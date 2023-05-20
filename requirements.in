@@ -1,0 +1,6 @@
+openai
+openai-whisper
+git+https://github.com/ytdl-org/youtube-dl.git
+langchain
+jupyter
+chromadb
