@@ -1,0 +1,83 @@
+vars:
+  - videos:
+    - name: Où va la Data Science ?
+      url: https://www.youtube.com/watch?v=bONAu-W44b8
+    - name: Techniques pour améliorer son éligibilité pour travailler dans la data
+      url: https://www.youtube.com/watch?v=N-7zRvzRr0I
+    - name: Le long parcours d'un cas d'usage applicatif en NLP, de 2013 à 2022
+      url: https://www.youtube.com/watch?v=Ki0pKl3TwdU
+
+stages:
+  get_description_from_youtube:
+    foreach:
+      ${videos}
+    do:
+      cmd: >
+        python3 src/get_description_from_youtube.py
+        --input_url "${item.url}"
+        --output_description_file_path "data/descriptions/${item.name}.txt"
+      deps:
+        - src/get_description_from_youtube.py
+        - data/.initial_dvc_dep.md
+      outs:
+        - data/descriptions/${item.name}.txt:
+            cache: false
+  get_audio_from_url:
+    foreach:
+      ${videos}
+    do:
+      cmd: >
+        youtube-dl -x
+        --audio-format mp3
+        -o "data/audio/${item.name}.mp3"
+        "${item.url}"
+      deps:
+        - data/.initial_dvc_dep.md
+      outs:
+        - data/audio/${item.name}.mp3
+  transcript_audio:
+    foreach:
+      ${videos}
+    do:
+      cmd: >
+        whisper
+        --language French
+        --output_dir data/transcripts
+        --output_format txt
+        "data/audio/${item.name}.mp3"
+      deps:
+        - data/audio/${item.name}.mp3
+      outs:
+        - data/transcripts/${item.name}.txt:
+            cache: false
+  summarize_transcript:
+    foreach:
+      ${videos}
+    do:
+      cmd: >
+        python3 src/summarize_transcript.py
+        --input_transcript_file_path "data/transcripts/${item.name}.txt"
+        --output_summary_file_path "data/summaries/${item.name}.txt"
+      deps:
+        - src/summarize_transcript.py
+        - data/transcripts/${item.name}.txt
+      outs:
+        - data/summaries/${item.name}.txt:
+            cache: false
+  extract_keywords_from_description_and_summary:
+    foreach:
+      ${videos}
+    do:
+      cmd: >
+        python3 src/extract_keywords_from_description_and_summary.py
+        --input_title "${item.name}"
+        --input_description_file_path "data/descriptions/${item.name}.txt"
+        --input_summary_file_path "data/summaries/${item.name}.txt"
+        --output_keywords_file_path "data/keywords/${item.name}.txt"
+      deps:
+        - src/extract_keywords_from_description_and_summary.py
+        - data/descriptions/${item.name}.txt
+        - data/summaries/${item.name}.txt
+      outs:
+        - data/keywords/${item.name}.txt:
+            cache: false
