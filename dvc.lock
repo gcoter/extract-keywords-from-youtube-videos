@@ -192,13 +192,13 @@ stages:
       md5: d32afe1a59ffda7278df0bfbc4c2020e
       size: 520
     - path: src/extract_keywords_from_description_and_summary.py
-      md5: 9d6663104cf3ff78ef7bfd75d0231015
-      size: 1857
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
     outs:
     - path: data/keywords/Le long parcours d'un cas d'usage applicatif en NLP, de
         2013 à 2022.txt
-      md5: 9b353849b21e58c0e3cb0f0fcf708f6f
-      size: 170
+      md5: a10ca2ced24d6a67fb33798fe0cfd9ca
+      size: 249
   extract_keywords_from_description_and_summary@1:
     cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
       \"Techniques pour améliorer son éligibilité pour travailler dans la data\" --input_description_file_path
@@ -217,13 +217,13 @@ stages:
       md5: 8e24fe56cdf39e4754c273ac133db0fe
       size: 964
     - path: src/extract_keywords_from_description_and_summary.py
-      md5: 9d6663104cf3ff78ef7bfd75d0231015
-      size: 1857
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
     outs:
     - path: data/keywords/Techniques pour améliorer son éligibilité pour travailler
         dans la data.txt
-      md5: c0f8e35ae56961787d792b6dd1b8d236
-      size: 173
+      md5: fc1f3b39c5d8df2142d04cb27f5a6f43
+      size: 271
   extract_keywords_from_description_and_summary@0:
     cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
       \"Où va la Data Science ?\" --input_description_file_path \"data/descriptions/Où
@@ -238,9 +238,9 @@ stages:
       md5: c9ec62ad5a6326319aa75889a32463e8
       size: 1197
     - path: src/extract_keywords_from_description_and_summary.py
-      md5: 9d6663104cf3ff78ef7bfd75d0231015
-      size: 1857
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
     outs:
     - path: data/keywords/Où va la Data Science ?.txt
-      md5: b99f1b8c656beafa0c6f70bab35041f3
-      size: 174
+      md5: d5cd6e4a6ced6f5a141b8380f3c9e0b1
+      size: 215

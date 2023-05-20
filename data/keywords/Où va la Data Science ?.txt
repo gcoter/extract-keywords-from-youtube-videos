@@ -1,1 +1,1 @@
-{"keywords": ["Data Science", "Machine Learning Engineer", "DevOps", "Data Engineer", "Data Analysis", "Business Expertise", "CICD", "Job Market", "New Technologies", "MLE"]}
+{"title": "O\u00f9 va la Data Science ?", "keywords": ["Data Science", "Machine Learning Engineer", "DevOps", "Data Engineer", "Data Analysis", "Business Expertise", "CICD", "Job Market", "New Technologies", "MLE"]}

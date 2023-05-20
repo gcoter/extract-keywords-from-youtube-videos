@@ -36,6 +36,7 @@ def extract_keywords_from_description_and_summary(
         Use this format (make sure your output can be read by Python's `json.loads`):
 
         {{
+            "title": "{title}",
             "keywords": ["keyword_1", "keyword_2", ...]
         }}
     """

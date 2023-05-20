@@ -1,1 +1,1 @@
-{"keywords": ["data", "visibility", "technical skills", "self-assessment", "professional personality", "learning", "LinkedIn", "networking", "market", "salary negotiation"]}
+{"title": "Techniques pour am\u00e9liorer son \u00e9ligibilit\u00e9 pour travailler dans la data", "keywords": ["data", "visibility", "technical skills", "self-assessment", "professional personality", "learning", "LinkedIn", "networking", "market", "salary negotiation"]}
