@@ -1,0 +1,512 @@
+Merci beaucoup à tous d'être venus. Je suis très très contente de vous voir si nombreux.
+Je m'appelle Andrea et aujourd'hui, comme Léo avait dit, on va parler de comment améliorer son
+éligibilité pour travailler dans le domaine de la data. Encore un grand merci à Roger et bien
+sûr un grand merci à Lyon Data Science d'avoir organisé cet événement. Donc je vais commencer.
+Quel est la cible de cette conférence ? En fait, j'avais pensé d'organiser la
+conférence autour des personnes qui sont intéressées à travailler dans le domaine de la data ou qui le
+font déjà, qui désirent par exemple faire une réconversion professionnelle vers le domaine de
+la data, qui désirent aussi améliorer la visibilité globale sur le marché et aussi apprendre
+plus sur comment accaparer plus de compétences de type hard skills mais aussi un petit peu de soft
+skills. Et bien sûr, si vous voulez avoir un meilleur poste dans la data, comme j'aime bien
+dire, ne vous plafonnez pas, essayez arriver plus loin et c'est pousser toujours vos limites
+professionnelles pour assurer que vous avez une progression constante au fur et à mesure de votre
+travail. Et donc en fait pourquoi est-il important d'améliorer la visibilité et l'éligibilité
+sur le marché ? Vous voyez bien, j'ai mis éligibilité et visibilité aussi puisque l'éligibilité c'est
+clair, oui on veut être mieux, on veut se présenter de la meilleure façon possible pour que les
+réculteurs observent quelle est notre qualité, quelle est notre valeur ajoutée pour pour l'entreprise
+par exemple. Mais son éligibilité parfois vient aussi un moment avec la visibilité puisque si
+on a des très bonnes compétences mais en fait on ne donne pas de visibilité sur nos compétences,
+on aura des difficultés à nous promouvoir et à trouver vraiment les jobs qui nous intéressent le
+plus. C'est comme un produit qui est très très bon mais qui n'a pas malheureusement une équipe de
+marketing très forte et qui arrive à mourir dans un camp juste parce que personne ne le connaît et
+donc nous on ne veut surtout pas ça de notre vie professionnelle et moi même en investissement
+sur sur ce chemin j'ai arrivé à doubler mon salaire par exemple j'ai arrivé à travail dans un
+environnement qui me plaît beaucoup et qui est adapté à mes capacités donc je n'ai pas cherché à
+adapter mes capacités au job description j'ai essayé à faire l'inverse et pour moi ça a été un
+gros succès et je pense aussi que pour vous ça va l'être si vous tenez compte de quelques
+petits astuces que je vais vous donner par dans cette présentation. Donc pour répondre juste à cette
+question on veut consolider l'image professionnelle qu'on a, on désire aussi développer le réseau
+qu'on a puisque bien sûr on est des êtres social et on peut trouver les meilleures opportunités si on
+reste en contact et si on partage l'information ou si l'information nous est partagée. On désire
+aussi démontrer le savoir-faire et comme ça on pourra donner plus de visibilité sur notre image
+professionnelle. On désire aussi être référent du domaine d'activité sur lequel on travaille,
+on veut savoir si les gens par exemple ils savent quels sont nos compétences et si ces gens là
+sont intéressés de faire appel à nos compétences. Une fois que les individus savent nous identifier
+c'est exactement ce moment là où on peut intervenir pour les aider et on peut créer un effet de
+boule de neige ou plus de plus en plus de gens arrive à bien à bien nous connaître et à nous
+recommander à leur tour. Bien sûr améliorer et avoir les meilleures chances d'être exposés aux
+bonnes opportunités d'emplois va se créer aussi par l'intermédiaire de cette visibilité qu'on
+désire projeter. Avoir des meilleurs leviers de négociations avec les récruteurs c'est peut-être
+une des raisons pour lesquelles vous voulez améliorer la visibilité et peut-être vos compétences
+techniques et bien sûr si vous travaillez dans le domaine de flu l'insigne le fait de avoir déjà
+une image bien établie ça va vous donner la possibilité de trouver des nouvelles prospects
+et ça c'est quelque chose de très important si on veut toujours pousser nos limites si on veut
+faire plus d'argent si on veut augmenter encore plus nos capacités techniques et si on veut bien
+sûr augmenter notre reach de point de vue networking. Voilà donc ça c'est le point que j'aimerais un
+petit peu soulever et donc je vais commencer par me présenter donc je travaille dans le domaine de la
+data de plus de 6 ans je suis data scientist dans mon temps libre je fais aussi un peu de frilance
+en essayant des cours et des concepts sur le domaine de machine learning data visualisation
+data modernisation etc et j'avais fondé Grid Data qui est justement une entité spécialisée à
+offrir coaching de Caliel dans la data de façon personnalisée un type B2C et bien sûr en B2B
+je donne aussi des conférences sur des concepts et outils de data ainsi que comment avoir une approche
+en entreprise plus data driven, comment accroître la démocratisation de la donnée et l'alphabetisation de
+la donnée en entreprise donc ce sont des choses qui m'intéressent bien je sais que vous êtes
+habitué avec des cours et des conférences de l'association new data science un peu plus
+technique mais je pense aussi que ce genre de cours peuvent vous orienter dans une direction où une fois
+qu'on est bien de point de vue technique qu'est ce qu'on peut faire pour arriver à nous sentir
+bien dans notre propre propos professionnel voilà et donc les sujets duquel je vais parler aujourd'hui
+c'est comment évaluer ces compétences et ça c'est très important parce que nous on a plein
+plein plein de skills mais tous ces skills ne sont pas toujours adaptés à tous les types de boîtes
+ou de type d'entreprise ou de job description donc il faut faire un self-assessment c'est ça
+ce que je dis qui va vous donner une meilleure visibilité des points forts et faibles que vous
+savez et qui va vous aider à mieux structurer ou vous vous positionner sur les marchés sur tous
+ces aspects ensuite on va parler de comment améliorer cette compétence donc peut-être
+ça c'est un des points qui vous intéresse le plus et bien sûr comment viser plus haut dans son
+avenir professionnel j'ai vu plein plein plein de gens qui qui travaillent dans leur domaine et
+qui se plafondent mais qui ont pas ce courage d'avancer qui ont pas le courage de vouloir
+un meilleur salaire ou une opposition à une plus grande responsabilité et c'est dommage parce que
+nous en tant que êtres humains on a tellement un gros potentiel que parfois volontairement ou
+un volontairement on ne le fait pas évoluer et donc pour moi une personne qui ne fait pas évoluer
+ses compétences et une personne qui n'attends pas son potentiel et c'est juste hommage et c'est
+pour ça en fait que je désire par cette présentation vous incorrigé à vous évaluer voire que vous
+vous valez beaucoup et qu'en fait vous pouvez toujours avoir plus vous pouvez toujours demander
+plus voilà et donc le premier sujet c'est justement ce self assessment et je j'aimerais ici
+discuter de quelles sont vos forces et vos faiblesses vous aurez aussi des tâches si vous voulez
+les réaliser dans votre temps libre comme ça vous partez avec quelques petits astuces pratiques
+quels sont les quel est le type de personnalité que vous avez de point de vue professionnel donc
+pourquoi je me concentre sur ça parce qu'en fait dans d'un entreprise quand on travaille on est
+déjà une personne mature qui normalement on est censé de tout connaître et de savoir ce qu'on veut
+et de avoir trouvé notre place parfaitement mais ce n'est pas toujours le cas et malheureusement
+dans le domaine académique bah on nous encourage pas toujours à développer notre personnalité à
+évaluer et à apprendre justement comment trouver le bon poste pour notre personnalité et par ce genre
+de self assessment c'est ça ce que je veux faire mettre l'accent sur le fait que chaque
+personnalité qu'on a est destinée à un type de travail spécifique ce que je veux dire par ça c'est
+si j'ai l'impression que en fait ça me plaît pas de coder je ne m'épanouis pas restant 90%
+du temps incodent et débogant du code dans un coin je suis une personne plus communicative bah en
+fait il faut que je réfléchis quel est le quel est ce désir comment est-ce que je peux le manifester
+puisque je veux me sentir un petit peu misérable si je rentre dans cet état d'esprit où je j'ai un
+conflict avec ma propre personnalité donc c'est un petit peu ça l'idée ici et un troisième sujet
+et quel est le poste que vous envisagez donc si vous avez déjà un poste qui vous plaît tant
+mieux effet d'élicitation mais pour plein de gens ce n'est pas le cas et donc si vous êtes intéressé
+de travailler dans la data bah en fait peut-être un petit peu de review sur les skills principaux
+dans le data data related job ça peut être intéressant donc commençons avec le premier quels
+sont les forces et les faiblesses j'ai mis ici une photo juste pour vous montrer le fait que en
+fait ça c'est un sujet qu'on approche d'habitude en entretien et c'est un sujet qui peut être
+très intéressant pour vous à structurer un petit peu votre votre point votre point fort et faible donc
+ici j'ai donné une liste qui est bien sûr non exhaustive qui a le but de vous rendre un petit peu
+conscient que même si vous avez des des faiblesses bah c'est ok tout le monde a des faiblesses il faut
+savoir les identifier pour peut-être diminuer leur impact sur n'importe quel type de travail qu'on
+fait ou peut pour peut-être les améliorer d'une telle sorte donc ici c'est juste une liste que vous
+avez et mon mon idée est de pouvoir être conscient que les points forts que vous avez ce sont les
+points sur lesquels il faut qu'on travaille et ce sont les points qu'il faut présenter lors des
+différents entretiens ou lors des différents types de opportunités qui convoient donc il y a un gros
+débat ici est ce qu'on essaie à améliorer les points forts qu'on a ou est ce qu'on essaie à améliorer
+les points faibles qu'on a pour arriver à un sort de équilibre et mon avis personnel et que en fait
+on a tous des points faibles et peut-être travailler là où on est meilleur ça peut nous amener un
+degré de spécialisation qui peut nous offrir un avantage concurrentiel sur le marché par rapport
+aux autres ressources humaines voilà donc ça c'est mon idée ici vous pouvez trouver plein plein
+plein d'assuces comme ça moi-même j'avais fait sur mes postes si jamais vous voulez suivre grid data
+un autre point important c'est sur l'évaluation des compétences en ce qui concerne le type de
+personnalité donc je vois pas ça très souvent quand quand on enseigne les gens à se former pour
+aller sur le marché de travail je ne vois pas ces discussions qui est lié à type de personnalité
+professionnelle qu'on peut avoir qu'est ce que je veux dire ben c'est justement cette idée
+qu'on est des personnes qui ont des très différents qui ont des personnalités différentes et
+parfois on s'oblige à aller dans des directions qui ne semblent pas en conformité avec notre état
+d'esprit si on est une personne artistique et que d'un coup on nous demande de faire des
+équations différentielles toute la journée bah vous vous rendez compte que ça va pas être une
+vie épanouissante si on est une personne très entrepreneur qui toute la journée désire justement
+à trouver des idées et comment le mettre en application mais qu'en fait ce qu'il faut qu'on
+fasse toute la journée c'est de coder bah encore une fois ça ce n'est pas un bon match et ça va
+pas nous rendre content donc c'est pour ça que cette idée de trouver votre personnalité professionnelle
+et quelque chose qu'il faut prendre en considération parce que si vous ne vous sentez pas content
+actuellement avec le boulot que vous faites c'est parce que peut-être il y a une incohérence au
+niveau de personnalité et type de tâches que vous réalisez donc j'espère que ce point
+il est il est clair parce que c'est un point qui peut déterminer si vous allez vous sentir avec du
+succès ou pas dans le sens où vous pouvez quand même faire des choses qui ne vous plaisent pas à
+100% et être successful mais la question est est-ce que vous vous sentez successful parce que voir
+une personne qui a des milliards d'euros peut ne pas se sentir successful de point de vue financière
+et c'est son attitude qui décide si elle est ou pas une personne qui a du succès donc dans votre
+cas quelle est quelle est la cible quelle est l'état d'esprit que vous cherchez pour que vous
+vous sentiez ici avec beaucoup de succès c'est ça la question ici et la dernière question c'est
+quelle est le poste que vous envisagez donc nous bien sûr on se trouve ici à l'association
+luand data science je suppose que vous êtes intéressé d'apprendre un petit peu de quoi s'agit-il
+en général et si jamais vous le connaissez peut-être avoir des petits astuces ici et là et donc la
+question est qu'est-ce qu'on peut faire pour la suite donc là le fait de savoir quel est le poste
+qu'on envisage est extrêmement important parce que ce poste qu'on envisage ça va dépendre de
+plein de choses ça va dépendre de paysages d'emploi donc de market où on se trouve et on
+voit tous actuellement que le job landscape il est très bon il est très promesseur il y a
+plein d'entreprises qui cherchent des compétences en data et par exemple le world economic forum ici
+estime qu'en 2020 on aura des jobs qui seront au niveau de 97 millions de jobs sur la partie
+data avec des data analystes des data scientistes des machine learning engineers des spécialistes
+des big data et data engineer qui vont être des ressources les plus demandées sur le marché donc
+si vous voulez travailler dans la data sachez juste qu'il y a une place pour tout le monde il y a
+plein plein plein d'opportunités et c'est pas ça la question qu'il faut se poser quand on décide
+de travailler dans ce domaine ou pas une autre question qu'on peut se poser lié au poste que
+vous envisagez c'est quel est le type de personnalité donc en plus de ceux qu'on a vu comme personnalité
+de type professionnel on a aussi notre propre personnalité par exemple ici j'avais pris un
+article de higher success qui disait bah on a de personnalité de différents types comme par exemple
+de directeur de penseur personnalité de personne qui aime bien socialiser ou la personne qui aime
+bien exécuter et aider dans des situations spécifiques qui peuvent qui peuvent être assez
+troublant disons et donc en fonction de ça bien sûr les types peuvent changer mais ça c'est
+aussi un facteur pour se dire bah si moi j'ai une personnalité de thinker dans ce cas là de
+penseur c'est à dire que je suis orientée vers le détail j'aime bien penser tout tout activité
+toute action de façon logique et je suis toujours préparé et orienté détail bah ça veut dire que
+pour moi le poste de data engineer data scientist et un poste qui est très très intéressant et donc
+pourquoi pas aller vers cette direction donc encore une fois ces personnalités peuvent aussi jouer
+sur la décision de aller sur un tel domaine data une autre question et aussi celle de hasard celle de
+prendre la décision de quel type de poste prendre en fonction de capacité hard et soft c'est à
+dire des compétences de type hard hard skill compétence et soft skill donc quels sont les
+compétences actuelles que vous avez de point de vue technique est ce que vous voulez capitaliser sur
+les compétences actuelles ou est ce que vous voulez ajouter encore plus de compétence parce que le
+job que vous avez trouvé demande encore un peu plus de compétence et donc ici c'est juste comme
+référence je vais mettre les slides à votre disposition c'est un petit article qui parlait
+du fait que la différence entre hard skills et soft skills est justement la différence entre les
+capacités qu'on a besoin pour bien clôturer des tâches et réaliser des tâches en entreprise de
+point de vue technique donc ça c'est le hard skills et aussi les soft skills sont des compétences
+qu'on a de point de vue communicative de collaboration interrelationnelle donc en fait on
+pourrait dire que les hard skills commencent à se développer à l'université et sur le marché
+de travail quand on rentre et quand on commence notre profession néanmoins les soft skills se
+développent surtout de notre vie et parfois les soft skills peuvent faire la différence entre avoir
+un bon job et un autre job qui nécessite des relations interhumaines donc ici encore une fois
+pour vous c'est important de savoir est ce que je suis plutôt hard skills oriented est ce que ça
+m'intéresse à développer mes skills plus hard que soft ou pas et il y a du travail qu'on peut
+faire dans ces directions aussi parce que lors des entretiens les deux ressortent et c'est long
+les types de jobs que vous avez bah les hard skills peuvent être plus importants comme dans le
+domaine de la data pour des des rôles plus techniques comme par exemple des tâches engineering
+ou des tâches architectes et les compétences soft skills peuvent être plus intéressantes pour des
+récruteurs qui cherchent plutôt de des tâches managers ou des des fonctions à de responsabilités
+qui prennent aussi en charge des équipes variées voilà et donc votre premier devoir sera à faire
+une liste avec vos premières les plus importantes 15 compétences techniques et les premières le
+plus important 15 compétences interrelationnelles ou de type soft skills les maîtres sur le papier
+va vous aider justement à avoir une clarité sur les choses où vous investissez le plus actuellement
+et sur les choses qui peuvent par exemple manquer en termes d'investissement actuellement puisqu'on
+peut pas tout faire d'un coup et donc en fait développer nos soft skills et nos hard skills
+c'est un travail à vie en fait une fois qu'on rentre sur le marché de travail on peut pas dire que
+on a arrêté l'apprentissage comme j'avais pensé initialement que ça va se passer malheureusement
+ce n'est pas le cas mais en fait ça fait partie de ce challenge là de pouvoir investir constamment
+et de se voir grandir dans un environnement qui peut être nourrissant et donc cet environnement
+c'est ce qu'on cherche quel est le bon environnement pour vous même est ce que vous vous éclatez et si
+oui est ce que ces skills vont évoluer et si oui bah voilà c'est un gros succès donc voilà si vous
+voulez faites ce liste là ça va vous aider j'aurai d'autres petites tâches à vous donner qui s'appuient
+et de ce ok donc on a parlé de cette ce grand chapitre qui est justement l'évaluation de soi
+même cette évaluation est très importante et lors de mes de mes cours de coaching personnalisé je
+fais aussi ça puisque c'est important de connaître quel est le parcours de l'individu et quels sont
+ces appétences quels sont ces points forts au but de initier une discussion sur l'amélioration
+de ces compétences donc je parlerai ici de deux gros points identifier le rôle de data qui vous
+intéresse dans la situation où vous l'avez pas déjà fait et je vais vous encourager de vous
+former constamment fait que je pense c'est très important pour n'importe quelle évolution professionnelle
+donc voilà j'aime bien dire que les données sont l'or numérique de notre ère digital et je le
+dis parce que le fait d'avoir commencé à travailler sur la data va c'était cette idée que j'avais
+pensé que la data va changer la société va la mieux structurer et va nous aider à mieux nous
+organiser en étant autant et donc je pense toujours ça et c'est pour ça que j'ai poursuivi ce
+chemin peut-être vous avez des autres raisons mais si vous êtes sur ce chemin parce que c'est un très
+très beau chemin qui peut vous amener beaucoup beaucoup de satisfaction et donc en fait améliorer
+ces compétences qu'on parle de la data c'est déjà identifier le rôle qui nous intéresse donc si on
+a un job actuel qui nous plaît bah ce n'est plus nécessaire mais si on désire à l'avenir à évoluer
+encore plus bah ça peut faire partie d'une des tâches qu'il faut qu'on réalise on se demande aussi
+bah quels sont les skills nécessaires pour ce job là et quels sont les choses que je dois faire par
+rapport à ce job là, par exemple je veux être un data scientist je devrais savoir déjà tout de
+suite quels sont les types de tâches que je vais réaliser au fur et à mesure que je vais travailler
+en tant que data scientist le fait de collecter les données est-ce que ça me plaît le fait de pouvoir
+par exemple faire du data cleaning 60% du temps est-ce que c'est quelque chose qui m'intéresse parce
+que les data scientist pensent d'habitude que être un data scientist c'est faire du machine learning
+et faire des modèles de partout comme ça avec une interprétation très intellectuelle et le job se
+finit là pas tout le monde mais en fait il y a des gens qui pensent ça et moi même j'étais une
+d'entre eux malheureusement mais bon j'ai évolué donc ça fait partie de cette évolution de
+quelle je veux parler et donc data cleaning par exemple est une chose qu'il faut qu'on fasse
+en tant que data scientist si on n'a pas de compétence dans ce domaine là bah en fait on devrait
+les apprendre si on veut rester dans ce domaine là est ce que l'idée de les apprendre nous plait
+ou pas c'est une des questions qu'on peut se poser est-ce que le fait de créer des algorithmes ou
+des adapter des algorithmes par exemple en piton et quelque chose qui nous intéresse ou pas donc
+toutes ces sortes de questions ici c'est juste un exemple mais c'est que je veux vous dire et que
+une fois qu'on a un tête en certains rôles il faut savoir si on est désiré de apprendre les
+choses nécessaires à réaliser ce rôle là de façon successful et donc ici moi j'avais mis en place
+que quelques petites idées de quels sont les hard skills de gros types de rôle de data qu'on
+trouve sur le marché actuellement bien sûr que la liste n'est pas holistique et les voilà donc en
+fait on a des data analystes des data ingénieurs des data scientistes data architecte machine learning
+engineer data analytics managers also donc ici pour chacun je suis venue avec une petite liste
+pour juste une sorte de cheat list qui peut vous aider à voir quels sont les compétences techniques
+assez importants qu'on doit avoir en fonction de rôle donc un peu près de partout on peut observer
+qu'il y a de connaissances de type SQL qu'ils nous font qui vont nous aider à requêter de grosses
+bases de données et structurer les données il y a des endroits où on a besoin de visualiser les
+données plus que des autres donc par exemple dans la partie data analystes data scientist data
+analytics manager on a des compétences plutôt liées à la data visualisation il nous faut des
+compétences de type statistiques dans des majorités des cas surtout dans la partie machine
+learning par exemple ou data scientist il nous faut des compétences de grosses bases de données par
+exemple dans la data engineering et data architecte ici donc il y a plein plein plein de compétences
+dont on a besoin si on est quelqu'un de technique on peut certainement aller et travailler dans ces
+directions les rôles de data sont assez techniques en général mais j'avais mis ici quelques
+petites indications que parfois ces rôles là peuvent être un peu moins technique donc selon
+votre domaine de prédilection vous pouvez travailler avec la donnée en ne pas interagissant directement
+vous pouvez être un project manager sur des projets en data vous pouvez être un manager des
+équipes de data sans que vous allez en détail sur tous ces aspects mais ce sont des qualités
+techniques que moi je trouve sont assez importantes une fois qu'on a décidé de travailler sur ce
+domaine là voilà donc deuxième devoir sera de classer ces 15 hard skills que vous avez identifié par
+exemple un ordre décroissant selon l'importance du rôle dans la data que vous avez ciblé donc
+selon ce type de liste vous allez regarder par quel est le rôle qui me plaît le plus ou quel est
+le rôle actuel que je fais et voilà mettre un ordre décroissant ces hard skills vous allez me
+demander ben un verre quel est le but de faire tout ça en fait une des choses que on peut faire
+avec c'est de les identifier et de pouvoir s'assurer que ces hard skills se trouvent sur notre CV
+sur notre profil LinkedIn puisque nous on sait le mieux possible de quoi on est capable et donc
+il faut qu'on le signalise de façon extrêmement rapide à toute personne qui est compétente et
+intéressante de intéresser de nos compétences et qui intéressait de nous récruter par exemple
+et un troisième sujet sera trouver les hard skills qui vous manquent et commencer à travailler
+dessus donc en fait si vous avez identifié qu'il y a des points bloquants qui vous amène à être
+le meilleur datanalyse du monde dans votre boîte par exemple et vous dites que en fait j'ai un peu
+de mal à communiquer avec mes responsables bah ça c'est le pont sur lequel il faut travailler
+donc toujours rester pragmatique par rapport à votre cible et les points que vous pouvez améliorer
+parce que lors de l'entretien vous voulez être là près à donner toutes les détails et toutes les
+réponses pour impressionner et ce que j'aime bien d'habitude à dire et justement bah j'espère
+que je vous ai impressionné avec cette présentation donc finalement j'ai abouti bien que l'autorée
+la situation bon la fois ça marche parfois ça marche pas mais bon on essaie toujours donc commencer
+à travailler à vos compétences comment bah en se formant et bien sûr ces choses là vous les
+connaissez déjà mais je le mets juste encore une fois en évidence le fait d'avoir une éducation
+formelle dans ce domaine là aide beaucoup puisqu'on voit qu'en france par exemple on demande des
+diplômes qui qui sont des diplômes peut-être liés à computer programming domaine statistique ou
+business et ça ce sont des diplômes qui qui sont importantes même si ça ne relève pas vraiment
+quelle est votre valeur ajouter un entreprise c'est une chose assez officielle et importante si
+jamais ça vous intéresse de poursuivre ses directions il y a plein plein plein de universités qui
+ont développé de plus en plus ce genre de de programmes liés à la data faire des certifications
+et passer par des cours en ligne est aussi très importante il faut être constant et s'assurer
+que ces cours là ils sont d'actualité et je le dis aussi parce que ça c'est un bon moyen pour vous
+de mettre à jour vos compétences techniques tout le temps il y a des récruteurs qui par
+l'intin cherchent des profils aussi par rapport à le fait d'avoir mis de façon récent à jour les
+compétences ou les certifications donc il y a parfois des filtres que vous allez choper juste
+parce que vous n'avez pas mis à jour votre certification et bien sûr que le plus gros
+travail de développement technique va être fait lors des interchips donc lors des stages et lors
+de travail que vous allez faire en entreprise directement ici on se demande parfois à André
+est-ce qu'on prend un job qu'on maîtrise pas bien techniquement à ça du sens c'est ce que
+je dois le faire j'ai un peu peur de ne pas me débrouiller et je dis toujours vas-y si tu as
+l'opportunité de prendre un job qui te plaît mais qui n'est pas que tu maîtrises pas complètement
+ce n'est pas grave tu vas apprendre sur place il y a plein plein plein d'outils techniques il y a
+des entreprises qui ont des systèmes informatiques tellement différentes qu'en fait on peut jamais
+savoir tous ceux qu'ils utilisent tous nouveaux projets et en fait un nouveau projet pour tout
+le monde et pour vous même aussi donc le fait de pouvoir dire oui je suis capable et de pouvoir
+s'adapter à un environnement de travail est un avantage extrêmement important donc ne rater
+pas des opportunités juste parce que vous êtes trop modeste pour accepter ces opportunités et donc
+le temps va vous aider à construire ces qualités et ces compétences techniques et le temps m'a aussi
+aidé à construire mes compétences techniques parce qu'en fait ma spécialisation est dans des
+plateformes d'intelligence artificielle de type low code ou non code et c'est parce que je me suis
+rendu compte que j'aime bien coder en piton je me débrouille bien à adapter des algorithmes de
+machine learning selon les données qu'on me met à la disposition mais ça m'éclate pas vraiment
+à développer des codes je suis pas vraiment j'ai pas un bas grand de développeuse j'ai un bas
+grand plutôt d'économiste et le fait de travailler dans ce domaine là sans devoir coder à 100%
+bah ça me plaît bien aussi et donc si vous dites j'ai peur parce que je n'ai pas les compétences
+techniques pour faire du programming statistique ce n'est pas toujours nécessaire j'ai réussi
+le faire de façon très agréable et je suis sûre que vous allez aussi le faire si ça vous
+intéresse donc vous voyez ici après 6 ans de travail bah j'ai réussi à mettre dans le moins
+cv des compétences techniques très intéressantes sur des outils plus ou moins connus qui qui m'ont
+permis en fait d'avoir le job de customer facing data scientist que je suis aujourd'hui désolé je
+parle juste en anglais au boulot c'est pour ça que je les mélange un petit peu donc voilà
+investir dans son avenir professionnel en faisant des formations et en s'assurant qu'on reste un
+veille technologique de façon constante est extrêmement important mais ça ce n'est pas la
+chose la seule chose qui compte ce qui compte aussi c'est le fait de se promouvoir parce qu'en fait
+dans la plupart des cas c'est que j'avais observé et c'est ça aussi auprès de mes clients c'est
+que ce ne sont pas les compétences techniques qui manquent mais en fait la capacité de promouvoir
+ces compétences de façon stratégique est simplement décis donc la majorité d'entre vous
+croient qu'ils ont moins de compétences que vous les avez et c'est dommage parce qu'en fait si
+vous êtes pas les promoteurs de votre propre capacité bah alors qu'il va l'être il y a
+personne qui va l'être et il y a plein plein de gens aussi qui se promue trop parfois et pour
+quelqu'un qui n'a pas l'œil entraîné bah on peut pas se rendre compte de ces différences de
+capacité technique donc c'est à vous de montrer ces capacités techniques si vous les avez sauf que
+parfois si vous les promouvez pas bah vous allez même pas arriver en cet état là de les promouvoir
+auprès d'un possible recruteur et voilà c'est pour ça que le troisième chapitre va se baser
+plus sur la partie visée plus haut dans son avenir professionnel parce que je pense que rester
+plafondé dans son coin pour toute la vie n'est pas quelque chose d'une être humaine mais plutôt
+d'une machine et donc nous on sait très bien se dissocier des machines en amenant notre personnalité
+et notre valeur ajouter nos idées qui font que en fait le monde avance et donc comment est-ce qu'on
+peut se promouvoir et comment est-ce qu'on peut viser plus haut ce sont des questions que je me
+pose souvent et ce sont des questions qui me poussent à aller plus loin développer encore plus de
+compétences et m'assurer qu'en fait je deviens pas obsolète et donc avoir un dream job n'est pas
+juste un dream c'est possible mais il faut être un petit peu stratégique dans la recherche et savoir
+quels sont vos priorités est ce que l'argent est une priorité si c'est le cas bah sans honte il faut le
+dire est-ce que c'est peut-être le fait de pouvoir avancer dans votre carrière de point de vue
+est une priorité ou peut-être de avancer dans les responsabilités est une priorité il faut
+être honnête avec soi-même et aussi avec ses interlocuteurs je sais que vous l'aident mais en
+fait c'est juste pour le mentionner donc comment se promouvoir il y a un livre que j'aime bien qui
+s'appelle promote yourself the new rules for career success et dans ce livre là il nous explique
+l'auteur le fait que la capacité de promouvoir ses skills en fait amène que sur ces mêmes skills
+on peut avoir des salaires plus grands on peut avoir des des possibilités des opportunités plus
+grandes donc c'est pas à un tabou le fait de savoir se promouvoir peut vous amener un plus
+grand salaire le fait de pouvoir connecter avec des gens et avoir plus de notoriété peut amener un
+plus grand salaire peut amener une position qui est meilleure et qui est meilleur adapté
+aussi à nos compétences donc pour se promouvoir bien sûr on peut pas juste dans 45 minutes
+discuter de tous ces sujets mais faites attention à votre profil LinkedIn il est votre il est votre
+adresse professionnelle assurez vous qu'il est mis à jour et qu'il est bien complété et qu'au
+fur et à mesure que vous avancez et vous évoluez dans votre profession bah vous allez aussi le
+mettre à jour puisque ça c'est un travail qui va jamais se finir bien sûr on n'est pas tous Bill Gates
+qui va dire bah je suis CEO de Microsoft et ça s'arrête sa description mais jusqu'au moment à ce
+moment là peut-être on peut aussi travailler qui sait parmi vous il y a quelqu'un qui va créer
+l'entreprise de l'avenir donc on sait jamais donc voilà ça c'est là le premier point que je
+voulais mentionner le deuxième c'est publier régulièrement du contenu intéressant et utile
+pour votre public et qui montre aussi le fait que vous vous avez un avis sur un sujet qui vous
+intéresse ou sur un sujet que vous maîtriser donc n'est pas peur de vous mettre et de vous
+afficher devant tout le monde en parlant des sujets qui vous plaisent il n'y a pas beaucoup de monde
+qui le fait et il y a un marché extrêmement énorme et demandeur de vos capacités et donc
+en fait ce que je vous encourage à faire et de aller montrer quels sont vos capacités et vous allez
+trouver de façon organique votre public au fur et à mesure que vous vous faites cet effort de
+rendre l'information plus accessible pour des gens et un autre point c'est développer votre
+réseau donc le fait de pouvoir rester en contact avec des personnes qui travaillent dans votre domaine
+d'activité que vous ne connaissez pas c'est très important donc déjà félicitations pour ceux
+qui sont ici le fait d'être à cet endroit ça veut dire que vous voulez développer votre réseau et
+c'est moi même aussi que j'avais fait ça quand je me suis inscrite à l'association en 2018 et donc
+c'est c'est quelque chose qui a enrichi ma vie professionnelle puisque j'ai eu l'occasion de
+connaître le plan de gens comme vous qui étaient soit intéressés de discuter plus sur des sujets
+qui me passionnaient soit par exemple qui étaient intéressés de récrouter donc voilà on ne doit
+jamais dire non à une possible opportunité qui peut nous amener plus loin dans notre vie professionnelle
+voilà ça c'est un petit peu l'astuce de la journée que je peux vous donner ici et pour ne pas
+vous ennuyer un quatrième devoir sera rédiger aujourd'hui après cette conférence en poste
+sur LinkedIn sur le sujet qui vous intéresse aujourd'hui donc oser justement de faire une
+publication et de partager une information qui vous intéresse et que vous pensez il y a d'autres
+personnes qui sont intéressées dessus parce que certainement on va dire ah tiens je savais pas ça
+même si pour vous c'est évident en fait pour d'autres personnes ça peut pas l'être donc on a aussi
+une chose que j'avais trouvé une personne qui lit un livre sur un sujet particulier c'est déjà
+sur ce sujet là plus de plus que les 99% les autres individus du monde oui parce que en connaître
+les basiques pas déjà en connaissant les basiques c'est déjà quelque chose qui nous met dans un
+avantage par rapport à ceux qui connaissent pas les basiques voilà donc taguer aussi 5
+personnes pour donner un peu plus de portabilité à votre poste et comme ça peut-être vous allez
+être étonné voir qu'en fait il y a un public de monde d'or de vos idées que vous avez pas
+exploité jusqu'au présent voilà juste avant de finir j'ai encore deux trois slides que je
+veux présenter c'est sur le sujet de comment viser plus haut donc en fait viser plus haut c'est à
+dire ne restez pas au même endroit et ne restez jamais au même endroit c'est à dire oui je
+travaille actuellement est ce que je peux faire des choses qui me plaisent encore plus est ce
+que je peux intégrer d'autres choses qui m'intéressent ou pas je vous donne un exemple
+j'ai travaillé pour data robot qui est une entreprise d'intelligence artificielle spécialisée dans
+un logiciel d'intelligence artificielle et j'étais un trainer des clients pour m'aider à monter
+en compétence les individus sur la plateforme donc j'ai adoré ce rôle là mais j'ai dit comment
+est ce que je peux devenir par exemple l'image de mon pôle est ce que je peux le faire parce que
+m'intéresse bien donc dans mon temps libre et à ma propre volonté j'avais commencé à faire des
+vidéos pas sur des scripts spécifiques que j'avais développé qui maintenant apparaît sur la
+plateforme et c'est parce que j'ai voulu justement ajouter une couche dynamique dans la partie
+self-paced learning des individus et donc en fait ces vidéos ont été tellement appréciées que
+maintenant il y a des gens qui me contactent justement pour que je fasse du contenu sur la
+partie content creation en vidéo donc j'ai développé des nouveaux skills sur la partie
+vidéo parce que j'ai voulu et voilà c'est ce qui là il m'aide à avoir plus de éligibilité sur le
+marché non pas juste en tant que data scientist mais peut-être que en tant que data scientist promoter
+donc voilà si j'ai des compétences que je peux partager pourquoi pas le faire et si j'avais trouvé
+un moyen qui me plaît pour le faire bah tant mieux voilà c'est juste un exemple donc comment
+viser au plus haut ici il y a des sujets que j'approche par exemple quand est-ce que c'est le moment
+de se rendre compte que on ne s'épanouit pas à son boulot mon rôle ce n'est pas de vous faire vous
+rendre compte que vous vous épanouissez pas votre boulot mais de vous dire que même au sein de
+votre boulot vous pouvez augmenter les responsabilités le degré de challenge vous pouvez demander
+un plus gros salaire vous pouvez faire plus de choses qui vont aider la entreprise à grandir vous
+étant que une cellule d'un organisme entière qui est votre entreprise et donc en fait vous pouvez
+toujours viser plus haut ne restez pas plafonnés voir au sein de votre entreprise ou ailleurs voilà
+et ici pour d'autres opportunités d'embauche par exemple il faut aussi tenir compte que si
+jamais ça vous intéresse à partir ailleurs bah il y a des stratégies spécifiques à mettre en
+place pour trouver un boulot pour pousser votre candidature et pour vous promouvoir donc par
+exemple stratégie de recherche d'emploi c'est que j'aime bien à mes clients c'est de demander
+une liste bien sûr de 30 entreprises pour lesquelles on veut travailler donc je suis sûre que vous allez
+pas venir avec 30 entreprises de n'importe où dans le monde mais le fait de penser activement à
+cette liste là c'est long le territoire l'origine le type d'activité l'industrie ça va vous aider
+mettre votre cerveau en action et l'ouvrir pour des opportunités que vous n'aurez pas pensé puisque
+c'est exactement la même situation quand on cherche qu'on veut acheter une une car une voiture
+bah cette voiture là on va l'avoir de partout et c'est pas parce qu'elle était pas là mais c'est
+parce que notre cerveau maintenant il est prêt d'accepter cette information plus facilement
+que ailleurs que dans des autres moments donc c'est pour ça que je vous dis une liste de 30
+entreprises pour lesquelles vous voulez travailler bah c'est une des choses que vous pouvez faire et
+ensuite andréa qu'est ce qu'on fait avec cette liste bah en fait vous allez vous connecter sur
+LinkedIn sur tous les individus qui travaillent dans la data sur cette entreprise et leur écrire
+un message personnalisé pour dire voilà je travaille dans la data j'apprécie tellement cette
+entreprise où vous travaillez j'aimerais bien rester en contact pour des possibles opportunités et
+en créant un petit peu et en préparant votre terrain bah vous allez recevoir des réponses j'avais
+lu un article qui disait que en fait une sur environ 50 candidatures ont une réponse positive
+que oui ça nous intéresse votre candidature d'un en cas c'est une sur deux et c'est pas parce que
+en fait je suis extraordinaire même si c'est possible c'est à vous de me dire mais c'est parce
+qu'en fait j'ai une approche plutôt stratégique à comment contacter les personnes qui m'intéressent
+et qui travaillent dans ce domaine là donc ça c'est parmi les astuces que moi j'offre dans
+des programmes personnalisés pour la partie job search et qui m'ont amené beaucoup de succès
+qui m'ont doublé le salaire et qui me rend très heureuse dans ma vie professionnelle donc voilà si
+je le peux si je peux le faire bah vous pouvez aussi et avec ça je voudrais vous remercier pour
+l'attention et si jamais vous voulez vous connecter avec moi n'hésitez pas puisque il y a plein de
+sujets qu'on peut approcher ensemble j'en suis sûr voilà est ce qu'il y a des questions que je peux
+adresser selon la présentation oui sur les tests de personnalités dont tu parlais au début
+il y en a quelques-uns qui résistent qui sont assez connus comme des disques ou quelque chose comme ça
+t'en recommande certains j'ai pas fait vraiment donc la question c'était sur les tests de
+personnalités est ce qu'il y a un que je recommande un priorité non pas certain pas nécessairement
+puisque il y a des tests de personnalités qui sont plutôt ciblés sur des aspects différents il faut
+déjà commencer avec quelques ans ils sont tous variés je voudrais pas promouvoir des tests
+spécifiques mais ce qui est certain est que ça va vous donner déjà une meilleure idée sur
+qu'est ce que vous vous attendez de vous même au deux points de vue professionnel donc chercher
+juste des tests de personnalités professionnels et vous allez certainement tomber sur les premières
+qui sont assez assez connus il ya d'autres questions ici à combien vous estimez le temps
+que ça vous a pris pour pour arriver il a vous emmette la question c'est à combien j'estime
+de formation ah d'accord donc la question c'est combien de temps de formation j'ai dû avoir
+pour arriver à ce moment de compétence assez compétence que j'ai actuellement ok bah en
+fait moi j'ai eu un master en économie candidatif qui m'a déjà aidé à apprendre qu'est ce que
+c'est la programmation statistique avec air et sas ensuite je me suis rendu compte qu'en fait
+ce sont pas les langages de programmation qui sont les plus connus pour la partie machine learning
+donc j'ai commencé par moi-même à me former à piton lorsque j'ai commencé un entreprise
+j'ai commencé sur sas et air et donc j'ai eu environ trois ans de travail sur sur ces langages
+de programmation avant que je commence à accoder à un piton sur sur les autres opportunités que
+j'ai eu donc après six ans je peux dire que j'ai des compétences assez variés qui qui me donnent
+la possibilité à de travail comme data scientist mais bien sûr que ces compétences peuvent toujours
+être améliorées parce que je ne peux pas dire que j'ai une une expertise si blessure des sujets
+particulières et le fait de développer des compétences particulières basse c'est lié justement à
+des projets sur lesquels on a travaillé donc par exemple les hauts toi tu avais travaillé sur des
+problématiques de nlp moi j'avais pas travaillé quand même ce sont des branches de l'intelligence
+artificielle assez importante donc ça dépend justement de domaine qui vous intéresse puisque
+voir dans la partie data science il y a des des cibles et des niches sur lesquelles on peut
+intervenir et juste par rapport à ça bah c'est long la la taille de l'entreprise on peut par
+exemple être un data scientist qui fait tout depuis le début jusqu'à la fin dans un cycle de vie
+d'un projet data ou si sur des équipes qui sont plus volumineuses sur des projets plus complexes
+bah le fait d'être data scientist c'est une brique plus petite et chacun a sa position donc
+selon l'expérience data scientist peut dire générique ou plus plus plus technique sur
+des sujets particulières donc en total pour te répondre six ans voilà c'est pour la question est-ce
+qu'il y a d'autres questions que je peux adresser oui je voulais savoir quelle vision vous aviez tu
+marché de la data en france à ce moment enfin est-ce que on est en retard par rapport à d'autres
+pays ou est-ce que on est encore au débit de la vague comment se situe en termes d'opportunités
+oui mais si beaucoup pour la question c'est très bonne donc un terme de opportunité où est-ce
+qu'on se situe sur le marché français je pourrais dire que la France elle est dans les top pays qui
+prioritise la data bien sûr les états unis sont encore un peu plus évolué avec ce désir aussi
+d'avoir encore plus de rôle dans la partie machine learning d'un mois ici en france je vois
+qu'il y a plus de demandes sur la partie data engineering avec stockage de données et nettoyage
+de données qui est plus prioritaire le marché il est un croissance qu'on part tout dans l'europe donc
+c'est un marché qui est très très important et c'est un marché qui va l'être encore pour quelques
+ans au moins donc c'est une belle opportunité de se retrouver en france sur sur ce marché et voilà
+je suis optimiste pour l'avenir de la data en france est ce qu'il y a d'autres questions oui
+concernant les salaires est-ce que tu recommandes des techniques de dégociation ou à défaut des
+études qui pourraient donner une fourchette avec elle oui une très bonne question et je peux dire
+la plus difficile le sujet sur le salaire est-ce qu'il y a des techniques de négociation et comment
+est-ce qu'on peut se positionner donc selon l'entreprise que vous visez selon le numéro de
+d'employés dans cette entreprise la région où elle se trouve le domaine d'activité l'industrie
+les salaires peuvent varier il y a des sites comme glastore ou LinkedIn qui donnent déjà une bonne
+idée sur quelle est la position d'une heure pour certaines positions quelle est la plage mais ça
+c'est juste estimatif je je je pourrais dire qu'en fait le but si jamais on change le poste
+sera toujours de grandir un salaire je peux pas donner une plage estimative ça c'est quelque
+chose qui se essaie lors des plans d'entretien pour voir la réaction des récruteurs donc par
+exemple il y a une période où j'avais 100 cas d'entretien par semaine et j'ai eu plein d'opportunités
+de tester qu'elles étaient les limites de ce que je pouvais demander et qu'elle était la plage
+selon les réactions des récruteurs qui parfois dans la majorité de cas ils vont pas le dire donc
+la technique que j'utilise d'habitude c'est quand on discute et on arrive au sujet de salaires déjà
+ne pas dire que le salaire qu'on a eu auparavant puisque ça peut c'était ça peut mettre une
+limite je sais pas si on veut donner un sort de target à notre salaire précédent et ça doit pas
+influencer le salaire futur et la technique que j'utilise c'est plutôt de dire en fait soit de
+donner un minimum qu'on considère d'avoir soit de demander à notre tour bah en fait selon le marché
+je vois que tous ces c'est très très c'est très dynamique j'étais plutôt intéressée de savoir
+quel est la plage salariale que vous vous cherchez pour la position pour laquelle je fais cet
+entretien parfois ça va pas donner une réponse donc on peut dire voilà allons plus loin et discutons
+de ce sujet là dans des phases plus avancées du sujet donc en fait le fait de négocier par
+mission parfois ça peut nous aider dans un bon endroit puisque si on arrive à la fin et on a vu
+dix personnes différentes le fait de pouvoir passer ces ans tous ces étapes et de demander
+un salaire plus grand ça peut ça peut augmenter notre chance d'avoir la position donc il n'y a pas
+de technique spécifique ça il faut tester en passant plein d'entretiens et je vous recommande de
+faire ça juste pour trouver votre valeur actuelle sur le marché voilà est ce qu'il y a d'autres
+questions liées à ce sujet ou un autre oui les certifications est-ce que c'est quelque chose de très
+reconnu en france ok très bien comme question merci beaucoup au niveau de certification oui les
+certifications sont très reconnues je vu que les entre l'ordre des entretiens si on peut dire voilà
+j'ai des certifications ça ça peut vous amener un avantage concurrentiel c'est toujours mieux en
+fait si vous êtes un candidat et un autre candidat qui est pareil que vous en compétence mais vous
+vous présentez des certifications ça peut représenter un bon point donc n'hésitez pas à
+passer des certifications si vous avez l'occasion si vous travaillez plus dans la partie cloud pas
+essayer à avoir des certifications aussi pour ça puisqu'il y a plein plein plein d'entreprises
+qui travaillent avec des cloud providers différents et le fait d'avoir une certification dans ce
+domaine là bah ça vous montre ça montre déjà que vous avez une connaissance dans ce domaine et même
+si ce n'est pas le même cloud provider bah en fait l'idée et le concept est toujours le même si
+vous avez su je sais pas créer une machine virtuelle ou créer une base de données sur amazon cloud
+bah vous allez aussi le faire sur google cloud provider ou sur microsoft Azure donc oui les
+certifications sont toujours importantes d'actualité surtout en première phase d'entretien
+pas j'entends la pose si jamais vous avez d'autres questions n'hésitez pas le
+on va passer la partie pizza et appareil on essaye de ne pas passer par les par la droite j'ai mis un
+petit pas devant la sortie mais c'est juste pour le gojo qui nous demande ça donc essayer de sortir
+pas les ascenseurs et sinon propose la machine pizza et bon merci beaucoup

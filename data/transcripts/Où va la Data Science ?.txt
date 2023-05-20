@@ -1,0 +1,1494 @@
+Merci à Lyon Data Science aussi de nous accueillir pour cet événement-là.
+Pour la petite histoire, les slides que je vais vous présenter,
+il est prévu qu'elles soient présentées aussi à la DevOps.
+J'en parlerai un peu plus après, mais pour celles et ceux d'entre vous
+qui vont être à Paris le XIV...
+Enfin non, c'est sur plusieurs jours, mais c'est du XII,
+c'est XII-XIV, mais en particulier le XIV.
+Vous aurez le plaisir de retrouver cette présentation,
+une deuxième fois si vous voulez avoir deux fois,
+le XIV à Paris.
+Alors pour la petite histoire, cette présentation-là,
+elle a une histoire un peu particulière.
+Constance m'avait demandé si j'avais des sujets à présenter.
+J'en avais, ils étaient assez techniques,
+mais j'ai privilégié un sujet un peu plus meta,
+en plus qu'il va pouvoir s'adresser à plus de personnes
+parce que ça ne va pas demander techniquement d'être très au fait
+de ce qui se fait en Data Science pour pouvoir le comprendre.
+C'est relativement ouvert.
+Et le postulat en fait, c'est ça, c'est de se dire qu'aujourd'hui,
+on verra après qui est Data Scientist,
+qui n'est pas Data Scientist, qui fait quoi ?
+Vous allez voir, on a un petit formulaire.
+Il y a de plus en plus de plateformes et d'infras,
+je ne vais pas les citer, mais qui permettent de gérer
+tout une partie de la DevOps,
+donc de la mise en production et la gestion du cycle de vie des modèles.
+D'une part, d'autre part, on entend pas mal parler d'un nouveau métier,
+enfin d'un nouveau métier, tout est relatif,
+mais le Machine Learning Engineering,
+donc il y a pas mal de choses qui bougent
+et la question à laquelle moi je vais essayer de répondre,
+et j'insiste sur le essayer,
+je ne vais pas donner de réponses toute faite,
+c'est avec tous ces changements-là,
+comment maintenant les Data Scientist vont devoir se positionner ?
+Voilà pour un petit peu le pitch,
+le titre, c'est Ovala Data Science,
+j'aurais pu prendre un autre titre,
+mais je trouvais que ça a donné envie de savoir un peu plus.
+Très brièvement, donc je me représente, bonjour,
+je suis Daoichi Ami,
+je suis Innovation Solutions Manager
+chez Positive Thinking Company,
+il y a 6 expertises,
+moi je ne vais parler que de ce qui me concerne,
+en tout cas que de ce que je connais un peu,
+Data & Analytics,
+moi on a d'autres expertises,
+vous pourrez en savoir plus soit sur notre site web,
+soit sur nos réseaux sociaux,
+et moi je suis basé à Paris, voilà.
+Donc ce que je peux vous proposer avant de commencer,
+c'est que vous scanner si vous le souhaitez,
+Secure Code, ce n'est pas un virus,
+c'est un petit sondage,
+c'est un petit sondage en ligne,
+un petit formulaire que vous allez pouvoir remplir,
+et on va pouvoir voir les réponses en live,
+donc je ne sais même pas que c'était faisable,
+mais qu'on se dit qu'apparemment ça a été très courant comme procédé,
+je ne sais pas.
+Il y a soit la 4G, je vous présume,
+soit le Wi-Fi Ojo Guest.
+Alors dans ce petit questionnaire,
+il y a deux questions si j'ai bonne mémoire,
+la première question, trois questions,
+comme je disais,
+la première est de savoir sur quelles expertises
+ou sur quel métier vous vous situez,
+la seconde c'est pour vous demander votre avis
+sur un petit peu la question qui est au centre de cette présentation,
+et la troisième question,
+on la découvrirent ensemble,
+je ne me rappelle pas très bien de ce que c'est,
+mais voilà.
+Alors, la majorité d'entre vous,
+vous êtes soit, enfin,
+la grosse majorité n'est pas sur les métiers de la data,
+donc il y a 10 personnes,
+enfin 9 personnes qui sont data scientist, data engineer,
+12 personnes qui sont plutôt devs,
+et le reste qui ne sont pas identifiés là-dessus.
+Ce que je remarque c'est qu'il n'y a aucun machine learning engineer,
+ça se m'ajoure en live, c'est incroyable.
+Ensuite, la question,
+donc cette question-là est importante
+parce que le but de cette présentation
+ce n'est pas forcément d'être dispensé devant des gens
+qui sont très connaisseurs du métier de machine learning engineer,
+ou pas que, en tout cas,
+la présentation se veut assez accessible,
+donc c'est intéressant qu'il y ait un peu de mixité.
+La seconde question c'est,
+est-ce que les data scientist devraient être responsables du DevOps ?
+Alors, il y a une majorité de personnes qui ne savent pas,
+j'espère vous faire changer d'avis d'ici la fin de la présentation,
+il y en a plein qui disent non,
+et il y en a quelques-uns qui disent oui.
+On va dire que les oui et les peut-être,
+c'est un peu la même réponse,
+mais en tout cas, vous êtes une majorité à dire non,
+j'avoue que je ne m'y attendais pas trop.
+Et là, est-ce que le métier de machine learning engineer
+va remplacer celui de data scientist ?
+J'espère que non,
+mais il y a quand même pas mal de je ne sais pas,
+et il y a huit peut-être, ça fait beaucoup,
+donc il y a huit personnes sur 30,
+je ne sais pas combien ça fait,
+ça fait un peu moins d'un tiers,
+qui pensent que potentiellement,
+dans quelques années,
+il y aura peut-être plus de data scientist,
+on dirait machine learning engineer.
+Mais eux, j'espère les faire changer de vie,
+c'est la fin de la présentation.
+Merci pour vos réponses,
+je poursuis ma présentation.
+Donc, il y a 3 chapitres,
+si vous préférez.
+Le premier, c'est qu'est-ce que la data science,
+ça peut paraître trivial comme ça,
+mais c'est important de situer assez précisément
+ce qu'il y a au cœur de l'expertise de la data science.
+Un data scientist, pour ceux qui ne le savent pas,
+c'est quelqu'un qui peut être amené à faire énormément de choses différentes,
+très différentes,
+on va essayer de voir qu'est-ce qui différencie
+les data scientist des autres.
+Ensuite, on va dézoomer un petit peu,
+et on va essayer de voir topologiquement,
+un peu comme si on faisait une carte,
+où sont les autres expertises,
+et où sont les autres métiers.
+Puis après, on va regarder comment est-ce que
+l'arrivée de ces nouvelles infras,
+l'arrivée de nouvelles problématiques,
+et en particulier de ce métier de machine learning engineer,
+va changer les choses.
+Je vous laisse encore une petite seconde,
+histoire que vous voyez bien le petit jeu de mots
+Merci, il y a eu quand même un rère,
+c'est pas mal.
+Donc,
+qu'est-ce qu'un data scientist ?
+Alors d'après une grande chaîne d'infos en continu,
+un data scientist,
+il travaille sur les métadonnées,
+il infiltre des raisons informatiques,
+et il fait des algorithmes de décryptage.
+Pour ceux qui ne sont pas data scientist,
+je précise que c'est pas ma définition.
+Un titre personnel,
+ça se trouve, ça fait 6 ans que je fais n'importe quoi,
+mais en tout cas, pour le moment, on ne m'a rien dit,
+mais en tout cas, c'est pas ce que je fais au quotidien.
+Plus sérieusement,
+cette slide-là, je l'ai un peu mise aussi pour justifier le fait
+qu'il y a quelqu'un,
+enfin, je ne pense pas que la personne fait ça seule,
+je pense qu'ils sont plusieurs, mais en tout cas, il y a un groupe de personnes,
+il y a un groupe de personnes qui se sont sentis assez
+confiantes sur leur connaissance de la data science
+pour se dire, c'est mon avis,
+je vais le partager avec,
+je ne sais pas trop c'est quoi le dimat, mais
+on parle de dizaines, centaines de milliers de personnes,
+donc c'est des gens manifestement qui sont très sûrs d'eux
+pour faire ça,
+et voilà, ça me paraissait,
+je l'ai mis un peu pour justifier la suite,
+c'est important de parler un petit peu du métier de data scientist
+et d'essayer de voir
+qu'est-ce que le data scientist fait.
+Petit point aussi pour la suite de la présentation,
+je vais emploier le terme expertise
+pour parler d'un savoir-faire,
+et je vais emploier le terme de métier
+pour parler d'un ensemble de savoir-faire.
+Donc par exemple,
+pour ceux qui connaissent, mais je reviendrai là-dessus après,
+le MLOps,
+c'est peut-être pas tant un métier que plutôt une expertise,
+ça ne veut pas dire qu'on ne le fait pas,
+mais c'est plus une expertise qu'un métier.
+Petit point de vocabulaire
+pour la suite.
+Alors assez simplement dit, le data scientist,
+c'est celui qui, partant d'une donnée
+d'un ensemble d'observations,
+va, au moyen de code,
+proposer un modèle.
+Je pense que pour une partie d'entre vous un modèle,
+ce n'est pas forcément clair ce que c'est,
+et ce n'est pas forcément le but de cette présentation
+mais il suffit de dire qu'un modèle,
+c'est un algorithme dont le comportement
+dépend des données qu'on lui donne
+en entrée, et qui a pour but
+essentiellement de prédire quelque chose.
+Donc voilà, alors le data scientist,
+c'est soit celui qui fait le modèle,
+soit celui qui fait le code,
+qui fait le modèle, en définitive,
+c'est quelqu'un en attendant de lui qui fasse
+des modèles.
+Alors bon,
+s'il y a des data scientists ici,
+ou des data ingé, ou des gens qui connaissent,
+c'est ça, jamais,
+mais là, ce que je vous montre, c'est ce qui
+distingue le data scientist des autres.
+On ne fait pas que ça, mais
+si je le tourne un peu autrement, on peut dire qu'on est
+pas les seuls à le faire, mais on est
+surtout connu pour ça.
+Petit exemple, et très rapide dans le but,
+ce n'est pas de s'étendre là-dessus.
+Là, ici, j'ai un joli jeu de données, chaque ligne,
+ça a un appartement, c'est un bien,
+une maison plutôt,
+décrit par 1, 2, 3, 4, 5, 6, 7,
+8, 9, 9, si je compte bien,
+variable, et le but, c'est de prédire
+le prix du bien.
+Bon, enfin, le but, c'est de prédire
+pour un data scientist.
+Il y a des gens qui ne vont pas forcément
+se fixer à ce but-là. Si quelqu'un sait que
+ça veut dire 2,25, c'est le debat,
+je suis preneur.
+Donc, le data scientist, lui,
+il prédit, là où le data
+analyste, il va plutôt décrire.
+Donc,
+c'est que le data scientist, il va dire,
+tiens, est-ce qu'il y a un lien entre le nombre de chambres
+? Oui.
+Est-ce qu'il y a un lien entre la surface habitable
+et le prix ? Il y en a un.
+Il ne va pas faire que ça.
+Le data scientist, il va aussi se poser
+la question de se dire, est-ce que
+je suis capable, en prenant
+de l'information déjà existante, ici
+la surface habitable et la surface du terrain
+de créer
+une nouvelle information.
+Donc, là, ici, le pourcentage
+qui est habitable. Et là encore,
+il va se livrer au même exercice. Est-ce que cette nouvelle
+information que j'ai créée, elle me permet
+de faire quelque chose ?
+Tout ça pour dire, le data scientist,
+en définitive,
+c'est très vide dit, mais
+il va plus mobiliser les probats
+et le data analyste, il va
+plus mobiliser les stats. Il y en a un qui
+prédit, il y en a un qui
+analyse ce qui s'est déjà passé.
+Alors, en mobilisant
+des connaissances business, en mobilisant
+des connaissances en maths, en probats, en stats, etc.
+Le data scientist, à la fin, il est capable,
+vous pouvez voir ça comme une équation ou comme un algorithme
+ou un peu comme vous voulez, c'est pas trop l'objet
+de cette présentation de rentrer dans le détail,
+de produire un modèle. On lui donne des variables,
+là, les neuf variables, et le modèle,
+le mieux qu'il peut, il va vous proposer un prix.
+Bon, alors si demain, moi, je vais faire un business
+où j'ai envie de
+prédire le prix d'appartement,
+comme on dit, on n'a rien fait tant qu'on n'a pas tout fait
+et si j'ai que le modèle qui fait ça, ça sert à rien.
+Ce modèle-là, il va falloir
+le mettre en production.
+Donc, gardez ça
+dans un compte votre esprit.
+Donc, là, ce qu'on a vu,
+c'est que le data scientist, il va opérer
+essentiellement
+sur cette chaîne-là.
+Son métier, c'est de transformer de la donnée
+en un truc très compact, un modèle qui a compris
+la donnée en mobilisant
+ce qu'on appelle l'apprentissage statistique.
+Et, comme dit, il va soit produire
+un modèle, soit produire le code qui fait
+un modèle. Mais alors, bien sûr,
+le data scientist, il ne fait pas du tout que ça.
+On connaît tous des data scientists qui sont
+plus ou moins à droit pour faire de l'analyse de données.
+Il y en a même certains qui savent utiliser tableaux
+qui sont allés sur click,
+sur Power BI, etc.
+Donc, ce que je vous ai présenté,
+là, c'est l'expertise
+qui nous différencie, mais c'est pas l'expertise
+qui nous caractérise.
+On connaît aussi
+des data scientists qui sont
+plutôt bons
+en data ingénierie.
+Moi, j'en ai connu un qui était assez habile
+pour faire du PySpark, ou ce genre
+de choses dont je ne vais pas trop parler, parce que je
+n'y connais pas. Mais on a aussi des data scientists
+qui sont capables
+de maîtriser ces outils-là, qui sont plutôt
+ceux des data ingé.
+Donc, il fait du machine learning,
+il fait de l'analyse de données, parfois,
+parfois, il va aussi faire de la data ingénierie.
+Il ne fait pas que ça.
+Parfois, le data scientist
+il va déployer
+et il va même
+gérer carrément la CICD.
+Donc, en gros, le cycle de vie
+d'un produit de machine learning en l'occurrence
+dans un système informatique un peu plus complexe
+avec tout ce que ça suppose de test,
+avec tout ce que ça suppose
+de configuration,
+de ce qu'on déploie pour que ça colle bien
+avec l'environnement dans lequel il est déployé.
+Vous commencez à avouer où je vais en revenir.
+Ça fait un peu beaucoup.
+Autant, oui, un data scientist
+qui peut faire un petit un peu de ça.
+Autant, c'est assez rare que les data scientists
+fassent tout.
+Et justement, c'était partant de ce constat-là
+que j'ai
+axé la présentation comme ça.
+Vous allez voir tout le monde la présentation.
+Je vais pas mal mobiliser des notions un peu topologiques.
+Je vais parler de frontières,
+des limitations, de trucs comme ça.
+Parce qu'il faut voir
+l'extension des expertises du data scientist
+comme un peu une frontière
+qui repousserait autour de ce truc-là un peu central,
+qui est le machine learning engineering.
+Donc,
+là, dans les slides suivantes,
+vous allez avoir des QR codes, c'est les sources
+de ce que je vous montre.
+Donc, on est passé à peu près, moi, quand j'ai commencé
+à travailler là-dedans, il y a un certain temps maintenant
+d'une vision comme ça.
+Ce diagramme de veine, vous le trouvez partout.
+Vous tapez Data Science,
+ou juste Data Science, d'ailleurs,
+sur votre moteur de recherche favori.
+Vous allez en trouver plein des comme ça
+avec des couleurs plus ou moins différentes.
+Mais en gros, le message est le même.
+Il y a des connaissances métiers et en mobilisant
+des connaissances en maths ou en statistiques.
+Eux, au moyen de support informatique
+qui va être capable de faire de la
+modélisation. Et ce diagramme-là,
+on le voit partout. On continue à le voir
+encore aujourd'hui. Mais moi, ce que j'observe,
+c'est que
+on continue certes à le voir beaucoup,
+mais on voit de plus en plus des choses
+comme ça. Alors là, ça, c'est incroyable.
+Donc là, le data scientist,
+c'est un data engineer, manifestement,
+qui fait de l'analyse de données
+qui, en plus, tant qu'à faire, fait aussi
+du DevOps
+et des plois.
+Et là, ce que vous avez sous les yeux,
+c'est vraiment ça qui a
+justifié le fait que je fasse cette présentation.
+Parce que moi, je ne voulais pas me contenter
+de me dire, il y a des gens qui ont déprendu différents.
+J'ai essayé de creuser et de me demander, mais comment est-ce qu'on a pu
+passer en 2016 ou en 2017
+ou qu'importe. Mais d'une vision
+comme ça, donc le data scientist, c'est quelqu'un qui fait un peu
+de la recherche, qui fait du prototypage, des choses comme ça,
+a économisé vous le fait
+d'avoir un data ingé, un data analyste, un MLE,
+prenez un data scientist, il va tout faire.
+Voilà, il
+fait un peu tout. Alors, bien sûr,
+on a chacun nos avis là-dessus.
+Moi, à titre personnel, je pense d'ailleurs que
+je ne dis pas que ça, c'est tout à fait
+exact, comme vision du métier.
+Par contre, je suis à peu près sûr de moi si je vous dis
+que la deuxième slide, enfin, la deuxième image, c'est complètement faux.
+Voilà, c'est
+pas le cas. Donc on est passé
+de quelqu'un qui faisait d'époque des notebooks
+de la modélisation, du prototypage
+à un terminateur
+qui fait
+tout un tas de choses.
+Et ça, c'est quelque chose qu'à titre personnel en ton consultant, j'ai pu constater
+dans la mesure où
+je voyais bien que le point de
+réassurance des clients qu'on voyait, ça allait
+plus forcément être, oh tiens, est-ce que je suis capable de prédire
+ça en fonction de ça ? Ça allait être. Ok, sachant
+que je suis à peu près sûr qu'on peut prédire
+ça en fonction de ça. C'est très bien. Ça veut dire
+que les clients, ils sont de plus en plus matures et ils savent
+que le potentiel qu'il y a.
+Ok, maintenant comment est-ce que je fais pour le déployer ?
+Donc, ce qu'on va
+poquer, j'ai l'impression, en tout cas, ce sur quoi il faut
+rassurer, c'est plus sur
+est-ce que je peux prédire le prix
+d'un appartement à partir de tout un tas de données, comme je voulais
+montrer, ça, ça paraît évident pour tout le monde.
+Maintenant, il faut rassurer sur sachant qu'on peut le faire,
+comment ça, ça va rentrer dans mon essaye,
+dans mon infra, parce que j'utilise
+tel techno et parce qu'un tel,
+il utilise ça, puis parce que le modèle, il faut qu'il soit consommé
+comme ça. Donc là, vous voyez,
+si on repense un petit peu au schéma qu'il y avait
+avant,
+il y a eu une espèce
+d'inflation du
+périmètre du data
+scientiste. Et c'est peut-être pas un hasard, en fait.
+Il y a ce article-là, qui est sorti
+en 2017, je crois,
+qui parle des dettes techniques
+cachées dans les systèmes de machine learning.
+Ça rentrait vraiment dans qu'est-ce que c'est une dette technique, etc.
+On va se contenter de retenir de cet article-là
+qu'il pointe du doigt le fait
+qu'il y a des problématiques propres aux machine learning
+et à l'intelligence artificielle pour le dire comme ça,
+quand elle va être déployée en production.
+Il y a plein d'exemples.
+L'article est curieux parce qu'il est très court,
+mais il donne plein d'exemples.
+Il fait les deux à la fois.
+Moi, je peux vous en donner un.
+Il peut arriver parfois qu'un data scientiste,
+là, je vais peut-être un peu jargonner.
+Donc tout le monde va peut-être pas
+bien se figurer ce que je dis, mais je pense
+qu'une partie au moins comprendront.
+Parfois, les data scientistes, quand ils ont de la donnée
+et qu'ils veulent faire une modélisation, typiquement,
+pour les prix des appartements prédire le prix d'un appart,
+le data scientiste, il va être tenté
+d'utiliser des variables qu'il va créer lui-même
+mais qui, en production, n'existent pas.
+Je vous donne un exemple.
+Là, sur le petit jeu de données que je vous ai montré tout à l'heure,
+on peut être par exemple tenté de dire
+le prix d'un appart, il va dépendre
+du nombre de requêtes
+que les utilisateurs font
+pour trouver les prix des appartements dans le coin.
+C'est des apparts très demandés, donc ils vont coûter plus cher.
+En effet, si on a le jeu de données
+et qu'on rassemble
+tous les appartements qui ont été très recherchés
+sur le moteur de recherche, on peut arriver à trouver quelque chose.
+Sauf que ça, en live,
+quand le modèle est en production,
+ce n'est pas nécessairement une information que vous allez pouvoir avoir.
+En tout cas, vous n'allez pas pouvoir l'avoir
+comme vous l'avez eu sur la donnée froide.
+Ce petit exemple-là
+il tente à nous faire penser
+que la personne qui fait le modèle
+il faut qu'elle ait quand même en tête
+que l'environnement de production, il va ressembler à ça
+et je vais pouvoir lui mettre tel donné dedans le modèle
+mais peut-être pas tel autre.
+Mais comment on serait tenté de dire
+le data scientist doit
+avoir plutôt bonne vision de ce qui va être bien proche.
+Là, c'est qu'un exemple. Il y en a tout un tas d'autres.
+Il donne aussi par exemple l'exemple d'un modèle A
+qui est utilisé en partie
+pour entraîner un modèle B.
+Si jamais change le modèle A,
+le modèle B va consommer une donnée
+qui a divergé.
+Il y a tout un tas d'exemples qui montrent
+qu'il y a des problématiques de mise en production
+très spécifiques au modèle de machine learning.
+Et ça,
+c'est quelque chose dont on est conscient
+puis assez longtemps. Notez aussi
+que les data ingénieurs en général
+pour un certain nombre de raisons,
+ils sont un petit peu plus matures que les data scientists
+sur les problématiques de mise en production, etc.
+parce qu'ils sont peut-être un peu plus proches
+d'un métier un petit peu authentique
+de développeur que le data scientist
+où les data scientists ont dit
+ils sont meilleur en dev que les gens qui font des maths,
+que les gens qui font du dev.
+Il y a une autre manière de le comprendre, c'est qu'ils sont moins bons en dev
+que les dev et moins bon en maths que ceux qui font des maths.
+Les deux façons de voir sont vraies.
+Donc voilà,
+il y a un manque de maturité chez les data scientists
+sur ces problématiques-là
+et en plus voilà,
+ce sont des problématiques vraiment à part.
+Je vais revenir un petit peu
+sur mon schéma. On a dit
+que le data scientist, lui,
+il avait un coeur de métier qui est le machine learning,
+la modélisation, le prototypage,
+que ça peut être plus ou moins étendu,
+plus ou moins loin. Il y a des data scientists
+qui vont plus ou moins faire de l'analyse de données, etc.
+Et on peut même s'amuser,
+là j'ai parlé d'expertise, on peut même s'amuser
+à parler de métier. Bon alors le code couleur
+l'aide, mais vous voyez bien que je peux tracer
+des limitations entre
+ce qui est plutôt de la responsabilité
+d'un data ingénieur et ce qui n'est pas
+de la responsabilité du data ingénieur.
+Ça ne veut pas dire que le data ingé ne va pas faire autre chose,
+mais pour une tâche, ou en tout cas pour une expertise
+donnée, il n'y a à peu près pas de doute
+quant à savoir si c'est le rôle du data ingé
+ou le rôle du data scientist.
+Encore une fois, ça ne veut pas dire qu'on ne peut pas
+faire l'autre, etc. Mais la frontière est
+poreuse, c'est un peu, c'est poreux,
+mais c'est pas une frontière fluide.
+Pour une tâche donnée, on sait assez facilement
+dire qu'il est censé la faire.
+Même remarque pour l'analyse de données, le data scientist
+il peut faire de l'analyse de données, si maintenant
+demain il faut mettre en place tout un système de
+dashboarding, etc. Ok, le data scientist peut le faire,
+mais on est à peu près sûr que si demain il y a
+un data analyst, c'est peut-être mieux que
+soit pas le data scientist qu'il le fasse.
+Donc là encore, la frontière a un peu poreuse,
+mais pour une tâche donnée, on peut assez
+facilement dire si on est deux dans l'équipe,
+un data scientist, un data analyst ou trois,
+un data ingé, toi tu fais ci, toi tu fais ça,
+etc.
+En revanche, c'est un petit peu moins net,
+c'est la frontière qui a
+côté dévops,
+là pour le coup, ça va être un peu plus
+compliqué de dire ce qu'il y a un combe
+au machine learning engineer, ce qui va un combe
+au data scientist. Et encore, ça c'est quand on est
+d'accord sur la définition, chez un certain nombre
+de personnes, le machine learning engineer,
+c'est comme un data scientist qui fait de la
+question, chez d'autres,
+c'est un dévops
+qui bosse dans le milieu du machine learning.
+Il y en a même qui considèrent que
+il ne faut plus du tout dire data scientist,
+il faut juste dire machine learning engineer,
+et que le machine learning engineer
+c'est le nom que devra avoir
+les data scientist. Et l'un
+des points que je trouve intéressant, c'est
+autant, il est assez facile pour
+les gens qui sont du métier, en fait même pour
+des gens qui ne sont pas du métier, d'arriver à dire
+ça c'est plutôt dans le périmètre de tel métier
+d'autre, autant la tâche, elle est peut-être
+plus aussi évidente qu'on parle de machine learning
+engineer, ou de machine learning
+engineering, et de data science.
+En fait, ce que je voulais montrer c'était que la nature
+des frontières n'est pas tout à fait la même.
+Dans un cas on a des frontières certes pour eux, mais au
+moins c'est à peu près où elles sont. Dans l'autre
+c'est pas évident, on ne sait pas très bien
+où jusqu'où le data scientist doit aller, et
+à quel moment prend le relais de machine learning
+engineer. Donc voilà, l'exemple du relais
+il est pas mal, on ne sait pas quand est-ce que l'un doit lâcher
+et quand est-ce que l'autre doit prendre
+le relais.
+Donc autant
+d'atteinger data analysis et des métiers assez
+relativement anciens et bien installés, autant
+pour un métier comme machine learning engineer qui est
+plus récent, c'est un métier relativement récent
+je reviendrai après sur à quel point il est récent
+mais c'est
+moins évident. Et surtout que le machine learning
+engineering, autant, on ne sait pas très bien
+placer la frontière entre
+MLE et data science, donc entre machine learning
+engineering et data science, autant
+on sait qu'il y a en particulier ce qui est côté
+DevOps, qui leur raconte
+et c'est précisément là-dessus, sur ce qui est
+du DevOps, qu'aujourd'hui il y a la plus grosse pression
+la pression aujourd'hui elle est là.
+Donc si demain un data scientist
+je m'asarde à faire une statistique
+je vais peut-être avoir tort mais je ne pense pas
+si demain un data scientist
+ou une data scientist va une off d'emploi et que
+c'est raté, je pense que ça sera peut-être
+pas à cause de la partie machine learning, ça peut
+de plus en plus fréquemment être à cause de la partie
+DevOps. Voilà, donc
+j'ai le sentiment de mon point de vue
+et là pour le coup c'est personnel mais que c'est
+sur cette expertise là qu'il y a le plus de pression
+donc c'est pas évident pour les data scientists
+parce que comme je l'ai dit
+il y a eu une espèce d'inflation, des responsabilités
+comme ça, bon ça restait tranquille quand c'était
+côté data hinge, quand c'était côté data
+analyse, mais là on efface
+à quelque chose d'un peu plus particulier.
+Alors pour tenter de répondre à cette question
+j'ai essayé de comprendre déjà un petit peu mieux
+quel était le métier
+de machine learning engineering.
+Alors bien sûr, c'est un métier qui est en croissance
+c'est plutôt logique parce qu'on a vu qu'il y avait
+une pression assez forte
+mais moi la question à laquelle je voulais répondre
+c'est la question que tout le monde se pose
+j'espère, c'est
+est-ce que le métier de machine learning engineering
+c'est un fork, donc est-ce qu'en gros c'est un métier
+qui naît en partie l'expertise data science
+en tout cas c'est un métier distinct
+ou est-ce que MLE
+c'est juste le nouveau nom de data science.
+Alors pour essayer de répondre à cette question
+j'ai déjà essayé de mieux comprendre
+qui étaient les MLE, je sais pas s'il y en a dans la salle
+j'ai trouvé une petite étude, il y en a
+d'après le sondage
+il y en a aucun, peut-être qu'il y en avait un ils n'ont pas osé dire
+je sais pas
+j'ai trouvé une étude faite
+sur LinkedIn
+sur les métiers les plus en croissance
+là vous avez la méthodologie
+donc ça a été fait du 1er janvier 2017
+au 31 juillet 2021
+et
+LinkedIn ont tout simplement calculé
+la croissance
+je pense simplement numérique
+dans le métier, alors il y a quelques règles
+certains métiers ont été exclus d'autant été fusionné
+est-ce que quelqu'un a envie de deviner
+quel est le top 1, ça n'a rien à voir avec
+ce dont on parle
+mais si vous voulez essayer de deviner
+quelqu'un a une idée
+non, les dates sont importantes
+je crois que c'est quelque chose
+consultant en vaccination
+je sais pas le terme consultant
+mais je crois c'est expert
+sur les vaccins
+en numéro 2 je me rappelle pas
+mais par contre
+en numéro 3 non plus
+c'est le métier de machine learning engineer
+et ça c'est logique
+on a vu qu'il y avait une grosse pression
+sur cette expertise
+le jeu de données titanique
+on en est venu à bout
+ça fait 10 ans qu'on fait des prédictions
+et tout ça ça sert à rien
+si on sait pas mettre en production
+tout naturellement
+on a pris le marché en appelant ça comme on veut
+ils se sont dit ça va pas
+c'est très bien d'avoir des modèles
+mais moi si je peux pas m'en servir
+ça sert pas à grand chose
+alors je suis tombé
+sur cette étude-là et ce qui est intéressant
+c'est qu'en plus de compter
+comment le métier progresse
+où est-ce qu'il progresse
+la parité, homme-femme, machin
+il donne aussi
+l'origine
+des gens qui font ce métier
+je vais peut-être me tromper
+software engineer
+je pense que ça peut être assimilé
+à data-inges
+parce que je présume que
+dans la langue anglo-saxonne
+non, des devs classiques
+c'est pas forcément data-inges
+parce que j'étais très étonné
+de pas avoir data-ingé là-dedans
+et je me suis dit c'était peut-être leur façon
+de nommer les data-inges
+mais bon je peux me tromper
+il y a aussi des data-scientistes
+c'est quelqu'un c'est
+je ne sais pas
+pardon
+je vais regarder
+qu'est-ce qu'ils disent
+non mais en plus pas particulièrement
+ah ouais
+mais je ne vois pas
+ah oui US
+c'est peut-être pour ça
+que ça ne colle pas tout à fait
+à ce que moi j'anticipe
+voilà
+là
+on a plutôt quand même l'impression
+enfin le fait qu'il y ait
+des data-scientistes qui forment une partie
+des MLE d'aujourd'hui
+on a quand même plutôt l'impression qu'on a affaire
+à une fission dans le métier de MLE
+d'un ensemble d'expertise
+et d'un autre ensemble d'expertise
+on verra lesquels après
+donc là on est plutôt quand même tenté de penser
+que c'est juste un métier qui est en train de se séparer en deux
+avec les uns qui prennent les responsabilités
+et puis les autres qui prennent d'autres responsabilités
+je reviens sur
+ok
+voilà
+c'était fait exprès
+et je reviens
+sur la première cartographie que je vous ai montré
+je vais essayer de vous la remontrer
+cette fois-ci plus en essayant de parler de métier
+mais vraiment en mettant à plat que des expertises
+encore une fois il y a un code couleur
+qui rend la lecture facile
+et qui montre que les expertises elles se regroupent
+là ici entre data-ingé, data-scientiste
+et un troisième métier en bleu
+il n'y a pas les data-analistes
+pardon s'il y a des data-analistes parmi nous
+mais là c'était pas forcément pertinent de faire apparaître ça
+donc qu'est-ce qu'on voit
+on voit qu'il y a des gens qui sont des fournisseurs de données
+pour le dire très simplement
+mais en tout cas des gens qui assurent la mise à disposition
+et la logistique de la donnée
+les data ingé
+je présume que là ces deux montes s'agissent
+c'est très vite dit
+mais voilà
+on voit qu'il y a des gens qui produisent des modèles
+et là c'est intéressant parce que vous avez écrit en très gros
+le data c'est écrit en très gros
+très inétest ou cleaning c'est pas écrit en aussi gros
+donc data c'est quand même écrit en très gros
+donc moi j'ai l'impression que le produit
+ce qu'on produit dans toute la partie en jaune
+que je présume est la partie des data ingé
+c'est de la donnée
+ok ça colle
+et là au milieu donc la partie machine learning
+qu'est-ce qu'on livre, qu'est-ce qu'on attend
+de la personne qui bosse sur le périmètre machine learning
+eh ben c'est un modèle
+c'est pas du code
+c'est pas un modèle
+c'est écrit en très gros ici
+ça c'est pas très surprenant
+par contre ce qui est plus surprenant
+c'est ces gens là
+ils sont pas nommés, donc là ici c'est que des équipements
+ça parle pas de métier
+ils produisent du code
+et ensuite il y a écrit du build, de l'intégration
+du test
+mais là vous voyez que sur ce découpage
+un petit peu vertical avec ces trois couleurs
+la source est intéressante
+regardez ce qu'il y a écrit machine learning engineering
+donc ça a été trouvé sur un article qui présente
+machine learning engineering
+ils expliquent juste que le machine learning engineering
+c'est la dernière étape, c'est le qui
+partant du code
+qui concourt à produire un modèle, c'est à peu près équivalent
+va au moyen de code applicatif
+faire du build, faire de l'intégration
+pour le dire très rapidement
+de la mise en production
+donc l'attention qu'il y a eu sur le métier de data scientist
+le fait qu'il y a fait que je fasse ces slides
+qui fait que des data scientist aujourd'hui
+ils peuvent avoir des soucis pendant des entretiens
+etc, c'est
+le fait que
+les data scientist ont de plus en plus
+souvent du géré, on a demandé
+de gérer la partie qui était plutôt en bleu
+là bas
+et moi en tout cas comme je l'ai dit à titre personnel
+c'est là-dessus que j'ai observé qu'on a eu le plus de difficultés
+vis-à-vis de certains de nos clients
+et moi je pense
+on va voir si j'ai raison, mais
+que le code couleur
+représente assez bien
+là où les différents métiers
+vont se stabiliser
+et je pense que cette image là
+je ne l'ai pas prise pour rien, c'est un article qui parle de machine learning
+engineering
+représente plutôt bien
+ce qui à terme sera demandé au MLE
+aux data scientist et aux data rg
+là-dessus il y avait relativement
+peu de doute, donc moi à titre personnel
+je pense que là on a une assez bonne représentation
+du passage de relais
+entre
+les data scientist et les machines learning
+engineers
+alors
+pour être un peu plus sûr de moi
+je me suis dit je vais aller regarder des oeuvres d'emploi
+donc sur welcome to the jungle
+et sur linkedin
+et pour chacune des oeuvres d'emploi
+pour le métier data science et pour le métier MLE
+j'allais regarder
+le pourcentage de ces oeuvres
+qui demandaient
+des compétences en data ingénierie
+il y a écrit DE en bleu là
+le pourcentage d'expérience qui allait demander des expertises
+en data analyse
+le pourcentage des oeuvres qui allait demander des expertises business
+donc comprendre sur métier
+et le pourcentage des oeuvres
+qui vont demander
+une expertise en DevOps et là je vais avoir besoin de vous
+parce que
+vous allez parier
+alors selon vous
+dans les oeuvres d'emploi data science
+donc 40 oeuvres d'emploi, j'ai regardé 20 sur welcome to the jungle
+et 20 sur
+linkedin
+quel est le pourcentage d'offre
+qui font mention d'une expertise
+data ingénierie
+j'ai pris l'argent, j'ai dit data ingénierie
+et dès que ça a commencé à parler de SQL, de Spark ou de Hadoop
+j'ai compté que c'était
+même si c'était factulatif
+j'ai compté data ingénierie
+c'est très discutable comme méthodologie mais je me suis pris comme ça
+alors d'après vous, est-ce que vous pouvez me donner un chiffre
+est-ce que quelqu'un s'est inspiré ?
+10%
+90%
+80% des offres de data science
+font mention de
+pardon
+j'ai compté SQL
+sur l'offre d'emploi il y a écrit SQL
+ou Spark ou quelque chose, 80
+il y en a à peine 30%
+selon vous
+même question, cette fois-ci avec
+l'analyse de données
+là c'est que sur les offres data science
+c'est pas machine learning engineer
+je n'allais pas considérer les offres d'emploi
+qui faisaient mentionner
+data science machine learning engineering
+il fallait qu'il écrit soit data science
+lead data scientist, senior data scientist
+bon j'ai un peu tout pris
+soit machine learning engineer
+vous remarquerez que pour les machine learning engineer
+on va un peu moins souvent parler de senior
+du machine learning engineer et puis c'est tout
+les data scientist ils ont plein de strats
+d'après vous, donc data analyse
+combien de pourcentages des offres
+font mention
+c'est pas un truc qu'ils exigent mais il faut mention
+de visualisation de données ou d'analyse de données
+60, 50, 80 et encore des 80
+toujours pas
+non, c'est 30%
+donc en bonne moyenne
+si vous prenez 10 offres d'emploi data science
+et je dis bien data science donc pas machine learning
+pas artificial intelligence machin, juste data science
+ou senior data scientist
+mais voilà
+on ne va pas trop vous parler d'analyse de données
+et là pour le coup j'ai vraiment brasser l'argent
+donc dès qu'il y a le mot analyse
+ou quoi que ce soit qu'ils puissent s'en rapprocher
+ou visualisation, j'ai compté ça
+en fait non il n'y en a pas tant que ça
+c'est quoi après ? c'est business
+selon vous, quel pourcentage
+des offres des métiers de data scientist
+demande alors business ça veut dire quoi ?
+ça veut dire de comprendre la données
+donc là typiquement dans l'exemple
+sur les...
+sur les...
+sur la
+la prédiction du prix d'un bien
+un peu en immobilier
+pas d'être Stéphane Plaza non plus mais de connaître un peu
+comment est-ce que l'immobilier marche
+selon vous là on est à quel pourcent ?
+dix pour cent
+dix pour cent
+qui dit mieux
+et ben non, soixante
+bravo à ceux qui ont dit soixante
+ou quarante ou cinquante
+donc dans la majorité des cas
+on va considérer que le data scientist
+il doit travailler dans une boîte qui
+qui fait
+de l'immobilier
+ben il doit
+à défaut de s'y connaître en immobilier au moins
+être prêt à s'intéresser un peu à l'immobilier
+alors il y a un truc que je ne vais pas préciser
+partait du principe que 100% des offres data science
+exigent une compétence en machine learning
+je ne l'ai pas précisé mais voilà
+je ne vais pas vérifier
+ça se trouve c'est même pas le cas mais je présume
+et maintenant DevOps
+quelle proportion des
+offres d'emplois pour la data science
+fondations de DevOps, là c'était quand même
+les méthodologistes et soit qui est le mot DevOps
+soit qui est, là pour le coup
+le seuil de sensibilité
+était assez bas donc même si ça parlait
+docker ou voilà dès que
+de près ou de loin c'était un peu du DevOps
+je comptais ça comme du DevOps, selon vous quelle pourcentage
+90
+60
+donc là on voit quoi un data scientist
+ça colle avec le premier diagramme
+c'est quelqu'un qui connaît la donnée
+alors je n'ai pas compté machine learning
+je n'ai pas compté maths etc
+je portais du principe que 100% des offres
+en data science on allait vous poser
+c'est quoi la différence bivariance aux genres de questions
+mais quand même
+le trail plus saillant c'est de dire
+nous on a une boîte qui bosse en l'immobilier
+il faut que tu t'intéresses un peu à ce qu'elle est immobilier
+bonne compréhension de business ou métier je ne sais pas comment ça dit etc
+on va faire le même exercice avec les MLE
+la réponse va vous étonner
+d'après vous dans quelle proportion
+on exige d'un MLE qui sache
+maîtriser SQL, Spark, Hadoop
+PySparks, Scala
+n'importe lequel de ces trucs-là
+50, 60
+80
+50
+50 toupiles
+50 toupiles c'était 20 sur 40
+exactement
+pour là data analysis
+dans quelle proportion est-ce que sur un nouveau emploi
+on va dire au machine learning engineer
+ouais c'est bien si tu peux faire des
+euh
+si tu peux
+présenter des résultats un peu animés etc
+20
+20 ouais
+20 voilà
+ok bah là c'est pas là
+c'est là je pense que vous n'êtes pas très surpris
+dans quelle proportion des cas on leur demande d'avoir une compréhension
+business
+50
+10
+10 ouais ok donc là
+personne n'a dit plus de 50
+10%
+et maintenant
+dans quelle proportion des offres
+on va parler de DevOps
+80
+60
+60 ça aurait été surprenant
+sinon on va t'en prendre un
+voilà
+du coup
+moi quand j'ai vu ça
+je savais pas trop comment conclure la présentation
+en fait
+enfin je savais pas trop quel slide
+mettre à la fin pour conclure et tout
+et surtout moi j'avais
+je peux vous le dire maintenant mais j'avais un avis
+qui n'était pas du tout celui là avant de commencer à faire ça
+moi j'étais d'avis que les datacentistes
+maintenant il va falloir que vous appreniez à utiliser
+docker compose et à faire de la CICD
+etc et j'étais très embêté parce que j'avais beau
+chercher je trouvais jamais
+suffisamment de sources qui allaient dans mon sens
+alors j'aurais pu tricher, j'aurais pu faire du charity picking
+mais comme je suis quelqu'un de très honnête
+je l'ai pas fait et je me suis dit bon bah ok
+apparemment sur internet je trouve pas de sources qui sont
+qui vont dans ton sens
+donc j'étais beau joueur et je me suis dit
+ok bah comment ça se fait
+et donc en faisant les slides j'ai changé d'avis
+c'est intéressant parce que ces slides là j'ai mis
+enfin au total j'ai dû mettre quelques jours à les faire
+voilà ou 3 jours peut-être même pas
+mais ça s'est étalé sur plus d'un mois
+parce que j'ai commencé les slides avec une idée en tête
+que moi voilà je voulais conclure
+en disant s'il y a des datacentistes ici
+bah voilà vous pouvez commencer à aller sur Udemy et tout
+et à vous former
+voilà je trouvais pas en fait
+beaucoup d'articles qui allaient dans mon sens
+sauf un article complètement farfelu
+qui dit la data science va disparaître
+si vous êtes vraiment un truc
+complètement alarmiste et tout
+mais bref c'est encore autre chose
+et du coup bah là je crois qu'on a
+d'autres réponses en fait
+je pense qu'on peut conclure de ça
+qu'au moins dans l'esprit des gens qui recrutent aujourd'hui
+des datacentistes et des machine learning
+ingénieurs bah c'est pas les mêmes expertises du tout
+en fait donc voilà
+sauf à imaginer un monde où on va pouvoir faire
+de la prédiction sans connaissance business
+bah pour le coup je peux vous dire c'est pas prêt d'arriver
+eh ben les MLE vont pas remplacer
+les datacentistes
+avez-vous des questions
+alors oui juste avant les questions
+on sera donc présent au stand numéro 24
+à la
+à la devox
+à Paris voilà donc du côté de porte
+porte maillot au palais des conneries
+voilà et donc avant que le hdmi
+le lâche complètement l'affaire
+est-ce que vous avez des questions
+ah j'ai une question
+du coup on a vu un peu
+les chiffres pour les us
+est-ce que t'as pu un petit peu avec welcome
+to the jungle c'était pas du tout en partie pris
+regarde un petit peu comment ça évoluait
+non après moi non mais
+mais
+empiriquement je lis plus souvent machine learning
+ingénieurs je l'ai plus lourd en 2022
+en 2020 mais c'est pas
+je sais pas j'ai pas de chiffre
+pourquoi
+d'après vous
+pourquoi
+pourquoi les stats du business
+pour l'expertise mle
+et si passe
+bah c'est justement parce que le mle
+il va arriver dans une boîte
+où là c'est ce que
+c'est ce que ça laisse entendre
+où ça y est on sait comment prédire
+on a peut-être même déjà le modèle qui est là
+et tout tout ce qui va mobiliser
+la connaissance business en fait chez le datacentistes
+la connaissance business elle va surtout
+être mobilisée au moment de ce qu'on appelle le feature engineering
+je prends un exemple très simple
+si jamais demain j'ai envie de prédire pour un véhicule
+à partir de tout un tas de données
+son prix de vente
+d'occas
+ça peut avoir du sens de diviser je sais pas moi l'âge du véhicule
+enfin le kilomètre âge par l'âge
+ça nous fait bah ouais comme la kilomètre il a roulé par an ça a du sens
+ça a pas de sens de diviser je sais pas moi la puissance
+de la sonneau par nombre de roues
+donc et ça peut paraître bête là dit comme ça
+mais faut quand même connaître un peu les véhicules
+et le marché de l'occasion pour le dire
+un machine learning engineer lui il va arriver dans un univers
+où on a assez rassuré sur notre capacité à prédire
+et à tous les coups il y a même peut-être un datacentiste
+ou le machine learning engineer lui-même
+mais plus souvent un datacentiste qui le aura fait avant lui
+donc c'est pour ça que
+feature engineering bien comprendre comment ça marche
+c'est plus le souci lui il est vraiment là pour mettre en production
+et assurer le sigle de vie du modèle
+enfin roule l'application avec le modèle
+oui
+j'ai une question concernant donc
+on apparaît la différence entre la machine learning et le datacentiste
+qu'est-ce qu'il y a à votre avis
+la différence entre un machine learning engineer
+et un DevOps
+et un DevOps c'est que
+il y en a peut-être pas tant que ça
+parce que dans les deux cas ça va un peu mobiliser
+les mêmes expertises maintenant la différence
+elle va surtout être
+elle va
+elle va surtout être là parce que
+un DevOps
+enfin un MLE il va
+faire du DevOps mais si on dit qu'il fait du MLE
+c'est pour une raison parce qu'il va pas versionner que du code
+il va versionner du code il va versionner un modèle
+de plus en plus souvent il va versionner de la donnée
+ce qui va mettre en production ça n'a pas un comportement
+complètement déterministe
+ça se teste pas de la même façon
+en plus il va mettre en production un truc qui marche aujourd'hui
+qui marchera peut-être pas dans un an
+donc toutes ces choses là
+et franchement je pense que l'article dit mieux que moi
+en fait au début je voulais mettre des slides avec des exemples
+mais je me suis dit bon déjà un peu flemme
+et puis surtout que ça allait pas forcément parler à tout le monde
+mais je pense que la lecture de cet article est assez intéressante
+pour justifier le fait que c'est pas que des effets de marche
+quand on dit MLEOps et pas DevOps
+c'est quand même un peu justifié
+voilà je sais j'espère que ça répond à la question
+oui
+c'était super
+est-ce que tu penses que l'émergence
+de ce rôle de MLE est très technique au fond
+qui était par avant gérée par des datas scientifiques
+comme tu disais
+elle vient pas aussi du fait que
+enfin la TS c'est pas mal démocratisé aussi
+que tu as les rôles comme les citizenes
+des datas scientifiques qui émergent
+et plein de plateformes comme le loco type de tai-ku
+qui en gros on a été la data science
+super accessible à tout pas tout le monde
+oui
+parce que justement
+tu vois la plateforme que tu as cité par exemple
+c'est pas certain
+qu'elle participe forcément de la démocratisation
+de la data science
+ne serait-ce que à cause de son prix
+et puis surtout que c'est une plateforme qui existe depuis
+tel qu'on la connaît
+je vais pas dire de bêtises mais allez 2015-2016
+ça commence à faire un certain temps
+pourtant
+moi
+quand je rencontre quelqu'un qui n'est pas data scientiste
+et quand je me dis ah quand même pour quelqu'un qui n'est pas data scientiste
+il s'y connaît pas mal
+dans la majorité des cas c'est pas quelqu'un qui a utilisé une plateforme comme ça
+donc je pense pas que ce soit dû à ces plateformes là
+je pense c'est le contraire
+c'est parce que on anticipe que les gens vont de plus en plus
+être bons en data science sans être data scientiste
+qu'on peut leur permettre j'ai une plateforme en cliquant
+d'entraîner un modèle
+mais tu vois que si jamais
+c'est pareil que quelqu'un juste en cliquant
+en déplorant des colonnes et tout il peut entrer d'un modèle
+si on fait ce pari là
+on compte que la partie business la personne la maîtrise
+je sais pas si ça répond tout à fait à la question
+sur le sondage de LinkedIn
+il n'y avait pas mentionné je crois le métier de provenance
+des ops c'est plutôt des software engineer
+ah oui donc software engineer serait plutôt devops
+non le software engineer c'est vraiment un dev
+ah ok d'accord
+ça m'étonne quand même qu'il n'y ait pas
+des ops tout court parce que
+l'univers on veut dire software
+on a une séparation claire entre
+un developer et un developer
+et quand même en provenance ici
+tu n'as pas du tout des ops
+tu as juste de software engineer
+peut-être que c'était mentionné mais pas
+ce n'était pas le
+actualization world
+oui je suis d'accord
+je sais pas trop quoi répondre
+mais c'est vrai moi j'aurais plus
+attendre après
+bon je pense que quand même
+là LinkedIn c'est assez
+gassant ça, ils sont un niveau de détail telle
+que je pense que s'il y avait des devops ils l'auraient écrit
+et que s'il y avait des software engineer c'est pas des devops
+et je n'ai pas de réponse
+après du coup qu'est-ce que ça voudrait dire
+qu'on estime que le chemin est plus court entre
+DS et MLE quand devops est MLE
+ce qui
+qui contredirait un peu
+moi ce que je dis mais donc ouais
+mais du coup c'est ce qu'on peut conclure
+mais après il y a peut-être aussi une barrière
+un peu la datation de sa souvent cette image
+d'un truc très compliqué, il faut faire des maths et tout
+ce qui n'est pas forcément vrai mais peut-être que ça
+ça contribue au fait de donner une image
+un peu inaccessible au métier d'MLE
+ce qui est faux, si quelqu'un veut être MLE
+dans la salle à lisi c'est pas
+c'est pas ou le data scientist d'ailleurs
+il faut un peu dimistifier ça c'est peut-être ça
+c'est peut-être pour ça, peut-être que ça fait un peu
+machine learning et tout donc peut-être
+je sais pas
+merci David pour cette présentation
+c'était super
+moi j'ai une question
+c'est par rapport au fait
+que je ne me souviens plus du tout
+je vais faire défiler les slides ça va peut-être te revenir
+non en fait
+c'est vrai qu'aujourd'hui le métier
+de machine learning engineer
+il est fait, moi je prends mon cas personnel
+en fait dans ma mission actuelle
+moi je traite le
+comment dire
+un métier de machine learning engineer en tant que data engineer
+parce que du coup
+l'expertise des DS n'est pas assez complexe
+pour réaliser ce métier là
+et du coup moi je viens de retrouver ma question
+du coup est-ce qu'il y a besoin d'avoir des vraies compétences
+de machine learning pour un MLE
+parce que moi j'ai l'impression qu'il s'est un DevOps
+il a besoin de compétences d'infra mais aussi de compétences d'infra
+ouais je vais prendre un exemple tout simple
+je vais prendre un exemple vraiment extrême
+mais en fait un peu caricatural
+mais voilà
+le MLE mettons que
+il doit déployer un modèle
+et dans la chaîne de CICD il faut tester le modèle
+là si c'est pas bien testé
+je parle pas de l'erreur de dire
+très une test machin je parle même pas de ça
+mais de dire
+voilà je fais un modèle de détection de fraude
+bah chouette dans 99,9% des cas il donne la bonne réponse
+par contre il se trompe quand il y a
+des très grosses fraudes qui vont coûter
+très cher
+c'est le genre de petit réflexe peut-être que
+alors c'est pas vraiment du machine learning tu vois
+mais ça peut avoir son sens
+c'est une bonne question
+mais
+c'est une bonne question et peut-être que
+et bah ça rejoint un peu peut-être
+cette question là peut-être que ça va pas mobiliser
+autant qu'on le croit
+une connaissance très profonde du machine learning ou des maths
+après voilà faut quand même être conscient
+de comment est-ce que je moniteur mon modèle tu vois
+est-ce que quelqu'un qui s'y connaît pas en machine learning
+il aura le réflexe de se dire
+je sais pas si un modèle il donne la bonne ou la mauvaise réponse
+par contre je connais la distribution des réponses qui est de données
+et à la changer
+à la distribution de la donnée d'entrée à changer
+tu vois bah ça
+faut s'y connaître en machine learning quand même un petit peu
+je pense
+c'est pas évident et en plus
+ça s'appelle machine learning engineer, faut pas se laisser tromper par les mots
+enfin ça aurait pu s'appeler
+data science engineer
+ou tu vois
+donc c'est juste le mot qui est comme ça
+mais ça veut pas dire qu'il décrit forcément bien les compétences qu'il faut
+j'ai une deuxième question
+est-ce que tu penses que le machine learning engineer
+il émerge beaucoup
+parce que le data scientist est à trop de charge de travail en fait
+ou soit qu'il a trop de charge de travail
+mais soit surtout que
+il a pas la compétence
+il a pas la compétence
+je pense
+je pense
+je pense
+je pense
+je sais pas
+parce que enfin si c'était un problème de charge de travail
+bah au lieu d'avoir un data scientist on aurait deux
+là c'est pas ça là c'est un data scientist et un MLE
+donc c'est que c'est pas une question de charge de travail
+c'est une question vraiment de
+oui
+c'est comme ça qu'on dirait MLE souvent
+oui bah oui
+moi ce que je rencontre et qui sont et qui écrivent sur le CV
+MLE et DS
+ils ont un certain âge comme moi
+donc ils ont pas fait des études pour ça
+il n'y a pas de
+comme à une époque il n'y avait pas de cursus data scientist
+je pense qu'aujourd'hui s'il y a un cursus MLE
+en tout cas moi ceux que je vois ils sont MLE
+ils m'ont l'air plus d'avoir mon âge que des gens qui sortent d'études
+et très souvent
+c'est un cursus MLE
+ça c'est une façon de devenir MLE ça
+du coup voilà
+on a plein de choses à faire
+on se dit ok à la criticité vraiment elle va et tout
+bah
+je fais quel pari
+je prends un devops et je croise les doigts pour qu'ils fassent du machine learning
+non je prends un data scientist et je vais espérer qu'ils fassent du devops
+donc
+en tout cas c'est la réaction qu'on a pas mal de petites boîtes
+en prenant un data scientist qui va faire
+plein de trucs qui va faire du dev, parfois du web
+qui va faire du vraiment
+et donc à la fin ça fait des MLE
+ou des dev web plus rarement j'en ai jamais vu
+mais
+moi
+là je fais passer des entretiens en ce moment
+et les deux personnes que j'ai vues
+qui ont écrit ds-mle
+c'est des gens
+c'est fait accidentellement
+et ils ont mon âge donc ils ne sont pas dis je vais faire des études de devops
+donc
+c'est la réaction qu'on a pas mal de petites boîtes
+mais ils ont mon âge donc ils ne sont pas dis je vais faire des études de MLE
+en fait
+et juste qu'ils ont dû faire du MLE
+parce qu'il y avait besoin du devops
+et là il y avait une question
+j'ai bien aimé la présentation
+vos analyses
+surtout en fait de voir
+l'évolution et la complémentarité
+d'accès
+ça se complémente un peu
+ma question concernant un peu plus
+les plateformes
+les solutions qu'on voit par exemple chez hugging face
+il y a de plus en plus de modèles
+qui sont démocratisés
+qu'on peut utiliser partout
+et est-ce que vous pensez que
+ces plateformes posent des risques
+pour le rôle de data scientist pure
+c'est-à-dire c'est plus simple
+d'apprendre un MLE
+qui va prendre un modèle
+on va appliquer sur les données
+oui bah déjà le modèle
+il faut le faire
+on est un peu tranquille là-dessus
+ça c'est une très bonne remarque
+et là c'est très personnel
+mais moi les derniers entretiens que j'ai fait passer
+les MLE que j'ai vus
+il y en avait de deux types
+soit le MLE de type start-up
+soit les MLE de type
+je bosse dans une boîte qui utilise un modèle open source
+donc très bonne remarque
+je ne pense pas parce que
+déjà ces modèles ils ne peuvent pas tout faire
+ça manque pas de vidéo
+sur internet
+pour ne pas les citer
+certains larges language-modèles
+ont besoin d'être entraînés le plus souvent
+et là c'est pas dit que le MLE
+soit celui qui ne soit le plus à même de le faire
+premièrement il faut bien les produire
+troisièmement ils ne font pas tout
+donc à pléthore de use case
+où les modèles open source ne vont pas marcher
+il suffit de reprendre le cas que j'ai donné pour la voiture
+ça paraît évident de dire
+il ne faut pas diviser tel colonne par tel autre
+mais donc c'est dire à quel point on est loin
+demain d'un feature engineering
+complètement automatisé
+voilà donc
+les modèles comme ça
+ils peuvent donner la recette de lasagne en Alexandrin
+si demain il a un jeu de données
+je ne suis pas certain qu'ils fassent pas
+certaines erreurs sur le feature engineering
+il est-il ? je vais peut-être
+enlever le hdmi parce que c'est un peu désagréable
+peut-être pour vous
+est-ce qu'il y a d'autres questions ?
+oui
+je réponds ton exemple sur les voitures d'occasion
+on a encore besoin de créer
+cette variable qui divise
+l'année par le nombre de kilomètres
+la Deep Learning ne peut pas le trouver tout seul ?
+non
+non carrément ?
+non parce que s'il y a
+10 variables
+c'est qu'on a vraiment de la chance
+je pense qu'une voiture c'est plus que 10 variables
+mais admettons s'il y a 10 variables
+il y a 45 si je compte bien
+combinaison
+mais sur les 45 il y en a 40 qui sont absurdes
+genre le nombre de portes que divise la sonne
+donc non
+parce que le problème du Deep Learning c'est que
+même si on avait un moyen
+mais en Deep Learning d'automatiquement on se dirait
+je vais diviser ça par ça
+même si on peut l'automatiser
+c'est que déjà ça ferait exploser le nombre de variables
+et ensuite le risque c'est de créer une variable
+ça se trouve c'est une super variable de diviser le nombre de portes par la sonne
+mais si on le fait pas c'est pour une bonne raison
+c'est parce que ça risque de bien marcher pendant l'entraînement
+puis après quelqu'un il va venir avec
+une 3 portes et une super sonne et puis ça n'a plus marché
+ou le contraire
+non ça en tout cas moi de ce que je sais
+sur ce point là du feature engineering
+on est ah ouais faut encore le faire
+heureusement parce que sinon moi je
+merci
+bien bah écoutez j'espère que cette présentation
+vous a plu et j'espère
+qu'il y aura un public aussi
+agréable que vous à Paris
+pour la DevOps le 14
+ce temps de 23 et j'espère que même
+certains d'entre vous seront à Paris je vous remercie
+merci

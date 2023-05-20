@@ -1,0 +1,1 @@
+{"keywords": ["NLP", "data analysis", "entity recognition", "sentiment analysis", "data aggregation", "Amazon", "consumer opinions", "qualifications", "Lizeo IT", "R&D"]}

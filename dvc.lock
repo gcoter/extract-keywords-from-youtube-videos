@@ -1,0 +1,246 @@
+schema: '2.0'
+stages:
+  get_audio_from_url@1:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Techniques pour améliorer
+      son éligibilité pour travailler dans la data.mp3\" \"https://www.youtube.com/watch?v=N-7zRvzRr0I\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Techniques pour améliorer son éligibilité pour travailler dans
+        la data.mp3
+      md5: 1c2a9acc007cb9d821dfd92529f9e8a8
+      size: 53765593
+  get_audio_from_url@0:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Où va la Data Science ?.mp3\"\
+      \ \"https://www.youtube.com/watch?v=bONAu-W44b8\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Où va la Data Science ?.mp3
+      md5: 3d5b1f1998ca2d8021359aa4b032af60
+      size: 50911349
+  get_audio_from_url@2:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Le long parcours d'un cas
+      d'usage applicatif en NLP, de 2013 à 2022.mp3\" \"https://www.youtube.com/watch?v=Ki0pKl3TwdU\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
+        à 2022.mp3
+      md5: 71be69fc2f6efa4b7894115c228dcb74
+      size: 73108602
+  transcript_audio@0:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Où va la Data Science ?.mp3\"\n"
+    deps:
+    - path: data/audio/Où va la Data Science ?.mp3
+      md5: 3d5b1f1998ca2d8021359aa4b032af60
+      size: 50911349
+    outs:
+    - path: data/transcripts/Où va la Data Science ?.txt
+      md5: cc98dec8cc58b34698e57bfd96a796d7
+      size: 56095
+  transcript_audio@1:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Techniques pour améliorer son éligibilité pour travailler dans
+      la data.mp3\"\n"
+    deps:
+    - path: data/audio/Techniques pour améliorer son éligibilité pour travailler dans
+        la data.mp3
+      md5: 1c2a9acc007cb9d821dfd92529f9e8a8
+      size: 53765593
+    outs:
+    - path: data/transcripts/Techniques pour améliorer son éligibilité pour travailler
+        dans la data.txt
+      md5: 0335c5652d5d324aed0c54c6a101532f
+      size: 50377
+  transcript_audio@2:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
+      à 2022.mp3\"\n"
+    deps:
+    - path: data/audio/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
+        à 2022.mp3
+      md5: 71be69fc2f6efa4b7894115c228dcb74
+      size: 73108602
+    outs:
+    - path: data/transcripts/Le long parcours d'un cas d'usage applicatif en NLP,
+        de 2013 à 2022.txt
+      md5: 44683aff301a9d6cbb616b52eb3d9fd7
+      size: 63422
+  summarize_transcript@0:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Où
+      va la Data Science ?.txt\" --output_summary_file_path \"data/summaries/Où va
+      la Data Science ?.txt\"\n"
+    deps:
+    - path: data/transcripts/Où va la Data Science ?.txt
+      md5: cc98dec8cc58b34698e57bfd96a796d7
+      size: 56095
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/Où va la Data Science ?.txt
+      md5: c9ec62ad5a6326319aa75889a32463e8
+      size: 1197
+  summarize_transcript@2:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Le
+      long parcours d'un cas d'usage applicatif en NLP, de 2013 à 2022.txt\" --output_summary_file_path
+      \"data/summaries/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
+      à 2022.txt\"\n"
+    deps:
+    - path: data/transcripts/Le long parcours d'un cas d'usage applicatif en NLP,
+        de 2013 à 2022.txt
+      md5: 44683aff301a9d6cbb616b52eb3d9fd7
+      size: 63422
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/Le long parcours d'un cas d'usage applicatif en NLP, de
+        2013 à 2022.txt
+      md5: d32afe1a59ffda7278df0bfbc4c2020e
+      size: 520
+  summarize_transcript@1:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Techniques
+      pour améliorer son éligibilité pour travailler dans la data.txt\" --output_summary_file_path
+      \"data/summaries/Techniques pour améliorer son éligibilité pour travailler dans
+      la data.txt\"\n"
+    deps:
+    - path: data/transcripts/Techniques pour améliorer son éligibilité pour travailler
+        dans la data.txt
+      md5: 0335c5652d5d324aed0c54c6a101532f
+      size: 50377
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/Techniques pour améliorer son éligibilité pour travailler
+        dans la data.txt
+      md5: 8e24fe56cdf39e4754c273ac133db0fe
+      size: 964
+  get_description_from_youtube@0:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=bONAu-W44b8\"\
+      \ --output_description_file_path \"data/descriptions/Où va la Data Science ?.txt\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Où va la Data Science ?.txt
+      md5: 89219d34357bcca15c8c644ab6bb8a5d
+      size: 1458
+  get_description_from_youtube@1:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=N-7zRvzRr0I\"\
+      \ --output_description_file_path \"data/descriptions/Techniques pour améliorer
+      son éligibilité pour travailler dans la data.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Techniques pour améliorer son éligibilité pour travailler
+        dans la data.txt
+      md5: 24bec0b0c8a3134e0d6658f77e31be53
+      size: 1170
+  get_description_from_youtube@2:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=Ki0pKl3TwdU\"\
+      \ --output_description_file_path \"data/descriptions/Le long parcours d'un cas
+      d'usage applicatif en NLP, de 2013 à 2022.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Le long parcours d'un cas d'usage applicatif en NLP,
+        de 2013 à 2022.txt
+      md5: bab811128c0ae9c11993ac784a959ed8
+      size: 860
+  extract_keywords_from_description_and_summary@2:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Le long parcours d'un cas d'usage applicatif en NLP, de 2013 à 2022\" --input_description_file_path
+      \"data/descriptions/Le long parcours d'un cas d'usage applicatif en NLP, de
+      2013 à 2022.txt\" --input_summary_file_path \"data/summaries/Le long parcours
+      d'un cas d'usage applicatif en NLP, de 2013 à 2022.txt\" --output_keywords_file_path
+      \"data/keywords/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
+      à 2022.txt\"\n"
+    deps:
+    - path: data/descriptions/Le long parcours d'un cas d'usage applicatif en NLP,
+        de 2013 à 2022.txt
+      md5: bab811128c0ae9c11993ac784a959ed8
+      size: 860
+    - path: data/summaries/Le long parcours d'un cas d'usage applicatif en NLP, de
+        2013 à 2022.txt
+      md5: d32afe1a59ffda7278df0bfbc4c2020e
+      size: 520
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 9d6663104cf3ff78ef7bfd75d0231015
+      size: 1857
+    outs:
+    - path: data/keywords/Le long parcours d'un cas d'usage applicatif en NLP, de
+        2013 à 2022.txt
+      md5: 9b353849b21e58c0e3cb0f0fcf708f6f
+      size: 170
+  extract_keywords_from_description_and_summary@1:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Techniques pour améliorer son éligibilité pour travailler dans la data\" --input_description_file_path
+      \"data/descriptions/Techniques pour améliorer son éligibilité pour travailler
+      dans la data.txt\" --input_summary_file_path \"data/summaries/Techniques pour
+      améliorer son éligibilité pour travailler dans la data.txt\" --output_keywords_file_path
+      \"data/keywords/Techniques pour améliorer son éligibilité pour travailler dans
+      la data.txt\"\n"
+    deps:
+    - path: data/descriptions/Techniques pour améliorer son éligibilité pour travailler
+        dans la data.txt
+      md5: 24bec0b0c8a3134e0d6658f77e31be53
+      size: 1170
+    - path: data/summaries/Techniques pour améliorer son éligibilité pour travailler
+        dans la data.txt
+      md5: 8e24fe56cdf39e4754c273ac133db0fe
+      size: 964
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 9d6663104cf3ff78ef7bfd75d0231015
+      size: 1857
+    outs:
+    - path: data/keywords/Techniques pour améliorer son éligibilité pour travailler
+        dans la data.txt
+      md5: c0f8e35ae56961787d792b6dd1b8d236
+      size: 173
+  extract_keywords_from_description_and_summary@0:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Où va la Data Science ?\" --input_description_file_path \"data/descriptions/Où
+      va la Data Science ?.txt\" --input_summary_file_path \"data/summaries/Où va
+      la Data Science ?.txt\" --output_keywords_file_path \"data/keywords/Où va la
+      Data Science ?.txt\"\n"
+    deps:
+    - path: data/descriptions/Où va la Data Science ?.txt
+      md5: 89219d34357bcca15c8c644ab6bb8a5d
+      size: 1458
+    - path: data/summaries/Où va la Data Science ?.txt
+      md5: c9ec62ad5a6326319aa75889a32463e8
+      size: 1197
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 9d6663104cf3ff78ef7bfd75d0231015
+      size: 1857
+    outs:
+    - path: data/keywords/Où va la Data Science ?.txt
+      md5: b99f1b8c656beafa0c6f70bab35041f3
+      size: 174
