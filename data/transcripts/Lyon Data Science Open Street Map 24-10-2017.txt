@@ -1,0 +1,1767 @@
+Juste pour vous rappeler, on est le Lyon Data Science pour ceux qui ne sont pas encore venus nous voir et on a 3 sponsors actuellement, DataGalaxy, DataLio et Opera qui nous permettent depuis un peu plus d'un an d'organiser ces meet-ups et au moins une fois par mois.
+Donc maintenant je vais laisser Sylvain vous présenter OpenStripMap et les différentes choses à ce sujet.
+Bonsoir, donc ce soir on a voulu parler un peu de cartographie, d'objets géographiques et tout ça.
+Alors on va vous présenter en 3 parties avec Patrice.
+Donc la première partie sera présentée par moi-même, Sylvain Maillard ou écologique sur un certain nombre de réseaux et choses comme ça.
+Donc je vous ferai une petite présentation de OpenStripMap et de ce qui est de la donnée géographique libre et de ce qu'on peut en tirer.
+Et ensuite Patrice, Frédière, Fred 27, il va parler plus de la partie technique, utilisation des données, Big Data, qu'est-ce qu'il faut pour travailler tout ça.
+Et à la fin on vous fera une petite proposition d'ateliers pratiques comme ce qu'on avait déjà eu fait à Lyon Data Science avec les algorithmes de machine learning pour la prédiction des disponibilités de vélovres.
+Là on a des petits projets sympas à vous montrer qui utilisent des données OpenStripMap avec du machine learning et des choses comme ça et on a un truc à proposer comme base de travail pour cette année.
+Donc l'objectif de la présentation c'est d'appréhender les données spatiales OpenStripMap pour pouvoir les utiliser dans des assets ou dans des algos de machine learning ou de data science pour apporter de la valeur ou du service ou même aider à compléter la base de données.
+Alors du coup il faut mettre la partie présentation et bon alors tout au début il n'y a pas l'habitude du bac.
+Une pleine écran ça doit être, j'ai un doute hop il est là.
+Oui c'est bon ah tiens ah il n'est pas fiché alors vas-y je te laisse faire c'est bizarre je l'avais mis en recopie vidéo.
+Oui il est là c'est juste derrière tout le pic sur le fond et puis le bouton vert.
+Voilà donc juste petite précision les présentations qu'on vous fait elles sont toutes dispos sur GitHub on vous mettra le lien sur le Meetup si vous voulez aller les voir c'est récupérable en fiché PDF avec des liens cliquables comme le premier lien cliquable et là en dessous là sous la souris.
+Donc OpenStreetMap la carte libre et participative alors qu'est ce que c'est donc je vais structurer un petit peu on va parler un peu d'historique du projet de qu'est ce qu'on a dedans comme on contribue à quoi il serve avec des exemples et quelques ressources qui pourront certainement vous servir.
+Alors côté historique en fait OpenStreetMap a été créé en 2004 par un étudiant anglais à l'époque qui avait pour un projet il voulait faire une carte des routes en Angleterre et il n'avait pas de données disponibles facilement ou un tarif abordable.
+Il y avait que l'ordonnage servait donc l'équivalent de l'IGN qui avait des jeux de données mais un tarif complètement prohibitif et donc là il s'est dit ben qu'est ce que je fais et il y a un truc finalement il manque quelque chose de la donnée facile d'accès pour tout le monde.
+Donc c'est là où il a lancé le projet OpenStreetMap pour cartographier les rues et les routes en Angleterre.
+Donc depuis le projet a évolué c'est plus limité aux routes c'est plus limité à l'Angleterre et donc on collecte vraiment tout ce qui permet de fabriquer une carte.
+En termes de dates au niveau français on a eu en octobre 2011 la création d'une association OpenStreetMap France qui est une association de contributeurs c'est-à-dire que c'est des gens qui contribuaient déjà sur OpenStreetMap qui se sont dit ben tiens on est pas loin les uns des autres.
+Des fois on discute un petit peu il y a des rencontres de temps en temps dans les villes des choses comme ça on commence à structurer de la donnée un peu plus ça serait bien d'avoir un truc du
+« Open Database License » et qu'est-ce qu'on trouve là-dedans et ben en fait c'est qu'on l'indique OpenStreetMap ça a bougé c'est toujours open ça il n'y a pas de problème par contre on a plus uniquement les rues on a aussi les arbres on a les forêts on a les rivissons on a les bâtiments on a les panneaux stop les passages piétons les.
+Voilà plein plein de choses comme ça et en réalité c'est pas une carte même si c'est ce qui était vu au début en ce qu'on a dans la base OpenStreetMap c'est des objets géographiques et c'est là où ça devient intéressant c'est-à-dire qu'on est on peut juste consommer la carte qu'on va voir sur le site principal OpenStreetMap.org donc juste visualiser et puis regarder c'est joli dans le coin ou pas mais on peut aussi aller extraire de la donnée et avoir accès vraiment à
+tous les éléments qui permettent de fabriquer une carte sur mesure en fonction de ce qu'on a envie d'en faire alors vous me direz c'est libre et participatif mais pourquoi contribuer pourquoi utiliser ça plutôt que d'autres outils comme Google Maps où ils nous fournissent toute une API plein de choses et comme ça tout intégrer au même endroit alors je vous inviterai juste à aller regarder les les licences d'utilisation des différents services de cartographique vous pouvez trouver
+et donc juste voilà sur OpenStreetMap c'est dit vous êtes libre de faire ce que vous voulez avec la donnée la seule contrainte c'est quand vous utilisez de la donnée OpenStreetMap faut dire que ça vient de chez OpenStreetMap sinon vous en faites absolument ce que vous voulez vous pouvez la retravailler vous pouvez changer la couleur vous pouvez supprimer des données sur vos cartes et afficher qu'un truc basique vous pouvez vendre des données si vous voulez à partir d'OpenStreetMap il n'y a aucun problème.
+L'IGN alors il y a aussi à souligner quand même depuis deux trois ans maintenant des jeux de données qui sont en open data donc il y a quand même une démarche de ce côté là d'ouverture et ils se mettent bien au goût du jour mais basiquement sur le gros des données c'est toute reproduction et interdite c'est comme ce qu'on trouve sur les livres vous avez pas le droit de photocopier l'IGN c'est la même chose.
+Et le cas intéressant c'est Google ou là vous voyez que ça commence par sauve dans le cas où vous aurez reçu une autorisation préalable vous n'êtes pas autorisé à et là il liste tout un tas de choses donc ils font vraiment la liste ils ont peur qu'on ne comprenne pas qu'on n'a pas le droit d'utiliser en dehors de l'interface Google Brut et surtout on on n'a pas le droit par exemple copier redistribuer extraire donc si vous avez besoin de la donnée de base.
+Avec Google vous n'avez pas le droit d'utiliser alors du coup l'avantage du participatif c'est que vu que c'est collaborative chacun cartographie un petit bout il y a personne qui fait la totalité du monde d'un coup donc chacun cartographie un petit bout dans son coin les choses qui voient bien tiens là il y a une boulangerie qui vient d'ouvrir ici il y a des grands travaux sur l'axe sur juste devant l'épitec.
+Sur l'avenue Vivier Merle le boulevard Vivier Merle il y a des gros travaux en cours bien une fois que ces travaux seront faits OpenStreetMap c'est parfait on peut aller faire les modifications et paf c'est disponible directement donc voilà c'est une somme de petites contributions comme ça qui font le tout OpenStreetMap c'est aussi alors ça peut paraître un peu déroutant quand on arrive sur le site principal qui est juste une vitrine plus orientée contributeur d'ailleurs la carte à l'horizine
+elle est là pour montrer à peu près qu'est-ce qu'il y a sur la carte et savoir est-ce qu'il y a des gros manques ou pas c'est qu'il y a plein de petits outils qu'on a l'impression qu'ils n'existent pas en réalité c'est tout un écosystème très très vaste autour et vu qu'on peut en faire ce qu'on veut il y a plein de services qui existent comme ça donc ça peut être pour des GPS que ça soit GPS de voiture ou GPS dans les smartphones on peut faire il y a des services d'impression d'atlas de ville donc vous savez ces
+atlas où vous avez la carte de la ville qui est cadrillée un index des rues avec voilà la rue Tartampion elle est en B3 et ainsi de suite donc parfait pour une bataille navale à l'échelle de la ville ça on sait faire aussi facilement avec OpenStreetMap il y a des outils qui font ça tout seul d'un coup voilà et
+dernier gros avantage c'est que c'est disponible tout de suite quand on fait des modifications donc il n'y a pas de modération des données a priori il y a des contrôles a posteriori mais on part du principe que si vous
+avez vu une modification sur le terrain que vous faites la démarche d'aller modifier la carte et ben on va commencer par vous faire confiance parce que c'est pas quelqu'un qui serait en angleterre en chine on fait pas aux états unis en afrique du sud ou autre qui pourra dire effectivement est-ce qu'il y a une boulangerie qui est ouvert au coin de la rue à la place de la boucherie qui avait avant voilà ça c'est vraiment les gens du coin qui peuvent savoir et enfin le plus gros avantage à mon sens c'est que
+surtout qu'on a accès à toutes les données donc il n'y a pas de restriction on vous dit pas bah non t'as pas payé tel truc t'as pas le droit à la donnée de bâtiment ou alors ben t'as le droit juste aux données à grande échelle donc enfin grande échelle
+pour faire une carte globale si tu veux faire la carte à l'échelle de la France ça va bien mais si tu veux faire la carte à l'échelle de ton quartier et ben c'est tellement taillé à l'âge que t'arriveras pas à caler les choses d'une avec les autres donc là on a vraiment
+accès à toutes les données les plus précises directement et puis ça fait que finalement on se retrouve avec des données de meilleure qualité il y a eu une étude je ne suis pas sûr qu'elle était reproduite depuis en 2009 il y a des étudiants qui avaient travaillé sur une comparaison des données OpenStreetMap et données Google Maps alors ils étaient d'arrivée à la conclusion que les données OpenStreetMap étaient un peu moins bien positionnés que les données de l'IGN
+pardon et bon c'était moins bien positionné mais c'était ça tournait autour de 6 mètres de précision je crois de tête à peu près quelque chose comme ça donc c'est à comparer avec la précision des GPS voiture et de la majorité des GPS à l'époque qui s'y descendait en dessous de 10 mètres on était déjà bien content
+c'était pas exactement ça encore mais c'était déjà pas mal et vous voyez sur les petites comparaisons parce qu'on est dans les outils sympas on peut comparer des cartes facilement aussi
+l'exemple des théâtres antiques et la colline de fourvière je ne sais pas si vous voyez un peu depuis le fond les théâtres dans OpenStreetMap ils sont entièrement cartographiés toutes les zones de gradins actuelles sont cartographiées les escaliers les travées et tout ça
+les zones où il n'y a plus de gradins ou c'est de la ruine c'est marqué aussi et si vous comparez à d'autres cartes connues c'est joli mais si vous ne connaissez pas vous saurez pas vraiment par où passer et comment préparer votre accès si vous avez un fauteuil roulant ou vous avez des difficultés de vous déplacer
+on a plein d'exemples comme ça je vous invite à les voir aussi du côté des plages de Boduc j'ai mis ça parce que je connais le coin là bas et c'est assez net il n'y a pas grand chose pourtant mais on arrive à la donner quand même vachement détaillé
+et puis OpenStreetMap vu que c'est complètement ouvert ça peut être vachement utile aussi donc on a une équipe de gens comme ça informé le début qui sont constituants d'associations par la suite qui s'appelle HOT c'est Humanitarian OpenStreetMap Team qui s'active en cas de catastrophe naturelle
+alors la première grosse activation c'était en 2010 pour le gros tremblementaire à HOT et en moins de 15 jours l'île a été entièrement cartographiée avant après
+les cartes qu'on avait datées de plus de 50 ans parce que c'était des restes de la colonisation il n'y avait rien fait depuis
+et là en 15 jours on a eu l'état complet de comment c'était avant le tremblementaire comment c'était après le tremblementaire
+et c'est de la donnée qui était utilisée en temps réel par les équipes de secours sur place pour dire aussi ben voilà à tel endroit la rue a été dégagée donc ce qui donnait les accès à d'autres zones et ainsi de suite
+ça s'était remonté dans la base OpenStreetMap et il pouvait sur place faire des impressions des cartes de l'état réel au jour le jour
+donc ça c'est pour montrer un petit peu les zones sur lesquelles l'équipe a été activée vous voyez qu'il y a eu des gros trucs en Afrique notamment Afrique de l'Ouest et un peu centrale
+ça c'était quand il y a eu les épidémies d'Ebola parce que dans ces zones les médecins sont en frontière notamment ils arrivaient et là il n'y avait pas de cartes c'était zone blanche
+donc on leur disait faut aller dans tel village mais la seule solution qu'ils avaient c'était de prendre un guide qui les amène en 4-4 jusqu'au village
+ils étaient incapable de savoir où ça se positionnait voilà et ben petite aussi sur les même en France c'est utilisé par exemple le réseau des Samus de Normandie
+ils continuent d'utiliser la base OpenStreetMap pour améliorer leur base adresse interne et pour contribuer les points adresses parce que des bâtiments qui se construisent
+il y en a plein partout vous avez qu'à regarder à Lyon le nombre de grus et les zones qui sont en construction
+quand il y a des nouveaux bâtiments il y a une nouvelle adresse il y a des gens qui y habitent et si ces gens ils ont un problème il faut bien pouvoir y accéder
+et si vous avez des cartes ou des bases de données qui ont un ou deux ans et ben vous rater du monde donc ils utilisent OpenStreetMap comme ça pour avoir des données plus à jour et pour pouvoir les mettre à disposition également
+donc je parle un petit peu des données mais je n'ai pas encore détaillé qu'est ce qu'on trouve dedans en fait on peut trouver un peu de tout du moment que c'est de la donnée géographique
+après il y a plus des restrictions qui sont d'ordre législatif ou entre guillemets moral
+donc on ne met pas de données nominatives par exemple on ne dit pas ici c'est un tel qui y habite
+il y a le numéro de la rue il y a la rue ça permet d'y accéder mais on ne dit pas c'est monsieur machin un madame truc
+on ne met pas de données personnelles non plus donc on ne va pas mettre sur un bâtiment chez grand-père ou des trucs comme ça
+et surtout on ne copie pas des données provenant d'autres cartes qui ne soient pas sous licence libre
+donc si vous avez de la donnée qui vient d'une collectivité territoriale qui publie ces données en open data sur un portail et tout
+vous avez le droit de récupérer ces données là et de les intégrer parmi l'ensemble des données OpenStreetMap
+mais vous n'avez pas le droit de copier de la donnée qui vient de chez Google ou de l'IGN
+à part ça vous pouvez mettre tout ce que vous voulez
+et les contributeurs ils en mettent des choses parce qu'on a plus de 4 milliards de points
+donc les nœuds c'est les points qui sont dans la base là où la donnée géographique associée
+plus de 50 millions de groupes de modifications donc c'est quand on fait des modifs
+on n'en voit pas chaque modification unitaire une par une on fait un certain nombre de modifications
+on envoie tout ça pour dire j'ai corrigé le boulevard vivier Merle
+on envoie tout d'un coup on n'en voit pas tronçon de 1 mètres par tronçon de 1 mètres
+voilà et donc tout ça fait que j'avais regardé tout à l'heure aujourd'hui
+il y a eu à peu près 4000 utilisateurs qui ont au niveau mondial sur les stats
+ça se trouve sur le site internet on a eu un peu plus de 4000 utilisateurs
+qui ont fait des modifications dans la base pour donner une idée de l'état d'évolution des données
+et dans les gros exemples de ce qu'on peut faire avec plein de petites fourmis comme on se qualifie
+c'est on a eu l'autorisation d'accès aux données du cadastre en 2008
+et ça a pris quelques années parce qu'il a fallu jusqu'en 2013
+pour tracer le contour de toutes les communes françaises en précision cadastrale
+donc c'était d'éplucher les textes officiels décrivant les contours des communes
+décrivant les évolutions parce que les communes il y a des fusions, il y a des changements
+il y a des sessions de terrain à un autre et de tracer sur la base des planches cadastrales
+il y a tous les contours des communes de toutes les communes de France
+et donc fin 2013 on était capable de produire le premier jeu de données des contours de communes sous licence libre
+et à l'heure actuelle il y a 24 jeux de données qui sont publiés sur le site data.gov.fr
+et vous voyez les derniers c'est des bornes de recyclage trilibre
+donc c'est les points d'apport volontaire à Paris et des zones touristiques internationales
+même chose ça a été tracé, il n'y a pas de contours officiels des zones
+par contre on a des adresses qui sont incluses dans une zone ou dans une autre
+et donc un petit travail de fourmis c'est dire bah voilà telle adresse elle est dans telle zone telle adresse elle est là
+donc la limite est au milieu et ça permet de faire des jeux de données utilisables par tous
+donc le processus en fait il est assez simple il faut collecter les données
+alors vous pouvez soit aller sur le terrain avec votre gps, les smartphones font ça très bien
+il y a des applis qui permettent d'enregistrer la trace gps quand vous vous baladez
+il peut y avoir des cartes aux parties donc cartes aux parties c'est on se dit ben tiens
+tel jour on va cartographier le parc machin et on se retrouve à 10, 20, 30, 40 en fonction de qui il veut venir
+des fois on fait ça avec des écoles, des fois c'est des événements organisés par des mairies ou autres
+et on collecte plein de données sur le terrain comme ça qu'on va mettre tous ensemble sur la carte
+voilà il y a tout un tas d'outils comme ça donc ça on les on charge ces données là dans un éditeur
+on les met en forme correctement avec des attributs, des mots clés, valeurs et choses comme ça je vais en parler juste après
+on envoie sur le serveur et à partir de ce moment là la donnée est disponible et puis on peut réextraire les données
+en faire des statistiques sur le nombre d'objets modifiés ou créer une carte avec un rendu spécial sur la zone
+donc les données qu'on a, je parle rapidement, Patrice passera plus, un peu plus longtemps dessus tout à l'heure
+en fait donc on a trois types d'objets principaux, il y a les nœuds, c'est des points, c'est là où il y a la donnée géographique
+on a des lignes, c'est en fait des lignes brisées qui relient des points ensemble
+donc la ligne elle-même ne porte pas d'infogéographique mais elle dit par quel point la ligne passe
+et on a des relations qui sont des trucs virtuels qui permettent d'associer ensemble plusieurs objets
+que ce soit ponctuel, linéaire ou ouvert, linéaire fermé
+un truc théorique, un groupement scolaire par exemple, on aura dans la relation du groupement scolaire
+on aura le mur d'enseinte, on aura les contours de chacun des bâtiments avec chaque bâtiment nommé les autres
+on pourra avoir les points avec tous les arbres de la cour, enfin ce genre de choses
+et quand on va sur la relation groupement scolaire, on extrait la donnée, on a directement toute l'info
+donc ça c'est hyper intéressant parce que ça permet de connecter des choses comme une ligne de bus ou de métro aussi
+on peut gérer comme ça
+alors les attributs qu'on met dedans en fait c'est des ensembles de moquets valeurs
+donc pour ceux qui connaissent le pose risquuel et l'extension HSTOR c'est exactement ça
+si on prend un objet et puis on lui liste des trucs, cet objet là c'est un contour, une ligne fermée
+qui a building et galiès ou alors c'est une zone commerciale, c'est un magasin, c'est peu importe
+et on peut cumuler autant d'attributs qu'on veut sur un même objet
+donc si vous cherchez Lyon, vous verrez il y a plein d'objets, plein d'attributs notamment de noms dans différentes langues
+je ne sais plus combien il y en a mais il y a une trentaine au moins d'attributs comme ça et ça gère sans problème
+donc tous ces attributs on a des outils aussi pour visualiser un petit peu les stats, il y en a qui s'appelle tag info
+qui permet de voir quand on cherche de la donnée, est-ce que l'ensemble de moquets valeurs est beaucoup utilisé ou pas
+là vous voyez que building il y a plus de 255 millions d'objets de type building dans la base OpenStreetMap par exemple
+alors tout à l'heure je parlais des éditeurs pour charger les données, il y en a deux principaux
+il y en a un qui s'appelle ID qui est un éditeur en ligne basé sur du JavaScript
+vous allez sur le site OpenStreetMap, vous vous met sur la zone, vous cliquez sur modifier et vous avez l'éditeur qui s'affiche
+on en a un autre qui est plus poussé en termes de traitement possible et qui permet de facilement d'enregistrer les données
+enfin les sessions de travailler sur du long terme et tout ça qui s'appelle JOSM donc J pour du Java qui est multiplatforme
+et donc lui vous installez le logiciel, vous téléchargez la zone sur laquelle vous voulez travailler et après vous voyez vous avez beaucoup beaucoup plus d'outils
+donc lui c'est celui qu'on utilise en général quand on a des trucs un peu plus complexes à faire
+tout à l'heure j'ai disais qu'on n'a pas de modération a priori mais qu'on vérifie quand même la donnée
+donc on a tout un tas de contrôles de qualité qui sont faits pour s'assurer qu'il n'y a quand même pas complètement n'importe quoi
+donc le premier qu'on a en fait c'est ce qu'on appelle des notes sur le site OpenStreetMap.org
+donc vous avez sur la partie droite l'espèce de petite bulle qui ressemble à un bout de texte
+et ça vous ouvre en une zone où vous pouvez positionner un point et vous mettez en commentaire
+donc le commentaire il faut qu'il soit le plus précis possible parce que là l'objectif c'est d'indiquer à des contributeurs
+qui s'attachent à ce point donc vous voyez qu'après il y a des notes qui ont été résolues
+il y en a plein qui n'ont pas encore été résolues mais bon ça c'est du travail en cours
+celle là c'est le qui a été résolu elle a été soumise il y a 5 jours par exemple donc c'est vraiment en vivant
+on a aussi un outil qui a été développé pour la France à l'origine et qui est maintenant et disponible sur le monde entier qui s'appelle Osmos
+donc Osmos il y a tout un ensemble de vérification de données qui sont faits donc c'est des sortes de requêtes
+qui vont vérifier des choses comme est-ce qu'il y a des bâtiments qui se croisent
+est-ce qu'il y a une route qui croise un bâtiment est-ce que les noms sont corrects
+ici c'est une proposition d'ajout par exemple qui dit attention voilà on a dans la base on a des données externes qui nous disent
+ici il y a une salle de sport voilà faut vérifier est-ce qu'elle est bien orthographiée ou pas
+il y a vraiment tout un tas de choses comme ça qui permettent à la fois de vérifier que la donnée est correcte
+et à la fois de proposer des améliorations ou des corrections d'orthographe
+si vous avez écrit général de Gaulle avec pas le bon nombre de elle ça va vous l'annoncer aussi
+on a aussi d'autres croisements qui sont faits après là c'est un exemple qui a été donc des données OpenStreetMap croisées
+avec d'autres référenciels ouverts donc la base route 500 de l'IGN
+l'ABD cartage avec donc c'est une base des cours d'eau
+des données caroyées de l'INSEE donc là c'est l'INSEE qui a découpé la France en carré de 200 mètres par 200 mètres
+dans lequel ils ont mis les infos du nombre d'habitants notamment
+et référencier le fantoir c'est la référentielle des noms de voie
+et vous voyez j'ai pris à l'échelle un peu plus éloignée
+mais toutes les zones qui sont en violet par exemple c'est des zones où l'INSEE nous dit
+là on a un carreau de 200 mètres par 200 mètres où il y a des habitants
+et dans OpenStreetMap à cet endroit là on n'a pas de bâtiment
+donc vu qu'en France il y a quand même peu de gens qui habitent sous tente
+en priori il manque quelque chose voilà et on a la même chose pour vérifier
+est-ce qu'on a toutes les routes ou pas, est-ce qu'il y a des différences
+ça peut être des routes qui ont été supprimées ou conchangées
+donc voilà ça permet d'améliorer au fur et à mesure
+et enfin on a un certain nombre d'outils qui permettent de travailler à plusieurs en même temps
+sur différentes zones et je parlais tout à l'heure de l'équipe humanitaire la HOT
+c'est un outil qui permet de découper une zone précise en carré
+et quand on travaille là dessus on se connecte sur le site
+on dit bah moi je vais travailler sur tel carré
+il y a une tâche précise à faire qui est par exemple cartographier les bâtiments
+tracer les routes ou vérifier d'autres choses
+et on charge les données que sur cette zone là
+on se concentre là dessus on trace tous ces bâtiments
+dès qu'on a fini on envoie les données sur le serveur OpenStreetMap
+on dit tâche terminée et on passe à la suivante
+et après il y a d'autres personnes qui viennent pour valider
+qui récupèrent le carré qui disent bah je vais vérifier
+là ils regardent est-ce que tout a été fait correctement
+des fois il y a des doutes sur le fait bah est-ce que tous les bâtiments ont été créés ou pas
+ou est-ce que c'est vraiment un bâtiment en zone un peu dense
+en type forêt ou autre
+il y a des fois c'est pas simple à savoir
+dès qu'ils pensent que c'est correct et valide
+et comme ça chacun bosse en même temps sur une zone différente
+sans jamais se marcher sur les pieds
+sans jamais faire de conflit de dédition
+voilà donc ça c'est des outils vachement pratiques
+et bah toutes ces données là quand elles ont été chargées
+après comme il faut en faire quelque chose
+alors il y a les rendus principal
+ou sur d'autres types de rendus
+mais on peut aussi utiliser la donnée de manière plus poussée
+on a possibilité d'exporter des données
+donc ça si vous allez sur le site
+vous avez un onglet qui dit exportez
+vous zoomz sur la zone
+vous pouvez même sélectionner sur la zone précise là sur la carte
+et il vous génère un fichier OSM avec toutes les données dedans
+donc ça on va voir avec Patrice tout à l'heure comment l'utiliser
+vous avez aussi des API de requêtes
+qui s'appelle l'overpass API
+ou on a un site qui nous permet de faire des requêtes
+vous voyez sur la gauche vraiment c'est du langage structuré assez particulier
+mais ça ça va interroger une copie de la base OpenStreetMap
+et ça nous extrait toutes les infos qu'on demande
+et ça ces requêtes là en plus on peut les interroger en direct dans d'autres outils
+comme uMap par exemple qui est un outil qui permet de faire des cartes personnalisées
+vous pouvez simplement dessiner vos données à vous sur un fond de carte
+mais vous pouvez aussi charger des jeux de données déjà existants
+donc que ça soit en fichier CSV par exemple avec des coordonnées, l'attitude, longitude
+ou ça peut être aussi une requête
+enfin vraiment en utilisant l'URL de l'API avec la requête dans l'URL
+et charger de la donnée qui sera mis à jour de manière dynamique
+donc dès qu'on fait un ajout d'un app, on passe votre carte et à jour
+ça ça marche aussi
+et on peut aussi charger ça dans un logiciel ECG
+ou dans une base POSGIS on va voir ça juste après
+j'avais prévu quelques exemples d'utilisation
+au niveau smartphone il y a deux grandes applis qui sont utilisés
+il y en a une qui s'appelle Osmande
+donc Osmande c'est pour OSM pour OpenStreetMap et HAND pour Android
+une autre qui s'appelle maps.my
+donc ça c'est deux applis qui vous permettent de télécharger des données hors ligne
+et d'utiliser votre téléphone sans avoir besoin de forfait data
+donc c'est vachement pratique surtout quand ça capte pas bien
+on a un projet dont on va reprendre un petit peu plus tard
+qui s'appelle OpenSolarMap
+qui est basé sur la donnée OpenStreetMap
+où là l'objectif c'est de faire une carte des zones potentielles
+pour poser des panneaux solaires
+on a aussi
+si vous avez déjà entendu parler des bases de la base sirène
+donc c'est la base registre des entreprises en France
+on a geocodé tout ça à découper par département et tout
+sur la base de données OpenStreetMap
+qui est assez jolie
+qui demande un peu plus de travail
+mais c'est un gars cycliste aux Etats-Unis à Cincinnati
+il a fait une carte en croisant des données OpenStreetMap
+des données de relief, des données locales
+en faisant des extractions
+sur la gauche là il y a une extraction des zones
+des points des magasins de réparation par exemple
+et autres en bas il y a une table de distance
+ou de temps de trajet entre les différents points de la ville
+donc tout ça basé sur la donnée OpenStreetMap
+alors si je suis réussi à vous intéresser un petit peu
+il y a quelques ressources en ligne
+il y en a une qui s'appelle switch to OSM
+qui vous explique avec des exemples de code et tout
+comment utiliser une carte OpenStreetMap sur votre site web
+il y a des outils pour les développeurs
+qui sont assez complets
+il y a tout qui est décrit sur le wiki
+la partie map feature c'est vachement intéressant
+quand on n'a pas encore trop l'habitude
+parce que c'est une page qui vous liste
+les principaux assemblages de moclés valeurs
+donc vous voyez amenity
+c'est tout ce qu'il y a des équipements
+vous avez plein de noms différents
+il peut y avoir bar, barbecue, brasserie, café
+il y en a une liste très très longue
+je n'ai pas tout mis
+à chaque fois vous avez un descriptif
+et une petite photo pour être sûr de savoir à quoi ça correspond
+et si vous vous ennuyez
+vous ne savez pas quoi faire comme carte
+vous pouvez aller regarder des exemples dans la carte tech
+alors sur la France on a une communauté
+comme je disais au tout au début
+la OpenStreetMap France, donc association
+et on a un groupe local
+donc vous cherchez sur le wiki OpenStreetMap Lyon
+vous tombez tout de suite dessus
+où on se rencontre tous les mois
+pour discuter un peu de problèmes de contributeurs
+lancer des projets des choses comme ça
+et puis il y a aussi une liste de discussions en mail
+si vous avez des questions
+donc je suis arrivé sur la fin de la première partie
+présentation globale
+et je suis arrivé sur des trucs un peu plus techniques
+avec Patrice
+alors je ne fais pas déjà
+si vous avez peut-être quelques questions
+le temps que ça charge
+alors les données de topographie
+en fait donc il y a un certain nombre de jeux de données
+qu'on n'a pas dans OpenStreetMap
+qui ont un intérêt particulier à les mettre
+la topographie ça en fait partie
+c'est de la donnée
+OpenStreetMap c'est toute la donnée vectorielle
+et pour la topographie il faut plus de la donnée raster
+donc la donnée maillée
+qui est très complexe
+à avoir une couverture globale
+ça prend beaucoup de temps et doutils
+et il existe des bases
+déjà il y a comme le SRTM
+ou le modèle Aster
+en fait SRTM c'est une mission
+de la navette spatiale américaine
+qui tournait avant
+qui avait appris un radar embarqué
+pour justement mesurer les altitude
+de partout tous les points de la planète
+Aster c'est basé sur l'analyse d'images satellites
+il y a eu plus de 2 millions d'images
+qui ont été analysées justement
+pour recalculer les hauteurs partout
+sur des grilles de 30 mètres par 30 mètres à peu près
+et donc il y a déjà de la donnée comme ça
+qui existe sous licence
+qui est vraiment dans le domaine public
+donc il n'y a pas trop d'intérêt
+à recréer une nouvelle base
+à charger toutes ces données
+dans une street map
+tout dépend aussi de la précision
+voilà alors dans SM
+il y a quand même des points
+avec des altitudes
+après c'est plus les points remarquables
+mais c'est très sportadique
+C'est rarement en dessous de 20 mètres
+mais on pourra en rediscuter à la fin
+parce que je connais un peu ces données là
+mais même les données fournies par l'IGN
+c'est 25 mètres
+alors il y a des jeux de données maintenant
+ils ont sorti il n'y a pas très longtemps
+un jeu de données 5 mètres
+mais en termes d'utilisation
+ça devient très particulier
+mon ordis subtra à la fin
+en lequel on peut voir des choses assez précises
+maintenant notamment avec le lidar
+les acquisitions laser
+il y a des mécanismes avec des drones
+qui permettent de couvrir certaines zones
+alors c'est assez réduit
+après il y a d'autres données
+on pourra peut-être en parler plus précisément
+sur ce sujet là
+c'est complètement ouvert
+il n'y a aucun problème de ce côté là
+les dates sont mises sur le wiki
+sur la page de Lyon
+prochaine rencontre c'est tout bon
+le prochain c'est tous les 2e mardi du mois
+donc ça va être dans 15 jours
+je laisse la parole à Patrice
+merci
+je te mets ça là
+je vais être un peu plus technique
+mais quelque part à un moment donné
+on veut ouvrir la base
+on veut attraper les objets
+on veut les utiliser
+se faire ses propres dataset
+les croiser
+faire des analyses, faire des statistiques
+même les entrées dans des modèles
+pour en déduire des choses
+au niveau de l'environnement
+avant de rentrer directement
+dans les objets OSM
+que je vais détailler un petit peu
+la base de données sous différentes formes
+je vais revenir simplement
+sur la manipulation de la géométrie
+puisqu'il y a un certain nombre de choses
+et il y a un certain nombre d'axes
+qui permettent de simplifier l'utilisation
+et de trouver le bon tout le kit
+pour travailler ces données
+je vais parler de géométrie d'abord
+travailler sur les géométries
+généralement
+on a un modèle qui a été établi
+qui maintenant fait consensus
+qui est le modèle de l'ogc simple feature
+point line polygon
+qu'on utilise en OSM
+ou en sg de manière générale
+alors on a des points
+on voit bien ce que c'est
+on a un xy
+qu'on peut avoir un z aussi
+l'altitude
+on peut aussi avoir une mesure
+qu'on associe au point
+comme de la radiométrie
+ou une autre mesure physique
+voilà et ensuite
+il peut avoir des lignes
+ça peut être
+un ensemble de points qui se continue
+et puis on a plusieurs lignes
+à la suite
+ou une route par exemple coupée par un tunnel
+elle peut être en plusieurs parties
+on parle de multipartes
+donc voilà
+les polygones également
+des polygones qu'on manipule en géométrie
+peuvent avoir des trous
+ou peuvent avoir des îles
+quand on représente des îles
+donc c'est des choses qui sont assez pratiques
+à manipuler
+à ce moment là la modélisation
+st géométrie de l'OGC
+qui est l'organisme
+le consortium géométrique
+voilà
+vous avez mis des exemples un petit peu ici
+alors les problématiques associées
+à la donnée géométrique
+il y en a plusieurs
+le premier c'est que
+les mathématiciens disent que la sphère
+n'est pas développable
+mais on peut difficilement mettre à plat
+la sphère
+pour faire des mesures
+là
+des projections
+donc associée à la donnée géographique
+on va avoir un système de coordonnées
+qui peut être géographique
+géographique dans le sens où c'est basé sur une ellipse
+avec des longitudes et des latitudes
+le plus connu de système
+ça va être le WGS84
+qui est celui utilisé pour les gps
+et généralement par habile d'engage
+quand on dit lat longue
+c'est souvent qu'on résonne
+dans ce système WGS84
+et on a aussi un deuxième type de système
+qui sont des systèmes projetés
+où là on va prendre les coordonnées
+et on va les projeter sur un cône
+sur un cylindre, sur un plan
+on les projette pour pouvoir
+regarder ou mettre à plat
+et mesurer des distances avec une règle
+bien sûr quand on reprojette
+on va avoir des approximations
+et d'où la nuance de précision
+et le travail sur la précision
+que font les géomètres ou les topographes
+pour le choix des systèmes de coordonnées
+normalement
+voilà donc dans notre cas
+on est en WGS84 pour le WSM
+qui est en lat longue
+voilà
+le deuxième point
+quand on manipule de la géographie
+ça va être les algorithmes
+qui vont permettre de travailler la géographie
+la géographie on va vouloir mesurer des distances
+on va vouloir créer des géométries
+qui sont des intersections des unions
+on va vouloir couper des géométries
+par d'autres géométries
+donc tout ça ça fait appel
+qui sont assez compliqués à mettre au point
+et qui font le passage
+avec pas mal de problématiques
+sur la représentation des nombres
+les nombres ils sont flottants
+ils ont des trous
+quand on les représente informatiquement
+et du coup il va falloir faire des calculs
+qui plantent pas
+quelque part quand on fait des choses
+un peu bizarres avec des géométries
+comme des queues de casserole
+des choses qui s'intersectent
+ou des géométries qui sont incorrectes
+c'est la taille des géométries
+généralement on est habitué
+à manipuler une ligne
+d'un enregistrement je sais pas
+une commande dans un bar
+qui fait quelques octets
+ou quelques centaines d'octets
+bien là tout de suite
+quand on va avoir dans l'enregistrement
+une forme géométrique qu'on met dans la ligne
+pour pouvoir la traiter
+et bien la géométrie si c'est le contour de France
+avec une précision de 1 cm
+ça peut être plusieurs méga octets en fait
+donc du coup on a une problématique
+qu'on traite
+voilà
+un autre point, dernier point
+que j'ai mis c'est l'indexation
+et la volumétrie
+alors la volumétrie on le comprend
+avec les géométries
+l'indexation c'est que c'est
+quand on regarde une carte
+avec une vue d'ensemble
+et bien on fait passer toutes les données
+à l'affichage
+toute l'ensemble de la base
+va être questionnée et va être fait chez
+pour pouvoir représenter la carte
+c'est pas la peine de voir des choses très précises
+au niveau français
+on va filtrer, on va enlever certains objets
+à certaines plages d'échelle
+et puis on va utiliser aussi
+des mécanismes d'indexation
+qui vont permettre de rapidement rechercher
+en fait la donnée à un endroit donné
+voilà
+ensuite on a des opérateurs sur les géométries
+alors il y a plusieurs classes d'opérateurs
+ça c'est des choses que vous allez pouvoir voir
+avec les bibliothèques
+puisque les bibliothèques vont vous apporter
+les premiers opérateurs qu'on va avoir
+c'est des tests bouléens
+des tests qui vont permettre de savoir
+si par exemple un point est à l'intérieur d'un polygon
+ou si on traverse une route
+ou si on est dans une distance de x mètres
+par rapport à la route
+voilà donc ça va permettre de pouvoir
+faire des recherches
+ou d'attraper en fait les objets
+avec un critère géographique
+pour construire son data set
+ou pouvoir répondre à une question
+il y a une deuxième classe d'opérateurs
+qui permettent de créer justement
+des objets géométriques
+et puis de les composer
+alors je vous ai mis un exemple ici
+ou par exemple on peut faire
+l'union de deux géométries
+on a deux polygones
+on fait un union de ces deux géométries
+et on a une géométrie qui est l'union des deux
+donc on a aussi tous les opérateurs bouléens
+tous les opérateurs bouléens
+unions, intersections, découpages
+par une forme
+après la richesse dépend aussi
+de la bibliothèque que vous utilisez
+un opérateur, alors il y a un opérateur
+moi que j'aime beaucoup et qui est très très utilisé
+c'est le buffer
+le buffer c'est on a une poly ligne
+on a un polygone, on a un point
+et on va essayer de trouver
+le champ du cercle d'une dimension donnée
+qui pourrait balayer la ligne
+ou la géométrie
+alors ça on les utilise typiquement
+beaucoup en SIG
+ça permet de répondre à des questions
+par exemple quelles sont les personnes
+de plus de 60 ans
+qui habitent à 20 mètres
+donc ce genre de questions par exemple
+se répondent avec un buffer
+on prend la ligne de bus
+on a un contour, on a une géométrie
+qui va indiquer le passage
+de la ligne de but
+et puis on va appliquer l'opérateur buffer
+avec une distance de 60 mètres par exemple
+et là l'opérateur va nous donner
+un polygone
+qui va être autour de la ligne de bus
+qui va suivre quelque part la ligne de bus
+et avec ce polygone je vais pouvoir
+faire une requête spatiale
+rechercher en fait des objets
+d'utilisation qui va être utilisés
+pour aller chercher tous les points
+qui matérialiseraient en fait les habitants
+et sur ces points d'habitants
+j'ai une propriété qui va être l'âge
+et je vais pouvoir à ce moment-là
+sélectionner que ceux qui ont plus de 60 ans
+voilà
+après il y a des opérateurs
+qui sont beaucoup plus compliqués
+beaucoup plus riches
+ça dépend de la problématique qu'on peut avoir
+il peut y avoir des opérateurs
+qui vont travailler sur des réseaux
+auto-pologiques
+qui vont travailler sur un ensemble de polygones
+qui se composent
+voilà comment découper l'espace
+avec des polygones simples
+typiquement c'est de l'honnais
+qui ne déforment pas trop les
+les polygones de base
+voilà on les utilise notamment
+on calcule des lémons finis
+mais il y a aussi des applications
+en géographie
+et le corollaire aussi c'est vos reneuils
+c'est en rouge
+c'est le dual
+alors OSM c'est une base vecteur
+dans le sens où on a une description
+en fait des objets géométriques
+avec un ensemble de points
+voilà mais on peut transformer
+en fait ces géométries
+qu'on appelle vecteurs
+en images
+voilà il suffit de colorier
+simplement ce qu'il y a de sous
+alors l'image
+ça peut être de l'image pour la colorier
+avec une couleur mais on peut aussi
+de sous mettre soit un identifiant
+par exemple
+et du coup ces rasters
+on revient quelque part à des matrices
+que l'on peut composer
+que l'on peut diviser
+que l'on peut multiplier
+que l'on peut combiner
+voilà donc c'est aussi une deuxième part
+du SIG et qui peut être aussi utilisé
+en complément de la donnée vecteur
+voilà donc des bibliothèques
+proposent ce passage
+vecteur raster
+alors les opérateurs
+les opérateurs géométriques
+qui fait un petit peu foie
+qui est très utilisé
+a décrit dans une spécification
+énormément d'opérateurs
+qu'on retrouve dans tout un tas de technologie
+on le retrouve dans du post-gis
+qu'il a implémenté
+on le retrouve chez Microsoft
+on le retrouve chez des éditeurs
+on le retrouve
+voilà donc c'est un peu
+on voit un petit peu les différents types d'opérateurs
+et quand on est familier avec ces opérateurs
+quand on change de technologie
+de retrouver ces opérateurs
+et de pouvoir les utiliser assez rapidement
+donc il y a des opérateurs
+qui travaillent justement
+avec les opérateurs bouliens
+les opérateurs de modification
+et puis des fonctions
+qui permettent d'interroger le géométrie
+voilà
+alors les géométries
+il va falloir les décrire
+les stocker, les récupérer, les comprendre
+donc c'est le rôle un petit peu dans l'encodage
+l'encodage c'est comment est-ce qu'on va écrire
+dans un disque ou dans un fichier
+ou comment est-ce qu'on va la formaliser
+dans un fichier informatique
+pour pouvoir l'apprendre, la manipuler
+il y a pas mal de formats d'encodage
+qui existent
+dans les principaux je vous ai donné quelques exemples
+il y a
+déjà ceux de l'OGC
+le well known texte
+le well known binari je vous donnerai quelques exemples
+qui sont utilisés un petit peu
+dans le monde de base de données
+essentiellement
+il y a aussi du geogizon
+alors ça c'est beaucoup sur le web
+ça c'est une représentation
+de forme de gizon
+qui est connue par pas mal de logiciels
+on a aussi le jml
+qui est utilisé aussi par l'OGC
+sur des formes de web service
+c'est une représentation xml
+on a celle de Goubiol aussi
+qui a ML
+avec son petit frère zipe
+et puis on retrouve aussi du binaire shape
+c'est le format qui a été spécifié
+c'est un format de mastery
+et qui est très très utilisé
+notamment dans les shapefiles
+c'est ce qui a fait que
+voilà
+donc notamment l'encodage
+l'encodage il est très très variable
+en termes de
+en termes de temps de lecture
+et en termes de taille
+stocké sur disque
+on comprend bien qu'un format binaire
+va être plus petit
+qu'un format texte
+donc ça ça a des implications assez importantes
+on approche ce type de choses
+avec les bases osm
+puisque on a 4 milliards de nœuds
+on a des bases de dunic
+qui sont quand même très conséquentes
+voilà
+donc là vous avez un exemple
+de well known texte
+donc ça ça vous parle ou pas
+c'est donc qu'on peut décrire des points
+on peut décrire des lignes, des polygones
+des multipoints c'est là des ensembles de points
+et vous avez l'équivalent aussi
+en well known binari
+où on a simplement
+les débuts, le nombre de part
+à l'intérieur d'une poly ligne
+et puis la représentation des nombres
+en flottant
+en simple ou en double précision
+le geogysène ça ressemble un petit peu à ça
+donc on a une partie
+dans le geogysène
+alors on peut avoir plusieurs types d'objets
+il y a les feature collection
+là on a une entité en fait
+qui est décrite
+dans laquelle on a la géométrie
+qui définit le type de géométrie qu'on a
+et ensuite on a des coordonnées
+alors il y a plusieurs façons de représenter
+les coordonnées
+ici on en a une
+et généralement tout comme en OSM
+on peut associer à la géométrie
+des informations textuelles
+ou scalaires
+qu'on peut mettre dans des propriétés
+voilà
+pour le geogysène vous avez un site
+je vous ai mis le URL d'un site c'est geogysène.io
+qui est très très pratique
+pour représenter et pour visualiser
+donc quand on travaille sur des dataset
+et puis que par exemple on veut définir
+une zone de test set
+pour pouvoir intersecter et récupérer
+tous les objets qui sont à l'intérieur
+c'est des outils qui sont très pratiques
+pour justement créer le geogysène
+pour pouvoir ensuite le mettre
+dans le programme
+ou dans le notebook Python ou Jupyter
+pour travailler
+voilà pour récupérer les données
+donc ensuite il y a le format shapefile
+un format qui est libre de droit
+je crois maintenant
+il est dans le domaine public
+voilà
+donc comme c'est ouvert c'est vrai que c'est très utilisé
+dans les différents logiciels SIG
+ou les bibliothèques
+tous savent lire du chef
+donc quand on a des géométries
+après on veut travailler avec les géométries
+il faut choisir une bibliothèque géométrique
+et notamment il y a les problématiques
+associées au système de projection
+computational géométrie
+tous les problèmes d'approximation de nombre etc
+je vous ai mis quelques librairies
+qui sont quand même très utilisées
+l'important c'est d'en choisir une et une
+qui est plutôt bonne
+surtout si on fait des grosses manipulations de géométrie
+des intersections et des buffers
+toutes n'ont pas la même robustesse
+en termes de manipulations
+de résultats
+donc j'ai volontairement mis aussi les langages
+donc le SIGAL ou le GEOS
+typiquement sont accessibles aussi
+avec différents langages
+le C se drape avec pas mal de choses
+après quand on est dans le monde big data
+on aime bien aussi travailler avec les GVM
+avec l'écosystème de GVM
+avec du Scala, du Java ou d'autres langages
+donc il y a des bibliothèques full java
+ou full GVM qui permettent en fait de travailler
+avec la géométrie
+donc je vais vous donner
+je vous mets quelques exemples
+justement comment est-ce qu'on
+on lit des géométries
+on récupère en fait une géométrie
+qu'on aurait dans un fichier
+ou qu'on récupère dans un service web
+pour construire en fait un objet géométrique
+et ensuite appliquer des opérateurs
+voilà, typiquement là vous avez un exemple
+en Python avec la bibliothèque OGR
+OGR c'est une bibliothèque aussi
+qui est libre
+et qui est très utilisée dans pas mal de stack
+pour travailler la géométrie vectorielle
+c'est celle qui est aussi compagnon de PostGIS
+voilà
+voilà avec OGR
+donc on retrouve des opérateurs de buffer
+comme j'ai
+je vous ai expliqué tout à l'heure
+c'est issu d'un voilà vous avez des exemples
+en Python donc ça c'est pour les data scientistes
+qui sont plus à l'aise avec Python
+et on voit que ces bibliothèques
+permettent aussi de pouvoir faire des exports
+ou des transformations d'encodage
+dans d'autres systèmes
+un exemple en Java
+où là on a justement un tableau docté
+qui contient alors
+la première ligne
+voilà on récupère au format shape
+dont je vous ai parlé tout à l'heure
+on récupère donc un ensemble docté
+qui constitue l'encodage en fait de la géométrie
+et puis il y a des fonctions qui permettent justement
+de construire un objet géométrique
+à partir de cet ensemble docté
+et ensuite il y a les opérateurs
+on peut travailler dessus
+on peut lister les points
+on peut parcourir en fait la géométrie
+et puis on peut éventuellement la réécrire
+dans un autre format
+et puis on peut faire des textes
+pour la mettre sur un site web
+ou dans une application web
+voilà
+dans la partie géométrique
+quand on travaille en volume
+quand on travaille en volume
+sur les données géométriques
+on utilise généralement
+une technique de double filtrage
+puisque il y a deux choses
+il y a à la fois la taille, la volumétrie
+et puis le coût d'analyse
+des différentes géométriques
+quand on veut rechercher par exemple
+un petit ensemble de 100 points parmi
+400 ou 4 milliards
+donc il y a d'abord une première indexation
+et ensuite on peut dans une deuxième phase
+regarder plus précisément la géométrie
+alors ça c'est notamment vrai
+pour les géométries de type ligne
+et de type polygon
+en sg ou en informatique géométrique
+les filtres primaires et secondaires
+c'est à dire que d'abord
+dans les candidats possibles
+les index spatiaux
+vont nous retourner un ensemble de candidats possibles
+ou pas
+et ils vont utiliser le filtre primaire
+le filtre primaire en fait
+s'intéresse uniquement aux enveloppes des objets
+c'est à dire qu'on va regarder
+l'enveloppe qui inscrit en fait la géométrie
+ça permet de pouvoir jeter 80%
+des géométries qui ne nous intéressent pas
+après ma bord
+et travailler sur des enveloppes
+pour discriminer en fait un objet parmi
+avec une b-box
+c'est quatre tests sur les flottants
+en gros quand on l'implémente
+généralement on dit est-ce qu'on est en dehors
+à gauche, à droite, en haut, en bas
+si on est en dehors ça veut dire que ça n'intersecte pas
+donc ça veut dire que quelque part
+on n'est pas intéressé par cette géométrie
+donc c'est très léger le fait de calculer quatre flottants
+et ça permet en fait d'économiser
+énormément de CPU et de temps de traitement
+et ensuite dans les candidats qui restent
+alors il peut y avoir les enveloppes qui s'intersectent
+mais c'est le filtre secondaire
+qui va s'occuper du détail, du contour, de la forme
+pour pouvoir résoudre en fait la question qui est posée
+voilà
+donc ensuite voilà pour rechercher parmi
+énormément d'objets
+on utilise des indexes
+alors en géographie c'est pas des indexes sur X
+et des indexes sur Y
+c'est des indexes combinés à deux dimensions
+donc il y a plusieurs technologies et de formes d'index
+qui permettent assez rapidement de retrouver un ensemble d'objets
+qui potentiellement nous intéressent
+parmi un gros ensemble
+la première technique très simple c'est le caroyage
+on découpe l'espace avec des carreaux qu'on nomme
+et ensuite on va référencer les objets
+qui intersectent en fait ce carreau dans l'index
+alors cette technologie d'index
+elle a fait ses preuves
+elle est toujours encore pas mal utilisée
+elle pose uniquement le problème des gros objets et des petits objets
+parfois on est obligé de faire plusieurs caroyages
+avec des tailles de mailles différentes
+et de faire des recherches
+en fonction justement de la taille de ces carreaux
+parce que si par exemple on a le contour français
+et qu'on a une taille d'index qui est assez petite
+parce qu'on aimerait être très discriminant
+eh bien le contour français il sera dans tous les carreaux de notre index
+donc ça peut poser justement des problèmes de parcours
+ou de taille d'index parce qu'on va avoir la même entité
+qui va être présent dans tous les enregistrements des carreaux
+ensuite on a d'autres formes d'index
+donc le deuxième je vais parler du quadtree
+il y a aussi le fait de construire des arbres basés sur les enveloppes
+et qui vont permettre justement en un minimum de tests
+de pouvoir retrouver un ensemble d'objets qui pourraient nous intéresser
+par rapport à une taille géométrique
+par rapport à une taille sur laquelle on recherche
+donc ça c'est très utilisé, c'est ce qui est généralement utilisé dans les bases de données
+un autre type d'index qui est très utilisé
+sur lequel je ferai un petit focus, c'est le GOH
+on en parlera un petit peu après
+après il peut y avoir aussi d'autres types d'index
+suivant les requêtes qu'on veut faire
+notamment sur des recherches de proximité par exemple
+on veut savoir les objets qui sont à proximité et d'autres
+donc il y a d'autres technologies d'index
+vous avez un point d'entrée qui est assez intéressant
+pour voir les différentes façons de traiter la donnée
+ou de l'index sur Wikipédia
+alors les GOH on en entend pas mal parler
+c'est très utilisé sur le web
+et c'est très utilisé aussi dans les systèmes
+à flux de données ou même sur des systèmes Big Data
+puisque ça permet d'avoir une indexation
+on va dire multidimensionnelle
+alors chaque carreau en fait dans le GOH
+l'idée c'est de dire
+on va définir un carreau dans lequel est l'entité
+ou plusieurs carreaux
+mais on va utiliser un encodage en fait variable
+c'est un encodage variable qui va permettre de définir
+la taille du carreau dans lequel on référence
+ou qui intersecte
+on l'a construit ainsi
+c'est à dire qu'on va partir du plus haut niveau du monde
+et puis on va découper le monde en fait en 4 cadrants
+1, 0, 1, 2, 3
+et puis ensuite si on dit notre entité est dans le carreau numéro 2
+ce qu'on va faire c'est qu'on va prendre le carreau numéro 2 récursivement
+on va le diviser en 4
+et puis on va regarder où est notre entité
+et puis on répète
+jusqu'à ce qu'on obtienne la précision ou la position qu'il nous intéresse
+alors 4 cadrants
+ça s'encode en fait sur 2 bits
+donc on peut aussi réduire quelque part la taille en chaine de caractère de l'encodage
+en encodant 4 niveaux par octet
+vous avez un exemple
+donc vous trouvez plein plein de bibliothèques qui vous permettent de travailler avec des GH
+c'est très utilisé aussi dans le charding
+lorsqu'on veut répartir des données spatialement
+donc on a des bibliothèques qui nous permettent justement de faire des conversions avec une précision donnée
+d'une longitude, d'attitude en une chaine de caractère
+dont on définit en fait la précision
+alors l'intérêt et ce qui nous intéresse c'est qu'on va pouvoir aussi poser des questions
+en matière d'indexation
+par exemple si je m'intéresse aux 3 premiers caractères
+je vais prendre un gros carreau
+et simplement en parcours de ma base de données
+tous ceux qui commencent par ces 3 mêmes caractères
+et bien je vais retrouver tous les objets qui potentiellement sont à cet endroit
+donc les bibliothèques vous proposent
+justement le passage dans les deux sens
+à la fois textuel ou lat-lang
+voilà
+donc quand on travaille en volume ou en big data
+on est dans un contexte de parallélisme de traitement
+le paradigme c'est plus de définir en fait les traitements parallèles par défaut
+et d'essayer d'envoyer le programme sur les données
+notamment on préfère aussi streamer les données
+on va pas faire des accès random
+des accès aléatoires avec des index qui vont nous obliger à bouger des têtes de lecture
+ou à faire des allers-retour mais plutôt d'essayer de prendre des flux en masse
+de les trier ou de les diviser ou de les écrire en deux
+et puis de les retravailler de façon iterative
+voilà les critères importants quand on travaille en volume
+ça va être le temps de parsing
+le choix du parsing ou de la représentation de la géométrie est très très important
+pourquoi c'est très important ?
+parce que déjà ça va conditionner le volume
+le volume qu'on ouvre à stocker
+donc moins on a de volume à stocker plus on va vite
+ce volume on peut le stocker aussi mais il va transiter aussi sur le réseau
+entre les nœuds du cluster
+plus on va pouvoir manipuler et utiliser de la bande passante en termes de réseau
+et puis l'encodage il est aussi important puisque en fonction de la bibliothèque qu'on utilise
+passer de la représentation informatique à l'objet géométrique ça coûte aussi
+donc si on a une représentation typiquement par exemple binaire
+qui est beaucoup plus adaptée pour du traitement Big Data
+et bien on passera moins de temps à charger la géométrie
+le temps de chargement de la géométrie sera beaucoup plus efficace
+et ensuite d'autres critères c'est le volume et l'indexation
+c'est la quantité de données qu'on manipule
+voilà back to usm
+alors les données usm, le premier format qu'on retrouve dans les fichiers quand on télécharge les fichiers usm
+et bien c'est une description xml
+je crois que c'est la première qualité adoptée
+c'est les points osm, quand vous avez des fichiers points osm c'est en fait des fichiers xml qui peuvent être zippés
+et on retrouve cette grammaire là très simple
+avec une description des nœuds, des way et puis des relations là sur le troisième slide
+alors dans la description on voit qu'à chaque objet on a un identifiant qui est unique
+que ce soit des lignes ou des relations
+c'est un identifiant unique qui va permettre de suivre l'objet et puis de voir les différents changements
+pour les nœuds justement on a là de longue la position avec la géographie
+et puis on a d'autres informations d'autres métadonnées qui sont associées au nœud
+comme l'utilisateur qui l'a saisie
+avec son identifiant son UID
+et puis quand est-ce qu'il a été modifié ou quand est-ce qu'il a été créé
+avec les versions notamment d'oeuvre
+alors sur le nœud on peut aussi avoir la définition de tag
+qu'on voit ici sur le way en bas
+on voit qu'il y a des sous-éléments tags
+qu'on peut aussi avoir sur le nœud et qui sont les tags libres
+de la base de ce côté là on peut mettre ce qu'on veut en tag, clé et valeur
+on remarque aussi que la taille des attributs ont vraiment été choisis pour être très petit
+et la profondeur quelque part du XML permet aussi de faire une lecture du XML de façon streamée
+sans forcément tout mettre en mémoire
+il n'y a pas de gros, beaucoup de profondeur
+ce qui permet en fait de pouvoir lire le fichier et puis de rapidement lire un nœud et de parser
+et d'avoir une petite machine à état qui est assez efficace dans la lecture des fichiers
+dans les relations on va avoir justement une dernière chose que je voulais vous montrer
+les ways on voit qu'ils ne contiennent pas de géométrie, ils contiennent par contre des références à des nœuds
+d'accord on dit que la ligne est composée des nœuds identifiés par la référence
+donc ce qui amène en fait une problématique qui va être de reconstruire les géométries
+si on veut avoir tous les points sur une géométrie et travailler sur des géométries
+pour les relations c'est beaucoup plus libre
+donc là on peut faire des relations avec des membres
+qui peuvent être des nœuds, des ways ou d'autres relations non ?
+ou d'autres relations, voilà
+alors on a un rôle qui indique le type de relation
+ça peut être de la relation sémantique de l'antique
+être par exemple dans le cas des multipolygones
+quand on a des polygons en plusieurs parties, dans OSM
+c'est géré par une relation qui va dire
+j'ai une relation de type multipolygon
+et dans les membres je vais avoir les relations avec les différents chemins
+qui composent soit les trous ou soit les îles des objets
+et le rôle va pouvoir dire est-ce que c'est un trou
+ou est-ce que c'est une île qui est à côté ou un contour
+et sur la relation on a aussi des tags d'informations
+qui nous permettent de classer et puis de savoir
+d'avoir d'informations sur le relation
+alors les formes abruptes
+bien sûr il y a le site web qui est une base de données derrière
+avec la base de données de la planète
+mais on peut aussi récupérer des extractions qui sont faites
+alors toutes les semaines ou au fil de l'eau
+en fonction de, voilà, sous forme de fichiers
+on peut les avoir sous forme de fichiers
+les semaines c'est le format d'origine, c'est le point OSM
+et puis il y a un autre format aussi qui est maintenant aussi diffusé
+qui est le PBF qui utilise un encodage binaire très très compressé
+c'est sur une base de protocoles buffer
+c'est l'outillage en fait de Google pour faire un encodage binaire efficace
+dans le protocole buffer, l'encodage des fichiers OSM est fait par bloc
+pour chaque bloc en fait on a un premier point de référence
+et ensuite toutes les coordonnées du bloc sont encodées en fait en delta
+par rapport aux coordonnées les unes des autres
+ce qui fait que plutôt que d'avoir des longitudes et des latitudes
+qui sont des grands nombres, on a plus que des petits delta à encoder
+d'autre part dans les blocs PBF on a aussi des chaînes, des tableaux de chaînes de caractère
+les chaînes de caractère, il y a beaucoup d'objets qui ont les mêmes chaînes de caractère à l'intérieur des blocs
+donc en fait ils font une table de référence à l'intérieur du bloc
+c'est évité de recopier plusieurs fois les mêmes chaînes de caractère
+donc tout ça c'est des encodages en fait de binaire qui sont très très compressés
+ce qui fait, on voit les tailles là notamment j'ai fait la copie
+la planète entière OSM coûte 37 gigas
+fait 37 gigas en fait en format PBF, en format protocole buffer
+donc ça commence à être préonsible
+c'est le double en XML mais il est compressé
+c'est-à-dire que le XML est passé après par une compression
+donc ça c'est des fichiers que vous pouvez télécharger directement sur le site web
+donc pour utiliser, vous voulez travailler avec de la donnée OSM
+vous avez plusieurs chemins, enfin les chemins les plus classiques après il y en a peut-être aussi d'autres
+le premier chemin c'est d'utiliser comme vous disais Sylvain
+de faire un extract de la zone qui vous intéresse pour un petit test set
+ou mettre au point en fait un programme avant de passer sur le volume complet
+la deuxième possibilité c'est de prendre les fichiers et de les mettre dans une base de données
+la base de données la plus naturelle ou sur lequel il y a le plus d'outillage côté OSM
+c'est Postgre et PostGIS
+PostGIS c'est la cartouche spatiale qui amène les opérateurs géométriques à la base de données Postgre
+et vous allez retrouver avec PostGIS tous les opérateurs STintersect, STAN, STBbox
+que je vous ai présenté avec le formalice de l'OGC
+c'est une implémentation de l'OGC
+et puis après à partir des fichiers notamment au PBF
+on peut aussi travailler directement à partir des fichiers brut si on le souhaite
+on fait des programmes de lecture
+alors quand on utilise du PostGIS Postgre
+il y a des outillages qui sont accessibles et référencés aussi sur le site OpenStreetMap
+les plus connus avec Sylvain on a dit que c'était au OSM tout PGSQL
+et puis Osmosis c'est les plus utilisés actuellement
+vous avez des lignes de commande et vous avez des opérations de création de schéma etc
+qui vont vous permettre de mettre la base dans votre base de données Postgre
+alors ces opérations reconstruisent aussi les géométries
+pour pouvoir travailler avec Postgre et puis rentrer une requête SQL en disant
+sélect, étoile, from, les points, where, la géométrie, STintersect, la géométrie
+avec une Bbox qu'on aurait donnée
+ou pareil pour les lignes ou pour les polygons
+donc ils vous reconstruisent en fait les relations entre les way, les nœuds
+pour vous en faire des vraies géométries que vous pouvez utiliser ensuite en SQL
+ou avec des opérateurs
+bon un petit exemple la planète ça a beaucoup diminué mais il y a quelques temps
+en juin là on était à peu près une journée
+une journée de calcul sur un bon serveur
+pour déjà mettre les données en fait dans la base de données
+maintenant avec les disques rapides les SSD et puis voilà on arrive à faire ça en 11h
+alors on n'est pas tous obligés d'intégrer la planète
+sur le site web vous allez trouver aussi des extractions par pays qui vous permettent de limiter
+typiquement la France je crois que c'est un dixième du volume de la planète
+ce qui représente quand même quelques heures pour les mettre à l'intérieur de la base
+vous avez aussi Geofabrik qui est une entreprise allemande
+ou une initiative allemande qui vous propose aussi des extractions par région
+donc c'est beaucoup plus facile une région on met dix minutes
+ou on met un quart d'heure à la mettre dans une base
+c'est beaucoup plus manipulable
+voilà
+puis à partir de fichiers donc bon là c'est après c'est du développement un peu plus de développement
+il y a pas mal de librairies qui permettent aussi de traiter ces fichiers
+et puis de vous envoyer des événements et qui comprennent le format
+donc vous gagnez pas mal de temps à utiliser ces librairies si vous voulez faire des imports massifs
+ou des traitements massifs
+notamment ces librairies sont aussi utilisées pour ceux qui font du big data
+et qui ont des formats un peu spéciaux de stockage
+donc ça permet en fait de repartir avec ces outillages
+sur le fichier d'origine et de le stocker comme on le souhaite
+voilà le point d'attention c'est justement la reconstruction des polylignes et des polygones
+qui peut prendre pas mal de temps
+la jointure entre 4 milliards d'enregistrements et tous les chemins
+c'est des gros fichiers à trier
+ça représente, moi je l'ai fait là justement pour le format Avro
+ça représente, j'avais des volumes de traitements de 1 tera à 5 temporaires de tri
+tri merge
+avant d'avoir la reconstruction en fait des polylignes avec l'ensemble des points
+les polygones c'est quand même beaucoup plus léger
+voilà puis une autre possibilité donc ça c'est quelque chose sur lequel j'ai pas mal travaillé
+c'est de simplifier justement l'accès aux données d'OSM
+pour ceux qui travaillent sur des gros volumes et avec des outillages big data
+justement on a fait pour vous là le gros travail de jointure
+et on propose des fichiers directement géographiques
+que l'on peut prendre dans un format Avro qui est très connu en big data
+puisqu'il est autodécrit, le schéma est intégré à l'intérieur du fichier
+et vous avez tout le kit de lecture un petit peu dans tous les langages
+donc là ça vous permet si vous voulez traiter la planète entière
+vous gagnez facilement une journée en téléchargeant directement les fichiers
+et en les utilisant dans votre stack big data
+donc c'est encore en incubation mais moi j'utilise professionnellement aussi
+pour l'instant en incubation je l'ai fait deux fois
+je vais essayer de le séquencer en fait toutes les semaines
+la génération de ces fichiers là ça représente
+alors pour la... on voit pas bien la taille
+en fait la France et puis il y a la planète
+pour la planète c'est 145 giga octets
+il faut un cluster de...
+là j'ai mis 7h30 intégré avec un petit cluster sur Amazon
+un petit cluster de 5 machines en utilisant Flink
+voilà
+donc là vous avez aussi les liens sur les... tout est en ouvert
+vous avez les liens si vous voulez regarder l'outillage
+ou les outils ou après on dès l'utilisation
+voilà
+après quand on travaille en géométrie donc là j'ai été très général
+en termes de bibliothèques, de concepts, de méthodes
+vous avez des frameworks en fonction de l'outillage big data que vous utilisez
+que vous utilisez des bibliothèques qui sont un petit peu plus complètes
+qui vont un peu plus loin que le travail géométrique
+et qui vous propose de l'indexation mais là ça dépend ensuite de l'outillage big data que vous utilisez
+si vous êtes en Mongo, si vous êtes en Spark
+ou dans d'autres...
+voilà
+donc vous avez quelques liens
+voilà donc j'ai fini pour cette partie là
+en introduction de travail géométrique et géographique autour d'OSM
+est-ce que vous avez des questions ?
+oui
+c'est plus une remarque par rapport au fonctionnement d'OSM
+par rapport aux autres outils de l'écosystème
+c'est que les nœuds portent l'information géographique et pas d'autres objets
+à mon sens ça pose de gros problèmes
+parce que quand on commence à faire le portage vers post-juice
+pour ne citer que lui
+on va avoir des chemins et des nœuds d'intérêt sur ces chemins
+des trucs qui ne vont pas être liés
+et quand moi je vais déplacer un nœud qui est initialement sur le choix
+dans l'OSM il est vraiment sur le chemin
+et j'oublie de redessiner mon polyline
+en fait les deux objets sont tout de bien séparés
+et la couche 2 du système qu'on est en train de concevoir
+elle va devoir gérer cette interaction entre les nœuds et les chemins
+et pour moi c'est la principale barrière qui m'empêche aujourd'hui d'utiliser le post-juice
+parce que j'ai envie que lui il appartienne à ma voix
+et j'ai envie de le taguer sur cette voix
+et en fait avec le whale mode texte il ne les vend pas
+et j'ai l'impression que ce problème il n'est pas...
+pour lui il n'est pas compris
+et il a pris en compte par la communauté
+car qu'à mon sens c'est une norme barrière
+à confirmer mais donc parce qu'on avait une question avant
+qui était de savoir combien de temps ça prend
+d'importer quel volume et tout ça
+et quelle fréquence de mise à jour
+donc en général ce qu'est fait c'est qu'on importe d'abord un fichier planète initial
+donc avec toutes les données
+et après au niveau des serveurs d'OpenStreetMap
+au niveau des serveurs centrales
+il y a des extractions de données qui sont fait toutes les minutes
+parce qu'on appelle les minutes diff en fait
+qui toutes les minutes disent
+tel objet a été modifié de telle manière
+et donc ça s'intègre après
+il y a toutes une chaîne d'outils qui existent
+pour aller récupérer automatiquement ces fichiers de diff
+et les intégrer
+et donc normalement quand tu intègres un diff dans ta base position
+si tu déplaces en eux
+tu es censé recalculer aussi la géométrie des lignes et polygones qui sont liées
+normalement c'est vrai que c'est vrai
+ce dont vous parlez c'est la modélisation topologique
+c'est-à-dire qu'il y a des objets points qui vivent
+et puis il y a des objets lignes qui sont basés en fait sur ces objets points
+et ça pose d'énormes challenges techniques
+voilà
+typiquement moi j'ai travaillé disons chez SRI
+et ce qui a fait la popularité des SRI dans les années 80
+c'est le format couverture qui justement est topologique
+c'est-à-dire que dans le stockage des données
+il y avait cette décomposition point ligne et polygone
+et notamment avec une gestion d'atopologie ou de la couverture typiquement
+si on est sur du parcellaire quand on déplace une ligne
+eh bien on sait que ça déplace la parcelle de gauche et la parcelle de droite
+puisque les deux polygones forment un continuum
+et on a envie que les deux soient liés etc
+et ça pose de gros problèmes de performance et de reconstruction
+et de complexité dans les algorithmes
+parce que notamment les algorithmes on ne voit plus uniquement la géométrie avec un algorithme
+voilà il faut prendre en compte dans l'algorithme
+les relations ou les travers ou les modifications aussi
+sur les objets connectés en fait sous-jacents
+du coup c'était difficile de faire évoluer les logiciels
+typiquement SRI dans la gamme ArcGIS a remis à plat en fait ce modèle
+en disant ok on veut que ce soit topologique
+mais on va faire de la contrainte à posteriori par des outils informatiques
+un petit peu comme OSM en disant voilà on ne vous empêche pas de modifier la donnée
+vous pouvez mettre ce que vous voulez
+mais après vous avez des outils de qualité qui peuvent vous aider à revenir
+sur ce qui devrait être légal en termes de positionnement
+et ça a permis justement de pouvoir prendre les objets aussi indépendamment les uns des autres
+parce que quand on a une topologie, quand on tire un polygone
+on tire aussi les lignes, on tire aussi les points
+donc ça a permis aussi de séparer les types d'informations en entités indépendantes
+et après on laisse à l'outillage quelque part le soin de vérifier la cohérence
+de remettre dans la logique de règles d'intégrité ou de corrélation
+après en termes de définition je trouve bien
+que justement on est une définition topologique
+après dans l'utilisation pragmatique c'est autre chose
+mais c'est ce que disait Sylvain en fait
+c'est à dire que si on déplace le point du coup on sait que la ligne
+elle est entretenue ou elle est déduite du point
+on relance la construction des lignes et là du coup on a
+voilà d'où le fait de relancer un petit processus
+qui va remettre les choses
+les problèmes de topologie en SIG de manière générale
+c'est pas spécifique OpenStreetMap ou POSGIS
+c'est la bête noire de tout SIGIST ça
+voilà donc en troisième partie voilà on a vu la partie OSM
+base de données, il y a la partie technique
+qui normalement doit vous permettre de pouvoir rentrer
+un petit peu dans les choses et dans la manipulation
+et dans l'utilisation
+il y avait un troisième point qui était sur la partie data science
+machine learning autour d'OSM des projets d'OSM
+donc il y a des choses déjà qui se font
+il y a des choses qu'on pourrait faire dans différents domaines
+donc on aimerait en présenter et puis en discuter
+ce qui pourra donner éventuellement des échanges après
+je crois qu'il y a un petit bar à côté
+la salle a dû être si c'est ouvert
+ça a l'air
+normal ça a l'air détrouvert
+alors avec Sylvain on a vu quelques
+quelques projets qui peuvent être intéressants
+pour des datas scientistes en manipulation de données SIG
+pour donner des idées ou avoir envie de contribuer
+alors je te laisse parler du premier qui est
+projet statistique
+j'avais déjà montré rapidement
+en fait tout à l'heure là c'est du
+c'est du projet entre guillemets simple
+c'est principalement de croisements géographiques
+enfin cinq croisements géographiques
+mais à l'échelle de la France entière
+ça commence tout de suite à faire des gros jeux de données
+donc c'était une carte des entre guillemets
+enfin ça a été plé zone amapée dans OSM
+donc c'est ce que je vous montrais avec les
+le croisement entre les données OpenStreetMap
+les données de l'INSEE, les données de l'IGM
+sur les routes, les rivières et compagnies
+donc ça c'était en fait
+par exemple le carriage des populations de l'INSEE
+il y a plusieurs millions de carreaux
+et c'est croisé avec je sais plus combien
+de millions de bâtiments qu'on a sur la France
+donc ça fait tout de suite des gros volumes de données
+donc ça c'est des choses qui sont
+ce qui sont très simples à faire
+juste si on travaille sur son quartier
+mais qui à l'échelle de la France
+ça prend tout de suite du temps
+et c'est là où on est bien content d'avoir des grosses bases de données
+du serveur POSGIS qui tourne
+et puis qu'on peut laisser tourner pendant un moment
+autre projet qui est assez intéressant
+t'as mis le lien
+donc vous avez le lien aussi sur le projet
+donc là Open Solar Map
+c'est donc un projet qui était de se dire
+finalement en France
+il n'y a pas beaucoup de soleurs
+le soleur fonctionne mal en France
+alors que dans d'autres pays
+vachement plus ensoleillé comme l'Allemagne
+du coup ça marche vachement bien
+donc qu'est ce qu'on pourrait faire pour améliorer
+les choses en France
+déjà avoir une idée du potentiel en termes de toits
+et pouvoir éventuellement proposer aux gens
+aux communes en tout cas de dire
+voilà le potentiel réel sur votre secteur
+en termes de pose de panneaux solaires
+donc là il y a eu une extraction des données de bâtis
+donc on a les bâtiments qui sont dessinés
+on a eu un de l'analyse d'image
+qui se rajoute par-dessus
+à partir d'images aériennes
+et il y a eu deux phases dans le projet
+en fait la première phase qui avait été présentée
+ils avaient d'ailleurs gagné je ne sais plus
+quelle prix d'innovation il y a deux ans
+donc la première phase c'était basé sur un interface
+qui s'appelle le map roulette
+qui est de proposer des modifications
+des validations d'objets
+vous avez un objet
+puis il faut dire est-ce que c'est une maison
+est-ce que c'est une piscine ou un truc comme ça
+vous cliquez le bon truc
+ça enregistre dans la base
+donc là vous allez sur le site
+on vous zoom sur une zone
+avec un contour de bâtiment
+puis on vous demande en dessous
+vous avez trois ou quatre propositions de type de toit
+et il faut cliquer sur le type de toit
+donc est-ce que c'est des pentes
+deux battants de chaque côté comme ça
+est-ce que c'est dans ce sens-là
+est-ce que c'est A4
+ou est-ce que c'est un toit plat
+est-ce qu'on n'y arrive pas
+donc ça permet assez rapidement
+comme ça de définir les types de toit
+de pas mal de bâtiments
+donc ça c'était la première partie
+mais qui demande un travail manuel
+systématique
+et en fait avec
+donc c'est une équipe de data scientist
+qui bosse pour le ministère
+là pour les talab
+puis là-dedans ils se sont dit
+tiens mais en fait on est capable
+aussi de faire de l'analyse d'image
+et de reconnaître des choses
+sur des images aériennes
+et donc la deuxième partie
+ils ont mis en place un algorithme
+qui est tout documenté
+sur le site internet
+il y a même l'accès au dépôt GitHub
+avec tout le code
+tout ce qu'il faut pour pouvoir comprendre
+et remettre en place
+et donc là ils analysent des images
+et ils sont capables
+dans plus de 80% des cas
+d'interpréter correctement
+le type de toit et l'orientation des toits
+donc à l'échelle de la France
+vous imaginez
+en termes de travail manuel derrière
+ça diminue énormément
+il y a un algorithme comme ça
+donc ça c'est quelque chose d'assez intéressant
+à les regarder
+si vous avez envie d'avancer un petit peu
+d'intéresser à ce genre de choses
+faut aller regarder le dépôt GitHub
+oui après il y a un deuxième projet
+justement
+alors qu'il vise à enrichir un petit peu la donnée
+ou de valider en fait la donnée
+il y a beaucoup de choses qui peuvent être faites
+je pense en machine learning
+pour l'amélioration de la qualité
+il manque des objets
+où on devrait avoir ce genre de choses
+c'est des choses que les modèles mathématiques
+pourraient apprendre et pourraient aider
+pour valider la base de données
+ou travailler sur la qualité de la base de données
+la DIP OSM
+justement c'est un
+c'est un projet qui utilise du CNN
+CNN TensorFlow
+qui permet justement de pouvoir classer
+classifier en fait des objets
+à partir des images satellites
+ou le type de route
+pour pouvoir ajouter en fait
+des attributs
+ou de modifier la forme en fait
+voilà
+donc je crois qu'ils sont partis au départ
+sur la prédiction de route
+et ils ont des ambitions un petit peu plus général
+haute projet intéressant
+alors petit Tizign
+normalement il devrait y avoir
+dans l'année une conf
+beaucoup plus poussée sur la thématique
+donc Mapillaries
+c'est une entreprise
+qui récolte
+des photos
+prises sur le terrain
+donc pour ça ils ont fait une appli
+qui s'installe sur smartphone
+ils vous envoient gratuitement aussi
+un support smartphone
+pour barbrice de voiture
+ou pour mettre sur votre véo
+vous caler votre smartphone dessus
+vous lancez l'appli
+et en fait
+il prend des photos
+tous les 5 mètres
+toutes les photos sont géoréférencées
+et avec l'orientation de prise de vue
+ensuite vous envoyez tout ça
+sur leur serveur
+c'est de la donnée
+elle est mise sous licence ouverte
+c'est réutilisable
+dans le projet OpenStreetMap
+notamment comme données de base
+pour pouvoir vérifier des choses
+parce que quand vous allez sur le terrain
+souvent on oublie de noter la couleur du banc
+ou la taille du lampadaire
+là on va voir sur les photos
+c'est bien un banc vert
+ou c'est un banc marron
+donc il y a un retour à la communauté
+et donc en plus de ça
+pour pouvoir faire un truc
+un peu à la Google Street View
+il y a des obligations légales
+de flouter les plats
+de l'imatriculation des voitures
+de flouter les visages
+donc ils ont développé des algorithmes
+de machine learning là dessus
+pour faire la reconnaissance d'objet
+et si on est capable
+de reconnaître une personne
+et de reconnaître une voiture
+finalement on arrive à détecter
+d'autres objets plus simples
+comme des panneaux de signalisation
+qui ont toujours la même forme
+avec de l'écriture normalisée
+des choses comme ça
+et donc ils ont mis en place
+un tas d'outils
+qui extrait automatiquement
+des images qu'on envoie
+les panneaux de signalisation
+les lampadaires
+vraiment la totalité des trucs
+qui s'extraire d'images
+d'une série d'images différentes
+des objets avec leur position
+physique sur le terrain
+et les attributs qu'il faut leur associer
+Oui alors ça c'est
+d'une manière du coup
+c'est plus une proposition
+actuellement dans la base OSM
+il y a très peu
+c'est grandissant
+ça avance de façon exponentielle
+de points d'hydrants
+les points d'hydrants c'est les bouches d'incendie
+en fait qui sont utilisées
+pour éteindre les incendies par les pompiers
+alors les pompiers ont bien sûr leur base de données
+mais d'un autre côté
+si on peut aussi les aider
+ou aller plus loin en termes de saisies
+voilà
+donc là typiquement à Lyon
+il n'y avait pas grand chose il y a un an
+là il y a quelqu'un du ZDIS apparemment
+qui agisse sur le territoire
+là entre la semaine dernière
+et aujourd'hui il y a déjà tout un pan
+d'après-skill qui a été saisie
+voilà et donc moi c'est un projet
+sur lequel j'ai envie de travailler
+j'ai un peu avancé sur la partie inferences
+et caractérisation du territoire
+sur les hydrants
+mais l'idée ce serait de dire
+voilà on a un emplacement sur le territoire
+sur lequel on a des rues, des bâtiments etc.
+d'essayer de faire une cartographie spatiale
+locale des objets qui sont autour
+et puis de faire travailler un algorithme
+de machine learning
+pour essayer de prédire la probabilité
+qu'à cet endroit y ait un hydrant
+voilà ce qui permettrait à la fois
+de détecter des anomalies
+ou qui permettrait de voir
+si justement à certains moments
+il manque pas des choses
+alors là ce site web
+c'est un site web qui a été fait
+par un allemand je crois
+il représente en fait la taille
+autour de l'hydrant
+il représente la taille du tuyau
+que peuvent avoir en fait les pompiers
+pour éteindre les feux
+donc ça suit quand même un schéma
+et les hydrants
+les emplacements d'hydrant mais
+donc du coup on peut se représenter
+justement s'il y a des bâtiments
+voilà que le tuyau fait
+30 mètres
+et bien il y en a peut-être
+dans les zones vides
+puisque les pompiers pourront
+peut-être pas forcément
+l'atteindre avec leurs tuyaux
+voilà donc
+l'intérêt d'un projet comme ça
+c'est aussi les pompiers ils ont
+des services exigés
+ils ont toutes les données qui sont bien
+référencées, bien localisées
+mais dans tout ce qui est des petites communes
+où il n'y a pas grand monde
+en service de mairie
+ou dans les autres services
+ils n'ont pas forcément de cartographie
+des lieux
+donc eux ils connaissent sur le terrain
+juste dans leur commune
+ils savent à quel endroit il y a une borne incendie
+mais ça reste juste de la connaissance
+pratique de terrain
+et ce n'est pas documenté c'est nulle part
+mais c'est juste de la connaissance
+de pompiers
+les formats de données
+et si chacun a son système exigé
+les formats de données
+ne sont pas forcément toujours les mêmes
+et ne sont pas directement
+joignables les uns sur les autres
+et il n'y a qu'à voir en été
+il y a toujours des pompiers
+de plein de régions de France
+qui vont se faire
+une semaine ou deux
+d'extinction de feu de forêt
+dans le sud de la France
+il n'y a pas de base
+au niveau national
+ou même international
+il n'y a aucun endroit
+où les pompiers auraient une base centrale
+avec toutes les données
+et c'est quand même vachement pratique
+si on peut charger facilement
+sur les gps, des pompiers
+ou autre
+maintenant en smartphone
+je pense qu'il les vérifie quand même
+oui non ça ne s'empêche pas de vérifier
+mais si on a une open script map
+sert déjà
+de base de référence pour des adresses
+on peut très bien imaginer
+que si on arrive à leur proposer
+ce service
+d'avoir une base
+avec des bornes incendies
+ça intéresse pas mal de monde
+notamment en dehors
+des grandes agglomérations
+voilà et puis en même temps
+d'une manière générale
+c'est aussi travailler sur la qualité
+des données en fait
+open script map a beaucoup de données
+il y a beaucoup de données
+globalement
+ça converge vers une bonne saisie global
+mais il y a encore des choses qui ne vont pas
+il y a encore des choses qui sont très précises
+d'un côté pas assez de l'autre
+donc travailler aussi avec des algorithmes
+de machine learning
+permettrait d'améliorer significativement
+quelque part la vision
+ou la lisibilité de la qualité de la donnée
+si on arrive à faire des modèles
+qui prennent en charge
+qui donnent une vision quelque part
+en fonction du territoire de la localité
+en urbain est-ce qu'on est en
+eh bien on pourrait avancer
+de façon plus pertinente en fait
+sur l'amélioration de la qualité
+pour le projet
+alors c'est valable pour open script map
+et c'est aussi valable aussi pour d'autres données
+voilà donc c'est des projets
+moi c'est un projet sur lequel j'ai envie d'avancer
+donc s'il y a des motivés
+ou s'il y a des gens qui ont des idées
+ou qui ont plus de compétences
+et qui veulent travailler sur ce genre de choses
+donc voilà j'ai un peu avancé
+sur la partie traitement de données en masse
+sur des modèles un peu importants
+eh bien il faut de la data pour arriver à faire converger
+donc ça c'est la première étape
+et puis la deuxième étape après c'est de
+voilà donc on a des solutions
+la d'indexation par proximité
+des choses assez efficaces
+donc après il faut brancher ça
+avec des algos de machine learning
+choisir les modèles, choisir les zones
+choisir les tests 7, arriver à trouver les bonnes features
+il y aura des features géographiques
+il y aura peut-être aussi d'autres features
+et puis de voir un petit peu
+si c'est possible de faire
+pour aider les pompiers
+ou aider la base USM sur les idrants
+j'ai vu qu'il y avait une proposition
+qui était relancée
+ah ouais
+et puis peut-être qu'en favorisant
+ce genre de nouveaux usages
+on peut faire adopter ce nouveau schéma
+parce qu'il est
+dans un sens plus visible
+et qu'il permet beaucoup plus de choses
+et pas que sur les idrants
+ça peut être intéressant
+donc ça veut dire qu'on va
+se taper la compatibilité
+le temps qu'il change tout ça
+donc il faudra
+il n'y a pas d'édition automatique
+sur OpenTrickMap
+il y aura un moment qui aura visu
+mais les tags
+sont un certain temps bizarre pour lui
+qu'il faut pas rester comme ça
+il peut y avoir effectivement
+le mix tag
+il peut y avoir
+en termes de features
+mais c'est vrai que si on arrive après en masse
+à avoir une masse critique quelque part
+en termes de saisies
+après naturellement les gens viendront saisir
+ou viendront ajouter
+ou l'utiliseront en référence
+ce qui est bien pour tout le monde
+si vous êtes intéressé
+pour participer
+on se retrouve normalement
+pour boire un verre
+juste à côté en bas
+en sortant à gauche
+à MROC
+normalement
+c'est ouvert il y a 15 jours
+je crois quelque chose comme ça
+donc c'est bon
+il y a un mois c'était
+encore fermé mais normalement
+on peut y aller
+si vous avez d'autres initiatives
+toutes propositions de projets
+n'hésitez pas
+j'ai une dernière question
+est-ce qu'il y a des gens techniques
+de chez Datalio
+dans la salle
+oui
+on peut se voir
+voilà c'était juste personnel
+merci
+merci beaucoup
+merci
+je dois partir à l'anniversaire
+je vais par rapport aux hydrants

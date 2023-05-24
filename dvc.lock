@@ -1,19 +1,818 @@
 schema: '2.0'
 stages:
   get_audio_from_url@1:
-    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Techniques pour améliorer
-      son éligibilité pour travailler dans la data.mp3\" \"https://www.youtube.com/watch?v=N-7zRvzRr0I\"\
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : Présentation
+      Amazon WS et prédiction RedShift et ML.mp3\" \"https://www.youtube.com/watch?v=JksDTeEvlK8\"\
       \n"
     deps:
     - path: data/.initial_dvc_dep.md
       md5: a0456f91466d915a0825e4976bd8f1fa
       size: 170
     outs:
-    - path: data/audio/Techniques pour améliorer son éligibilité pour travailler dans
-        la data.mp3
-      md5: 1c2a9acc007cb9d821dfd92529f9e8a8
-      size: 53765593
+    - path: 'data/audio/Lyon Data Science : Présentation Amazon WS et prédiction RedShift
+        et ML.mp3'
+      md5: 7c6610b2d206638648cabc65d9225c9f
+      size: 93533254
   get_audio_from_url@0:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science - Meetup
+      #3.mp3\" \"https://www.youtube.com/watch?v=ZwMZI-3gAus\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: 'data/audio/Lyon Data Science - Meetup #3.mp3'
+      md5: 216f05bbe39f2eff469a6c15ccf96048
+      size: 61725486
+  get_audio_from_url@2:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : Les
+      ressources indispensables pour débuter en Big Data - Machine Learning !.mp3\"\
+      \ \"https://www.youtube.com/watch?v=LnmoOvuu-Ek\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: 'data/audio/Lyon Data Science : Les ressources indispensables pour débuter
+        en Big Data - Machine Learning !.mp3'
+      md5: 1fda60a9c98405268508cb8147835819
+      size: 55876614
+  transcript_audio@0:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science - Meetup #3.mp3\"\n"
+    deps:
+    - path: 'data/audio/Lyon Data Science - Meetup #3.mp3'
+      md5: 216f05bbe39f2eff469a6c15ccf96048
+      size: 61725486
+    outs:
+    - path: 'data/transcripts/Lyon Data Science - Meetup #3.txt'
+      md5: ce2f297a0df2146c9a39bccaccebd103
+      size: 60362
+  transcript_audio@1:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : Présentation Amazon WS et prédiction RedShift
+      et ML.mp3\"\n"
+    deps:
+    - path: 'data/audio/Lyon Data Science : Présentation Amazon WS et prédiction RedShift
+        et ML.mp3'
+      md5: 7c6610b2d206638648cabc65d9225c9f
+      size: 93533254
+    outs:
+    - path: 'data/transcripts/Lyon Data Science : Présentation Amazon WS et prédiction
+        RedShift et ML.txt'
+      md5: 45b96e341aca9971127e76041ac5f478
+      size: 63683
+  transcript_audio@2:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : Les ressources indispensables pour débuter
+      en Big Data - Machine Learning !.mp3\"\n"
+    deps:
+    - path: 'data/audio/Lyon Data Science : Les ressources indispensables pour débuter
+        en Big Data - Machine Learning !.mp3'
+      md5: 1fda60a9c98405268508cb8147835819
+      size: 55876614
+    outs:
+    - path: 'data/transcripts/Lyon Data Science : Les ressources indispensables pour
+        débuter en Big Data - Machine Learning !.txt'
+      md5: e51d80f4aa6c6f9f0aa6f38253405c25
+      size: 57334
+  summarize_transcript@0:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science - Meetup #3.txt\" --output_summary_file_path \"data/summaries/Lyon
+      Data Science - Meetup #3.txt\"\n"
+    deps:
+    - path: 'data/transcripts/Lyon Data Science - Meetup #3.txt'
+      md5: ce2f297a0df2146c9a39bccaccebd103
+      size: 60362
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: 'data/summaries/Lyon Data Science - Meetup #3.txt'
+      md5: ef0363233d095731bb0d90515ff2b417
+      size: 650
+  summarize_transcript@2:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : Les ressources indispensables pour débuter en Big Data - Machine
+      Learning !.txt\" --output_summary_file_path \"data/summaries/Lyon Data Science
+      : Les ressources indispensables pour débuter en Big Data - Machine Learning
+      !.txt\"\n"
+    deps:
+    - path: 'data/transcripts/Lyon Data Science : Les ressources indispensables pour
+        débuter en Big Data - Machine Learning !.txt'
+      md5: e51d80f4aa6c6f9f0aa6f38253405c25
+      size: 57334
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: 'data/summaries/Lyon Data Science : Les ressources indispensables pour
+        débuter en Big Data - Machine Learning !.txt'
+      md5: b62a29aa1139281b024eddfb67e6df8b
+      size: 520
+  summarize_transcript@1:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : Présentation Amazon WS et prédiction RedShift et ML.txt\" --output_summary_file_path
+      \"data/summaries/Lyon Data Science : Présentation Amazon WS et prédiction RedShift
+      et ML.txt\"\n"
+    deps:
+    - path: 'data/transcripts/Lyon Data Science : Présentation Amazon WS et prédiction
+        RedShift et ML.txt'
+      md5: 45b96e341aca9971127e76041ac5f478
+      size: 63683
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: 'data/summaries/Lyon Data Science : Présentation Amazon WS et prédiction
+        RedShift et ML.txt'
+      md5: 485a4e5f726fce808122df1046de819a
+      size: 649
+  get_description_from_youtube@0:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=ZwMZI-3gAus\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science - Meetup
+      #3.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: 'data/descriptions/Lyon Data Science - Meetup #3.txt'
+      md5: 94afe48249f9d225fbfe56be3bd650df
+      size: 86
+  get_description_from_youtube@1:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=JksDTeEvlK8\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : Présentation
+      Amazon WS et prédiction RedShift et ML.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: 'data/descriptions/Lyon Data Science : Présentation Amazon WS et prédiction
+        RedShift et ML.txt'
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
+  get_description_from_youtube@2:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=LnmoOvuu-Ek\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : Les
+      ressources indispensables pour débuter en Big Data - Machine Learning !.txt\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: 'data/descriptions/Lyon Data Science : Les ressources indispensables pour
+        débuter en Big Data - Machine Learning !.txt'
+      md5: 6db821f222178cb40d188adeb366065d
+      size: 268
+  extract_keywords_from_description_and_summary@2:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : Les ressources indispensables pour débuter en Big Data
+      - Machine Learning !\" --input_description_file_path \"data/descriptions/Lyon
+      Data Science : Les ressources indispensables pour débuter en Big Data - Machine
+      Learning !.txt\" --input_summary_file_path \"data/summaries/Lyon Data Science
+      : Les ressources indispensables pour débuter en Big Data - Machine Learning
+      !.txt\" --output_keywords_file_path \"data/keywords/Lyon Data Science : Les
+      ressources indispensables pour débuter en Big Data - Machine Learning !.txt\"\
+      \n"
+    deps:
+    - path: 'data/descriptions/Lyon Data Science : Les ressources indispensables pour
+        débuter en Big Data - Machine Learning !.txt'
+      md5: 6db821f222178cb40d188adeb366065d
+      size: 268
+    - path: 'data/summaries/Lyon Data Science : Les ressources indispensables pour
+        débuter en Big Data - Machine Learning !.txt'
+      md5: b62a29aa1139281b024eddfb67e6df8b
+      size: 520
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: 'data/keywords/Lyon Data Science : Les ressources indispensables pour
+        débuter en Big Data - Machine Learning !.txt'
+      md5: 797869d235b0e44dc27f3256d7c3dde8
+      size: 288
+  extract_keywords_from_description_and_summary@1:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : Présentation Amazon WS et prédiction RedShift et ML\"
+      --input_description_file_path \"data/descriptions/Lyon Data Science : Présentation
+      Amazon WS et prédiction RedShift et ML.txt\" --input_summary_file_path \"data/summaries/Lyon
+      Data Science : Présentation Amazon WS et prédiction RedShift et ML.txt\" --output_keywords_file_path
+      \"data/keywords/Lyon Data Science : Présentation Amazon WS et prédiction RedShift
+      et ML.txt\"\n"
+    deps:
+    - path: 'data/descriptions/Lyon Data Science : Présentation Amazon WS et prédiction
+        RedShift et ML.txt'
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
+    - path: 'data/summaries/Lyon Data Science : Présentation Amazon WS et prédiction
+        RedShift et ML.txt'
+      md5: 485a4e5f726fce808122df1046de819a
+      size: 649
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: 'data/keywords/Lyon Data Science : Présentation Amazon WS et prédiction
+        RedShift et ML.txt'
+      md5: 42e89e34c5d789e1738bb78070a88904
+      size: 292
+  extract_keywords_from_description_and_summary@0:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science - Meetup #3\" --input_description_file_path \"data/descriptions/Lyon
+      Data Science - Meetup #3.txt\" --input_summary_file_path \"data/summaries/Lyon
+      Data Science - Meetup #3.txt\" --output_keywords_file_path \"data/keywords/Lyon
+      Data Science - Meetup #3.txt\"\n"
+    deps:
+    - path: 'data/descriptions/Lyon Data Science - Meetup #3.txt'
+      md5: 94afe48249f9d225fbfe56be3bd650df
+      size: 86
+    - path: 'data/summaries/Lyon Data Science - Meetup #3.txt'
+      md5: ef0363233d095731bb0d90515ff2b417
+      size: 650
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: 'data/keywords/Lyon Data Science - Meetup #3.txt'
+      md5: 65403fb8e5604a0c6aeabcbd8a8a546b
+      size: 207
+  get_description_from_youtube@5:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=la9J4UpIgeQ\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : Place
+      de R et Python dans les formations en Data Science.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: 'data/descriptions/Lyon Data Science : Place de R et Python dans les formations
+        en Data Science.txt'
+      md5: 0b825299fef9c208082937a3dbbf0118
+      size: 2147
+  get_audio_from_url@5:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : Place
+      de R et Python dans les formations en Data Science.mp3\" \"https://www.youtube.com/watch?v=la9J4UpIgeQ\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: 'data/audio/Lyon Data Science : Place de R et Python dans les formations
+        en Data Science.mp3'
+      md5: a2b34ea3d298b72854820a227d6d90cc
+      size: 90013903
+  transcript_audio@5:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : Place de R et Python dans les formations
+      en Data Science.mp3\"\n"
+    deps:
+    - path: 'data/audio/Lyon Data Science : Place de R et Python dans les formations
+        en Data Science.mp3'
+      md5: a2b34ea3d298b72854820a227d6d90cc
+      size: 90013903
+    outs:
+    - path: 'data/transcripts/Lyon Data Science : Place de R et Python dans les formations
+        en Data Science.txt'
+      md5: 6d39fc4f48b4e69c3a47e740a9d3691d
+      size: 108080
+  summarize_transcript@5:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : Place de R et Python dans les formations en Data Science.txt\"\
+      \ --output_summary_file_path \"data/summaries/Lyon Data Science : Place de R
+      et Python dans les formations en Data Science.txt\"\n"
+    deps:
+    - path: 'data/transcripts/Lyon Data Science : Place de R et Python dans les formations
+        en Data Science.txt'
+      md5: 6d39fc4f48b4e69c3a47e740a9d3691d
+      size: 108080
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: 'data/summaries/Lyon Data Science : Place de R et Python dans les formations
+        en Data Science.txt'
+      md5: 7bdfeca73137ee250f05a35c0023b3e6
+      size: 672
+  extract_keywords_from_description_and_summary@5:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : Place de R et Python dans les formations en Data Science\"\
+      \ --input_description_file_path \"data/descriptions/Lyon Data Science : Place
+      de R et Python dans les formations en Data Science.txt\" --input_summary_file_path
+      \"data/summaries/Lyon Data Science : Place de R et Python dans les formations
+      en Data Science.txt\" --output_keywords_file_path \"data/keywords/Lyon Data
+      Science : Place de R et Python dans les formations en Data Science.txt\"\n"
+    deps:
+    - path: 'data/descriptions/Lyon Data Science : Place de R et Python dans les formations
+        en Data Science.txt'
+      md5: 0b825299fef9c208082937a3dbbf0118
+      size: 2147
+    - path: 'data/summaries/Lyon Data Science : Place de R et Python dans les formations
+        en Data Science.txt'
+      md5: 7bdfeca73137ee250f05a35c0023b3e6
+      size: 672
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: 'data/keywords/Lyon Data Science : Place de R et Python dans les formations
+        en Data Science.txt'
+      md5: 69604419a8f8f78a07645c170f9c7f11
+      size: 242
+  get_audio_from_url@12:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : Présentation
+      de Sagemaker: plateforme ML d'AWS.mp3\" \"https://www.youtube.com/watch?v=P0evji1IMVQ\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: "data/audio/Lyon Data Science : Présentation de Sagemaker: plateforme
+        ML d'AWS.mp3"
+      md5: 9116d176096c786418391995012cdc0b
+      size: 42874878
+  transcript_audio@12:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : Présentation de Sagemaker: plateforme ML
+      d'AWS.mp3\"\n"
+    deps:
+    - path: "data/audio/Lyon Data Science : Présentation de Sagemaker: plateforme
+        ML d'AWS.mp3"
+      md5: 9116d176096c786418391995012cdc0b
+      size: 42874878
+    outs:
+    - path: "data/transcripts/Lyon Data Science : Présentation de Sagemaker: plateforme
+        ML d'AWS.txt"
+      md5: 606c1236f326d1d64536c72da3d41193
+      size: 40615
+  summarize_transcript@12:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : Présentation de Sagemaker: plateforme ML d'AWS.txt\" --output_summary_file_path
+      \"data/summaries/Lyon Data Science : Présentation de Sagemaker: plateforme ML
+      d'AWS.txt\"\n"
+    deps:
+    - path: "data/transcripts/Lyon Data Science : Présentation de Sagemaker: plateforme
+        ML d'AWS.txt"
+      md5: 606c1236f326d1d64536c72da3d41193
+      size: 40615
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: "data/summaries/Lyon Data Science : Présentation de Sagemaker: plateforme
+        ML d'AWS.txt"
+      md5: 6b03ef254a8c9ca7f10cea20f1c12afd
+      size: 706
+  get_audio_from_url@19:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science - Enjeux
+      de l'Intelligence Artificielle.mp3\" \"https://www.youtube.com/watch?v=_6V201z8vWw\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Lyon Data Science - Enjeux de l'Intelligence Artificielle.mp3
+      md5: 6c105d404a5af3aa9d419110d7014ca6
+      size: 33235758
+  transcript_audio@19:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science - Enjeux de l'Intelligence Artificielle.mp3\"\
+      \n"
+    deps:
+    - path: data/audio/Lyon Data Science - Enjeux de l'Intelligence Artificielle.mp3
+      md5: 6c105d404a5af3aa9d419110d7014ca6
+      size: 33235758
+    outs:
+    - path: data/transcripts/Lyon Data Science - Enjeux de l'Intelligence Artificielle.txt
+      md5: 7fafcd684cd3cd9444471cf1911db61a
+      size: 34516
+  summarize_transcript@19:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science - Enjeux de l'Intelligence Artificielle.txt\" --output_summary_file_path
+      \"data/summaries/Lyon Data Science - Enjeux de l'Intelligence Artificielle.txt\"\
+      \n"
+    deps:
+    - path: data/transcripts/Lyon Data Science - Enjeux de l'Intelligence Artificielle.txt
+      md5: 7fafcd684cd3cd9444471cf1911db61a
+      size: 34516
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/Lyon Data Science - Enjeux de l'Intelligence Artificielle.txt
+      md5: fd0e662d878eff27f6e0759c678fcebb
+      size: 1094
+  get_description_from_youtube@13:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=iwdHFssqtIM\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : Quickly
+      build Data Science web apps with Streamlit.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: 'data/descriptions/Lyon Data Science : Quickly build Data Science web
+        apps with Streamlit.txt'
+      md5: 0f191a201e7018aad5559621e303bc9d
+      size: 1578
+  get_audio_from_url@13:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : Quickly
+      build Data Science web apps with Streamlit.mp3\" \"https://www.youtube.com/watch?v=iwdHFssqtIM\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: 'data/audio/Lyon Data Science : Quickly build Data Science web apps with
+        Streamlit.mp3'
+      md5: e92d8eaf1faeaf295b176e5bd2bc46fe
+      size: 63353774
+  transcript_audio@13:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : Quickly build Data Science web apps with
+      Streamlit.mp3\"\n"
+    deps:
+    - path: 'data/audio/Lyon Data Science : Quickly build Data Science web apps with
+        Streamlit.mp3'
+      md5: e92d8eaf1faeaf295b176e5bd2bc46fe
+      size: 63353774
+    outs:
+    - path: 'data/transcripts/Lyon Data Science : Quickly build Data Science web apps
+        with Streamlit.txt'
+      md5: 3014b44d3db70c11336315857b5242a8
+      size: 55014
+  summarize_transcript@13:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : Quickly build Data Science web apps with Streamlit.txt\" --output_summary_file_path
+      \"data/summaries/Lyon Data Science : Quickly build Data Science web apps with
+      Streamlit.txt\"\n"
+    deps:
+    - path: 'data/transcripts/Lyon Data Science : Quickly build Data Science web apps
+        with Streamlit.txt'
+      md5: 3014b44d3db70c11336315857b5242a8
+      size: 55014
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: 'data/summaries/Lyon Data Science : Quickly build Data Science web apps
+        with Streamlit.txt'
+      md5: ddc50e9d92ec4bfadc64778dce77e1b8
+      size: 835
+  extract_keywords_from_description_and_summary@13:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : Quickly build Data Science web apps with Streamlit\" --input_description_file_path
+      \"data/descriptions/Lyon Data Science : Quickly build Data Science web apps
+      with Streamlit.txt\" --input_summary_file_path \"data/summaries/Lyon Data Science
+      : Quickly build Data Science web apps with Streamlit.txt\" --output_keywords_file_path
+      \"data/keywords/Lyon Data Science : Quickly build Data Science web apps with
+      Streamlit.txt\"\n"
+    deps:
+    - path: 'data/descriptions/Lyon Data Science : Quickly build Data Science web
+        apps with Streamlit.txt'
+      md5: 0f191a201e7018aad5559621e303bc9d
+      size: 1578
+    - path: 'data/summaries/Lyon Data Science : Quickly build Data Science web apps
+        with Streamlit.txt'
+      md5: ddc50e9d92ec4bfadc64778dce77e1b8
+      size: 835
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: 'data/keywords/Lyon Data Science : Quickly build Data Science web apps
+        with Streamlit.txt'
+      md5: bce63af3d22bdc1132d977e93b5fa700
+      size: 256
+  get_description_from_youtube@8:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=rjQ1CcHEEF4\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : Data
+      Science en production avec R : quels enjeux ? Quelles solutions?.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: 'data/descriptions/Lyon Data Science : Data Science en production avec
+        R : quels enjeux ? Quelles solutions?.txt'
+      md5: 5c59732f93bad78e6996b21e1600e5ab
+      size: 1141
+  get_audio_from_url@8:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : Data
+      Science en production avec R : quels enjeux ? Quelles solutions?.mp3\" \"https://www.youtube.com/watch?v=rjQ1CcHEEF4\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: 'data/audio/Lyon Data Science : Data Science en production avec R : quels
+        enjeux ? Quelles solutions?.mp3'
+      md5: 2f653ed55acf91a5b6a728312170ac77
+      size: 59658013
+  transcript_audio@8:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : Data Science en production avec R : quels
+      enjeux ? Quelles solutions?.mp3\"\n"
+    deps:
+    - path: 'data/audio/Lyon Data Science : Data Science en production avec R : quels
+        enjeux ? Quelles solutions?.mp3'
+      md5: 2f653ed55acf91a5b6a728312170ac77
+      size: 59658013
+    outs:
+    - path: 'data/transcripts/Lyon Data Science : Data Science en production avec
+        R : quels enjeux ? Quelles solutions?.txt'
+      md5: c325ed48b58be8d3581ef49c06a50783
+      size: 52276
+  summarize_transcript@8:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : Data Science en production avec R : quels enjeux ? Quelles solutions?.txt\"\
+      \ --output_summary_file_path \"data/summaries/Lyon Data Science : Data Science
+      en production avec R : quels enjeux ? Quelles solutions?.txt\"\n"
+    deps:
+    - path: 'data/transcripts/Lyon Data Science : Data Science en production avec
+        R : quels enjeux ? Quelles solutions?.txt'
+      md5: c325ed48b58be8d3581ef49c06a50783
+      size: 52276
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: 'data/summaries/Lyon Data Science : Data Science en production avec R
+        : quels enjeux ? Quelles solutions?.txt'
+      md5: 7447abc270a1c3ade9a37113aa402bd0
+      size: 786
+  get_audio_from_url@3:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science Open
+      Street Map 24-10-2017.mp3\" \"https://www.youtube.com/watch?v=3rnex4E3-sY\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Lyon Data Science Open Street Map 24-10-2017.mp3
+      md5: d5fd0d731454693409096c2ca6fa2132
+      size: 92967604
+  get_audio_from_url@10:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : 7 conseils
+      pour démarrer avec Spark.mp3\" \"https://www.youtube.com/watch?v=8-m461AD5MU\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: 'data/audio/Lyon Data Science : 7 conseils pour démarrer avec Spark.mp3'
+      md5: 42e7375c2f280042668033e818461beb
+      size: 59955313
+  transcript_audio@10:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : 7 conseils pour démarrer avec Spark.mp3\"\
+      \n"
+    deps:
+    - path: 'data/audio/Lyon Data Science : 7 conseils pour démarrer avec Spark.mp3'
+      md5: 42e7375c2f280042668033e818461beb
+      size: 59955313
+    outs:
+    - path: 'data/transcripts/Lyon Data Science : 7 conseils pour démarrer avec Spark.txt'
+      md5: d51a73004c96eb04b5f44bd42510258c
+      size: 48427
+  summarize_transcript@10:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : 7 conseils pour démarrer avec Spark.txt\" --output_summary_file_path
+      \"data/summaries/Lyon Data Science : 7 conseils pour démarrer avec Spark.txt\"\
+      \n"
+    deps:
+    - path: 'data/transcripts/Lyon Data Science : 7 conseils pour démarrer avec Spark.txt'
+      md5: d51a73004c96eb04b5f44bd42510258c
+      size: 48427
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: 'data/summaries/Lyon Data Science : 7 conseils pour démarrer avec Spark.txt'
+      md5: a71add5a5db2a6fd7a0b9e82bcc27304
+      size: 507
+  get_description_from_youtube@6:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=hk5Qz2l4a7Y\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : Milou
+      est à Tintin ce que Rantanplan est à Lucky Luke - NLP & Word Embeddings.txt\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: 'data/descriptions/Lyon Data Science : Milou est à Tintin ce que Rantanplan
+        est à Lucky Luke - NLP & Word Embeddings.txt'
+      md5: 4d8375775e619fdf87ba4b4efc0b611c
+      size: 733
+  get_audio_from_url@4:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science La détection
+      de fraude.mp3\" \"https://www.youtube.com/watch?v=H0DQocQMSFU\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Lyon Data Science La détection de fraude.mp3
+      md5: a2e6b2ff1042d9b47e1201306f8e7f55
+      size: 60984543
+  transcript_audio@4:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science La détection de fraude.mp3\"\n"
+    deps:
+    - path: data/audio/Lyon Data Science La détection de fraude.mp3
+      md5: a2e6b2ff1042d9b47e1201306f8e7f55
+      size: 60984543
+    outs:
+    - path: data/transcripts/Lyon Data Science La détection de fraude.txt
+      md5: b13ea6fb4684e3214bd5997954206e34
+      size: 73245
+  summarize_transcript@4:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science La détection de fraude.txt\" --output_summary_file_path \"data/summaries/Lyon
+      Data Science La détection de fraude.txt\"\n"
+    deps:
+    - path: data/transcripts/Lyon Data Science La détection de fraude.txt
+      md5: b13ea6fb4684e3214bd5997954206e34
+      size: 73245
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/Lyon Data Science La détection de fraude.txt
+      md5: a790b2bde5bc89af7fcaa4102b39b2a7
+      size: 808
+  get_audio_from_url@9:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : AutoML
+      avec R: le tuning de modèles pour paresseux.mp3\" \"https://www.youtube.com/watch?v=65-PmQG_t2g\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: 'data/audio/Lyon Data Science : AutoML avec R: le tuning de modèles pour
+        paresseux.mp3'
+      md5: 29b601f9a00623a67e694b7054d374d2
+      size: 51609113
+  transcript_audio@9:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : AutoML avec R: le tuning de modèles pour
+      paresseux.mp3\"\n"
+    deps:
+    - path: 'data/audio/Lyon Data Science : AutoML avec R: le tuning de modèles pour
+        paresseux.mp3'
+      md5: 29b601f9a00623a67e694b7054d374d2
+      size: 51609113
+    outs:
+    - path: 'data/transcripts/Lyon Data Science : AutoML avec R: le tuning de modèles
+        pour paresseux.txt'
+      md5: afb177d46a0936ec13472716040eea90
+      size: 49433
+  summarize_transcript@9:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : AutoML avec R: le tuning de modèles pour paresseux.txt\" --output_summary_file_path
+      \"data/summaries/Lyon Data Science : AutoML avec R: le tuning de modèles pour
+      paresseux.txt\"\n"
+    deps:
+    - path: 'data/transcripts/Lyon Data Science : AutoML avec R: le tuning de modèles
+        pour paresseux.txt'
+      md5: afb177d46a0936ec13472716040eea90
+      size: 49433
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: 'data/summaries/Lyon Data Science : AutoML avec R: le tuning de modèles
+        pour paresseux.txt'
+      md5: 66ccd5d06572bf8cb6501c96fed982f4
+      size: 924
+  get_audio_from_url@17:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science - Machine
+      Learning en production.mp3\" \"https://www.youtube.com/watch?v=f93yCPq-VMc\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Lyon Data Science - Machine Learning en production.mp3
+      md5: 7956283c6848fe1bacf2b6ac7637b268
+      size: 64755268
+  transcript_audio@17:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science - Machine Learning en production.mp3\"\n"
+    deps:
+    - path: data/audio/Lyon Data Science - Machine Learning en production.mp3
+      md5: 7956283c6848fe1bacf2b6ac7637b268
+      size: 64755268
+    outs:
+    - path: data/transcripts/Lyon Data Science - Machine Learning en production.txt
+      md5: 12749248c06523763d1b5ad1e7ef0ac0
+      size: 53400
+  get_description_from_youtube@18:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=Kh8W4hNCIC8\"\
+      \ --output_description_file_path \"data/descriptions/Efficacité 'réelle' d'un
+      test de catégorisation.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Efficacité 'réelle' d'un test de catégorisation.txt
+      md5: 3552d3ccb6ff43ea5ed1b5eb02fffcdb
+      size: 835
+  get_audio_from_url@18:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Efficacité 'réelle' d'un
+      test de catégorisation.mp3\" \"https://www.youtube.com/watch?v=Kh8W4hNCIC8\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Efficacité 'réelle' d'un test de catégorisation.mp3
+      md5: 8468fbab3e0a098d061a5d0ae4545d42
+      size: 34359983
+  transcript_audio@18:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Efficacité 'réelle' d'un test de catégorisation.mp3\"\n"
+    deps:
+    - path: data/audio/Efficacité 'réelle' d'un test de catégorisation.mp3
+      md5: 8468fbab3e0a098d061a5d0ae4545d42
+      size: 34359983
+    outs:
+    - path: data/transcripts/Efficacité 'réelle' d'un test de catégorisation.txt
+      md5: 806c600886c9ca263ee84c314c565f08
+      size: 23074
+  summarize_transcript@18:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Efficacité
+      'réelle' d'un test de catégorisation.txt\" --output_summary_file_path \"data/summaries/Efficacité
+      'réelle' d'un test de catégorisation.txt\"\n"
+    deps:
+    - path: data/transcripts/Efficacité 'réelle' d'un test de catégorisation.txt
+      md5: 806c600886c9ca263ee84c314c565f08
+      size: 23074
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/Efficacité 'réelle' d'un test de catégorisation.txt
+      md5: 9a96f6719f89ba13c6728140ea0bfd4c
+      size: 739
+  extract_keywords_from_description_and_summary@18:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Efficacité 'réelle' d'un test de catégorisation\" --input_description_file_path
+      \"data/descriptions/Efficacité 'réelle' d'un test de catégorisation.txt\" --input_summary_file_path
+      \"data/summaries/Efficacité 'réelle' d'un test de catégorisation.txt\" --output_keywords_file_path
+      \"data/keywords/Efficacité 'réelle' d'un test de catégorisation.txt\"\n"
+    deps:
+    - path: data/descriptions/Efficacité 'réelle' d'un test de catégorisation.txt
+      md5: 3552d3ccb6ff43ea5ed1b5eb02fffcdb
+      size: 835
+    - path: data/summaries/Efficacité 'réelle' d'un test de catégorisation.txt
+      md5: 9a96f6719f89ba13c6728140ea0bfd4c
+      size: 739
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: data/keywords/Efficacité 'réelle' d'un test de catégorisation.txt
+      md5: eb61c4efcd9836630ef677c27a5bbcc2
+      size: 296
+  get_audio_from_url@23:
     cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Où va la Data Science ?.mp3\"\
       \ \"https://www.youtube.com/watch?v=bONAu-W44b8\"\n"
     deps:
@@ -24,20 +823,79 @@ stages:
     - path: data/audio/Où va la Data Science ?.mp3
       md5: 3d5b1f1998ca2d8021359aa4b032af60
       size: 50911349
-  get_audio_from_url@2:
-    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Le long parcours d'un cas
-      d'usage applicatif en NLP, de 2013 à 2022.mp3\" \"https://www.youtube.com/watch?v=Ki0pKl3TwdU\"\
-      \n"
+  get_description_from_youtube@7:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=H9z6-tqswws\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : Introduction
+      au Machine Learning avec Spark 2.x et Scala.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: 'data/descriptions/Lyon Data Science : Introduction au Machine Learning
+        avec Spark 2.x et Scala.txt'
+      md5: a4d4b6b0c6442aaf1da947ffa6e28f40
+      size: 585
+  get_description_from_youtube@16:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=2xMxUjoi2GU\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science - Prédiction
+      de classements de courses sportives à partir d’estimations locales.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Lyon Data Science - Prédiction de classements de courses
+        sportives à partir d’estimations locales.txt
+      md5: 41cce9ec8a40b04b79ac0e738a2f4da7
+      size: 107
+  get_description_from_youtube@21:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=Ki0pKl3TwdU\"\
+      \ --output_description_file_path \"data/descriptions/Le long parcours d'un cas
+      d'usage applicatif en NLP, de 2013 à 2022.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Le long parcours d'un cas d'usage applicatif en NLP,
+        de 2013 à 2022.txt
+      md5: bab811128c0ae9c11993ac784a959ed8
+      size: 860
+  transcript_audio@3:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science Open Street Map 24-10-2017.mp3\"\n"
+    deps:
+    - path: data/audio/Lyon Data Science Open Street Map 24-10-2017.mp3
+      md5: d5fd0d731454693409096c2ca6fa2132
+      size: 92967604
+    outs:
+    - path: data/transcripts/Lyon Data Science Open Street Map 24-10-2017.txt
+      md5: d00f09dad4c26038ef8bcdf5e07bda90
+      size: 87983
+  get_audio_from_url@6:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : Milou
+      est à Tintin ce que Rantanplan est à Lucky Luke - NLP & Word Embeddings.mp3\"\
+      \ \"https://www.youtube.com/watch?v=hk5Qz2l4a7Y\"\n"
     deps:
     - path: data/.initial_dvc_dep.md
       md5: a0456f91466d915a0825e4976bd8f1fa
       size: 170
     outs:
-    - path: data/audio/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
-        à 2022.mp3
-      md5: 71be69fc2f6efa4b7894115c228dcb74
-      size: 73108602
-  transcript_audio@0:
+    - path: 'data/audio/Lyon Data Science : Milou est à Tintin ce que Rantanplan est
+        à Lucky Luke - NLP & Word Embeddings.mp3'
+      md5: 337b862b8393bfec2cd8d5ea01b1632b
+      size: 78159125
+  transcript_audio@23:
     cmd: "whisper --language French --output_dir data/transcripts --output_format
       txt \"data/audio/Où va la Data Science ?.mp3\"\n"
     deps:
@@ -48,35 +906,7 @@ stages:
     - path: data/transcripts/Où va la Data Science ?.txt
       md5: cc98dec8cc58b34698e57bfd96a796d7
       size: 56095
-  transcript_audio@1:
-    cmd: "whisper --language French --output_dir data/transcripts --output_format
-      txt \"data/audio/Techniques pour améliorer son éligibilité pour travailler dans
-      la data.mp3\"\n"
-    deps:
-    - path: data/audio/Techniques pour améliorer son éligibilité pour travailler dans
-        la data.mp3
-      md5: 1c2a9acc007cb9d821dfd92529f9e8a8
-      size: 53765593
-    outs:
-    - path: data/transcripts/Techniques pour améliorer son éligibilité pour travailler
-        dans la data.txt
-      md5: 0335c5652d5d324aed0c54c6a101532f
-      size: 50377
-  transcript_audio@2:
-    cmd: "whisper --language French --output_dir data/transcripts --output_format
-      txt \"data/audio/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
-      à 2022.mp3\"\n"
-    deps:
-    - path: data/audio/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
-        à 2022.mp3
-      md5: 71be69fc2f6efa4b7894115c228dcb74
-      size: 73108602
-    outs:
-    - path: data/transcripts/Le long parcours d'un cas d'usage applicatif en NLP,
-        de 2013 à 2022.txt
-      md5: 44683aff301a9d6cbb616b52eb3d9fd7
-      size: 63422
-  summarize_transcript@0:
+  summarize_transcript@23:
     cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Où
       va la Data Science ?.txt\" --output_summary_file_path \"data/summaries/Où va
       la Data Science ?.txt\"\n"
@@ -91,7 +921,166 @@ stages:
     - path: data/summaries/Où va la Data Science ?.txt
       md5: c9ec62ad5a6326319aa75889a32463e8
       size: 1197
-  summarize_transcript@2:
+  get_audio_from_url@11:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : L'importance
+      de la normalisation en analyse de données.mp3\" \"https://www.youtube.com/watch?v=ev7r-FdEpd8\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: "data/audio/Lyon Data Science : L'importance de la normalisation en analyse
+        de données.mp3"
+      md5: 6be4746c4bacdbcea29afce3015075d0
+      size: 58510845
+  transcript_audio@11:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : L'importance de la normalisation en analyse
+      de données.mp3\"\n"
+    deps:
+    - path: "data/audio/Lyon Data Science : L'importance de la normalisation en analyse
+        de données.mp3"
+      md5: 6be4746c4bacdbcea29afce3015075d0
+      size: 58510845
+    outs:
+    - path: "data/transcripts/Lyon Data Science : L'importance de la normalisation
+        en analyse de données.txt"
+      md5: 35a2d93b78e75ef60f4cb59cafae5a44
+      size: 57108
+  summarize_transcript@11:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : L'importance de la normalisation en analyse de données.txt\"
+      --output_summary_file_path \"data/summaries/Lyon Data Science : L'importance
+      de la normalisation en analyse de données.txt\"\n"
+    deps:
+    - path: "data/transcripts/Lyon Data Science : L'importance de la normalisation
+        en analyse de données.txt"
+      md5: 35a2d93b78e75ef60f4cb59cafae5a44
+      size: 57108
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: "data/summaries/Lyon Data Science : L'importance de la normalisation en
+        analyse de données.txt"
+      md5: b04a5b8ca04a49bb1ed127b972823257
+      size: 531
+  get_description_from_youtube@20:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=oU03ZE_vaoU\"\
+      \ --output_description_file_path \"data/descriptions/Recommandation de contenus
+      chez 6play.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Recommandation de contenus chez 6play.txt
+      md5: 90b43b80b4fa46ada2762df5001509ba
+      size: 582
+  get_audio_from_url@21:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Le long parcours d'un cas
+      d'usage applicatif en NLP, de 2013 à 2022.mp3\" \"https://www.youtube.com/watch?v=Ki0pKl3TwdU\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
+        à 2022.mp3
+      md5: 71be69fc2f6efa4b7894115c228dcb74
+      size: 73108602
+  get_description_from_youtube@24:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=ei9MpUgEac0\"\
+      \ --output_description_file_path \"data/descriptions/Construire des produits
+      data-driven.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Construire des produits data-driven.txt
+      md5: c70612da8785a2d060268e328a8ff585
+      size: 601
+  get_audio_from_url@24:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Construire des produits
+      data-driven.mp3\" \"https://www.youtube.com/watch?v=ei9MpUgEac0\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Construire des produits data-driven.mp3
+      md5: 6e9df90627a63bb6a779920ceb104d14
+      size: 63124975
+  transcript_audio@24:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Construire des produits data-driven.mp3\"\n"
+    deps:
+    - path: data/audio/Construire des produits data-driven.mp3
+      md5: 6e9df90627a63bb6a779920ceb104d14
+      size: 63124975
+    outs:
+    - path: data/transcripts/Construire des produits data-driven.txt
+      md5: db04f6fa62887a62cba5e046e4a69b07
+      size: 59676
+  summarize_transcript@24:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Construire
+      des produits data-driven.txt\" --output_summary_file_path \"data/summaries/Construire
+      des produits data-driven.txt\"\n"
+    deps:
+    - path: data/transcripts/Construire des produits data-driven.txt
+      md5: db04f6fa62887a62cba5e046e4a69b07
+      size: 59676
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/Construire des produits data-driven.txt
+      md5: fe4ac68514c88e843baa047669db2b6a
+      size: 742
+  extract_keywords_from_description_and_summary@24:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Construire des produits data-driven\" --input_description_file_path \"data/descriptions/Construire
+      des produits data-driven.txt\" --input_summary_file_path \"data/summaries/Construire
+      des produits data-driven.txt\" --output_keywords_file_path \"data/keywords/Construire
+      des produits data-driven.txt\"\n"
+    deps:
+    - path: data/descriptions/Construire des produits data-driven.txt
+      md5: c70612da8785a2d060268e328a8ff585
+      size: 601
+    - path: data/summaries/Construire des produits data-driven.txt
+      md5: fe4ac68514c88e843baa047669db2b6a
+      size: 742
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: data/keywords/Construire des produits data-driven.txt
+      md5: dd38b88652354f88a180a0eded9ffb67
+      size: 269
+  transcript_audio@21:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
+      à 2022.mp3\"\n"
+    deps:
+    - path: data/audio/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
+        à 2022.mp3
+      md5: 71be69fc2f6efa4b7894115c228dcb74
+      size: 73108602
+    outs:
+    - path: data/transcripts/Le long parcours d'un cas d'usage applicatif en NLP,
+        de 2013 à 2022.txt
+      md5: dd11c6f79d6ab43f7476e0b5858705b9
+      size: 64620
+  summarize_transcript@21:
     cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Le
       long parcours d'un cas d'usage applicatif en NLP, de 2013 à 2022.txt\" --output_summary_file_path
       \"data/summaries/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
@@ -99,17 +1088,581 @@ stages:
     deps:
     - path: data/transcripts/Le long parcours d'un cas d'usage applicatif en NLP,
         de 2013 à 2022.txt
-      md5: 44683aff301a9d6cbb616b52eb3d9fd7
-      size: 63422
+      md5: dd11c6f79d6ab43f7476e0b5858705b9
+      size: 64620
     - path: src/summarize_transcript.py
       md5: 8d2a104b345ad2d2b148d3cab6f03db3
       size: 1543
     outs:
     - path: data/summaries/Le long parcours d'un cas d'usage applicatif en NLP, de
         2013 à 2022.txt
-      md5: d32afe1a59ffda7278df0bfbc4c2020e
-      size: 520
-  summarize_transcript@1:
+      md5: 4b2a879742051da9a00da51881a2c612
+      size: 679
+  extract_keywords_from_description_and_summary@21:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Le long parcours d'un cas d'usage applicatif en NLP, de 2013 à 2022\" --input_description_file_path
+      \"data/descriptions/Le long parcours d'un cas d'usage applicatif en NLP, de
+      2013 à 2022.txt\" --input_summary_file_path \"data/summaries/Le long parcours
+      d'un cas d'usage applicatif en NLP, de 2013 à 2022.txt\" --output_keywords_file_path
+      \"data/keywords/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
+      à 2022.txt\"\n"
+    deps:
+    - path: data/descriptions/Le long parcours d'un cas d'usage applicatif en NLP,
+        de 2013 à 2022.txt
+      md5: bab811128c0ae9c11993ac784a959ed8
+      size: 860
+    - path: data/summaries/Le long parcours d'un cas d'usage applicatif en NLP, de
+        2013 à 2022.txt
+      md5: 4b2a879742051da9a00da51881a2c612
+      size: 679
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: data/keywords/Le long parcours d'un cas d'usage applicatif en NLP, de
+        2013 à 2022.txt
+      md5: 4b1cf7c3d9d1e9eb2b2f13f91e723aa8
+      size: 274
+  get_description_from_youtube@14:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=hntw-YG2Wuo\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : What
+      to do before an A|B test? An exploration of offline evaluation methods.txt\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: 'data/descriptions/Lyon Data Science : What to do before an A|B test?
+        An exploration of offline evaluation methods.txt'
+      md5: b00e3a683ba1ecd6f83bc5ab02a91aa4
+      size: 765
+  get_audio_from_url@14:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : What
+      to do before an A|B test? An exploration of offline evaluation methods.mp3\"\
+      \ \"https://www.youtube.com/watch?v=hntw-YG2Wuo\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: 'data/audio/Lyon Data Science : What to do before an A|B test? An exploration
+        of offline evaluation methods.mp3'
+      md5: 0e1ff4c814d5a9dbcd29875fca18dc14
+      size: 27508170
+  transcript_audio@14:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : What to do before an A|B test? An exploration
+      of offline evaluation methods.mp3\"\n"
+    deps:
+    - path: 'data/audio/Lyon Data Science : What to do before an A|B test? An exploration
+        of offline evaluation methods.mp3'
+      md5: 0e1ff4c814d5a9dbcd29875fca18dc14
+      size: 27508170
+    outs:
+    - path: 'data/transcripts/Lyon Data Science : What to do before an A|B test? An
+        exploration of offline evaluation methods.txt'
+      md5: de937057c9cdb71fbfb148ec3291c3cd
+      size: 26726
+  summarize_transcript@14:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : What to do before an A|B test? An exploration of offline evaluation
+      methods.txt\" --output_summary_file_path \"data/summaries/Lyon Data Science
+      : What to do before an A|B test? An exploration of offline evaluation methods.txt\"\
+      \n"
+    deps:
+    - path: 'data/transcripts/Lyon Data Science : What to do before an A|B test? An
+        exploration of offline evaluation methods.txt'
+      md5: de937057c9cdb71fbfb148ec3291c3cd
+      size: 26726
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: 'data/summaries/Lyon Data Science : What to do before an A|B test? An
+        exploration of offline evaluation methods.txt'
+      md5: c2064a7624f2c48e011f4e6ce183ccff
+      size: 467
+  extract_keywords_from_description_and_summary@14:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : What to do before an A|B test? An exploration of offline
+      evaluation methods\" --input_description_file_path \"data/descriptions/Lyon
+      Data Science : What to do before an A|B test? An exploration of offline evaluation
+      methods.txt\" --input_summary_file_path \"data/summaries/Lyon Data Science :
+      What to do before an A|B test? An exploration of offline evaluation methods.txt\"\
+      \ --output_keywords_file_path \"data/keywords/Lyon Data Science : What to do
+      before an A|B test? An exploration of offline evaluation methods.txt\"\n"
+    deps:
+    - path: 'data/descriptions/Lyon Data Science : What to do before an A|B test?
+        An exploration of offline evaluation methods.txt'
+      md5: b00e3a683ba1ecd6f83bc5ab02a91aa4
+      size: 765
+    - path: 'data/summaries/Lyon Data Science : What to do before an A|B test? An
+        exploration of offline evaluation methods.txt'
+      md5: c2064a7624f2c48e011f4e6ce183ccff
+      size: 467
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: 'data/keywords/Lyon Data Science : What to do before an A|B test? An exploration
+        of offline evaluation methods.txt'
+      md5: 68c6d34295b36cb33aebbdab0c318b4e
+      size: 341
+  get_description_from_youtube@12:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=P0evji1IMVQ\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : Présentation
+      de Sagemaker: plateforme ML d'AWS.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: "data/descriptions/Lyon Data Science : Présentation de Sagemaker: plateforme
+        ML d'AWS.txt"
+      md5: 6ccf58783b1277e31d31201561251ec6
+      size: 596
+  extract_keywords_from_description_and_summary@12:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : Présentation de Sagemaker: plateforme ML d'AWS\" --input_description_file_path
+      \"data/descriptions/Lyon Data Science : Présentation de Sagemaker: plateforme
+      ML d'AWS.txt\" --input_summary_file_path \"data/summaries/Lyon Data Science
+      : Présentation de Sagemaker: plateforme ML d'AWS.txt\" --output_keywords_file_path
+      \"data/keywords/Lyon Data Science : Présentation de Sagemaker: plateforme ML
+      d'AWS.txt\"\n"
+    deps:
+    - path: "data/descriptions/Lyon Data Science : Présentation de Sagemaker: plateforme
+        ML d'AWS.txt"
+      md5: 6ccf58783b1277e31d31201561251ec6
+      size: 596
+    - path: "data/summaries/Lyon Data Science : Présentation de Sagemaker: plateforme
+        ML d'AWS.txt"
+      md5: 6b03ef254a8c9ca7f10cea20f1c12afd
+      size: 706
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: "data/keywords/Lyon Data Science : Présentation de Sagemaker: plateforme
+        ML d'AWS.txt"
+      md5: daa91e1dde1bff372f4c2b562437e242
+      size: 307
+  get_audio_from_url@15:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/L'Industrialisation des
+      modèles de machine learning via la conteneurisation.mp3\" \"https://www.youtube.com/watch?v=yvR5N83c7OU\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/L'Industrialisation des modèles de machine learning via la
+        conteneurisation.mp3
+      md5: 70d4b2594a6eef78e07ae6a6cd91ee6a
+      size: 56789018
+  get_description_from_youtube@9:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=65-PmQG_t2g\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : AutoML
+      avec R: le tuning de modèles pour paresseux.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: 'data/descriptions/Lyon Data Science : AutoML avec R: le tuning de modèles
+        pour paresseux.txt'
+      md5: 913a2bd7534c3a57b3d9915e8ab961bc
+      size: 367
+  extract_keywords_from_description_and_summary@9:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : AutoML avec R: le tuning de modèles pour paresseux\"
+      --input_description_file_path \"data/descriptions/Lyon Data Science : AutoML
+      avec R: le tuning de modèles pour paresseux.txt\" --input_summary_file_path
+      \"data/summaries/Lyon Data Science : AutoML avec R: le tuning de modèles pour
+      paresseux.txt\" --output_keywords_file_path \"data/keywords/Lyon Data Science
+      : AutoML avec R: le tuning de modèles pour paresseux.txt\"\n"
+    deps:
+    - path: 'data/descriptions/Lyon Data Science : AutoML avec R: le tuning de modèles
+        pour paresseux.txt'
+      md5: 913a2bd7534c3a57b3d9915e8ab961bc
+      size: 367
+    - path: 'data/summaries/Lyon Data Science : AutoML avec R: le tuning de modèles
+        pour paresseux.txt'
+      md5: 66ccd5d06572bf8cb6501c96fed982f4
+      size: 924
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: 'data/keywords/Lyon Data Science : AutoML avec R: le tuning de modèles
+        pour paresseux.txt'
+      md5: 047bd278034b39b1e59deadf92653391
+      size: 266
+  get_description_from_youtube@4:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=H0DQocQMSFU\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science La détection
+      de fraude.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Lyon Data Science La détection de fraude.txt
+      md5: e94e003675d623f0dc664a6d95c45b49
+      size: 130
+  extract_keywords_from_description_and_summary@4:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science La détection de fraude\" --input_description_file_path
+      \"data/descriptions/Lyon Data Science La détection de fraude.txt\" --input_summary_file_path
+      \"data/summaries/Lyon Data Science La détection de fraude.txt\" --output_keywords_file_path
+      \"data/keywords/Lyon Data Science La détection de fraude.txt\"\n"
+    deps:
+    - path: data/descriptions/Lyon Data Science La détection de fraude.txt
+      md5: e94e003675d623f0dc664a6d95c45b49
+      size: 130
+    - path: data/summaries/Lyon Data Science La détection de fraude.txt
+      md5: a790b2bde5bc89af7fcaa4102b39b2a7
+      size: 808
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: data/keywords/Lyon Data Science La détection de fraude.txt
+      md5: d32dac3f5c02864d36edb3d9f380147b
+      size: 264
+  get_audio_from_url@22:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Techniques pour améliorer
+      son éligibilité pour travailler dans la data.mp3\" \"https://www.youtube.com/watch?v=N-7zRvzRr0I\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Techniques pour améliorer son éligibilité pour travailler dans
+        la data.mp3
+      md5: 1c2a9acc007cb9d821dfd92529f9e8a8
+      size: 53765593
+  get_description_from_youtube@23:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=bONAu-W44b8\"\
+      \ --output_description_file_path \"data/descriptions/Où va la Data Science ?.txt\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Où va la Data Science ?.txt
+      md5: 89219d34357bcca15c8c644ab6bb8a5d
+      size: 1458
+  extract_keywords_from_description_and_summary@23:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Où va la Data Science ?\" --input_description_file_path \"data/descriptions/Où
+      va la Data Science ?.txt\" --input_summary_file_path \"data/summaries/Où va
+      la Data Science ?.txt\" --output_keywords_file_path \"data/keywords/Où va la
+      Data Science ?.txt\"\n"
+    deps:
+    - path: data/descriptions/Où va la Data Science ?.txt
+      md5: 89219d34357bcca15c8c644ab6bb8a5d
+      size: 1458
+    - path: data/summaries/Où va la Data Science ?.txt
+      md5: c9ec62ad5a6326319aa75889a32463e8
+      size: 1197
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: data/keywords/Où va la Data Science ?.txt
+      md5: d5cd6e4a6ced6f5a141b8380f3c9e0b1
+      size: 215
+  get_audio_from_url@20:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Recommandation de contenus
+      chez 6play.mp3\" \"https://www.youtube.com/watch?v=oU03ZE_vaoU\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Recommandation de contenus chez 6play.mp3
+      md5: 8b803dc10e5275380d43dafbd7ee752b
+      size: 50262900
+  transcript_audio@20:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Recommandation de contenus chez 6play.mp3\"\n"
+    deps:
+    - path: data/audio/Recommandation de contenus chez 6play.mp3
+      md5: 8b803dc10e5275380d43dafbd7ee752b
+      size: 50262900
+    outs:
+    - path: data/transcripts/Recommandation de contenus chez 6play.txt
+      md5: 0b4fca356e9b99ea4fa4df313a2d4b8a
+      size: 48127
+  extract_keywords_from_description_and_summary@8:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : Data Science en production avec R : quels enjeux ? Quelles
+      solutions?\" --input_description_file_path \"data/descriptions/Lyon Data Science
+      : Data Science en production avec R : quels enjeux ? Quelles solutions?.txt\"\
+      \ --input_summary_file_path \"data/summaries/Lyon Data Science : Data Science
+      en production avec R : quels enjeux ? Quelles solutions?.txt\" --output_keywords_file_path
+      \"data/keywords/Lyon Data Science : Data Science en production avec R : quels
+      enjeux ? Quelles solutions?.txt\"\n"
+    deps:
+    - path: 'data/descriptions/Lyon Data Science : Data Science en production avec
+        R : quels enjeux ? Quelles solutions?.txt'
+      md5: 5c59732f93bad78e6996b21e1600e5ab
+      size: 1141
+    - path: 'data/summaries/Lyon Data Science : Data Science en production avec R
+        : quels enjeux ? Quelles solutions?.txt'
+      md5: 7447abc270a1c3ade9a37113aa402bd0
+      size: 786
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: 'data/keywords/Lyon Data Science : Data Science en production avec R :
+        quels enjeux ? Quelles solutions?.txt'
+      md5: 82477eacead9ba40f7b919fc2d51e6c6
+      size: 243
+  get_description_from_youtube@10:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=8-m461AD5MU\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : 7 conseils
+      pour démarrer avec Spark.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: 'data/descriptions/Lyon Data Science : 7 conseils pour démarrer avec Spark.txt'
+      md5: 322866576bb14c7c0d8b8901fbc45ca0
+      size: 534
+  extract_keywords_from_description_and_summary@10:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : 7 conseils pour démarrer avec Spark\" --input_description_file_path
+      \"data/descriptions/Lyon Data Science : 7 conseils pour démarrer avec Spark.txt\"\
+      \ --input_summary_file_path \"data/summaries/Lyon Data Science : 7 conseils
+      pour démarrer avec Spark.txt\" --output_keywords_file_path \"data/keywords/Lyon
+      Data Science : 7 conseils pour démarrer avec Spark.txt\"\n"
+    deps:
+    - path: 'data/descriptions/Lyon Data Science : 7 conseils pour démarrer avec Spark.txt'
+      md5: 322866576bb14c7c0d8b8901fbc45ca0
+      size: 534
+    - path: 'data/summaries/Lyon Data Science : 7 conseils pour démarrer avec Spark.txt'
+      md5: a71add5a5db2a6fd7a0b9e82bcc27304
+      size: 507
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: 'data/keywords/Lyon Data Science : 7 conseils pour démarrer avec Spark.txt'
+      md5: 241136c28b9408f605475ad7095430c1
+      size: 223
+  get_audio_from_url@16:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science - Prédiction
+      de classements de courses sportives à partir d’estimations locales.mp3\" \"\
+      https://www.youtube.com/watch?v=2xMxUjoi2GU\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: data/audio/Lyon Data Science - Prédiction de classements de courses sportives
+        à partir d’estimations locales.mp3
+      md5: 40ff7be99ad763e29f6ed25b8aff065c
+      size: 53721741
+  get_audio_from_url@7:
+    cmd: "youtube-dl -x --audio-format mp3 -o \"data/audio/Lyon Data Science : Introduction
+      au Machine Learning avec Spark 2.x et Scala.mp3\" \"https://www.youtube.com/watch?v=H9z6-tqswws\"\
+      \n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    outs:
+    - path: 'data/audio/Lyon Data Science : Introduction au Machine Learning avec
+        Spark 2.x et Scala.mp3'
+      md5: c8676046eb7ff029ddad0cd454e79a8b
+      size: 60760294
+  transcript_audio@7:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : Introduction au Machine Learning avec Spark
+      2.x et Scala.mp3\"\n"
+    deps:
+    - path: 'data/audio/Lyon Data Science : Introduction au Machine Learning avec
+        Spark 2.x et Scala.mp3'
+      md5: c8676046eb7ff029ddad0cd454e79a8b
+      size: 60760294
+    outs:
+    - path: 'data/transcripts/Lyon Data Science : Introduction au Machine Learning
+        avec Spark 2.x et Scala.txt'
+      md5: 87a8ddd7d8c79e32cf72e2c9ffa5698b
+      size: 42956
+  summarize_transcript@7:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : Introduction au Machine Learning avec Spark 2.x et Scala.txt\"\
+      \ --output_summary_file_path \"data/summaries/Lyon Data Science : Introduction
+      au Machine Learning avec Spark 2.x et Scala.txt\"\n"
+    deps:
+    - path: 'data/transcripts/Lyon Data Science : Introduction au Machine Learning
+        avec Spark 2.x et Scala.txt'
+      md5: 87a8ddd7d8c79e32cf72e2c9ffa5698b
+      size: 42956
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: 'data/summaries/Lyon Data Science : Introduction au Machine Learning avec
+        Spark 2.x et Scala.txt'
+      md5: eef624554c86222e908a7ef9a71ac80f
+      size: 595
+  extract_keywords_from_description_and_summary@7:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : Introduction au Machine Learning avec Spark 2.x et Scala\"\
+      \ --input_description_file_path \"data/descriptions/Lyon Data Science : Introduction
+      au Machine Learning avec Spark 2.x et Scala.txt\" --input_summary_file_path
+      \"data/summaries/Lyon Data Science : Introduction au Machine Learning avec Spark
+      2.x et Scala.txt\" --output_keywords_file_path \"data/keywords/Lyon Data Science
+      : Introduction au Machine Learning avec Spark 2.x et Scala.txt\"\n"
+    deps:
+    - path: 'data/descriptions/Lyon Data Science : Introduction au Machine Learning
+        avec Spark 2.x et Scala.txt'
+      md5: a4d4b6b0c6442aaf1da947ffa6e28f40
+      size: 585
+    - path: 'data/summaries/Lyon Data Science : Introduction au Machine Learning avec
+        Spark 2.x et Scala.txt'
+      md5: eef624554c86222e908a7ef9a71ac80f
+      size: 595
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: 'data/keywords/Lyon Data Science : Introduction au Machine Learning avec
+        Spark 2.x et Scala.txt'
+      md5: 639efa3298bed1f1f6b7cb6737ceb5b2
+      size: 253
+  transcript_audio@6:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science : Milou est à Tintin ce que Rantanplan est
+      à Lucky Luke - NLP & Word Embeddings.mp3\"\n"
+    deps:
+    - path: 'data/audio/Lyon Data Science : Milou est à Tintin ce que Rantanplan est
+        à Lucky Luke - NLP & Word Embeddings.mp3'
+      md5: 337b862b8393bfec2cd8d5ea01b1632b
+      size: 78159125
+    outs:
+    - path: 'data/transcripts/Lyon Data Science : Milou est à Tintin ce que Rantanplan
+        est à Lucky Luke - NLP & Word Embeddings.txt'
+      md5: 05de890297c8f67c495cb812cf94668c
+      size: 86164
+  summarize_transcript@6:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science : Milou est à Tintin ce que Rantanplan est à Lucky Luke - NLP &
+      Word Embeddings.txt\" --output_summary_file_path \"data/summaries/Lyon Data
+      Science : Milou est à Tintin ce que Rantanplan est à Lucky Luke - NLP & Word
+      Embeddings.txt\"\n"
+    deps:
+    - path: 'data/transcripts/Lyon Data Science : Milou est à Tintin ce que Rantanplan
+        est à Lucky Luke - NLP & Word Embeddings.txt'
+      md5: 05de890297c8f67c495cb812cf94668c
+      size: 86164
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: 'data/summaries/Lyon Data Science : Milou est à Tintin ce que Rantanplan
+        est à Lucky Luke - NLP & Word Embeddings.txt'
+      md5: 8a4b7303c6504b6852629d955f90c755
+      size: 1298
+  extract_keywords_from_description_and_summary@6:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : Milou est à Tintin ce que Rantanplan est à Lucky Luke
+      - NLP & Word Embeddings\" --input_description_file_path \"data/descriptions/Lyon
+      Data Science : Milou est à Tintin ce que Rantanplan est à Lucky Luke - NLP &
+      Word Embeddings.txt\" --input_summary_file_path \"data/summaries/Lyon Data Science
+      : Milou est à Tintin ce que Rantanplan est à Lucky Luke - NLP & Word Embeddings.txt\"\
+      \ --output_keywords_file_path \"data/keywords/Lyon Data Science : Milou est
+      à Tintin ce que Rantanplan est à Lucky Luke - NLP & Word Embeddings.txt\"\n"
+    deps:
+    - path: 'data/descriptions/Lyon Data Science : Milou est à Tintin ce que Rantanplan
+        est à Lucky Luke - NLP & Word Embeddings.txt'
+      md5: 4d8375775e619fdf87ba4b4efc0b611c
+      size: 733
+    - path: 'data/summaries/Lyon Data Science : Milou est à Tintin ce que Rantanplan
+        est à Lucky Luke - NLP & Word Embeddings.txt'
+      md5: 8a4b7303c6504b6852629d955f90c755
+      size: 1298
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: 'data/keywords/Lyon Data Science : Milou est à Tintin ce que Rantanplan
+        est à Lucky Luke - NLP & Word Embeddings.txt'
+      md5: 44e678510834191da50c81e5300c949c
+      size: 292
+  transcript_audio@15:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/L'Industrialisation des modèles de machine learning via la
+      conteneurisation.mp3\"\n"
+    deps:
+    - path: data/audio/L'Industrialisation des modèles de machine learning via la
+        conteneurisation.mp3
+      md5: 70d4b2594a6eef78e07ae6a6cd91ee6a
+      size: 56789018
+    outs:
+    - path: data/transcripts/L'Industrialisation des modèles de machine learning via
+        la conteneurisation.txt
+      md5: 14b4f7a4b21c7056e7e6117499679422
+      size: 47659
+  summarize_transcript@15:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/L'Industrialisation
+      des modèles de machine learning via la conteneurisation.txt\" --output_summary_file_path
+      \"data/summaries/L'Industrialisation des modèles de machine learning via la
+      conteneurisation.txt\"\n"
+    deps:
+    - path: data/transcripts/L'Industrialisation des modèles de machine learning via
+        la conteneurisation.txt
+      md5: 14b4f7a4b21c7056e7e6117499679422
+      size: 47659
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/L'Industrialisation des modèles de machine learning via
+        la conteneurisation.txt
+      md5: 00b5f2d068a877a8d4f7654ff16ab6c2
+      size: 1050
+  transcript_audio@22:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Techniques pour améliorer son éligibilité pour travailler dans
+      la data.mp3\"\n"
+    deps:
+    - path: data/audio/Techniques pour améliorer son éligibilité pour travailler dans
+        la data.mp3
+      md5: 1c2a9acc007cb9d821dfd92529f9e8a8
+      size: 53765593
+    outs:
+    - path: data/transcripts/Techniques pour améliorer son éligibilité pour travailler
+        dans la data.txt
+      md5: 0335c5652d5d324aed0c54c6a101532f
+      size: 50377
+  summarize_transcript@22:
     cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Techniques
       pour améliorer son éligibilité pour travailler dans la data.txt\" --output_summary_file_path
       \"data/summaries/Techniques pour améliorer son éligibilité pour travailler dans
@@ -127,10 +1680,10 @@ stages:
         dans la data.txt
       md5: 8e24fe56cdf39e4754c273ac133db0fe
       size: 964
-  get_description_from_youtube@0:
-    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=bONAu-W44b8\"\
-      \ --output_description_file_path \"data/descriptions/Où va la Data Science ?.txt\"\
-      \n"
+  get_description_from_youtube@19:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=_6V201z8vWw\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science - Enjeux
+      de l'Intelligence Artificielle.txt\"\n"
     deps:
     - path: data/.initial_dvc_dep.md
       md5: a0456f91466d915a0825e4976bd8f1fa
@@ -139,10 +1692,140 @@ stages:
       md5: 27f3274c59803908da0561b9cca7c98e
       size: 706
     outs:
-    - path: data/descriptions/Où va la Data Science ?.txt
-      md5: 89219d34357bcca15c8c644ab6bb8a5d
-      size: 1458
-  get_description_from_youtube@1:
+    - path: data/descriptions/Lyon Data Science - Enjeux de l'Intelligence Artificielle.txt
+      md5: 637d1655a415046f2d07afaa6706b63d
+      size: 436
+  summarize_transcript@20:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Recommandation
+      de contenus chez 6play.txt\" --output_summary_file_path \"data/summaries/Recommandation
+      de contenus chez 6play.txt\"\n"
+    deps:
+    - path: data/transcripts/Recommandation de contenus chez 6play.txt
+      md5: 0b4fca356e9b99ea4fa4df313a2d4b8a
+      size: 48127
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/Recommandation de contenus chez 6play.txt
+      md5: 5e5222bf489d5e6d4d4f08947c257cdc
+      size: 703
+  extract_keywords_from_description_and_summary@20:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Recommandation de contenus chez 6play\" --input_description_file_path \"data/descriptions/Recommandation
+      de contenus chez 6play.txt\" --input_summary_file_path \"data/summaries/Recommandation
+      de contenus chez 6play.txt\" --output_keywords_file_path \"data/keywords/Recommandation
+      de contenus chez 6play.txt\"\n"
+    deps:
+    - path: data/descriptions/Recommandation de contenus chez 6play.txt
+      md5: 90b43b80b4fa46ada2762df5001509ba
+      size: 582
+    - path: data/summaries/Recommandation de contenus chez 6play.txt
+      md5: 5e5222bf489d5e6d4d4f08947c257cdc
+      size: 703
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: data/keywords/Recommandation de contenus chez 6play.txt
+      md5: e64fd420082e614545402e751f1fef8f
+      size: 242
+  transcript_audio@16:
+    cmd: "whisper --language French --output_dir data/transcripts --output_format
+      txt \"data/audio/Lyon Data Science - Prédiction de classements de courses sportives
+      à partir d’estimations locales.mp3\"\n"
+    deps:
+    - path: data/audio/Lyon Data Science - Prédiction de classements de courses sportives
+        à partir d’estimations locales.mp3
+      md5: 40ff7be99ad763e29f6ed25b8aff065c
+      size: 53721741
+    outs:
+    - path: data/transcripts/Lyon Data Science - Prédiction de classements de courses
+        sportives à partir d’estimations locales.txt
+      md5: c654f0d3634beca647ec65bca7afd0bf
+      size: 52874
+  summarize_transcript@16:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science - Prédiction de classements de courses sportives à partir d’estimations
+      locales.txt\" --output_summary_file_path \"data/summaries/Lyon Data Science
+      - Prédiction de classements de courses sportives à partir d’estimations locales.txt\"\
+      \n"
+    deps:
+    - path: data/transcripts/Lyon Data Science - Prédiction de classements de courses
+        sportives à partir d’estimations locales.txt
+      md5: c654f0d3634beca647ec65bca7afd0bf
+      size: 52874
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/Lyon Data Science - Prédiction de classements de courses
+        sportives à partir d’estimations locales.txt
+      md5: fa35b8008cb6c7655450472f69523d47
+      size: 1156
+  get_description_from_youtube@15:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=yvR5N83c7OU\"\
+      \ --output_description_file_path \"data/descriptions/L'Industrialisation des
+      modèles de machine learning via la conteneurisation.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/L'Industrialisation des modèles de machine learning
+        via la conteneurisation.txt
+      md5: 24748195f861e455a6cb4d04dfcbab45
+      size: 1023
+  extract_keywords_from_description_and_summary@15:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"L'Industrialisation des modèles de machine learning via la conteneurisation\"\
+      \ --input_description_file_path \"data/descriptions/L'Industrialisation des
+      modèles de machine learning via la conteneurisation.txt\" --input_summary_file_path
+      \"data/summaries/L'Industrialisation des modèles de machine learning via la
+      conteneurisation.txt\" --output_keywords_file_path \"data/keywords/L'Industrialisation
+      des modèles de machine learning via la conteneurisation.txt\"\n"
+    deps:
+    - path: data/descriptions/L'Industrialisation des modèles de machine learning
+        via la conteneurisation.txt
+      md5: 24748195f861e455a6cb4d04dfcbab45
+      size: 1023
+    - path: data/summaries/L'Industrialisation des modèles de machine learning via
+        la conteneurisation.txt
+      md5: 00b5f2d068a877a8d4f7654ff16ab6c2
+      size: 1050
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: data/keywords/L'Industrialisation des modèles de machine learning via
+        la conteneurisation.txt
+      md5: 08386060cde768718fbb612aad15ae88
+      size: 242
+  extract_keywords_from_description_and_summary@19:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science - Enjeux de l'Intelligence Artificielle\" --input_description_file_path
+      \"data/descriptions/Lyon Data Science - Enjeux de l'Intelligence Artificielle.txt\"\
+      \ --input_summary_file_path \"data/summaries/Lyon Data Science - Enjeux de l'Intelligence
+      Artificielle.txt\" --output_keywords_file_path \"data/keywords/Lyon Data Science
+      - Enjeux de l'Intelligence Artificielle.txt\"\n"
+    deps:
+    - path: data/descriptions/Lyon Data Science - Enjeux de l'Intelligence Artificielle.txt
+      md5: 637d1655a415046f2d07afaa6706b63d
+      size: 436
+    - path: data/summaries/Lyon Data Science - Enjeux de l'Intelligence Artificielle.txt
+      md5: fd0e662d878eff27f6e0759c678fcebb
+      size: 1094
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: data/keywords/Lyon Data Science - Enjeux de l'Intelligence Artificielle.txt
+      md5: 1027c944788757e8c4e7bc3b0d4683c0
+      size: 311
+  get_description_from_youtube@22:
     cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=N-7zRvzRr0I\"\
       \ --output_description_file_path \"data/descriptions/Techniques pour améliorer
       son éligibilité pour travailler dans la data.txt\"\n"
@@ -158,48 +1841,7 @@ stages:
         dans la data.txt
       md5: 24bec0b0c8a3134e0d6658f77e31be53
       size: 1170
-  get_description_from_youtube@2:
-    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=Ki0pKl3TwdU\"\
-      \ --output_description_file_path \"data/descriptions/Le long parcours d'un cas
-      d'usage applicatif en NLP, de 2013 à 2022.txt\"\n"
-    deps:
-    - path: data/.initial_dvc_dep.md
-      md5: a0456f91466d915a0825e4976bd8f1fa
-      size: 170
-    - path: src/get_description_from_youtube.py
-      md5: 27f3274c59803908da0561b9cca7c98e
-      size: 706
-    outs:
-    - path: data/descriptions/Le long parcours d'un cas d'usage applicatif en NLP,
-        de 2013 à 2022.txt
-      md5: bab811128c0ae9c11993ac784a959ed8
-      size: 860
-  extract_keywords_from_description_and_summary@2:
-    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
-      \"Le long parcours d'un cas d'usage applicatif en NLP, de 2013 à 2022\" --input_description_file_path
-      \"data/descriptions/Le long parcours d'un cas d'usage applicatif en NLP, de
-      2013 à 2022.txt\" --input_summary_file_path \"data/summaries/Le long parcours
-      d'un cas d'usage applicatif en NLP, de 2013 à 2022.txt\" --output_keywords_file_path
-      \"data/keywords/Le long parcours d'un cas d'usage applicatif en NLP, de 2013
-      à 2022.txt\"\n"
-    deps:
-    - path: data/descriptions/Le long parcours d'un cas d'usage applicatif en NLP,
-        de 2013 à 2022.txt
-      md5: bab811128c0ae9c11993ac784a959ed8
-      size: 860
-    - path: data/summaries/Le long parcours d'un cas d'usage applicatif en NLP, de
-        2013 à 2022.txt
-      md5: d32afe1a59ffda7278df0bfbc4c2020e
-      size: 520
-    - path: src/extract_keywords_from_description_and_summary.py
-      md5: 6ec96c9b671cd2da7b126c08ee040eb4
-      size: 1889
-    outs:
-    - path: data/keywords/Le long parcours d'un cas d'usage applicatif en NLP, de
-        2013 à 2022.txt
-      md5: a10ca2ced24d6a67fb33798fe0cfd9ca
-      size: 249
-  extract_keywords_from_description_and_summary@1:
+  extract_keywords_from_description_and_summary@22:
     cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
       \"Techniques pour améliorer son éligibilité pour travailler dans la data\" --input_description_file_path
       \"data/descriptions/Techniques pour améliorer son éligibilité pour travailler
@@ -224,23 +1866,171 @@ stages:
         dans la data.txt
       md5: fc1f3b39c5d8df2142d04cb27f5a6f43
       size: 271
-  extract_keywords_from_description_and_summary@0:
-    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
-      \"Où va la Data Science ?\" --input_description_file_path \"data/descriptions/Où
-      va la Data Science ?.txt\" --input_summary_file_path \"data/summaries/Où va
-      la Data Science ?.txt\" --output_keywords_file_path \"data/keywords/Où va la
-      Data Science ?.txt\"\n"
+  get_description_from_youtube@17:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=f93yCPq-VMc\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science - Machine
+      Learning en production.txt\"\n"
     deps:
-    - path: data/descriptions/Où va la Data Science ?.txt
-      md5: 89219d34357bcca15c8c644ab6bb8a5d
-      size: 1458
-    - path: data/summaries/Où va la Data Science ?.txt
-      md5: c9ec62ad5a6326319aa75889a32463e8
-      size: 1197
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Lyon Data Science - Machine Learning en production.txt
+      md5: 8b19b69875aca2d4af4b218acc37696d
+      size: 370
+  summarize_transcript@17:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science - Machine Learning en production.txt\" --output_summary_file_path
+      \"data/summaries/Lyon Data Science - Machine Learning en production.txt\"\n"
+    deps:
+    - path: data/transcripts/Lyon Data Science - Machine Learning en production.txt
+      md5: 12749248c06523763d1b5ad1e7ef0ac0
+      size: 53400
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/Lyon Data Science - Machine Learning en production.txt
+      md5: 67bc6c2362ec3f13ef1e6ae1fdd3404e
+      size: 690
+  extract_keywords_from_description_and_summary@17:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science - Machine Learning en production\" --input_description_file_path
+      \"data/descriptions/Lyon Data Science - Machine Learning en production.txt\"\
+      \ --input_summary_file_path \"data/summaries/Lyon Data Science - Machine Learning
+      en production.txt\" --output_keywords_file_path \"data/keywords/Lyon Data Science
+      - Machine Learning en production.txt\"\n"
+    deps:
+    - path: data/descriptions/Lyon Data Science - Machine Learning en production.txt
+      md5: 8b19b69875aca2d4af4b218acc37696d
+      size: 370
+    - path: data/summaries/Lyon Data Science - Machine Learning en production.txt
+      md5: 67bc6c2362ec3f13ef1e6ae1fdd3404e
+      size: 690
     - path: src/extract_keywords_from_description_and_summary.py
       md5: 6ec96c9b671cd2da7b126c08ee040eb4
       size: 1889
     outs:
-    - path: data/keywords/Où va la Data Science ?.txt
-      md5: d5cd6e4a6ced6f5a141b8380f3c9e0b1
-      size: 215
+    - path: data/keywords/Lyon Data Science - Machine Learning en production.txt
+      md5: 18910b47e6ad8bb6e26ea8a614a382db
+      size: 210
+  extract_keywords_from_description_and_summary@16:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science - Prédiction de classements de courses sportives à partir
+      d’estimations locales\" --input_description_file_path \"data/descriptions/Lyon
+      Data Science - Prédiction de classements de courses sportives à partir d’estimations
+      locales.txt\" --input_summary_file_path \"data/summaries/Lyon Data Science -
+      Prédiction de classements de courses sportives à partir d’estimations locales.txt\"\
+      \ --output_keywords_file_path \"data/keywords/Lyon Data Science - Prédiction
+      de classements de courses sportives à partir d’estimations locales.txt\"\n"
+    deps:
+    - path: data/descriptions/Lyon Data Science - Prédiction de classements de courses
+        sportives à partir d’estimations locales.txt
+      md5: 41cce9ec8a40b04b79ac0e738a2f4da7
+      size: 107
+    - path: data/summaries/Lyon Data Science - Prédiction de classements de courses
+        sportives à partir d’estimations locales.txt
+      md5: fa35b8008cb6c7655450472f69523d47
+      size: 1156
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: data/keywords/Lyon Data Science - Prédiction de classements de courses
+        sportives à partir d’estimations locales.txt
+      md5: cb34ba41a31b4c920bdcb637f0e11dac
+      size: 312
+  get_description_from_youtube@3:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=3rnex4E3-sY\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science Open
+      Street Map 24-10-2017.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: data/descriptions/Lyon Data Science Open Street Map 24-10-2017.txt
+      md5: c7ba94d1b2d8d970d38e94c21b936e43
+      size: 67
+  get_description_from_youtube@11:
+    cmd: "python3 src/get_description_from_youtube.py --input_url \"https://www.youtube.com/watch?v=ev7r-FdEpd8\"\
+      \ --output_description_file_path \"data/descriptions/Lyon Data Science : L'importance
+      de la normalisation en analyse de données.txt\"\n"
+    deps:
+    - path: data/.initial_dvc_dep.md
+      md5: a0456f91466d915a0825e4976bd8f1fa
+      size: 170
+    - path: src/get_description_from_youtube.py
+      md5: 27f3274c59803908da0561b9cca7c98e
+      size: 706
+    outs:
+    - path: "data/descriptions/Lyon Data Science : L'importance de la normalisation
+        en analyse de données.txt"
+      md5: d348cf3c8311528a67338711c2c152e0
+      size: 1167
+  summarize_transcript@3:
+    cmd: "python3 src/summarize_transcript.py --input_transcript_file_path \"data/transcripts/Lyon
+      Data Science Open Street Map 24-10-2017.txt\" --output_summary_file_path \"
+      data/summaries/Lyon Data Science Open Street Map 24-10-2017.txt\"\n"
+    deps:
+    - path: data/transcripts/Lyon Data Science Open Street Map 24-10-2017.txt
+      md5: d00f09dad4c26038ef8bcdf5e07bda90
+      size: 87983
+    - path: src/summarize_transcript.py
+      md5: 8d2a104b345ad2d2b148d3cab6f03db3
+      size: 1543
+    outs:
+    - path: data/summaries/Lyon Data Science Open Street Map 24-10-2017.txt
+      md5: b397d7cad6ec32ba98b21f1a852395c8
+      size: 660
+  extract_keywords_from_description_and_summary@11:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science : L'importance de la normalisation en analyse de données\"\
+      \ --input_description_file_path \"data/descriptions/Lyon Data Science : L'importance
+      de la normalisation en analyse de données.txt\" --input_summary_file_path \"\
+      data/summaries/Lyon Data Science : L'importance de la normalisation en analyse
+      de données.txt\" --output_keywords_file_path \"data/keywords/Lyon Data Science
+      : L'importance de la normalisation en analyse de données.txt\"\n"
+    deps:
+    - path: "data/descriptions/Lyon Data Science : L'importance de la normalisation
+        en analyse de données.txt"
+      md5: d348cf3c8311528a67338711c2c152e0
+      size: 1167
+    - path: "data/summaries/Lyon Data Science : L'importance de la normalisation en
+        analyse de données.txt"
+      md5: b04a5b8ca04a49bb1ed127b972823257
+      size: 531
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: "data/keywords/Lyon Data Science : L'importance de la normalisation en
+        analyse de données.txt"
+      md5: a06f35c3696cda2fd6890ccf2dce3dcd
+      size: 276
+  extract_keywords_from_description_and_summary@3:
+    cmd: "python3 src/extract_keywords_from_description_and_summary.py --input_title
+      \"Lyon Data Science Open Street Map 24-10-2017\" --input_description_file_path
+      \"data/descriptions/Lyon Data Science Open Street Map 24-10-2017.txt\" --input_summary_file_path
+      \"data/summaries/Lyon Data Science Open Street Map 24-10-2017.txt\" --output_keywords_file_path
+      \"data/keywords/Lyon Data Science Open Street Map 24-10-2017.txt\"\n"
+    deps:
+    - path: data/descriptions/Lyon Data Science Open Street Map 24-10-2017.txt
+      md5: c7ba94d1b2d8d970d38e94c21b936e43
+      size: 67
+    - path: data/summaries/Lyon Data Science Open Street Map 24-10-2017.txt
+      md5: b397d7cad6ec32ba98b21f1a852395c8
+      size: 660
+    - path: src/extract_keywords_from_description_and_summary.py
+      md5: 6ec96c9b671cd2da7b126c08ee040eb4
+      size: 1889
+    outs:
+    - path: data/keywords/Lyon Data Science Open Street Map 24-10-2017.txt
+      md5: 77d5e955b301f07da703344f33aac0d1
+      size: 263

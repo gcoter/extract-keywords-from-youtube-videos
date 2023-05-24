@@ -1,0 +1,1523 @@
+Donc les références, c'est un père qui m'est cher, et remercie Franck, notamment de n'avoir pas été ici.
+Donc je travaille chez Foxtreme, je vais présenter en installe de l'entreprise parce que je crois qu'elle n'a jamais eu l'occasion de présenter ici.
+On a deux domaines d'expertise, on fait de l'acquisition vidéo avec tout ce qu'il va avec, donc l'enregistrement, la diffusion, l'export.
+Et puis on fait aussi de l'analyse en temps réel, notamment de la détection d'intrusion en site extérieur qui est quelque chose qui n'est vraiment pas facile.
+Et puis on a aussi de la gestion de file d'attente.
+Donc on est une PME de 35 personnes avec une équipe de développement et une équipe recherche.
+Et on fait plein de choses intéressantes, du traitement d'image, années de vidéo, apprentissage statistique, apprentissage profond, donc on s'amuse vraiment bien.
+Donc là je vous présente le schéma classique d'analyse de données, notamment de machine learning, avec les grandes étapes.
+Donc on a notre données qui arrive, il y a le prêtraitement, l'extraction des caractéristiques, vous construisez un modèle statistique pour expliquer vos données, et puis vous exprériez les scores.
+Alors dernière score, j'entends, ça peut être la classification de la régression, ça peut être encore un peu plus large les statistiques, ça peut être la fameuse valeur P, souvent que les chercheurs aiment bien.
+Donc voilà, c'est très large.
+Et dans cette présentation, j'ai essayé de vous démontrer deux choses, c'est que la normalisation c'est un terme qui est ambigu, ça peut vouloir dire plusieurs choses très différentes.
+Donc c'est d'une certaine manière, c'est un faux ami, c'est un piège, si vous maîtrisez mal les concepts derrière, ça peut mal se passer pour vous.
+Et puis, deuxièmement, que c'est pas réduit à l'étape de prêtraitement.
+Souvent on dit que la normalisation c'est facile, c'est au début du piège, j'ai pas réussi, là c'est prêtraitement, et puis après c'est bon, c'est fini, il n'y a plus de tout cette notion, on fait 100.
+Donc je vais essayer aussi de casser cette idée-là.
+Donc voilà le programme de réjouissance, normalisation au plan real, parce que justement on va se comprendre qu'il y en a 30 tas, sur des données univariées, multivariées.
+Et puis, voilà, juste dans quelques applications, pour vous montrer que derrière ces tâches qu'on pourrait appeler haut niveau, il y a encore des problèmes de normalisation qui s'opposent.
+Alors on attaque, voilà. Donc si je vous dis 42, voilà parce qu'on aime bien l'insurance 42, si je vous dis 42, vous ne savez pas si cette valeur est grande ou petite, donc vous ne savez pas sur cette distribution,
+ou est-ce que vous vous placez si vous êtes très à gauche, au centre ou à droite.
+Donc si c'est le nombre de kilomètres que vous marchez chaque jour, vous êtes vraiment tout à droite de la courbe, c'est assez exceptionnel.
+Si c'est votre pointure, vous êtes vraiment au milieu de l'histogramme.
+Et puis, si c'est le nombre de fois, je serai au supermarché ou au péage, vous vous dites, mince, j'ai encore choisi la file maudite.
+Et voilà, pour le coup, vous êtes probablement très à gauche, vous êtes un cousin du délama, vous êtes super zen, voilà.
+Donc, ça veut dire que toute seule une donnée, elle ne peut pas parler.
+Et ce que vous allez essayer de faire, c'est de la rendre tout de suite contre-encile.
+Donc ce que vous faites, c'est que vous vous appliquez, ce n'est pas un bel une.
+Une standardisation par zscore.
+Donc l'équation est assez simple.
+Vous calculez la moyenne, vous retranchez la moyenne à votre valeur, et puis vous divisez par la déviation standard.
+Donc ça, c'est très intéressant parce que ça fait que vos valeurs sont toujours sur une échelle de valeur que vous maîtrisez parfaitement.
+Et d'une certaine manière, la valeur du zscore, c'est une distance à la distribution.
+Vous n'avez plus besoin de savoir vraiment de quoi vous parlez.
+Si vous avez un zscore de 2 ou de 3, vous êtes un point d'emploi exceptionnel.
+Et puis, 0, vous êtes au milieu, et puis, voilà, dans le négatif, vous êtes exceptionnel, mais de l'autre côté de la distribution.
+Donc ça, c'est vraiment une manière très très intéressante de rendre votre donnée beaucoup plus compréhensible.
+Alors c'est pas entre être humain, mais c'est vrai entre deux algorithmes ou en tout cas deux étapes de vos traitements.
+Mais, il y a quand même un mais.
+Cette étape de normalisation est très très utilisée, et souvent les gens ont tendance à ignorer ça.
+C'est que derrière, il y a quand même une hypothèse gaussienne.
+C'est-à-dire résumer une distribution comme ça avec deux paramètres.
+Derrière, il y a quand même une grosse hypothèse gaussienne.
+D'ailleurs, vous reconnaissez le zscore dans l'expansion, là, c'est en la formule du zscore.
+Et en fait, sous hypothèse gaussienne, votre zscore a vraiment une signification très très forte.
+C'est-à-dire, si vous vous connaissez la valeur du zscore, vous savez parfaitement la population, la quantité de population dont vous parlez.
+À la louche, mais si vous êtes entre moins d'eux et deux, la fourchette moins de deux, c'est 95% de votre donnée.
+Tout le temps, entre moins de 0,58 et 2,58, vous avez 99% de votre gaussienne.
+Donc, c'est une manière extrêmement, enfin, c'est vraiment un sens très très fort, et c'est pour ça qu'on aime bien le zscore.
+Mais, voilà, est-ce que cette normalisation est tout le temps valide, pas justement, quand la donnée n'est pas gaussienne...
+Quand la donnée n'est pas gaussienne, eh bien, ça se passe mal.
+Donc là, il ne faut pas tout regarder, regarder juste l'image de droite.
+Donc en haut, vous avez une distribution log normale, et puis, on la passait à travers un zscore, et vous voyez, en bas, il y a des valeurs.
+Donc, effectivement, on sent qu'on a standardisé les valeurs, mais vous voyez que vous avez toujours cette forme un peu bizarre.
+Et puis, surtout, on a des gros problèmes, c'est-à-dire qu'on voit que notre zéro est un peu décalé.
+On le trouve un petit peu trop à droite.
+Ça, c'est le fait que les valeurs qui sont ici ont énormément impacté son estimation.
+Et puis, on a un deuxième problème, c'est qu'un zscore de 2 et un zscore de moins 2, ça ne veut pas dire une même chose.
+Et ça, c'est quelque chose d'anormal.
+Donc, ce qui est très important de comprendre, c'est que quand vous faites une normalisation par zscore, vous ne touchez pas la forme de votre distribution.
+Vous la translaté, vous la dilaté.
+Mais, si ce n'est pas gaussier en entrée, ce ne sera pas gaussier en sortie.
+C'est un point assez important parce qu'il y a des gens derrière le mot normalisation, ils entendent gaussianisation.
+La loi normale, si vous voulez.
+Une petite anecdote, mais avant, je travaillais un peu dans le monde des neurosciences.
+J'analysais des données neurophysiologiques.
+Et j'ai croisé un médecin qui avait tout un pipeline d'analyse du sommeil.
+Et puis, à la fin, il a appliqué un test statistique qui s'appelle la NOVA, c'est l'analyse de balance.
+Je ne rentre pas dans les détails.
+Ce test-là, il exige que votre données soit gaussienne.
+Je lui ai dit, est-ce que tu as vérifié les hypothèses de gaussianité,
+est-ce que tu as fait un test de normalité ou des choses comme ça ?
+Je lui ai dit, non, j'ai fait une normalisation par zscore, donc mes données sont normales.
+Et c'est vraiment ce jour-là où je me suis dit que le mot normalisation, c'est un mot super dangereux
+et en fait, ça peut dire un peu tout son et son contraire.
+Donc, premier point de vocabulaire, ce que je vous conseille, c'est de dire
+dans ce cas-là, on ne parle pas de données normalisées, mais plutôt de données remises à l'échelle.
+Alors, son cas n'était pas perdu.
+Ah voilà, ce n'était pas un émette d'ailleurs.
+Je ne sais pas trop ce qui se passe.
+Moi, je lui ai conseillé d'appliquer ce qu'on appelle un zscore géométrique,
+ça veut dire que vous utilisez la moyenne géométrique,
+peut-être que ça vous dit vaguement des souvenirs,
+et puis la déviation standard géométrique.
+Et quand vous appliquez ça sur des données qui sont lovres normales,
+ça vous donne des données qui sont quasi gaussiennes en tout cas.
+Vous vérifiez très bien, enfin, si vous faites un QQplot
+ou des tests de Shapiro ou des choses comme ça,
+vous passerez des tests de normalité,
+vous aurez le droit d'appliquer une ANOVA sereinement.
+Parce que vous pouvez toujours l'appliquer sur des données lang gaussiennes,
+mais la valeur que vous obtenez, elle n'a aucune validité.
+C'est un peu comme si une probabilité n'était pas sur l'intervalle 01,
+on ne sait pas trop comment l'interpréter.
+Donc le grand danger, c'est de faire des bêtises sans sang de monde.
+Alors, pour faire ces normalisations, on utilise des moments statistiques.
+Alors bon, le premier moment que vous connaissez tous la moyenne,
+il y a une variante qui est peut-être un peu moins maîtrisée,
+qui est la médiale, donc c'est la valeur centrale.
+Vous avez autant de valeurs plus petites que plus grandes.
+Donc sur l'histogramme, ça correspond à voir la surface à gauche du très bleu
+et dégager la surface à droite.
+Et puis, voilà, il y a le mode qui est vraiment la valeur la plus fréquente.
+Et il faut bien comprendre que ces trois valeurs sont égales
+que quand votre distribution est symétrique.
+Ce qui est rarement le cas sur des données réelles.
+Et donc la plupart du temps, les gens pensent estimer la tendance centrale
+avec une moyenne, alors qu'ils n'ont jamais tracé leur distribution
+pour voir un peu quelle tête ça a.
+Et potentiellement, cette moyenne, elle peut être vraiment impactée.
+Si vous avez une valeur très, très loin,
+et bien, votre moyenne va être impactée.
+Rappelez-vous, on prépare le gars qui allait avoir le NS.
+Il a impacté complètement la moyenne.
+Tout le monde avait un, il avait grain et au fait, il décalait complètement la moyenne.
+Voilà, c'est très exactement ça.
+Donc vous avez des estimateurs qui sont plus robustes.
+Et quand vous traitez des données réelles, en fait, c'est quand même très, très utile.
+Alors il y a les moments d'entre deux, parce qu'on divise par la déviation,
+enfin par les quartiers.
+Donc chaque moment d'entre un, un peu son équivalent,
+et puis, pas pareil, vous pouvez calculer un z-score.
+Et donc, là, vous avez l'équivalent du z-score avec la médiale.
+Bon, il y a un facteur correctif.
+Je ne rentre pas dans les details, c'est des histoires de consistance des estimateurs.
+Ce qui est très intéressant, c'est que ça, ce sont des statistiques robustes.
+C'est-à-dire que si vous avez des points aberrants,
+qui sont très, très loin de chaque côté de votre distribution,
+eh bien, ça ne va pas compacter votre traitement.
+Et ça, c'est quand même un point qui est fondamental.
+Donc il y a d'autres types de remises à l'échelle qui utilisent les mini-rex.
+Alors ça, c'est assez intéressant parce que ça fait qu'en sorties,
+vos valeurs vivent sur des intervalles qui sont maîtrisées.
+Et ça, ce n'est pas très utile quand vous passez à l'étape d'après
+et que votre traitement ne peut pas traiter d'autres valeurs.
+En sachant que, comme c'est l'utilise de min et de max,
+c'est assez sensible aux valeurs aberrantes.
+Donc parfois, il faut prendre le temps de les enlever avant
+et d'appliquer la normalisation en vrai.
+Il y a un autre type de traitement qui est le fait d'utiliser la notion de norme.
+Donc là, on commence à rentrer poussoument dans l'algebra linéaire,
+mais vous avez un vecteur et puis sur cette espèce vectorielle,
+vous avez une norme et vous voulez rendre votre vecteur
+d'une certaine manière unitaire, de norme unitaire.
+Et là, pareil, vous avez, ça vous permet d'avoir vos valeurs
+qui vivent sur un intervalle maîtrisé.
+Et vous avez, comme il y a plusieurs normes,
+vous avez, on va dire, chacune va vous donner des propriétés un peu différentes
+et donc c'est à vous de choisir celle qui convient dans votre traitement.
+Et là, dans ce cas-là, on a plutôt envie de parler de norme
+et au sens de la norme.
+On norme le vecteur, on norme la donnée.
+On va passer au cas multivarié pour que ce soit un peu plus drôle.
+Donc maintenant, on traite un vecteur.
+Donc la première manière d'étendre ce qu'on a vu, le zscore,
+c'est de faire ça composante par composante.
+Donc voilà, j'ai mis un nom dix n.
+Là, vous avez votre donnée originale.
+Vous voyez que deuxième étape, elle est centrée, c'est-à-dire centrée en zéro.
+Et puis après, les écartiques sont tous égaux à 1.
+Alors ça, c'est bien, mais on reste un peu sur notre fin
+parce que vous voyez, là, l'éclipse, elle a un angle.
+Et c'est tant qu'il vous capture la corrélation que vous avez entre vos deux variables.
+Et quand on fait de la née de données, souvent on a bien décoré les variables.
+Et donc, il y a une méthode qui s'appelle le Blanchiment qui vous fait ça.
+Alors, l'équation tarée un peu barbare.
+On va la détailler.
+Vous voyez, la grande matrice sigma, c'est la matrice de covariance.
+Et puis, ben, X monus, maintenant ce sont des vecteurs.
+Ça réalise votre numérateur.
+Et cette matrice de covariance, sur la diagonale, vous avez retrouvé les variances.
+Donc on va dire les sigma carré et les sigma n carré.
+Mais, sur des termes hors-diagonaux, vous allez capturer tout ce qui est de l'ordre de vos corrélations.
+Ce qu'on appelle les covariances.
+Et donc, quand vous allez inverser, vous allez annuler tous ces termes-là
+et vous allez obtenir un nuage de points,
+ben, typiquement, qui se ferait quinte.
+C'est pour ça qu'on appelle ça aussi spherine, en anglais.
+Et alors, on fait ça parce que, justement, ce nouvel espace,
+il y a plus de corrélation entre vos variables.
+Ça, c'est très bien.
+Et ça améliore le conditionnement du problème.
+Alors, le conditionnement, c'est une notion d'algénieur peut-être un peu poussée.
+C'est la plus grande des valeurs propres utilisées par le plus petit.
+Donc pour faire simple, c'est quand vous avez votre ellipse,
+un cas 2D, donc c'est assez facile,
+vous prenez le demi grand axe que vous utilisez par le demi petit axe.
+Donc là, ça n'a pas l'air méchant.
+Mais sur un problème assez simple,
+dès que vous êtes à peine en dimension 10,
+vous pouvez avoir des conditions de l'ordre du million, du milliard.
+Voilà, ça peut exploser très, très vite.
+Et on va le voir par la suite en machine learning,
+ça nous pose d'énormes problèmes.
+Donc, on blanchit et vous voyez que,
+si vous calculez dans cet espace blanchi,
+si vous calculez votre conditionnement,
+ça vaut un.
+Donc c'est le cas parfait.
+Et votre optimisateur, vous dire merci.
+Alors un petit point,
+il ne faut pas confondre ça avec la réduction de dimension.
+Souvent, c'est des choses qu'on ferait
+à peu de temps en même temps dans la chaîne de traitement.
+Mais on peut réduire sans blanchir et enlarcement.
+Et puis on peut faire les deux,
+c'est d'ailleurs très bien.
+On blanchit, l'espace réduit,
+comme ça on est au top de ce qu'on peut faire.
+Voilà, c'est le dernier normalisation qui peut exister.
+C'est la transformation par quantil
+où on vient réchantionner les distributions.
+On utilise les fonctions cumulatives
+pour modifier la forme des distributions de vos données.
+Ici, vous avez votre données originale.
+Comme elle n'est pas remise à l'échelle,
+on ne voit rien.
+Vous applique un Zscore,
+vous avez cette donnée,
+on est content.
+Ça ressemble un petit peu à négocienne,
+mais ce n'est pas parfait.
+Il y a des fonctions qui vous permettent
+d'avoir des gociennes parfaites.
+En traitement d'image,
+il y a une transformation
+qui est un peu similaire
+qui s'appelle l'égalisation d'histogrammes.
+Au lieu d'avoir des gociennes en sortie,
+vous avez un histogramme uniforme.
+On aime bien faire ça
+typiquement pour rehausser
+le contrat d'une image.
+Là, vous pouvez faire exactement la même chose
+vers la distribution gocienne.
+Dans ce cas-là,
+on a envie de dire que la donnée
+n'est pas normalisée,
+elle est plutôt gociennisée.
+Là, pour le coup,
+en sortie, c'est une gocienne parfaite.
+Là, c'est top.
+C'est fini pour la partie méthode,
+vous avez connu le coup.
+Maintenant, je vais vous montrer
+que ces différentes normalisations,
+on va les retrouver
+tout au long de la chaîne de traitement
+avec différents exemples.
+Un premier exemple assez connu,
+le Machine Learning.
+Le problème du Machine Learning,
+c'est qu'on a un jeu de donnée,
+puis on essaye
+d'entraîner
+un classifier, un récresseur,
+ce que vous voulez.
+Il y a différents paramètres.
+Là, je les ai appelés P1P2.
+Dans cette espèce de paramètre,
+on va trouver celui qui minimise
+la fonction de coup.
+Quand on fait ça à l'aide d'un gradient,
+on peut se retrouver sur une fonctionnelle
+qui a une tête très allongée,
+qui fait que
+le gradient va converger très, très lentement,
+parce qu'il va faire plein de petites
+d'itérations
+pour avancer jusqu'au fond du canyon,
+d'une certaine manière.
+Voir, quand vous mettez un garde-fou,
+vous dites que vous avez mis d'itérations,
+si ça n'a pas fini, tu t'arrêtes.
+Vous pouvez arrêter
+votre entraînement,
+alors que vous n'avez pas encore
+atteint vos paramètres optimaux.
+Vous vous en sortez de votre algorithme,
+vous vous rendez un classifier qui n'est pas du tout optimal.
+Donc ça, c'est un peu dramatique.
+Ce qu'on fait, c'est qu'on normalise...
+Alors là, c'est même le top de la normalisation,
+parce que là, vous avez l'engin,
+vous reconnaissez le cercle.
+Donc, dans le domaine,
+on appelle ça du feature scaling,
+le domaine c'est bien,
+parce que la surface est bien sphérique,
+et ça fait que toutes les approches
+d'optimisation qui ne prennent pas
+compte la courbure de cette fonctionnelle
+vont converger beaucoup plus vite.
+Donc la courbure souvent est estimée
+avec ce qu'on appelle la hécienne,
+et ça, c'est assez lourd à calculer,
+donc souvent, on n'aime pas trop le faire,
+et donc on préfère
+ne conditionner le problème,
+et puis comme ça, on sait que ça va converger tout seul.
+Alors en fait, ce qu'il faut bien comprendre,
+vous êtes peut-être des utilisateurs
+de machine learning, donc vous connaissez
+les grands noms, je ne sais pas, SVM, Raison Neurone,
+classifier naïf paysien,
+des choses comme ça, mais en dessous
+de toutes ces méthodes-là,
+derrière, si vous ouvrez
+le capot, le moteur
+c'est souvent des optimiseurs
+des centres stochastiques,
+c'est probablement la plus connue,
+mais il y en a tout un tas d'autres,
+et toutes ces méthodes sont sensibles
+à ce problème-là.
+Donc c'est très important, parce que
+quand vous faites, je ne sais pas quel méthode
+pour un fit, souvent derrière il y a ça,
+et si vous creusez un peu
+la doc, peut-être que dans les hyper
+paramètres de la méthode
+où vous trouverez un endroit
+un paramètre qui vous permet
+de changer justement l'optimiseur,
+si vous êtes expert du domaine,
+vous pouvez décider de changer.
+Et voilà, c'est très important,
+parce que ça, ça fait que,
+de temps en temps, on vous donne des modèles,
+on vous dit voilà, j'ai appris mon modèle,
+et vous pensez que votre modèle est bien
+optimisé, et en fait c'est pas le cas.
+Alors il faut quand même noter qu'il y a des méthodes
+en machine learning
+qui ne sont pas sensibles
+à la normalisation, voilà.
+Donc tout ce qui est à base d'arbres,
+les random forest, et puis
+tout ce qui va derrière
+une gradient de boosting et tout,
+souvent on travaille avec les données brutes
+comme ça, on a des valeurs de seuil
+qui sont interprétables, donc on aime bien.
+Mais il y a d'autres classifières qui possèdent
+intrinsétement
+la gestion, on va dire,
+chaque variable a un peu
+un coefficient, en fait,
+si j'aimais un peu de manière automatique,
+enfin, il n'y a pas besoin
+de normaliser.
+C'est prendre compte de manière
+intrinsèque.
+Donc deuxième exemple,
+l'anomalie de détection,
+donc ça c'est un domaine assez
+important, voilà,
+donc là c'est un article qui fait un peu
+état de l'arbre, commence un peu à vieillir,
+quand même. Donc principalement
+ce qui marche bien en détection
+d'anomalie, c'est
+SMM une classe, ça, ça marche bien.
+Bon, depuis, il y a eu pas mal
+les autant en codeur, on dit plus en ligne.
+Donc moi je voulais vous proposer
+qu'on retraine un peu ce qu'on a
+appris dans la partie précédente.
+Donc on va
+directement modéliser les caractéristiques,
+donc là c'est le cas univarié,
+donc vous avez juste une valeur.
+Ce que vous pouvez faire, c'est
+vous modélisez avec un zscore, et dès que
+la valeur du zscore devient trop forte,
+vous décidez d'un seuil,
+et puis vous dites, voilà,
+là je dégage, je seuil
+et je dégage.
+Bon, une approcheur plus naïve.
+Donc quand vous avez
+n valeur, parce que vous avez n caractéristiques,
+et bien la première
+généralisation c'est d'appliquer plein
+de zscores, n zscores, et puis d'appliquer
+n seuil. Alors ça souvent,
+on n'aime pas trop parce qu'on va avoir ce qu'on appelle
+des effets de seuil, c'est-à-dire que
+si tout le monde dit c'est ok
+le point dans la discussion,
+sauf
+une dimension,
+qu'est-ce qu'on fait, voilà, parce qu'on dit
+ok, est-ce qu'on les fait voter,
+est-ce qu'il y a des pondérations, enfin voilà,
+on ne s'en sort pas, faut mettre les méta-métodes,
+enfin bon. Donc c'est souvent
+quelque chose qu'on n'aime pas trop faire,
+et puis il y a toujours ce codé
+effet de seuil, c'est-à-dire si vous êtes juste
+d'autre côté du seuil, il n'y a pas de peau, voilà.
+Donc c'est quelque chose qui est assez difficile
+à arriver et qu'on n'aime pas trop faire.
+Donc l'autre manière de faire
+qui est très élégante, c'est la distance
+de z, vous voyez l'équation, elle peut
+paraître un peu barbare, mais si vous repensez
+au blanchiment, la sortie du blanchiment
+qu'on vous l'appelait z, ça c'est
+rien d'autre que la racine
+carré de z transpose z.
+Et au fait c'est la distance
+de cliquette après blanchiment.
+Donc on peut le voir
+sur le dessin, parce que c'est toujours
+plus facile avec un dessin, vous avez
+l'équation, elle a les 4 gros points,
+ils sont tous avec une distance du point
+0, donc ils sont tous
+en distance utilienne, ils sont en racine
+carré de l'origine.
+Maintenant, si vous prenez
+en compte la distribution, vous dites
+les points bleus, ils sont dans la
+distribution, ils appartiennent à la distribution
+selon l'axe, l'acran
+diagonale, c'est à dire qu'ils sont un z
+score qui est plutôt faible, alors que
+les points jaunes, en contraire
+on voit que selon l'autre axe, ils sortent.
+Donc ils vont avoir des distances plus grandes
+par rapport à la distribution.
+Donc si vous essayez
+d'appliquer une forme de blanchiment de
+tête, c'est à dire que
+cette ellipse, pour la transformer en
+cercle, vous allez sentir que les
+points bleus vont rentrer dans le cercle
+si ça se fait de tête.
+Et les points jaunes
+vont s'écarter, donc
+la distance de maladie des points jaunes
+sera plus grande que les points bleus.
+Donc
+cette distance là
+elle va être
+très élégante, parce qu'en une valeur,
+vous allez détecter les points amérants.
+Ça va intégrer toutes les dimensions
+et ça va intégrer potentiellement
+les termes de corrélation entre vos composants.
+Donc c'est vraiment top.
+C'est ce qui fait que c'est
+une des méthodes très employées
+pour la détection d'anomalies
+en machine learning.
+Donc c'est très bien, on retombe
+sur ce qui existe déjà.
+Et maintenant, je voulais
+raffiner un peu cette approche là
+et non pas modéliser
+les caractéristiques directement,
+mais modéliser
+les distances à la caractéristique moyenne.
+Donc en fait, c'est un environnement assez simple.
+Je vais vous les distraire en haut. Vous avez des points.
+Potentiellement, ça peut être des scalaires,
+des vecteurs, des matrices, ou même des
+tenseurs. Vous calculez une moyenne
+donc en noir.
+Vous calculez toutes les distances
+à la moyenne.
+C'est en fait un histogramme.
+Alors comme les distances,
+c'est des choses qui se distribuent
+de manière log-normal.
+On va estimer un z-score.
+Alors si vous avez bien suivi,
+on va utiliser un z-score géométrique.
+Merci géométrique.
+Et sur ce z-score géométrique,
+on applique un seuil et en fait
+ça vous exclut directement les points
+qui sont au-delà du seuil
+sur les z-scores des distances.
+Et ça, ça marche bien.
+Vous avez une sphère
+en 3D, après
+on appelle ça des hypersphères.
+C'était sérieux.
+Donc ça c'est quelque chose
+qui est vraiment bien.
+Parce que c'est un classif
+en classe. Il n'y a pas besoin
+d'un apprenti sage supervisé. Vous avez pas besoin
+de labeliser chacun des échantillons que vous mettez
+en disant, lui il est
+contaminé, lui il n'est pas.
+Il faut juste qu'il n'y ait pas trop
+de données contaminées. Parce que si on vous
+est calibré de la donnée contaminée.
+C'est une approche qui n'a pas beaucoup de données.
+Ça c'est quand même assez important.
+Et qui est assez simple
+à expliquer. Moi j'ai expliqué ça
+à des médecins. Bon alors c'était
+des matrices de commence, le point noir.
+Et au fait c'était assez facile à faire.
+Et je ne sais pas si j'aurais été capable
+d'expliquer SVM une classe
+avec le kernel Tric pour épouser
+les mondes et arrêter des problèmes.
+Et enfin vous voyez que c'était pas possible pour moi.
+Il y a quelque chose quand même. Le point noir
+on peut le représenter
+et facilement l'expliquer à quelqu'un.
+Il y a quelque chose qui est super c'est
+qu'on peut changer
+la moyenne qu'on utilise et la distance.
+Donc là c'est un exemple
+qui utilise la géométrie de Mélaine.
+Comme on travaille sur des matrices
+de covariance.
+Ce sont des éléments mathématiques
+qui ne se traitent pas en géométrie
+Euclidean classique.
+C'est tous au lycée.
+On utilise la géométrie de Mélaine
+et vous voyez au lieu d'abord une sphère
+en 3D, on a une forme de patatoïque
+parce que je pense que c'est pas linéaire.
+Et donc ça c'est très intéressant parce qu'on est
+capable d'adapter cette technique tout simple.
+On peut l'adapter à notre problème
+si on est capable de bien comprendre
+quelle est la géométrie
+qu'il faut utiliser.
+Donc un peu toujours à l'OMD,
+il y en a qui ont remplacé
+la distance par des distances
+très mal. Vous savez, depuis les travaux
+de Cédric Villani, ça pousse
+très fort dans le domaine applicatif
+sur ces thèmes-là.
+Et pareil, ils font beaucoup mieux
+que les SVM classiques dans leur domaine
+étaient l'état de l'art
+jusqu'encore quelques mois.
+Il y a vraiment des choses très très fortes
+derrière un algorithm tout simple.
+Et de même quand ils étaient capables
+de casser l'hypothèse un peu
+linéaire en utilisant une géométrie
+adaptée, on peut casser
+l'hypothèse que je n'ai pas dit
+mais bon, en haut on a
+qu'un seul mode, qu'un seul cluster
+et bon, parfois c'est pas très adapté
+aux données, donc il y a des extensions
+multimodales et une équipe
+polonaises qui a fait ça, donc ça marche
+vraiment très très bien.
+Donc pour vous montrer
+que ça marche bien, j'ai voulu
+vous donner un exemple de cette fameuse
+patate humaine, donc ce sont des données
+de temps série, voilà, il y a deux capteurs
+on peut traiter avec un capteur
+mais c'est plus simple de vous montrer
+avec le capteur.
+On calcule la matrice de coordinates, donc
+c'est une matrice de deux, vous avez les variances
+sur la diagonale, la covariance
+hors diagonale et qui
+c'est symétrique.
+Et puis on peut représenter la donnée
+comme un point dans un espace 2D, voilà
+il y a une des dimensions que j'ai fait sauter
+donc en noir, vous avez toujours la
+covariance moyenne, et puis on fait
+glisser une fenêtre d'estimation
+qu'on est capable de
+l'attracer à l'écran.
+Alors le rendu est très très moche
+mais normalement
+peut-être ceux qui sont devant ils voient
+il y a des tout, vraiment des petits
+points bleus
+qui est l'estimation de la covariance
+à chaque fois que vous décalez la fenêtre
+vraiment d'un échantillon.
+Donc ce qui est très intéressant c'est que vous voyez que
+dès qu'il y a cette forme d'anomalie
+là au milieu, et bah votre covariance
+elle sort de votre zone de détection
+et puis
+elle rentre dedans
+quand c'est fini
+et donc ça c'est un détecteur
+qui marche très bien, qu'on peut déployer
+en temps réel, et on l'a mis dans un petit
+positif médical, ça tourne en temps réel
+à 250 Hz
+donc vous avez vraiment
+la capacité à détecter des eau-clayeurs
+à la volée c'est très très puissant
+Troisième exemple sur le type learning
+donc c'est quelque chose
+qui est très à mode, donc je pense que le tour
+c'est assez
+donc un vrai frappel
+sur comment fonctionne la raison neurone
+vous prenez une image, alors bon c'est pour
+différencier les loups et les renards
+parce que je l'explique, on aime bien les renards
+puis quand on l'échaille les chiens
+il y a un peu de commun et rasoir
+vous prenez les valeurs des pixels
+brut, et puis vous les mettez dans une première
+couche, la couche d'entrée
+et puis la raison neurone en fait c'est
+une cascade d'opérateurs linéaires
+et de non linéarités scalaires
+qui vont transformer votre information
+que au début très très local
+et crétons des images vers une information
+de plus en plus abstraite et sémantique
+à tel point que vous voyez qu'en sortie du réseau
+vous avez toutes deux neurones
+et il y a un neurone qui cote l'information
+au renard et puis l'autre
+donc ça
+maintenant ça marche bien
+mais il faut voir que
+pendant des années et des années
+les chercheurs n'ont pas su
+optimiser, enfin c'était difficile
+d'optimiser les poids
+de ces couches intermédiaires, les couches cachées
+dès que ça tenait en top profond
+on avait du mal à optimiser
+les poids pour obtenir la bonne réponse
+donc c'était un problème assez difficile
+qui a été resolu
+on va dire avec
+des aimants qui viennent de différents endroits
+pousses de données, pousses de calculs
+des architectures différentes et tout
+et notamment
+là-dedans il y a comme l'équipe en 2015
+donc c'est une équipe de Google
+qui a sorti un réseau qui s'appelle Inception V2
+donc le Inception V1 s'appelle Googlenet
+pour ceux qui le connaissent bien
+parce qu'il y a des éminences spécialistes dans la salle
+et donc dans leur version 2
+ils ont apporté
+un raffinement qui s'appelle la batch normalisation
+donc
+le problème c'est que quand vous optimisez
+ce réseau-là, vous voyez
+vous avez différentes couches
+vous regardez votre évoque en sortie
+et puis vous allez
+la rétro-propagée vers
+le bas de votre réseau
+et puis vous avez corrigé les poids
+pour que l'erreur diminue
+donc ça, ça marche bien
+mais quand vous regardez la couche du milieu
+les couches avant sont modifiées
+mais les couches après aussi
+et ça, ça va être un vrai problème
+parce que vous avez modifié
+vos poids pour que ça colle bien
+à ce qui s'est passé avant
+mais comme la rétro-propagation
+a aussi modifié les poids qui viennent après
+à l'itération d'après
+et bien en fait il y a un vrai décalage
+entre
+la couche d'avant
+et puis vous les poids
+que vous avez refris
+il y a une forme de décalage
+ce qui s'appelle le covalent shift
+et qui fait que
+vos poids sont tous passés
+dans la partie linéaire de la porte relue
+soit que dans la partie non linéaire
+et ça va créer
+des instabilités dans votre apprentissage
+donc les instabilités dans l'apprentissage
+des raisons de ronde, ça s'est connu
+depuis qu'il y a des raisons de ronde
+et donc la seule manière de faire
+depuis le début c'est de dire
+on va ralentir l'apprentissage
+c'est à dire que votre gradient
+il y a toujours un taux d'apprentissage
+qui est associé
+et donc
+c'est toujours été un taux de la bidoue
+c'est à dire que quand on voit que le résort
+prend mal, on ralentit
+un peu la vitesse d'apprentissage
+et puis ça prend plus de temps
+mais ça apprend
+et donc cette équipe de Google
+a tout simplement
+utilisé un Zscore
+et puis ils ont publié
+ils n'ont pas fait qu'il y a un Zscore
+ils ont aussi montré à quel point c'était génial
+et donc en fait ce qui fait
+qu'à chaque course vous appliquez un Zscore
+qui fait que vos valeurs sont toujours
+même si il y a ce fameux décalage
+qui passe à travers un Zscore
+les valeurs sont toujours
+globalement dans la même fourchette
+et il y a plus ce décalage
+vous réduisez énormément les variations
+d'unité à un autre
+et ça ça fait que pour un même taux d'apprentissage
+vous apprenez beaucoup plus vite
+regardez sur le dessin là
+vous avez les deux courbes continues
+qui sont pour des taux d'apprentissage plutôt faibles
+vous voyez que la courbe rouge
+il n'y a pas de batch normalisation
+elle apprend donc celle en bleu elle fait un peu mieux
+mais égal
+voilà il n'y a rien qui saute forcément
+aux yeux par contre quand vous
+augmentez le taux d'apprentissage
+vous passez à 0,5
+vous voyez que le réseau en rouge
+tirait là
+il apprend très rien
+et donc typiquement la batch normalisation
+c'est quelque chose qui fait qu'on apprend
+aujourd'hui sur des jeux de données
+on apprend des réseaux vraiment de manière très rapide
+parce que justement
+cette batch normalisation
+diminue énormément les instabilités
+donc ce qui
+autrefois prenez plusieurs semaines
+aujourd'hui en plus avec l'avancement
+d'HGPU c'est quelques heures à peine
+et puis c'est fini quoi
+c'est vraiment quelque chose qui a été assez révolutionnaire en termes d'apprentissage
+et voilà
+de type learning
+bon alors c'était
+l'explication de la batch normalisation
+elle est un peu contestée aujourd'hui
+par une équipe de Miki mais bon comme c'est un problème
+qui est encore clos
+on va rentrer dans le débat mais bon voilà faut juste
+si jamais il y a des spécialistes
+un point important quand même à noter
+tout ce qui est pré-traitement normalisation et tout
+normalement
+type learning on fait pas de normalisation
+de données
+la grande promesse du type learning c'est que
+vous vous rappelez le pipeline de machine learning
+que j'ai présenté au début
+la grande promesse du type learning c'est de dire
+qu'on passe directement de la donnée Brick au score
+il n'y a plus plus ces étapes intermédiaires
+à faire de pré-traités
+il ne s'en fait plus
+si votre réseau est bien fait
+bon c'est pas toujours le cas mais
+si il est bien fait
+au fait vous n'avez plus besoin de normaliser votre données
+voilà
+et donc souvent si normaliser
+votre données à l'heure pour résultat
+c'est que votre réseau n'est pas encore optimal
+donc typiquement les batch normalisation
+souvent il y a des gens qui faisaient du feature scaling
+avant d'entraîner leur réseau
+depuis la batch normalisation
+normalement il n'y a plus aucun impact
+ils peuvent le faire ou pas le faire
+ça n'a plus du tout d'impact
+parce que c'est le réseau qui est capable
+d'encoder les invariants de votre problème
+vous n'avez pas à élu pré-mâcher le travail
+dernier exemple
+les tests hypothèses en statistiques
+donc ça c'est quelque chose
+je ne sais pas si vous êtes très familiers
+peut-être...
+moins de gens qui font ça
+on va utiliser
+un exemple assez illustratif
+vous vous fabriquez un médicament
+contre... je ne sais pas la grippe
+parce que chaque année
+il faut de vos traitements
+à cause des mutations
+et donc pour savoir si c'est efficace
+qu'est-ce que vous faites
+vous tirez au hasard dans une population
+des gens et puis vous les
+répartissez au hasard entre deux groupes
+et puis dans un groupe
+vous allez donner votre vrai médicament
+et puis dans l'autre ce sera une gélule
+et vous allez
+mesurer un score clinique
+objectif qui veut vous dire
+est-ce qu'il n'y a que nous pas
+est-ce qu'il n'y a encore la grippe ou pas
+et...
+l'hypothèse que vous formulez
+c'est qu'il n'y a pas de différence entre les deux traitements
+en gros
+vous ne vendez pas de sucre
+vous avez mis beaucoup de recherche dans un truc
+mais en fait ça ne sert à rien
+et forcément cette hypothèse
+vous allez essayer de la rejeter
+en disant non, les deux traitements
+ne sont pas équivalents
+donc d'un point de vue statistique
+on va formuler
+donc sous
+hypothèse Hdm
+c'est-à-dire
+en se disant que
+l'hypothèse est vraie
+quelle est la probabilité d'obtenir
+la différence entre les moyennes
+c'est-à-dire que sur vos échelles cliniques
+vous avez calculé un certain nombre de statistiques
+des moyennes, des écartiers pédaux
+et la probabilité d'obtenir la différence
+en gros vous allez regarder
+le traitement moyen
+de chacun de vos groupes
+vous allez dire quelle est la probabilité d'obtenir
+cette différence entre mes deux groupes
+alors pour résoudre ce problème
+on utilise un test
+de Sudent non appéré
+et puis ça permet aussi
+d'obtenir la fameuse valeur p
+donc la fameuse p value
+dont on entend beaucoup parler en sciences et en statistiques
+alors
+qu'est-ce que c'est cette p value
+parce qu'elle est souvent très très mal comprise
+donc là vous avez une distribution
+et en fait c'est l'air sous la courbe
+au-delà de votre point observé
+et donc si vous voulez
+vraiment si vous voulez avoir une bonne définition
+de ce que c'est c'est vraiment
+le degré de compatibilité entre votre données
+et votre hypothèse nulle
+estimée vrai
+parce que souvent elle est très sangue
+avec la probabilité apostérielle
+et on va voir ça se faire aussi d'après
+et donc
+le principe c'est que
+si elle est suffisamment faible
+au-delà d'un certain seuil
+souvent c'est fixé à 5% de manière assez arbitraire
+il y a des grands déballats dessus
+vous dites bah voilà la probabilité
+trop faible
+donc je rejette mon hypothèse nulle
+donc je rejette le fait que mes deux traitements
+y'est pas différent
+c'est ça le principe méthodologique
+donc très bien
+mais c'est comme toujours
+c'est très associé
+donc voilà est-ce que la donnée c'est nécocié
+est-ce que les variances entre vous
+deux groupes sont égales
+et donc si c'est pas le cas
+il n'y a pas de panique
+donc vous pouvez déjà
+il y a tout un tas de tests qui existent
+pour vérifier la normalité des données
+et puis bah si elles sont pas
+normales
+donc soit vous voulez nécociéliser
+soit vous appliquez des tests non paramétriques
+il y a des tests qui vont utiliser
+de ronds et statistiques ordinales
+et qui n'ont pas besoin
+qui ne font aucune hypothèse sur votre donnée
+donc voilà la boîte outil est immense
+faut juste utiliser
+voilà les bonnes choses
+et on va dire à chaque test
+qui fait une hypothèse gaussienne
+vous avez son pendant non paramétrique
+qui ne fait aucune hypothèse
+donc faut aller piocher
+c'est un peu comme les particules
+les anti particules et chacun sont symétriques
+donc faut aller prendre au bon endroit
+mais ce qui est très important
+c'est si vous calculer une valeur P
+en ayant pas vérifié
+les hypothèses sous-jacentes à votre test
+vous allez publier peut-être même
+dans des super papiers nature series et tout
+des trucs jusqu'ils sont
+faux au sens où la valeur
+que vous obtenez n'est pas interprétable
+c'est à dire qu'il y a
+numériquement vous obtenez un résultat
+en réalité vous êtes pris les pines dans le tapis
+et vous le savez pas
+donc ça
+vous êtes pas là à construire
+l'édifice de la science
+au contraire vous mettez des briques
+qui sont complètement déjà
+érodés
+mauvaises
+enfin voilà qui vont faire que les autres
+vont bâtir de suite
+c'est faux
+donc
+pour filer un peu la métaphore
+sur l'histoire des particules
+je voulais évoquer avec vous
+l'histoire des besoins de X
+c'est une particule
+ils en paraitent depuis très très longtemps
+et puis au cerne ils ont fait
+une expérience calculable en des années
+et puis ils ont cumé de la tenée et puis
+normalement ils ont dit voilà on peut calculer
+un pibalio
+et en fait ils ont fait exactement la même chose
+cette histoire de test hypothèses vous le retrouvez
+partout là c'était
+en médecine mais c'est vrai en estrophysie
+qui ont biologie partout partout
+donc c'est ce qu'ils ont fait vraiment
+donc H0
+l'hypothèse nul c'était que
+le monde ne contenait pas le boson de X
+puis hypothèses alternatives
+il y a un boson de X
+ils ont cumulé tout leur donnée D
+et puis ils ont dit voilà notre pibalio
+donc c'était une pibalio qui était vraiment très sévère
+sur le seuil de risque
+le seuil n'est pas
+un seuil à 5 sigmas
+voilà c'était
+encore plus petit que une chance sur 3,5 millions
+donc voilà
+et donc dans la foulée on a eu tout un tas de papiers
+du jeu recevus là, voilà qui nous dit
+le boson de X est découvert avec
+90 lettes à 29,99,99
+voilà
+donc peut-être que ça bouche pas encore
+je vais essayer de vous démontrer que ça c'est joli
+donc pour faire ça je vais d'abord
+rappeler une loi un peu fondamentale en statistiques
+qu'on appelle la loi de Pays
+donc c'est une loi
+qui vous permet on va dire
+d'échanger un peu cause et conséquence
+dans les probabilités
+donc le terme tout à gauche
+c'est ce qu'appelle la probabilité à poster
+c'est la probabilité que
+l'hypothège h0 soit vrai
+étant donné que vous avez observé
+les données d
+le premier terme à droite
+c'est ce qu'on appelle la vraie semblance
+c'est la probabilité d'obtenir
+les données d sachant
+que l'hypothèse
+h0 est vraie
+peut-être qu'elle n'est pas vraie
+on se pose la question
+P2h0
+c'est la probabilité que h0 soit vrai
+et puis P2n
+c'est la probabilité sur les données
+au sein terme cassé
+qui est souvent difficile à estimer
+mais si vous voulez le point
+qui est très très important
+c'est qu'il y a très souvent
+une confusion entre les deux termes
+on confond souvent
+ce terme là et ce terme là
+celui de gauche c'est la probabilité
+que l'hypothèse soit vrai
+étant donné qu'on a observé les données
+alors que l'autre c'est la probabilité
+d'observer les données
+étant donné que h0 est vrai
+et si vous voyez une vision
+un peu naïve mais qui est quand même pas mal
+que je vous invite à voir
+c'est de dire que la pivalu c'est la vraie semblance
+pas tout à fait exact
+mais c'est déjà une bonne définition
+vous ferez déjà mieux que 95% des gens
+qui manipulent les dévalorités
+alors si on essaie de mettre un point
+sur le titre
+il nous dit que la probabilité
+que l'hypothèse est intime
+que le besoin de l'hypothèse existe
+après avoir fait notre expérience
+c'est ça
+il n'y a pas de timide manière
+d'être une génération calcul
+c'est un mois
+la probabilité conditionnelle
+de l'hypothèse nul
+et puis bah il dit que ça c'est un mois la pivalu
+donc c'est juste
+il s'assoit sur la loi de pays
+et en fait il n'y a pas le droit de faire ça
+c'est juste
+impossible
+et bon alors là c'est le monde
+mais c'est tous les articles qui ont fait ça
+donc voilà
+et ce qu'il faut bien comprendre c'est que
+la personne qui écrit ça
+c'est pas juste un journaliste
+il a fait l'ex il a un docteur en sciences
+enfin voilà c'est lui qui check
+les fake news et les fakes sur ce monde
+donc on est plus on est rassurés
+mais voilà
+c'est tout est possible
+et donc
+il y a même une page Wikipédia
+qui recense tout ce qu'il faut pas faire
+sur la valeur paix
+et en fait
+je vous invite vraiment à la lire et à la relire
+jusqu'à ce que pour vous ça soit une évidence
+enfin si vous vous manipulez des valeurs paix
+si vous voulez avoir une culture bien sur le sujet
+nécessairement un point fondamental
+parce que cette valeur paix c'est vraiment
+le seuil de publication
+en termes de biologie c'est si vous avez la bonne valeur
+vous passez en publication
+et donc
+voilà
+il y a vraiment tellement de choses pour ce qui se font
+c'est incroyable
+et donc en fait
+mon propos c'est
+peut-être que vous êtes paupons mais
+en ce moment dans le domaine des statistiques
+il y a une vraie bataille entre
+deux clans il y a les fricontistes et les
+baisiens
+alors moi je suis pas grand statisticien
+donc moi je observe juste le débat
+maintenant je cherche pas de réhabiliter
+la pivale ou en étant fricontiste
+et tout
+juste à dire c'est un outil
+c'est outil, il y a un mode d'emploi
+et donc avant de
+faire n'importe quoi il y a un qui apprend
+on dit c'est la faute de la valeur paix et tout
+c'est-à-dire disait le mode d'emploi
+et puis travailler proprement
+voilà c'est juste ça
+donc s'il a des hypothèses de normalité
+vérifiez-les
+il faut pas faire n'importe quoi
+donc message assez simple
+conclusion
+voilà
+je tiens les temps
+la normalisation c'est important
+voilà donc c'est un message simple
+je voulais vous partager
+cette image
+parce que pour moi c'est vraiment une belle analogie
+de ce que c'est que l'analyse de données
+donc ça c'est un bol du ski de Pantred
+c'est un couloir assez étroit
+qui pour moi est une belle analogie
+du pipeline d'analyse
+le skier qui arrive au haut du couloir
+c'est les données qui arrivent en entrée
+du pipeline
+et le skier qui sort du couloir
+en bas du couloir
+c'est vos données qui ont été traitées
+qui sortent de votre pipeline d'analyse
+et donc entre les deux
+il va y avoir tout un tas d'étapes
+le skier il va faire ce qu'on appelle
+le virage sauté c'est assez technique
+faut pas se planter
+les séparés vous en aise 2 données
+vous avez plein de couches de traitement
+et
+ce qui est très intéressant c'est que
+l'analogie a quand même des limites
+c'est que
+vous n'avez pas besoin d'être expert
+en alpinisme en ski de Pantred
+pour comprendre que si le geys boite
+ça va mal se passer
+par contre
+la gravité étant
+il va quand même sortir du couloir
+et vous allez tout de suite reconnaître
+qui s'est boité
+il va être plein de neige
+il va y avoir peut-être des hélicos
+ça va être compliqué
+en analyse 2 données
+le pipeline est très long
+et à moins d'être vraiment l'expert absolu
+si vous êtes boité quelque part
+ça va être très compliqué de le détecter
+et c'est là que la normalisation
+c'est vraiment important c'est que c'est pas
+juste le premier virage qu'on peut déliguer au skier
+parce que c'est le truc qui sert à rien
+c'est une notion qui va être
+tout au monde votre pipeline d'analyse
+du prêt traitement, l'extraction des caractéristiques
+le classifier entraîné
+les tests statistiques
+tout, tout, tout
+donc si vous faites pas attention à cette notion là
+bah d'ailleurs
+mais vous vous rendrez pas compte
+et donc ça c'est le grand problème
+c'est pour ça que je prends cette image assez fort
+message numéro 2
+donc c'est un terme ambigu
+ça peut dire plein de choses très différentes
+et donc moi je vous invite
+quand vous discutez avec quelqu'un
+on emploie tout ce mot là
+parce que c'est un raccourci
+donc c'est très bien mais
+de vous arrêter de lever le stylo
+et de vous dire voilà qu'est-ce que
+de tout coup je veux parler très exactement
+qu'est-ce que je veux faire à ma donnée
+est-ce que je vais la normer
+est-ce que je vais la mettre à l'échelle
+est-ce que je vais la blanchir
+est-ce que je vais la grossianiser
+donc je voulais le corollaire c'est que
+bah si il y a un terme qui est pas clair parmi ces quatre là
+c'est une invitation à creuser
+c'est-à-dire que
+vous autoformez et vous trouvez des tutoriels
+mais voilà faut que les choses deviennent clair
+parce que sinon
+pour continuer sur la métaphore
+c'est-à-dire que vous allez bientôt faire une faute de cartes
+et puis
+vous n'avez pas besoin de rencontre mais
+ça se passe vraiment bien pour la suite
+troisième message c'est
+éviter les boîtes noires
+parce que
+il y a vraiment beaucoup d'hypothèses
+cachés un peu partout
+c'est-à-dire qu'on est une époque merveilleuse
+vous tapez cinq mots-clés dans le boucle
+vous tombez directement sur le dépôt GitHub qui va bien
+vous installez
+l'environnement virtuel et en 2-3 heures
+vous allez en train de traiter votre données
+c'est incroyable
+derrière une moyenne
+il y a une hypothèse de symétrie
+derrière un z-score et une hypothèse de grossianité
+derrière un dépôt GitHub
+de 10 000 lits de code
+est-ce que vous imaginez le nombre d'hypothèses
+est-ce que le gars qui l'a codé il les imagine aussi
+alors ça ne veut pas dire qu'il ne faut pas le faire
+je vais dire que je l'ai fait
+je le fais
+mais c'est juste de dire
+il faut lire les papiers associés
+il faut lire le code
+il faut vous assurer que le code a bien été fait
+vous avez des dépôts, il y a encore la semaine dernière
+un dépôt GitHub qui avait mis les trois
+il y avait une erreur dedans
+j'ai écrit à l'auteur, on discutait tout
+mais faites gaffe
+prenez le temps de lire
+de vous assurer des hypothèses
+c'est ce que vous faites ici
+c'est très bien
+faites gaffe aux approches boîte noire
+parce que vous serez toujours sous optimaux
+par rapport à une bonne compréhension
+de ce que vous faites
+et puis, dernier point
+c'est de dire, votre données, il faut la regarder
+notamment
+vous pouvez utiliser vraiment tout ce que vous voulez
+j'ai fait une école d'ingénieur généraliste
+en première année
+on avait des dépés d'électronie
+on se faisait fouetter
+par la personne
+qui nous faisait des dépés en disant
+mais utiliser votre ultimètre
+c'est pas possible, regardez
+comment votre courant d'entrée se transforme
+dans vos composants
+prenez l'attention
+pour comprendre
+juste regardez quoi
+c'est pareil, ce pipeline d'analyse
+il peut être très long
+à la fin, forcément il devient un peu complexe
+à comprendre
+prenez le temps
+de tracer des histogrammes
+regardez votre données
+vous serez beaucoup moins surpris qu'il y aura des problèmes
+et puis même, vous allez peut-être découvrir
+des choses aussi sur votre propre traitement
+vous pensez que ça se passait comme ça
+en fait pas du tout
+ça peut être bénéfique
+pour ce que vous essayez de mettre en place
+voilà, je vous remercie
+de m'avoir écouté
+est-ce qu'il y a des questions
+ne soyez pas timides
+est-ce que
+t'as parlé de deep learning
+à un moment
+et donc on fait de la batch norme
+mais si
+je crois que là
+dans deep learning on va avoir
+enfin quand on fait la batch norme
+c'est une normalisation classique
+est-ce que t'as déjà vu des papiers
+avec un zscore géométrique
+parce que là tu disais
+qu'on pouvait obtenir le meilleur résultat
+et sinon, qu'est-ce que t'en penses
+alors en fait
+vous avez tous entendu la question
+en fait, sqore
+dans la batch normalisation
+d'deep learning on pourrait utiliser d'autres types
+de zscore
+en fait
+le zscore géométrique
+est parfaitement adapté
+il faut cautionniser
+une donnée qui est log normal
+mais il y a vraiment
+l'idée de cautionniser
+derrière la batch norme il n'y a pas d'idée de cautionniser
+au fait, ils veulent juste remettre à l'échelle
+donc quand ils en font un zscore
+il en faut juste pour recentrer les données
+autour d'un intervalle qui sera toujours le même
+donc il n'y a pas forcément
+de besoin
+d'avoir quelque chose de rapiné
+deuxièmement, j'ai pas dit
+mais le zscore géométrique
+si les valeurs sont strictement positives
+c'est la moyenne géométrique
+c'est que tu fais
+pas la somme des éléments divisé par le nom
+mais le produit des éléments
+et tu prends la racine énième
+donc c'est pas défini
+si les valeurs sont élétriotes
+et donc si les couches
+inférieures de ton réseau
+te donnent des points négatifs
+tu vas pas savoir faire ça
+tu vas rassencarer d'un nombre négatif
+voilà, ça va mal se passer
+donc
+la réplique c'est que c'est pas forcément adapté
+ce qu'ils essayent vraiment
+de faire dans la bêche normalisation
+c'est de remiser à l'échelle tout simplement
+pour que diminuer
+la quantité de variation entre
+deux iterations d'apprentissage
+que ça soit toujours à peu près dans le même rang de valeur
+merci
+oui
+oui
+oui mais
+je suis d'accord mon propos c'est de dire
+que la bêche normalisation va finir
+les poids vont s'apprendre
+donc en plus en face de chaque pixel
+s'il y a des pixels qui effectivement sont toujours
+sur des valeurs très très fortes
+je sais pas votre capteur est mal
+il s'atture toujours sur le même pixel
+ça sera toujours des valeurs très très fortes
+qui seront abeillantes d'un pour l'autre
+et en fait votre réseau il va finir par apprendre
+que le coefficient associé
+il faut qu'il mette certaines valeurs
+et dès qu'il sera passé dans la bêche normal
+ça sera bon
+d'accord mais est-ce que ce sont des pavés
+qui sont avant 2015 en fait
+d'accord ok
+c'est intéressant
+et voilà après moi
+vraiment c'est de dire voilà si le réseau est bien fait
+normalement en fait il doit tout faire
+d'une certaine manière c'est un peu
+l'esclave idéale
+si je peux dire ça veut dire que
+toutes les étapes de très très bon qu'on faisait
+autrefois aujourd'hui normalement
+on n'a plus à les faire
+c'est les premières couches du réseau qu'ils les font
+et en plus qu'ils les font on va dire
+un peu non pas de manière analytique
+qu'on le faisait autrefois mais il y aurait peut-être
+un drame
+c'est vrai que c'est quand même
+des travaux assez assents donc voilà
+il y a peut-être des choses
+c'est une question difficile
+pardon j'ai
+ça c'est une question difficile ça
+en fait ce qui est très intéressant c'est d'aller lire
+ce que le CERN a publié
+parce que oui ils ont utilisé le bon terme
+euh
+c'est-à-dire ils auraient pu dire
+le degré de compatibilité entre l'expérience
+et les côtés est-ce que le besoin d'exiner
+pas là est très très très faible
+forcément c'est moins vendeur
+pour quand on peut sortir du métro
+et que vous attrapez le journal
+lequel vous allez prendre
+donc en fait
+en ce moment même il y a un grand débat
+il y a une tribu qui s'appelle No Fact Science
+et quelques scientifiques qui sont rassemblés
+pour essayer un peu de juste en parler
+de comment est-ce que les journalistes
+devraient parler ou ne devraient pas parler
+de la science
+enfin voilà je n'ai pas de réponse
+toute faite pour le sujet
+pareil j'assiste un peu au débat
+c'est un vrai enjeu parce qu'en fait
+le problème c'est que
+on peut avoir du petit pré-racoleur
+sur des sujets
+quand on vous dit par exemple
+oui non j'ai été à l'aliment ça augmente
+c'est toujours des types
+vous vendez beaucoup mais c'est toujours très dangereux je trouve
+parce que pour prendre un exemple
+qui va vous parler
+augmenter vos notes de 400%
+c'est à dire passer de 1 à 4
+enfin augmenter 300%
+donc ça veut dire que votre taux de base
+il est plutôt faible
+quand vous passez de 19 à 20
+pourtant c'est plus intéressant
+je ne sais pas
+les titres des journaux
+je ne sais pas si vous avez répondu à cette question
+voilà si on adopte
+un point de vue paysan
+on aurait pu dire
+suite à cette expérience
+on a énormément augmenté notre confiance
+dans l'existence du besoin de vie
+ça s'arrêter et ça je pense s'arrêter à un point de titres
+mais c'est un peu long
+il y a des termes techniques
+ça se rend vraiment bien
+je ne sais pas si j'ai refermé
+oui
+on sait que dans les domaines
+de l'amendement des titres de texte
+de mots
+généralement les mesures traditionnelles
+qui ne tiennent pas
+les normalisations bizarres
+on doit le faire carrément
+est-ce qu'il y a d'autres domaines
+à part les textes
+sur lesquels
+il faut faire attention
+avec les normalisations traditionnelles
+et se dire
+là ça va pas marcher
+parce que
+il est vraiment un peu différent
+dans le point de vue
+c'est une vraie question
+je sais pas si je veux l'impôt
+typiquement moi
+NLP
+traitement naturel du langage
+je n'ai pas pu trop travailler
+donc je ne sais même pas
+je le découvre
+qu'effectivement
+les normalisations ne marchent pas
+je pense que le point le plus important
+à garder en tête
+c'est qu'il n'y a jamais d'automatisme
+c'est-à-dire que
+vous ne pouvez pas arriver
+dire là je n'ai pas regardé ma donnée
+je pense qu'il existe toujours des solutions
+en tant que chercheur
+donc on trouve toujours
+dans la boîte de outils
+quelque chose qui convient
+donc j'ai pas forcément d'idées
+d'autres domaines
+dans lesquels
+ça marche mal
+en termes de type learning
+typiquement
+moi ce que je peux dire
+c'est qu'il y a tout un tas de domaines
+où le type learning
+n'a pas encore battu
+les tas de l'art
+classique du machine learning
+moi j'ai vécu un comité
+fait de la neurophysiologie
+le type learning
+il y a encore
+50% en dessous
+des méthodes traditionnelles
+est-ce que c'est parce qu'on n'a pas encore compris
+comment normaliser les données
+je sais pas
+mais il y a des choses
+qu'on n'a pas encore compris
+construite
+d'autant plus que le type learning
+ce qu'il faut bien voir
+c'est que
+la preuve mathématique
+de pourquoi ça marche si bien
+on ne l'a pas encore
+donc quand ça marche pas du tout
+on ne sait pas non plus
+ce qu'on appelle les exemples
+adversariaux
+c'est à dire que vous pouvez
+rajouter un petit bruit
+sur l'image du renard
+il va vous classifier ça
+comme une girafe
+et tout le monde
+reste les bras ballants
+et la preuve mathématique
+qui vous explique là
+ça
+et bah en fait elle existe pas encore
+alors il y en a qui travaillent
+qui travaillent durs
+il y a des Français
+qui sont assez à la pointe
+là-dessus
+mais
+voilà
+il y a tout autant de choses
+qu'on n'a pas encore compris
+et bah voilà
+ça fait peut-être partie
+de cette zone d'ombre
+qu'il va falloir découvrir
+dans les années qui viennent
+merci beaucoup Autier
+pour le reste de questions
+n'hésitez pas à rester après
+parce que
+on va voir quelque chose
+et
+ça serait super sympa
+si on partage ce moment
+après cette conférence
+merci
+merci

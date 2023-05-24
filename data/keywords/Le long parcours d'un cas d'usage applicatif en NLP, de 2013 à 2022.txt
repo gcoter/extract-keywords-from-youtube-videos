@@ -1,1 +1,1 @@
-{"title": "Le long parcours d'un cas d'usage applicatif en NLP, de 2013 \u00e0 2022", "keywords": ["ISEO", "data analysis", "entity recognition", "classification", "data aggregation", "Amazon", "consumer opinions", "sentiments", "project", "happy"]}
+{"title": "Le long parcours d'un cas d'usage applicatif en NLP, de 2013 \u00e0 2022", "keywords": ["Lizeo IT", "R&D", "NLP", "data analysis", "entity recognition", "language processing", "product qualification", "social media", "tonalit\u00e9", "WOJO Lyon H\u00f4tel Dieu"]}

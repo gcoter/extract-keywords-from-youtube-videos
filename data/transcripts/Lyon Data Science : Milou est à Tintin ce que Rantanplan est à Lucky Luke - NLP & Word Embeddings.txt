@@ -1,0 +1,909 @@
+Bon, déjà bonjour à tous, merci d'être venu aussi nombreux, on est très content d'être
+là pour cette présentation, je demande les premières NLP, on va se planter rapidement,
+donc moi je m'appelle Tanguy Moro, je suis data scientist chez 305 talents depuis environ
+un an, ça vous m'entendez tous ou je dois parler un peu plus fort, c'est bon ? Ok,
+donc data scientist, je suis 35 talents depuis un an, c'est fait un an que je travaille en
+collaboration avec Samuel, nos thématiques principales c'est justement tout ce qui est NLP et on
+va vous en parler un peu après, mon parcours simplement, je sors de l'INSA Rouen, donc une
+école d'ingénieur, diplômé 2017, les dernières en génie mathématique.
+Je suis Samuel Magnan, donc Tanguy a déjà à peu près tout dit, donc je travaille dans la même
+boîte depuis deux ans par contre et donc aussi sur les thématiques NLP et j'ai aussi fait l'INSA,
+mais INSA Lyon pour le coup, donc département informatique, je suis sorti un peu avant en
+2016, donc aussi data scientist. Donc Tanguy va un petit peu introduire toute la thématique de la soirée.
+Donc le titre NLP one-on-beidings, Milou est adapte à ce que rentant plan est à
+luke et luke, vous avez peut-être interpellé, pour ceux qui connaissent ni NLP ni one-on-beidings,
+ça ne vous a probablement rien dit, vous n'en faites pas, on va vous éclairer un peu là-dessus.
+On va en parler plus en détail, mais pour l'instant s'il y a une chose à retenir pour commencer,
+c'est que les one-on-beidings c'est une technique du NLP et cette technique,
+elle va permettre à un ordinateur de comprendre les relations entre les mots,
+donc par exemple d'interpréter le fait que rentant plan est l'équilibre et on va essayer de vous
+emmener dans un voyage pour faire comprendre comment de ces relations, on peut les transmettre,
+déjà on peut les voir, les apprendre, on peut les transmettre à un ordinateur.
+Donc voilà tout d'abord, je vais vous présenter un petit peu le NLP de manière générale,
+l'idée c'est de vous donner un petit peu une vision globale, donc sur ce que c'est,
+on ne va pas rentrer dans le détail technique, on ne va pas rentrer dans tous les domaines etc,
+mais globalement le NLP c'est le traitement du langage naturel, donc en gros c'est tout ce qui
+va toucher, donc c'est un domaine de l'informatique et l'intelligence artificielle et aussi de la
+linguistique, donc ça va toucher un petit peu à faire la jonction, on trouve vraiment tout ce
+qui est traitement du langage humain et faire passer ça sur un ordinateur, donc savoir comment
+l'ordinateur va être capable de processer toutes ces données là, donc les données textuelles etc,
+sachant qu'il y a un certain nombre de défis qu'on rencontre assez fréquemment, tout ce qui est
+autour de la parole, donc génération de parole ou synthèse de parole, ça vous connaissez déjà
+sûrement, et après tout ce qui est touché à la compréhension du langage ou à la génération du
+langage, donc ça peut être des chatbots, c'est quelque chose qui est assez à la mode,
+il y a beaucoup d'autres choses aussi, donc il y a un certain nombre de domaines et thématiques qu'on
+peut aborder, sachant que nous on n'a pas le temps de tout voir, donc là c'est un petit peu tout ce
+qui est possible avec le NLP, mais on va se focaliser un petit peu sur certaines choses, à savoir qu'un
+petit peu les grandes familles de problème c'est tout ce qui va toucher à la syntaxe, donc elle
+est capable de voir un petit peu comment une phrase est structurée, tout ce qui est l'aspect grammaire
+d'une phrase etc, la spécématique qui va s'accrocher plus au sens des mots en tant que telle,
+l'aspect après discours, donc c'est-à-dire être capable de trouver les relations entre les phrases,
+par exemple si c'est un petit peu le principe, enfin quand vous avez un chatbot c'est un petit
+peu l'idée, vous allez avoir une relation d'une phrase à l'autre, il faut qu'il y ait une suite
+logique entre les phrases, il y a un contexte qui est commun, il y a des termes qui sont communs,
+il y a des termes qui sont en relation les uns avec les autres, etc, etc et donc pour commencer on
+va plus passer par quelques exemples pour vous montrer un petit peu ce que c'est les problématiques
+d'une LP plutôt que de tout décrire parce que ça prendrait vraiment tout longtemps et ce n'est
+pas forcément ce qui nous intéresse, mais le premier aspect c'est tout le travail donc sur
+la syntaxe, donc typiquement quand on va avoir une phrase, donc here every mind dies but not
+every man lives, c'est une phrase assez basique et on va avoir quelques tâches à faire avant de
+pouvoir utiliser cette phrase, il est peut-être capable de faire comprendre à l'ordinateur cette
+phrase et première chose, il faut être capable de la découper correctement et il faut aussi être
+capable de pour ainsi dire la rapporter à ce que les entités les deux sont importantes. Par exemple
+nous ce qui nous intéresse au final c'est de savoir que les termes importants c'est man die,
+man live, peu importe la conjugaison, plus importe la forme du mot, donc on va avoir un certain nombre
+d'étapes que ça tokenisation pour découper la phrase ou après enlever les mots qui sont vite
+de sens ou ramener à chaque mot à une racine qui est vraiment le sens, enfin le sens basique du
+moment, ça c'est un petit peu les approches générales qu'on va avoir sur une phrase pour
+la découper et après il va y avoir d'autres domaines, dans tout ce qui est touché la syntaxe,
+quelque chose que vous avez dû faire quand vous étiez plus jeune, c'est en vous donner une phrase
+et faire accrocher qu'est-ce que c'est le COE, le COD, le COI, le sujet, la tribe du sujet, etc. Et
+on va voir des problématiques qui vont plus toucher à ça, à savoir être capable de construire un
+petit peu cet arbre et dire on va voir là dans la phrase, tel ou il y a un déterminant,
+tel ou il y a un verbe, tel ou il y a un attribut, etc. Donc en fait un petit peu construire la,
+trouver la grammaire de la phrase. Ça c'est un petit peu l'idée de la syntaxe et vraiment travailler
+sur comment la phrase est structurée, comment la phrase se découpe, etc. Donc pour avoir des
+phrases qui est une certaine logique grammaticale. Donc ça c'est à une partie du NLP et une autre
+va plus toucher à la sémantique, donc là on était sur la structure, la sémantique on est plus
+sur le contenu à savoir le sens des mots, le sens lexical. Donc là on a deux exemples assez simples.
+Un goût de les connaisses c'est de l'OCR, donc en gros si vous avez des caractères et reconnaître
+les mots associés aux caractères, bon là c'est du chinois mais on a la même problématique avec
+les caractères latins et on a bien d'autres thématiques comme par exemple à partir d'un texte on
+expère certains types de mots, donc il y a un sens particulier par exemple le nom des villes,
+le nom des personnes, le nom des localisations, des organisations, etc. Et nous le thème principal
+dont on a parlé c'est les words and beddings et ça va aussi se rattacher à la sémantique,
+c'est à dire à partir d'un mot être capable d'y associer un sens. Et enfin la dernière partie,
+le dernier exemple qu'on va vous donner sur tout ce qui touche au discours c'est être capable de
+trouver des relations entre des mots sans une phrase. Quand vous allez avoir une phrase vous allez
+avoir quelqu'un qui fait quelque chose et peut-être vous allez avoir il ou elle qui va référencer
+quelque chose qui s'était passé avant et donc ça ça va nous permettre aussi de comprendre une
+phrase et il faut bien comprendre c'est pas forcément un problème simple, par exemple on a une
+phrase toute bête c'est Paul a essayé de joindre George sur son téléphone mais il n'a pas répondu,
+dans ce cas là c'est assez clair pour un humain que le il va référencer Paul, c'est Paul qui n'a
+pas réussi, pardon j'ai inversé. En gros ça va être assez clair que il référence Paul et il
+suffit qu'on change le verbe, qu'on passe de réussite à répondu, il va référencer George et si pour
+un humain c'est assez clair et assez évident, pour un onniateur la structure de la phrase est
+exactement la même et la sémantique c'est assez proche donc c'est des problématiques qui sont pas
+forcément simples. Ça c'était un petit peu un tour d'horizon rapide de quelques domaines d'UNLP,
+c'est juste pour vous montrer qu'en gros c'est un domaine qui est quand même très vaste et nous du
+compte d'adresser de se focaliser sur vraiment un aspect plus de la sémantique donc à savoir à un terme
+associé à un sens et donc on va plus toucher tout ce qui est comprendre des mots, comprendre les
+relations entre des mots et surtout notre idée de base c'est comment est-ce qu'on fait pour
+mesurer la distance entre deux mots, par exemple même un autre exemple ça c'est quelque chose qui
+touche plus au travail qu'on fait chez 365 talents si on va travailler sur des compétences. Pour un
+humain c'est évident que RH et ressources humaines c'est la même chose, que gestion du risque et
+maîtriser le risque c'est la même chose mais que gestion du risque et gestion de projet c'est pas
+tout à fait la même chose. Sauf qu'il va falloir être capable d'apprendre ça automatiquement à
+l'ordinateur, quand on va gestion du risque et maîtriser les risques on a un terme important
+au commun qui risque et gestion du risque et gestion de projet on a aussi un terme en commun
+qui est gestion. Sauf que clairement pour nous les deux ont un sens différent, enfin gestion du risque et
+maîtriser le risque avec un sens identique et dans l'autre cas non. Donc c'est un petit peu notre
+problématique centrale c'est comment associer un sens à des mots et comment être capable de comparer
+des mots et de voir s'ils ont un sens identique ou non et dans quelle mesure. Pour répondre à cet
+enjeu on va justement utiliser la technique des voiements des humains. Cette technique actuellement
+elle est visée chez beaucoup de personnes et à beaucoup d'endroits donc par exemple la
+traduction automatique chez google vous dire probablement peut-être régulièrement. L'analyse de
+sentiments que ce soit chez twitter chez facebook par exemple sur les iphone on va vous suggérer le
+smiley qui correspond à vos envies ou à votre phrase. Les recommandations que ce soit chez netflix
+ou d'autres ça va se baser sur des techniques de word and meanings et enfin tous les chatbots
+qu'on rencontre maintenant énormément tout ça ça va être basé sur les mêmes techniques.
+Qu'est ce que c'est que cette technique du word and meanings ? Elle part d'une idée assez simple
+qui est de transformer les mots du langage naturel en vecteur. Pour que personne ne soit perdu
+dès le début je vais juste rappeler très rapidement ce que c'est un vecteur donc un
+vecteur on le définit généralement par deux aspects importants sa taille et son langage.
+Ces deux aspects là vont le définir entièrement et quand on va parler par exemple de mots etc on
+va essayer de transposer ces mots en vecteur. Le vecteur qu'on a là il est en deux dimensions
+c'est le x et c'est le y et nous on va souvent parler de vecteur à multiples dimensions parfois
+300 dimensions parfois des millions de dimensions c'est un peu dur à comprendre conceptuellement
+mais vous pouvez imaginer que chaque dimension en fait c'est une caractéristique par exemple si
+vous essayez d'écrire votre voiture vous allez peut-être dresser un tableau caractéristique pour
+chaque case vous allez lui associer son type de moteur son type d'essence et bah nous on va faire
+la même chose pour des mots. On peut imaginer que un mot à 300 dimensions c'est un mot pour lequel
+on a défini 300 caractéristiques. Je ne m'étendrais pas plus là dessus mais nous on va utiliser des
+vecteurs et quand on a utilisé des vecteurs pour les mots on va parler de ça. Maintenant pourquoi
+des vecteurs pour les mots ? Quel est l'intérêt ? Il y a deux avantages principaux. Le premier c'est
+que naturellement c'est manipulable par un ordinateur donc ça va nous faciliter énormément la
+tâche de nos data scientistes et enfin l'élément le plus important c'est que en passant des mots
+aux vecteurs on peut utiliser tous les outils mathématiques qui ont été développés pour les
+vecteurs. Donc notamment on va pouvoir définir des notions de distance mais aussi toutes les
+opérations classiques sur les vecteurs donc les additionner les multiplier etc et enfin toutes les
+propriétés des vecteurs c'est à dire pouvoir construire des bases pour voir les combiner etc.
+Tout cet aspect là il va nous intéresser énormément. Enfin comment est-ce qu'on peut
+construire ces embeddings ? L'idée de départ c'est de se dire que dès qu'on a des mots similaires
+on va vouloir leur attribuer des vecteurs similaires et des vecteurs similaires en mathématiques
+c'est-à-dire que la distance entre ces deux mots elle sera très proche. On rappelle que le but c'est
+justement de pouvoir comparer ces deux mots de pouvoir les mesurer. Maintenant qu'on a défini ça
+on va passer un petit peu par une partie qu'on va appeler linguistique on va essayer de se
+demander comment est-ce qu'on pourrait qualifier des mots similaires. Qu'est-ce que ça veut dire des
+mots similaires simplement ? Le premier effet que je pense c'est en demandant comment comparer deux
+mots c'est de prendre un dictionnaire, de regarder les définitions. Souvent on va déjà sortir un
+premier problème c'est que pour chaque mot on a beaucoup de définitions donc pourrait même avoir
+des étiquettes différentes là par exemple je sais pas si vous voyez très bien mais rouge c'est
+à la fois un adjectif ça peut être un nom propre ça peut être un nom commun tout ça ça va pas
+forcément nous aider mais on va se dire ok avec le dictionnaire on a tous les sens on essaie de
+prendre chaque sens et de les comparer à tous les autres sens qui peuvent exister dans le dictionnaire
+donc ça c'est un travail de fourmi mais c'est un travail qui se fait et notamment en word net qui
+existe en anglais où ils prennent tous ces sens qu'ils appellent sincètes ils essayent de dire
+ma chat et chien c'est à une certaine distance donc ça c'est des linguistes qui s'en occupent
+et qui vont fixer des distances et qui au fur et à mesure vont avancer avancer tout doucement
+donc ce système il va être assez simple si on parle en relation sémantique finalement si on
+considère les deux principales les synonymes voiture automobile bagnole on pourrait presque dire qu'elles
+sont tout de même niveau voiture et automobile on pourrait les mettre sur un plan de similarité
+on pourrait dire qu'elles sont complètement similaires et après voiture camion un peu plus
+loin et jusque là pas trop de problème mais dès qu'on commence à vouloir ajouter toutes les
+autres par exemple la relation de similarité d'usage voiture essence peut-être tasse et café
+est ce que tasse et café on les utilise on les emploie souvent ensemble est ce que pourtant
+on devrait dire qu'ils sont similaires ou pire par exemple les antonymes chaud froid est ce que chaud
+en matière de similarité devra être à l'opposé de froid ou contraire juste à côté c'est des
+questions qui vont être très compliquées à y répondre surtout pour des linguistes et du
+coup le modèle qu'on va créer là il va être très limité déjà il va être subjectif en fonction
+des relations qu'on a vu chaud froid est ce qu'ils seront à côté ou pas il va être disponible
+dans seulement peu de langues bref vous l'avez compris un modèle comme ça on pourra pas on
+pourra pas s'en sortir avec ce modèle là on pourra rien construire de très grand que nous on
+pourra utiliser par la suite du coup les linguistes là dessus ils nous ont pas trop aidé et on
+va essayer de voir si les philosophes ils ont pas des réponses plus intéressantes à nous apporter
+il ya l'outveak vin kenstein qui a un demi-siècle c'est posé la question qu'est-ce qu'un jeu comment
+est-ce qu'on peut définir un jeu et finalement dans sa définition du jeu il s'est posé des
+questions est-ce qu'un jeu c'est stratégique si on pense par exemple au à la machine à sous
+rien de stratégique en tiril manette l'argent arrive est-ce que c'est compétitif non c'est
+là bas là son chien rien de compétitif il va se poser toutes sortes de questions et au
+final la conclusion à laquelle il va arriver c'est que un jeu on ne peut pas lui donner des
+caractéristiques précises en fait pour définir un jeu on va plutôt dire qu'il appartient à une
+certaine famille si on a listé un exemple de cinq jeux et vous ne trouvez pas une caractéristique que
+ces cinq jeux ont pourtant rien qu'on les regarde on peut voir qu'ils sont très semblables
+au final par ces travaux il va réussir à sentir que la définition d'un mot elle va plutôt venir
+de l'usage réel qu'on en fait de son contexte à quel moment va utiliser le mot ça va le définir
+ça peut paraître très flou et très philosophique pour l'instant je vais vous aider par un exemple
+est-ce que quelqu'un ici connaît le mot tes guineaux personne parfait je vais vous donner
+quatre phrases une bouteille de tes guineaux est posée sur la table tout le monde aime le tes
+guineaux le tes guineaux rend sous le tes guineaux est fabriqué à partir de céréales est-ce que
+quelqu'un pense savoir ce qu'est le tes guineaux une idée merci avec simplement quatre phrases
+vous avez tous pu situer tes guineaux tout du moins en relation avec bière et c'est cette idée là
+qui nous va nous intéresser et qui d'un point de vue historique est passé de notre philosophe la
+signification correcte dans l'usage par des linguistes d'autres linguistes et enfin va être
+formulée par la phrase emblématique des world embedding qui va être du show know world by
+the company it keeps et c'est cette phrase là qui nous va nous intéresser et en se basant sur
+ça on va pouvoir faire les premiers pas vers une approche des world embeddings pour les ordinateurs
+là donc on va vous parler un petit peu maintenant de bah comme l'a dit Tanguy un mot c'est un
+petit peu son contexte il est défini par rapport au mot qu'on va trouver avec lui au mot qu'on va
+trouver autour de lui et donc on va essayer de faire de mape ça sur l'ordinateur c'est à dire
+bah comment est-ce qu'on construit ces contexte comment est-ce qu'on fournit ce contexte un
+ordinateur donc là on va voir plusieurs sortes de modèles de pour les world embeddings il faut
+savoir que l'idée de définir un mot par rapport à son contexte c'est qu'est-ce que c'est le contexte
+et les mots proches les mots qui sont autour de lui et les mots aussi qui sont autour de lui fréquemment
+par exemple on peut dire si on a voiture le verbe conduire sera souvent proche de voiture et de
+manière fréquente donc peut-être regarder sera moi présent proche de voiture etc on va voir ce
+contexte là et donc il y a deux termes important c'est le fait d'être proche ou non et le fait
+d'être fréquent ou non donc c'est vraiment ces deux idées le fait d'être proche et le fait d'être
+là le fait d'être là souvent qui vont définir ce qu'elle contexte et donc comme l'a dit Tanguy un
+peu plus tôt nous ce qui nous intéresse c'est d'avoir un vecteur c'est que c'est quelque chose que
+l'ordinateur peut manipuler facilement c'est quelque chose qu'avec les outils mathématiques aussi on
+peut manipuler facilement donc pour chaque mot on aimerait bien avoir un vecteur qu'il décrit et
+commencer que pour des contextes similaires des contextes identiques on veut avoir des mots qui vont
+avoir une usage identique et donc qui seront similaires et bon on va essayer de construire ces
+vecteurs là d'abord avec une approche un petit peu intuitive un petit peu basique c'est si on a
+quatre phrases si on a un certain nombre de phrases donc à l'île c'est les pommes bah préfère les
+poires j'aime les pommes et les poires etc etc un certain nombre de freins un certain nombre de
+contexte comme ça on va pouvoir dire bon bah voilà est-ce qu'on va être capable pour un mot donné
+d'analyser tous ces contextes et de voir si il y a d'autres mots qui ont des contextes proches
+donc ce qu'on va faire la proche basique donc là on considère qu'on a un certain nombre de
+phrases qui n'est pas définie mais c'est pour chaque mot on va voir avec quel autre mot on va le
+trouver par exemple dans les exemples qu'on a pommes on va le trouver avec alice et avec aimer
+etc etc on va faire ça sur un certain nombre de documents et on va se rendre compte que
+en faisant ça certains mots vont avoir des contextes qui sont toujours un petit peu les mêmes
+vont surtout avec des verbes de certains types avec des noms de personnes etc etc et comme ça
+on va pouvoir avoir des vecteurs un petit peu similaires donc c'est des vecteurs de cours
+fin des c'est une maîtrise de co-occurrence dans laquelle on va trouver des vecteurs pour chaque
+mot donc voilà pommes on va le trouver beaucoup avec le verbe aimer un petit peu avec des noms de
+personnalistes et bob beaucoup avec les verbes préférés un petit peu avec poires etc il faut
+imaginer qu'après on va voir ça pour tous les autres mots qu'on a potentiellement pu rencontrer
+et l'idée là pour regrouper nos termes c'est simplement de dire bon bah voilà quelles mots
+ont des vecteurs qui se ressemblent certes il y a des variations mais qui ont des vecteurs
+qui sont globalement plutôt proches et globalement ça nous donne ça marche déjà assez bien on
+peut voir que bah pommes et poires vont se retrouver dans des contextes assez proches avec
+toujours un petit peu les mêmes mots le problème qu'on va voir vous avez bien compris c'est
+que là on a un exemple avec quelques mots si on prend des langues où il y a un million de mots
+quelque chose comme ça on va devoir faire construire une maîtrise d'un million de terres par
+un million de terres mais il arrive un moment où c'est plus gérable donc l'autre idée c'est plutôt
+que de pour réduire un petit peu ça plutôt que de travailler quel mot on va trouver dans un contexte
+avec quel mot on peut dire on a quel mot on va trouver dans quel document par exemple Alice on va
+le trouver dans le document 1 etc pommes dans un certain nombre de documents l'idée c'est un petit peu
+de se dire si il y a des mots c'est un mot qui touche à la médecine et qu'on a 50 documents qui
+parlent de médecine et 50 documents qui parlent de mécanique logiquement le mot qui parle de
+médecine on va le trouver plus dans des contextes de ces documents qui parlent de médecine etc
+donc en ayant tous ces documents on va aussi pouvoir construire des vecteurs de quel mot on
+trouve dans quel document et en comprenant ces vecteurs disons bah voilà pommes et poires on les
+trouve plutôt dans les mêmes documents et plutôt à la même fréquence dans ces documents là donc
+a priori c'est plutôt des mots quand le même sens sauf que vous voyez peut-être déjà un petit peu
+les problèmes qui va y avoir avec ça c'est que déjà c'est pas c'est pas un volume qui est
+négligeable il faut avoir beaucoup de documents on a beaucoup de vocabulaire donc on va devoir
+construire une matrice énorme et à côté de ça c'est très lourd à mettre à jour si on a un nouveau
+mot faut trouver des documents faut l'ajouter on va augmenter notre taille de vocabulaire
+etc etc donc c'est quelque chose qui n'est pas facile à mettre à jour à côté de ça les vecteurs
+sont très creux parce que si on a un million de mots de vocabulaire et qu'on garde chaque
+document dans un autre exemple d'avant en colonne on va pas trouver c'est un million de mots dans
+notre colonne donc on va avoir beaucoup de zéro beaucoup d'heures qui seront creuses et à côté
+ça c'est des modèles qui sont pas forcément très robustes mais qui nous donnent quand même un
+petit peu d'intuitif pour chaque mot le contexte de ce mot donc les documents dans
+lequel on va trouver ce mot ça permet de le décrire un petit peu en longtemps ces modèles
+là qu'on a utilisé parce qu'on a réussi à trouver une petite astuce mathématique c'est le
+light and sematic analysis on va pas trop détailler vous avez vu c'est assez affreux mais l'idée c'est
+que ici on a notre matrice creuse de tous nos termes de vocabulaire par tous nos documents
+vous l'imaginez de taille très très très grande et ce qu'on va faire c'est que par un peu de magie
+mathématique on va être capable de réduire cette matrice là une sous-matrice on va avoir beaucoup
+moins de taille de vecteurs c'est à dire qu'ici pour chaque mot avant j'avais une taille de vecteurs
+qui était égale à ma taille de documents avec beaucoup de zéro donc c'était assez difficile
+à comparer là j'avais une matrice beaucoup plus réduite ou pour chaque mot de mon vocabulaire
+il faut avoir seulement quelques aspects et je vais enfin pouvoir comparer mes mots
+avec ce système là et quelques astuces par exemple nettoyer un peu les mots trop fréquents parce que
+pour les mathématiques cette partie là c'est assez gênant plutôt que de simplement compter les
+mots on va utiliser leurs fréquences enfin on va accorder plus d'importance aux mots qui sont
+juste à côté des mots à considérer pour ceux qui sont très loin dans le document
+bref avec tout ça on va être capable de sentir un peu les relations entre les mots et par exemple
+de construire cet arbre on peut voir en haut les parties du corps qu'on a réussi à rapprocher
+les pays les animaux on va commencer à toucher du doigt ce à quoi se se conchèrent exactement
+le problème de ces modèles donc c'est évidemment c'est qu'ils vont être très dur à maintenir
+et encore une fois ils vont exploser avec la taille du vocabulaire plus on aura de mots
+plus la réduction mathématique l'opération d'avant elle va être complexe c'est ça qu'on a
+utilisé pendant des années parce que on n'arrive à rien
+mais vous êtes là ce soir et depuis assez récemment avec le big data et des nouvelles méthodes
+qui se mettent en place des ordinateurs plus puissants on arrive à trouver d'autres modèles
+et justement des modèles qui peuvent s'appliquer à notre cas et c'est là qu'on va rentrer dans
+les réseaux de neurones avec des réseaux de neurones on va essayer de modifier l'approche qu'on
+avait avant pour obtenir de meilleurs résultats je sais pas si tout le monde est à l'aise avec
+les réseaux de neurones donc j'ai fait un petit rappel assez court donc là vous avez un réseau de
+neurones très rapidement une couche d'entrée des couches intermédiaires une couche de sortie
+et ce qui va relier ses couches c'est des opérations mathématiques avec les opérations
+mathématiques on va pouvoir passer d'une couche à l'autre ces opérations on va les appeler matrice
+de poids c'est ça qu'on va régler tout doucement minutieusement pour arriver au but qu'on s'est fixé
+avec le réseau de neurones comme arrivé à ce but encore une fois je vulgarise peut-être beaucoup
+mais c'est un système de récompense c'est à dire que si le réseau de neurones il n'arrive pas
+à obtenir le résultat qu'on veut on va lui taper sur les doigts lui dire non non regarde c'était
+là qu'il fallait quitter et petit pas par petit pas le réseau de neurones il va réussir à converger
+vers là où on l'attend pour faire la tâche qu'on lui demande comment ça s'applique à notre cas
+simplement on va créer un réseau de neurones qui ne va pas se baser entièrement sur les
+statistiques mais qui va prédire il va prédire quoi il va prédire un mot en fonction de son contexte
+donc on va prendre des grandes données par exemple wikipedia et pour chaque phrase on va
+considérer chaque mot on va considérer son contexte et on va demander un réseau de neurones
+si je te donne ce contexte le moins le moins intéressant est ce que tu vas pouvoir retrouver
+ce mot cette tâche là qu'on va lui demander de réaliser et comme souvent avec les réseaux de
+neurones c'est pas la tâche qui nous intéresse c'est pas le résultat c'est plutôt le mécanisme
+que le réseau de neurones va utiliser pour arriver à ce résultat
+un des raisons de neurones qu'on peut utiliser c'est celui-ci donc rapidement pour vous remettre
+dans le bain ce qu'on va faire c'est que à chaque entrée on va lui associer un mot donc à la
+première hantée le premier mot etc jusqu'à la fin de la phrase on va lui mettre ça en l'entrée
+et en sortie ce qu'on va attendre c'est qu'il nous prédise le mot qui manque
+maintenant pourquoi est-ce que c'est l'engrenage qui nous intéresse ou en tout cas une pièce de
+synchronage ça va demander un peu plus d'explication c'est la partie un poil plus
+mathématique de la présentation mais vous inquiétez pas ça va bien se passer
+tout d'abord je vais juste introduire rapidement le principe de one odd vector
+c'est que au début quand on n'a pas de word en meaning pour un mot
+pour le le faire passer à la machine on ne va pas pouvoir écrire le mot l'ordinateur il
+arrivera pas à le comprendre donc simplement on va dresser un index on va prendre tout notre vocabulaire
+de A à Z on va construire un vecteur de la taille de ce vocabulaire et pour chaque mot on va lui
+attribuer d'index au premier mot le premier indice au deuxième mot le deuxième indice
+au dernier mot le dernier indice du coup simplement quand on va avoir une phrase
+bah à chaque mot on va lui attribuer un index
+et on aura notre vecteur vous allez comprendre très vite pourquoi ça ça nous intéresse
+voilà les seules opérations que ce réseau de neurones il va faire on va les détailler ça va
+être assez simple on arrive sur nos entrées donc nos entrées quand on l'a dit on les transforme
+simplement en one odd vector on va ensuite accéder à leur embedding grâce à la première
+matrice de poids qu'on a définie tout à l'heure donc c'est ce qui va lier notre première couche
+des entrées avec notre couche cachée finalement si vous imaginez qu'il y a beaucoup de mots dans
+le concept ce qu'on va obtenir à la fin de cette opération c'est une sorte de mic mag de tous ces
+mots qui vont être mélangés une fois qu'on a retenu une sorte de codage de cette phrase on va faire
+l'opération inverse c'est-à-dire qu'avec notre contexte on va décoder le contexte ça c'est la
+deuxième matrice de poids qui va s'en charger c'est la partie la moins intéressante pour nous
+parce que cet engrenage là il n'est pas important pour nous mais qu'est ce qui va donner il va donner
+un vecteur de probabilité qui à la fin va nous dire je pense qu'étant donné ce contexte il y a
+99% de chance que le mot qui manque ce soit celui ci du coup si vous m'avez bien suivi il y a
+deux engrenages principaux la première matrice de poids et la deuxième matrice de poids et comme on
+l'a dit c'est dans la première matrice de poids que il y a les words en bellings c'est cet engrenage
+là qu'on va extraire et à coercant cet engrenage là vu qu'on a utilisé un one-odd vector au début
+cette matrice elle va contenir une ligne pour chaque mot du vocabulaire et sur chaque ligne il y aura
+un vecteur et ce vecteur il sera assigné au mot du vocabulaire correspond on va pouvoir jouer sur
+la taille de notre réseau de neurones sur la couche cachée on va grossir ou réduire nos engrenages
+pour avoir plus ou moins de longueur de vecteur on va pouvoir ajuster cette taille c'est pas la
+seule chose qu'on va pouvoir jouer sur ce modèle on va vous expliquer les paramètres les plus
+importants pour régler ce réseau comme Tanguy l'a dit le principe du réseau en fait c'est pas
+vraiment la finalité qui est de prédire le mot au manque dans le contexte mais c'est plus d'extraire
+pour chaque mot un vecteur qui est un petit peu la description du mot sachant qu'en fait qu'il y a
+deux approches pour ça donc celle que Tanguy a décrite si on a un contexte et à partir de ce
+contexte là on va essayer de prédire le mot qui manque dans le contexte pour que ce soit
+il y a l'autre approche qui est de dire en fait on n'a qu'un mot et à partir de ce moment on va
+essayer de prédire dans quel contexte naturellement on devrait trouver ce mot là donc la première
+approche c'est l'approche qu'on appelle bien avant le bag of words et l'autre approche c'est
+skibogram l'avantage de la première c'est qu'on va être plus précis pour les mots qui sont très
+fréquents parce qu'on va avoir beaucoup d'exemples donc l'idée c'est qu'en fait notre réseau va s'entraîner
+avec beaucoup d'exemples pour essayer de prédire un mot donc plus un mot à de contexte disponible
+plus il va être précis sur ce mot là tandis que l'autre approche c'est une approche qui est
+naturellement si plus lente qui est un peu plus complexe et qui va être plus précise sur les mots
+rares parce qu'on n'aura pas besoin d'avoir tant d'exemples du qu'on a autant de contexte qu'on
+veut donc on sera un peu plus précis sur ces termes là donc ça c'est le premier point c'est
+mais dans tous les cas la finalité est la même c'est à la fin on va extraire
+de ce réseau là on va juste extraire les vecteurs associés à chaque mot c'est ce qui nous intéresse
+donc c'est les vecteurs de poids qui vont être les vecteurs qui vont encoder un petit peu l'information
+de chaque mot je vous aurais des exemples un peu plus tard pour vous montrer exactement comment ça
+marche c'est ce qu'on peut en faire. Le deuxième attribut sur lequel on peut jouer c'est ce qu'on
+appelle la fenêtre donc c'est le contexte en fait c'est quand on a un mot c'est les mots qui sont
+avant les mots qui sont après sachant que pour cibo donc pour les bag of words c'est l'approche
+on essaie de prédire le mot à partir du contexte on regarde un certain nombre de mots avant un certain
+nombre de mots après et c'est tout et pour l'autre approche qui gramme on essaie de prédire de prédire
+le contexte à partir du mot on regarde plus de mots avant et après mais de manière un petit
+peu aléatoire des fois on regarde 3 des fois on regarde 5 des fois 1 des fois 2 etc ce qui fait
+qu'en fait naturellement on va donner plus de pas aux termes proches qui en théorie définissent
+le contexte et moins de pas aux termes éloignés et donc on peut aussi jouer sur la taille de cette
+fenêtre donc la taille du contexte parce qu'en fait on pourrait dire bon ben si on a une phrase
+le contexte d'un mot c'était toute la phrase mais potentiellement le mot qui en 125e position
+il décrit pas du tout le mot actuel donc là on a un petit exemple tout bête mais si on essaie de
+donner les définitions de stack overflow par rapport à son contexte si on prend une fenêtre
+de taille 1 donc on regarde juste le terme avant et le terme après bon on voit que c'est
+c'est quelque chose à voir avec le web et avec proposer ça ne nous donne pas forcément beaucoup
+d'informations si c'est juste à le contexte deuxième exemple on a site web et on a proposé
+ce question ou réponse c'est déjà plus intéressant ça envoie déjà un peu plus d'informations
+sur ce qu'est stack overflow je pense que je pense que tout le monde connaît
+et dernier exemple là on prend une taille de fenêtre qui est encore plus grande
+on va aller beaucoup plus loin dans la phrase et on va pouvoir récupérer d'autres informations
+comme le fait qu'il y a programmation et informatique donc on va peut-être apporter des informations
+en plus avec ce contexte mais à côté de ça on va aussi mettre un certain nombre de termes comme
+large choix thème concernant qui n'aide pas forcément à décrire le terme donc c'est en fait
+c'est avec ça qu'on va jouer donc sur cette taille de fenêtre soit en essayant de donner
+un contexte plus local soit en essayant de donner un contexte plus global potentiellement rajoutant
+du bruit etc enfin un autre paramètre du modèle sur lequel on peut jouer notre anglais a déjà
+parlé c'est la taille de notre embedding c'est à dire pour chaque mot la taille du vecteur qu'on
+y associe et donc d'une manière générale on associe un vecteur de taille 300 mais juste pour
+faire aux alentours de 300 un peu moins un peu plus etc mais juste pour vous donner un petit peu une idée
+comme Tanguy a dit un peu plus tôt en fait c'est on essaie de c'est un peu comme si un mot on
+essaie de caser dans le vecteur tout ce qui permet de le décrire et c'est assez clair qu'on peut
+pas décrire un mot par exemple avec deux dimensions si vous prenez n'importe quel mot on peut pas admettons
+qu'il est féminin et royauté ça permettra pas d'écrire tous les mots par exemple il faut un certain
+nombre de dimensions pour permettre d'en coller ça forcément plus on a dimension plus on va
+pouvoir en coller des informations différentes mais on va rajouter du bruit on va avoir de la
+redondance etc et moins notre dimension plus on va plus on va réduire plus on va aussi perdre
+l'information donc en fait il va falloir pas avoir un vecteur qui soit qui porte trop d'informations
+et au final qui porte trop de bruit et pour pas avoir un vecteur non plus trop petit qui compresse
+trop l'information et qui perd de l'information et enfin il y a pas mal d'autres paramètres sur
+lesquels on peut jouer un paramètre tout bête c'est si on veut prédire un mot on peut se demander
+est-ce que c'est intéressant de prédire ce mot là ou pas par exemple si on a encore plus qu'énorme
+et qu'on a un mot qui est présent une seule fois on va essayer de prédire ce mot par rapport à son
+contexte mais si son contexte j'ai vu un truc truc c'est le mot qu'on doit prédire si c'est le seul
+contexte qu'on a truc ça peut vraiment être n'importe quoi juste avec ce contexte là on pourra
+pas donner une définition précise du mot on n'aura pas assez d'exemples à notre point c'est on peut
+décider de regrouper certains termes par exemple si on prend wikipedia on va voir le mot victor qui
+va être écrit à plein endroit le mot Hugo qui va être écrit à plein endroit donc on pourrait
+juste décider de bon bah prendre ces deux mots là et essayer de voir et en fonction au contexte de
+les reprédire mais on va aussi avoir des endroits il y a remarqué victor Hugo et ça ça va apporter
+une information qui est un petit peu différente et on pourrait dire on a plutôt que d'essayer de
+prédire victor d'essayer de prédire Hugo on pourrait essayer de prédire ces deux mots ensemble
+qui portent un sens qui est un petit peu différent pareil si on a aujourd'hui on pourrait essayer de
+prédire aujourd'hui qu'il n'y a pas forcément de sens et oui tout seul etc et donc un ou porte
+monnaie bref et l'idée c'est là on va rassembler des mots pour prédire quelque chose qui a un sens
+un petit peu différent de juste de mots séparés ça c'est quelque chose aussi qu'on fait à 365
+talents je vous montre à quelques exemples plus tard et quel est l'intérêt de justement rassembler
+certains mots après on peut jouer sur le nettoyage etc sur comment on va est-ce qu'on garde les
+accents est-ce qu'on garde les muscles que lui bon ça c'est plus de la de la tuyauterie avant mais
+ça va aussi jouer sur le modèle et enfin il faut savoir qu'il y a d'autres approches la proche qu'on
+va présenter c'est word to vec donc c'est-à-dire un mot on va simplement essayer de le reprédire
+en fonction de son contexte qui sont les mots avant et après il y a d'autres approches comme glove ou
+fast texte qui va plus se baser plutôt que de prédire en fonction des mots en fonction des
+caractères on va glisser sur les caractères avant et les caractères après ce qui nous permet par
+exemple de voir si on a déshumanisé dans déshumaniser il ya humain donc en glissant sur les
+caractères on va des fois trouver d'autres informations qu'on n'aurait pas trouvé
+voilà et donc là on vous a donné juste un petit peu une vision globale de comment on peut
+paramétrer ce modèle comment on en extrait des données comment on associe un vecteur à un mot
+mais au final ça vous dit pas comment est-ce qu'on utilise ces vecteurs et qu'elle est au final
+l'intérêt d'avoir ces vecteurs on vous rappelle qu'au moment où on a défini notre réseau de neurones
+on s'était dit on prend un mot et avec son contexte on va pouvoir prédire ce mot
+et le mécanisme d'apprentissage va faire que des mots avec des contextes similaires
+vont avoir des vecteurs similaires et ça on l'avait presque déjà avec l'autre approche
+qu'est ce qu'on a en plus avec cette approche si on présente les quatre mots king man queen
+woman avec ses vecteurs on a parlé tout à l'heure qu'on avait des outils mathématiques accessible
+avec word to veck ils devaient encore plus accessible par exemple
+si on prend notre vecteur roi et qu'on lui enlève le vecteur femme
+puis qu'on lui rajoute le vecteur femme tu pourras se traduire par enlever la part masculine et rajouter
+une part féminine on va tomber sur le vecteur queen
+reigne et du coup si vous vous rappelez ce qu'on avait imaginé dans l'approche intuitive en
+disant chaque caractéristique de mon vecteur je vais pouvoir lui attribuer quelque chose
+mais en fait ça se passe vraiment dans le word to veck ça veut dire que pour chacun de mes
+vecteurs je vais pouvoir jouer sur mes opérations pour tomber sur d'autres vecteurs et ça ça
+peut généraliser à beaucoup de choses donc là bas on a notre exemple entre king et man entre queen
+et woman on a les mêmes vecteurs la même relation mais on en a d'autres par exemple entre les pays et
+leur capitale ou entre les pronoms et leurs processifs on a plein plein plein d'exemples
+de ces relations qui existent entre des vecteurs et en fait c'est parce que ça qui va plus nous
+intéresser il va plus définir le langage que nous on va utiliser pour le faire
+jusque là on a été un peu beau par l'heure on vous a raconté plein de choses
+mais maintenant on va pouvoir vous montrer un peu tout ce qu'on vous a parlé tout ce qu'on a pu vous
+dire on a préparé pour vous trois raisonne rône trois word to veck on va vous montrer un peu
+les résultats qu'on peut imaginer avec ces ces modèles rapidement pour vous présenter les
+refine kit démo pour présenter un petit peu les trois modèles qu'on a si on a un modèle qui a
+été entraîné sur tout le vocabulaire de wikipedia français un surtout le vocabulaire de wikipedia
+français et anglais qui nous permet aussi de faire un petit peu le pont entre des langues parfois
+et enfin un sur ça plus d'autres sources donc des profils etc etc des choses un peu plus du
+domaine de la rh etc donc d'autres sources de données donc dans les deux premiers c'est du cibo
+donc on prédit le mot à partir de son contexte et dans l'annecasse on prédit le contexte à
+partir du mot donc on a changé d'algorithme sachant que pour cette approche là vaut mieux avoir une
+taille de fenêtre un peu plus grande et vu que la prochaine est un petit peu différente et que
+aussi elle va pondérer plus fortement les termes proches on peut rajouter une fenêtre plus grande
+comme les termes éloignés naturellement ils seront moins pondérés donc pour vous donner une idée
+on voit wikipedia français c'est 750 millions de mots français anglais bon 2,5 milliards pour
+le dernier modèle tout ça c'est nos données d'entraînement donc c'est pour vous ayez un petit
+peu une idée du volume que ça représente sachant qu'avant toutes ces données elles ont été
+préprocessées savoir on enlève les majuscules on enlève les actions on regrousse à un terme
+comme victor Hugo ou gestion de projet ou risk management etc on va dire c'est un seul terme
+etc etc sachant que ça d'ailleurs pour regrouper c'est une approche statistique on va voir quelles
+termes sont naturellement très souvent ensemble on n'est pas entré dans le détail mais fin de
+démo avec quelques exemples un petit peu
+il a accoté il faut le leur des terminaux si on n'a pas perdu
+on va peut-être vous manger la première lettre non c'est bon ça devrait aller
+bon première en gros on va avoir trois modèles qu'on a mis
+modèle français et modèle anglais français et un modèle qui combine ça avec d'autres données
+première chose qu'on peut voir c'est un petit peu à quelle quantité de mots au final on a gardé
+notre modèle parce qu'on ne peut pas en fait on ne garde pas tous les mots qu'on va croiser
+nous dans ces modèles là on s'est dit globalement un mot qu'on voit moins de 40 fois dans notre date
+à 7 il n'est pas forcément intéressant on n'a peut-être pas assez de contexte en vrai
+souvent on peut monter à plus mais après ça fait des modèles qui sont très lourds à utiliser
+ouais descendra moi pardon et donc on a on s'est limité un petit peu mais pour vous donner
+une idée en en se limitant à 40 pour le modèle français on a vous voyez pas le début je crois
+que c'est on croit peu près 400 000 mots et c'est donc ça arrive à régler mais sinon
+voilà c'est en gros le modèle français pur entraîné sous équipélieurs on a gardé
+au total 400 000 mots le modèle anglais français on a gardé un peu plus d'un million de termes
+et le dernier modèle on en a encore un petit peu plus donc ça doit être un million cinq ou
+quelque chose comme ça c'est juste pour vous donner une idée en fait de la 1 million trois donc
+c'est pour vous donner une idée de la quantité de termes que notre modèle va connaître il faut
+imaginer que derrière chacun de ces modèles qu'on a entraîné on a récupéré notre engrenage
+et là par exemple pour le dernier modèle cet engrenage ta taille c'est 1 million 300 000 mots
+de vocabulaire et vu qu'on a décidé d'avoir 300 caractéristiques possibles on a une matrice de
+taille 1 million 300 000 fois 300 donc c'est quand même quelque chose qui est assez conséquent
+donc en fait comme l'avis dit Tanguy aussi l'idée de base c'est un petit peu d'être capable de dire
+quand on a deux mots ou deux phrases si on généralise un petit peu est-ce qu'elles sont plutôt similaires
+est-ce que ça parle de la même chose ou pas du tout
+yes j'explique en attendant donc en gros bon un exemple un petit peu tout simple c'est on va
+voir ces deux phrases là mark aime les pommes c'est écrit un petit peu bizarrement parce que
+avec le nettoyage on ramène chaque mois le racine etc etc mais en gros on va voir mark aime les pommes
+et mark aime les poires donc nous intuitivement on se dit ça veut à peu près dire la même chose
+c'est la même idée qui est transmise donc là en gros on va cliquer la similarité entre ces deux
+phrases on peut faire la même chose entre des mots et en gros ça va donner un score entre moins
+un et un donc la mesure similarité c'est mesure cosineus donc en gros on va projeter les vecteurs
+c'est en gros c'est l'angle entre les vecteurs si vous vous rappelez les vecteurs c'est défini
+par leur taille et leur angle est-ce qu'on va comparer là c'est les angles savoir si est-ce
+que les vecteurs ils sont dans la même dimension il y a les vecteurs de ces deux phrases
+ils sont à 90% dans la même dimension c'est pas tout à fait vrai mais imaginez-le comme ça
+ça va voilà on peut imaginer qu'on peut combiner en fait c'est le vecteur moyen
+pour en s'y dire
+ah à grandir un peu le display oui yes
+celui là comment plus
+et voilà c'est à l'idée en gros pour une phrase on peut prendre le vecteur moyen parce que
+certes si on a une phrase qui est trop grande on va finir par avoir un vecteur qui va un petit
+peu plus rien dire mais quand on a juste quelques termes c'est une c'est une assez bonne approximation
+en fait il y a quelques approches qu'on peut faire pour améliorer dans certains cas mais
+dans le cas général ça ça nous suffit c'est juste pour vous montrer un petit peu donc là c'est
+un autre exemple avec marc aime le pomme et luke aime les poids et les pommes aussi on a juste changé
+le nom c'est pareil on reste quand même très proche mais on a quand même une différence
+qui est un petit peu plus grande mais pas rien de significatif mais non on peut prendre un autre
+exemple il garde toujours la même phrase mais pour vous montrer donc là on reste en fait toujours
+on a toujours des fruits on a toujours des personnes qui aiment des fruits bon c'est pas très
+intéressant mais c'est juste pour vous montrer un petit peu que au final c'est un modèle qui a réussi
+quand même à bien agréger toutes ces informations donc là maintenant est-ce que marc marque aime
+les pommes et marque aime les livres là on est passé de bas deux fruits quelque chose des choses
+qui étaient naturellement proches à des domaines qui sont déjà plus éloignées donc là on voit
+que ça reste le score reste élevé mais quand même beaucoup plus bas que précédemment parce que
+certes on a déterminant commun certes l'idée c'est toujours d'aimer quelque chose mais c'est plus
+du tout la même chose le même genre de chose qu'on aime et on peut donner un autre exemple
+que ce qu'il y a vraiment rien à voir pour le coup donc voilà donc marque aime les pommes et le chat
+regarde la ligne là pour le coup ça vraiment rien à voir et on voit que le score de similarité est
+beaucoup plus bas si on peut trouver des exemples si on prend marque aime les pommes avec un produit
+simile quelque chose comme ça on va avoir des scores qui sont à zéro voire même en négatif
+donc déjà on voit que notre idée de base qui était de dire est-ce qu'on est capable de comparer
+deux mots et aussi par extension de phrases c'est quelque chose qui est plutôt respecté maintenant
+comme on le disait plus tôt on a un certain nombre d'autres opérations qui sont aussi intéressantes
+à regarder et la première qu'on peut regarder la première qu'on peut regarder c'est qu'on
+compare des vecteurs est-ce que si on nous donne un certain nombre de termes on serait capable de
+repérer si on va jouer à l'intrus sur ces mots là voilà c'est ça l'idée c'est de trouver un intrus
+donc là ça reste assez simple je sais pas si vous voyez toute la phrase
+il y a le modèle il va réussir à reconnaître que chat c'est le plus éloigné
+chat est le plus éloigné parmi tous les mots qu'on a
+moi jusque là vous pouvez peut-être vous dire bon j'aurais pu le faire
+mais par exemple si on va chercher un peu plus loin
+disait 20 un peu plus détaillé donc là on n'a que des poètes sauf victor ego
+vous bien sûr vous l'aviez mis à m'en repérer est-ce que
+pardon
+peut-être moins que les autres parce qu'il est que aussi excellent en tout cas il a une différence
+on a été capable de l'arpérer
+bon l'idée c'est juste de montrer que le modèle a réussi à prendre de manière un petit peu
+générale et on peut dire sur les exemples on va différencier un chat d'une poire d'une pomme
+c'est facile même sur des termes qu'on a eu de manière beaucoup moins fréquente dans le modèle
+et sur des termes beaucoup plus sur des mêmes beaucoup plus fixés il a aussi
+quelque part de discriminer les informations
+les vecteurs sont
+ok donc la question c'était de savoir si
+comment il arrivait à obtenir ce résultat là
+l'idée c'est que chaque mot on a déjà trouvé son envenu puisque on l'a construit avant le modèle a
+été généré avant et en fait ce qu'on va faire c'est juste comparer donc simplement on va comparer
+les mots de deux à deux et on va chercher le mot qui est le plus éloigné de tous les autres
+et quand beaucoup de dimensions sont communes ou là on a vraiment mis que des poètes
+mais le dernier poète est un poète anglais
+qu'est-ce qui manque au début ah ouais normal
+des petits caractères et trop j'ai mal fait mon copier collé
+on recommence hop voilà on a réussi on pouvait plus les discriminer sur le fait d'avoir été un
+écrivain ou sur la poésie du coup on a dû aller chercher ailleurs et peut-être que une des
+dimensions qui était la plus discriminante c'était le pays
+en gros juste pour vous expliquer un petit peu aussi pourquoi on a cette
+problématique chez nous pourquoi on a décidé de passer par ces modèles c'est qu'on a un certain
+nombre de problématiques dans le domaine de la RH donc à savoir traiter des CV etc et reconnaître
+des compétences et il faut qu'on soit capable de voir si une personne n'a exprimé une compétence
+d'une certaine manière une autre personne d'une autre manière est-ce qu'on va parler de la même
+compétence même si elle écrit des ferraments ou pas par exemple certaines personnes ont marqué
+gestion de projet d'autres management de projet suivi de projet chargé de projet etc etc derrière
+on a quand même la même idée il faut qu'on soit capable de dire bon bah c'est la même chose bon
+en tout cas ça ça reflète un petit peu la même chose mais à côté de ça une personne qui a
+mis gestion de risque comme on a dit un peu plus tôt gestion de projet gestion de risque on a
+toujours le terme gestion mais ça c'est pas du tout le même domaine donc c'était un petit peu
+notre problématique de base donc là on a un exemple c'est plus ce genre de question que nous on va
+chercher à poser à nos modèles là évidemment c'était java pas du tout on peut se demander
+ouais pourquoi java effectivement on s'est posé aussi cette question là donc la meilleure manière
+de savoir pourquoi java c'est de regarder qui sont les amis java avec qui il y a l'habitude d'être
+dans des contextes du coup pour se faire on va simplement ça marchait ça devrait marcher
+on va simplement chercher ceux que java donc le modèle là qu'on utilise pour l'instant c'est
+le modèle français on a appris que sur utipéia français
+ah oui raté il y a une île qui s'appelle java et comme c'est le plus fréquent
+comme c'est le plus fréquent il y a aussi le change à la etc donc au final c'est normal
+qu'il ait été différent des trois autres parce que c'était pas forcément le bon donc cette
+fois ci on va aller plutôt vers nos autres modèles donc par exemple notre modèle qui est
+bâti à partir de l'autipédia anglais ou qui est à français, LinkedIn, d'autres données cette
+fois ci java il va être proche de voilà quelque chose qu'on connaît déjà un peu plus en tout cas
+pour certains du coup il faut faire attention à quelle donnée on utilise ça nous montre un peu
+que parfois on croit qu'on a quelque chose et ça n'a pas forcément été le cas si on prend par
+exemple tu peux prendre tes exemples plus haut là je vais faire avance avance on peut faire
+on pourrait vous montrer les images mais là avec 400 000 mots d'ailleurs on n'a pas mis la
+diapo on a pas mis la diapo on pourrait en fait c'est ce système là de most similaire qui va le
+faire on peut le faire nous on le fait de cette manière on peut le faire en visualisation il ya
+juste une opération mathématique qui va se faire en plus parce qu'il n'y a pas visualisé un
+vector à 300 dimensions donc tu vas falloir l'écraser et voir sur quelle dimension c'est le plus
+discriminant cette opération là on va pas la faire là on pourrait la faire on va préférer
+celle là qui est un peu plus simple en même temps un autre exemple par exemple ça va être étudier le
+mot avance donc on a appris un petit peu qu'est-ce que c'était le mot avance dans wikipédia voilà
+le mot avance est lié au terme au fait d'être en retard d'être en avance ou pas en gros c'est
+plus la notion d'être à l'heure ou pas c'est un petit peu ce qu'on a ce qu'on a croisé le plus
+souvent est ce qui nous a orienté le mot donc là on a aussi à côté on a un petit peu les scores
+donc c'est le mot similaire donc c'est en fait avance il est très proche de retard mais seulement
+avec un score de 0,57 ce qui n'est pas très élevé et à côté de ça on peut regarder sur le dernier
+modèle qu'on a généré qui est aussi des qui pensions contre des profils à certain nombre d'autres
+données avance il y aura plus la notion de niveau de niveau intermédiaire de niveau basique de niveau
+avancé effectivement on l'a dit tout à l'heure on a décidé d'enlever les accents mais peut-être
+que nous on n'aurait pas dû par exemple sur ce cas là on a deux modèles sur des données différentes
+qui vont nous donner des vecteurs différents en tout cas des comportements différents donc tout ça
+il va falloir le gérer de notre côté et vérifier que ce qu'on veut faire on le fait bien on peut
+peut-être aller sur un dernier exemple oui il faut que je le tape non ah tu peux le taper le chemin
+vous avez un peu plus compris le sens du titre nlp au ardenbenil la phrase du tout c'était
+l'intin est à milo ce que rentre en plan est à nuquiluc donc c'est un peu notre histoire de reine roi
+femme si on essaye de faire ouais on l'a déjà fait tout à l'heure ce qu'on va faire ici simplement
+on l'a réécrit mais l'opération c'est que le premier loup on lui ajoute le vecteur du
+quilluc et on lui enlève le vecteur teintin là c'est les vecteurs qu'on va ajouter les vecteurs
+qu'on aussi vous rappelez puisque ça fait graphiquement en deux dimensions on va le faire
+en troisième dimension il va nous donner le top 10 des vecteurs les plus proches du
+vecteur qu'on aura donc voilà c'est vraiment tout l'intérêt du modèle
+voilà donc là on obtient bien notre entamplant donc le modèle est capable de comprendre que la
+relation qu'il imitait à teintin c'est un peu la même que celle qu'il rentre en plan à nuquiluc
+et ça on va le faire on va pouvoir le faire pour beaucoup de choses comme on l'invente au soleur
+pour les villes etc on va pouvoir faire des trucs bien plus marrant ça romaine par exemple ça
+romaine après je ferais traduction peut-être bon un exemple un peu bête qui marche d'ailleurs
+à peu près avec tous les modèles qu'on a qu'on a pu faire c'est est-ce qu'on est capable
+en gros est-ce que même à une personne quelque chose comme ça on peut y associer un petit peu
+une idée par exemple je pense que vous voyez à peu près tout ce dont on parle là qu'est-ce
+que c'est la version mauvaise de gondalf c'est une question toute bête qu'on pose il est
+bon voilà en fonction de ce qu'il a appris sur wikipedia est ce qu'il a appris sur un petit peu
+tout le reste il est bon bah voilà la version mauvaise de gondalf c'est plutôt ça romaine
+j'ai une dame qui connaissait pas trop là bas c'est c'est deux magiciens dans le seigneur des
+anneaux qui sont le magicien blanc et le méchant magicien du coup on va simplement évit le goût
+d'on arrive à retrouver sur le bon méchant du coup tu voulais tester quoi après la traduction
+peut-être pour montrer un petit peu toutes les choses qu'on fait par exemple pourquoi si on avait
+construit un moment un modèle qui se basait à la fois sur l'inglis non français et l'inglis
+non anglais c'est qu'on s'est dit bah peut-être avec le hachant que ça va réussir à faire un
+petit peu des ponts entre les deux langues et imaginez que vous êtes capable de faire de
+la traduction en mettant par exemple un mot en enlevant la partie anglais en rajoutant la partie
+français voilà pour vous montrer quelque chose qui marche pas du tout on avait notre modèle
+où on a pris juste sur wikipédia en français donc là on va essayer de voir bah project
+management ça c'est une compétence en anglais en français comment est-ce qu'on l'exprimerait
+là on essaie avec ce modèle là bon ça toppe cette table vraiment complètement à côté c'est
+vraiment perdu au coup c'est vraiment bien perdu parce que de bas c'est un terme qui est très rare
+donc les contextes définissent pas forcément ce que c'est donc le vecteur est parti complètement
+sucette ça veut un petit peu rien dire voilà c'est pour ça en fait qu'on a fait aussi notre
+dernier modèle c'était un petit peu pour les autres ça copie le à dans ce modèle là ouais
+donc c'est quoi ce modèle français
+donc c'est pas horrible non plus que ça a trouvé mais par exemple les premiers termes qui remontent
+c'est pas exactement la même chose certes c'est des proches ça reste un petit peu des compétences
+etc mais c'est pas ça définit pas non plus la même chose ça définit pas vraiment la même entité
+surtout c'est des mots qui sont en anglais on pourrait s'attendre à directement trouver
+peut-être la comparaison en français en fait c'est pas le cas pourquoi ces mots en anglais
+existent parce que dans l'utilité de la français bah on est bombardé de presque tous les mots
+en anglais on aurait eu du mal à l'imaginer que sauf qu'un générique pour pas innovative on peut
+se poser la question pourtant ils sont tous présents et plus de 40 fois donc si on utilise plutôt que
+notre modèle français on a réutilisé notre modèle anglais français anglais français
+autre source du coup j'ai pris un autre exemple désolé mais on a enlevé la partie anglaise
+c'est possible parce qu'on avait le mot français on a réclé la partie française
+voilà et l'intérêt du coup c'est qu'on peut faire des 40 petites charges comme ça et on peut
+penser à un certain nombre de problématiques qu'on peut avoir donc là c'est un problème une
+problématique de traduction mais on peut aussi avoir des problématiques de dire bon ma voilà est-ce
+qu'on se récupère si on a un métier de détecter les différents niveaux de séniorité du même
+métier donc là un exemple qu'on a et qui va pas marcher aussi dans les anciens modèles qu'on
+avait qui va mieux marcher dans les nouveaux modèles qu'on a un petit peu tuné à l'autre
+manière justement pour ces pour ces problématiques là c'est si on dit bon ma voilà on a un RH
+qu'est ce que c'est la version la version seigneur d'un RH tiens si on a une personne qui travaille
+dans l'hérâche qui va évoluer vers des postes supérieurs qu'est ce que ça va être son poste
+potentiellement plus tard la stuce qu'on va utiliser là c'est que plutôt que d'enlever
+anglais de rajouter français on va enlever junior et on va rajouter senior c'est-à-dire que cette
+sorte de caractéristique qui va gérer l'âge ou la séniorité de la personne on va la forcer
+trop maximum je relance du coup vous y voyez hop et voilà et de RH on va passer à des RH donc
+directeur des ressources de vie voilà c'est un petit peu tout l'intérêt du modèle bon il y a
+toujours des mots qui va être derrière qui sont pas forcément les meilleurs mais c'est un petit
+peu l'idée c'est que justement on va pouvoir non pas se limiter juste à un mot et des bases
+synonymes qu'on pourrait avoir ou tout en tas de relations et qu'il est à l'avant et surtout
+qu'il facile à mettre à jour la question c'est savoir s'il y a des vecteurs qui pourraient
+former une sorte de base donc la question c'est pour nos 300 dimensions qu'on a choisi est-ce
+qu'on est capable de nommer chacune des 300 dimensions ce qui se passe c'est que les 300
+dimensions c'est pas nous qui les avons choisis on a choisi le nombre c'est le réseau de neurones
+qui va lui-même définir en quelque sorte quelles sont ces dimensions si tu es un vecteur mot similaire
+de 1000000 qu'est ce qui se passe effectivement non on n'a pas essayé ça par contre d'une manière
+générale ce qui est contre dans les littératures c'est qu'en fait nous l'exemple qu'on a donné on
+vous a un petit peu menti on vous a dit bon ben voilà on a peut-être une dimension c'est le fait
+d'être masculin ou féminin une dimension c'est peut-être la royauté etc et en fait généralement
+c'est beaucoup plus diffus ça c'est un petit peu réparti entre plusieurs dimensions mais bon
+peut-être c'est vrai on pourrait l'essayer effectivement on pourrait sur les 300 dimensions
+on pourrait le faire directement avec on va on va juste finir il nous reste 5 slides et après on
+va revenir sur les questions on va remettre la démo si vous voulez jouer un peu avec donc on finit
+par juste quatre petites slides sur ce qu'on peut faire un peu avec ces words dans
+meanings qu'on va réussir à faire donc nous on a pris des textes de wikipedia mais il y a des gens
+qui ont pris des textes des années 1900 des textes des années 1950 des textes des années 2000
+qui ont comparé un peu où se placer certains mots en fonction des années et avec ça on peut
+faire une étude presque historique de chaque mot de la position de comment il va être utilisé
+donc par exemple broadcast donc qui est plus diffusé en 1850 c'était plus d'informations
+on commence à passer par les journaux la télé la radio et en fait aujourd'hui il va être diffusé
+il va être beaucoup plus lié à la télé en fait donc on va pouvoir suivre l'évolution de ces mots
+ça c'est un exemple de ce qu'on peut faire un autre exemple on avait parlé un peu bon c'est
+l'analyse de sentiments donc là quand on parlait de le phrase justement donc là avec des modèles
+qui se basent sur les born and beings on va être capable de prédire les moticones qui
+va correspondre au sens de la phrase et là ça peut aller même assez loin parce que on peut
+se dire bah you love me il pourrait directement utiliser love et mettre quelque chose qui serait
+complètement faux mais là il a bien compris le sens de la phrase et était capable de prédire
+la bonne moticone donc là vous pouvez aller sur ce site et jouer avec si vous voulez un peu
+après il y a des choses un peu moins marrante dans les données par exemple en utilisant juste
+wikipedia et en faisant l'analyse de sentiments on peut faire une ya raciste sans vouloir c'est à
+dire que quelque part caché dans les dimensions même de wikipedia ou d'autres textes en fait
+bah par exemple les noms de noir par rapport au nom de blanc il va y avoir des différences
+dans les sentiments c'est à dire simplement si on met genre m une pomme bah on va avoir un
+sentiment qui va être en moyenne positif alors que je sais pas ce qu'on peut imaginer sale
+m la pomme donc la même phrase en genre le mot directement le sentiment il va tomber alors
+qu'il devrait pas être justement il ne devrait pas avoir ce biais sur les présents donc il faut
+faire attention à ce qu'on fait avec il y a des méthodes pour faire en sorte que justement ça
+ce soit pas biaisé mais qu'on remette tout au même niveau donc il faut faire il faut garder
+un sensitif avec tout ce qu'on va faire de ces données enfin j'arrive finir sur une petite note
+celle qu'on a fini aussi par fin qu'on a fait en fin de démo c'est à dire que actuellement et donc
+c'est un papier qui est assez récent octobre 2017 ce qu'on essaie de faire nous chez 35 talents c'est
+que on veut faire de la traduction et d'habitude pour l'affaire on utilise des data set énorme de
+données parallèles de données traduites cette phrase en français cette phrase en anglais et ça
+pendant 50 millions de phrases on n'a pas forcément les moyens il est capacité d'avoir ces data set
+et avec les words d'ambiance on a pu développer des modèles simplement en prenant un wikipedia
+anglais et wikipedia français mais peut-être pas forcément wikipedia français on a pu prendre
+lignes en français ou deux petits mots français les données n'ont pas forcément à avoir un lien
+entre les deux en fait simplement en créant les deux words d'ambiance on va être capable un peu
+de la manière on l'a fait tout à l'heure en faisant anglais français on va pouvoir rapprocher ces
+deux data set ces deux espaces de vecteur jusqu'à les fusionner elle est capable de dire que finalement
+on va créer un espace où le mot le plus proche de chat ce sera 4 le mot le plus proche de chien
+ce sera dog donc on sera capable de faire de la traduction mot à mot mais sans jamais avoir
+dit un seul instant tellement en français est équivalent à tellement d'anglais et ça ça reste
+assez fort jusqu'à l'heure on a essayé de vous guider vers qu'est-ce qu'étaient les words d'ambanings
+on a présenté globalement ce que nous on en faisait ce que les autres pouvaient en faire le
+fonctionnement un peu général on a essayé de répondre à une question et j'espère que ça a
+suscité plein d'autres questions chez vous vous allez pouvoir continuer votre chemin en sachant
+ces bases et en cherchant soit par vos propres moyens soit en nous posant des questions en tout
+quoi on espère que la présentation vous aura plu et maintenant si vous avez des questions n'hésitez
+pas
+merci
+j'ai une question par rapport à la traduction en fait quand vous prenez un terme et vous enlevez
+français vous rajoutez anglais c'est comme là de directeur quand on a un contexte autour et c'est
+à dire qu'il y a des mots qui sont apparus autour du mot mais dans le cas de la traduction le mot
+français et anglais n'était pas forcément apparaît à côté de le projet de management
+en fait dans le réseau de neuronnes qu'on va créer très grossièrement ou moins on va envoyer
+tous les mots dans la machine et qu'on va faire apparaître les contextes on va voir que ce qui
+relit français et project management et gestion de projet finalement la relation entre les deux
+ça va être la même qu'entre risque management et anglais c'est à dire que effectivement à aucun
+moment on a connecté les deux mais on a connecté le français et l'anglais mais pourtant on a été
+capable de dire que la relation qu'il y est le français au mot français et l'anglais au mot
+anglais on a été capable de bâtir ça marche clairement pas pour tous les mots mais ça marche
+pour certains mots qu'on va réussir à avoir certains ça n'a pas du tout marché par exemple il
+y a plein de mots comme on a quoi on a cher français la chair c'est la peau alors qu'en anglais
+chair ça va être un comité mais une place une chaise ou une chaise ouais du coup rien que
+par exemple pour ce mot là on va pas savoir si on l'utilise en français ou en anglais donc
+dans notre modèle Wikipédia anglais français ce mot là il l'aura vu dans des contextes français
+il l'aura vu dans des contextes anglais comme on l'a dit si on cherche le mot stimulaire de chair
+soit le français aurait crasé l'anglais soit l'anglais aurait crasé le français soit ça va être
+entre les deux et ça va être un peu n'importe quoi d'ailleurs on peut montrer un exemple avec
+sayde ou par exemple si on prend Wikipédia français moi je dis Wikipédia français c'est
+notre pourdement de sayde donc sayde donc en français il va nous sortir bah beaucoup de mots
+qui sont un peu connotés de la manière mais en tout cas des prénoms si on questionne notre modèle
+anglais français bah là ce sera le verbe du coup on aura que des verbes vous voyez
+ou peut-être monter un peu fait des entrées donc là on aura que des noms mais pourtant c'est
+Wikipédia anglais plus français ça veut dire que il avait le sens du prénoms sayde du français
+mais Wikipédia anglais est tellement plus gros que le capital français et sayde est bien plus
+utilisé en anglais que sayde en français donc il a écrasé le deuxième sens et maintenant si on va
+essayer le dernier modèle par exemple ça pourrait ça pourrait bien si on regarde le
+dernier modèle lui il est complètement à l'ouest il a un peu le mic-mac des deux et il va pas s'en
+sortir il va sortir des prénoms il va sortir de l'anglais mais il va être largué
+d'autres questions
+juste la fin est-ce qu'on a envisagé un moment d'utiliser des dictionnaires d'anthonyme de
+synonyme etc pour compléter le modèle je veux juste revenir sur un point que t'as dit que le
+modèle était non supervisé en fait c'est pas le cas parce que on prend les données de Wikipédia
+où on a notre phrase on enlève un mot de la phrase on donne la phrase et on connaît le mot
+qui doit prédire donc c'est du supervisé si on est capable de lui dire bah le mot que tu aurais
+dû trouver c'est lui voilà il a le contexte maintenant j'en ai parlé un petit peu plutôt
+avec wordnet ou justement c'est des linguistes qui se sont amusés à créer tous ces synonymes
+ces anthonymes etc ça marche pour ce que ça veut faire pour nous on va plutôt vouloir la
+masse de vocabulaire qui nous est accessible après une approche qui les deux ça pourrait
+exister il ya il ya des approches qui lie le world avec et l'approche statistique qu'on a vu un
+peu avant qu'on a appelé nous approche intuitive il ya des modèles qui lie ces deux là qu'il y en
+un qui s'appelle glove par exemple qui va avoir justement un peu les avantages des deux mais des
+modèles comme ça peut-être que ça existe nous en tout cas on voit mal comment on l'intégrer
+voilà naturellement ça ça nous satisfait
+alors oui couler l'outil qu'on utilise pour faire du pré-processing bon on est en train de
+retravailler un petit peu dessus mais en fait on a fait quelque chose d'un petit peu custom
+parce que en tout cas qu'on a commencé à travailler dessus la plupart des outils qui étaient
+disponibles à l'époque c'était soit trop lent soit on avait tout en cas un nombre de cas qui
+nous intéressait par exemple c'est plus plus ça va être en s'emmerancer parce que c'est enlever
+les plus enlever les tirer ou alors si des moteurs de règles fallait tout écrire en règle et que
+ça prenait un temps fou donc pour le coup on sait on a fait quelque chose d'un petit peu custom
+c'est à dire on enlève les accents on enlève les majuscules on garde les caractères spéciaux
+quand ils ont un certain contexte même chose pour les chiffres les chiffres seuls on les enlève les
+chiffres avec des lettres accrochées en les gardes etc sachant que c'est clairement pas une approche
+qui est parfaite parce qu'il y a beaucoup de bruit il y a beaucoup de il y a des quelques exemples
+qu'on n'a pas montré là mais qu'on pourrait montrer globalement le même mot qui va être écrit
+de plusieurs manières différentes ou alors des mots qui étaient complètement différents qui vont
+être amenés sur le même mot au final par exemple des 1d à jouer des accents aigu et 2
+avance par exemple avance avance et accent aigu avant bref qui vont être amenés donc pour le coup
+c'est c'est clairement un petit peu quelque chose qu'on a fait de manière de manière custom il y a
+pas mal d'approche qui existe mais là je demande en train d'évaluer d'autres approche pour voir si
+ce serait pas mieux ou pas mais oui pour le coup c'est vraiment on a tout construit à la main
+quand vous calculé la similarité entre deux phrases vous avez dit qu'on n'est pas le vecteur de la
+phrase mais la moyenne de tous les meilleurs des mots qu'est-ce qui se passe lorsqu'on fait en
+comparation de la phrase et une métaphore qui donne le même sens à peu près et ce que ça ne
+fonctionne pas puis pareil pour la traduction lorsqu'on a des sens cachés et la la banale par exemple
+l'espèce a traduit le bon sens qu'on attend c'est d'essayer comment on comprend
+tu veux me sonner je complèterai oui il faut répéter ok donc en gros c'est quand on a des phrases
+avec des sens un petit peu cachés qui sont pas le sens évident comment est-ce que le modèle se
+comporte c'est ça est-ce qu'on est capable par exemple sur la banane de rattaché le sens
+quand on prend deux phrases et une métaphore que chaque mot dans la métaphore ça va renvoyer dans
+un contexte qui est différent c'est ça quand on prend deux phrases si on les littéralement
+qui ont des sens vraiment différents mais en fait qu'il y en a une qui a un sens qu'on connaît
+nous deux un sens d'usage qui est différent du sens écrit comme la banane ok les cas comme ça
+généralement ça pose pas mal de problèmes d'ailleurs c'est pour ça que par exemple on a on
+travaille avec des n-grams c'est à dire qu'on va rapprocher les termes ensemble c'est pour gérer
+un petit peu toutes les expressions il y a aussi certaines expressions qu'on va raccrocher ensemble
+parce que par exemple si on reprend l'exemple de gestion de projet si on ne reproche pas les
+deux ensembles on va avoir juste gestion qui se battent dans tout un tas de contexte projet qui se
+battent dans tout un tas de contexte et les deux vont avoir un vecteur moyen qui est pas du tout
+même que le vecteur de gestion de projet en tant que tel donc non généralement quand on a des cas
+comme ça vu que pour chaque mot on a un vecteur qui est un vecteur moyen qui a final le vecteur du
+contexte le plus fréquent par exemple banane ça va se trouver dans 90% dans des contextes on
+parler de free donc ça va vraiment se focaliser sur ce sens là par contre on peut travailler
+des fois sur des expressions mais c'est quelque chose qu'on va faire un petit peu qu'on va d'essayer
+voilà
+si tu mets des espaces on pourrait en faire des espaces
+et du coup là clairement il va faire n'importe quoi donc oui justement les cas quand on a un cas
+qui n'est pas le le sens principal d'un mot des fois on va voir un petit peu de la chance ça va
+être encodé quelque part dans les dimensions mais souvent ça va être complètement écrasé par le
+reste
+voilà c'est vu que c'est un vecteur au final qui était appris à partir tous les contextes on
+aura peut-être cette information mais elle sera écrasée par les informations tous les autres
+contextes pour compléter toutes ces histoires de métaphores en fait on va pas les avoir en termes
+à terme comme là mais si il y a un moment on a pu comprendre que avoir la banane donc nous dans
+notre modèle on enlevé là c'est pour ça que j'ai créé avoir banane si un moment on a pu
+comprendre que ça c'était tellement fréquent que ça aurait dû être un mot à part entière
+comme le coup du victor du go et du victor ego c'est encore quelque chose d'autre on pourrait par
+exemple penser dans un prochain modèle à l'obliger dès qu'il voit avoir la banane à le considérer
+comme une entité et à ce moment là on aura le vrais sens de cette métaphore peut qu'il soit assez
+fréquent etc mais là dans notre cas on l'a pas et du coup ce qu'on va avoir ça va être n'importe
+quoi en fait c'est on peut le voir même sur d'autres exemples ce qu'on voit vraiment on se focalise
+sur la ce qu'on voit vraiment on a un sens en fait on a une sémantique par mot donc c'est un
+petit peu la différence du donc des fois ça va encoder un petit peu ces différents sens dans
+le mot si on a de la chance mais des fois s'il y a un sens qui est vraiment trop peu fréquent il va
+pas être assez bien encodé en tout cas il ne sera pas facile à ressortir ça tout ça ça va
+joindre l'étoillage il ya deux manières de coller les mots comme ça quand tu vois ça tu considères
+ça comme une entité soit de manière statistique on va dire bah ça arrive tellement fréquemment ensemble
+les pattes très fréquemment en seul qu'on va les considérer ensemble du coup nous dans
+wikipedia on va avoir des trucs horribles par exemple ça si on cherche la lettre g donc ça
+va être mis au super g on va avoir le palmarais vous avez un petit peu édition descente super à
+limite jusque là pourquoi pas et on va avoir ce c'est un peu de trucs horribles final car final
+demi-finale reposage final adversaire résultat adversaire résultat etc etc ça d'où ça vient
+en fait on a pris wikipedia et on a enlevé toutes les données qui ne vous intéressait pas ici c'est
+les chiffres on va être là vous devez avoir dans votre tête la page wikipedia final un tableau
+de score demi-finale un tableau de score car de finale un tableau de score nous on a viré tous
+les tableaux de score du coup le texte qu'on avait à la fin c'était final car final demi-finale
+des pages comme ça il y en a des centaines du coup qu'est ce qu'il a fait un mot ou une phrase
+pendant 16 mots on arrive à retrouver exactement dans le même ordre ça et ça plus d'une centaine de
+fois le modèle il a dit oula ça c'est fréquent ça va probablement être une entité et si on
+regarde les moches de ça on va trouver d'autres trucs horribles et on y réfléchit un peu ça va
+ça va être du simplement nettoyage qu'il y a une autre question là bas
+donc la question c'est de savoir si on peut avoir la polinomie des mots ok du coup dans notre cas
+là non on l'a vu avec saïd par exemple en anglais français où on avait le sens prénom et le sens
+verbe c'était l'un avait écrasé l'autre donc dans les modèles que là on a préparé c'est pas le cas
+on va être capable et ça déjà été fait je pourrais pas vous citer le papier mais on pourrait par
+exemple imaginer que saïd dans un certain contexte c'est à dire quand on détecte que c'est un nom
+commun décider que c'est son premier sens et du coup écrire saïd underscore 1 et quand on
+voit le verbe saïd on pourrait détecter que c'est un verbe et dire ça c'est son deuxième sens
+donc on a fait saïd saïd 2 et à ce moment là pour le modèle ce serait deux entités différentes
+et du coup dans le modèle final on aurait un ambéding différent pour saïd et un autre ambéding
+pour saïd et à ce moment là on serait capable de gérer la polinomie en gros ce que tu demandais
+aussi c'est si on a si on regarde un terme avec par exemple tous ces termes les plus proches et
+quand les clusters ont deux catégories est-ce qu'on serait capable de détecter un petit peu les deux
+s'il a deux sens un petit peu différent on n'a jamais vraiment testé ça sachant que ça peut
+peut-être marquer dans certains cas par exemple on a le cas de illustrator sur le modèle anglais
+français en anglais illustrator c'est juste un illustrateur et en français c'est le logiciel
+et c'est des termes on va un petit peu un petit peu retrouver ces deux sens là mais il se trouve
+qu'au final c'est tellement mixé dans tous les sens que le c'est pas qu'est ce qu'on a là dans ce
+cas oui voilà mais pour le coup on n'a jamais non c'est vrai qu'on n'a jamais trop travaillé
+tu essayais de de séparer la polisémie comme ça déjà dehors parce que ça c'est une opération
+qu'on n'a pas trop parlé mais ça c'est une opération qui est très lourde parce qu'en fait
+quand on va chercher le terme le plus proche en notre terme il faut alors qu'on compare ça à nos
+300 000 vecteurs à nos 1 million de vecteurs etc et nous des fois on va devoir traiter admettons 15
+millions de combinaisons ou 15 millions de termes donc ça devient vraiment très lourd ça c'est une
+opération qui prend un deuxième de seconde et quand on a 15 millions ça devient pas gérable donc
+généralement on travaille peu par les termes les plus proches et plus par juste similarité mais c'est
+vrai que c'est une approche qui peut être intéressante peut-être pour essayer de détecter la pour séparer
+des sens des sens d'interme pour gérer la polisémie
+oui effectivement on n'a peut-être pas été clair là dessus donc la différence entre similérité
+et proche ce que nous on appelait proche c'était dans le sens de géographique dans la phrase
+c'est-à-dire que si le mot est juste à côté va être très proche si le mot est très très loin
+dans la phrase il va être éloigné on l'a aussi utilisé pour dire que deux mots sont proches par
+rapport à leur distance ou leur similérité avec une similérité élevée la illustrator
+de cartonnistes on va dire qu'ils sont proches en sens où ils sont similaires c'est presque des
+synonymes et pourtant c'est un peu compliqué de suivre pourtant ce qui s'est passé là c'est
+que on a vu les mêmes mots autour de l'illustrator et les mêmes mots autour de cartonnistes c'est
+à dire que illustrator et cartonnistes sont des mots proches parce qu'ils avaient les mêmes mots
+proches c'est clair ou pas du tout il y avait une question là justement oui non je voulais juste
+apporter un petit complètement pour répondre à la question précédente sur la polysémie les
+premiers modèles commencent à sortir en fait très rapidement l'idée c'est d'aller au-delà de ce qu'on
+fait pour l'instant et pour tous les qu'on en fait un mot c'est un point dans un espace clédiable
+la première table c'est de se dire mais plutôt ça va être une densité un mot ça va être une
+densité dans cet espace et pour faire simple souvent on me dit ça est plus loin d'ocien alors
+on a un vecteur moyen et on retrouve ce vecteur là et après on a une variante c'est donc la variante
+va permettre de savoir à quel point on a un degré de confiance sur le sens du mot ça c'est la
+première étape et du coup après naturellement on peut passer à des mélanges et du coup on peut
+explicitement modéliser les différents sens des mots l'apprendre naturellement
+c'est le modèle très récent tel non cette approche pas qu'on puisse jeter un oeil alors
+la la le premier truc c'est gocian embédiment l'acronyme du modèle c'est
+voir tout le monde et le second c'est voir tout gocian mixture ok il y a les implementations
+tu as entendu c'est que on peut on peut finir on a un dispute après la dernière question
+le modèle qui a permis de faire ça ou nous les modèles qu'on va construire ça va être des
+modèles en fin qu'on va coder en ton surf l'eau qu'on va entraîner en ton surf l'eau et après
+au moment où notre modèle il est créé il est figé on va l'amener dans nos process et là on
+va y voir différentes technologies et notamment nous en pitton
+parce qu'il tombe bien souvent sur des librairies comme ça il va être bac à ne pas ducé il
+aura ducé derrière ouais certaines sur flots l'enutigène c'est pour générer nos modèles
+ortfex et ouais c'est tout bac qui est producée même non pire oui même non pire oui donc ouais
+la librairie non pire qui va permettre de faire tous ces calculs là les derrière c'est du c donc
+c'est juste vraiment l'interface finale c'est du pitton tout ce qu'on construit c'est du pitton
+mais en fait la base d'ailleurs c'est qui fait que c'est rapide c'est du c c'est pour c'est pour
+ça que c'est viable c'est pour ça que pitton est viable dans tout ce qu'est la science on va
+finir là un modèle comme ça sur jensim c'est plus de temps pour le nettoyage que pour le modèle
+un modèle donc le modèle complet avec les 2,5 milliards de mots il faut compter un peu moins
+d'une dizaine d'heures mais le nettoyage il peut prendre bien plus que ça ouais je crois que c'est
+ça ouais on va on va s'arrêter là merci à tous et merci

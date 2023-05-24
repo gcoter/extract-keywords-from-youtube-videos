@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science : Introduction au Machine Learning avec Spark 2.x et Scala", "keywords": ["Spark", "Scala", "machine learning", "data preparation", "MLlib", "pipelines", "outlier detection", "software tools", "data analysis", "DTW system"]}

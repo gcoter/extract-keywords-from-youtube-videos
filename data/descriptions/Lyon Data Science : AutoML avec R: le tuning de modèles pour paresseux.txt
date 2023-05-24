@@ -1,0 +1,1 @@
+Session du 14.09.2018\nPour cette rentrée, Alex Boulangé, Chief Data Scientist chez Social Intelligence, nous parlera d'un package R qu'il a développé pour pouvoir tuner des réseaux de neurones artificielles avec du biomimétisme (en utilisant notamment l'optimisation par essaims particulaires).\nhttps://www.meetup.com/fr-FR/Lyon-Data-Science/events/254371549/

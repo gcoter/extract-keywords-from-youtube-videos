@@ -1,0 +1,5036 @@
+Donc je me présente rapidement, donc je suis enseignant-chercheur, je suis en poste à l'université de Lyon 2.
+Il y a deux éléments qui me permettent un peu de parler de logiciels et d'enseignement.
+C'est que je suis enseignant-chercheur en poste effectivement à l'université.
+Ça fait un certain nombre d'années que j'enseigne.
+Et l'autre élément clé également, c'est que je suis concepteur de logiciels pour l'enseignement.
+Donc j'ai beaucoup réfléchi à cette question-là parce que c'est très important.
+On forme des étudiants qui vont à l'entreprise.
+Il faut comme ça, j'ai exactement ce que l'on propose parce qu'on ne peut pas les enfermer avec nous.
+Quand on utilise un logiciel pour former des étudiants, il faut qu'on soit sûr que ça va mettre réellement
+de l'évageriser sur le marché de l'emploi pour la souple.
+Et la question, elle n'est pas aussi simple que ça.
+Voilà, donc je fais aussi des tutoriels et tout ça.
+C'est ma principale activité actuellement, j'ai deux priorités.
+Ma première priorité, c'est le master 6 que je m'occupe,
+même si une partie de mes étudiants qui sont là, ils sont sympas de venir.
+Ça, c'est ma première priorité.
+Ma deuxième priorité, c'est les tutoriels.
+Je m'exprime beaucoup, je passe beaucoup de temps à ça.
+Je dis énormément, je teste, voilà.
+Et quand je pense que j'ai quelque chose à dire là-dessus,
+j'ai mis un tutoriel et je ne le mets envie de pas.
+Alors je parle très rapidement du master 6.
+C'est un master dont je m'occupe depuis un certain nombre d'années déjà, depuis 2013.
+Et il y a trois axes forts.
+Il y a un, c'est le méthode de statistique data mining.
+Ensuite, il y a une deuxième partie scénarformatique.
+Je vois un certain nombre d'enseignants ici qui interviennent dans nos formations également.
+Voilà, et une troisième partie sur l'application.
+Et l'élément central dans tout ça, en réalité, c'est les outils.
+Les outils qu'on utilise, il n'y a pas de secret, c'est R et piton.
+R et piton, c'est un élément qui est très important.
+On n'a pas fait le choix de R ou piton.
+On a fait le choix de prendre R et piton.
+Et justement, aujourd'hui, ce que je vais essayer de montrer,
+c'est la chose suivante.
+C'est qu'on peut avoir les deux.
+Alors, il y avait plein de manière de présenter cette chose-là.
+En fait, il y avait plein de manière de la présenter.
+Je peux faire un panorama de R avec ce qu'on peut faire avec,
+mais je n'aurais jamais exhaustif en réalité.
+Je peux parler de piton aussi de ce qu'on peut faire avec également.
+Ça pourrait être pareil, mais là, je ne pourrais pas tout dire.
+Je ne suis même pas sûr de le couvrir.
+Et donc, j'ai fait le choix de le présenter
+sous la forme d'un cheminement personnel.
+Ça fait des années que j'enseigne.
+Ça fait des années que je m'interroge sous l'intérêt de ce que je fais.
+Et donc, ça m'a amené à faire des choix, à faire aussi des actions.
+Et au final, ça aboutit au fait que je suis littéralement
+de gaver mes étudiants de R et piton.
+On en est à ce stade-là.
+Mais ça leur sert réellement.
+En tout cas, j'espère.
+J'espère que ça leur sert réellement.
+Donc, je vais reparler de Tanagra pour le coup,
+sous les prénices d'abance que j'ai fait au départ,
+un bout de réflexion.
+Ensuite, cette réflexion m'a amené sur Tanagra
+que j'ai conçu pour l'enseignement,
+en faisant un mix avec Excel,
+une compétence qui était très importante pour moi à l'époque.
+Mais on ne s'est pas arrêté là.
+Heureusement qu'on évolue une université.
+On pensait que l'université,
+c'est uniquement des formations théoriques avec des courants d'envie.
+Ce n'est pas vrai.
+Dans les universités, on fait des vraies TD,
+on fait des vraies qualifications avec des vraies projets.
+Et pour faire ces projets-là,
+typiquement, on utilise des vrais outils.
+Et les outils qu'on utiliserait aujourd'hui, c'est R et piton.
+Voilà.
+Donc après, je finirai par étudier des autres emplois.
+Justement, question dans notre domaine.
+Et on verra effectivement que ces outils-là
+sont très importants aujourd'hui.
+Ils sont très importants dans le monde,
+mais aussi en France, dans les hommes d'emplois en France.
+Et ça, c'est un aspect important.
+Donc, c'est la première partie.
+Je vais aller un peu vite
+pour vous montrer tout simplement le cheminement.
+Et je vais prendre un peu plus de temps sur R et piton
+en faisant donc des démonstrations.
+J'ai répété tout l'après-midi.
+Théoriquement, ça ne doit pas planter.
+Mais vous m'accorderez le bénéfice de l'erreur
+si avec le stress, je clique là où il ne faut pas
+et que ça ne plante pas.
+Mais normalement, ça marche.
+Voilà.
+Alors très rapidement,
+les prémices, la réalité, c'est quand j'étais étudiant.
+Alors j'étais étudiant en économie prix.
+J'ai un cheminement un peu particulier,
+mais bon, tous les chemins mènent avant.
+Voilà, j'y suis maintenant.
+D'être assaillé en ce rôle, je ne sais pas.
+Mais voilà.
+Et donc, quand j'étais étudiant en maîtrise d'économie prix,
+on avait un projet à faire.
+C'était faire du calcul d'économie prix.
+La régression.
+Alors ça, c'est très marrant
+parce que l'économie prix,
+ça paraît très santé sur l'économie.
+Mais sur Coursera, si vous avez sur le cours d'Android NJ,
+son premier cours sur son MOOC en machine learning,
+c'est un cours d'économétrie.
+Il l'appelle différemment.
+Il l'appelle sous l'angle de la régression.
+Il l'appelle...
+Voilà.
+Mais c'est exactement les cours
+qu'on fait en économie prix en l'été.
+Donc, j'ai fait du machine learning bien avant l'heure,
+sans le savoir.
+C'est comme celui qui faisait de la pro, sans le savoir.
+Et donc, dans ce cadre-là, j'avais un projet à faire
+et l'enseignement, c'est Patrick Silbeste-Parrot,
+pour qui j'ai vraiment beaucoup de considération,
+m'avait dit, ah, ce serait bien que vous fassiez un petit truc
+qui marche, quoi.
+Donc, je me suis dit, moi, je programme énormément,
+j'ai programmé plein de choses dans ma vie.
+Et je me suis dit, donc je vais programmer le projet,
+voilà, et comme ça, je rentre le projet
+et je rentre en cible logiciel.
+Donc, je l'avais fait.
+Donc, j'avais rendu ça, il m'avait donné une note,
+et il m'avait dit surtout,
+enfin, si c'est important quand même pour avoir le diplôme,
+mais surtout, ce qu'il m'avait dit, c'est bien ce que t'as fait
+et j'aimerais l'utiliser pour mes enseignements.
+C'est pas mal, ça.
+C'est vraiment pas mal.
+Donc, je me suis dit, ah, ça, c'est intéressant,
+je dis, mais ok.
+En fait, la seule différence, c'est quoi ?
+En fait, le seul problème, c'est quoi ?
+C'est que j'ai pris le logiciel pour moi,
+et là, c'est différent.
+C'est un logiciel, en fait, qui va utiliser par d'autres personnes.
+Donc, on pose l'alarme, on pose la soie de manière différente,
+ce moment-là.
+Il faut qu'on anticipe, ce seront, on va en faire les gens.
+Et donc, c'est une des premières fois où je me suis dit,
+ben, comment les gens vont le percevoir cet outil-là ?
+Je vais lui proposer, il va le proposer à d'autres personnes
+et comment ils vont l'utiliser.
+Et c'est des questions clés.
+C'est des étudiants qui sont formés sous l'outil.
+En tout cas, qui sont formés sur la théorie
+et ils vont utiliser l'outil.
+Ils vont garder quelque chose.
+Donc, c'est une question qu'il faut se poser.
+C'est comment ils vont le percevoir
+et est-ce que ça leur sert réellement.
+Donc, j'avais donné tous les codes sourds, c'est tout ça.
+Voilà.
+Ensuite, moi, je suis parti à New York.
+J'avais fait une partie de mes études à Paris
+et je suis revenu sur Lyon pour Xoraison.
+Et là, j'ai commencé une thèse de doctorat.
+C'était au laboratoire Ayric à l'époque.
+Il m'a vu revenir, on m'a dit
+j'essaye d'utiliser ton outil,
+mais il est trop abscond pour les étudiants.
+Est-ce que tu pourrais en faire un truc
+un peu plus facile à utiliser
+et qu'on puisse exploiter les sorties.
+Et réalité, c'était très intéressant ce qu'il m'a dit.
+Parce que je me suis dit, effectivement,
+il y a une question clé.
+C'est comment on peut l'utiliser.
+Et il faut que ce soit conforme au standard du domaine.
+On ne peut pas former des étudiants
+sur des outils qui marchent une certaine manière.
+Et quand ils sont en entreprise
+et qu'ils ont des outils parailleurs,
+ça marche différemment.
+Et du coup, la formation ne sert à rien.
+Donc, voilà.
+Donc, j'avais travaillé là-dessus.
+Et ensuite, je l'ai filé et je l'ai mis en ligne.
+A l'époque, c'était les débuts d'Internet.
+Ça provient à 15 par là, c'était les débuts d'Internet.
+Donc, j'avais mis sur ligne.
+Mais je pense que le seul qui l'a utilisé, c'est lui réellement.
+C'est quasi pas le seul à l'avoir utilisé, je pense.
+Et je l'ai intégré dans un paquet.
+Je l'ai mis dans un paquet complet
+où j'avais mis six pins.
+Je l'ai développé par là-dessus.
+Je montre un peu rapidement,
+parce que c'est quand même mieux,
+ça, c'est les TD qui faisaient.
+Pas de cric.
+Donc, c'était ça.
+Donc, il l'utilisait encore en 2005.
+Il l'utilisait encore en 2005.
+Voilà.
+Il avait fait un fichier d'Ed.
+C'est le seul à l'avoir fait.
+Même moi, je l'ai fait que après.
+Voilà.
+Donc, voilà.
+C'est un TD qu'il avait fait par ailleurs.
+Alors, je ferme.
+Comment on ferme ça déjà ?
+Tac, tac, tac.
+Voilà.
+Je fais une petite démo.
+Parce que ce que je vais vous montrer,
+c'est l'influence.
+Et l'influence, en fait, elle n'était pas...
+elle n'avait pas de secret.
+A l'époque, les logiciels phares,
+à l'époque que j'utilisais en tout cas
+en tant qu'étudiant,
+c'était soit statistica, soit SPSS.
+Et quand, du coup,
+quand j'ai programmé l'outil en question,
+je me suis calé sur ça.
+Typiquement, c'était SPSS réellement.
+J'avais SPSS quand même étudiant.
+Donc, j'ai beaucoup étudié.
+Et du coup, j'ai calqué le mode d'expression
+des logiciels sous le format d'SPSS
+avec le même système de menu,
+ainsi de suite.
+Alors, pour faire un petit démo,
+j'ai pris un exemple assez marrant.
+Là, c'est le nombre de fois
+d'invitérité dans les couples.
+Et là, c'est les causes possibles.
+On va essayer de voir qu'est-ce qui permet
+de prédire le nombre d'affaires
+l'année dernière.
+Je ne sais pas si ça veut dire
+exactement les affaires assises, en fait.
+Mais je ne vais pas le dire.
+Alors, allons-y.
+Donc, je sélectionne les données
+d'un Excel.
+Donc, ici, c'était très important
+que ce soit d'un Excel.
+Parce que Excel est un outil
+qui est très utilisé.
+Sommes-ci, c'est un élément clé.
+On parle beaucoup de data science.
+On parle beaucoup de R&Ptons.
+Je suis moi-même prêt R&Ptons.
+Il n'en reste pas moins que dans une partie
+du métier de la statistique,
+le chargé d'affaires Excel
+est extrêmement utilisé.
+Et donc, le fait qu'on n'a rien d'outil
+avec Excel,
+ça peut être un avantage.
+Ça peut être un avantage également.
+Alors, aujourd'hui, ça évolue.
+Mais il y a une dizaine d'années,
+il y a une vingtaine d'années,
+encore plus Excel,
+c'était le dossier de référence.
+Clairement, quand on fait
+le chargé d'éduc de statistique,
+c'est le dossier de référence.
+Et il fallait qu'on forme
+les épulons là-dessus.
+À l'époque, en master,
+en DEC, à l'époque,
+sur les vingt étudiants
+qui pouvaient avoir en DEC,
+il y en avait au moins une dizaine
+qui n'avait jamais utilisé Excel.
+Et qui avait, sur le marché de travail,
+le lendemain.
+Donc, c'était...
+Donc, marier ces deux outils-là,
+c'était un élément très important,
+anti-statistique par ailleurs,
+et puis Excel par ailleurs.
+Alors, je lance ça.
+Donc, ça, je l'ai fait par la suite.
+Ce n'était pas comme ça à l'époque.
+Je l'ai mis ici dans Excel.
+Je l'ai mis dans un paquet,
+ce que s'appelle Cipina.
+Et voilà, je vais lancer la régression,
+et ça lance au logiciel,
+et ça charge les données.
+Voilà.
+Et là, typiquement, c'est l'interface
+qu'il y avait dans les logiciels de l'époque,
+au milieu des années 90,
+qui était pilotée par MENU.
+Donc, on a les données dans une vie,
+et ce qu'ils essaient, c'est comme ça.
+C'est pareil comme dans VUE
+et sous statistiques également.
+Et on a les menus en haut,
+on sélectionne les données,
+et on lance les traitements.
+C'est ce qui se passe ici.
+Voilà.
+Donc, là, je le fais très rapidement,
+parce que l'affaire en elle-même,
+hop, voilà, devant vous.
+Voilà.
+Et je lance ces traitements
+et j'ai des résultats.
+Donc, on a les sorties qui sont conformes,
+donc, en fait, au standard du domaine,
+et on a les coefficients qui sont là.
+Non, ça, c'est les coefficients de la régression.
+Voilà.
+Donc, là, typiquement,
+quand le coefficient est positif,
+ça veut dire que ça entraîne plus d'affaires.
+Quand le coefficient est négatif,
+ça veut dire que ça entraîne moins d'affaires.
+Et là, ce qu'on a, c'est la significativité.
+Est-ce que la variable joue un rôle important ou pas ?
+Oui.
+Très bien.
+Donc, là, typiquement, plus on a des années de mariage,
+plus on tombe sur le bon joueur.
+C'est peut-être vrai,
+j'en sais rien,
+ça fait 20 ans déjà,
+mais bon, voilà.
+Plus on est religieux
+et, moi, on trompe son conjoint.
+Je ne sais pas également.
+Je ne vais pas m'avancer
+dans une explication fermante.
+Et là, c'est le ratine du mariage.
+C'est-à-dire qu'est-ce qu'on est heureux en ménage.
+C'est une forme de satisfaction par rapport au ménage.
+Et là également, plus on est satisfait
+et, moi, on trompe son conjoint.
+On tombe un peu sur le sens.
+Bon.
+Je ne m'attarderai pas là-dessus.
+Ce qui est très important également,
+ce qui m'a dit Patrick,
+c'est qu'il m'a dit,
+ces résultats, c'est bien.
+Il faut qu'il l'inclue
+dans un outil par la suite,
+qui puisse récupérer ces résultats-là.
+Et typiquement,
+c'est pour ça que j'ai rajouté
+ici un élément
+où on peut copier les résultats
+et les coller dans Excel.
+Voilà.
+On peut récupérer les résultats,
+faire les rapports, ainsi de suite.
+Donc, ce qui est très important
+que je veux dire dans cet histoire-là,
+bon, c'est un peu plaisir de montrer un outil
+que j'ai développé il y a plus de 20 ans,
+mais l'autre élément important,
+c'est que,
+et quand on développe des outils
+pour les étudiants,
+il faut qu'on soit sûrs
+que ça respecte les standards du domaine.
+Parce que quand ils vont en entreprise derrière,
+ils vont utiliser des outils pas les mêmes outils,
+forcément pas,
+mais il y a une trame qui d'obscive.
+Il faut que cette forme de trame-là,
+il faut qu'elle apparaisse quelque part
+sur les outils que nous on utilise.
+Voilà.
+Très bien.
+Donc ça,
+ça m'a permis de beaucoup travailler
+et, à la suite de ça,
+aux laboratoires qui ont vu ça,
+j'étais encore étudiant à l'époque,
+et ils m'ont dit
+qu'il faut que tu fasses une thèse.
+Il faut que tu fasses une thèse avec nous.
+Pourquoi pas, après tout.
+Et à l'époque,
+ils avaient dégroupé un outil,
+c'était donc Cipina.
+Cipina,
+alors la Cipina,
+c'est la version 2.5, 2.5,
+c'était un projet étudiant à la base.
+C'était un projet étudiant à la base,
+donc il y a une série de personnes
+qui ont travaillé dedans.
+Ensuite, moi,
+je suis arrivé en 1995
+où je me suis occupé
+donc de la partie règle,
+donc c'était mon stage de DEVSS
+dans le laboratoire Eric.
+Et voilà.
+Et ensuite,
+j'ai fait ma thèse,
+donc j'ai travaillé dessus.
+Et c'était le logiciel fab du laboratoire.
+À l'époque,
+quand les gens parlaient de laboratoire Eric,
+c'était Cipina.
+Il y avait quasiment
+une bijection de plus d'eux.
+Dans l'esprit des gens,
+c'était, ah, laboratoire Eric,
+c'est Cipina.
+Alors voilà.
+Et ça,
+ça m'aspectait très important
+de la recherche.
+Le seul bémol
+que je peux avoir par rapport
+à cet outil,
+déjà,
+c'est qu'on n'avait pas bien choisi.
+Est-ce que c'est un outil
+de recherche
+pour faire des publications
+ou c'est un outil
+pour les enseignements
+ou c'est un outil commercial
+parce qu'il y avait toujours
+le fantasme à l'université
+de l'industrialisation.
+Tout le monde parle de ça.
+Voilà.
+Mais quand on fait un outil,
+qu'est-ce qu'on vise exactement?
+Et le problème avec cet outil-là,
+c'est qu'on n'a jamais choisi.
+Du coup,
+il a toujours aussi
+entre qu'est-ce qu'on veut en faire,
+libre ou pas libre,
+est-ce qu'on met le code
+dans l'in ou pas,
+ainsi de suite,
+c'était un vrai souci.
+Voilà.
+Donc,
+je montrais rapidement également,
+ça fait très plaisir
+de le montrer également ici,
+mais le problème,
+c'est qu'on avait fait
+le choix de prendre une librairie.
+Là aussi, c'est un choix
+qu'il faut faire.
+Attention, quand on fait
+des logiciels libres,
+c'est qu'on avait pris
+donc une librairie payante.
+Voilà.
+Donc, le Turbo Power Software.
+Et cette librairie-là,
+elle marche uniquement
+sur les PC 32 bits.
+Voilà.
+16 et 30.
+16 à l'époque.
+16 bits à l'époque.
+On était 1 2, 16 bits à l'époque
+sur 32 bits.
+Et quand on est passé
+sur son 4 bits,
+ça ne marche pas.
+Donc, c'est pour ça
+que j'ai dû ici lancer
+sous une machine virtuelle.
+Donc, je l'instrais
+rapidement également
+et je montre
+sur tous les auteurs.
+Voilà.
+C'était un projet étudiant.
+Donc, les étudiants,
+là, dans le fichier d'aide,
+je montrais ici.
+Voilà.
+J'ai mis tous les noms,
+là, ils sont dans le fichier d'aide.
+Voilà.
+Voilà.
+Donc, les étudiants,
+à l'époque aussi,
+faisaient des bons projets.
+Il n'y a pas que maintenant.
+Maintenant aussi,
+ils font des bons projets.
+Bien sûr, bien sûr.
+Ils me regardent.
+Il faut que je le dise.
+Mais à l'époque aussi,
+ils faisaient des bons projets.
+Les vrais,
+les vrais mètres d'art d'oeuvre.
+Voilà.
+C'est Penova
+qui lui donnait pour ça.
+Surtout lui donnait pour ça.
+Voilà.
+C'est les vrais vraiment
+qui ont fait toute la maquette
+derrière, ainsi de suite.
+Moi, je suis arrivé vers la fin.
+J'ai rajouté les règles.
+Ensuite, j'ai fait vivre
+pendant un peu de temps.
+Voilà.
+Alors, je fais un petit démon,
+quand même.
+Voilà.
+Donc, je vais prendre
+les fichiers iris.
+J'imagine que tout le monde
+connaît les fichiers iris.
+Voilà.
+Donc, on a chargé les données
+et je lance ces calculs.
+Et...
+Voilà.
+C'est pas très...
+Pas très sexy à l'époque.
+Voilà.
+Mais ça marchait.
+Ça marchait.
+Et en 95, je peux vous dire
+qu'il n'y avait pas grand monde.
+Il n'y avait pas grand monde.
+Vous avez des logiciels
+qui étaient disponibles
+sur Internet.
+Voilà.
+Donc, ça, c'était des graves
+d'induction.
+En fait, c'est comme des arts
+de décision, mais ça fait
+des fusions derrière
+pour faire des rééclatements.
+Donc, je travaillais là-dessus.
+Le titre de ma baisse
+est grave d'induction.
+Le titre de ma baisse
+est grave d'induction.
+Donc, je travaille là-dessus.
+C'est une bonne méthode.
+Voilà.
+Et du coup, effectivement,
+on gagne sur le biais de l'erreur
+parce qu'on a un système
+de représentation
+qui est plus performant,
+mais on colle trop aux données.
+Du coup, on perce
+que la variance de l'erreur.
+Donc, finalement,
+sur les arts classiques,
+ça n'est gagné pas beaucoup.
+Mais du point de vue
+de la théorie,
+il y avait des choses vraiment
+intéressantes.
+Voilà.
+Donc, ça, c'était très bien,
+mais il y avait plein de choses
+qui m'ont bounuée.
+Et la...
+La principale chose
+qui m'a ennuyée,
+c'est qu'il n'était pas
+performant du tout.
+Il n'était pas performant
+du tout.
+Parce que,
+quand on fait un logiciel
+à plusieurs mains,
+si on n'a pas un chef
+de projet
+qui caste tout le monde,
+ben,
+chacun fait comme il veut.
+Et, ben, après,
+ça parle dans tous les sens.
+Voilà.
+Donc, je l'ai fait vivre
+jusqu'à la fin de ma thèse.
+Une fois que j'ai fini
+ma thèse,
+je me suis dit,
+il faut que je refasse
+la chose,
+mais en un manière,
+cette fois-ci.
+Donc,
+j'ai fait d'Asipina
+version 3.
+Et moi,
+pour moi,
+à l'époque,
+c'était un outil
+de recherche pure.
+C'était vraiment
+l'élément clé,
+c'est la performance.
+C'est un élément clé,
+même à l'époque.
+À l'époque,
+quand j'ai commencé à...
+Quand j'ai commencé
+la formatique,
+j'avais, ben,
+8 kilos octés.
+Voilà.
+Mais à cette époque-ci,
+c'était autour de 256 méga.
+Une machine avec
+156 méga drains.
+Je l'ai déjà beaucoup,
+à l'époque.
+C'était une super machine.
+Voilà.
+Voilà.
+Donc,
+mais quand on charge
+des données en mémoire
+avec des processeurs
+qui ne sont pas très performants,
+ça prend du temps.
+Si ce qu'on voit par ailleurs,
+là, typiquement,
+il y a des étudiants chez moi
+qui ont fait des stages
+et ils me disent,
+bah, piton,
+c'est plus rapide que air.
+Je dis, très bien.
+Ok.
+Pourquoi pas?
+Moi, je veux bien le croire,
+si on veut le dire.
+Mais montrez-moi pourquoi.
+Est-ce que c'est un problème
+du package?
+Est-ce que c'est un problème
+du coeur même,
+du système?
+Ensuite, et suite.
+Ils me disent,
+bon, on a testé,
+bon, voilà,
+et on voit que c'est plus rapide.
+Non, non, non.
+Il faut bien qu'on cadre les choses
+et qu'on sache exactement
+sur quel plan.
+Et moi,
+à l'époque,
+c'était vraiment
+l'élément numéro 1.
+Donc,
+l'élément numéro 1,
+c'était la performance.
+Donc,
+qu'est-ce que j'ai fait?
+Je le fais là.
+Je vais le lancer ici.
+Hop là.
+Voilà, voilà.
+Oui, oui, oui.
+Ça,
+c'est une petite anecdote
+d'autres que j'ai dit
+à mes étudiants.
+C'est,
+ma vie est résume à ça.
+Ma vie est résume à air.
+C'est pas une verre,
+c'est piton.
+Ensuite,
+Excel.
+Voilà.
+Une,
+qui est aussi un super logiciel.
+Typiquement,
+quand je fais des remises à niveau
+pour mes étudiants
+en début d'année,
+comme ils ont pas le même niveau
+en informatique
+qu'encore,
+parce qu'ils viennent d'horizons
+différents,
+pour les mecs à niveau
+sur d'une part,
+donc la partie supervisée
+de data mining
+et d'un parti grocery
+visé,
+en fait,
+pour ramener tout le monde
+dans son même cadre
+et ne pas perdre personne,
+enfin,
+pour ne pas perdre
+gens en route,
+typiquement.
+Donc,
+l'élité que j'utilise,
+c'est naive.
+C'est un de ceux,
+on a plein de plugins
+dans l'élité
+qui sont performants également
+et qui permet
+de faire des choses
+vraiment intéressantes.
+J'ai pas prévu de démon
+parce qu'il est super lourd
+et mon PC,
+malgré qu'il soit bien
+et il n'est pas suffisamment bien,
+quand même.
+Voilà,
+mais je vous montrerai
+des tutoriels que j'ai fait
+par ailleurs,
+sur l'image mining,
+sur le texte mining,
+où on s'en compte
+qu'on peut avoir
+relativement, facilement,
+des résultats
+réellement performants.
+Mais j'en parle à la fin
+des logiciels de l'élite,
+justement.
+Est-ce qu'il y a
+des alternatives
+qui sont assez pinins ?
+À plat,
+je charge les données,
+donc c'est les fichiers,
+c'est les ondes de Bremen.
+Ceux qui ont fait
+des data mining
+connaissent un peu.
+En gros, c'est des données
+qui sont recueillies
+par des radars.
+Voilà,
+c'est des données fictives,
+ces données générées.
+Et on a 3 types d'objets.
+C'est ce qu'on a mis ici,
+là-bas,
+classe,
+il y a 3 types d'objets possible.
+Je crois A,
+c'est un avion,
+peut-être B,
+c'est un dirigeable,
+C, je sais pas ce que c'est,
+menu-age.
+Voilà.
+Et les autres variables,
+c'est les fichiers fictifs.
+En fait,
+le plus gros intérêt
+des ondes de Bremen,
+c'est qu'on a un générateur,
+déjà,
+donc on génère autant qu'on veut.
+Voilà.
+Et l'autre élément clé,
+c'est qu'on connaît
+l'évoire théorie.
+C'est 16%.
+On ne peut pas faire
+mieux que 16%.
+Il m'a de taux d'évoire.
+Donc,
+ça permet de situer
+les différentes méthodes.
+Qui s'approche le plus
+de 16% des variables ?
+Donc,
+très bien.
+Donc là,
+j'ai chargé 600 000 individus
+avec 22 variables,
+c'est relativement rapide.
+Voilà.
+Et je vais lancer
+100 000 d'objets en variable
+cible,
+et les autres en prédictive.
+Et
+je lance le traitement.
+C'est un outil
+que j'utilise encore aujourd'hui
+pour mes enseignements,
+malgré son âge,
+enfin,
+98,
+97,
+en fait,
+j'ai réfléchi
+à partir de 97.
+Je l'ai développé
+sur 97,
+98,
+et il était prêt
+en septembre,
+98.
+Voilà.
+Donc voilà,
+on a des décisions
+qui sont là.
+Et je vais la simplifier
+un peu,
+et voilà.
+Bon,
+ça nous dit que je suis utilisé
+encore maintenant aujourd'hui,
+pourquoi ?
+Parce que c'est le seul logiciel
+libre au monde
+où on a des fonctionnalités
+qui sont interactives.
+Il y a plein de logiciels
+qui ont des fonctionnalités
+interactives,
+mais tous sont payants.
+Le seul qui est libre,
+c'est Cipina.
+C'est pour ça que je l'utilise.
+En le mariant avec Excel,
+donc un métédié que je fais
+en MA,
+en Master H&U,
+donc c'est l'introduction
+de la tamaning,
+il y a une partie
+sur l'âme des discriminantes,
+une partie sur le scoring,
+une partie sur les arbres
+de décision.
+Je l'ai fait travailler sous R
+par ailleurs,
+j'ai bien le cadre,
+mais par ailleurs,
+je l'ai fait travailler
+sous Excel plus Cipina
+pour qu'il voie
+une fonctionnalité
+qui est très importante,
+c'est
+j'explote de manière
+interactive
+désognée
+dans l'âme de décision.
+Là,
+typiquement,
+si on est sous R
+ou sous Python,
+bon,
+les graphiques des arbres
+sous Python,
+je crois que ça a évolué,
+mais à l'époque,
+j'avais testé,
+on n'avait pas
+des sorties graphiques simples.
+C'est qu'on a un système
+d'arbres comme ça
+avec les règles de résultats
+et le rôle qui est joué
+par les autres variables,
+typiquement.
+Là,
+sur les 21 variables,
+il a pris les 7,
+les 11 et les 16,
+et on ne sait pas
+qu'est-ce qui se passe
+avec les autres variables.
+Et donc,
+on aurait tendance
+à dire que les seules variables
+pertinentes, c'est celles-là,
+et pas les autres.
+On peut jeter en camp.
+Mais en fait,
+non, c'est pas vrai.
+En fait,
+ces variables
+qui ne sont pas prises là,
+elles sont masquées
+par les autres.
+Et ça,
+pédagogiquement,
+il faut l'expliquer.
+Et si je le fais
+uniquement avec le R,
+un tutoriel
+qui a été fait
+sur Airparks,
+un TV,
+c'est 1h45.
+Donc,
+si je commence
+à dire,
+attention,
+il faut faire
+tel comment,
+comment ensuite dire ça.
+Et je perds les étudiants.
+Ce qui n'est pas possible.
+Les étudiants
+sont très exigeants
+de nos jours.
+Je le dis,
+on est
+dans une époque
+où
+il y a le smartphone,
+il y a tout un tas de trucs
+et tout ça.
+Donc,
+il faut qu'on soit bien cadrés
+et qu'on avance
+à pas de charge.
+Il ne faut pas les perdre.
+Il ne faut pas les perdre.
+Donc, voilà.
+Donc, ce qui est important ici,
+typiquement,
+ces fonctionnalités-là,
+c'est que je peux aller
+sur les sommets
+et je peux les explorer.
+Là,
+typiquement,
+c'est la pertinence des variables.
+Ensuite, là,
+c'est la description
+des moyens conditionnels
+sur les sommets
+pour pouvoir les comparer.
+Donc, là,
+typiquement,
+si je prends
+cette première variable-là,
+il me dit que
+celle qui différencie
+les individus,
+c'est la viscette.
+C'est normal,
+parce qu'il apparaît dans l'arme,
+mais il avait six aussi,
+en fait,
+elle n'apparaît pas
+parce qu'elle est masquée
+par la viscette.
+Et si on n'a pas cet aspect
+d'exploration interactive,
+on ne voit pas ces informations-là.
+On passe à côté.
+Et du coup,
+on n'a pas une viscette
+suffisamment.
+Voilà.
+Donc, voilà.
+C'est pour ça que je l'utilise.
+J'ai beaucoup aussi
+fait beaucoup de choses là-dessus.
+Je montre très rapidement
+que vous avez vu.
+J'ai fait le traitement,
+c'est 15 secondes.
+Je vais refaire le traitement
+et j'avais programmé
+à l'époque
+du multi-training,
+qui est de plus en plus
+d'actualité
+avec les machines actuelles.
+Donc, qu'est-ce qui se passe ici ?
+Donc, je limite à quatre
+comme l'autre.
+C'est quatre niveaux maximum.
+Et là, je peux avoir
+le nombre de coeurs
+du processeur.
+Et du coup,
+je vais l'utiliser réellement.
+Les machines actuelles
+sont de plus en plus performantes.
+Et donc,
+il y a beaucoup de coeurs là-dessus.
+Et c'est très belle
+de programmer des algorithmes
+de la tamanning
+sans les exploiter.
+Donc, c'est ce que j'ai fait ici.
+C'est vieux, ça.
+Mais c'était pas mal.
+Je me suis bien fait plaisir.
+Et aujourd'hui,
+dans les enseignements qu'on fait,
+justement,
+il y a un cours
+au moins de étudiants
+de faire de la programmation parallèle
+sous R cette fois-ci.
+Mais c'est les mêmes idées.
+C'est que j'ai des ressources
+qui sont des PC
+de plus en plus performantes
+ou même distribuées
+avec les systèmes adobés
+de tout ça
+avec ma préduce.
+On parlerait tout à l'heure
+de ma préduce, justement.
+Et il faut qu'on puisse
+donc programmer dans ce cadre-là.
+Et c'est un élément
+qui est très important.
+Donc, voilà.
+Donc, j'ai divisé
+par deux le temps de calcul.
+Parce que j'ai exploité
+les différents processus.
+Donc, voilà.
+Donc, j'ai beaucoup aimé
+ces logiciels.
+J'utilise encore.
+En fait, la seule raison pour laquelle
+j'ai pas mis dans Tanagra
+les arbres interactifs
+c'est que si je l'avais mis
+je serais tué Cipina.
+Enfin, on tue pas ces bébés.
+Enfin, moi en tout cas, non.
+Non, non, non, non.
+Très bien.
+Donc, c'est pour ça
+que j'ai gardé
+les arbres interactifs
+dans Cipina
+et dans Tanagra,
+j'ai jamais mis les arbres interactifs.
+Donc, on ne peut pas
+laisser un petit espace.
+C'est pour ça que j'utilise
+encore.
+Je ne sais pas s'il est
+encore utilisé aujourd'hui.
+À un moment donné,
+il était très utilisé.
+Aujourd'hui, je ne sais pas.
+Très bien.
+Alors,
+sur le site,
+où j'ai un Google Analytics,
+il doit avoir
+une vingtaine de visites
+par jour à peu près.
+Mais je ne sais pas
+si c'est uniquement des visites
+ou si c'est des chargements.
+Ce qui charge, c'est de passer
+les installs réellement.
+Dans le Tanagra,
+il y a un peu plus,
+il y a une centaine de visites.
+Voilà.
+Il y a aussi des visites.
+Très bien.
+Alors, ce qui n'est pas
+dans Cipina,
+c'est que déjà,
+c'est uniquement limité
+aux apprentissages supervisés,
+la technique supervisée.
+Donc, il n'y a pas
+l'aspect actuel administrative,
+voilà.
+Ensuite,
+quand je fais des clics,
+une fois que je ferme l'odiciel,
+il n'y a plus de mémoire
+de tout ça.
+C'est un problème
+par l'odiciel.
+J'ai fait une analyse,
+je ferme mon logiciel.
+Très bien.
+Et demain,
+je vais continuer mon analyse.
+J'ai plus de mémoire
+de ce que je fais.
+Il faut que je réplique la même chose.
+Est-ce qu'il faut lui noter
+sur un autre papier?
+Non, non, c'est impossible.
+C'est là que les langages
+de script sont très importants.
+En fait, une analyse,
+vous tapez votre script,
+vous fermez votre fichier script,
+vous fermez le pc,
+vous fermez le pc,
+demain vous revenez,
+vous allez voir le script.
+C'est là aussi que les logiciels
+sous forme de chaînes de traitement
+sont très importants également.
+En gros,
+le script,
+c'est de la programmation visuelle.
+À l'époque,
+c'était précédemment
+de la programmation visuelle.
+Je mets des flèches
+avec des trucs qui se connaissent.
+Très bien.
+Et l'autre aspect aussi
+qui me causerait mon problème,
+c'est que
+c'était un logiciel de chercheur.
+Donc,
+j'ai codé dans tous les sens,
+voilà,
+comme j'en avais envie
+au fil de l'eau, voilà.
+Et à chaque fois
+que je voulais rajouter quelque chose,
+ça me prenait beaucoup de temps,
+rien que pour faire une interface.
+Et ça,
+ça m'intéresse pas.
+Moi, ce que je voulais,
+c'est programmer des méthodes
+et puis les expliquer après.
+Et si à chaque fois
+que je veux rajouter une méthode
+dans un logiciel,
+il faut que je crée une fenêtre,
+de sortie,
+il faut que je programme
+chaque bouton ainsi de suite,
+c'est extrêmement loup.
+Et ça,
+je me suis rendu compte,
+c'était très limitatif au bout d'un moment.
+Donc,
+je me suis dit,
+il faut que je fasse autre chose.
+Donc,
+c'est là que j'en suis venu
+à Tanagra.
+Le gros intérêt de Tanagra,
+c'est pour ça que j'en parle un peu ici,
+c'est que
+je les réfléchis
+pour les cours.
+Voilà.
+C'est la première fois
+où réellement,
+j'ai une réflexion à l'amont
+que j'avais fait avant.
+Avant, c'était uniquement
+une envie.
+J'ai envie de faire ça
+à l'égumence dedans.
+Là, c'est pas pareil.
+Je me suis dit,
+il faut que je fasse quelque chose
+qui soit réellement utile
+et que ça soit
+en phase
+avec la formation
+des étudiants.
+Ce que je n'ai jamais fait
+auparavant.
+Donc,
+j'ai passé du temps
+à réfléchir là-dessus.
+Voilà.
+Et je mets un peu le contexte.
+Alors,
+qu'est-ce qui se passait ?
+C'est qu'à l'époque,
+il y avait une grosse vague.
+Il y avait une grosse vague
+sur le data mining.
+Voilà,
+il y avait une grosse vague
+sur le data mining
+et s'il rentrait
+dans le grand public.
+Ce qui n'était pas le cas
+avant,
+c'était la faire des chercheurs
+machine learning.
+Moi,
+j'ai fait une thèse
+en machine learning.
+C'était uniquement
+la faire des chercheurs.
+Ça n'entrait pas
+dans le grand public.
+Et on a vu arriver
+il y a deux ouvrages
+typiquement que j'aime bien,
+que j'ai beaucoup lu.
+Et celui de Stéphane Tufféry.
+2002.
+Voilà.
+Donc, j'avais lu ces ouvrages-là
+et je me suis rendu compte
+que le data mining,
+c'est une réalité des entreprises.
+Ce n'est pas un truc
+de chercheur seulement.
+C'est une réalité
+dans les entreprises.
+Il y a eu le livre
+de la FEMUR.
+Je l'ai vu il n'y a pas longtemps.
+Je l'ai vu et je l'avais dit.
+Parce qu'en fait,
+j'avais raconté une anecdote
+qui lui est revenue.
+Quand je l'avais acheté,
+j'ai beaucoup aimé.
+J'en parle autour de moi
+et il y a un copain,
+mais en fait,
+c'est pas un copain.
+Voilà.
+Il m'a emprunté.
+Il m'a emprunté.
+Il ne m'a jamais rendu.
+Il ne faut jamais prêter ses livres.
+Comme beaucoup de choses,
+peut-être.
+Je ne sais rien.
+Et du coup, je l'ai racheté.
+J'ai racheté
+à deux fois le même livre.
+C'est la seule fois que je l'ai fait.
+C'est la seule fois que je l'ai fait.
+Parce que je l'aimerais.
+Il m'a vraiment très,
+très bien fait, je trouve.
+C'est un peu ancien maintenant.
+Ça peut évoluer.
+Il y a d'autres livres
+plus intéressants, peut-être,
+aujourd'hui.
+Mais à l'époque,
+c'était une vraie évolution.
+Je me suis rendu compte
+qu'il y avait des pratiques
+qui sont faites en empruntée
+sur la date d'un anigre
+et qu'il fallait qu'on soit
+à peu près conforme à ça.
+Voilà.
+Alors, à l'époque,
+il n'y avait qu'un seul logiciel
+réellement
+qui tenait la route,
+c'était le WECA.
+C'était vraiment le Celerie.
+Orange, machine, l'armée.
+Bien sûr, également.
+Mais c'était un 28h.
+A l'époque de 2002,
+c'était que WECA, en fait.
+Donc, j'ai beaucoup étudié WECA.
+Et ce qui m'ennuie réellement
+dans WECA,
+il est très performant.
+Je ne dis pas,
+il est très performant.
+Et le vrai problème de WECA,
+c'est que les sorties
+ne sont pas conformes
+à la pratique qu'on a.
+Je prends l'exemple typique.
+Je prends la régulation logistique.
+Si on fait la régulation
+sur WECA,
+on n'a pas...
+On a uniquement appelé co-efficient.
+On n'a pas la significativité
+des variables.
+Je n'ai pas les variances
+des variables.
+Du coup,
+je n'ai pas les pés-value
+pour tester
+si ils sont intéressants ou pas.
+Et ça,
+on ne peut pas passer
+au côté de ça.
+Un étudiant en statistique,
+il voit ça,
+il ne comprend pas.
+Il, quand on lui donne
+la pratique.
+Quand il voit les sorties de WECA,
+il n'a pas ça.
+Du coup,
+il se dit,
+mais comment je fais ma sélection
+de variables?
+Donc,
+il y a une série de choses
+comme ça
+qui ont fait que je n'étais pas
+très emballé par WECA
+à l'époque.
+Et je me suis dit,
+ça veut dire
+qu'effectivement,
+il y a un espace machine en ligne,
+mais il ne faut pas
+qu'on oublie la partie statistique.
+C'était ça,
+l'important dans l'histoire.
+C'est que,
+sur la partie machine en ligne,
+je sais à peu près
+ce qu'il faut faire,
+ce qu'il y a dans WECA
+est excellent par ailleurs,
+mais,
+ce qu'il manquait dans WECA,
+c'est l'aspect statistique.
+Oh,
+moi,
+j'ai bien enseigné
+une formation statistique.
+Il y a tout un langage
+que je dois tenir auprès des étudiants
+qui correspond
+à une vraie pratique statistique.
+Il faut qu'on voit ça
+dans la logicielle.
+Donc,
+ça nourrit ma réflexion.
+Voilà.
+Et il y avait aussi
+une expérience,
+bon,
+si à longtemps je peux en parler,
+sans nommer les gens,
+c'est que
+il y avait 2 éditeurs
+de logiciels à l'époque phare,
+data mining,
+qui sont venus nous voir.
+Ils sont venus nous voir,
+ils ont dit,
+vous lancez
+dans data mining,
+maintenant,
+je lui ai dit,
+oui,
+oui,
+très bien,
+à l'époque,
+c'était Jean-Luc Chaussard,
+responsable de la formation.
+Ils ont discuté avec lui,
+il a voulu vous investir
+dans data mining,
+oui,
+oui,
+à nous,
+on a des logiciels,
+vous nous connaissez,
+j'ai des voix sans pop,
+mais on les connaît,
+bien sûr.
+Voilà,
+on vous les donne gratos
+pour former les étudiants.
+Oui,
+très bien,
+très bien,
+très bien,
+on va pas dire non.
+Ils m'ont dit,
+maintenant, c'est payant.
+Comment je dirais ça ?
+Bon,
+je dis,
+poliment,
+ok,
+on passe à autre chose.
+Donc,
+tout ça,
+ça nourrit ma réflexion,
+et je me suis dit,
+il faut qu'on ait un logiciel libre.
+Il faut absolument qu'on ait
+un outil libre,
+déjà,
+d'une part,
+pour les étudiants,
+plus d'utiliser chez eux,
+quand ils
+ont fait des cours
+et d'étudier
+à l'université,
+mais la vie,
+ça n'arrête pas
+à la fin du cours.
+Et ensuite, après,
+il faut qu'ils aient
+le logiciel également.
+Donc,
+soit on a un partenariat,
+mais pas qu'ils voulaient
+absolument pas que le logiciel
+soit diffusé comme ça,
+on va faire un partout,
+voilà.
+Et soit,
+il faut qu'on ait un logiciel.
+Et donc,
+la solution du libre,
+s'imposer de plus en plus.
+Voilà,
+alors,
+j'ai beaucoup travaillé,
+j'ai mis des petites photos,
+parce que,
+pour moi,
+2002, 2003,
+c'est d'aller
+des grandes résolutions.
+J'ai perdu 30 kilos
+le passage,
+et j'ai fait un bruit.
+C'est pas mal.
+Et j'ai pondu
+Voilà.
+Donc,
+par la suite,
+j'ai expliqué,
+donc,
+j'avais conçu le logiciel,
+voilà.
+Et,
+enfin,
+j'ai fait un bébé,
+enfin,
+j'ai contribué à faire
+un bébé,
+bien sûr.
+Comme c'est filmé,
+j'imagine que c'est
+quelqu'un d'autre balaouar.
+Donc,
+il faut que les titler.
+Très bien.
+Donc,
+j'ai beaucoup réfléchi,
+voilà.
+Et en 2005,
+j'ai fait un séminaire
+pour expliquer pourquoi
+c'était important.
+C'est après coup.
+J'avais fait un séminaire
+à l'époque pour...
+J'avais fait au laboratoire
+pas Eric,
+et j'avais retransqué
+dans ce séminaire-là
+donc les éléments de réflexion
+que j'avais essayé de mettre
+en nom,
+pour pouvoir réellement
+dire que c'est intéressant.
+Et bon,
+j'ai mis ici
+les différents logiciels
+que j'avais essayés.
+Et ce qui est important,
+c'est ce transparence
+sur l'évaluation des outils,
+voilà.
+Ou réellement,
+j'ai essayé de poser
+ce qui était important
+pour moi.
+Ce qui était réellement important
+pour moi,
+il faut qu'on soit centré
+sur les méthodes,
+bien évidemment,
+parce que c'est ça,
+notre boulot, voilà.
+Mais il ne faut pas qu'on en
+fait à des étudiants,
+sur des outils,
+qui sont totalement
+ou qui n'ont aucun rapport
+avec la pratique paragraph.
+Ça, ça m'a aidé moi
+un clé,
+et un élément clé
+également
+qui a beaucoup changé
+maintenant,
+c'est que
+je me suis dit,
+à l'époque,
+que j'ai un temps limité
+pour faire mon cours.
+À l'époque, c'était 21 heures.
+Maintenant, ça peut baisser
+parce qu'il y a des restrictions.
+Voilà.
+Et quand je fais
+un cours de 21 heures,
+j'ai une série de méthodes
+que je vais enseigner
+à mes étudiants.
+Et,
+si je dois rajouter
+en plus
+dans ce temps-là
+l'enseignement
+d'un langage de script,
+quelque chose comme ça,
+ça va me prendre du temps.
+Ça empiète
+sur la partie data mining.
+Donc,
+soit j'ai un cours
+à part
+sur la méthode de script,
+typiquement R au buton,
+c'est ce que je fais maintenant,
+typiquement à l'université.
+Maintenant,
+j'ai un cours de R à part,
+et ensuite,
+j'ai un cours de data mining
+à part.
+C'est vraiment,
+soit je choisis des outils
+où on n'a pas besoin
+d'avoir
+des étudiants.
+Donc,
+ça s'était en 2002
+jusqu'à 2005,
+c'est cette réflexion-là
+qui a changé par la suite.
+Il y a beaucoup changé
+par la suite,
+parce que les étudiants
+ont beaucoup évolué également.
+Très bien,
+voilà,
+c'est ce que je mets ici.
+Et le dernier point important,
+c'est à l'époque,
+Excel était fondamental.
+En 2002,
+on formait des étudiants
+qui en appelaient ça,
+chargés d'études statistiques,
+qui existent toujours
+sur la site de l'APEC.
+Si vous tapez
+ou chargés d'études statistiques,
+il y a plus d'emplois
+qu'en tant que
+data scientist.
+On ne peut pas
+passer à côté de ça.
+Surtout que les étudiants
+sont capables de le faire.
+Faire un, faire l'autre,
+ils peuvent le faire les deux.
+Donc,
+c'est pour ça
+que c'était très important
+avec Excel.
+Et pour m'en parler,
+parce que,
+voilà,
+j'ai fait,
+sur le site Cadet Nougat,
+c'est une étude
+qui a fait tous les ans
+sur les outils
+qui sont utilisés
+par les data scientistes.
+Donc là,
+c'est 2005.
+Et si on regarde
+en 2005,
+rapidement,
+à l'époque,
+c'était,
+c'était,
+c'était le,
+le règne des logiciels Péla.
+C'était le règne des logiciels Péla,
+à l'époque,
+les premiers noms,
+on l'a envoyé bien,
+je ne me suis pas envie de démontrer,
+si vous voulez,
+voilà.
+Et,
+parmi celles,
+Excel,
+Excel était extrêmement utilisé.
+Et même par les data scientistes,
+ou les data manières,
+pour qu'on appelle ça,
+data manières,
+data scientist,
+c'est un bug en bonnet,
+blanc en bonnet,
+voilà.
+Donc, voilà.
+Et parmi les logiciels libres,
+si on va,
+on va en voir,
+le premier c'est OECA,
+loin, loin, loin.
+Très bien.
+En tout cas,
+ce qu'apparaît,
+c'est Excel en bonne place.
+Vous voyez,
+les logiciels Péla,
+mais Excel en bonne place.
+Ça, c'est 2005.
+Je regarde maintenant en,
+voilà.
+Je regarde maintenant 2017,
+voilà.
+Il n'y a pas de secret,
+on n'a pas de secret,
+on est bien d'accord là-dessus.
+C'est Python IR,
+qui prédoumise, clairement,
+c'est pour ça qu'on les enseigne,
+c'est pour ça que je les charge,
+méchamment là-dessus,
+si vous voulez,
+parce qu'on ne doit pas passer à côté.
+Après SQL langage,
+c'est pas un vrai logiciel en soi,
+mais c'est une compétence qu'il faut avoir,
+bien sûr.
+Voilà.
+Ensuite, il y a RapidMiner,
+le RapidMiner,
+c'est écrit sur le site.
+Si vous allez sur le site,
+vous verrez à la fin,
+il y a un commentaire,
+ce qui se passe,
+en gros RapidMiner,
+c'est un logiciel libre.
+En fait, c'est une université,
+c'est égal, c'est-à-dire,
+c'est une université en Allemagne
+qu'il avait mis en avant,
+il l'a pléé, et,
+en fait,
+ce qu'ils ont fait,
+c'est qu'ils ont recris le code de OECA,
+qu'ils ont mis dans une autre interface,
+qui était assez proche de Tanagra, d'ailleurs.
+C'est-à-dire qu'on avait les chaînes de traitement
+sur le côté à gauche.
+Ensuite, ils ont évolué par la suite.
+Ensuite, ils ont créé une entreprise,
+ils ont créé une structure autour de ça,
+et maintenant, ils ont une double version,
+une version gratuit,
+si vous voulez,
+qui est limitée en nombre.
+C'est-à-dire,
+chez 10 000 individus,
+je ne sais pas,
+il ne faut pas que je dise une métier,
+mais en tout cas,
+c'est limité en nombre.
+Et si on veut la version complète,
+il faut payer une licence.
+Et ce qui se passe avec RapidMiner,
+c'est qu'ils sont très actifs
+auprès de leurs utilisateurs.
+Donc, tous les ans,
+au moment du vote Caddy Luget,
+ils vont solliciter les utilisateurs
+en disant,
+il faut voter pour nous.
+Moi, j'ai chargé RapidMiner,
+je l'ai installé,
+je l'ai testé,
+j'ai écrit les tutoriels sur RapidMiner,
+sur la version libre.
+Et tous les ans,
+au moment du vote,
+je reçois l'email.
+On me dit,
+« Enrico, tu te rappelles qu'il y a le vote Caddy Luget,
+il faut que tu votes,
+il faut que tu votes,
+il faut que tu votes,
+il faut que tu votes!
+Oui, très bien.
+Et on a Excel,
+toujours.
+On est en 2017,
+ça reste un nos crap privilégie.
+Et il n'y a pas de secrets.
+Et quand je vois que ça hospitalise
+pour Excel
+que ce serait statistique,
+ce n'est pas par hasard,
+j'imagine que ce n'est pas,
+je vois je le vois complèbal.
+Inverse en Undertale,
+j'ai testé les deux.
+Donc Excel est ma clошule.
+D'biens,
+vous pouvez se contenter d'Excel
+avec VBA.
+Aujourd'hui, 2017,
+ce n'est plus vrai.
+Ce n'est pas se contenter d'Excel.
+Il ne faut aller plus loin.
+Il n'y a plus là, justement,
+c'est ce que je vais reparler.
+Très bien.
+Donc voilà,
+j'ai tellement ouvert de choses
+que je ne me retrouve plus.
+Ah bon, voilà.
+J'en étais là,
+donc j'avais fait des spécifs.
+Je parle rapidement
+parce que faut quand même
+que je parle des pitots dans l'histoire.
+Voilà.
+Donc j'ai fait des spécifs,
+tout ça.
+J'ai étudié les différents officiels.
+Et une fois que j'avais fait ça,
+je l'ai mis en œuvre
+avec un cahier des charges,
+cette fois-ci.
+Et je l'ai vraiment utilisé.
+Alors, il y avait aussi
+à l'époque un aspect recherche.
+C'est que je voulais qu'il soit libre
+parce que quand on publie des choses,
+il faut que les gens puissent me vérifier.
+Donc il faut que le logiciel
+soit accessible à tous.
+Quand je fais une expé
+et que je dis que telle méthode
+est meilleure qu'une autre,
+je ne peux pas publier là-dessus
+et donner ça
+et croyez-moi sur parole.
+C'est ce qui je faisais beaucoup avant.
+Je peux vous dire
+le nombre de fois
+où j'ai vu des publications
+et j'ai demandé à la personne
+de m'envoyer le logiciel
+pour lui vérifier.
+Il me dit, oh, il y a un secret industriel.
+On ne peut pas le diffuser comme ça.
+Tu te dis, mais du coup,
+mais tes expés, là,
+comment je peux savoir
+que c'est vrai ce que tu me dis?
+Il me dit, oui, mais moi, non, non, non, non, non.
+Quand on publie quelque chose
+avec un résultat,
+il faut que ce soit reproductible.
+C'est la base même de la recherche.
+Donc il faut que le logiciel soit libre.
+Typiquement, ce qui est intéressant
+avec R et les packages R, justement,
+c'est que tout le monde
+écrit un package,
+il s'intégrerait dans R
+et tout le monde peut vérifier
+ce qu'il dit.
+C'est un élément qui est fondamental.
+On ne peut pas passer à côté de ça.
+Il y a d'autres éléments
+qui sont très importants.
+Il faut que le code source
+soit publié
+parce qu'il faut qu'on puisse vérifier
+les implementations.
+Je prends l'exantypique,
+c'est une naïve base.
+En fait, la base de la naïve base
+est une méthode productive
+qui est très utilisée
+parce qu'elle est très simple
+en texte magnétiquement.
+En fait, à sa base,
+c'est un produit de probat conditionnel.
+C'est un produit de probat conditionnel.
+Une probat, c'est inférieur à 1.
+C'est entre 0 et 1.
+Et quand je fais un produit
+de valeur qui soit inférieur
+à 1,
+quand j'ai pris un de variable,
+au bout de ma main,
+j'ai un débat de mode capacité.
+Donc, ça ne fait pas d'erreur
+parce que l'audiciel ne dit pas qu'il n'est hors.
+Mais il fait un calcul faux.
+Si on n'a pas le code,
+on ne sait pas s'il a fait
+soit un produit de probat,
+soit il est passé en logarithm
+et là, il fait une addition.
+Et là, ça ne planque pas.
+Mais ça, on ne le sait pas
+en fait que si on voit le code,
+ça.
+Donc, c'est très important
+qu'on ait une visibilité sur le code.
+Donc, là, il y a le membre.
+Aujourd'hui, c'est réglé.
+Tout le monde maintenant publie son ordre.
+J'imagine.
+On m'intéresse moins
+à la recherche aujourd'hui.
+Mais il faut que le code se publie.
+Alors, j'avais aussi un petit aspect
+à l'époque.
+C'est que, en fait,
+je ne suis pas le seul à programmer.
+En fait, il y a deux personnes
+avec qui il est programmé.
+Donc, c'est pour ça aussi
+que j'avais mis le code.
+Il y a certains qui l'ont fait.
+Mais le problème,
+c'est que ça faisait le jouet
+le rôle de chef de projet
+que je ne voulais pas faire.
+C'est énormément un boulot.
+Vérifier les implementations
+des uns et des autres.
+Ensuite, le mettre
+dans le cadre commun,
+faire des versions et tout ça.
+Non, non.
+C'est pas mon métier.
+C'est un sénar-chercheur.
+Je suis dans des cours à l'université.
+C'est ma priorité numéro 1.
+Donc, non, non.
+Je ne vais pas passer mon temps
+à vérifier les codes,
+à maintenir.
+Et, pareil, également,
+je voulais faire un forum au départ.
+Pareil.
+Si je dois aller surveiller
+sur le forum également,
+qu'est-ce qui se passe,
+qu'est-ce qui se dit,
+généralement, sur les forums,
+il y a 99,9 % des gens
+qui sont plutôt comprenables.
+Il y a 0,1 % qui est énervé.
+Et, hop, ça fout le boxon partout.
+Donc, ça,
+je ne veux pas avoir à gérer ça.
+Je ne veux pas.
+Donc, pareil.
+Donc, ça aussi,
+j'ai limité.
+J'avais mis une version 1 de forum.
+Je l'ai fermé au bout de 3 mois.
+Parce que, bon,
+c'était dans mon métier.
+Voilà.
+Donc, j'étais là.
+Voilà.
+Tout allait bien.
+Tout allait bien.
+Donc, on était contents.
+On utilisait ça en cours.
+Voilà.
+Tout allait bien.
+Et, pourtant,
+je me suis lancé dans R.
+Pourquoi je me suis lancé dans R ?
+Parce qu'il manquait
+un élément clé.
+Un élément clé,
+je vais essayer de développer ça
+rapidement, maintenant.
+Ça passe vite.
+Le temps, c'est dramatique.
+Très bien.
+Qu'est-ce qui s'est passé ?
+Qui s'est passé la chose suivante ?
+Donc, je faisais des cours
+en master statistique.
+Il y a des cours qui s'appellent six,
+toujours.
+Voilà.
+Voilà.
+Et, dans le cours de master,
+donc, j'avais un cours de programmation.
+Parce qu'on est tous persuadés
+qu'il faut qu'elle date un scientiste,
+ou un statisticien,
+à l'époque, on appelait ça
+sage programmé.
+C'est fondamental.
+Et on a...
+On fait des traitements simples.
+On veut faire des clics de boutons.
+Mais quand on veut faire
+des traitements complexes,
+il faut faire des traitements par l'eau.
+Et des traitements par l'eau
+qui soient suffisamment sophistiqués.
+Et sophistiqués,
+ça veut dire,
+en fait, des structures algorithmiques.
+Mais ça,
+l'idée est derrière.
+Et donc,
+il faut savoir programmé.
+Donc,
+mon premier cours
+de toute ma vie,
+c'était en 1995.
+C'était un cours de thermopascal.
+Donc, je faisais un cours
+de thermopascal à l'époque.
+Ensuite,
+on effectue le thermopascal
+sur une dose.
+Voilà.
+Ça allait encore.
+Ensuite, on effectue Delfi.
+C'est peut-être la période
+la plus sympa,
+voilà.
+Et ensuite,
+on s'est dit,
+il faut qu'on évolue un peu
+parce qu'il y a Java,
+qui est très à la mode.
+Il faut qu'on regarde ce que c'est.
+On ne peut pas les enseigner
+aux étudiants.
+J'ai dit oui, très bien.
+Donc, j'ai fait du Java.
+Et à un moment donné,
+vers 2005, 2004,
+c'était un renouvellement
+des maquettes,
+on nous a dit,
+il faut faire des économies
+d'échelle.
+Ça,
+c'est pas bon,
+ça.
+Il faut faire des économies d'échelle.
+Donc, on va faire un cours commun
+entre une formation biais
+qui existe toujours aujourd'hui,
+un biais,
+et six.
+On a une troisième formation
+d'algorithmie
+de classe-objet.
+C'est juste pas possible.
+Voilà.
+Et comme ça,
+les CN,
+ça coûte moins cher.
+Et on fait les TD
+dans chaque formation.
+Après,
+ça fera une économie d'échelle.
+Très bien.
+C'était pas gérable.
+C'était pas gérable.
+Les étudiants statistiques
+ne veulent pas
+faire un cours de ces plus-plus.
+Ça,
+ils les intéressent pas.
+Ils sont gentils,
+ils sont de belles volontés.
+Puis,
+ils notent à la fin.
+Donc,
+il faut quand même qu'ils fassent
+quelque chose.
+Et clairement,
+ils étaient malheureux.
+Et c'est pas notre vocation
+de former des étudiants malheureux.
+C'était pas possible.
+Donc,
+je les fais une année,
+une année seulement,
+une année.
+Et au bout de l'année,
+j'ai dit non.
+Normalement.
+On peut pas continuer comme ça
+parce que les étudiants
+ne voient pas l'intérêt de ça.
+Voilà.
+Ils le font parce qu'ils sont
+obligés de le faire.
+Ils voient pas l'intérêt de ça.
+Et,
+même moi,
+je doute de l'intérêt
+de la chose.
+En BIBD,
+c'était plutôt justifié.
+D'ailleurs,
+maintenant,
+c'est devenu encore de s'échappes
+avec les données.
+Voilà.
+Mais,
+les étudiants statistiques,
+non, non, non,
+ils ne vont pas faire de développement
+d'improprise du tout.
+Donc, ils ne veulent pas de ça.
+Donc,
+j'ai commencé à regarder
+un peu
+qu'est-ce que je pourrais leur faire.
+Et bien,
+celui qui s'est imposé à l'époque,
+c'était pas à l'époque.
+Aujourd'hui,
+tout le monde est air lover,
+air attiré,
+air parti.
+Mais à l'époque,
+non, non, non.
+C'était le seul.
+J'ai dit,
+il faut qu'on se lance dans air.
+Et donc,
+j'ai montré un peu
+sur Calibuget, ça.
+À l'époque,
+c'est tout petit.
+Mais vous trouvez en fait,
+j'ai mis ça en ligne.
+J'ai mis sur mon blog
+mon exposé d'aujourd'hui.
+Voilà.
+Vous le trouverez plus détaillé
+cette fois-ci.
+Et, à l'époque,
+air est là.
+Là.
+Donc,
+c'était 2006.
+2006.
+Air est là.
+Donc, on dit mais air,
+à l'époque,
+l'image qu'on avait de air,
+c'est que ça a un outil
+de statisticien.
+Même moi,
+en tant qu'informaticien,
+j'avais un a priori,
+qu'est-ce que c'est que ce langage,
+on ne déclare pas des variables.
+On ne type pas,
+si de suite,
+qu'est-ce que c'est comme VBA,
+on ne va pas le faire.
+J'étais jeune.
+Voilà.
+Très bien.
+Donc, voilà.
+J'ai regardé
+et je me suis rendu compte
+que je peux construire
+un cours de programmation
+là-dessus.
+Et les étudiants
+ont une compétence
+de programmeur.
+En mixant,
+du coup,
+la double compétence,
+on utilise air
+pour faire du traitement statistique,
+à l'époque,
+il n'y avait pas beaucoup
+de paquets pour maintenant.
+Mais,
+par exemple,
+si on fait l'investi factorial,
+le seul qui était valable,
+c'était ADE 4.
+Mais, c'était le seul valable.
+Donc,
+on avait,
+dans un même langage,
+une double compétence.
+On fait des traitements statistiques
+par ailleurs
+et on fait de la programmation statistique.
+Donc, j'ai utilisé
+ce langage-là,
+en fait,
+dans cet double aspect-là.
+C'est-à-dire que,
+dans mon cours,
+il y avait une partie
+où je l'ai entraîné à utiliser air,
+à l'époque,
+en Master,
+en DDSS, à l'époque,
+il y avait,
+je ne sais pas,
+sur les 20 étudiants,
+il y avait ceux qui avaient
+utilisé air dans leur vie.
+Et donc,
+c'est juste impossible.
+Le gars qui vient en Master,
+la première chose que je lui demande,
+t'as fait du air
+ou pas avant de venir ?
+S'il me dit,
+eh bon,
+puisque c'est air,
+machin, j'y dis,
+non, non, non, non,
+c'est pas possible,
+parce que non,
+on ne peut pas avancer,
+je reviens à zéro à chaque fois.
+C'est pas possible.
+Voilà.
+Donc, il y avait ces double aspects-là.
+Et, je suis très content.
+Je suis vraiment très content.
+C'est un des cours forts,
+c'est un des cours forts réellement
+et c'est ma page la plus consultée.
+J'ai une page de cours,
+et cette page-là,
+c'est la page
+qui est la plus consultée aujourd'hui.
+C'est-à-dire,
+ça sert à d'autres personnes.
+Tant qu'à faire,
+ça refait du boulot,
+ça sert aux gens.
+Sinon, je vois pas trop la...
+Voilà.
+Donc voilà.
+Et donc,
+c'est d'autant plus vrai
+qu'arriver la vague
+data science
+ou big data,
+si vous voulez,
+et dans la vague data science,
+si vous regardez un peu,
+en réalité,
+on est dans le même cadre,
+un peu près,
+qu'elle data mining,
+c'est-à-dire que j'ai des données,
+je prépare les données,
+j'applique les algorithmes,
+les machines learnings,
+les statistiques,
+les rapports,
+j'ai des résultats,
+je valide les résultats
+et je déploie.
+Ça veut dire,
+je fais des rapports
+et je déploie.
+Ce qui a changé aujourd'hui,
+ce qui avait dans la data mining
+à l'époque,
+c'est que la source d'information
+s'était participément
+appelée données de l'entreprise.
+Donc, c'est un entrepôt de données.
+Il y a une grande vague
+des entrepôts de données
+vers 87 par là
+et on disait
+il faut qu'on crée des entrepôts,
+tout le monde a voulu faire des entrepôts
+et sur les entrepôts,
+on greffe les méthodes
+data mining.
+Ce qui est nouveau aujourd'hui
+avec la vague data science,
+c'est qu'on applique toujours
+les albos de l'entreprise,
+donc on va chercher les données
+en dehors de l'entreprise également.
+Et c'est ce qu'on voit bien.
+Je suis allé sur la page
+de l'équipé d'aide
+de data science en anglais
+et effectivement,
+on a le même processus
+data mining,
+j'appelle ça processus data mining.
+La seule différence
+en réalité,
+c'est qu'on va chercher
+les données sur le monde.
+C'est très joli,
+mais avec des fameuses caractéristiques,
+paredeté,
+vognimétrie,
+velocité.
+Donc,
+il y a des outils clés
+qu'il faut qu'il soit
+présent dans les logiciels.
+C'est quoi ces outils clés-là?
+Ils sont là.
+C'est que,
+déjà,
+il faut qu'on puisse gérer
+la volumétrie.
+Donc ça, c'est devenu
+un élément clé, réellement,
+mais plus qu'avant,
+donc il faut qu'il y ait
+des solutions pour la volumétrie
+dans le petit en question.
+Il y a un deuxième élément,
+c'est l'accès aux données
+non structurelles,
+typiquement le texte mining.
+Si on crée un logiciel
+qui n'a pas de fonctionnalité
+de texte mining,
+laissez tomber tout de suite.
+C'est un outil académique
+pour apprendre,
+c'est exactement le catamagra,
+mais il n'y a pas le texte mining
+parce que c'est des compétences
+supplémentaires.
+Je ne vais pas me lancer
+dans la programmation de ça.
+Ils n'ont plus rien.
+Je ne fais que ça.
+Mais clairement,
+dans un logiciel
+qui soit utilisé réellement
+de manière opérationnelle,
+il faut qu'il y ait
+des accesses sur le texte,
+il faut des accesses
+sur les images,
+il faut qu'il y ait des appellis
+qui permettent d'accéder
+des données en vie.
+Donc maintenant,
+ces trois éléments-là,
+donc j'avais mis
+dans le transparent avant,
+je le passais un peu avant,
+un peu vite,
+sur les fonctionnalités
+d'un logiciel de la data mining
+à l'époque,
+et le logiciel de la data mining
+c'est trois éléments-là,
+clés, qui sont nouveaux.
+Et donc,
+c'est un élément
+d'évaluation d'un outil.
+Si il n'y a pas assez
+fonctionnalité
+sur un outil aujourd'hui,
+il faut s'inquiéter,
+parce que ça veut dire
+qu'il y a tout un temps
+de data science
+que vous allez...
+sur lequel vous allez
+passer à côté.
+Donc c'est un élément.
+Et fortosement,
+d'envers,
+on n'est pas mal
+passé qu'un autre par rapport
+ça.
+Il y a un autre aussi
+qui est venu se pointer derrière.
+Il y a un autre aussi
+qui est venu se pointer derrière.
+Alors,
+qu'est-ce que je vois, moi?
+C'est que
+il y a plein de choses
+qui fait qu'Ère aujourd'hui
+est indispensable.
+Le premier élément clé
+c'est qu'il est utilisé
+à l'entreprise aujourd'hui.
+Ça, ça valide
+à tous les choix
+qu'on a fait.
+On forme des étudiants
+sur des outils,
+des outils qui étaient
+plutôt académiques
+au départ,
+ces outils académiques-là
+sont rentrés
+dans les entreprises.
+Et donc,
+ça veut dire que,
+effectivement,
+un,
+on a le fond de l'affaire
+dans l'aspect hédagogique,
+mais en plus,
+on rend des étudiants
+qui sont vraiment
+opérationnels
+et qui peuvent le mettre en valeur
+dans leur CV,
+qui peuvent le mettre en valeur,
+dans leur travail
+au quotidien,
+en entreprise.
+Donc là,
+c'est le critère clé.
+C'est vraiment le critère clé
+aujourd'hui.
+C'est-à-dire que
+R est un livre à la base,
+une universitaire.
+En fait,
+il y a un article
+sur New York Times
+qui explique
+l'origine de R
+avec Rociaca
+et Dientlemann.
+Ils expliquent le cheminement
+et tout ça.
+Bon,
+c'est très bien un travail
+universitaire.
+J'aurais pu faire la même
+chose.
+Voilà.
+Ça,
+c'est un élément.
+Alors,
+il y a d'autres aspects
+également qui sont importants,
+mais évidemment,
+il y a plein de librairies
+maintenant.
+On ne peut pas,
+quasiment,
+il y a des nouvelles méthodes
+librairies
+qui sont plus ou moins bien
+programmées.
+Ça nous de le vérifier.
+Alors,
+moi,
+il y a une double vérification
+quand il y a un nouveau package.
+Alors,
+déjà,
+je regarde
+si il est publié
+dans le journal de R.
+Si il est publié là-dedans,
+ça veut dire qu'il a été
+donc évalué
+par un chercheur,
+par un collègue.
+Si il est évalué,
+très bien.
+Si il n'est pas évalué,
+très bien également,
+je vérifie moi-même.
+Donc,
+c'est pour ça que je passe
+un temps monumentaire
+à décortiquer les logiciels.
+Je passe mon temps,
+quasiment,
+qu'à ça.
+Je passe mon temps à lire,
+à vérifier,
+à tester,
+lire, vérifier,
+tester.
+Et quand je pense
+qu'il y a quelque chose à dire là-dessus,
+je fais un tutoriel derrière.
+C'est comme ça que je
+fonctionne aujourd'hui.
+C'est mon maximum de temps.
+C'est vraiment ça.
+Très bien.
+Et il y a des choses nouvelles,
+comme la programmation
+Big Data.
+Le fait que maintenant,
+c'est que la programmation
+R, c'est un élément
+qui est quand même pas mal.
+C'est vraiment pas mal.
+Statistiquement,
+c'est quelque chose que
+j'ai introduit
+ces dernières années
+dans mon cours de programmation
+R.
+Je fais un cours de programmation
+R.
+J'ai dû un peu tercer
+mon cours
+pour ajouter une séance 7
+sur laquelle
+je fais la programmation
+en après-duce.
+Parce que c'est une
+compétence clé.
+C'est la programmation parallèle.
+Parce que,
+non,
+on a des systèmes distribués
+avec les plus terres
+ainsi des suites.
+Il faut que les calculs
+soient déportés
+pour qu'on ait plus de puissance.
+C'est assez versatile.
+Il permet
+de faire beaucoup de choses.
+Et surtout,
+il est utilisé entre autres.
+Alors,
+je fais
+un petit démon
+très rapidement.
+Vraiment très rapidement.
+Ça,
+c'est un de mes cours clés.
+En fait,
+je ne connais pas
+votre niveau de culture
+sur la passagance
+et sur les méthodes.
+Donc, du coup,
+je vais un peu vite.
+Si j'avais trop vite,
+il faut me dire,
+ensuite de suite.
+Sachant que
+il est déjà 8h01,
+j'ai pour objectif
+de m'arrêter à 8h30.
+Ça va,
+8h30 ?
+Donc, du coup.
+Très bien.
+Donc,
+ça,
+c'est l'attentissage hypervisé
+à l'indice prédictive
+de l'hutra classique.
+J'ai une base de données
+avec une variable cible.
+Voilà.
+Je la sinde en deux.
+Voilà.
+Une pour créer le modèle,
+l'autre pour tester.
+Sur la partie création de modèle,
+je crée le modèle prédictif.
+Ensuite,
+je l'applique sur les chantiers en test.
+Et je confonte
+en deux
+entre ce que la prédiction
+du modèle est observée
+pour avoir une affiche de confusion.
+Alors,
+je montre ça sous R.
+On peut le faire
+avec d'autres outils.
+Voilà.
+Mais je montre ça
+pour pouvoir voir
+que le code,
+il est super simple.
+Donc,
+là,
+j'ai pris la fidélité
+de nouveau comme exemple.
+Qu'est-ce qui se passe ?
+Donc,
+là,
+si vous avez eu la chaine,
+bon,
+vous avez eu la chaine entière,
+là.
+Donc,
+qu'est-ce qui se passe ?
+Là,
+je charge des données.
+Ensuite,
+j'ai la variable cible.
+Donc,
+là,
+pour le coup,
+je vais binariser.
+Si il n'y a pas d'affaires,
+si on ne tombe pas,
+et s'il y a une affaire ou plus,
+on tombe.
+Donc,
+ensuite,
+je laisse un déant en deux.
+On va voir exactement mon schéma tout à l'heure.
+Voilà.
+Ici,
+en faisant les chantiers en ajout asard,
+avec,
+j'ai pris 401 pour l'abandissage
+et 200 pour le peste.
+Ensuite,
+je vais créer l'art de décision
+et je l'affiche.
+Donc,
+non,
+si,
+je vais prêter.
+Donc,
+c'est là que la pression arrive,
+mais normalement,
+ça devrait marcher.
+Normalement,
+ça devrait marcher.
+J'ai répété avant de venir.
+Donc,
+il n'y a pas de souci.
+Hop, là,
+quand on l'entrait,
+voilà,
+il charge les données.
+Et ensuite,
+je l'affiche ici,
+tac,
+tac.
+Et,
+voilà.
+Très bien.
+Très bien.
+Donc,
+qu'est-ce que vous voyez?
+Là,
+typiquement,
+apparemment,
+celle.
+Donc,
+ici,
+la première variable discrime.
+Alors, si je lis là,
+très rapidement,
+donc,
+là,
+100%,
+c'est-à-dire que j'ai 100% de la base.
+J'ai toute la base entière.
+Toute la base d'abandissage.
+Ensuite,
+le 023,
+c'est le pourcentage de la deuxième classe.
+Donc ici,
+la deuxième classe,
+yes,
+c'est la deuxième classe.
+Et donc,
+le 23%,
+023,
+c'est la proportion des yes.
+Et du coup,
+la classe majoritaire dans le sommet,
+c'est non.
+Voilà,
+comment il faut le dire.
+Très bien.
+Donc,
+la première variable
+qui joue apparemment,
+c'est actuellement un mariage ou pas.
+Il n'y a pas été au lendemain plus.
+On imagine très bien.
+Si,
+si on a un mariage,
+Vatine,
+donc,
+donc,
+super,
+à 2,5,
+c'est entre 1 et 5,
+je crois,
+dans la base.
+Donc,
+du coup,
+la classe majoritaire,
+c'est non.
+Si on n'est pas heureux en mariage,
+la deuxième variable,
+c'est l'âge.
+Donc là,
+si on lit bien en réalité,
+j'ai,
+j'ai,
+j'ai essayé de voir
+ce qu'il y avait,
+ce qu'il y avait derrière.
+Si on n'est pas heureux en mariage,
+et qu'on est jeune,
+et que
+on n'est pas très,
+on,
+on est plutôt religieux
+parce que les noms,
+ils parlent là,
+et qu'on a une occupation là,
+c'est en fait,
+c'est une échelle de 1 à 7,
+est-ce qu'on a un boulot bien ou pas,
+et qu'on a un bon boulot,
+typiquement,
+dans les jeunes cas de dynamique,
+quoi,
+bah,
+c'est des gens qui t'empleurent
+leur,
+en tout cas,
+dans leur conjoint.
+Bah,
+c'est ce qu'il dit,
+moi,
+j'en sais rien.
+Je ne suis pas jeune,
+je ne suis pas dynamique,
+cas de dynamique,
+non plus.
+Ensuite,
+je fais la prédiction,
+comme le schéma ici,
+vous avez vu,
+voilà.
+Donc,
+je suis là,
+je suis là.
+Donc,
+j'ai sendé la base,
+voilà,
+j'ai l'arbre de décision,
+j'ai les caractéristiques
+de mon modèle,
+ici.
+Voilà.
+Donc,
+j'ai la matrice de confusion,
+rapidement,
+voilà,
+qui est là.
+Et voilà.
+Donc,
+là,
+il faut une petite expertise,
+tout simplement,
+qu'est-ce qui se passe,
+c'est que les prédictions
+des gens qui t'empleurent
+en mariage,
+j'en ai très peu,
+en vérité.
+Donc,
+ça veut dire qu'il y en a plein
+des gens qui trompent qu'on
+n'arrive pas à détecter,
+c'est la sensibilité,
+on appelle ça,
+c'est 3 sur 58 ici,
+3 sur la somme,
+de la ligne.
+Donc,
+c'est toujours quelqu'un qui trompe,
+sauf que c'est 100%
+mais sur 3 individus.
+Donc,
+bon,
+voilà.
+Mais bon,
+en tout cas,
+c'est ce que me dit la sortie.
+Donc voilà.
+Ce qui est très important,
+c'est regarder le code.
+On n'a pas besoin d'avoir,
+enfin,
+avoir une formation
+mirifique
+pour pouvoir prendre
+ce code-là.
+On est absolument d'accord.
+En fait,
+ce qui se passait beaucoup à l'époque,
+c'est que les étudiants
+avaient peur de la partie
+codage,
+parce que,
+ils se disent,
+ou là,
+les commandes,
+ils s'intéressent un peu.
+Si on a des bons tutoriels,
+il n'y a pas de soucis,
+on peut rentrer du code
+sans avoir de problèmes.
+Donc,
+il n'y a pas de vraies connaissances dures
+là-dessus.
+En fait,
+la vraie connaissance dure
+avait,
+sur la programmation.
+Là, effectivement,
+il y a des notions supplémentaires
+qui l'algorithme est typiquement.
+Et puis,
+donc,
+la structuration du programme.
+Ça, effectivement,
+c'est une connaissance
+qu'il faut acquérir.
+Mais,
+sur le fait de pondre
+une série de codes
+et pour le lancer derrière,
+franchement,
+je ne vois pas
+où est la difficulté.
+Je ne vois pas
+où est la difficulté.
+Et justement,
+aujourd'hui,
+l'enjeu que je fais,
+c'est que,
+donc,
+chez mon cours d'économétrie,
+que je fais,
+ça s'appelle plus économétrie,
+parce que les étudiants
+n'aiment pas entendre ça.
+Ça s'appelle modèle linéaire,
+mais en fait,
+c'est pour d'économétrie.
+Voilà.
+Et,
+dans mon cours d'économétrie,
+typiquement,
+dans mes TP,
+j'en ai 6,
+j'en ai 6 TP avec eux,
+donc 6,
+soit 1h45.
+Je fais 3
+sous R,
+parce que,
+la plupart,
+il y a encore des stages,
+parce qu'en réalité,
+quand on voit ça,
+ils peuvent rentrer du code.
+Simplement,
+quand je fais ma fiche de TD,
+je mets bien les bons repères.
+Voilà.
+Et du coup,
+ils ont les tutoriels à côté.
+Et donc,
+en 1h45,
+ils peuvent développer
+une vraie compétence R.
+Ils peuvent développer
+une compétence R,
+et je ne vois pas
+où est la difficulté ici.
+On a des codes comme ça.
+Ça,
+ça les démantrait,
+et ensuite,
+le 5e TD,
+je fais sous-piton,
+pareil.
+Je vais montrer tout à l'heure
+que je peux faire
+exactement la même année
+sous-piton,
+donc il n'y a aucune difficulté.
+La seule difficulté,
+c'est la syntaxe.
+La syntaxe,
+c'est qu'on va prendre
+une langue nouvelle.
+On va prendre la syntaxe
+tout simplement,
+et une fois qu'on a la syntaxe,
+ce n'est pas un problème.
+Donc, il n'y a vraiment pas de soucis.
+Bon, après,
+les pays numéro 6,
+c'est l'évaluation.
+Et ils ont le choix de l'outil.
+Et tous les ans,
+ils sont,
+à peu près la moitié,
+font le choix d'Excel.
+Ensuite,
+il y a un cas,
+qui font le choix de R,
+et encore,
+ils font le choix de R.
+Donc, ça veut dire que,
+quand ils peuvent le faire.
+Après, je vais dire là-dessus,
+la deuxième démonstration
+que j'aimerais montrer,
+c'est la même chose,
+mais en texte mining.
+Donc là,
+également,
+on se dit,
+taxe mining,
+c'est compliqué ça.
+Mais non, non, non.
+Donc là,
+j'ai créé un exemple
+très simple.
+C'est la
+prédiction des nivelles de retaire.
+Donc, on est toujours
+dans la quantité
+hypervisée.
+J'ai une variable simple
+ici.
+Donc, c'est l'étiquette
+de la nouvelle.
+Est-ce que ça parle
+de la SQ ou de CRUD?
+Voilà, c'était la distinction.
+C'est le présent de la
+CIPINA et un module
+de texte mining,
+mais qui a été masqué après
+parce qu'il plantait souvent.
+Et quand il est arrivé,
+ça a tout balayé.
+C'est impossible,
+quand je suis bien CR,
+à l'époque,
+on l'avait s'est tombé.
+Voilà.
+Et ça, c'est les variables
+prédictives,
+sauf qu'il n'est pas
+sous forme d'un tableau
+individu variable.
+Donc, tout l'enjeu
+du texte mining,
+c'est tout simplement
+je prends du texte,
+je vais construire
+un dictionnaire
+à partir des documents
+en la tokenisation.
+Je prends chaque mot,
+chaque mot devient une variable.
+Et ensuite,
+je vais compter
+l'incurrence du mot
+dans chaque document.
+Ce qu'on appelle la
+condération,
+c'est l'échelle d'acquander
+ce type.
+Donc,
+finalement,
+on est dans le cadre
+de la quantisation
+supérieure.
+La cat aggregation
+de texte,
+c'est dans le même cas
+que la quantisation supérieure.
+La seule difficulté
+supplémentaire,
+c'est la tokenisation
+pour créer le dictionnaire
+et créer un tableau
+de données.
+Mais,
+une fois que ça s'est fait,
+il n'y a rien de nouveau.
+Ça,
+il n'y a rien de nouveau,
+sauf qu'il y a des techniques
+supplémentaires.
+C'est pour ça qu'il y a un
+tableau de données
+donc c'est l'attention
+d'indexie.
+Mais,
+fondamentalement,
+on est dans les mêmes
+schémas.
+Il faut qu'on génère
+un tableau de données.
+Une fois qu'on a un tableau
+de données,
+on peut faire les traitements.
+Alors,
+ça se passe comment?
+Ça s'ouvre,
+justement.
+Allons-y.
+Il est là.
+Il est là.
+Très bien.
+Donc,
+là,
+j'ai pris la base
+de retaire.
+Regardez.
+Alors là,
+j'ai pris tout le monde
+pour faire les traitements
+directement.
+J'ai pris chez XML.
+Alors,
+rapidement,
+tac,
+hop.
+Voilà.
+C'est ça,
+la base de retaire.
+Ça leur démo,
+R,
+texte mining,
+la base retaire,
+c'est ça.
+Tac.
+Et voilà.
+Donc,
+vous avez vu,
+c'est un document XML
+très simple
+où j'ai
+une structure XML
+avec un
+chaque document,
+en fait,
+il y a deux éléments
+dans chaque document.
+Il y a
+le thème,
+et donc,
+je vais faire une prédiction
+du texte brude
+vers les tickets.
+Donc,
+qu'est-ce qui se passe
+dans R,
+du coup?
+Ce qui se passe
+dans R,
+du coup,
+c'est que,
+non,
+j'ai lancé.
+Non,
+j'aurais pas dû.
+Tac,
+c'est pas ça.
+C'est que j'ai déjà ouvert.
+Je ne le trouve plus.
+Il est là.
+Voilà.
+Donc,
+si on regarde bien
+le code R,
+qu'est-ce qui se passe là?
+Donc,
+du coup,
+j'ai ouvert le sujet
+et je mets le document
+dans une autre structure,
+sur le vector.
+Voilà.
+C'est un vector.
+Une fois que j'ai fait ça,
+qu'est-ce qui se passe?
+Je vais essayer de faire
+donc de la tokenisation.
+C'est-à-dire que je vais prendre
+chaque mot
+et chaque mot,
+je vais considérer que c'est
+une variable.
+C'est ce qui se passe ici en bas.
+Donc là,
+je prends la libre ETM.
+Donc,
+les choix des libérés
+sont très importants
+par l'idée.
+C'est un élément
+qui permet de choisir
+entre R et Python.
+Moi, je pense,
+c'est que
+vous êtes confrontés
+et vous allez essayer
+de voir
+dans quel langage
+il y a le meilleur
+en fait,
+libéré
+ou en fait le package.
+Et c'est par rapport à ça
+qu'on peut fonctionner.
+C'est un élément de choix
+en délogissant.
+C'est deux outils là.
+Sinon,
+en termes de fonctionnalité,
+en termes de résultats
+à être rendus,
+non, ils sont quasiment
+équivalents.
+Très bien.
+Donc,
+c'est ce que je montre ici.
+Voilà.
+Et je vais appuyer la marque.
+Je vais lancer ça rapidement.
+Donc là,
+je sélectionne
+TAC.
+Voilà.
+Contrôle entrée.
+Ça fait tous les traitements.
+Je recharge les données.
+Voilà.
+Et donc,
+ça me génère la matrice là.
+Hop là.
+Et donc ça,
+c'est le début de la matrice.
+C'est le début de la matrice
+ou tout simplement,
+donc ici,
+donc les documents,
+il y en a 117 en tout.
+J'ai pris la première et la deuxième.
+Et j'ai affiché
+donc les premières variants.
+Et j'ai affiché en fait
+donc les premiers tokens,
+les premiers mots qu'il a pris.
+Et là,
+c'est les occurrence.
+Donc,
+dans le document 9,1,
+il y a le agrite qui apparaît une fois.
+Le whole apparaît une fois.
+A le saut apparaît une fois.
+Bah, apparaît 5 points si-dessus.
+Si on regarde ça,
+c'est bien.
+C'est bien, mais il y a un souci.
+C'est qu'il y a des mots,
+en fait,
+et des termes
+qui n'amènent pas de sens.
+Par exemple, c'est le cas de hendres.
+Hendres,
+c'est comme et en français.
+Ça n'amène pas de sens en lui-même.
+Donc,
+il faut qu'on fasse
+une simplification là-dessus.
+C'est exactement ce qui se passe ici.
+On enlève les nombres.
+Ensuite,
+on enlève les compituations.
+On met le tour au minuscule.
+Et on enlève ce qu'on appelle
+l'estoporte,
+ce qui se passe ici.
+Et voilà.
+Et l'idée, en fait,
+c'est que je vais créer
+un tableau qui est de plus en plus compact.
+Voilà.
+Tout ça,
+on peut le faire très facilement
+dans R.
+C'est pour ça que je montre ça ici.
+On peut le faire très facilement
+dans R.
+Et à la fin,
+donc je vais tout lancer d'un coup,
+parce que, voilà,
+tac,
+à la fin,
+j'ai un arbre de décision.
+Ah,
+on a le word cloude.
+Ça,
+c'est présent à la mode également.
+Je montre très rapidement ici.
+Voilà.
+Voilà.
+Donc,
+c'est les plus fréquents
+dans les documents en question.
+Voilà.
+C'est très bien la mode.
+Ça fait très joli.
+Ça fait très data science,
+je trouve.
+On met un word cloude
+avec des oligolaires.
+Tout de suite,
+il dit,
+oh, c'est data science,
+parce qu'il y a des words cloudes.
+Ah,
+si les gens aiment ça,
+je vais pas.
+On va pas aller.
+Voilà.
+Moi,
+ce que je veux surtout,
+c'est qu'à la fin,
+j'ai bien un arbre de décision.
+Donc,
+j'ai bien un modèle préditif
+qui est basé sur l'occurrence
+des mots dans les documents.
+C'est ça, là,
+c'est bien que je regarde
+les mots qui apparaissent
+et je le place par rapport à ça.
+Alors,
+dernier exemple ici,
+c'est la programmation MAPREDUS.
+Ça,
+c'est un cours qui a apparu
+il y a 2 ans,
+3 ans,
+même pas.
+Voilà.
+C'est que,
+très facilement,
+sous R, du coup,
+je peux mettre en oeuvre
+donc le principe MAPREDUS.
+C'est-à-dire que
+j'ai un problème à gérer,
+voilà,
+j'ai un traitement à faire,
+j'ai un système de clusters,
+il faut que je déporte
+les calculs sur les clusters,
+ainsi de suite.
+Qu'est-ce qui se passe?
+Il faut que je programme
+la programmation MAPREDUS
+et sous R,
+c'est super simple.
+En fait,
+le vrai enjeu,
+il est où?
+En fait,
+il est dans la création
+des index.
+Là,
+il faut réfléchir un peu
+que j'ai un traitement à faire.
+Comment je vais le découper?
+Et sur le découpage-là,
+je le matérialise,
+en fait,
+par la création d'un index.
+Je prends un exemple ici
+pour que vous voyez bien
+ce qui se passe.
+Donc là,
+regardez,
+je vais sélectionner ça
+et ensuite,
+je vais détailler la chose.
+Tac!
+Qu'est-ce qui se passe?
+Ce qui se passe,
+c'est la chose suivante.
+C'est que
+j'ai un vecteur de valeur.
+Voilà.
+Donc,
+c'est un vecteur de valeur quelconque
+que j'ai généré ici
+de manière aléatoire.
+Voilà.
+Voilà.
+J'ai un vecteur de valeur
+et je vais faire donc
+la somme du vecteur de valeur.
+Sauf que,
+c'est très simple,
+sauf que je vais la choisir suivante,
+c'est que
+je vais les découper
+en cinq parties,
+comme ça.
+Donc,
+la partie numéro 1
+sera calculée
+sur une machine à part.
+Ensuite,
+la partie numéro 2,
+ainsi et ainsi.
+Donc,
+j'ai une page là.
+Le principe ma préduce,
+dit la chose suivante,
+crée un index.
+Et l'index,
+il va servir
+à définir
+qui est, en fait,
+qui va avec qui.
+Voilà ce qui se passe.
+Donc,
+c'est ce qui se passe là.
+Donc,
+j'ai lancé.
+Je vais lancer le traitement.
+Là,
+ça plantait un peu chez moi.
+J'espère que ça va marcher.
+Eh ben,
+ça marche très bien.
+Très bien.
+Un plat.
+Regardez.
+Donc,
+tac, tac,
+excusez-moi.
+Voilà.
+Donc,
+là,
+j'ai les vecteurs de valeur.
+Et générer,
+j'ai généré.
+Donc,
+ça,
+c'est les vecteurs de valeur
+qui me sont donnés.
+Et là,
+j'ai généré
+donc,
+l'index.
+E,
+en plein deuxième,
+il va aller dans le compte numéro 3,
+numéro 4, ainsi de suite.
+Donc là,
+typiquement,
+ici,
+la valeur qui,
+en fait,
+qui va avec celle-ci,
+va avec celle-ci,
+ainsi de suite.
+Une fois que j'ai fait ça,
+du coup,
+ça,
+c'est la partie map qui
+va avec celle-ci.
+Voilà.
+C'est l'heure de la partie Venus.
+Et une fois que j'ai ça,
+j'ai ça,
+bah, la sortie ici,
+paf,
+je peux faire donc la consolidation.
+J'ai les clés
+et j'ai les sommes
+par globe de valeur.
+Alors ça,
+oui,
+oui,
+ça se fait beaucoup.
+Mais ce qui est très intéressant,
+c'est que je peux le faire sous R.
+Cette compétence-là,
+je peux les faire acquérir
+aux étudiants sous R.
+Donc là,
+typiquement,
+R est un vrai langage de programmation,
+big data,
+pour le coup.
+Parce que je peux mettre en œuvre
+les principes big data.
+Et ça,
+il y a dix ans,
+quand on avait fait le choix de R,
+on n'avait pas vu tout ça.
+Mais grâce au dynamisme de R
+et de la communauté
+qui fait avancer R,
+on a des fonctionnalités
+qui sont réellement très très intéressantes.
+Voilà.
+Alors,
+je m'arrête là-dessus pour R.
+Voilà.
+Pour quoi on s'est lancé dans Python ?
+On se demande,
+hein,
+parce que R va bien.
+On se demande,
+mais c'est vrai ça.
+C'est une vraie question
+qu'il faut se poser.
+Parce que,
+donc,
+on avait travaillé sur R,
+du temps à trouver la bonaxe
+pour les étudiants.
+Il faut que ça marche bien.
+Il ne faut pas que je l'ai perdu.
+Il ne faut pas non plus
+que ce soit ennuyeux.
+C'est difficile de trouver le milieu.
+Mais bon, on essaie.
+Et donc,
+tout allait bien.
+Et pourquoi on s'est lancé dans Python ?
+Ça, c'est une vraie question clé.
+Parce qu'en réalité,
+on pouvait s'en passer.
+On pouvait s'en passer,
+mais non.
+C'était super important
+qu'on se lance dans Python.
+Qu'est-ce qui s'est passé ?
+Il s'est passé la chose suivante.
+Donc,
+on a
+une série de formations
+qui sont sur trois années.
+Il y a une licence,
+c'est l'informatique d'AstraZiance.
+Voilà.
+Ensuite, il y a un master informatique.
+Et on a les master 2.
+Donc, il fait un master 2.
+Et donc,
+en licence,
+j'ai un cours de programmation.
+J'ai un cours de programmation en licence
+qui est marié
+avec un cours d'algorithmie.
+Donc, on est deux collègues à le faire.
+Elle fait la partie d'algorithmie.
+Et moi, j'arrive à en appuyer
+sur la partie programmation.
+Jusqu'à là,
+tout va bien.
+Et donc,
+on a fait le choix
+de,
+en fait,
+de travailler sous Delphi.
+Ce qui est très intéressant,
+c'est qu'il y a 20 ans
+que Delphi était en master 2.
+Et on a fait descendre en master 1.
+Et on était descendus jusqu'à
+donc, à licence.
+Donc, il y a une vraie progression
+des compétences des étudiants.
+Ça, on ne parle pas jamais.
+On ne parle pas toujours.
+Mais on a été en termes de,
+par exemple,
+et donc, mon cours de mataménie,
+je fais c'est en master 2.
+Maintenant, je fais en master 1.
+Donc, il y a une vraie progression
+des compétences des étudiants.
+Ça, c'est plutôt pas mal.
+Et donc, on était là.
+Donc, ça marchait très bien.
+Sauf qu'au bout d'un moment,
+ce qui est bien informatique,
+c'est qu'on ne peut pas s'endormir.
+Il faut qu'on soit tout le temps...
+Il faut qu'on surveille ce qui se passe
+parce que ça évolue beaucoup d'informatique.
+Et donc, on s'est proposé la question
+à m'en donner,
+est-ce que c'est toujours pertinent
+de travailler sous Delphi,
+tout simplement,
+parce que,
+si on va sur le site de la PEC,
+voilà,
+si on fait une recherche
+sur le mot clé Delphi,
+bon,
+il y a quand même des autres emplois.
+On est d'accord.
+Mais, bon, clairement,
+je ne sais même pas si Delphi,
+tout le monde connaît ici.
+Je ne suis même pas sûr.
+Ça, dans le cadre de programmation,
+qui était très envolde il y a 15 ans,
+mais justement, il y a 15 ans.
+Donc, voilà.
+Donc, c'est très intéressant
+du point de vue pédagogique
+qu'on m'outit,
+parce que c'est très lié,
+donc, à l'algorithmie.
+Mais, clairement,
+personne n'utilise ça.
+Enfin, très peu,
+de ce sort de dévance.
+Donc,
+c'est un élément clé.
+On ne peut pas rester là-dessus.
+Donc, on s'est dit,
+mais qu'est-ce qu'on peut utiliser ?
+C'est quel outil
+on peut amener pour la programmation
+pour que, quand l'étudiant,
+on soit content de le mettre.
+Donc, on a réfléchi,
+on a réfléchi.
+Et,
+moi,
+ce qui m'a beaucoup...
+c'était en quelle année, ça ?
+C'était 2013,
+2014, voilà.
+Il y a un élément,
+c'est que moi,
+je passe mon temps
+sur le site des cadenuggets.
+Voilà.
+Ah non, il y a un article
+que j'ai vu.
+C'était celui-là,
+dans le monde informatique.
+Voilà.
+Voilà.
+Donc, je lis beaucoup
+le monde informatique
+et le monde tempus.
+Il y a le monde numérique, également.
+Je lis quasiment là.
+Pour le coup,
+je lis vraiment tous les matins.
+J'ai vu cet article-là,
+juillet 2014, hein.
+Je me suis dit,
+ah,
+il y a quand même un truc
+intéressant, là,
+parce qu'il y avait un autre élément clé,
+c'est que,
+sur le site des cadenuggets,
+on voyait quasiment
+Python arriver de plus en plus
+sur les logiciels populaires.
+Ah,
+tous les ordres,
+donc il y avait un compte rendu
+des logiciels les plus populaires
+portés par les...
+par les tapasaniantistes.
+Et Python,
+qui était loin,
+on ne le disait pas,
+qui existait même pas,
+en 2006,
+on ne le voyait pas, hein.
+On le voyait,
+on le voyait,
+on le montait,
+on le montait,
+Python est,
+c'est pareil,
+ça sert à rien d'enseigner Python,
+parce que,
+on peut faire la même chose
+avec R1.
+C'était ça,
+mon idée du départ, hein.
+Donc, j'avais vu ça en amont,
+j'avais testé un peu,
+j'avais regardé,
+dans Orange,
+on peut programmer en Python.
+Alors,
+en Python 2.7,
+ça s'évolue maintenant,
+mais,
+on peut,
+soit faire un diagramme
+de traitement,
+soit,
+donc le code,
+on peut le programmer en Python.
+Donc,
+il y a une library,
+donc machine learning,
+Orange,
+on peut le faire sous putain.
+Donc,
+j'avais regardé ça,
+pour moi,
+c'était réglé,
+c'est un truc qui amène
+plus par rapport à R,
+mais quand je lis,
+les gens plutôt intelligents,
+qui disent ce genre de choses,
+bah,
+il faut réfléchir un peu plus.
+Donc,
+il faut vraiment réfléchir un peu plus.
+Et donc,
+j'ai regardé en détail.
+J'ai regardé en détail,
+et,
+excuse-moi,
+qu'est-ce que c'est que ça ?
+Ah,
+là.
+Il est où,
+il est là ?
+J'ai regardé en détail,
+et,
+il y a des choses
+qui ne mentent pas.
+Ça,
+on ne peut pas passer
+à côté de ça.
+On ne peut pas passer
+à côté de ça,
+parce que,
+on forme des étudiants
+qui vont en entreprise.
+Ça,
+c'est la règle d'or.
+Il ne faut jamais oublier ça.
+Des fois,
+on oublie un peu
+l'université,
+mais non,
+non,
+il ne faut pas qu'on oublie ça.
+C'est fondamental.
+C'est fondamental.
+Donc,
+il faut qu'on survie,
+il y a,
+en fait,
+il y a des éléments clés.
+Il y a,
+en fait,
+il y a un aspect,
+donc,
+c'est la pédagogie.
+On essaie,
+on essaie tout le temps
+de marcher de l'emploi.
+Et,
+on a une chance extraordinaire.
+Je suis considérable que c'est une chance.
+C'est qu'on encadre
+des stagiaires de tous les ans.
+J'en encadre une vingtaine
+de tous les ans.
+C'est-à-dire que,
+tous les ans,
+en face de moi,
+j'ai 20 personnes
+qui viennent des entreprises
+et qui me racontent un peu
+leurs préoccupations,
+ce qu'ils veulent,
+ainsi de suite,
+et les compétences
+qu'ils attendent
+de nos étudiants.
+C'est super important,
+ça, hein.
+Quand ils viennent,
+ils disent,
+vous étudiez,
+on fait ça, ça, ça,
+ça, c'est super important.
+Donc, moi,
+je note,
+je ne le vois pas,
+mais je prends des notes,
+voilà.
+Et je regarde
+qu'est-ce qu'on peut en faire.
+Et là,
+typiquement,
+le fait que Piton
+apparaissent dans les oeuvres
+de plus en plus maintenant,
+on ne pouvait pas passer,
+peut-être.
+Donc,
+c'est pour ça
+que je l'ai introduit
+en licence.
+Donc,
+j'ai...
+Voilà,
+voilà.
+Donc,
+j'ai introduit en licence.
+J'ai des étudiants
+qui ont eu Piton
+la première année avec moi.
+Ça fait des tédés de 3 heures.
+Mais bon,
+quand même,
+il y avait une vraie avancée.
+Donc,
+ça marche très bien maintenant.
+C'est un con que je fais
+maintenant tout le temps,
+en licence,
+qui marche très bien.
+Je suis très content
+de ne pas avoir
+de d'autres loges de fonctionnement.
+Et les étudiants aussi
+sont très contents.
+Donc,
+tout va bien.
+Donc,
+tout allait bien,
+sauf que les étudiants
+du master 6 à l'époque
+ont dit,
+vous faites un cours
+de Piton,
+de Piton.
+Vous faites un cours
+de Piton,
+monsieur,
+en licence,
+je dis,
+j'aimerais bien,
+enfin,
+on aimerait bien et tout ça.
+Bon,
+les étudiants demandent des choses.
+Généralement,
+j'essaie de répondre
+à la demande.
+Donc, je leur ai dit,
+ok,
+je peux faire une formation cartose.
+Voilà,
+on regarde dans un peu du temps
+quel moment c'est libre.
+Et le seul libre qu'il était,
+c'était le vendredi
+avant les vacances,
+de Noël.
+Donc, je dis,
+bah voilà,
+je viens pour vous,
+bah là,
+là,
+pour le coup,
+c'est vous sur mon temps libre.
+Voilà,
+je fais la formation de 6 heures
+et vous me dites
+ce que vous en pensez.
+Je pense que c'est piton.
+Voilà,
+ils n'ont entendu pas les pitons
+et je vais leur faire une formation
+en 6 heures.
+Bon,
+tout le monde est venu.
+Pas d'absence.
+Généralement,
+il y a quelques absences.
+Là,
+il n'y avait pas d'absence du tout.
+Et on a fait la formation.
+Très bien,
+je leur ai fait le soir.
+Je leur ai dit,
+comment vous voyez ça,
+comment?
+Alors,
+je leur ai dit,
+c'est très bien,
+nickel et tout,
+c'est un truc pas mal ça.
+Je leur ai dit,
+bah vous avez fait un projet maintenant.
+Ça rigolez-moi.
+Mais bon,
+ils l'ont fait.
+Ça veut dire que,
+en réalité,
+le gap entre piton et air,
+il n'est pas énorme.
+Parce que sous-air,
+on les a surformés sous-air.
+Voilà.
+Piton, ils l'ont jamais vu.
+Je leur ai fait une formation
+de 6 heures.
+Pas beaucoup de 6 heures.
+Je leur ai fait une formation
+de 6 heures sur piton.
+Je les mets sur un projet
+qui n'est pas non plus
+le plus facile qu'il soit.
+Ils sont capables de le faire.
+Ça veut dire que le gap
+est donc pédagogique
+entre ces deux langages-là.
+En réalité,
+il n'est pas énorme.
+Il n'est pas énorme du tout.
+La vraie différence,
+c'est la salle taxe.
+Voilà.
+Non, non, non.
+Absolument pas.
+Voilà.
+Et du coup,
+quand j'ai vu ça,
+j'ai vu ça.
+Voilà.
+Je me suis dit,
+je vais l'introduire dans la maquette.
+Donc maintenant,
+il y en a dans la maquette.
+Les étudiants,
+ils sont en charge de l'eau.
+Je peux vous dire,
+je parlais de gravage tout à l'heure.
+On n'est pas loin de ça,
+c'est soit air, soit piton,
+un sud et sud.
+Et on met vraiment les tartis.
+Donc maintenant,
+en tant qu'on a été
+à la maquette,
+il y a peu d'heures de suite
+parce qu'on est obligés
+de faire des choix.
+Malheureusement,
+les heures sont limitées
+à l'université.
+On n'a plus de faire des choix.
+Il y a que 12 heures là-dessus.
+Mais avec les 12 heures qui sont,
+ils ne sont pas pas
+de faire des projets intéressants.
+Des projets donc,
+pas l'horizon.
+Alors,
+ce qui est très intéressant également,
+c'est que maintenant,
+vous m'étiez dit que je faisais que sourire
+avant.
+Maintenant,
+je fais une partie sur piton.
+Donc,
+avant la séance,
+j'ai dit aujourd'hui,
+on travaille sur sourire.
+Ou bien,
+on travaille sur piton.
+Et voilà.
+Et ça permet d'interner les deux.
+Et ils ont la double compétence.
+Avec un coup,
+avec un coup d'héagogie
+qui est minimum.
+Et ils peuvent rajouter
+dans l'observé la ligne de piton.
+Avec des vraies compétences derrière.
+Voilà.
+Alors,
+petite démon sur piton,
+cette fois-ci.
+Voilà.
+Alors,
+je montre,
+donc j'avais ouvert un peu ce spider.
+Là,
+c'est la détection de spam.
+C'est toujours l'apprentissage supervisé.
+Donc,
+l'idée,
+c'est qu'on a une série de documents,
+en fait,
+et on veut savoir si c'est un spam
+ou pas spam.
+C'est la variable cible.
+Et les descripteurs,
+en réalité,
+c'est les termes qui apparaissent,
+c'est les textes magniques.
+Ou bien,
+les exclamations,
+ainsi de suite.
+Voilà.
+Donc,
+je montre ici le code.
+Ah,
+je suis désolé,
+je traîne un peu.
+Je me suis sent fui,
+mon Dieu.
+Très bien.
+Je montre un peu le code.
+Voilà.
+Ici,
+donc,
+relativement,
+et voilà,
+on se rend compte
+qu'il n'y a aucune difficulté.
+C'est que de la syntaxe.
+Là,
+je charge donc les données d'apprentissage.
+Je charge les données test.
+Ensuite,
+je prépare les données.
+Je crée un arme de décision.
+Je crée un arme de décision.
+Voilà.
+Je crée un arme de décision
+et ensuite,
+qu'est-ce qui se passe?
+Bon, là,
+c'est quoi?
+Je fais la tédiction
+sur les chantiers en test
+et ensuite,
+je calculs
+l'implice de confusion
+et plus une différence
+animée.
+Entre le code
+qui est là
+et le code swear,
+il n'y a aucune différence
+pour la montagne.
+La seule différence
+c'est la syntaxe.
+Et la syntaxe,
+ce n'est pas un problème
+pour ramassion.
+Je sais ce que je dis par ailleurs.
+Moi,
+j'ai fait des cours,
+quasiment tous les langages,
+depuis que j'enseigne,
+j'ai même fait des cours de VPR.
+Je mange donc
+des cours de VPR aussi,
+et c'est pour ça
+que je révisais dans chaque cours.
+C'est la syntaxe.
+Je révis au moins
+un gardant 20 minutes
+sur la syntaxe,
+mais le fond,
+la programmation,
+ce n'est absolument pas un problème.
+Et du coup,
+je peux arriver en cours
+et j'arrive à faire un cours
+qui n'a pas l'importance.
+Et là,
+typiquement,
+c'est ça.
+La vraie différence,
+c'est la syntaxe.
+Alors,
+il y a une différence également
+qui est importante,
+c'est qu'on n'a pas
+les mêmes packages
+et on n'a pas
+la même performance de packages.
+Et là,
+typiquement,
+c'est à nous de vérifier.
+C'est à moi,
+là,
+c'est la détection de communauté.
+C'est la détection
+de communauté
+dans les réseaux sociaux.
+Je vais vous montrer rapidement ici.
+Voilà.
+Qui est là.
+Voilà.
+Ça, on va le faire ensemble.
+Je vais partir,
+on va le faire ensemble.
+Qu'est-ce qui se passe ?
+Donc,
+j'ai une communauté
+avec des marfices,
+enfin,
+des relations
+avec les personnes.
+Donc,
+on a une ensemble de personnes
+et certains sont
+plus connectés
+avec les autres ou pas.
+Et donc,
+c'est un graphe en réalité,
+c'est envers les connexions
+de ces personnes-là.
+Et puis,
+les élément sens troncs.
+Donc,
+les influenceurs,
+je vais vous le dire.
+Typiquement,
+il y a une notion plaît.
+Donc,
+c'est la centralité.
+Ça se mesure.
+Donc,
+qu'est-ce qui se passe ici ?
+Voilà.
+C'est la centralité.
+En fait,
+c'est un exemple célèbre.
+Donc,
+c'est le club de caractère
+de Zachari.
+Et dans le club
+de caractère de Zachari,
+il y a
+le président
+qui se prit la tête
+avec l'entraîneur.
+Ça ne fait jamais bon signe.
+Ça va finir par une séparation.
+Et là,
+typiquement,
+on en sait complètement.
+Et pas le degré centralité.
+Je vois,
+effectivement, que les...
+Et donc,
+ici,
+l'individu numéro 1,
+c'est un élément central
+pour un groupe d'individus.
+Et là,
+donc,
+l'individu 34,
+c'est un élément central
+pour un autre groupe d'individus.
+Et,
+dans le plus court chemin,
+ces deux individus là,
+c'est donc,
+c'est des éléments envolés.
+Donc,
+si je veux que ces deux personnes
+là,
+sur la vie gauche,
+c'est ces gens-là
+qu'il faut faire,
+en fait,
+c'est solliciter.
+C'est ça l'idée.
+C'est ça l'idée
+que sur QTRE et tout ça,
+il y a des communautés
+qui sont en clâté,
+parce que c'est la suite.
+Ça, maintenant,
+si on regarde ça,
+sous érepiton.
+Là,
+sous piton,
+voilà,
+qu'est-ce qui se passe ?
+Je charge la matrice d'advasance,
+voilà,
+je charge mes données caractées.
+Ensuite,
+je manipule les matrices,
+voilà,
+à suite de suite,
+voilà,
+et ensuite,
+je lance les crétements.
+Je fure un graphique
+du graph,
+voilà,
+et ensuite,
+je la fiche.
+Alors,
+quand j'ai testé ce matin,
+c'est à nous de vérifier ça,
+c'est que,
+quand j'ai fait mon tutoriel,
+ça c'est un tutoriel qui est en ligne.
+Donc,
+ce tutoriel est en ligne,
+il y a le document qui explique tout,
+et il y a le code piton.
+Il est disponible en ligne.
+On sait aussi de tutoriel.
+Très bien.
+Sauf que je l'ai fait avec piton 3.5.
+L'année dernière,
+c'était piton 3.5.
+Cette année,
+en répétant,
+avant de venir ici,
+j'ai piton 3.6.
+Oui,
+j'ai mis un jour,
+ma version de piton.
+Le packaging graph,
+il marche plus.
+Donc,
+j'ai essayé de regarder
+comment faire,
+d'une heure, une heure et demi,
+si vous voulez.
+Et là,
+typiquement,
+non,
+j'ai laissé tomber.
+Donc,
+ça,
+ça peut être un enjeu fort.
+Déjà,
+c'est les choix des packages,
+et ce que les packages
+ne performent pas,
+et ce qu'on a la bonne version,
+ainsi de suite.
+C'est là que ça joue le choix.
+C'est là que ça joue le choix.
+Typiquement,
+j'ai refait la même chose sous R.
+Typiquement,
+c'est le TD que je vais faire cette année.
+Ils ne le savent pas encore.
+En même temps,
+ils vont le savoir,
+du coup.
+Oui, c'est vrai.
+Il n'est pas là.
+Ah non,
+il est où la communauté?
+Voilà.
+Voilà.
+Donc,
+ça,
+c'est le code Python,
+et là,
+c'est le code R.
+Dans le code R,
+ils ont regardé,
+ils ont discuté,
+je charge les données,
+en m'en donner,
+puis j'ai la maquise
+de la science que je vais construire,
+et ensuite,
+je peux clôté le plan.
+Et après,
+on fait le traitement,
+on trouve les deux vraies
+de centralité,
+et puis on trouve un sujet.
+Si on regarde bien
+les deux codes en parallèle,
+typiquement,
+en réalité,
+il n'y a aucune différence,
+et aucune différence.
+La seule différence,
+c'est la simple.
+Mais la trame,
+elle reste là.
+Voilà.
+Alors,
+dernier élément,
+mais je vais montrer très rapidement.
+Ça,
+il faut que je le mette en ligne
+dans ces jours.
+Malheureusement,
+dernier élément,
+puis je vais m'arrêter là.
+Mes étudiants de l'année dernière
+ont fait un projet text mining.
+D'ailleurs,
+je vais passer mon UK
+d'un programmé seul,
+cette année-là.
+Je vais dire toute l'onance,
+lundi.
+Comme ils savent
+que je suis trépie d'ailleurs,
+donc,
+je vais regarder sans détails.
+Ça, c'est un projet
+dernier,
+ou je vais redire
+ce suivant.
+Vous allez faire
+un projet text mining.
+Ça peut choisir les sujets.
+C'est toujours vrai
+que des étudiants choisissent.
+Je donne un cadre.
+Un suivi d'actualité
+à l'époque,
+cette année, c'était le sport.
+C'est un suivi d'actualité.
+Voilà.
+Et j'aimerais que
+vous fassiez un traitement.
+Donc,
+vous racontez l'histoire
+à partir des données.
+En mettant en œuvre
+les compétences que
+on a appris ensemble.
+Ça,
+je vais pas de faire
+la pause,
+si vous voulez.
+Très bien.
+Qu'est-ce qu'ils ont fait ?
+Ils ont pris
+le suivi.
+Et ensuite,
+ils les ont lus
+une à une.
+Ils ont passé des nuits
+en tiers dessus.
+J'imagine.
+Ils les ont lus
+une à une.
+Et ils les ont étiquetés
+à la main.
+En disant,
+cette offre-là,
+c'est plutôt
+chargé d'études.
+Cette offre-là,
+c'est plutôt
+et donc,
+ça y est en distance
+et dessus.
+Et dessus,
+ils ont monté
+une application.
+Donc,
+je monte très rapidement.
+J'en ai pour 2 minutes
+et je m'arrête.
+Voilà.
+Je monte ça.
+Voilà.
+L'application shiny.
+Voilà.
+Et donc,
+là, ici,
+on a l'ensemble.
+Alors,
+Directorie.
+C'est là que ça va pas marcher.
+Ah,
+ah, si,
+ils chargent les données.
+Ah, c'est parce que j'ai
+mis plein de choses.
+Du coup,
+ça a un peu lourd
+à charger.
+Voilà.
+On a les documents
+qui sont là.
+Je peux vivre, non ?
+Voilà,
+voilà.
+Donc là,
+c'est les offres d'emplois
+chargés d'études.
+Si je vais sur data science,
+on a les offres d'emplois
+également,
+on a le data ainsi de suite.
+Voilà.
+Donc,
+on va sur les offres d'emplois.
+Voilà.
+Et on va chercher les mots clés
+qui permettent,
+en fait,
+de les distinguer.
+Alors,
+là où c'est très spectaculaire,
+c'est le World Cloud.
+Qu'est-ce qui se passe
+sur le World Cloud ?
+Ils ont fait un World Cloud
+sur les différents types
+d'offres d'emplois.
+Donc,
+ici,
+je prends un premier.
+Donc,
+c'est la pondération binaire.
+Donc,
+c'est la présence
+ou l'absence du terme
+dans l'offre d'emplois.
+Et là,
+je prends ici
+l'offre d'emplois.
+Donc,
+c'est l'assistique
+des mots clés
+qui apparaissent
+le plus souvent.
+C'est statistique.
+Ce qui est pas tout.
+Non,
+on est bien d'accord.
+Voilà.
+Ensuite,
+il y a ça,
+effectivement,
+il devrait y avoir
+excès quelque part.
+Non,
+il n'a pas réparé.
+Non,
+il devrait y apparaître.
+Non,
+je sais pas
+pourquoi il n'a pas réparé.
+Voilà.
+Et,
+si je prends maintenant
+ici data science,
+donc,
+je prends
+la pondération binaire,
+on va regarder
+ce qui différencie
+le changer d'études classiques
+avec beaucoup d'obtemplois
+encore.
+Vous allez sur les sites
+de la Paix,
+il y a 400 euros.
+Je vais vous montrer
+tout à l'heure.
+Il y a toujours statistique.
+Ça,
+ça ne change pas.
+Voilà.
+Et,
+si on va sur les outils,
+il y a des bases de données,
+parce que les données sont
+des bases de données,
+et ensuite,
+il y a excellences.
+Ils sont les outils
+privilégiés.
+On va dans les ordres
+d'emplois statistiques.
+Si on va sur les data science,
+le mot clé numéro 1,
+il ne change pas.
+C'est statistique
+des méthodes de data science.
+C'est des méthodes statistiques.
+C'est du statistical learning.
+Donc,
+ça ne change pas ça.
+Ce qui change,
+c'est quoi?
+C'est les pratiques
+et les outils.
+C'est exactement
+ce qui se passe là.
+Il y a
+piton et air.
+Ils les ont mis
+même collés.
+Non,
+c'est un hasard,
+parce qu'il est dans le world
+cloud, c'est un hasard.
+Donc,
+il y a piton et air.
+Donc,
+c'est des outils fins.
+C'est vraiment des outils
+fins.
+Et c'est ce qui distingue.
+Et dans les ordres d'emplois,
+ils ont fait un petit anabis
+ici d'ables décisions.
+Voilà.
+Et voilà.
+Quand on a des autres
+d'emplois,
+une bonne manière
+de déclasser
+si c'est data science
+ou pas,
+c'est l'apparition
+du mont piton.
+Qui a un vrai phénomène
+de mode.
+Qui a un vrai phénomène
+de mode.
+Quand on est phénomène
+de mode,
+il faut les prendre
+avec prudence toujours,
+mais dans l'esprit
+des recruteurs.
+C'est ça qui est important,
+c'est ça qui est tout le temps
+des étudiants.
+C'est que nous,
+on pense des choses.
+On a une certaine vérité,
+parce qu'on réfléchit
+et tout ça.
+C'est des gens
+qui embauchent nos étudiants.
+Et dans l'esprit des recruteurs,
+piton, maintenant,
+est indissociable.
+Elle est donc
+à la data science.
+Et ça,
+il faut qu'on en tienne compte.
+Il faut absolument qu'on en tienne compte.
+Et c'est pour ça
+que je le charge là-dessus.
+Je le charge.
+Qu'est-ce qui me reste
+à dire ?
+Il reste plus qu'un transparent
+puis je m'arrête.
+Voilà, voilà.
+Ça, c'est l'étude Gartner
+dont j'avais parlé.
+Donc, il y a deux études
+qui sont intéressantes
+sur les citons.
+Je vais vous les ouvrir.
+J'ai mis les références.
+Voilà.
+Il y a un réputon apparaissant ici.
+Et si on ne veut pas
+un réputon,
+si on ne veut pas de réputon,
+moi, je conseille
+9.
+Voilà.
+J'en avais parlé au début.
+Voilà.
+Il y a toutes les fonctionnalités.
+Si vous allez sur mon site de tutoriel,
+je le montre à la fin
+pour vous regarder bien.
+Sur 9, on peut voir
+en fait qu'il y a un système
+de plug-in.
+On compte des paquets,
+si vous voulez.
+On peut les installer
+et il est super performant.
+Le seul bémol
+par rapport au 9,
+c'est la documentation.
+Le temps que je passe
+pour faire une opération,
+je passe mon temps à regarder
+qu'est-ce qu'ils en disent
+et je regarde comment ça marche.
+Moi, je peux perdre une demi-journée.
+Une demi-journée de fonctionnaires,
+ça va vite.
+Mais en situation réelle
+en entreprise,
+c'est pas pareil.
+Vous avez des délais
+de productivité,
+il y a des contraintes de temps
+et tout ça.
+On ne peut pas perdre
+une demi-journée
+pour chercher une commande.
+En fait,
+c'est le vrai problème là-dessus.
+Donc moi,
+j'ai écrit plein de tutoriels
+sur 9 quand même,
+parce que je pense que
+c'est un investissement
+qui pourrait être intéressant.
+Voilà.
+Et sur l'étude Gartner,
+également sur les outils,
+il y a un truc là.
+Et même, pareil.
+Ce qui est intéressant,
+moi-même,
+c'est qu'il est pleinement fonctionnel,
+mais donc il manque
+la partie Big Data
+qui met sur la partie payante
+et il y a très peu de temps.
+Voilà.
+C'est le seul problème.
+Très bien.
+Je m'arrête là
+et je dis la chose suivante.
+Il ne faut pas choisir entre
+R et Pluton.
+Il faut prendre les deux.
+Il faut prendre les deux
+et surtout,
+le surcoût de l'un à l'autre,
+il est négligeable.
+Il est vraiment négligeable.
+Pour bien le montrer,
+je vous montre le site.
+Finalement,
+je ne suis pas les sous-vents
+sur Internet.
+Ce n'est pas grave,
+mais bon,
+c'était important quand même.
+Ça, c'est mon site de référence.
+Sur ce site-là,
+on peut voir tout ce que je fais.
+Je mets dessus.
+Donc ici,
+c'est toute mon activité.
+Ça ne permet de savoir
+si je ne bosse ou pas,
+par exemple.
+Voilà.
+Bon, voilà.
+L'explosé d'aujourd'hui,
+je l'ai mis là.
+Je l'ai mis là,
+tout ça.
+Et,
+qu'est-ce que je voulais dire?
+Je voulais dire Pluton.
+Regardez bien.
+Pluton,
+donc j'ai découvert en 2014.
+J'ai décidé à le faire en 2015.
+Et quand j'ai préparé le cours,
+je l'ai fait pendant l'été,
+juste avant la rentrée.
+Et voilà.
+Et ça m'a pris un été.
+Un été pour préparer
+tout le cours entier.
+Ce n'est pas...
+C'est très faible en réalité.
+Je ne connaissais pas du tout Pluton avant.
+Je remonte ici.
+Voilà.
+Je remonte ici en amont.
+Regardez.
+Donc fin juillet 2015,
+il fait chaud.
+Ça y est, c'est des vacances.
+Tout va bien.
+Donc,
+j'ai le temps maintenant.
+Donc,
+je commence à regarder
+mon pas.
+Je réfléchis en amont
+dans les vacances.
+Et je me dis,
+je vais le faire vraiment.
+Une fois qu'on le lance,
+on le fait vraiment.
+Ah...
+Il va pas s'éteindre, là.
+Voilà.
+Donc, ici, le 22 juillet,
+je me lance.
+On est d'accord.
+Ensuite,
+j'ai le 24 juillet.
+C'est le premier et le transparent.
+Ensuite, le 28 juillet,
+c'est des collections.
+Ensuite, le 31 juillet.
+Voilà.
+Le 4 août,
+le 7 août,
+je remonte un peu en amont.
+Voilà.
+Là, c'est le 11 août.
+Voilà.
+Le 11 août,
+mon cours est quasiment prêt.
+D'accord.
+Finalement,
+le cours est très faible.
+Voilà.
+Et le 14 août,
+entre les 14 août et le 30 août,
+je pars un peu en vacances quand même.
+Ça m'arrive.
+Et le 30 août,
+je continue.
+Et mi-septembre,
+j'étais devant les étudiants.
+Voilà.
+Donc,
+ce que je maîtrisais,
+c'était R.
+Ce que je maîtrisais,
+c'est la programmation.
+Et le passage à piton,
+ça a pris un mois et demi.
+Voilà.
+Et après,
+je pense,
+je ne sais pas,
+on diront,
+est-ce que le cours est bien fait
+ou pas.
+Donc,
+c'est plutôt le message
+que vous pouvez passer.
+Je vous remercie.
+Alors,
+j'ai un peu de témoignement.
+Si vous avez des questions,
+du coup,
+apparemment,
+il y a de la bière en mode.
+Il faut répéter la question
+pour que ça passe au micro.
+Si c'est possible.
+Oui, oui, bien sûr.
+Il faut répéter la micro
+pour que la question
+passe au micro.
+J'ai l'impression
+mais tout le monde peut-être
+non,
+je ne sais pas.
+Comme je disais,
+on sait que R.
+et Piton,
+c'est pareil,
+on va vous poser la question.
+Alors,
+finalement,
+j'ai répondu
+à la question d'LD
+par...
+Oui ?
+Vous avez OK9 tout à l'heure
+et pas du tout,
+rapide mineur,
+très, très vite.
+OK9, c'est mieux,
+rapide mineur.
+C'est peut-être la raison pour laquelle
+je pense que Naime
+est en fait mieux,
+rapide mineur.
+Oui, donc la question,
+et bien sûr,
+en fait, la question,
+c'est,
+j'ai parlé beaucoup de Naime,
+effectivement,
+et je suis passé vite
+sur rapide mineur.
+Voilà.
+Et en fait,
+la question pour laquelle
+je parle un peu de rapide mineur,
+c'est qu'ils ont eu
+une version limitée.
+Donc la version free,
+maintenant,
+de rapide mineur,
+c'est une version
+qui est limitée.
+Voilà.
+Donc moi,
+je considère que c'est pas
+très fair play.
+Enfin,
+j'imagine,
+je montre que c'est un peu
+pas pareil.
+Mais le fait qu'un dit
+je suis libre,
+mais limité,
+du coup,
+très grand,
+qu'il vit sa vie,
+j'investis plus dans Naime,
+c'est-à-dire,
+par rapport à ça,
+par rapport à la limitation
+de la version.
+Surtout.
+Oui?
+Question,
+bon,
+on a décompré le message
+à Rébiton,
+et à l'égal expérience
+des logiciels,
+vous pensez que
+ils ont eu une longue vie
+pour eux,
+ils servaient,
+en fait, 5 ans,
+pour participer
+sur le triangle.
+Alors la question,
+c'est à la vitamine étername,
+ou bien,
+est-ce qu'il y a autre chose?
+C'est une vraie question.
+C'est une vraie question
+sur laquelle,
+en fait,
+ce qui est compliqué,
+c'est qu'en fait,
+il y a un phénomène de mode aussi.
+Et ça,
+on ne maîtrise pas ça.
+On ne maîtrise pas ça.
+Et en fait,
+pour le savoir,
+il faut s'intéresser
+aux fonctionnalités.
+Donc,
+typiquement,
+il y a un étudiant
+chez moi
+qui m'avait beaucoup parlé
+de Piton,
+avant que je passe
+le cours de Piton,
+mais dis,
+monsieur,
+vous avez eu Piton
+?
+Julia,
+c'est un truc super bien.
+Donc,
+j'ai un peu regardé tout ça.
+Et est-ce qu'il y a un vrai gap
+là-dedans ou pas?
+On n'arrive pas
+de maîtriser.
+Et en fait,
+je pense que,
+pour réfléchir un peu
+à long terme,
+c'est sur les fonctionnalités.
+C'est-à-dire,
+quels sont les besoins
+à venir
+aux différentes tâches
+qu'on aurait,
+nous,
+à résoudre.
+Et dans ce cadre-là,
+c'est quel type de langage
+ou quel type d'outil
+va émerger
+et va être
+vraiment pertinent maintenant.
+Là,
+typiquement,
+tout ça,
+je pense que c'est un phénomène
+de mode.
+Parce que,
+fonctionnellement,
+il n'y a pas une vraie différence.
+En revanche,
+il y a certains tâches pitons
+qui sont largement
+meilleures que ceux de L.
+C'est clair également.
+Mais ça dépend des domaines.
+En type learning,
+typiquement,
+il y a des tâches
+tâches pitons
+qui sont très bien.
+Là,
+j'ai plein de cours
+et tout ça.
+Mais à partir du moment
+où j'aurai moins de cours,
+cet été,
+je vais essayer de réfléchir
+à écrire des séries de tutoriels
+de type learning
+ou de sous-pitons.
+On peut déjà
+comprendre exactement
+les quatre types
+et tout ça.
+Et il y a des forts de chances
+que je le fasse sous-pitons
+parce que les packages pitons
+ils semblent la priorer
+pour l'instant
+plus déterminées.
+Donc,
+c'est plus par rapport
+aux fonctionnalités
+qu'il faut réfléchir
+et la visibilité,
+elle est courte,
+elle est courte.
+4, 5 ans,
+effectivement, oui.
+Je ne vois pas où c'est.
+Oui?
+Moi,
+je me demandais
+que tout ce qui était
+data learning
+et machine learning,
+il y a 10, 15 ans,
+on va commencer
+sur WCA,
+tannagra,
+et le orange outil.
+Oui?
+Et c'est des outils
+très interactifs
+avec beaucoup d'animations
+et beaucoup de digitisation.
+Et pour des problèmes
+de flexibilité,
+on est passé à du code,
+donc pitons ER.
+Et est-ce que
+à une époque,
+on se pose la question
+de l'interfautabilité
+des modèles?
+On ne pourra pas revenir
+sur un tannagra 2
+ou un WCA 2
+ou,
+c'est-à-dire,
+avec peut-être
+toujours autant de flexibilité
+et des interfaces
+avec les pitons ER.
+En fait,
+donc la question,
+c'est...
+la question,
+j'ai pas l'humain,
+mais...
+La question,
+c'est l'interfautabilité
+des modèles
+qui sont sortis.
+Effectivement,
+là-dessus,
+ER et pitons
+n'ont pas fait beaucoup
+d'efforts.
+Quand je vois
+les sorties de city learning
+sur les arbres,
+ou on n'a pas un arbre graphique,
+typiquement,
+il faut générer un post-cry
+pour faire un truc.
+Je l'ai fait,
+mais moi,
+je ne suis plus capable
+de le faire
+parce que j'ai le temps
+de le faire.
+Alors apparemment,
+ils ont fait des efforts,
+mais je n'ai pas testé ça.
+Là,
+il y a des efforts à faire.
+Je prends un autre exemple,
+il y a des packages,
+par exemple,
+LDA,
+c'est un des discriminants.
+Les sorties ne sont pas
+conformes
+à ce qu'ils se fais normalement
+dans la pratique
+usuelle des statistiques.
+Donc,
+là,
+typiquement,
+ce n'est pas tellement les outils.
+C'est
+l'effort
+qu'on va faire
+les gens qui font des packages
+pour sortir des résultats
+plus conformes
+à la pratique
+à l'entreprise
+de ces modèles-là.
+Et ça,
+c'est vraiment de packages,
+en réalité.
+Donc,
+on peut avoir ça
+avec ces outils-là,
+mais il faut que les gens
+qui fassent des packages
+fassent cet effort-là.
+Et je pense
+qu'il y a deux aspects.
+Il ne faut pas attendre ça
+des chercheurs.
+Ils ne les intéressent pas.
+Les chercheurs,
+ce qu'ils intéressent,
+c'est de publier.
+Donc,
+ils ne font aucun effort
+sur des sorties,
+je ne prends pas.
+J'ai un compte
+sur un réseau de neurones.
+Donc,
+j'utilise donc,
+c'est NLNET,
+histoire une série
+de coefficients
+totalement
+dans le réseau avec ça.
+Et là,
+typiquement,
+c'est uniquement
+un effort à faire
+sur les sorties en réalité.
+C'est pas l'outil en lui-même.
+C'est l'effort à faire
+sur les sorties.
+Et on ne peut pas attendre
+ça des chercheurs,
+parce que ce n'est pas
+leur attente,
+ce n'est pas leur métier.
+Ça peut venir que
+des gens qui veulent
+créer des packages
+professionnelles.
+Il n'y en a pas beaucoup.
+Il n'y en a pas beaucoup.
+C'est vrai.
+C'est vrai.
+C'est vrai.
+C'est un métier.
+C'est un métier.
+Il faut un investissement.
+Et dans les logiciels
+comme 9,
+typiquement,
+la révélation logistique,
+typiquement,
+ils l'ont fait évoluer.
+Ils ont sorti une série de
+packages d'abord.
+Maintenant, je vois
+que dans les sorties,
+il y a des test de significativité
+dans la révélation logistique.
+Donc ça veut dire
+qu'une réflexion
+est faite sur la lecture
+des résultats.
+Qui n'était pas faite avant.
+J'imagine
+ça va évoluer
+dans le bon sens,
+j'espère.
+J'imagine ça va évoluer
+dans le bon sens,
+j'espère.
+J'imagine ça va évoluer
+dans le bon sens,
+j'imagine ça va évoluer
+dans le bon sens,
+j'imagine ça va évoluer
+dans le bon sens
+Merci à vous,
+merci à vous d'êtreATHI helping us

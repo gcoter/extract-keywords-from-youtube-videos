@@ -1,0 +1,544 @@
+Bonjour à tous, je suis Clément Sages, trésorier de l'association London Data Science et nous
+sommes réunis aujourd'hui pour une nouvelle session Meetup. On tient déjà à remercier
+nos 3 sponsors, Datalio, Esquire et UpFluence. Aujourd'hui, nous avons le plaisir d'accueillir
+Daoud et Carole du DataWalk pour nous parler de la prédiction de classement de courses sportives.
+Donc l'idée c'est qu'ils vont présenter pendant une trentaine de minutes et ensuite ils répondront
+à vos questions donc n'hésitez pas à poser les questions pendant la présentation dans le chat
+de Twitch et ils y répondront à la fin. Donc je vous laisse commencer.
+C'est bien, merci Clément. Bonsoir à tous. Donc comme Clément l'a dit, ce qu'on va vous
+présenter ce soir c'est une mission qu'on a effectuée il y a quelques mois de ça maintenant.
+Rapidement, je vais dire un petit mot sur qui on est. Alors DataWalk c'est la marque data
+de la société Linealus qui a été formée en 2014, on a un peu plus d'une santé d'aujourd'hui et on
+est spécialisé dans la tech et aussi dans la data. Aller du DataWalk c'est ça en fait,
+c'est tous nos collaborateurs qui font de la data. Cette mission-là en particulier,
+elle a été réalisée par deux data scientists donc moi-même et ma collègue Carol et un chef
+de projet. C'était une mission qui a duré trois mois environ trois quatre mois pour un client à
+nous qui travaille dans le monde du Paris Sportif. L'objectif de notre client c'était de disposer
+donc d'un modèle qui va remettre la probabilité d'arriver à l'achat pour une course pour les
+coureurs et ce que l'on a, lui, bosse dans la prise de Paris. Alors pour vous donner un peu de contexte,
+nous plus c'était d'attirer une nouvelle clientèle sur le Paris, de faire quelque chose de plus
+attractif. Les jeunes évidemment se désintéressent beaucoup du Paris Sportif et leur idée c'était
+de se dire est-ce qu'on pourrait avoir une machine qui t'aide à faire de la prise de Paris, une machine
+qui finalement te conseille des paris plus ou moins risqués et ça passe par donc le fait d'avoir un
+modèle qui permet de prédire pour une course qui va arriver à quel rondeau. Ça c'est le contexte
+dans lequel la mission a eu lieu. Pour ceux d'entre vous qui demanderaient comment est-ce que
+le client pourrait avoir intérêt à suggérer les bons paris aux joueurs, en fait c'est pas très
+surprenant, c'est du pari mutualisé donc eux ce qui leur importe c'est qu'il y ait une masse de
+mises, une masse de paris qui sont importantes mais après que les gens gagnent ou que les gens perdent
+ça à la rigueur c'est pas c'est pas tellement important. Le client avait par contre une contrainte
+c'est qu'il fallait pas proposer un modèle qui soit trop catastrophique non plus parce que
+il fallait quand même donner envie aux gens de jouer mais on n'est pas parti avec comme ambition de
+faire quelque chose d'absolument parfait donc voilà bonsoir pour ceux qui arrivent donc je résume
+le but c'était voilà de proposer donc un modèle qui permet sur une course d'arriver à prédire
+pour chaque coureur son ronde arrivé. Merci David donc pour récapituler tout ça notre objectif
+c'était avec des données que l'on nous donne donc on nous donnait des informations sur chaque
+partant d'une course ensuite on nous donnait des informations sur la course en elle-même
+avec tout ça il fallait qu'on puisse dire pour chaque partant quelle est sa probabilité d'arriver
+premier d'arriver seconde d'arriver troisième etc donc chaque course représente un simple de
+données qui doit nous permettre de faire une prédiction sur la position la probabilité de
+chaque partant d'arriver à chaque ronde. Donc quels étaient nos données?
+Donc ça c'est un exemple qu'on va utiliser selon la présentation on avait beaucoup plus
+d'informations que ça mais pour exemple donc chaque course à un ID on va regarder par exemple
+la course 0 qui avait pour partant John Richard Paul et George on a des informations sur les
+partants donc leur âge leur entraîneur pourquoi leur entraîneur parce que les
+performances d'un entraîneur peuvent avoir un impact sur la performance du coureur et après
+on a on a là sur la présentation le nombre de prix qu'il a gagné ensuite comme information
+on a des informations plus sur la course donc là pour l'instant c'est la taille de la course
+mais on aurait pu avoir le lieu de la course on aurait pu avoir la température du jour des choses
+comme ça ensuite on est en supervisé parce qu'on a les résultats donc on sait que John est
+arrivé premier que Richard est arrivé troisième que Paul est arrivé quatrième au niveau du
+nombre de features on avait énormément d'informations on avait à peu près 50 variables sur les
+partants et après une dizaine de variables sur sur la course en même sur la dispositif de la
+course c'était c'était beaucoup de variables et surtout des variables très très variés et
+assez surprenantes on les a pas toutes figurées c'est pas le but mais en tout cas c'était
+extrêmement riche et là où on dit que on date à séance parfois on peut vous retrouver un petit
+peu à court de données là dans cette mission moi j'ai appui le sentiment contraire on avait
+presque trop de données en fait ça fait qu'on a vraiment du travailler avec le client il y a
+un vrai travail de leur part pour nous expliquer qu'est-ce que tel variable de dire est-ce que
+tel variable est important tout pas etc donc on est ressorti de cette mission on a appris pas
+mal de choses donc là ce que vous voyez c'est en effet l'aspect de la donnée tel qu'on la reçoit
+de la donnée sur des coureurs de la donnée sur l'événement et un résultat et malheureusement
+toutes les courses font pas la même taille alors pour ceux d'entre vous qui s'y connaissent peut-être
+déjà un petit peu en machine learning ou en date à séance les machines elles sont bonnes
+à prédire par contre ce qu'elles n'aiment pas c'est quand la dimension de la donnée d'entrée
+est pas constante on peut tout à fait imaginer une course avec 20 coureurs ou une course avec 10
+coureurs et du coup ça fait que l'objet sur lequel on travaille la course et bien on se demande
+est-ce que c'est vraiment le bon découpage de notre donnée parce que finalement une course ça
+ne veut pas dire grand chose une course où il y a quatre coureurs une course il y en a dix dans
+un cas on doit prédire quatre chiffres dans l'autre on doit en prédire dix et c'est ce décalage là
+le fait de pas avoir une donnée de dimension constante qui nous a posé problème au début donc
+on a on a on a on a pensé à plusieurs approches on a on a pensé à plusieurs façons de faire deux
+en fait la première c'était de se dire bah on va prendre notre course on va essayer de prédire
+pour chaque coureur son classement mais là comme je vous l'ai dit il y a un problème de taille d'entrée
+à être sorti qui n'est pas toujours la même et puis de surcroît se pose la question de savoir
+une course à quatre coureurs pour quelle est la même dimension que une course à dix coureurs il faut
+faire ce qu'on appelle du padding on a tout à fait le padding c'est cette opération qui consiste à
+ajouter de la donnée neutre qui est pas censé perturber le modèle mais mais là c'était un petit
+peu compliqué envisager pour nous on s'est dit si dans notre jeu de données la course avec le plus
+de coureurs il y en a 15 et qu'on part sur cette base là et qu'on rajoute x coureurs pour que toutes
+nos courses et cette dimension là de 15 coureurs comment créer ces faux coureurs comme on fait
+cette opération de padding et autre chose aussi qui nous a pas beaucoup satisfait dans cette solution
+là c'était de se dire que finalement pour la machine la représentation de notre course la représentation
+de la donnée qu'on va donner en entrée à la machine et ben elle est très dépendante de l'ordre
+dans lequel on fait figurer les participants si vous vous rappelez du premier tableau que j'ai
+montré les quatre premiers coureurs ben si je vous les mets dans un ordre différent les features
+les variables elles aussi elles se font dans un ordre différent et du coup il aurait fallu trouver
+une façon un peu arbitraire de les ordonner on était pas très à l'aise à faire ça alors on a
+exploré une seconde biste la seconde biste c'était de se dire est-ce qu'on peut pas raisonner à une
+échelle plus petite non pas essayer de prétire toute une course mais se dire déjà est-ce qu'on
+trouve ça vraisemblable que tel coureur arrive à tel rang pour ceux qui s'y connaissent en foot
+on peut répondre à la question est-ce que c'est vraisemblable que le psg arrive premier que l'om
+arrive deuxième ou troisième ça c'était c'était une approche qui qui nous a tenté et elle a
+cet avantage que la question qu'on pose au modèle les champions sur le terrain de travail
+des dimensions constante c'est un couple coureur rang et la machine vous dit oui ou non ou alors
+probable pas probable donc ça c'était c'était plutôt pas mal c'était plutôt intéressant
+mais c'était pas tout à fait satisfaisant pour nous parce que déjà il ya il ya ce truc où on
+n'a pas d'information sur le contexte dans lequel le coureur fait sa course et si on veut avoir
+cette information là il aurait fallu que notre échantillon ce soit ben quelle est la probabilité
+que tel coureur arrive à tel rang avec tout un tas d'autres variables qui décrivent finalement
+l'environnement dans lequel le coureur fait cette course là je sais pas moi le palmarès
+moyen de ses concurrents et on avait le sentiment de perdre un peu trop en qualité de données donc
+ces deux approches là on les a pas trouvé satisfaisantes et on s'est dit finalement que cette mission
+c'était peut-être l'occasion de tester quelque chose d'un peu d'un peu nouveau d'un peu innovant
+alors on a on a on a essayé de développer quelque chose d'un peu d'un peu hybride je vais laisser la
+parole à carol qui va vous détailler parti du coup du coup pour faire quelque chose d'hybride on
+s'est demandé est ce que ça voudrait pas le coup de faire des duels plutôt des duels de partants
+disons toute toute course va avoir x partant et on essaye de les opposer les uns aux autres donc
+c'est ce que l'on fait sur notre exemple avec la course 0 donc on regarde les partants on a John
+Richard Paul et George et on va essayer de faire des duels donc on sait que John est arrivé
+premier si John est arrivé premier ça veut dire qu'il a gagné face à Richard il a gagné face à Paul
+il a gagné face à George du coup on lui met un à chaque fois qu'il gagne et zéro à chaque
+fois qu'il perd donc le partant a gagné c'est un le partant a perdu ses oreilles ensuite on regarde
+Richard Richard est arrivé troisième donc Richard a gagné contre Paul par contre il a perdu
+contre George une fois qu'on a ça on se demande qu'est ce qu'on fait avec ma feature et bien
+tout simplement on va récupérer toutes les features du coup partant a on va y accoler les
+features du partant b et après on a les features de la course en elle même qui sont
+communs aux deux donc on n'a pas besoin d'éduquer ce qui nous fait cette nouvelle cette nouvelle
+table maintenant on se demande est-ce que est-ce qu'on est bon à prédire ce genre de choses donc on
+va utiliser un xg boost on a décidé d'utiliser un xg boost pour tester on regarde oui on arrive
+à prédire mais ça peut être amélioré donc on utilise notre accuré six scores pour garder
+si nos résultats sont bon ou non vu qu'on a un supervisé on peut faire une fois qu'on a fait
+notre premier test on se demande qu'est ce que l'on peut faire pour améliorer cette sortie ce n'est
+qu'une première base ça nous donne pas notre résultat que l'on cherche à avoir notre résultat
+que l'on cherche à avoir c'est la probabilité pour chaque partant d'arriver à chaque rang mais ça
+nous avance un petit peu vers sa solution donc qu'est ce que l'on fait on fait du feature
+engineering comme dout nous a dit tout à l'heure on avait énormément de variables donc beaucoup de
+choses sur lesquelles on pouvait travailler on a donc fait appel au métier donc fait appel à notre
+client qui lui connaît sa donnée et qui aussi connaît son type de paris il connaît son type
+de paris et il connaît les pronostiqueurs donc il sait ce qu'un pronostiqueur va regarder dans un
+partant pour décider à ce qu'aujourd'hui il est en forme ou non du coup on a créé plein
+de variables donc je disais une cinquantaine pour pour les coureurs une dizaine sur la course
+pour exemple sur les coureurs ce que l'on pourrait faire c'est regarder est ce que sur l'année
+précédente combien de fois le coureur s'est blessé pour savoir s'il arrive en forme ou pas sur
+une course on peut aussi regarder pour le coureur toujours est ce que sur les trois derniers mois
+il a bien performé donc combien de fois est-ce qu'il est arrivé premier sur les trois derniers mois
+combien de fois est-ce qu'il est arrivé deuxième etc on peut aussi travailler sur l'entraîneur
+vu que l'entraîneur a un impact sur le coureur on peut se demander tiens l'année dernière combien
+de fois est-ce que l'équipe de l'entraîneur a gagné un challenge par exemple et si ensuite on
+se concentre un peu plus sur sur la course je disais tout à l'heure qu'on peut regarder la
+température du jour mais on peut aussi regarder le sens du vent peut-être que pour une course de
+sprint le sens du vent va avoir un impact peut-être que le terrain va avoir un impact on est dans un
+stade où si on est où si on est en extérieur sur de la terre donc toutes ces informations là
+ont été travaillées pour essayer d'augmenter notre accuré ce score sur une couple de partants
+donc sur notre son module pour essayer de mieux prévenir nos jouets une fois qu'on a ça et
+ben en fait on obtient on obtient quasiment ce que l'on souhaite donc là sur sur ce sur ce data set
+que vous voyez encore une fois c'est très schématique il manque énormément de features on
+n'a fait apparaître que quelques-unes on a répondu à toute nos contraintes c'est-à-dire qu'on est
+capable de décrire à leur de façon très partielle puisque à ce stade on prédit pas encore le résultat
+de la course mais on peut décrire un peu de façon partielle un peu esquisser une tendance dans
+cette course on va voir que sur une course il y a un coureur qui qui qui sera jamais battu par
+exemple en autre qui sera souvent battu c'est pas encore tout à fait ce qu'on veut mais on s'approche
+et surtout on a à la fois un échantillon de taille constante la taille d'un échantillon c'est
+deux fois le nombre de features qu'il faut pour décrire un coureur les features du premier les
+features de seconde et oui ou non donc on est sur un échantillon de taille constante et on bosse quand
+même avec cette idée que le coureur il ne court pas tout seul donc quand on fait une prédiction pour
+un coureur c'est en prenant en compte la donnée qu'on a sur ces autres participants donc voilà ça
+c'est l'idée base de ce qu'on a tenté c'était de se dire une course c'est un ensemble de petits
+duels et peut-être qu'en prédisant assez bien et assez finement c'est tout petit duels on peut
+arriver à avoir une image globale du résultat de la course donc ça devrait pas tarder à
+s'afficher ce que vous allez voir sur la slide qui arrive c'est une matrice alors une matrice
+c'est un tableau avec des chiffres très simplement et cette matrice là c'est exactement
+puisqu'on avait un petit peu vu au tableau avant alors comment est-ce qu'elle se lit
+chaque case de la matrice ça représente d'après le modèle le duel entre deux coureurs à une
+même course le code couleur il n'est pas forcément il n'est pas forcément évident ce que vous
+lisez en ij c'est la probabilité que i gagne face à j alors les valeurs les plus élevées elles
+sont en vert et les valeurs les plus faibles elles sont elles sont en jaune alors quelques
+commentaires sur cette matrice chaque cellule chaque case de cette matrice chaque petit carré
+qui est plus ou moins jaune ou plus ou moins vert c'est une réponse du modèle c'est le modèle qui dit
+coureur i contre court j moi je pense que c'est une grande probabilité de gagner grand problème
+grand probabilité de perdre enfin probabilité de gagner faible si vous préférez et voilà donc
+nous on est capable de faire cette matrice là avec un modèle pour chaque cellule on va dire
+qu'est ce que tu penses du duel entre numéro deux et numéro trois et le modèle nous donne un chiffre
+c'est ce que c'est la matrice que vous avez sous les yeux et déjà plus je remarque le modèle
+n'est pas conçu le modèle n'est pas contraint pour prédire une valeur spécifique a contre b qui
+soit l'opposé de b contre a en toute logique si le modèle dit que a est plus fort que b on doit
+s'attendre à ce qu'ils prédisent ben fatalement que b est plus faible que a c'est pas tout à fait
+comme ça que le modèle y se comporter ça sent ça sent rapprocher il se contredisait pas mais
+on n'a pas contraint le modèle à donner des probabilités exactement opposées pour un duel
+et pour le duel inverse si vous préférez dit autrement f de ab est différent de 1 moins f de
+b1 si je dis à mon modèle 2 contre 3 et qui me donne une probabilité 2 à 60% de chance de
+battre 3 il va pas dire exactement que 3 à 40% de chance de battre 2 ce qui en toute logique
+devrait être le cas mais le modèle n'a pas été contraint à donner ce genre de réponse donc en
+réalité qu'on veut vraiment savoir ce l'issue du duel de 2 contre 3 et ben on demande au modèle
+quelle est la probabilité que 2 battent 3 quelle est la probabilité que 3 battent 2 et on fait l'un
+et on le moyenne avec un moins l'autre voilà comme ça le modèle il donne des résultats un peu
+plus consistants si vous êtes un observateur vous remarquerez aussi que la matrice elle est
+symétrique donc ça veut dire que la diagonale du bas de la matrice et ben c'est un moins les
+valeurs de la diagonale du haut donc là on sentait que l'on s'approchait du but même si c'est pas
+encore tout à fait ce qu'on veut avec ça on peut pas encore faire de paris de pronostic mais on a
+déjà une idée de la fissionnerie de la course et je pense que vous voyez très bien que là celui qui
+a l'air d'être plutôt bon c'est le coureur numéro 7 sa ligne elle est toute verte dit autrement
+d'après le modèle le courant numéro 7 il a de grandes chances de battre à peu près tous ses
+concurrents par convention la diagonale elle est toute verte aussi parce que on estime que un joueur
+contre lui-même il gagne c'est une convention on aurait pu prendre l'inverse à ses peu d'importance
+donc si on regarde ce coureur 7 on constate que ben d'après le modèle il a des probabilités très
+élevées de battre tout le monde alors à ce stade nous ce qu'il nous fallait c'était un moyen de
+passer de 7 matrice là à une matrice non pas coureur versus coureur mais probabilité qu'un
+coureur arrive à un certain an et il a fallu un petit peu se creuser la tête pour trouver ça donc on
+a une idée c'était de se dire on va faire des simulations de un contre les autres donc là
+ce que vous voyez c'est les probabilités telles que le modèle les a prédit que John bat
+pardon que John perde face à Paul Georges et Richard donc là comme vous pouvez le voir d'après le
+modèle John a assez peu de chances de perdre face à Paul il a un peu plus de chance de perdre face
+à Georges et peu de chance de perdre une chance sur cinq de perdre face à Richard ça c'est quelque
+chose qu'on sait prédire le modèle est fait pour il fonctionne il fonctionne sur des duels
+l'étape suivante c'est quand se dit bah partant de ces probabilités là on va faire des simulations
+donc je vais simuler John versus tous les autres des milliers des milliers de fois et bah comment on
+fait ces simulations c'est très simple je prends chiffre aléatoire là sur le lignes voyez simulation
+1 simulation 2 simulation 3 chaque simulation chaque fausse course c'est juste bah une suite de chiffres
+autant de chiffres que de concurrent et si mon chiffre tiré aléatoirement est supérieur à la
+probabilité de perdre que j'ai prédit bah je pense d'ailleurs que John a gagné donc là sur ma
+première simulation John gagne face à Paul pour dire autrement John ne perd pas face à Paul John
+gagne face à Georges et il gagne face à Richard dans ma seconde simulation les choses elles se
+passent un peu différemment parce que on voit que dans cette seconde simulation là John perd face
+à Paul et enfin dans la dernière simulation John ne perd aucun de ses duels et donc cette nouvelle
+information là que je vous donne donc il gagne des temps de fois il perd temps de fois c'est juste
+prendre les probabilités données par mon modèle ça c'est le modèle c'est le faire et faire
+beaucoup de simulations beaucoup de milliers de simulations pour vous donner le chiffre exact
+je crois qu'on en faisait 4 000 et on regarde dans combien de scénarios fictifs John perd une
+fois John perd zéro fois John perd quatre fois et pour le dire plus simplement dans une course le
+premier c'est celui qui perd jamais le deuxième c'est celui qui perd qu'une fois le troisième c'est
+celui qui perd qui perd deux fois etc voilà donc là vous allez voir s'afficher ensuite dans chaque
+une de mes simulations là il n'y en a que trois mais gardez l'esprit que nous on en faisait plus
+que trois quatre mille on voit que bah dans la première simulation John ne perd jamais dans la
+seconde il perd qu'une fois c'est face à Georges dans la dernière il perd jamais dit autrement
+il arrive premier dans la première simulation deuxième dans la seconde première dans la première
+dans la dernière et là on peut commencer déjà à avoir un début de de résultats comme on le
+voulait carol tu vas peut-être ajouter un mot là dessus oui on se rend bien compte que du coup si
+on regarde par rapport à toutes nos simulations sur quatre mille simulations à peu près on peut
+regarder le nombre de fois où John est arrivé premier on peut regarder le nombre de fois où
+John est arrivé souvent le nombre de fois il est arrivé troisième et donc ça nous donne sa
+probabilité en fait ça nous donne sa probabilité la probabilité de John d'arriver premier la
+probabilité de John d'arriver deuxième la probabilité de John d'arriver troisième et c'est
+exactement ce que l'on cherchait à voir on cherchait à avoir une matrice qui nous dise pour chaque
+coureur quelle est sa probabilité qu'il arrive à chaque rang du coup c'est ce que l'on pourra
+voir de notre matrice suivante ça va mettre un côté chargé donc ça nous donne cette cette
+fameuse matrice où chaque ligne correspond à un coureur un par temps et chaque colonne correspond
+à un rang comme tout à l'heure lorsque la probabilité est faible donc la probabilité que
+que le coureur 0 arrive à la place 0 est très faible donc il arrive premier en fait elle est très
+faible donc c'est clair et s'il a une très grande probabilité d'arriver premier elle est très forte
+donc on peut regarder le coureur numéro 7 il a une très forte probabilité d'arriver premier
+ensuite on regarde cette matrice on se dit ok quelle était notre contrainte métier notre contrainte
+métier c'est de faire des paris c'est donc de dire qui a la plus forte probabilité d'arriver
+premier donc on va normaliser sur les colonnes pour s'assurer que la probabilité d'arriver un rang
+reste correcte ensuite si on regarde les lignes si on regarde les lignes par exemple la ligne 4 est
+très très belle au niveau de cette ligne 4 on se rend compte que la distribution c'est une forme
+de gaussienne parce que on a un centroid qui est le coureur 4 va arriver de second autour de ce
+centroid où la probabilité est la plus forte on va avoir arrivé premier et arrivé troisième qui
+est une probabilité un tout petit peu plus faible et ensuite plus ça va s'écarter du centre notre
+gaussienne la probabilité d'arriver à ce rang là va être faible donc on le voit très bien sur la
+ligne numéro 4 on peut voir aussi que sur les colonnes 4 5 6 donc le fait d'arriver 4e 5e 6e
+etc on a peu d'information on a peu de coureurs qui vont se démarquer pourquoi parce que c'est un
+peu difficile quand même de dire quels sont les critères qui vont faire que telle personne va arriver
+dernier sauf qu'à exceptionnel mais c'est plus difficile par contre on est plutôt bon sur les
+premières les premières place arriver premier deuxième troisième on voit bien qu'on a des
+coureurs qui sortent du lot et c'est ce qu'on cherche à savoir parce que quand on veut faire
+des paris ce qui nous intéresse vraiment ce sont les premières places c'est parier qui va arriver
+premier qui va arriver second est-ce qu'on arrive à avoir l'ordre le bon ordre des trois premiers
+etc donc il faut toujours rester proche de ce que l'on cherche au final ce que le métier cherche à
+obtenir donc là sur notre exemple quand on regarde la ligne du septième on se rend
+compte que le septième a une forte probabilité d'arriver premier mais il y a juste derrière le
+quatrième qui a aussi une probabilité à s'élever d'arriver premier par contre au niveau des couleurs
+on se rend compte que le quatrième va peut-être plutôt arriver arriver second parce que sa
+probabilité d'arriver second est plus forte que sa probabilité d'arriver premier donc quand on
+regarde nos lignes on voit bien des leaders qui se détachent et donc des des résultats qui
+semblent assez assez justes sauf que comment est-ce qu'on va pouvoir évaluer nos résultats ça c'est
+ça c'est toute la question parce que quand on était sur des duels on avait notre score d'accueil ici
+mais maintenant qu'on est sur une matrice de coeur et de probabilité qu'est ce qu'on fait ouais
+ça c'était ça c'était une grosse difficulté j'avais dit que les données avec lesquelles on
+travaillait elles étaient pas toujours simple à comprendre pour nous il y avait autre chose aussi
+qui a été qui a été dur à prendre pour nous c'est comment on mesure la qualité d'un pronostic
+alors carole tout à l'heure elle parlait de d'accueil assis l'accueil assis c'est le score de
+prédiction c'est combien de fois quand j'ai dit a il plus fort que b ou b plus fort que a combien
+de fois j'ai eu raison combien de fois j'ai eu tort et vous voyez bien que pour chaque duel gagner
+il y a nécessairement un duel perdu pour dire autrement dans notre tableau où on présentait
+tous les duels possibles d'une course la colonne y la colonne donc du résultat elle
+contient autant de 1 que de 0 on peut pas envisager qu'il y a un duel gagné sans que réciproquement
+il y ait le même duel inversé perdu et ça c'est assez intéressant parce que ça veut dire que si
+jamais on répond au hasard ou si jamais on répond une valeur constante on est sûr d'avoir une
+réponse sur deux qui est bonne déjà et c'est là que le score d'accueil assis la précision donc
+elle montre ses limites parce que si on répond en hasard vous vous répondez bon à la moitié des
+questions c'est que c'est qu'il faut peut-être pas répondre au hasard en tout cas c'est que
+c'est pas la bonne façon de mesurer à l'inverse vous voyez que si vous prédisez bien tous les
+duels mécaniquement vous ordonnez bien tous vos coureurs et donc la course vous l'avez dans
+l'ordre parfait sauf que entre les deux nous on sait pas on sait pas à quel point la qualité de
+notre classement est bonne alors sans rentrer dans le détail il y a beaucoup de kpi il y a beaucoup
+de maitris qui a beaucoup d'indicateurs qui permettent de dire si la prédiction de course est bonne
+ou pas par exemple si on arrive à distinguer le huitième du neuvième c'est pas du tout aussi
+intéressant que si on distingue le premier du second penser un peu court cipique dans les cours
+cipiques en général c'est plutôt sur les premiers rang qu'on fait du pari plutôt que sur les
+derniers il y a beaucoup de kpi beaucoup d'indicateurs comme ça et donc on a eu le le raisonnement suivant
+on sait que si on répond totalement au hasard sur les duels ça nous fait des classements de
+courses totalement aléatoires on sait que si on répond parfaitement bien aux duels mécaniquement
+les courses elles sont toutes parfaitement bien prédites et donc on a un peu les deux points d'une
+droite c'est-à-dire pas une droite qui s'exquissent si on répond au hasard et qu'on prédit un duel
+sur deux biens et bien on classe nos courses aléatoirement si on prédit toujours bien
+sur nos duels on classe nos courses parfaitement en revanche on a une assez mauvaise idée
+on a une idée assez mauvaise de comment est-ce que la qualité de nos classements se comportent
+entre les deux c'est-à-dire que par exemple un score de 0 7 de précision bien classé 70%
+des duels on sait pas comment ça se répercute en termes de classement de rang on pourrait tout
+effet imaginer un modèle qui est par exemple et c'est pas ce qu'on veut très bon à distinguer les
+derniers donc qui est dernier qui est avant dernier qui est ça c'est pas très satisfaisant et ce modèle
+là même s'il est très bon à distinguer les derniers pour peu qu'il se trompe sur les premiers il
+sera moins satisfaisant qu'un modèle qui est moins brun sur les derniers mais qui est très précis
+sur les premiers et nous là comme ça a priori on n'avait que un score d'accuracy pour notre modèle
+et on comprenait mal comment ce score d'accuracy influencé en fait sur le résultat
+final de la course donc là sur les slides qui viennent on va
+schématiser un peu plus donc tout le processus
+oui on va schématiser un peu plus le processus et ensuite on vous donnera un petit peu comment on a
+fait les méthodes les résultats qu'on a eu et comment on a fait pour évaluer donc si on prend
+un petit peu de recul sur toute la notre méthode qui est atypique qu'est ce qu'on a fait on a
+commencé par récupérer en données créer des duels avec ces duels on a décidé d'utiliser
+un XGBoost pour pour obtenir notre matrice de probabilité des duels
+voilà donc notre matrice de probabilité des duels qu'on a présenté donc la probabilité
+que A gagne contre B une fois qu'on a eu cette matrice de probabilité des duels on a utilisé
+des simulations de Monte Carlo pour réussir à avoir ce que l'on cherchait qui était la
+probabilité de chaque joueur d'arriver à chaque rang une fois qu'on a ça on peut ensuite faire
+des paris donc voilà notre notre notre vision globale et derrière qu'elles ont été les actions
+qu'on a dû faire pour avoir ce ça comme on disait on a eu énormément de données donc s'approprier
+les données nettoyer les données une fois qu'on s'est approprié les données qu'on les a nettoyer
+on crée nos duels avec ces duels on peut faire des features donc on fait du feature engineering
+beaucoup on demande au métier de nous donner des informations on fait des tests une fois qu'on a
+fait ça on regarde notre accuracy score donc on regarde nos résultats de notre XGBoost on s'assure
+que les résultats sont bon on essaye de faire en sorte que les résultats soient de mieux en
+mieux et ensuite on passe à notre matrice de probabilité de chaque joueur de ça partant
+d'arriver à chaque rang ou là on est un peu plus à la veuve donc là on ne sait pas trop quel sont
+nos résultats on ne sait pas trop que doit-on faire que doit-on améliorer pour pouvoir en
+sorte d'avoir de meilleurs résultats sur sur nos paris donc si on passe à la slide suivante
+ce qu'est ce qui s'est passé et bien on a utilisé des capillailles des capillailles définies par
+par le métier en fonction des types de paris en fonction des types de paris que l'entreprise
+faisait on a décidé de créer des capillailles et donc d'observer la différence qu'il y avait
+entre notre accuracy score au niveau des duels et nos capillailles à la fin lorsqu'on a notre
+matrice de probabilité de chaque partant d'arriver à chaque rang ces capillailles étaient plutôt
+plutôt bon en fait on s'est rendu compte que oui c'était très difficile que c'était pas linéaire
+entre le passage de notre accuracy score sur les duels au passage de notre matrice de notre matrice
+de probabilité finale et du coup on ne pouvait pas vraiment évaluer ce qu'il fallait faire de
+plus donc seulement regarder les capillailles nos capillailles étaient plutôt bons on s'est rendu
+compte qu'on arrivait à peu près à un pronostiqueur qui a de l'expérience donc un pronostiqueur
+qui connaît bien les partants qui connaît bien les typologies de course sont des pronostiqueurs
+qui en font leur métier et on arrivait avec cette méthode là à avoir des résultats aussi bons
+oui on était on était assez content et le plus surprenant le plus surprenant
+c'est que le modèle sur les duels le modèle sur les duels ne prédisaient que 65% des duels
+correctement pour dire autrement en 35% des cas il se trompait et on était très surpris de voir
+que en faisant 35% d'erreur le résultat final soit aussi bon et en investigant ce qu'on a fini par
+comprendre c'est que déjà les modèles étaient plus précis à distinguer un premier d'un deuxième
+quarant-huitième d'un deuxième premièrement et ensuite il y avait comme ce sentiment c'est un peu
+dur à expliquer ou à décrire mais que l'erreur elle était mutualisée donc sur une course on
+pouvait se permettre de faire 35% d'erreur ça serait rattrapé par les 65% d'autres bons résultats
+c'est quelque chose qui était assez dur à comprendre qui a été assez surprenant et on voyait assez
+bien que les erreurs on les faisait surtout sur sur la fin de la course sur sur ce qui était
+clairement pas les meilleurs on les faisait pas au début mais voilà c'était quand même quelque
+chose d'assez surprenant donc là ce que vous voyez voilà c'est ça enfin parce que ce que
+on vous a montré sur la slide précédente c'était un peu tout ce process passé d'une course à des
+duels prédire sur des duels puis remonter comme ça d'échelle du duel jusqu'à jusqu'à la course
+et des méthodes de simulation c'est une mission si je dis pas de bêtises qui a dû durer trois mois
+et quelques c'est ça carol ou pas oui c'est ça à peu près trois mois on a eu chacun un peu de temps
+pour travailler dessus et la plus grosse partie du travail a été le futur engineering une fois
+qu'on a eu la méthode et qu'on a eu l'idée qu'on savait à peu près que de pouvoir qu'on pouvait
+passer des duels à notre à notre matrice finale via la méthode de monté carlot une fois qu'on a
+eu ça le plus gros du travail ça était le futur engineering et encore une fois le besoin de l'input
+du métier pour savoir sur quoi travailler et qu'est ce qu'ils avaient besoin qu'on améliore
+parce que notre but c'était d'être bon sur les premiers et au final là où on était moins bon
+donc sur les derniers on n'avait pas forcément besoin donc trois mois de travail avec une grosse
+partie en liaisant avec le métier bien voilà j'espère que ça vous a plu j'espère que c'était
+clair et que que ça vous a alors quelqu'un dans le chat me demande une idée pourquoi les
+premiers sont mieux classés que les derniers oui bah ça c'est directement lié je pense aux
+futures qu'on a créé au fur et à mesure de la mission à la fin la plupart des la majorité des
+futures c'était nous qui les avons créé et ces futures là c'était du type palmarès sur les
+six derniers mois nombre de fois où il arrivait premier sur les trois derniers mois ce genre de
+choses et donc entre un premier un deuxième ou un troisième il y a plus de différences sur ces
+variables là que entre les derniers qu'on soit 8e 9e 10e on n'est pas arrivé premier dans les
+ces derniers mois on n'est pas arrivé deuxième dans les derniers mois on n'est pas toutes les
+variables qu'on a créé en fait non de sens que si on est premier deuxième troisième par contre
+un dernier et un avant dernier se distingue pas en termes de variable puisque nous on n'a jamais
+construit de variable du type combien de fois je suis arrivé dernier sur les derniers mois donc
+c'était en construisant des variables entre guillemets de winner on prédisait bien sur les
+gagnants on aurait tout à fait pu imaginer être très bon après dire les derniers si on a été
+très attentif à ces variables là un petit mot avant de reprendre sur la question merci à tous
+donc d'avoir été là ça a été présenté donc par ma collègue carol data scientist et moi même
+d'avoud vous pouvez nous retrouver donc sur notre blog il y a d'ailleurs un article qui présente
+ce projet là et vous pouvez bien sûr aussi nous suivre sur la réseau social facebook élimin
+j'en prends pour les questions dans le cadre de ce projet qu'appelez-vous feature engineering le
+feature engineering c'est tout le travail qui consiste à créer de nouvelles variables je vais
+donner un exemple nous on avait donc des dizaines et des dizaines et des dizaines de courses par
+contre on n'avait pas la donnée très simple de dire tel coureur tel coureur il est arrivé tant
+de fois premier les six derniers mois ça c'est une feature qu'il a fallu construire nous même c'est
+ça le feature engineering en fait c'est construire des nouvelles colonnes des nouvelles variables
+pour pour prédire je passe à la question d'après très intéressant petite question plutôt que de
+se focaliser sur chaque participant un par un dans les simulations monté carlot n'était-il pas
+possible de simuler directement de simuler directement les résultats d'une course en utilisant
+la matrice probabilité de résultats de duel problème à cause d'éventuelles incohérences
+a supérieur à bb supérieur à c pour la même course non non non c'est pas pour ça en fait si on
+est passé par des simulations ça s'est fait un peu empiriquement c'est parce que au moment où j'ai
+fait ça j'étais pas du tout sûr de mon coup et j'étais tellement pas très sûr de mon coup pour
+pour être honnête que j'ai j'ai j'ai sorti les probats pour pour un duel et j'ai un peu fait
+ça à la main c'était pas la méthode forcément la plus la plus efficace de faire des simulations
+monté carlot alors question après dans votre projet vous avez utilisé des régations justiques non
+non non parce que on avait le sentiment que enfin si pardon enfin on en a utilisé c'était notre
+baseline mais le score était vraiment c'était un score de baseline quoi je crois c'était
+56 c'est 55 ou 56 de précision donc non on évite à aller vers faire d'autres modèles c'est pas
+tout à fait surprenant pour la régulation logistique puisque on a beaucoup de vape qui sont pas linéaires
+et l'exercice même on doute qu'il soit linéairement séparable donc très vite on a prévu des jeux
+des modèles pas linéaires et on me demande pouvez-vous revenir au slide qui montre les
+trois simulations et réexpliquer pourquoi encore gaine deux fois et arrive deuxième une fois oui
+alors je vais remonter en arrière sur la slide alors voilà donc cette slide là c'est un peu
+si on devait regarder qu'une ça serait celle là ce tableau là il présente les résultats de John
+face à trois autres participants et le modèle il est capable de prédire donc John versus Paul
+John versus Georges et versus Richard et il nous donne ces probabilités là c'est la première ligne
+du tableau ces probabilités de perdre nos simulations c'est des chiffres qu'on tire au hasard on
+considère que si le chiffre tirer au hasard est plus petit qu la probabilité prédite par le modèle
+c'est une défaite et donc vous voyez bien que plus la probabilité de perdre est faible et moins
+il y a de chance que le chiffre qu'on tira au hasard c'est un chiffre tirer uniformement de
+0 à 1 saut plus petit que la probabilité de perdre et dans ces simulations là on constate
+que dans la première aucun chiffre n'est plus petit que les probabilités de perdre John
+au zéro autrement dans cette simulation là John ne perd jamais c'est seulement dans la seconde
+simulation où il fait une défaite et faire une défaite perdre un duel et par ailleurs gagner
+tous les autres c'est ça être deuxième j'espère que j'ai répondu à la question le client est-il
+satisfait du produit livré oui oui le client le client était satisfait des résultats le client
+était satisfait des résultats il aurait aimé mieux mais alors vous parlez de duel avez-vous
+essayé d'établir des classements comme aux échecs avec le système et l'eau ben je crois que c'est un
+peu c'était un peu l'idée au début c'était une une une une une une une une espèce de classement
+et l'eau je suis pas expert je sais pas exactement comment ça marche mais je crois qu'empiriquement
+ouais c'est un peu ce qu'on a fini par faire bonjour votre présentation est très intéressante
+du nature des données est ce qu'on peut imaginer de les traiter afin de les rendre par exemple
+centré ou de les renormer oui alors on aurait pu centrer ou renormer les données cela étant
+dit comme le modèle qu'on utilisait c'était un xg boost donc un modèle à base d'arbres il y avait
+moins ce besoin en fait donc on pouvait laisser nos features, nos variables d'entrée telle qu'elle
+c'était moins important que si on avait utilisé une régression par exemple ou là oui ça aurait été
+important de normaliser là non on n'a pas on n'a pas centré ou normalisé avez-vous essayé une autre
+approche prédire le temps d'un coureur et en déduire son classement alors oui mais pour préserver
+le temps d'un coureur à une course il aurait fallu d'autres données on considère que le temps
+qui va faire une course bah il faut quand même un peu les autres coureurs le contexte et tout et
+c'est ça en fait qu'on sait pas présenter autrement qu'en faisant des variables agrégées donc c'est
+comme si je vous disais combien Lucen Bol doit faire au prochain 100 mètres il va vous manquer
+énormément de variables pour arriver à me le dire et je suis sûr que la représentation que vous
+allez avoir en particulier de cet concurrent elle sera jamais satisfaisante vous allez être obligé
+de faire de l'agrégation de des moyens d'être comme ça et perdre finalement pas mal d'informations
+je n'ai peut-être pas très bien compris vous utilisez quel modèle un XGBoost sur ce tableau ne
+peut-on pas dire qu'il perd une place à chaque probat de perte superior à 0 à 5
+non pas exactement on peut par exemple pour répondre à Asgard son 440 imaginer quelqu'un
+qui a des probabilités de perdre jamais supérieur à 0 à 5 mais toutes très élevées celui-ci on
+peut pas considérer qu'il va arriver premier pour autre que vous faudrait-il comme nouvelle
+donnée pour améliorer le modèle c'est dur à dire c'est dur à dire nous on avait le sentiment
+ça c'est peut-être plutôt carol tu te rappelles de quel variable était les plus utilisés ou pas
+les plus utiles pour le modèle il y avait surtout celle qu'on a cité c'est à dire combien de fois
+est-ce qu'il est arrivé premier les trois dernières semaines des cas derrière moi ça permet de bien
+montrer la forme du participant aussi le participant il y a trois semaines il était en forme
+normalement il devrait toujours être en forme donc cette variable là était plutôt plutôt
+intéressante ensuite sur les variables les autres variables au niveau de la course on en avait
+d'autres on a testé d'autres sur la typologie de la course qui n'était pas qu'ils n'ont pas
+donné d'information donc je pense que sur la typologie de la course on avait bien bien cadré le
+sujet et bien serner le problème par contre sur les variables du partant en tout cas pour les
+premières places c'était surtout combien de fois est-ce que la personne a gagné un petit peu
+sur les entraîneurs aussi mais mais il y a alors quel était le type de course je suis pas sûr de
+pas sûr de prendre la question de cours c'est à dire si c'était des courses longs courtes
+du sprint ou il y avait de tout il y avait de tout et du coup on a fait un modèle par
+course parce que si c'est de sprints aussi c'est de l'endurance on va pas avoir besoin des mêmes
+variables surtout sur la typologie de course comme je disais tout ce qui est vent tout ce qui est
+température etc c'est pas les mêmes choses dont on a besoin mais en fonction des typologies courtes
+alors comment faire des prédictions sur un nouveau participant sur lequel on n'a pas encore de données
+la question elle s'est posée il ya deux choses à savoir c'est que le modèle est plutôt utilisé
+pour prédire sur des participants sur lesquels on a de la donnée parce que les participants sur
+lesquels on a de la donnée c'est ceux sur lesquels les gens ont envie de parier les gens ne parient
+pas sur des inconnus cela étant dit le fait que le participant n'est pas enfin le fait qu'ils
+soient un nouveau participant c'est déjà une donnée on ne va pas le mettre favori en fait sur
+une course donc l'absence de données on savait bien la gérer parce que ça se traduisait en
+termes du futur bah par le fait par exemple qu'il n'avait pas de palmarès et très souvent c'est
+des gens qui vont pas faire de si bonnes performances le plus de données et plus de courses quels
+outils l'engage et l'utiliser pour le développement bah c'était en piton et on a utilisé très
+simplement saikiklorm donc c'était rien de très compliqué technologiquement j'imagine qu'une
+prochaine étape serait d'explorer des approches de deep learning avec des modèles d'attention pour
+avoir des présentations à pouvoir du même par exemple compenser alors on a on a on a testé
+de faire un truc de deep donc c'était un c'était un réseau de neurones ça a pas donné de résultats
+aussi bons qu'est ce qu'on tait ensuite modèle d'attention modèle d'attention sur quoi sur les
+features donc enfin qui est un modèle qui ferait de l'attention sur sur les features qui
+retiendrait les bonnes features de ce que je sais les modèles d'attention ça va être plus
+utile sur du signal donc du son de l'image ou du texte mais sur de la feature comme ça je
+je suis pas je suis pas sûr de comprendre comment le mécanisme d'attention est remarché
+alors non vous pouvez pas avoir expliqué le code hélas cela étant dit je tiens à vous rassurer
+le code est le code est pas très compliqué le code est pas très compliqué c'est beaucoup de
+jointures et de manipulation comme ça pour dire je passe d'un ensemble de courses un ensemble de
+duels et je prédis sur mes ensembles de duels technologiquement ça s'est fait dans un
+environnement très simple c'était sur un Jupyter notebook et pour la mise en production je sais
+pas ça c'est pas nous qui c'est pas de notre côté on a géré ça pour la mise en production
+c'était vraiment pour savoir est-ce il est possible de faire ce genre de prédictions est-ce
+qu'en faisant ce genre de prédictions d'avoir des résultats qui sont utiles on va vraiment aller
+tester et après on a livré au client un client s'il veut faire des améliorations etc il peut s'il
+veut mettre un code il peut mais notre but était prouver que c'était possible avec une méthode un
+petit peu un petit peu un petit peu différent des autres
+ouais et voilà donc nous on est vraiment resté sur la partie poc et j'insiste ça c'était alors
+mécanisme d'attention sur la série temporaire du coureur d'accord je comprends sur la série
+temporaire du coureur donc du coup les mécanismes d'attention c'est ce qui permet à un modèle
+dans un signal d'entrée de savoir qu'est-ce qui est important et qu'est-ce qui n'est pas
+oui oui ça aurait pu être ça aurait pu être quelque chose qu'on aurait pu tenter ouais tout à
+fait et de se dire finalement une course c'est un ensemble de série temporaire de résultats c'est
+quelque chose qu'on a c'est quelque chose qu'on aurait pu tenter si on est plus de temps là la mission
+est finie et tout a été livré donc on n'aura pas l'occasion d'essayer je n'ai pas très bien oui
+alors quelqu'un demande avec 65% de bonne prédiction des duels vous obteniez souvent le
+bon classement des trois premiers oui oui oui et en fait pour dire autrement qu'on fait 65%
+de bonne prédiction fait 35% d'erreur et les erreurs elles étaient surtout concentrés à distinguer
+les derniers en fait le modèle n'était pas bon à distinguer les derniers donc c'est l'une des
+choses qui explique en fait que en ayant 65% de bon résultat on arrive quand même à être bon
+sur les premiers ans avez-vous utilisé d'autres données que c'est fourni par le client non
+absolument pas au début de la mission on a reçu un disque dur et c'est tout avec avec la données
+on s'est débrouillé avec ça on avait énormément de données du coup pas vraiment besoin d'aller
+chercher ailleurs d'autres informations on avait vraiment énormément de données notre client
+dispose de quasiment toutes les informations possibles sur la course donc on n'avait pas besoin
+d'aller chercher les informations ok je crois qu'on arrive à la fin des questions vous
+trouverait plus de détails sur l'article de blog qu'on a écrit est ce que vous pensez pouvoir
+gagner au paris avec cet algo on nous demande souvent ça alors c'est un peu compliqué parce que
+l'objectif du client c'était pas tellement de faire un truc qui marchait tout le temps c'était plus de
+faire quelque chose qui soit assez attractif pour répondre à la question de mémoire le modèle
+se situe aux alentours d'une espérance nulle donc il n'y perd ni gagne il gagne assez pour pour payer
+les tickets paris mais c'est tout qu'on vous dit énormément de données c'est à dire je sais
+pas est ce que tu t'en rappelle carole non je ne me souviens pas exactement combien on a fait on a
+fait beaucoup de tri parce qu'il y avait des choses qui nous intéressaient pas forcément mais comme
+disait daoud on a reçu littéralement un disque dur plein à craquer avec six ans d'historique
+quelque chose d'assez énorme on a fait du tri d'un sur et on a récupéré ce qu'on avait
+fait par rapport à ce que disait daoud tout à l'heure le but du client c'était vraiment d'attirer
+les jeunes qui ne savent pas parier donc de leur proposer des idées de paris et du coup
+nombre de lignes nombre de variables en fait il y a si on a mettons dix cours c'est dans chaque
+cours si il y a dix participants comme nous on s'intéresse au duel c'est des multiplis d'attaque
+c'était plusieurs millions de lignes en fait on avait un c'est de mémoire j'ai peur de vous
+dire une bêtise mais c'est 2,5 millions de lignes c'est pas 2,5 millions de cours c'est des duels
+et ça aussi je ne l'ai pas dit pendant la présentation mais le fait de bosser sur des
+duels artificiellement ça baufle votre volume de données là où avant vous aviez une course
+très vite vous avez 100 duels alors avez-vous vu un impact suite à la période actuelle je
+présume que ça doit parler du covid non parce que la mission elle a été faite avant on porte
+des masques pour sortir dehors dans l'ancien monde et du coup la question ne se posait pas à l'époque
+et la mission c'est terminé avant donc on n'a pas eu à gérer on n'a pas eu à gérer on n'a pas
+à gérer tout ce qui est covid voilà donc certains d'entre vous ont partagé le blog merci à
+eux et l'article étant relativement récent vous devriez le trouver sans trop de difficultés sur
+notre blog alors je crois que le lien avec sages data sense à la fin de marche pas le premier lien
+à l'art de marché et voilà je vous invite à lire l'article sur ce projet là en particulier et
+à lire tous les autres aussi si vous voulez ou êtes vous basé donc la société à des locaux à
+paris l'île et l'ion on est on est on est sur les on est sur les trois villes paris
+l'île et l'ion recrutez-vous des stages de data analysis sur l'ion je suis par le jour
+pour vous donner de réponse si vous souhaitez faire des datures vous pouvez nous contacter
+faire une convidature spontanée je pense c'est à nouveau merci à tous merci à tous les parties
+qui ont fait d'être là je ne m'attendais pas ce qui est autant de monde c'est moins très souvent
+surtout que en vrai merci à vous deux aussi d'aouday carol pour cette présentation
+de rien et puis n'hésitez pas à les contacter ça avait encore d'autres questions et sinon on
+se dit à une prochaine session meet-up pour l'un de la science donc à partir de janvier prochain
+on n'hésitait pas à nous suivre sur la réseau et à nous contacter si vous voulez être sponsor si
+vous voulez intégrer l'association pour organiser aussi ce meet-up n'hésitez pas et sinon bonne soirée
+à tous bonne soirée bonne soirée à moi

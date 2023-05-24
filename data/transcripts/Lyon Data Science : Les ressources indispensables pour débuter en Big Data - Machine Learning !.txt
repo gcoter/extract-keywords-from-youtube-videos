@@ -1,0 +1,1585 @@
+On a pour but, j'ai mis de promouvoir la valorisation des données parce que c'est bien en vogue en ce moment
+et c'est surtout de pouvoir échanger entre informaticiens et matheux passionnés de data
+parce qu'on s'est rendu compte qu'on a fait plusieurs conférences sur la recherche fondamentale
+avec beaucoup de techniques et beaucoup de formules de maths au départ.
+On avait enchaîné ensuite en variant un peu les plaisirs avec des retours d'expérience de professionnels du terrain.
+On a vu qu'il y a déjà un petit delta entre ce qui était prodable, ce qui était industrielisable
+et ce qu'on pouvait faire dans les labos.
+Ce soir, je me propose justement de faire un petit historique de ce qu'on appelait le big data depuis quelques années
+mais en tant qu'informaticien, donc ça serait une vision sûrement différente de la partie d'entre vous
+et je laisserai la parole ensuite à Anil qui lui est plus justement tes arts et donc une autre vision de la data
+et donc c'est à travers ce genre de différence qu'on aimerait favoriser l'échange dans le cadre de l'asseau
+donc si le milieu associatif vous intéresse, on est toujours partant pour accueillir de nouveaux bras
+pour toujours créer plus de conférences.
+On en a une par mois et on crée des petits ateliers pour faire découvrir des outils
+plus en mode travaux pratiques régulièrement.
+Et donc le big data c'est un mot qu'on a galvodé énormément ces quatre dernières années
+c'est un buzzword, alors là oui j'en mets partout, des anglicismes bien moches
+c'est un peu le thème vraiment de la soirée je pense
+et donc c'est quelque chose qu'on a un peu mal compris je pense au départ
+et notamment au niveau de son application dans le domaine privé dans lequel j'ai travaillé
+j'ai fait dix ans de SS2Z avant d'être dans une start-up maintenant qui s'occupe des données de l'emploi
+et donc voilà ce que j'en ai retenu de ce fameux big data
+donc ça c'est un petit rappel historique
+donc il y a plus de cinq ans en fait quand on voulait valoriser des données
+on faisait de la BI, on faisait de la business intelligence
+on voulait en fait montrer des indicateurs
+donc je rappelle juste quelques termes pour qu'on se retrouve dans un data warehouse
+on était avec le langage SQL et qu'on alimentait avec des jobs ETL
+donc on avait déjà des soucis de performance à l'époque
+donc on crée des data martes, on avait des notions de stockage en étoiles déjà
+et ils sont apparus ensuite les stockages en colonne
+bref on ne va pas faire un cours d'architecture ce soir
+c'est juste pour dire que c'était à l'époque qu'on faisait de la state descriptive
+donc en gros il y avait des 0, des 1, on faisait des beaux graphiques
+et c'était aussi ce que le top management voulait
+donc déjà dans les labos on faisait déjà beaucoup plus de choses
+mais c'était pas prodable et ça n'avait vraiment pas percé sur le marché
+parce qu'il y avait pas mal de soucis de mise en oeuvre technique
+donc en gros au niveau architecture on prenait data source
+les sources de données on avait une petite mécanique qui les mettait dans un data warehouse
+et ensuite on en crée des camembers
+on pouvait même éventuellement rajouter ensuite
+en amont un système de stockage qui permettait d'abord
+de tout avoir dans une base de données avant de le traiter
+tout ça pour rappeler qu'on avait des modèles relationnels
+avec des relations entre les différentes tables
+et qu'ensuite on s'est dit que pour gagner de la place
+parce que c'était ça à l'époque qui était important dans un oracle
+ou un SQL server de l'époque
+ou je vais parler très informaticien, ça changera après
+mais pour l'instant je vais parler un peu informatique
+on avait donc des modèles en colonne
+pour factoriser donc certaines des valeurs dans des dimensions
+et ensuite en fait est venu une démocratisation du coût du stockage
+ça coûtait plus grand chose d'avoir des gros discutures de partout
+et surtout une augmentation nette de la puissance processorale disponible
+pour pas cher également
+donc ça servit à pas mal d'acteurs que vous connaissez bien
+qui avaient beaucoup beaucoup de données de gel à l'origine
+donc qui sont éclatées
+après ils ont mis des vidéos un peu partout aussi
+après ils ont mis des photos
+et après ils ont multiplié les réseaux sociaux
+parce que ça marchait très très bien
+donc ça c'est possible
+grâce à ce qu'on a mis sous le buzzword Big Data
+avec les fameux 3V de l'époque
+parce que c'est pareil on croyait qu'il n'y avait que 3V à l'époque
+en disant bon ben on va pouvoir gérer beaucoup de volumes
+ça c'est le challenge
+on va pouvoir donc on a parlé de Data Lake
+on en reparlera tout à l'heure
+un endroit où on pouvait tout déverser librement
+et j'en parlerai plus tard
+on a parlé aussi d'internet des objets
+parce que ça permettait de connecter beaucoup de choses
+de mettre des capteurs un peu partout
+qui loguaient très très régulièrement des choses
+c'est le cas de Linky chez Nedy
+c'est le cas de pas mal de choses dans l'industrie 4.0
+je crois on en est maintenant
+pour stocker tout ça et avoir un historique conséquent
+et le cas de l'intelligence artificielle
+donc on a beaucoup abordé dans les meetups ici
+donc du machine learning, de l'apprentissage machine en général
+on parlait de velocité
+donc c'était à la fois pour la vitesse
+c'est aussi pour le côté agile
+donc on a parlé de cluster
+parce qu'on a fait des calculs massivement parallèles
+à travers beaucoup de machines plutôt qu'une seule grosse
+et on a parlé de traitement en temps réel
+donc c'était ça les grosses promesses du big data
+avec une diversité des données
+qui permettait maintenant de stocker
+donc des photos, de Facebook, des vidéos de YouTube
+donc c'était super bien
+et par contre il y avait une technologie pour y accéder
+qui était qu'on a mis sous l'étiquette no SQL
+qui veut dire pas seulement du SQL
+c'est du not only SQL
+c'est-à-dire que c'était à la fin du SQL
+et donc on a parlé de stockage sans schéma
+où on pouvait vraiment avoir vachement plus de liberté
+donc on ne faisait plus que du descriptif, du prédictif
+enfin on pouvait lancer des gros calculs mathématiques
+comme on en a parlé beaucoup
+je schématise beaucoup pour aller un petit peu plus vite
+mais voire même du prescriptif
+donc ça c'était les promesses
+on disait maintenant on est à l'air
+où on peut se permettre maintenant
+avec le volume qu'on a et la capacité
+des processeurs qu'on a
+on pourrait aller beaucoup plus loin
+donc en fait on a opposé
+deux mondes
+des données structurées et des données non structurées
+au départ c'était un peu ça
+au départ on disait big data, c'est forcément d'Iradoo
+donc c'était ça un peu que je vais mettre au clair ce soir
+parce qu'il y a eu notamment au big data
+Paris 2016 là
+un salon assez réputé
+où il y avait
+une table ronde
+où il se disait encore à l'époque
+est-ce que le data lake va tuer le data warehouse
+genre comme s'il y avait un qui allait remplacer l'autre
+c'est à dire que maintenant qu'on avait
+moyen de stocker en parallèle
+on allait plus avoir du tout de données structurées
+et donc ça a été la grosse mode
+de se dire qu'on allait tous avoir un gros cluster
+et que ça allait nous simplifier la vie
+donc on opposait la moléditation relationnelle
+avec le NoSQL
+on opposait le stockage par factorisation
+on voulait toujours gagner de la place
+en factorisant les choses dans des dimensions
+au stockage par réplication
+on avait un gros cluster qui géré
+le failover
+donc la perte d'une machine
+parce que tout était répliqué et qu'on pouvait faire des calculs
+massivement parallèles
+et on opposait la scalabilité
+donc ça c'est aussi c'est un bel anglicisme
+bien sale
+mais ça veut juste dire qu'avant il fallait des grosses machines
+qu'on faisait monter indépendamment
+les unes des autres alors que maintenant on peut
+faire plein plein de petites machines
+qu'on fait grandir en nombre et plus en puissance
+et donc c'était un peu en oubliant
+qu'il y a un système qui est consistant
+et l'autre qui est avant tout parallélisé
+c'est à dire qu'à un instant t
+l'état
+des données stockées dans un cluster
+en l'occurrence
+de l'écosystème adoub si on parle
+que dessus
+on ne peut pas comparer directement les choses
+c'est des propriétés acides vous pourrez creuser si ça vous intéresse
+mais c'est pour ça qu'on s'est rendu compte
+que c'était complètement complémentaire
+et que même si
+cette scène-là elle devenait un petit peu plus
+celle-ci avec un data lake en amont
+il restait de toute façon
+bon ça c'était pour l'exemple de celui qui voulait le faire
+de la data vise au final
+c'est encore le côté pratico pratique de l'informaticien
+et pas celui qui est dans les labos
+mais c'est l'objectif
+c'était de pouvoir dire voilà on a un data lake
+dans lequel on peut mettre toutes les données
+sans aucun traitement préalable
+ça tiendra tout
+et en fait ça nous évite
+d'avoir à les pré-traiter
+donc après on pourra brancher des algorithmes
+d'intelligence artificielle dessus
+ça va être super on aura toutes les données qu'il faut
+et c'est un peu la faute du président de Google aussi
+qui avait dit à l'époque
+que la data c'était le pétrole du XXIe siècle
+donc les gens ils se sont dit c'est super
+je vais monter un gros cluster c'est super la mode
+le top management surtout disait moi je veux beaucoup de données
+plus je serai riche
+après en plus je vais parachuter un data scientiste dessus
+il va transformer les octets en lingue d'or
+et j'ai gagné quoi
+donc ça ça a duré un temps
+il y a des gens qui ont essayé
+ils ont eu des problèmes ça on le sait déjà
+donc on a parlé de data swarm assez rapidement
+parce qu'en fait on ne peut pas tout mettre
+pour que ça soit exploitable
+par des informaticiens
+ou des mathématiciens
+et donc on s'est dit on va peut-être
+revoir un peu le principe du big data en disant
+c'est des images en fait que je ne suis pas du tout retouché
+je l'avais vraiment trouvé avec 3 v4 v et 5 v
+au fur et à mesure du temps
+donc j'ai trouvé ça intéressant
+et donc on va d'abord trouver des données pertinentes
+parce qu'on a beau en avoir un gros volume
+en fait si on a tout mélangé on n'en fera jamais grand chose
+donc on s'est mis à parler
+de data quality
+encore plus
+de MDM 2.0 parce que le master data management
+c'était avant tout un gestionnaire de workflow
+là on s'est dit il faudrait quand même
+une seule notion de la vérité à un seul endroit
+donc on a reparlé des golden records
+ce genre de choses si vous voulez
+Google-iser et on a dit
+qu'il fallait documenter tout ça parce que
+si on ne mettait pas des métadonnées associées aux données
+on avait un petit souci donc ça me permet de
+placer que notre partenaire data galaxy
+le fait super bien via son outil
+ça c'était l'occasion
+parce que c'est un mi type de rentrée
+donc autant introduire tous les acteurs
+donc là on s'est rendu compte qu'il y avait
+un problème de qualité quand même
+et qu'on ne pouvait pas faire ça n'importe comment
+mais pas du ciel
+et donc là on s'est dit c'est la fête
+donc ça c'est l'éléphant à doupe
+donc c'est la fête on a tous monté un super cluster
+il y a de la qualité et ça y en a trouvé la solution
+ça va être trop bien donc au CD-VOLA
+moi je te propose c'est la claire parce que
+ça a bien le style donc bon c'est juste un tétro
+d'exemple ne lisez pas forcément tout ce qu'il y a tout dedans
+c'est juste pour exprimer que
+si vous aviez
+si vous aviez raté
+en fait si vous étiez partis 15 jours en vacances
+vous reveniez 15 jours après de votre collègue
+vous avez raté il y a une couche qu'on a rajouté
+parce que maintenant la mode c'est de mettre
+du storm et tout parce qu'on fait du spark
+temps réel in memory maintenant et c'est vachement mieux
+donc ça c'est un peu plus ce qu'on fait
+quand on est dans la recherche et qu'on veut s'éclater
+dans son labo quand on est en entreprise
+des fois on a le budget mais on l'a pas très longtemps
+quand on veut juste jouer avec la technique
+et donc après ça devenait un peu des trucs comme ça
+on va rajouter des couches parce que ça va être trop bien
+et ça finissait en truc comme ça
+mais moi j'arrive pas à lire
+parce que techniquement il y a moyen de s'éclater
+mais en entreprise
+parce que je suis aussi à propos de parler de ça
+on a du mal à se faire budgeter un truc comme ça
+parce qu'en fait on s'est rendu compte
+que même si on pouvait construire des choses
+très bien techniquement
+ça ne valait pas forcément le coup
+et donc là on a rajouté un petit v
+donc j'ai trouvé cette image là qui était exactement ça
+on s'est dit maintenant
+en fait il faut que ça ait aussi de la valeur
+parce que ça va bien de jouer avec ces clusters
+le week-end mais en semaine en fait
+on a des comptes à rendre
+donc ce management te finançait beaucoup de poc
+pour créer des gros clusters
+et il s'est rendu compte qu'en fait
+il ne retombait pas forcément dans ses sous
+donc on a parlé de héroï
+c'était un peu de retour sur investissement
+on a parlé de projets
+qui étaient business driven
+pilotés par le métier
+par un besoin de métier
+et c'est ça les vraies choses
+on a accueilli l'année dernière
+quelqu'un de chez Bob Emploi
+qui disait qu'en fait il avait boire
+les données possibles
+il avait fait des super clusters géniaux
+qui tournaient trop bien et qui sortaient des résultats très rapidement
+mais les résultats ne servaient à rien
+il était juste frustré par l'inutilité
+du terrain, de tout ce qu'il avait pu monter
+donc c'est vraiment ça maintenant
+le change, je pense, du big data
+c'est plus ici une quantité de données
+c'est plus une histoire de monter des architectures techniques
+c'est vraiment de trouver l'utilité
+et de trouver vraiment
+de voir les data science comme un moyen
+et pas comme une fin
+donc voilà, on profite pour placer également
+que si vous êtes un peu perdu dans ces notions-là
+on a deux partenaires aussi
+qui sont capables de transformer
+vos données en dollars que sont opérées et data lieux
+mais c'était juste l'histoire de les placer
+à cet endroit-ci
+mais c'est pas pour rien qu'il y ait des gens
+qui sont spécialisés là-dedans, parce que c'est pas toujours la tête
+donc en gros
+pour résumer, parce qu'on parle
+de big data, ça se gère aussi avec des small data
+c'est à doute
+et tout l'écosystème qu'il y a autour
+sachant que tous les deux mois, il y a de nouveaux composants qui sortent
+et qui sont super intéressants à découvrir
+mais alors c'est d'abord
+pour des données non structurées
+c'est à dire qu'on aurait du mal
+à mettre les données bancaires là-dedans
+sauf pour des vraiment des choses très spécifiques
+comme par exemple
+du streaming ou du temps réel dans lequel on exploite
+vraiment la puissance d'un gros cluster
+et de calcul parallèle
+c'est aussi le cas pour du machine learning
+un peu gourmand, parce que pour faire tourner
+des gros process en ordre de nouvelier
+c'est super efficace
+et j'ai mis performance en LT aussi
+parce que c'est une mode qui commence à sordonner
+c'est intéressant parce que
+le LT c'est
+pas l'inverse mais c'est une nuance de l'ETL
+qui voulait qu'on transformait avant de charger
+maintenant on charge avant de transformer
+c'est à dire qu'on se met de plus en plus
+à déléguer de part la puissance des clusters qu'on monte
+la complexité qu'on mettait
+dans les ETL
+au niveau même de la base de données
+donc en fait ça revient presque à refaire
+les procédures stockées comme il y a 10 ans
+sauf que là on a vachement plus de machines
+donc le côté
+propriétaire
+des procès de base de données
+commence à reprendre le dessus
+sur les solutions
+qui étaient très portables de ETL
+parce que justement on a une puissance bien plus intéressante
+à ce niveau-là
+et donc c'était juste pour dire que ça pouvait aussi servir à ça
+notamment avec
+avec cloudera
+et donc en fait
+cette état se gère aussi si on veut faire
+de la data vise avec
+des propriétés acides dont je parlais tout à l'heure
+si on veut vraiment afficher des vrais chiffres
+et pas juste trouver des tendances
+ou faire des gros calculs
+si on veut après illustrer des choses
+avec des graphiques et des camemberts
+c'est quand même important d'avoir des données
+stockées pour avoir un cluster
+et du failover et du calcul massivement parallèle
+sauf qu'on a des performances en lecture
+parce que je ne sais pas si vous avez essayé
+de mettre un clic
+sur un cluster à double
+mais en fait
+passer cinq connexions simultanées
+les performances en lecture s'effondrent complètement
+on l'a beau mettre beaucoup de machines
+ce n'est pas du tout prévu pour ça
+donc c'est ça qui est important c'est de voir que à double
+ça ne répond pas à toutes les problématiques du big data
+et donc je dis ça parce que effectivement
+dans le monde du privé
+et du lequel je viens
+on parle vachement plus de chiffres pour le top management
+que justement de grosses recherches
+au niveau de l'intelligence artificielle
+donc on a toujours besoin d'avoir des données structurées
+pour optimiser les perfs en lecture
+en plus c'est un requétage SQL
+qui est bien acté dans la tête
+même des ingénieurs qui ont 50 ans aujourd'hui
+donc c'est pour ça que ça marche pas mal
+et j'ai ajouté un acteur aussi
+avec lequel j'ai pu jouer un plus
+il y en a plein d'autres
+mais j'ai voulu aussi montrer que le big data
+si on faisait de la IoT par exemple
+et qu'on avait des données clés valeurs
+pendues dans du JSON
+dans des gros volumes
+qui étaient MongoDB
+qui étaient des données structurées
+mais sans schéma
+donc ça c'est intéressant parce que c'est pas des images ou des vidéos
+mais
+c'est des données qu'on met dans des cases
+simplement on sait pas le nombre de cases qu'il y aura
+c'est à dire qu'il y a forcément un schéma
+dans lequel ça rentrera mais on pourra rajouter une colonne
+ou on supprime une en fonction de ce qu'on veut mettre dedans
+ça rentrera quand même
+donc c'est encore une notion différente
+parce que les outils il y en a beaucoup
+et donc voilà j'espère que vous avez reconvenu
+c'est pas que à d'où
+et en plus le requétage de MongoDB c'est assez rigolo
+c'est de la programmation fonctionnelle
+donc c'est des fonctions de fonction avec plein de parenthèses qui se ferment à la fin
+donc c'est un côté ludique
+que je trouve assez marrant
+donc pour résumer
+en gros
+mon propos
+c'était de se dire que
+l'idée elle doit d'abord venir des gens qui ont une cravate
+des gens qui ont l'argent
+mais c'est aussi eux qui ont la
+connaissance du terrain
+dans les données de l'emploi
+pour l'instant je suis surtout le technicien de l'équipe
+mais en fait c'est vraiment les gens
+qui savent ce que c'est qu'un chômeur
+et comment est-ce qu'on pourrait attendre
+un demandeur d'emploi
+c'est ces personnes-là qu'il faut écouter
+et c'est de eux que j'ai apporté à l'idée
+et après il faut que le moyen
+soit mis en place par le monsieur Alunette
+donc c'est toujours l'informaticien ou l'architecte
+data
+qui a les outils pour dire je pense que cette structure est adaptée
+à votre besoin parce qu'il y en a beaucoup
+pour ne pas se tromper
+et une fois qu'on a un beau cluster de bonne qualité
+avec moyen de
+calculer un retour sur l'investissement
+alors là on appelle un data scientiste
+ou en tout cas il a pu venir avant un petit coup
+mais c'est là qu'il peut vraiment
+développer toute sa puissance et il sera moins frustré
+aussi par tout ce qu'il laissera
+infructuellement
+par le manque de qualité des données
+ou ce genre d'échecs qu'on a trop vu
+en fait c'est deux ou trois dernières années
+voilà donc là c'est
+une évolution
+de
+tout trouver pour la suite
+de Anil qui va nous parler donc un peu plus
+de mathématiques
+voilà voilà
+donc c'était volontairement un peu caricatural aussi
+pour lancer le débat si vous avez d'autres choses
+d'autres visions de la chose, c'est intéressant aussi que vous veniez
+en discuter devant tout le monde
+ou qu'on en discute d'ailleurs après la conf
+mais j'espère avoir apporté une pierre à l'édifice
+voilà
+je te passe le truc
+merci Rémi
+pour cette présentation
+donc d'après ce qu'il disait
+il y a le big data, il y a le machine learning
+ou la data science
+alors très souvent quand on fait
+un meet up de rentrée donc on en a fait deux pour l'instant
+on fait une présentation
+sur ce que c'est le machine learning
+jeu d'entraînement, jeu de tests, cross validation
+et à la fin les gens ils nous demandent
+c'est quoi les ressources
+donc là je me suis dit au lieu de vous parler de machine learning
+je vais juste vous balancer des ressources
+et si jamais vous avez d'autres ressources supplémentaires
+n'hésitez pas à rajouter
+donc comme vous pouvez le voir ici
+mais c'est le métro du machine learning
+donc au début on commence par les fondamentaux
+on passe par les statistiques
+à la fin il y a les toolbox
+donc du java, du piton
+et le truc c'est qu'il n'y a pas forcément
+il n'y a pas forcément
+il n'y a pas forcément
+il ne faut pas commencer si vous êtes débutant
+donc oui
+pourquoi commencer
+alors déjà
+on ne va pas aller directement sur les mous
+sur les vidéos, c'est sur le truc là
+alors on va déjà voir ce que c'est
+les différentes ressources
+sur lesquelles vous allez pouvoir vous baser régulièrement
+donc les deux trois bouquins
+qu'il faut avoir donc on les a en forme
+à PDF pour aussi les acheter
+déjà parce que vous pouvez vous la péter
+j'ai lu pattern recognition and machine learning
+et en plus de ça ça vous fait un support de travail
+tout au long de votre apprentissage et même plus tard
+donc selon moi après on peut peut-être en rajouter
+les deux textes à créer
+donc il y a elements of statistical learning
+pattern recognition and machine learning
+donc les deux traitent
+de toutes les questions du machine learning
+de façon très théorique
+donc beaucoup de maths
+beaucoup de calculs de probabilité
+beaucoup d'optimisation
+pour pattern recognition and machine learning
+car il y a des exercices
+de temps
+sur l'optimisation linéaire
+à la fin vous avez plein d'exercices
+sur l'optimisation de la fonction coude
+la régression linéaire et c'est assez détaillé
+pour aussi les solutions
+sur internet
+et un petit plus par contre
+pour elements of statistical learning
+vous avez un format
+où il y a du code en R2D
+donc
+là c'est vous
+si vous êtes venu sérieusement
+ceux qui sont là depuis 3 mois
+3 ans et qui viennent quand même
+on sait pas ce que vous faites là
+mais si c'est vraiment votre premier vrai meet up machine learning
+vous en êtes à là
+il y a des choses de maths et d'infos
+donc en maths
+on va retourner en terminal
+voire en première
+on va essayer de revoir les notions de dérivée
+d'intégral, de fonctions composées
+de fonctions convexes qu'on cave
+les fonctions convexes qu'on cave on les aime bien
+car on aime bien les minimiser après
+faire de l'opinisation
+les bases d'algebra
+donc tout ce qui est vecteur, produit scalaire, produit vectoriel
+tous ça
+les matrices, les déterminants, les valeurs propres
+par exemple quand on fait des systèmes de recommandation
+on utilise beaucoup de décompositions matricielles
+et enfin
+beaucoup de bases de probats et de stats
+donc des valeurs baléatoires, des densités de probabilité
+tout ce qui est la notion d'inférence
+des tests statistiques
+très souvent on aime bien modéliser des classifières probabilistes
+donc on aime bien modéliser
+des distributions de probabilité
+donc il faut avoir des notions de probabilité et de statistiques
+pour faire cela
+donc qu'est ce qu'on peut faire ?
+déjà vous pouvez prendre le bouquin de ces mains de votre petit frère
+plus sérieusement
+vous retrouvez vos cours de licence
+moi j'ai mis le tout en un
+parce que j'étais en prêt pas
+vous reprenez tous ces cours là
+sur internet ce qui est pas mal c'est le project Euler
+donc dessus il y a des questions de mathématiques
+alors je dis un truc complètement au hasard
+calculer la somme des sans premiers non premiers
+donc vous faites un petit code en piton
+vous retournez à la solution et vous dites
+c'est bon ou pas et ça permet
+on va dire de former un peu le cerveau
+pour tout ce qui est bas dans les MOOCs
+ce qui est très bien c'est Khan Academy
+donc tout ce qui est produit scalaire
+algebrainaire et compagnie
+là dessus ils sont très bons
+il y a un petit kiff
+récemment
+ça s'appelle
+Free Blue One Round
+ça un gars il fait des vidéos youtube donc il est vraiment énervé
+il fait des animations de malades
+donc là je crois qu'il montre
+ce que c'est une transformation vectorielle de je ne sais quoi
+et donc prenez
+prenez ce nom là
+le nom juste en bas
+donc c'est lui il fait pas mal d'animations
+en algebrainaire et en analyse
+et en fait pour visualiser
+ce qui se passe dans
+ah vous voyez pas
+c'est Free Blue One Round
+allez sur sa chaîne youtube donc il y en a plein d'autres
+donc il faut juste chercher sur youtube
+animation, math, je ne sais pas quoi
+mais celui là je pense c'est un des meilleurs
+franchement allez-y vous allez vous régaler
+dans tout ce qui est basse d'infos
+donc on va revenir un peu sur la programmation orientée objets
+sur le fonctionnel aussi
+par exemple Spark tout à l'heure t'en parlais
+c'est basé sur du fonctionnel
+tout ce qui est l'engage de programmation
+donc en priorité piton ER bien sûr
+après si vous êtes un data scientist en entreprise
+ou même un chercheur en machine learning
+vous serez en contact avec des gens qui font du Java
+du Scala, du C, du JavaScript
+donc soyez polyglot quoi
+c'est à dire pas besoin de savoir programmer dans 10 000 langages
+mais c'est bien de savoir dire du C, du Java, du Scala
+au moins pour communiquer avec les gens
+tout ce qui est basse de données
+bien sûr donc SQL no SQL
+et bien sûr de la théorie
+donc tout ce qui est algorithmique, complexité
+toutes ces notions là
+donc là il y a un bouquin
+d'algorithmes qui est assez connu
+donc c'est juste algorithms
+sinon
+une équipe qui gagne toujours Open Classroom
+le site du zéro pour les anciens
+donc tout ce qui est basse en programmation
+bah allez dessus quoi n'hésitez pas
+il y a aussi un site que j'aime beaucoup
+donc j'en ai mis 3, je connais surtout Hackerrank
+en fait c'est des sites où on a des petites challenges
+en programmation
+typiquement un challenge Python on demande de faire un petit code
+on l'exécute en ligne
+il nous dit si on a raison ou pas
+pareil pour du SQL on fait une petite commande SQL
+sur un jeu de données quelconque
+on la tape et on l'exécute
+et si c'est bon bah il nous dit que c'est bon on a un point en plus
+et c'est très addictif et franchement
+on apprend beaucoup de choses
+alors là c'est bon bah on commence à avoir
+un petit cerveau quand même c'est déjà pas mal
+donc pour débuter
+en machine learning
+alors bon c'est peut-être un peu vieillot maintenant
+mais je pense que le cours d'Andro-NJ
+sur Coursera je pense qu'il est
+encore très très bien donc le seul problème
+je dirais c'est que déjà il y en a eu plein d'autres
+qui sont peut-être plus modernes maintenant
+et il est en octave donc qui est le langage
+Open Source de Matlab
+ça aurait été le dire qui soit en Python mais bon
+franchement je pense que tous on a
+une petite émotion quand on le voit donc
+et j'ai mis aussi la spécialisation
+de data science parce que je l'avais faite à l'époque
+après j'en as plein d'autres maintenant sur Coursera
+c'est vrai qu'il y en a maintenant et ils en ont mis pas mal
+de payante mais vous pouvez toujours avoir accès à certaines vidéos
+donc n'hésitez pas
+et là à partir de maintenant bah vous savez
+identifier les différentes étapes de la data science
+donc faire un modèle de data
+de machine learning
+faire de la future selection
+de la future extraction, faire du data cleaning
+faire du tuning aussi parce que les algorithmes
+ils dépendent de paramètres et selon les paramètres
+qu'on leur donne bah ils auront des résultats
+plus ou moins bons
+ensuite les évaluer selon certaines métriques
+donc tous ces termes là
+et aussi identifier les différents algorithmes
+donc dans un premier temps
+si vous savez ce que c'est de la classification
+le clustering, la régression
+la réduction de dimensionnalité
+si vous savez plus ou moins comment marche un SVM
+un arbre de décision, une régression linéaire
+bah si vous commencez à apprendre de la bouteille
+et là on se dirige
+vers le maître Jedi
+et dans ce cas là il faut mettre les mains dans le Cambouis
+donc pour mettre les mains dans le Cambouis
+rien de mieux qu'une petite compétition cague
+ou il y a aussi DataScience.net
+pour les francophones du coup
+ils font beaucoup moins de compétitions
+mais de temps en temps on en a
+donc alors c'est des comp... pour ceux qui savent pas
+c'est des sites où on a un projet
+de machine learning de data science
+donc typiquement je donne les plus simples
+mais reconnaître les chiens des chats
+dans un jeu de données avec des chiens et des chats
+et du coup le meilleur algorithme
+celui qui a le meilleur score
+gagne une certaine somme
+et sinon alors là aussi c'est un peu vieillot
+mais bon pour les chercheurs c'est pas trop mal
+c'est UCI
+une sorte de bibliothèque
+on a plein de jeux de données
+donc au tout début quand vous commencez de machine learning
+téléchargez plein de données sur UCI
+lancez vos algorithmes dessus, essayez de les tuner
+et essayez de voir ce que ça donne
+maintenant
+j'ai parlé de quelques outils
+mais il y a beaucoup d'outils à prendre en main
+faut pas penser à tout prendre en main
+bon je vous rassure c'est pas une torpille
+alors en machine learning
+donc tout ce qui est bibliothèque de machine learning
+donc ça ils qui te l'entrent pour piton
+carrette si vous faites du R
+spark mlib si vous faites du spark
+quoi qu'est-ce qu'il y a
+oui carrette carotte
+c'est le vrai logo de carrette
+après tout ce qui est deep learning
+donc tensorflow, café, torches
+tout ce qui est bibliothèque
+pour processer la donnée
+extraire la donnée
+donc on a panda en piton
+donc là j'ai volontairement mélangé
+le big data, les bases de données
+la data extraction
+enfin tout ces trucs là
+mais c'est juste qu'un point de vue purement machine learning
+c'est un peu la même chose
+comment extraire la donnée, comment faire des requêtes
+ça va prendre beaucoup de choses mais c'est déjà suffisant
+faire un peu de spark
+data ecu donc data ecu en fait
+il faut pas seulement du data cleaning et ce genre de choses
+il y a aussi plein de modèles de machine learning
+on peut faire toute la plat-plagne
+de data science dans data ecu
+enfin tout ce qui est bibliothèque
+de visualisation alors si vous êtes
+très très très très très chaud
+vous faites du D3.js
+donc là vous tapez votre code en javascript
+et ça vous fait des visualisations mais de malades
+si vous êtes un peu moins chaud
+vous faites du pitton et vous faites du matplotlib
+et si vous êtes paresseux
+un peu comme moi
+moi je gère pitton mais en même temps matplotlib
+reprend de la syntaxe et tout
+je trouve ça assez soulant
+vous allez sur du tableau ou du click view
+là c'est du drag and drop
+vous pouvez faire des histogrammes
+des densités, des cartes en 2 minutes
+franchement en 2 minutes
+une fois que l'outil est pris en main
+c'est super rapide
+du coup je recommande vivement ces 2 derniers logiciels
+après si vous êtes très rapide
+faites tout en D3
+et oui soyez flexible
+parce qu'en fait il faut savoir
+que les outils changent très très rapidement
+comme tu disais un peu Rémi de tout à l'heure
+et à l'époque on faisait
+les algos de machine learning en WCA
+donc c'est du java
+très rapidement pitton est arrivé
+demain il y aura peut-être du Scala, du Julia
+enfin c'est ce qu'on disait à une époque je sais pas si ça va vraiment remplacer pitton
+mais en tout cas il faut faire attention
+parce que les outils
+tout va très vite même les algorithmes
+genre à une époque c'était la Rendum Forest
+maintenant c'est le XGBoost
+tout va très vite
+là par exemple je mentionne Théano
+qui était la bibliothèque de deep learning
+depuis 2006 qui a été faite par Benjo
+qui n'est pas n'importe qui
+de l'université de Montréal et ils ont arrêté
+parce que tensorflow, café, pytorche
+des grands de facebook, google
+a pris le dessus
+là pareil pour tout ce qui est raisonne neurone
+au début on avait le net, on a eu Alexnet
+ça s'arrête pas quoi
+donc soyez toujours curieux
+et soyez flexible
+donc là je sais même pas si
+il y a des gens à ce niveau là ici mais on va voir
+ce qu'il y a après
+trouvez des domaines d'application qui vous intéressent
+donc
+soit vous faites du machine learning
+parce que vous aimez bien les maths et vous faites du machine learning pour du machine learning
+et tant mieux
+soit c'est parce que vous avez vu que c'était le métier le plus sexy du monde
+et vous voulez être millionnaire et c'est bien aussi
+soit c'est parce que vous avez trouvé
+des domaines assez intéressants
+et typiquement vous pouvez l'appliquer à tout et n'importe quoi
+donc là j'ai mis quelques images
+en génétique, en marketing
+en reconnaissance faciale, en finance
+en reconnaissance de la voie
+là juste en haut c'est tout ce qui est data science
+pour faire du social
+donc il n'y a pas longtemps on a reçu base impact
+ils aident pas l'emploi
+avec des données, des chômeurs
+aider les gens à trouver un emploi
+donc
+il y a vraiment plein de domaines dans lequel vous pouvez contribuer
+et rejoindre des communautés
+donc nous c'est les bikers
+lion data science
+après il y a aussi d'autres meetups
+dans la salle mionnette
+donc au Codesse Roma
+qui avait fait une présentation chez nous
+il y a au moins un an maintenant
+il a fait une présentation en D3.js
+il couvre tout ce qui est en visualisation
+de données
+il y a aussi le meetup intelligence artificielle
+avec Fabien
+Fabien je sais plus si ce sont prénom
+qui
+alors eux ils sont dans l'intelligence artificielle
+au sens très large du terme
+pas seulement du machine learning
+et bien sur tous les autres meetups
+de la scène lion tech hub
+et alors il y a les communautés réelles
+il y a aussi les communautés en ligne
+donc si le soir
+vous n'arrivez pas à dormir
+que vous voulez absolument faire du machine learning
+essayez de contribuer sur TensorFlow
+sur scikit learn, sur spa
+si vous faites pour TensorFlow
+vous allez aider Google et tout
+peut-être qu'il faut vous recruter ça va être cool
+et là après vous arrivez à ce niveau-là
+donc je rigole pas
+une fois que vous êtes arrivé à ce niveau-là
+essayez de regarder du contenu
+un peu plus poussé
+alors là j'ai mis deux Youtubers
+Sandex et Syrage Raval
+Sandex c'est un gros malade du piton
+il fait plein de vidéos
+piton pour la finance
+piton pour un élément de sentiment
+pour faire du café, piton pour tout et n'importe quoi
+et du coup il y a beaucoup de vidéos de machine learning dans sa chaîne
+et Syrage Raval
+il fait des vidéos
+où la forme est géniale
+c'est-à-dire que quand on regarde on a l'impression de regarder un film
+et le fond est aussi génial
+il va vraiment dans le fond des choses
+il fait surtout du deep learning
+et du coup ça va être un vrai régal de regarder leurs vidéos
+en plus ils font du live coding
+donc vous pouvez coder en même temps que eux
+il faut poser des questions
+et sinon
+une fois que les mots commencent à vous souler
+vous regardez directement
+c'est vrai qu'on voit pas très bien mais vous allez directement
+sur les sites des universités
+et vous allez regarder leurs cours
+donc sur dissérences
+le cours de Stanford
+là c'est le cours de l'UNS avec Yann Lequin
+et devenez
+ou redevenez chercheur
+si vous l'étiez pas déjà avant
+pourquoi ? parce qu'en fait on a la chance
+dans un domaine qui évolue très très très vite
+et du coup comme je disais avant
+il faut être très flexible
+autant possible sur la nouvelle technologie
+qui arrive
+du coup dans un premier temps
+vous allez sur archive
+je sais pas comment on prononce aussi
+c'est la version guide de archive
+donc de archive pour ceux qui savent pas
+tous les articles de machine learning
+de deep learning et d'autres domaines d'ailleurs
+arrivent en priorité sur archive
+et ils sont open source
+c'est à dire les chercheurs
+dans la lutte dans la recherche
+pour être sûr que leur idée va être
+à mettre sur archive
+sinon vous pouvez aller directement aussi
+sur les sites des conférences
+donc là j'en ai mis 3 qui sont assez connus
+en machine learning donc NIPS la plus connue
+ICML, ECML
+j'étais à ECML il n'y a pas longtemps
+on apprend beaucoup de choses
+ce qui buzz pas mal c'est tout ce qui
+transfert learning, online learning
+on voit un peu les nouvelles choses qui arrivent
+sur le marché et aussi les journaux
+il y en a bien sûr plein
+mais il y a le journal machine learning
+machine learning intelligence aussi
+et si les fichiers
+en latex avec des équations
+en écrit tout tout tout petit
+avec des figures en piton
+pas forcément très jolies
+si tout ça vous en avez un peu marre
+il y a des très très bons articles en ligne
+donc
+il y a par exemple le blog de Andrey Karpati
+où il passe en revue
+les différentes technologies
+en deep learning et en raison de neuro
+on est tout ce genre de choses
+il y a aussi un site qui s'appelle
+Distill
+c'est D-I-S-T-I-2-L
+pour un pub
+et ce qu'il faut c'est qu'il faut beaucoup d'animations
+le problème très souvent c'est qu'on voit des boîtes noires
+on ne voit pas trop comment les poids évoluent
+dans les réseaux de neurones et tout
+et là il faut beaucoup d'animations
+pour voir comment le réseau de neuroni marche
+comment on modifie le moment
+ou le taux d'apprentissage
+comment ça converge
+donc il y a plein de sites comme ça
+c'est vrai que vous pouvez aussi vous la péter en lisant des articles
+mais si ça va plus vite en lisant ces blogs là
+c'est mieux quoi
+et là vous arrivez à ce niveau-là
+et pour ceux qui ne savent pas
+c'est les quatre pas pour ce moment
+du deep learning donc il y a le quain
+Innton, Benjo et Androenji
+et là du coup je n'ai vraiment pas ce que vous faites là
+donc soit vous faites
+des trucs de malade
+des nouvelles technologies de ouf et tout
+soit vous allez faire du fric
+et est-ce que c'est tout
+alors on peut finir dessus
+juste à la fin
+je veux vous dire de vous cultiver
+parce qu'en fait on a vraiment la chance d'être dans un domaine
+qui est assez à la mode
+qui intrigue beaucoup les gens
+et qui intrigue parce que c'est un domaine très lié
+à l'intelligence artificielle comme vous l'avez deviné
+et du coup
+n'hésitez pas à relire un peu certaines littératures
+à voir certains films
+donc là j'ai mis une liste non exhaustive
+il y en a plein d'autres
+donc relisez les Asimov
+les films avec Brad Pitt donc c'est un peu plus soft que le reste
+sur du sport analytics
+donc comment une équipe américaine
+ils avaient réussi avec
+quelques fichiers excel
+ils avaient réussi à trouver des joueurs
+qui étaient sous coté pour les recruter
+dans leur équipe et ils ont gagné des championnats
+il y a Homo Deus
+le gars qui a écrit ça il a écrit sa pièce
+je sais pas si vous l'avez lu
+du coup en fait ça parlait de Homo Sapiens
+c'est Homo Deus en fait c'est après Homo Sapiens
+c'est notre futur
+la religion qui sera le dataïsme
+donc je sais pas si c'est des fantasmes et tout
+mais ça peut être intéressant de le lire
+et je vous parle de tout ça
+parce qu'en fait on peut avoir vraiment de l'inspiration
+dans plein de bouquins, dans plein de romans, dans plein d'essais
+même dans d'autres domaines
+la psychologie par exemple le premier article
+de raison neurone c'était en 57
+c'était une revue de psychologie
+là récemment par exemple j'ai lu un livre qui s'appelait
+La nuit des temps
+donc je pense que ça vous parle
+aucun rapport avec l'intelligence artificielle
+alors c'est une équipe de chercheurs
+ils trouvent des humains sous la glace en Antarctique
+donc c'est dans les années 60
+donc à l'époque tous les chercheurs parlent pas anglais
+il y a un espèce de gros système
+de traduction, une sorte de google
+traduction de l'époque
+qui permet aux différentes personnes de parler entre elles
+et le truc c'est que les humains qui ont trouvé sous la terre
+commencent à parler
+et du coup la traductrice elle connaît pas forcément
+l'angage de ces humains là
+et le truc c'est que entre les images qu'ils ont réussi à avoir de cette époque là
+entre les réactions de l'humaine
+qui commencent à parler avec son langage pas du tout connu
+la traductrice commence petit à petit
+avec une sorte d'apprentissage non supervisé
+je ne sais quoi
+commence petit à petit à apprendre
+le langage de la fille
+et du coup évidemment Barjavel a pas pensé
+à tout ça mais
+c'est incroyable de voir qu'ils avaient des idées
+un peu similaires et peut-être
+d'autres humains de science-fiction
+et tout il y a des choses plus tard dans 40 ans
+on aurait dit tiens c'était dedans
+donc voilà disait Barjavel et on regardait Terminator
+celui au boulot
+et maintenant au boulot on va commencer à bosser
+vas-y
+si jamais ça marche pas
+tu te bailles le
+tu n'as pas de paquet de sauvage à la fin
+c'est le premier retour Kaïeul qu'on fait dans notre meetup
+pour la petite histoire
+Horan, c'est un peu mon étudiant
+je sais pas si je peux le dire
+c'est l'étudiant de mon corps au cadran
+je suis en thèse et du coup je devais assister
+à un tp, aider les différents étudiants
+dans un tp scikitland
+et eux ils avaient commencé le machine learning
+ça faisait un mois
+un mois même pas
+et du coup je l'ai vu galérer
+sur scikitland
+c'était les débuts
+quelques semaines plus tard
+il y a un étudiant
+il est arrivé premier sur la compétition Kaïeul
+je lui ai dit j'ai passé toute ma vie
+à arriver dans l'instant premier
+et eux on leur donne la connaissance
+c'est direct qu'ils arrivent premiers
+et du coup on a essayé de bosser un peu ensemble
+et toi tu t'es donné à fond
+et même si à la fin
+t'as passé beaucoup de temps
+et même si à la fin t'as pas gagné
+parce qu'il y a l'histoire qu'on racontera à la fin
+en tout cas c'était une belle aventure
+et bah est-ce que tu peux nous expliquer un peu la compétition
+alors compétition proposée par Mercedes
+le but c'est que
+en fait c'est d'essayer de prédire
+le temps qu'une voiture va passer
+à faire des tests
+ils ont plein de voitures avec différentes caractéristiques
+il y en a qui ont la 4 roues motrices
+il y en a qui vont avoir
+je sais pas des suspensions hydrauliques
+différentes motorisations
+ils font des tests
+et donc chaque voiture
+entre 70 et 130 secondes
+à passer les tests
+et le but c'est d'essayer de prédire
+le temps que va mettre une voiture à passer le test
+ça c'était la compétition
+et niveau donner
+tout ce qui est prêt de traitement
+et tout ce genre de choses
+donc le power point il a été fait très rapidement
+donc on a deux jeux de données
+le jeu d'apprentissage
+et le jeu de test
+tous les deux avec 4200 observations
+donc 4209
+donc 4209 voitures dans le train
+et 4209 dans le test
+on a 378 variables dans le train
+il y en a plus dans le train
+parce que bien sûr il y a la variable y à prédire
+on a 8 variables catégorielles
+et tout le reste c'est des variables binaire
+et au niveau juste, au niveau
+aucune donnée manquante
+par contre il y a pas mal
+d'outliers
+tout ce qui est modèle
+alors au début
+t'es allé voir directement sur les kernels
+qui étaient disponibles
+est-ce que t'as utilisé des modèles déjà existants
+et bien pour commencer je fais vraiment
+ce que je considère une approche classique
+pour commencer déjà
+alors on a des variables catégorielles
+avec tous les algorithmes de machine learning
+donc on a dû les recoder
+avec le label encoder
+ce qui transforme
+les variables catégorielles
+en entier
+et ça en fait c'était indictionnaire
+que l'on avait créé pendant le TP
+que Annie l'avait co-encadré
+et donc on a quelques algos
+Random Forest, Caneer's Neighbor
+Gradient Boosting etc
+donc c'est vraiment des algorithmes
+classiques pour un data scientist
+pour commencer
+on n'avait pas un bon score du tout
+mais pour commencer
+pour mettre les mains dans le cambouis
+c'était un bon début
+voilà
+ensuite
+on a commencé à avoir des approches
+un peu plus complexes
+j'ai pu avoir des discussions
+avec mon twitter qui est présent ici
+qui m'a donné des conseils
+notamment d'utiliser du non-supervisé
+et ça fait partie
+de la base du machine learning
+et le preprocessing
+ici c'est A, JRP
+c'est Gaussian Random Projection
+c'est de la projection sur des matrices
+qui sont créées de manière aléatoire
+en utilisant une distribution gaussienne
+il y a plein d'autres
+il y a un sparse Random Projection
+il y a vraiment plusieurs méthodes de preprocessing
+on a essayé d'en faire le maximum possible
+pour ajouter le maximum
+d'informations possible dans nos diodes données
+aussi j'ai fait du clustering
+pour essayer d'ajouter encore de l'information
+sans forcément utiliser
+la variable y
+et bien sûr
+pendant ce challenge
+un algorithme que je ne connaissais pas
+mais qui est maintenant, on peut le dire, à la mode
+et que tous les attaques s'utilisent
+c'est le XGBoost
+et qu'on a tuné
+avec un algorithme qui s'appelle Hyperopt
+qui permet d'optimiser les paramètres
+parce que je ne sais pas si vous avez déjà utilisé
+mais il y a énormément de paramètres dans l'XGBoost
+et c'est trop compliqué de jongler avec ça
+c'est une bibliothèque Python Hyperopt
+qui est utilisé sur Python
+par contre
+si on veut avoir une bonne optimisation
+il faut avoir vraiment du bon matos
+moi je me suis servi de la VM
+je me suis servi de la VM
+pendant mon stage
+j'avais 56GB de RAM et 8h
+donc ça allait
+encore pas trop mal
+mais on va dire que c'est vraiment pas assez
+si on va avoir une optimisation
+en même temps
+et pour terminer
+la dernière approche qu'on a fait
+pareil on a fait un XGBoost
+avec de l'hyperoptimisation
+après j'ai mis plus TATON
+parce que vous allez voir
+si vous allez faire du kegel
+ou si vous en avez déjà fait
+la plupart des grands compétiteurs
+ce qu'ils disent c'est que
+des fois il faut essayer
+à l'intuition de faire varier
+certains paramètres
+moi c'est ce que j'ai fait quelques fois
+au lieu d'utiliser l'hyperopt
+et quelques fois ça fait la différence
+ça m'a permis de gagner une fois
+j'ai gagné
+donc c'était le scoring
+la métrique c'était du R2
+et j'ai passé de 0,568
+à 0,571
+donc c'est vraiment énorme
+je sais pas si t'avais fini
+et en fait j'ai combiné avec un pipeline
+ce que j'ai fait
+c'est que j'ai fait une moyenne du XGBoost
+avec le pipeline et le pipeline
+comment je l'ai construit j'ai utilisé un T-POT
+et j'ai utilisé un T-POT
+qui en fait pas un pipeline
+donc là typiquement
+il m'a ressorti un lasso
+en cross-validation
+et il m'a sorti le gradient boosting
+et moi j'ai ajouté
+un arc de décision pourquoi un arc de décision
+parce que la complexité de cette compétition
+en fait c'est qu'il y avait énormément
+d'outliers dans le train
+mais il y en avait aussi dans le test
+et la complexité c'était de
+certaines personnes
+se sont penchées sur
+essayer de prédire les outliers
+mais c'est quasi impossible
+du coup ce qu'il fallait c'était essayer de les ignorer
+au maximum et essayer de se concentrer
+sur les vraies variables
+et les arcs de décision c'est des arcs de groupes
+qui sont pas sensibles aux outliers
+donc c'est pour ça que
+j'ai décidé d'intégrer
+ce regresseur
+dans mon pipeline
+et donc c'est cette méthode
+qui m'a donné le meilleur score
+sur le public leaderboard
+j'ai été promis pendant
+une semaine
+et sur le privet après
+j'ai fini 13ème sur 3840
+ce qui est pas mal
+je pense
+alors les difficultés
+on a énormément d'outliers dans le train
+et dans le test
+et les jeux de données sont petits 4200 lignes
+c'est vraiment rien du tout
+aujourd'hui surtout
+et donc c'était peu pour
+un
+un algorithme
+qui nous fournit de bons résultats
+et donc il y a une personne
+qui a trouvé une technique
+c'est faire du probing
+alors c'est quoi le probing ?
+c'est qu'on détermine
+on détermine
+par un calcul mathématique
+les variables qu'on essaie de prédire
+on peut les calculer à l'avance
+et donc
+une fois qu'on a calculé ces variables
+dans notre train
+et à grandir nos jeux de données
+et avoir du coup de meilleurs résultats
+donc je sais pas s'il y a des matos dans la salle
+j'ai essayé
+d'expliquer très rapidement comment ça marche
+la métrique c'est du R2
+donc
+voilà ça commence ici
+donc le R2 c'est ce qui est en haut à gauche
+donc c'est 1 moins
+donc c'est la somme de 1N de YI
+donc YI c'est le valeur réelle
+moins YI chapeau c'est les valeurs
+les valeurs estimées
+au dénominateur on a Y bar
+c'est la moyenne des Y
+et en fait ce qu'ils ont fait
+je sais pas comment
+ils ont eu l'idée de faire ça
+au final pour un matos
+c'est pas si compliqué mais faut avoir l'idée de le faire
+ils ont pris
+un fichier
+où ils ont mis toutes les variables Y à 0
+et ils se sont rendu compte
+que ça retournait une valeur donc c'est
+roue BP, ça veut dire baseline probing
+ça nous retourne une variable de
+moins 59,2822
+donc après ils se sont dit
+maintenant le Y1
+on va le mettre à 100, on va voir ce que ça nous donne
+et ça leur a donné encore une variable
+et eux ils ont fait
+ils ont essayé
+de trouver Y
+en fonction de la valeur que nous retournent
+cagolle lorsqu'on soumet
+des fichiers
+et donc je vais pas rentrer dans les détails
+pour ceux qui sont pas mateux c'est peut-être
+un peu ennuant je vais dire
+mais en gros
+à la fin on arrive à trouver le cas
+et une fois qu'on a ce cas on peut
+calculer toutes les variables
+qui sont dans le public leaderboard
+c'était
+19%
+du test
+du jeu de données test
+qui nous donnait notre classement sur le public leaderboard
+et après le classement final c'était
+sur le 81% qui reste
+et donc c'est là le danger du probing
+on va avoir un bon score sur le public
+mais
+de 1 on va faire de l'overfitting
+et de 2 ça va pas du tout être représentatif
+de notre classement final
+overfitting pour ceux qui savent pas c'est du surapprentissage
+quand on apprend trop
+quand notre algorithme il apprend trop bien
+il a très peu de scalabilité
+et si on a des différences entre le train et le test
+on va avoir de très mauvais résultat
+et c'est ce qui s'est passé pour un compétiteur
+il m'avait dépassé
+sur les deux dernières semaines
+il nous mettait
+le meilleur
+le deuxième il était à 0,578
+et lui il était monté à 0,63 en R2
+et après il a perdu 2300 places
+sur le private
+en fait
+il a fait du probing
+en plus il a trouvé un pattern dans le train
+en fonction de l'ID
+donc du numéro du véhicule
+et en fonction des variables catégorales
+il a réussi à trouver un pattern
+qui lui permettait
+de prédire les outliers
+mais apparemment
+il était promé à 2400
+ou 2350
+et moi l'inverse
+la dernière semaine je suis descendu
+parce que tout le monde a fait du probing
+du coup tout le monde est monté
+j'ai gagné 153 places
+ou quelque chose comme ça entre le public et le privé
+et il y a des gens, celui qui est promis
+il a gagné 1800 places
+c'était une compétition assez folle
+et si vous avez des questions
+que j'ai utilisées
+et actuellement je fais d'autres compétitions
+et on va en faire encore avec Anil
+vous pouvez avoir des infos et des scripts
+sur les compétences
+voilà
+merci de votre attention
+merci Orade
+je vais commencer par la première question
+alors je voulais savoir
+que tu avais fait des cours de machine learning
+avec un peu de pratique avec nous
+à l'université
+quand tu t'es mis dans du Kaggle
+qu'est-ce que tu as appris en plus
+qu'est-ce qui était utile ?
+au début
+en sortant de la fact
+quand je commençais à faire mon stage
+j'avais l'impression
+d'être bon en machine learning
+je pense que c'était le cas de toutes les personnes de ma classe
+et après
+on a entendu parler de Kaggle
+on a décidé de faire une compétition
+et en fait on s'est rendu compte qu'on savait rien du tout
+parce que
+nous on allait directement s'attaquer sur les données
+direct de la CP
+et ensuite lancer ça dans un random forest
+mais pas du tout
+ça apprend énormément de choses
+je le conseille à tout le monde
+parce qu'il y a plein de gens qui publient des carnelles
+sur
+de l'exploration des données
+sur la densité des données
+là typiquement il y a une personne qui a publié un notebook
+sur la distribution des grecs en fonction des données
+il y a des gens qui ont réussi à trouver des correlations
+mais ça demande énormément de travail
+et beaucoup de talents d'analyse
+des correlations cachées
+entre des variables
+et cette compétition
+en fait les longs des variables étaient cachées
+pour cause de confidentialité
+de la part de Mercedes
+et il y a des personnes qui ont réussi
+à deviner à quoi correspondaient les variables
+et à partir de ça
+forcément la vision de la compétition elle évolue
+ça ajoute du piment
+peut-être
+mais franchement
+on apprend énormément de choses
+je ne connaissais pas l'HGBoost
+maintenant
+c'est l'algorithme
+que tout le monde utilise
+surtout sur Kaggle
+voilà
+oui
+je ne sais pas
+vas-y
+au final
+c'est quel genre d'algorithme qu'a gagné
+c'est un HGBoost
+qui a gagné
+sauf que la personne qui a fait ça
+moi
+j'avais pas compris en quelque chose
+c'était super compliqué ce qu'il a fait
+il a trouvé des paternes dans les données
+autre que celui qui est arrivé premier
+et en fonction de ça
+il a fait des mixes entre
+le jeu de données train et le jeu de données test
+il a repassé des données
+il y avait des valeurs
+qu'on n'avait pas dans le train et qu'on n'avait pas dans le test
+il a essayé de les prédire
+il a rajouté dans son jeu
+d'apprentissage
+enfin c'est vraiment un truc
+je crois qu'il a la cinquantaine
+il a vingt ans d'expérience
+il a fait que six soumissions
+arriver premier avec six soumissions
+c'était incroyable
+oui bien sûr
+combien d'heures de travail j'ai passé sur la compète
+alors toutes mes soirées
+pendant toute la compétition
+c'est à dire de trois mois
+de temps en temps
+quand on avait du temps libre avec mon tutoriel
+et bien on passait un peu de temps dessus
+enfin c'était surtout entre midi et deux
+on parlait de... il me donnait des idées
+des conseils sur
+comment est-ce que je peux enrichir
+mon jeu d'apprentissage
+parce que là 4209 observations
+c'est vraiment très petit
+et donc il fallait rajouter de l'information
+et des observations au maximum
+sinon c'est vraiment toutes mes soirées
+pendant deux mois
+mais c'était un plaisir
+parce que vu que la compétition
+on veut être dans les premiers
+il y a l'indrénaline et du coup on est là
+en train d'essayer de chercher des trucs
+on recherche des articles sur internet
+les paquets d'hyper hop
+des petits potes d'optimisation
+ça c'était en fouillant
+sur le net et tout
+c'est très enrichissant comme expérience
+on a répété avec plaisir
+c'est ce que je fais d'ailleurs
+maintenant
+tu as gagné une médaille d'or ?
+oui j'ai gagné une médaille d'or
+ma première
+et bien là je me suis inscrit à la ZILO
+là encore plus compliqué
+pour moi en termes de
+c'est pas tellement le côté machine learning
+qui est compliqué c'est surtout le côté
+enfin ça fait partie du machine learning
+mais le côté pré-processing
+la préparation de la donnée
+et là
+en plus la difficulté
+sur ce challenge c'est qu'on
+on peut et on doit je pense
+aller chercher des données à l'extérieur
+et c'est là que ça pose problème
+pour moi parce que
+j'ai pas énormément d'expérience
+et je commence à peine à découvrir le monde de la data science
+donc ça pose quelques problèmes
+mais pareil
+toutes les personnes qui publient leur kernel et dans les discussions
+c'est passionnant je trouve
+et ça apprend énormément de choses
+la ZILO
+j'ai pas encore de
+vu que c'était ma première compète
+j'ai pas encore de classement
+donc je sais pas on va voir à la fin
+de la ZILO
+et je pense que d'ici là
+j'en commencerai d'autre
+avec un île
+moi j'ai fait un M2 data science
+à la doigt
+première promo
+c'est ça
+Claude Bernard
+cette année là
+je viens de finir le master
+en fait on a un master 2
+vous êtes un M2 ?
+vous savez pas encore mais je suis le référent
+des M2 data science mat
+et des M1
+SITN
+surprise c'est moi
+je pense que je vous verrai
+peut-être pour ça non
+moi je suis le référent des M2
+data science mat
+je suis un matheu
+merci à tous en tout cas
+de votre attention
+merci d'avoir accueilli
+merci à tous alors si vous avez d'autres questions
+vous pouvez bien sûr venir
+de les poser après la conférence
+je vois que juste
+terminer par le sondage habituel
+pour savoir pourquoi être un peu mieux notre public
+qui évolue d'année en année
+alors pour qui est-ce que c'était le premier
+le premier meetup LDS
+alors quelle est la proportion
+de ceux qui se disent plutôt informaticien
+et donc ok les autres c'est les matheux
+ou est-ce qu'il y en a qui sont ni l'un ni l'autre non ?
+ouais d'accord
+qui sont un peu perdus
+il se veut de la lumière c'est bien
+et qui est la proportion de ceux qui reviendront
+un meetup LDS
+parce que c'était super cool
+et qui diront alors voisins
+qui les accompagnent
+merci bien
+et puis si vous voulez vous motiver
+pour un peu d'associatif aussi
+avec ce cadre de fond là
+n'hésitez pas à venir nous contacter aussi
+on a toujours besoin de braids et de bonnes idées
+si vous avez des bons sujets aussi
+ou si vous êtes fan de speaker
+même de l'autre bout de la France
+on peut aussi le faire venir

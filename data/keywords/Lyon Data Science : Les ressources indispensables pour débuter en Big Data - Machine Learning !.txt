@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science : Les ressources indispensables pour d\u00e9buter en Big Data - Machine Learning !", "keywords": ["data science", "big data", "machine learning", "probability", "statistics", "programming languages", "competitions", "community", "quality data", "challenges"]}

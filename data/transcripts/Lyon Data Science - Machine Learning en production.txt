@@ -1,0 +1,554 @@
+bonsoir à tous déjà bonne année et bienvenue donc au premier meet-up
+de l'année pour lequel j'ai honneur donc d'accueillir
+Nastasia Sabi qui veut nous parler de machine learning en production
+avant de lui passer la parole je tiens à remercier donc déjà les
+sponsors de lds donc qui sont Datalio, Esquire et affluence puis n'hésitez pas
+à nous contacter s'ils avaient n'importe les questions sur l'asso donc Nastasia
+va nous faire une présentation d'environ une cinquantaine de minutes et
+ensuite elle répondra aux questions que vous poserait dans le chat de twitch
+donc n'hésitez pas à les poser au cours de la présentation et répondra à la fin
+je te passe la main du coup Nastasia et bonne présentation à tous
+ok parfait merci bonsoir à tous et effectivement ben meilleur
+vœu pour 2021 en espérant en tout cas que ce soit moins pire que 2020
+aujourd'hui du coup je suis là pour vous parler de machine learning en
+production donc il y a un sujet dont on parle de de plus en plus et en fait j'aurais
+pas pu parler de beaucoup beaucoup beaucoup de choses et je me suis dit que
+j'allais me focuser un petit peu sur certains éléments et sur l'automatisation
+et la mise en valeur du machine learning en production donc il y aura pas tout mais
+il y aura il y aura déjà pas mal d'éléments que j'ai pu traverser donc j'ai appris avec
+plein de personnes en raison plein de collègues super sympas qui m'ont appris
+plein de choses j'ai appris aussi de mes erreurs j'ai encore beaucoup de choses à
+apprendre mais en tout cas j'avais envie déjà de partager tout ça avec vous
+je me présenterai assez rapidement je m'appelle Nastasia effectivement et je
+suis ingénieur machine learning donc un bien gros mot pour dire que finalement je
+suis spécialisée dans le fait de mettre en production des modèles de machine learning
+c'est arrivé un peu par hasard et par étapes c'est à dire qu'au départ je suis
+développeur backend et puis de fil en aiguille je suis rentrée dans la data
+dans la data ingénierie dans la data science et mais l'ingénierie etc et j'en suis là
+aujourd'hui aujourd'hui j'ai un blog sur le sujet du machine learning en production vous pouvez
+aller y faire un tour si ça vous intéresse j'ai aussi une newsletter sur le sujet et puis vous
+pouvez me trouver sur twitter vous pouvez soit me follow soit sinon aussi je partagerai les slides
+par cette intermédiaire si vous voulez juste les slides et pas forcément toute la retranscription
+c'est notre manière d'y avoir accès je disais que je vais me concentrer sur quelques éléments
+et ce sont les quatre éléments sur lesquels je vais me concentrer et en réalité je vais pas
+tout vous donner de ces éléments là le focus qu'on va prendre c'est mettre en production mais
+surtout être un peu plus serein en production parce que finalement il y a des tonnes de manière de
+mettre en production on peut mettre en production et puis tous les jours réparer des bugs et puis
+on peut mettre en production et puis être un peu plus serein quand on vient au travail le matin et
+c'est un petit peu tout ce retour d'expérience que j'ai envie de vous venir donc il y a quatre
+éléments d'ailleurs d'abord le premier élément qui va être notre socle c'est le fait d'avoir des
+données sur lesquelles on peut réellement compter et qui vont être à la base de tout puis on va
+voir comment automatiser l'entraînement de manière sereine automatiser l'inférence et puis
+monitorer un petit peu ce qui est en production voir si on tire réellement un bénéfice et puis
+pouvoir ajuster revenir dessus si justement on n'en tire pas de bénéfice parce que pour
+sûr les bugs ça arrivera alors vous voyez tout de suite un parti pris là dedans en fait que je
+dis entraînement inférence c'est que là je vais partir vraiment sur l'apprentissage supervisé
+et en mode batch pour l'entraînement donc il n'y aura pas de renforcement learning il n'y
+aura pas d'apprentissage non super non supervisé ni d'apprentissage semi supervisé enfin ça aurait
+pu être infini comme sujet donc j'ai préféré essayer de me concentrer sur quelques éléments
+on va commencer par notre premier cercle qui sont les données pérennes alors je ne sais pas
+exactement quel est quel est mon public c'est un peu le fait d'être à distance aussi c'est un peu
+plus compliqué mais j'imagine que parmi vous il y a des curieux mais il y a aussi des data
+scientiste des data ingénieurs des data analystes des data architectes des développeurs data peu
+importe beaucoup de gens qui tournent autour de la data de ce terme de la data et finalement si ce
+terme revient tout le temps c'est parce qu'il est assez crucial et fondamentale dans le machine
+learning et on peut même aller jusqu'à dire que finalement les données c'est la matière première
+de notre système c'est pour ça que finalement il y a beaucoup de travail qui est fait dessus que ce
+en termes de qualité d'exploration tout finalement va partir de là pour construire
+notre système en fait finalement si on regarde avec la programmation classique ce que j'appelle
+la programmation classique on va dire bon c'est développement par exemple vous développez un
+site comme une dix heures jamais travaillé pour dix heures mais c'est un exemple vous avez un
+programme que vous construisez vous avez des données qu'en réalité vous maîtriser quand même assez
+bien et puis que vous créez aussi vous même par l'intermédiaire de ce programme et tout cela vous
+donne un résultat on dit donc quelque chose de déterministe et d'assez bien maîtriser ces données
+sont quand même assez bien maîtriser ce qui va se passer avec le machine learning c'est qu'on a
+un renversement alors cette histoire de renversement je donne ma source je la tire de pierre de l'or
+qui en parle dans son livre big data dans la collection que sais-je je suis pas sûr que ce soit le
+premier en avoir parlé mais c'est là ou en tout cas moi je trouvais ça et il dit finalement c'est
+complètement différent en machine learning parce qu'on a des données un résultat qu'on
+veut obtenir et un programme qui est l'aboutissement de tout ça qu'est-ce que ça veut dire ça veut
+dire que les données sont plus subies qu'elles sont contrôlées et créées de plus ce programme
+ben il est non déterministe une grande partie celle modèle c'est quelque chose qu'on ne va
+jamais coder soi même et même la partie qu'on code soi même à savoir future engineering oui
+d'attaque extraction ce genre de choses nous sont nous sommes en fait donnés par la donnée qui est
+à notre disposition donc il y en a une manière de construire le programme qui est complètement
+différente et ça qu'est ce que ça veut dire ça veut dire que finalement dans un projet de machine
+learning les données sont plus importantes que le code chaque j'en ai parlé avec plusieurs
+personnes venant des différences en raison et il y a une personne qui nous ai qu'elle aimait pas
+beaucoup se présupposer parce qu'elle pensait que c'était laisser la porte ouverte au fait de dire
+que bah puisque les données sont peut-être plus importantes que le code en machine learning le code
+c'est pas important et c'est pas ce que je suis en train de dire et cette personne avait justement
+peur que ça veut dire bah le code du coup on y fait pas attention je pense qu'en fait c'est encore
+pire que ça dans le machine learning c'est que non seulement le code est important donc il faut
+prendre soin mais il faut aussi prendre soin de ses données donc ça fait finalement double travail
+et notre objectif c'est du coup de pouvoir construire des pipelines régulières de données
+pour avoir quelque chose de serein sur lesquels on puisse s'appuyer et construire tout le reste
+ça a l'air peut-être parfois évident comme ça et pourtant toutes les personnes qui se sont
+confrontées à ce problème là savent que bah non c'est pas c'est pas si évident que ça et que c'est
+parfois très compliqué je vais essayer de donner des éléments qui permettent d'avoir des données
+un peu plus de conscience sur lesquelles on peut s'appuyer pour construire ces algos de machine
+learning donc tous ces éléments là me sont venus comme je vous le disais avec l'expérience
+aujourd'hui c'est celle que je délivre on est dans un domaine qui est encore nouveau et
+certainement que dans un nom je ne ferai pas la même présentation et que quelqu'un d'autre ne
+ferait pas la même présentation donc ne prenez pas tout avec dogmatisme mais en tout cas ce que je
+vous donne là c'est sont les éléments qui qui moi ont permis de sortir dans certains contextes et
+qui me permettent d'être plus sereines en production première élément du coup ces données
+si on doit les traiter comme du code ça veut dire qu'on va les versionner alors versionner ces
+données c'est quelque chose qui commence à se répandre à être une idée voilà qui devient un
+peu mainstream quoi que c'est peut-être encore un peu le début finalement c'est quelque chose que
+j'ai toujours fait depuis le début que je suis dans la data que ce soit pour faire de la duté
+analyse ou du machine learning mais je l'ai fait de manière différente au début j'ai commencé par le
+faire finalement j'ai envie de dire à la main c'est à dire qu'on partitionnait nous-même les
+les fichiers par exemple si on recevait de la donnée chaque mois on allait écrire pour chaque mois la
+donnée qu'on recevait en plus d'avoir qu'à cette époque là s'il existait des outils pour versionner
+ce données en tout cas ils n'étaient pas assez connus pour que l'un d'entre nous on ait ou l'idée
+mais par contre on avait bien senti qu'on avait besoin de versionner nos données pour pouvoir
+revenir dans le temps rejouer certains éléments et ça nous a servi mais vraiment des des tonnes
+de foi pour comprendre des bugs rejouer des choses etc. Donc finalement là on est dans un dans une
+approche qu'on pourrait qualifier d'événement-ciel et même pour employer un gros mot d'événement-sourcime
+ça veut dire qu'on va on va traiter le fait d'avoir de la donnée qui nous arrive comme un
+événement et j'aime assez bien cette approche parce que je pense qu'elle représente une certaine
+réalité on me disait un petit peu bon c'est peut-être un peu triste de dire ça mais parfois en
+chinois ni dans data analys du maire général on subit la donnée donc le fait de la recevoir c'est
+un événement qu'on pourrait enregistrer quelque part et à partir du fait qu'on ait reçu ces
+événements on reconstruit des états c'est à dire qu'on a reçu telle donnée en décembre telle
+donnée en novembre et bien finalement en janvier on a une donnée consolidée on reconstruit un état
+le problème de cette approche c'est qu'il faut la développer et tout code qu'on écrit doit être
+maintenu comme on dit le code qui est le meilleur c'est celui qu'on écrit pas du coup c'est pour ça
+qu'aujourd'hui c'est pas l'approche que je conseillerai parce qu'aujourd'hui il existe d'autres
+solutions il existe des solutions automatiques pour versionner ces données alors je vais faire un
+petit peu la promo de beaucoup d'outils venant de data bricks parce que c'est ce que je connais le
+plus j'ai fait beaucoup de spark c'est vrai que c'est beaucoup ce que je connais mais retenez
+surtout l'idée qu'il existe des outils pour faire du versionner moi je vous présente ce que je
+connais le mieux et ce que je connais le mieux sont souvent des outils qui viennent de data bricks
+mais ce sont tous des outils open source donc code ouvert code que vous pouvez ouvrir des issues
+faire des poules request etc comprendre ce qui se passe à intérêt donc là on a un exemple avec
+delta lake un exemple que j'ai un peu simplifié malgré tout du coup qu'est ce qu'on a on a deux
+versions ici on a eu on a modifié deux fois notre données si on fait juste un ride on va avoir la
+dernière donnée à jour la dernière version mais si on fait un describe history on va avoir les
+différentes versions et on va avoir des éléments du style qui a fait la modification qu'est ce qu'on
+a fait là on a écrit mais comment on a écrit a priori il ya une fois où on a fait un append
+il ya une fois où on a fait un override et on lance une erreur si l'élément n'existe pas
+quel cluster à lancer ça bref ça nous permet d'avoir ces éléments là et ça nous permet de
+pouvoir remonter dans le temps si on a un bug si on doit rejouer quelque chose si il y a une
+prédiction qu'on ne comprend pas etc une fois qu'on a versionné ces données on se dit bon c'est
+déjà pas mal mais si on veut le traiter comme du code il faut aller plus loin et avoir que
+conscience pardon que les données peuvent non c'est pas vrai vont évoluer quoi qu'il arrive c'est
+juste une question de temps et peut-être que vous aurez la chance d'avoir un modèle de machine
+learning qui mourra avant que les données aient évolué mais pour sûr elles évolueront et elles
+évolueront de différentes manières parfois ce sera abrupt du un erreur technique parfois ce
+sera abrupt mais du changement abrupt parfois ce sera graduel etc en tout cas la meilleure manière
+de s'assurer qu'on n'est pas en train d'apprendre de prédire sur des données complètement bidon
+c'est les tester et c'est possible c'est possible de faire des tests unitaires de données donc là
+je donne deux exemples qui pour le coup ne sont pas ne viennent pas de tête d'abrix qui sont
+païdique et got expectations et qui permettent de faire des tests unitaires de données généralement
+c'est quelque chose que je vois sur près tous les projets tout le monde naturellement va aller
+vérifier que quand même il n'y a pas trop nul dans cette colonne avant de l'utiliser ce que je vois
+moins que je l'ai quand même pas mal vu et que justement c'est pas une idée qui est tombée du
+ciel c'est de vérifier que ça se passe bien que tel champ contient bien ce qu'il doit contenir
+que voilà le pourcentage de nul et inférieur à 12% ça dépend de ce que vous remarquez de la
+donnée et les deux exemples que je donne païdique et got expectations sont des librairies toujours
+open source qui permettent de faire du profiling c'est à dire qu'elles vont évaluer votre
+donnée et vous dire ben moi je conseille ça ça ça comme test à implémenter pour la suite
+donc c'est plutôt pas mal ce que je reprocherai peut-être à ces librairies c'est peut-être
+leur capacité parfois à travailler sur du big data donc jq est vraiment pensé big data got
+expectations c'est un peu plus neuf et par exemple profiling sur got expectations un peu
+long à mon goût mais peut-être qu'il faudrait faire des simple et retravailler là dessus en
+tout cas vous pouvez faire des tests unitaires de données pourquoi je vous dis ça moi en fait je
+me rends compte je soule beaucoup de gens je me rends compte avec ça avec le fait que les données
+vont évoluer parce que voilà je vais vous raconter un petit peu aussi des mauvaises
+d'expérience j'ai été effarée de dans une expérience de voir à quel point la donnée pouvait
+évoluer et ça va vraiment dépendre de votre contexte il y a des moments où les données
+vont pas trop évoluer que ça et tant mieux pour vous et moi je travaillais pour une chaîne de
+télévision et on regardait les audiences on avait deux changements on en avait un qui était super
+abrupte parce qu'on était dépendant de service tiers et que le problème c'est que
+on peut avoir des problèmes réseau on peut avoir toutes sortes de problèmes puis c'était la
+grosse donnée pour le coup donc je me levais le matin et je ne savais pas si j'allais pas devoir
+contacter mes fournisseurs pour leur dire et en fait la donnée n'est pas arrivée etc ou la donnée
+évident etc ça ça m'a beau que ça a été l'un des premiers traumatismes on va dire les deuxièmes
+c'est que dans cette même expérience les gens ne consomment pas du tout la télé de la même
+manière on était qu'en hiver à noël c'est la folie c'est tellement la folie que je me rappelle
+qu'on avait interdiction de mettre en prod pendant 15 jours à la période de noël alors qu'on
+était habitué à mettre plusieurs fois en production par jour parce que le problème c'est
+qu'on était incapable de savoir de prévoir en fait le comportement des gens qui évoluent
+énormément du coup ça veut dire que bah notre donnée évoluait énormément et qu'il fallait
+analyser tout ça et parfois prendre des décisions sur une donnée qui évaluait de manière très
+saisonnière et puis des fois c'était dû à un programme etc. Bref la donnée évolue ça dépend
+de la nodée sur laquelle vous travaillez mais en tout cas moi ça a été un traumatisme et
+quelque chose que j'ai bien intégré je pense du coup vous pouvez versionner votre donnée tester
+vos données pour avoir quelque chose d'un peu plus serein en production prévenir des bugs aller
+vers bien maintenance etc. ça c'est le premier cycle on va aller un peu plus loin et parler
+d'automatisation d'entraînement. On va encore parler de versionnines mais cette fois-ci on va
+perler de versionnines de code donc c'est quelque chose qui est assez courant généralement si les
+software ingénieurs les ingénieurs software c'est pas comment dire ça français à cure en
+tout cas ça les parfois un peu moins chez le data scientiste ça dépend des personnes. Aujourd'hui
+il y a un grand gagnant pour versionner son code c'est Git il existe d'autres outils mais c'est
+clair que c'est aujourd'hui le grand gagnant c'est pas forcément évident de s'y mettre contrairement
+à ce que parfois on essaye de vous faire croire. Git est un outil assez large où on peut passer des
+heures et des heures et des heures à fouiller dans tout un tas de commandes tout un tas de tricks
+etc. Il y a un coup d'entrée mais passer ce coup d'entrée on peut réussir à s'en sortir avec
+deux trois commandes deux trois fonctions et avoir un code sur lequel on peut revenir. Donc on
+versionne les données on versionne le code il nous reste un dernier élément allez on va versionner le
+modèle. En versionnel modèle ça veut dire quoi là je mets en avant MLflow qui très clairement est
+l'outil que je connais pour versionnel modèle qui est un petit data brick mais open source. Qu'est ce
+que permet de faire MLflow ? Il va permettre d'enregistrer vos hyperparamètres ceux que vous
+avez choisis, vos métriques, comment votre modèle a performé. Les métriques on pense toujours AUC,
+Accuracy mais ça peut aussi être une métrique business que vous avez complètement customisé,
+le modèle en soi, la version de la donnée utilisée et tous ces éléments là vous
+permettent de pouvoir revenir à un modèle dans le temps si vous avez une prédiction qui est un
+peu bizarre, que ça vous permet aussi de voir l'évolution de votre modèle, de voir comment
+il performe à force des réentraînements et s'il n'est pas en train de tomber. Au delà de ce côté
+vraiment production ça va m'aider à monitorer ma production, ça permet aussi de faire des
+expérimentations en même d'aller en production et de se dire qu'avec telle pure paramètre ça
+ne marche pas du tout alors qu'avec celui-là ça marchait mieux. Vous pouvez loguer tout un tas
+de choses, vous pouvez loguer les features que vous utilisez, c'est assez vaste. Finalement versionnez
+ces données, versionnez son modèle et versionnez le code, c'est un tout qui vous permet d'arriver à
+la reproducicibilité. Là où en développement classique on remonterait juste dans le code et
+en machine learning on est content de pouvoir avoir le modèle et les données pour pouvoir remonter
+dans le temps et reproduire une production qui aurait été bizarre ou comprendre pourquoi tout
+d'un coup un entraînement est bizarre, ce genre de choses. Par exemple j'ai vous donné un exemple
+de bugs, souvent les bugs ont été en machine learning, ils sont silencieux et on va voir comment
+avec cet exemple. Nous sommes le 1er janvier, nous faisons un entraînement, on est en train d'évaluer
+notre accuracy, qui est super bonne, qui est de 0,9, on est bon et puis on fait quelques modifications
+dans notre code mais qu'on ne pense pas avoir une influence sur notre modèle et il se trouve que
+15 jours plus tard on réentraîne en fait tous les 15 jours, on a un nouvel entraînement et là
+pas ta track, on passe à 0. Là il faut pouvoir remonter dans le temps. La première chose c'est
+peut-être un réflexe d'ingénieur software justement, on remonte dans le code, ok est-ce que c'est
+le code mais est-ce que c'est la data, peut-être que le code en fait n'est pas du tout responsable mais
+qui s'est passé quelque chose dans la donnée qui fait que l'entraînement ne va plus. Donc le fait de
+versionner cette donnée ça fait qu'on peut dire et ben vas-y réentraîne avec cette donnée ok et on
+peut jouer sur toute cette plage des 15 jours pour arriver au moment où il s'est passé quelque chose
+pour pouvoir dire ok là il y a un truc qui ne va pas. Donc finalement tous ces éléments là nous
+permettent de reproduire ce bug, de pouvoir comprendre ce qui s'est passé. Un bug comme celui-là permet
+aussi de se dire il faut se méfier. Peut-être que ce changement de code a entraîné une modification
+que je n'avais pas envisagée donc ok post mortem à partir d'aujourd'hui dès que je fais la
+mode modification de code j'aurai entraîné comme ça je suis sûre au moins que j'ai pas entraîné
+de régression dû à mon code. Petite histoire d'un petit bug. Dans l'entraînement j'ai tendance
+à mettre le feature engineering et j'avais juste envie de faire un petit focus là-dessus parce que
+c'est souvent une grosse partie dans les projets. J'ai parfois vu des projets où le feature
+engineering c'était mais un projet à part entière et finalement je pense que c'est un peu le cas par
+exemple pour des personnes comme Uber, enfin des compagnies comme Uber ou le feature engineering devient
+un projet à part entière et du coup autant je veux bien reconnaître que le code en machine
+learning a une simplicité que n'a pas le code parfois d'une grosse application pour une compagnie
+d'assurance autant dans le feature engineering. Des fois il y a des parties hyper complexes,
+hyper lourdes et c'est peut-être là que on peut se concentrer enfin je pense qu'il faut tester son
+code clairement mais c'est peut-être là où la plus grosse partie est à tester. Là j'ai mis
+pas le test parce que beaucoup de gens utilisent Python et peu importe. L'idée c'est d'avoir un test
+pour finalement arrêter de faire quelque chose qu'on fait souvent manuellement et bien là on se
+met à écrire des tests automatiques pour que bah qu'on t'en fait une modification dans notre
+cause et quand on le renvoie en production on est sûr de ce qui se passe et on a quelque chose
+d'un peu plus souvent. Autre focus que j'avais envie de faire, ce que j'appelle la folie des
+notebooks. Alors la folie pourquoi ? La folie c'est un terme ambivalent et c'est justement ça que
+j'aime bien qui m'amuse en tout cas personnellement avec l'idée c'est qu'aujourd'hui il y a un grand
+débat je pense en data science, faut-il, doit-on, est-ce raisonnable de mettre des notebooks en
+production ? Alors je vais vous donner mon avis pour l'avoir expérimenté dans plusieurs entreprises
+pour le coup. Les notebooks c'est une folie dans le sens où c'est génial. C'est génial en data
+exploration, c'est génial en data visualisation. Personnellement même quand je dois tester un petit
+bout de code pour sûr je veux ouvrir un notebook. C'est mon réflexe premier. Par contre pour avoir
+essayé plusieurs fois de les industrialiser et de les maintenir quand il y a un problème quand
+je veux modifier quelque chose je trouve ça beaucoup plus lourd et c'est là où j'ai envie de parler
+de folie en dans le sens négatif où je sais que certaines personnes sont plus à l'aise avec
+des notebooks que c'est des choix d'équipe mais il existe parfois d'autres solutions qui permettent
+de ne pas forcément mettre que des notebooks en prod ou de ne pas en mettre du tout. Par exemple
+on peut avoir des systèmes où on permet aux personnes qui ne sont pas forcément à l'aise avec
+une autre manière de coder ou de monter en compétence sur cette autre manière de coder ou de
+leur générer des projets qui font que c'est plus simple de rentrer dedans et de moins se manger
+sur des problèmes d'idée des choses comme ça ou alors une solution que que j'aime bien et que
+finalement j'ai vu deux fois dans deux entreprises c'est dire ok j'ai un notebook qui a des parties
+qui sont dans mon notebook et puis j'ai des parties qui sont un peu plus difficiles à tester
+sont un peu plus difficiles à maintenir et je les mets dans des dans des packages à part et c'est
+marrant parce que finalement c'est une histoire que j'ai vécu plusieurs fois et c'est peut-être
+une manière de contenter tout le monde sans prendre sans faire trop d'efforts en allant
+en production parce qu'un notebook industrialisé c'est clairement plus d'efforts à tester à
+versionner etc on a toujours l'impression d'être obligé de ruser mais peut-être qu'on peut
+trouver des solutions intermédiaires on a parlé de l'automatisation de l'entraînement deuxième
+partie automatiser l'inférence alors l'inférence c'est le moment où finalement on va donner la
+prédiction avant de donner cette prédiction il y a finalement plusieurs questions auxquelles
+il faut pouvoir répondre est ce qu'on a besoin de temps réel ou pas est ce qu'on veut desservir
+une ou des prédictions donc peu importe le choix qu'on fait généralement c'est assez facile de
+répondre à ces questions là elles sont assez guidées par le business il y a j'entends parfois
+enfin il n'y a pas longtemps j'ai vu un article qui disait que tout le machine learning était
+en train de devenir temps réel je pense très clairement que c'est un point de vue et je pense
+que ça dépend vraiment de l'entreprise dans laquelle vous êtes et de ce que vous desservez il
+y a des personnes pour qui le temps réel ça va être oui présent tout le temps puis il y a des
+entreprises pour lesquelles non pas forcément c'est pas forcément quelque chose de nécessaire et même
+de voulu répond à ces questions va vous emmener à faire de la prédiction de différentes manières
+l'une des manières peut être la paye web voilà il y a certaines entreprises elles passeront
+tout le temps par de la paye web par exemple c'est celle où ce sont déjà des appays web
+on soit et c'est là où l'essentiel de leur machine learning est mais il y a des entreprises pour
+qui bah ce sera pas le cas du tout d'ailleurs la paye web se cache un diablotin qu'on tournait
+dans le monde de la data et c'est qu'il faut bah des compétences web par moi j'ai longtemps
+travaillé comme dev backend donc c'est des choses qui me font moins peur mais je reconnais que bon
+ok donc il faut être bon en state il faut être bon data il faut savoir versionner son modèle
+versionner son son code versionner ses tests versionner bref tout savoir versionner tester tout ce
+qu'il y a à tester maintenant il faut aussi avoir des compétences web ça commence à faire beaucoup
+pour une seule personne et puis au-delà du fait de savoir réaliser une paye web il faut savoir
+les desservir il faut des compétences ops ou punaise il faut pouvoir mettre ça dans un
+conteneur comprendre ce qui est d'aucœur pouvoir l'utiliser et puis si on a beaucoup d'utilisateurs
+qui qui vont prendre cette prédiction il faut savoir maîtriser des outils comme Kubernetes bon
+voyez je vais en venir ça va dépendre des entreprises certaines entreprises vont dire
+bah ça c'est le boulot de complètement une autre équipe qui a plus ces compétences là et puis
+il y en a qui vont dire bah notre équipe fera tout de bout en bout moi j'ai plutôt tendance à me
+dire que c'est plus simple une équipe qui fait tout de bout en bout mais par contre il faut trouver
+des solutions pour que de la paye web arrête d'être un diablotin et que ce soit plus agréable
+donc il y a quelques solutions que j'avais envie de mettre en avant déjà c'est pas obligé de travailler
+sur des outils comme ceux qui connaissent symphony ou spring pour faire des appels web qui sont
+généralement les solutions vers lesquelles on va se tourner quand on veut faire spotify je pense
+par exemple et faire avec symphonie je voudrais pas dire de bêtises mais je pense que c'est un cas
+d'usage qui fait que symphonie donc là on est dans une grosse appli web mais nous généralement on
+définit on va juste donner une prédiction peut-être qu'on peut prendre quelque chose de beaucoup
+plus simple il y a un exemple que je donne c'est fast api qui est une hybrérie en piton qui permet
+de pouvoir faire une api web de manière plus simple et finalement quand même de manière assez
+efficace pour le besoin qu'on a parfois vous aurez aussi besoin même de faire l'interface web
+alors on peut prendre quelque chose comme streamnit qui va permettre de ne pas faire de html pas de
+css pas de js que du piton le rêve quoi et en plus en ayant pensé pas mal de choses pour la data
+bon en réalité quand on rentre dans les détails c'est un peu plus complexe que ça je vais pas
+tout rentrer là dedans surtout qu'il y a déjà eu une personne qui a présenté ça au lion data
+science mais voilà ça permet de faire des interfaces web simples qu'on a besoin de réaliser
+ça et qu'on n'a pas forcément des compétences web de fou troisième solution bah c'est des
+des copains bon ce que j'entends parler copains c'est les collègues qui s'y connaissent plus qui
+voilà qui ont plus habitude de faire des api web et qui peuvent peut-être décharger de cette partie
+là l'inférence peut passer par une api web elle peut aussi passer par un dashboard où on va dire
+de la data visualisation alors là aussi il se cache un diabeton derrière tout ça moi je vous
+racontais mes débuts en data vise en fait j'en ai fait et en fait je me rends compte que ça m'a
+tellement traumatisé que j'essaye de ne plus en faire alors qu'en fait les choses ont quand même
+beaucoup évolué puis moi même je pense que j'ai évolué sur le sujet j'ai commencé avec un outil
+qui était fermé pour le coup qui j'espère à évoluer bon je vais le balancer ça veut pas dire
+que c'est un mauvais outil je pense qu'il a évolué il s'agit de tableau j'ai commencé avec tableau
+et moi en tant que personne qui avait l'habitude de faire du version des tests c'était extrêmement
+perturbant d'être sur un clic au drôme c'était l'interface qu'on me donnait j'avais c'était
+difficile de faire du version in c'était difficile de faire des tests alors c'est vrai des gens qui
+m'ont dit oui tu aurais pu faire des tests d'interface c'est vrai c'est totalement vrai j'aurais pu
+mais ça se fait pas de manière aussi aisément qu'avec d'autres solutions et puis c'est un outil
+donc fermé à ce moment là voilà j'accuses pas forcément l'outil mais les circonstances dans
+lesquelles j'étais faisais que j'avais pas mal d'erreurs 500 qui pétaient un peu dans tous les sens
+j'avais pas les compétences pour très clairement ni en théorie de data vise parce que la data vise
+on a parfois tendance à l'oublier mais c'est aussi beaucoup de théorie sur comment on représente
+au milieu des données et j'avais pas de compétence sur cet outil là franchement ça a été un moment
+un peu dur un peu incarnage et du coup je me rends compte que je prends toujours la data vise avec
+bon j'ai le renfort j'en fais mais clairement je un autre traumatisme voilà je me raconte un autre
+de mes trop un autre de mes traumatismes mais je me suis rendu compte avec le temps que derrière
+chaque diablotin se cache un petit ange après j'ai découvert d'autres outils qui sont plus sympas
+par exemple Super 7 voilà donc je sais pas du tout où ça en est mais c'est un outil qui était
+quand même plus agréable qui était open source donc ça veut dire qu'on a au moins une chance de
+comprendre l'erreur qui loupait à la tête il ya un outil qui est développé en ce moment par
+data brick qui s'appelle SQL Analytics et qui a l'air de cartonner ce que j'aime bien aussi et
+qui j'espérais prendre le vent en poupe mais finalement pas sûr c'était de créer des dashboard
+depuis un notebook ce que j'aimais bien c'est que autant voilà je peux critiquer les notebooks
+parce que je trouve que des fois on innait beaucoup de codes et du coup on a plus testé ce code et
+c'est dur de le maintenir etc et c'est pas grave on va jusqu'au bout on va jusqu'au prod et on galère
+à le maintenir autant je trouve que dans certains cas c'est vraiment génial et typiquement c'est
+un cas là où je trouve que c'est génial d'avoir des dashboards dans un notebook qu'on peut versionner
+un peu plus tester etc mais ça a pas forcément l'air de prendre du moins c'est l'impression que j'ai
+en tout cas ce qui est sûr c'est qu'il ya des outils plus sympa que d'autres et pareil on peut
+essayer d'être des copains j'ai une seule fois rencontré une personne spécialisée en uix
+dont la data mais c'était intéressant et c'est intéressant de se dire que au-delà des compétences
+pratiques ben il ya des compétences théoriques en data vise et que bon c'est intéressant de
+discuter avec ces gens là et de voir comment ils peuvent penser votre votre dashboard
+une autre solution c'est parfois de s'intégrer dans un autre produit tout simplement au delà
+de la pay web ou du dashboard qui a d'intéressant avec ça généralement on s'intègre toujours
+dans un autre produit d'une manière ou d'une autre à plus ou moins un terme ou au moins dans
+un autre processus ce que j'aime bien avec cette idée là c'est que finalement c'est penser
+l'inférence comme un produit en soi et se dire que c'est intéressant de cister l'intérêt
+des utilisateurs au-delà d'avoir uniquement une prédiction ce qui soit pertinente des
+fois les utilisateurs ça dépend de quoi il ne faut rien à faire de savoir pourquoi vous leur
+donnez telle prédiction sans rien à faire que le modèle chaotique mais parfois c'est très important
+et pas uniquement pour les raisons qu'on ressasse toujours qui sont les tics par des temps on dit
+que c'est ça mais ça peut être parce qu'on a envie de comprendre son modèle donc ça peut être
+d'un point de vue très technique ça peut être parce qu'on a besoin de donner conscience aux
+utilisateurs de dire je te donne cette prédiction crois-moi vas-y cette prédiction elle est bonne
+parce que si parce que ça ça peut être merci c'était un terrain des utilisateurs ça peut
+voir un côté finalement très marquettine par exemple dans la recommandation de produit on voit
+souvent bah en fait je vous recommande ça parce que vous avez acheté ça et les autres clients ont
+aussi acheté ça pardonne pas je peux rien que cette explication ça peut peut-être certaines
+personnes l'épousser à consommer là où elle n'aurait pas consommer
+donc on a vu l'automatisation de l'entraînement l'automatisation de la ferrance ça fait déjà
+pas mal de choses maintenant on va passer un petit peu au monitorine et c'est là où finalement
+on commence à regarder si on arrive à tirer profit de son son modèle en production et c'est
+tout va bien il ya plusieurs formes de monitorine dans les machines d'ournée il y a le monitorine
+que je dirais classique c'est à dire bah monitorer les serveurs généralement c'est plutôt côté
+ops est ce que tout va bien ce que les machines vont bien côté applicatif combien de données j'ai
+ingéré filtrer en combien de temps etc si je suis sur une API web est-ce que je suis capable de
+répondre assez rapidement même en batch est-ce que mon entraînement n'est pas trop long etc
+ça c'est ce que j'appellerai le monitorine classique on va avoir différents niveaux dans ce
+monitorine on peut avoir des choses plus ou moins graves j'ai envie de dire par exemple si vous avez
+d'un coup votre IUC tombe complètement bah là ça peut être très important il faut lever une
+grosse alerte je l'ai jamais mis en place mais je sais que certaines entreprises vont jusqu'à envoyer
+un sms donc voilà ça peut prendre différents niveaux et puis bon bah si on voit que la donnée
+évolue un peu mais doucement c'est peut-être juste à surveiller attention j'ai vu que là il y avait
+des choses qui se passaient mal voilà donc il peut y avoir différents niveaux peut y avoir
+différentes cibles aussi il y a les ops qui vont avoir envie de savoir ce qui se passe sur les
+serveurs il y a les personnes qui maintiennent le modèle des personnes techniques donc là
+elles ont besoin de beaucoup d'informations quand il y a une business qui veut savoir si
+à peu près tout se passe bien mais lui il y a plein de trucs qui comprend pas moi je
+conseillerais vraiment clairement de commencer par les personnes qui vont s'occuper de maintenir
+le modèle parce que c'est elles qui sont responsables de ça c'est elles qui vont devoir mettre les
+mains dedans c'est pas que j'ai pas envie de donner à les informations business mais clairement si
+il y a une priorité à prendre c'est celle-ci quitte à être complètement transparent sur le
+le tiel à dire voilà et puis plus tard on vous fera un dashboard pour vous puissiez un peu plus
+comprendre et voir la valeur qu'on génère avec ça mais nous on a besoin de pouvoir de pouvoir
+m'onitérer tout ça va m'onitérer avec des dashboards et des alertes en sachant qu'il faut
+généralement juger ces alertes généralement toujours parce que si vous envoyez trop de mail
+trop d'alerte plus personne ne les regardera donc c'est une justesse à trouver c'est très
+toujours évident mais c'est quelque chose à garder en tête pour que ça continue à avoir un sens
+et puis bien malheureusement les bugs ça arrivera quand même et du coup autant faire des postes
+mortem et se dire et ben là ça s'est mal passé comment est ce que je peux faire la prochaine fois
+pour que ça se passe bien bien sûr quand on va en prône on essaye de prévoir pour que ça se passe
+au mieux mais ne le neurons pas il y aura toujours des choses qui se passeront mal et en plus un
+machine learning on a le problème ce qu'on appelle des bugs silencieux donc là je vais faire un focus
+sur le monitoring de modèle drift alors le modèle drift qu'est ce que c'est on a un exemple
+hyper flagrant qu'on a tous malheureusement vécu et qu'on vit encore malheureusement beaucoup aujourd'hui
+c'est l'histoire d'un petit virus qui est né quelque part en chine et qui a fait s'effondrer pas
+mal de choses et en tout cas changer pas mal de choses donc tout le monde s'est mis sur netflix
+d'un coup tout le monde s'est mis à acheter des produits qu'il n'achetait pas et plus personne
+n'est allé au cinéma du jour au lendemain bon ce sont des exemples mais grosso modo ça veut dire
+que votre données a évolué et le fait que votre données évolue ça peut plus ou moins avoir un
+impact sur votre modèle et le fait que votre modèle va décroître en fait le modèle drift ça veut
+dire que votre modèle décroi la performance décroi la performance tombe et c'est arrivé à plusieurs
+personnes eut plein d'articles sur le sujet la pandémie a impacté des personnes sur des
+modèles qu'ils avaient en production et puis qui du coup du jour au lendemain se sont retrouvés avec
+des données tellement différentes que le modèle n'était plus performant il ya différentes formes
+de modèles drift donc j'en ai un peu parallèle qu'au seconde quand j'ai fait le modèle drift et
+toujours plus ou moins lié au data drift des fois ce que vous avez fait une bêtise dans votre code
+mais la plupart du temps c'est parce que les données bougent soit c'est abrupte problème technique ça
+c'est abrupte qui dure comme la récession par exemple c'est saisonnier bon ben on prend la
+saison compte dans le modèle ça peut aussi être graduel comment se protéger de ça il ya plusieurs
+manières déjà il faut pas dire que quand on est en production ben ça y est c'est fait finalement
+c'est là où tout commence il n'y a pas très longtemps il ya une question qui a été posée à
+quelqu'un où on lui demandait quel est les projets qu'elle avait mis en production qu'elle modèle
+elle avait mis en production et ça et j'ai trouvé sa réponse assez intéressante parce que
+au départ elle était mal à l'aise parce qu'elle s'est rendu compte qu'elle n'en avait jamais
+mis nouveau et plus elle a avancé dans sa réponse et plus elle est devenue intéressante parce qu'elle
+a dit c'est vrai j'en ai jamais mis en prod de nouveau mais par contre j'en ai fait évoluer beaucoup
+et ça a apporté beaucoup d'heures à mon entreprise donc il n'y a pas de honte à la maintenance il
+n'y a pas de honte à se dire qu'on va passer du temps une fois qu'on sera en production à faire
+évoluer le modèle à s'arranger pour qu'il ne tombe pas et évaluer tout ça alors comment
+sont protégés justement comment faire cette maintenance première chose réentraîner voilà
+avec des données fraîches si possible sinon ça sert à rien mais pas à la veuve il faut vérifier
+le résultat donc il faut monitorer l'entraînement pour être sûr qu'on ne décroie pas que le modèle
+ne décroie pas et on réentraînant déjà on évite généralement pas mal de le fait que que le modèle
+décroie mais il faut aussi monitorer la vraie vie parce que peut-être qu'on ne réentraîne pas assez
+souvent et la seule manière d'en avoir le coeur net c'est de monitorer la vraie vie et puis peut-être
+que je dis n'importe quoi nous on précise sur mille classes mais en fait les utilisateurs ils
+utilisent ce que dix classes et ce c'est dix classes là et ben on n'est pas performant ça peut être
+des choses de savoir un petit peu ce qui se passe dans la vraie vie et de se dire bah peut-être ça
+peut être intéressant de le savoir monitorer les données elle-même parce que généralement modèle
+drift égale de tête drift pas toujours des fois c'est parce qu'on a fait une bêtise en code
+mais si on n'a rien changé généralement ça vient de là et ça vient du fait que la donnée sur
+laquelle on prédit est trop différente de celle de l'entraînement comment est-ce qu'on peut
+faire ça c'est un peu la bataille j'ai beaucoup lu sur le sujet ces derniers temps et c'est un peu
+la bataille c'est un domaine assez ouvert tout le monde n'est pas d'accord sur les manières de
+faire non qui veut dire boire à faire des tests de statistiques avec des p-value puis on a qui
+veut dire la p-value surtout pas on va juste mesurer la distance donc quelle mesure de distance
+entre nos deux distributions bon c'est pas évident j'ai envie de dire peu importe un peu
+importe c'est pas peu importe mais autant commencer et essayer de voir ce que ça peut donner
+et je dirais que c'est pas forcément quelque chose à négliger parce que en fait ça va vous aider à
+comprendre pourquoi vous avez un modèle drift et moi comme je vous disais j'étais un peu traumatisé
+c'est vrai par le fait que les données bougent mais oui pour sûr les données bougent ça dépend
+de la criticité du projet ça dépend de votre modèle il y a des modèles qui effectivement
+mouge moins que d'autres et c'est vrai que pour l'instant c'est un peu lourd parce qu'il faut
+faire ça un peu soi même mais les techniques de détection de drift c'est ma prédiction mais
+je suis je suis à peu près sûr vont se démocratiser voilà ce sont les éléments sur
+lesquels je voulais me focuser donc il y aurait beaucoup beaucoup beaucoup de choses à dire
+mais je vais m'arrêter là si vous voulez en savoir plus sur ce sujet je suis en train d'autopublier
+un livre sur le sujet donc j'en fais la promo même de l'avoir fait où je raconterai plus en
+détail plein d'anecdotes etc et juste pour finir une chose que je n'ai pas dite je m'en rends compte
+en fait maintenant c'est que je travaille pour connecrane qui est une entreprise qui vend des
+grus et qui embauche voilà donc on embauche dans notre dans notre lab dans notre équipe donc si ça
+vous intéresse pour vous me contacter je vous remercie je prends deux minutes de pause pour
+reprendre mon souffle et puis prendre vos questions donc merci anastasia pour ta présentation qui
+était à mon entrée complète puis je disais pas poser les questions dans le chat de twitch
+première question qui était je suis étonnée par le côté réentraînement tous les 15 jours si on
+peut avoir des métriques en sortie qu'est ce qui empêche de le faire plus souvent rien je sais pas
+se comprendre la question si ça peut être mis oui le coup machine bah oui oui oui bon bah oui
+par exemple effectivement par le réentraînement bah ça va dépendre de quand la donnée déjà est
+mise à jour du coup machine et de si ça a un intérêt de de réentraîner tous les jours parce qu'à
+ce compte là on pourrait dire qu'on réentraîne toutes les heures donc c'est un curseur à trouver
+en fonction du monitoring et du projet souvent je suis retrouvée des des projets qui disent
+ah ben tous les 15 jours ça a l'air de marcher ok ok je vais plus à une semaine etc
+alors j'ai la question toujours de colin ce n'est pas possible dans dans la ci d'extraire les
+trucs du notebook et d'en faire autre chose si c'est possible aujourd'hui par exemple on ne
+versionne pas des notebooks pour être honnête on les transforme en réalité on fichier piton
+mais on garde des notebooks quelque part ce serait long à expliquer mais je dirais pour
+faire simple que c'est ouais ce que je disais c'est que c'est un petit peu toujours de la ruse si on
+peut en faire autre chose mais après la personne qui maintient tout ça déjà ça dépend des
+entreprises et pas toujours la même que celle qui a produit le notebook au départ et et maintenir
+un projet c'est pas la même chose que de le construire le construire finalement ça dépend mais
+c'est des compétences différentes que de revenir sur un code de devoir retrouver à quel moment le
+bug est par exemple ça veut dire dans un notebook on peut pas cliquer sur un élément pour aller
+d'un élément à un autre ça c'est des choses qu'on n'a pas compte on compte on des bugs voilà par
+exemple alors j'ai pas testé airflow paper mille cube flow qui est là voilà alors j'ai jamais vu de
+tu dans des notebooks écrits par des data scientist et ben moi si mais je reconnais que
+on a rusé même si en fait il existe des alors je découvre après ça qu'il existe des outils qui
+permettent quand même plus simplement de faire des tests de notebooks
+voilà quelqu'un qui dit après si tu en dors de la partie future engineering il n'y a pas grand
+chose à tester une termine dans un notebook peut-être et c'est un petit peu ce que j'essayais de dire
+en fait c'est que finalement j'ai il n'y a pas longtemps je suis allé au data AI submit et il y avait
+beaucoup d'exemples que j'ai trouvé intéressant où les personnes se permettait d'avoir du code
+très simple dans leur notebook qui faisait un petit peu la glu et les parties complexes étaient
+dans des packages et piton où elles pouvaient le tester à l'infini et aussi le partager parce que le
+fait d'avoir un package à part ça fait aussi qu'on peut le partager et avoir des fonctions qu'on
+appelle utils ou helpers par exemple qui sont partageables à plusieurs projets
+alors est-ce qu'il existe déjà des outils de mesure de modèle drift clé en main ou en tout
+cas que recommanderaient plus alors de data drift il existe des librairies comme à la
+Baye detect ou évidement li AI mais que j'ai pas du tout testé il existe aussi des interfaces
+clé en main effectivement le sqlite deux outils que je viens de citer sont des outils open source
+mais les en fait les trucs clé en main qu'on a testé en fait on a toujours trouvé des limites
+dans nos cas donc peut-être que pour vous ça peut marcher nous on a trouvé des limites mais bon
+je suis à peu près sûr que dans cinq ans tout le monde aura j'exagère tête un peu en disant ça
+mais je pense que ça existera ce que tu as un feedback sur les outils de monitoring pour les
+ml en prod ben nous finalement on se sert voilà actuellement on se sert de de ml flow pour monitorer
+qu'est ce que j'ai pu voir j'ai pu voir du dq j'ai pu voir des fois des choses faites
+manuellement moi ce que j'aurais tendance à conseiller c'est que aujourd'hui les outils sont
+énormes il n'y en a de partout essayer de prendre des outils open source parce que c'était
+toujours plus simple que d'avoir un outil fermé et et plus simple que de devoir réinventer toute
+la ronde je dirais version de donner pas de problème de volumétrie bonne question bonne
+question parce que par exemple le fait de passer devon sourcine au fait de versionner
+automatiquement quand vous versionner automatiquement généralement l'outil va gérer pour vous le fait
+que vous ayez une forte volumétrie voilà et quelle est mon utilisation de ml flow alors c'est
+encore un outil que je découvre mais grosso modo il ya plein de choses dans ml flow il y a plein
+de choses dans ml flow là où je voulais le citer en exemple c'était surtout sur le fait que et vous
+pouvez le faire vous même ou utiliser d'autres outils c'est le fait de traquer vos hyperparamètres
+vos métriques votre modèle pour garder une trace de ce que vous avez fait et pouvoir monitorer tout
+ça et revenir plus facilement dans le temps tout importe l'outil que vous avez utilisé après
+ml flow il ya énormément de choses je pense que j'ai fait le tour des questions
+j'ai l'impression
+j'ai l'impression que t'en avais une dernière qui t'ai évité le datadrift utile d'y réviter de
+rentrer sur l'ensemble des données anciennes et récentes qui rend le modèle moins adapté aux
+nouvelles tendances oui je la vois je la comprends pas désolé à mesdames je n'ai pas répondant
+quand le modèle moins adapté
+mais tu dirais éviter de ré-entraîner oui oui je vois je pense avoir une idée oui oui peut-être
+que par exemple quand on se rend compte qu'on a un drift bah oui ça va peut-être dire que ça sert à
+rien de ré-entraîner sur trois ans peut-être qu'il faut entraîner que j'ai connu des modèles
+on va entraîner que sur très peu de données enfin très fraîche quoi des données très fraîches
+je pense que c'était ça la question oui je pense que ça serait quoi les meilleurs références tu
+me dis Clément quand est ce que j'arrête parce que quelques questions qui restent ok ça
+marche ça serait quoi les meilleurs références pour avoir un état de vieux de la partie et
+maintenant pour toi difficile de choisir sa stack actuel bon je crois que tout le monde l'a
+dîné actuellement ma stack c'est databrix je l'ai assez mise en avant et avant d'utiliser
+la fabrique s'utiliser déjà beaucoup les outils de databrix de toute manière puisque j'utilise
+spark je sais pas franchement je ne pourrais pas vraiment répondre parce que j'en ai pas
+réellement testé d'autres donc ce serait mal au lait de ma part ce que je pourrais juste dire
+c'est que pour avoir testé une stack et je fais plein de choses manuellement et j'assemble
+des morceaux clairement avoir une stack même s'il n'y a pas parfaite ouais je trouve ça plus
+agréable et les gens sont beaucoup moins réticents au fait de versionner le modèle par
+exemple parce que c'est déjà là d'ailleurs je me demande si tu avais entendu parler de
+dvc pour data version control qui a eu l'air monitoré un version un peu tout à la fois les
+modèles c'était le code je me demande si tu avais déjà testé alors je n'ai entendu parler j'ai vu
+des mots mais je ne l'ai jamais testé ok ça a l'air intéressant à creuser l'entreprise n'est pas
+assez imprieste elle est à part du oui et ça à l'intérêt intéressant difficile je suis d'accord
+avec toi voilà j'ai donné des outils à titre d'exemple mais vous n'est pas que je vous dis que
+ce sont les meilleurs parce que j'ai pas fait un bêche marque de tous les outils c'est plus les
+méthodes de mon avis qui sont intéressants derrière ouais et je suis d'accord il faut rester
+flexible vu la vitesse d'évolution je peux pas sûr qu'il y a des grands gagnants aujourd'hui
+je pense qu'on commence à refait le tour des questions ouais je crois aussi on peut s'arrêter
+là pour laisser les gens manger tranquillement je vais être remercie du coup au nom de toute
+l'équipe lds de de la présentation oui la présentation sera dispo du coup sur hn twitch
+pendant 14 jours et après elle sera aussi visible sur notre site web sur youtube et après on pourrait
+en ce moment aussi partager les slides si vous voulez voilà merci encore la stasia je sais pas si
+tu veux dire un dernier mot de faim moi je veux dire un grand merci déjà de m'avoir accueilli
+d'avoir pu discuter de ce sujet que j'adore puis merci à tout le monde pour vos retours question
+n'hésitez pas à me contacter là où je suis plus souvent disponible c'est sur twitter mais
+je suis en ligne que je j'adore discuter donc tout ce sujet là et changer n'hésitez pas voilà merci
+beaucoup ça marche merci encore et puis à une prochaine fois pour un autre meetup
+de la sense et plaisir

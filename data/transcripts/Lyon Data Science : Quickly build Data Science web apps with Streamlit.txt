@@ -1,0 +1,2343 @@
+Donc bonjour à tous et à toutes et merci pour votre présence
+pour ce nouveau Meetup Lyon Data Science et je pense d'ailleurs le premier on online si je me trompe pas.
+Aujourd'hui, c'est moi-même Fanny Leandri and Asselot qui se chargera
+de vous faire une présentation sur Streamlit, un framework qui vous permettra de construire des applications web orientées Data Science.
+Un petit mot sur l'association Lyon Data Science.
+Donc Lyon Data Science c'est la première association lyonnaise qui traite des différents sujets de machine learning et d'intelligence artificielle.
+Normalement, nous, nous le voyons de manière mensuelle au cours de Meetup sur des sujets divers.
+Bon, vu les circonstances actuelles, peut-être que ce sera un peu plus on online.
+Si vous voulez plus de détails sur l'association, n'hésitez pas à consulter leur site Internet.
+www.lyondata.science ou par mail via contact at lyondata.science.
+Ils sont aussi présents sur Facebook, sur Twitter, sur LinkedIn, sur Slack aussi.
+Donc vraiment sur la plupart des réseaux sociaux, peut-être Instagram, non peut-être pas Instagram.
+Nous remercions encore les différents sponsors à savoir Dataleo, DataGalaxy, Esker et UpFluence.
+Pour passer à la présentation, qu'est-ce que je veux dire par une application web data.
+Donc pour cela, je vais vous faire une démonstration.
+Voici une application web dans laquelle on a le Dataset de Udacity.
+C'est un Dataset qui consiste en un ensemble d'images qui ont été prises par un véhicule autonome qui circule sur la route.
+Sur ce Dataset, nous avons des humains qui ont anoté sur les différentes images où se trouvaient les piétons, les voitures en vert, les voitures en rouge, les camions en violet et tous les objets dont les feux tricolores en jaune.
+Nous avons en dessous la version des objets identifiés par un modèle de Deep Learning qui est ici YOLO V3 qui fait lui aussi la détection d'objets tels que des personnes ou des voitures.
+Donc on peut voir ici la comparaison entre deux images où le modèle n'a pas réussi à détecter potentiellement les personnes en vert qui se trouvent derrière la voiture en rouge.
+Ce qu'on peut faire, comme on est sur une appli interactive en mode web, ça va être, c'est de pouvoir interagir directement avec le modèle.
+Par exemple, est-ce que je peux modifier mon seuil de confiance de mon modèle YOLO V3 pour essayer de capter de nouveaux objets.
+Donc on a un slider ici qui nous permet d'interagir avec le modèle.
+Lorsque, avec le registrement, peut-être que ça prendra un tout petit peu plus de temps d'habitude et en plus, je n'ai pas de GPU.
+Donc il faut imaginer que derrière le modèle, il y a un carré bleu qui vient d'apparaître en plus.
+Donc je pense qu'il va détecter le camion en jouant avec le seuil.
+Donc ce qu'on peut faire ici, c'est vérifier est-ce que potentiellement il y a des paramètres du modèle qu'il faut modifier pour permettre de capter plus ou moins d'objets, voir comment est-ce que le modèle réagit dans la vie réelle.
+Ce qui nous importe, c'est quand même de savoir comment le modèle réagit dans des circonstances réelles.
+Donc à moi, c'est un sujet qui m'intéresse depuis pas mal de temps.
+En effet, j'ai agi en tant que TechLeed en data analytics.
+Je gère aussi la partie intelligence décisionnelle et en tant que product manager.
+Donc dans ces circonstances-là, j'ai régulièrement à faire des présentations en interne et en externe sur qu'est-ce que la data science, qu'est-ce que la BI, comment marche un modèle de machine learning.
+Et surtout, comment est-ce que je peux valoriser vos jeux de données, vos data sets.
+Au sein d'Ordline, qui est une compagnie qui est spécialisée à l'échelle européenne dans les transactions bancaires, ça peut être d'identifier quels sont les algos qui sont plus ou moins performants en termes de risque, comment est-ce que je peux changer les différents paramètres, est-ce que je peux améliorer la segmentation.
+Bref, ça va être d'insister en interne et en externe sur nos compétences en data.
+Donc c'est quelque chose sur lequel je travaille depuis quatre, cinq années et je suis passé par divers types d'architecture pour faire ça.
+Le premier type d'architecture, c'est que je veux rester dans l'écosystème Python.
+Du coup, je travaille en notebook jupyterre, je fais un export HTML et cet export HTML, je l'envoie directement par mail au client qui pourra s'amuser avec potentiellement les différentes visualisations à l'intérieur.
+Ou encore, j'utilise des livreries comme Plutly ou Pannell qui permettent de créer un serveur web pour délivrer ces pages HTML.
+Avec différents stagiaires, on a aussi essayé de s'intégrer à tableau software, qui ont notamment plusieurs briques comme tapas ou tableaux extension API,
+pour aller chercher du Python, exécuter du Python et l'afficher au niveau du dashboard tableau software.
+Ça demande un peu d'expertise en tableau, donc moi tout seul c'est un peu compliqué à faire.
+Et enfin, j'ai essayé de passer par la manière, on va dire, software engineer, à savoir, ton modèle de data science,
+tu le mets dans un web service REST avec Flask ou FastAPI, tu le mets dans un docker et derrière, j'ai un front-end en React, en Vue.js, en JavaScript,
+qui a été codé soit par moi soit par quelqu'un d'autre, pour aller récupérer et consommer les prédictions de cet API REST.
+Alors, pour la peine, j'avais besoin de prototype web et j'avais envie d'avoir la main sur ces prototypes web,
+je voulais être capable de changer la couleur, la customisation, les interactions qu'on puisse avoir.
+Du coup, j'avais un process assez compliqué qui était, je fais mon analyse en notebook Jupiter,
+j'extrais de codes intéressants dans du docker, je code mon application en Vue.js, et petit à petit,
+la chose devient compliquée à maintenir parce que si je vais rajouter une nouvelle interaction ou un nouveau slider,
+est-ce que je dois changer le endpoint dans mon API REST, il faut que je révisais Linux,
+je ne suis pas forcément bon en Linux ou en docker, il faut que j'aille réviser comment marche ANG NX si je mets un load balancer devant.
+Bref, il y a tout un tas de choses, la complicité de ce process est assez élevée.
+Donc si vous voulez d'ailleurs une expérimentation sur ça, sur mon GitHub, il y a un petit projet face to API plus Vue.js
+pour voir la complicité de la chose.
+Donc moi, j'avais besoin de pouvoir créer des applis web interactifs, mais sans forcément passer par du Vue.js et du docker.
+Enfin, j'aimerais bien, en tout cas, pouvoir rester dans l'écosystème Python pour pouvoir construire des applications web interactives.
+Donc après tout, on est sur Twitch, ce que je peux vous proposer de faire.
+Si vu qu'on est sur Twitch, souvenez-vous de la démo précédente que vous avez vue tout à l'heure.
+À votre avis, combien de lignes JavaScript ont été écrites pour cette application et de même combien de lignes Python ont été écrites ?
+Pour une fois, je vais lire le chat, attendre un peu.
+Et puis, s'il n'y a pas de réponse, je vais considérer que vous avez tous réfléchi dans votre tête.
+Donc, la bonne réponse est pour ceux qui n'ont pas triché.
+La bonne réponse est, ne vous inquiétez pas, aucune ligne de code JavaScript n'a été malmenée lors de cette implementation.
+Il y a eu 0 JavaScript, 0 HTML, 0 CSS pour cette démo.
+On est dans environ 300 lignes de code Python et sur ces 300 lignes, on est surtout sur du télécharger le modèle, charger le modèle, l'exécuter sur un stack d'image.
+Donc, qu'est-ce qui gère la partie interaction et visuelle pour la PIE web ?
+Eh bien, c'est une librairie qui s'appelle Streamlit, qui est le but de la présentation.
+Et Streamlit consiste en 23 lignes de code Streamlit qui se charge de toute la partie visuelle et interactive du web.
+Et du coup, Streamlit, c'est cette librairie qui a été open sourcée assez récemment en octobre 2019 et dont le rôle, justement, est de créer purement en script Python des applications web avec lesquelles on puisse interagir avec notre modèle.
+Ça a eu son impact sur la communauté, ils sont arrivés en quatre mois à peine d'activité, ils sont arrivés, je crois, à 7000 étoiles sur GitHub, c'est une butrique comme une autre, et 13000 utilisateurs actifs.
+Ce qui est quand même relativement conséquent.
+Donc, ce qui est intéressant de voir sur Streamlit, c'est qu'il repose sur trois grands fondamentaux.
+Une fois qu'on a vu ces trois fondamentaux, on peut utiliser Streamlit sans aucun souci.
+Ces trois fondamentaux, ça va être premièrement Streamlit.
+Si je sais faire du scripting en Python, je peux faire l'application dont j'ai besoin en Streamlit.
+J'ai pas besoin d'autres paradigmes de code.
+Streamlit me fournit des widgets pour la partie interactive.
+Et enfin, on va voir Streamlit fournit aussi une gestion des objets déjà utilisés sous un système de cache qui va lui permettre de me renvoyer des objets qui ont été déjà calculés.
+Si il y a eu un processus assez long, par exemple, un modèle de deep learning qui a pas mal processé pour avoir sa prédiction, j'ai pas envie de me recalculer une deuxième fois.
+Donc sur cette partie-là, sur la partie script, bon, j'ai pris un exemple assez bateau.
+J'ai beaucoup hésité.
+Finalement, je pars sur le Titanic.
+Vous connaissez tous le dataset du Titanic.
+Pour ceux qui ne le connaissent pas, c'est un dataset dans lequel on a les profils des passagers qui se trouvaient sur Titanic.
+C'est-à-dire dans le cache, le sexe, le ticket, la classe et dans le but de classifier les personnes qui vont périr dans ce naufrage ou survivre à ce naufrage en fonction de ces différents paramètres.
+Donc, un début de script Python Data Science, ça peut être, j'importe Pandas et je lis mon fichier CSV dans un DataFrame.
+Si je veux afficher ce DataFrame dans StreamLit, j'importe StreamLit, asst, et derrière, je peux rajouter les lignes st.write.titanit.data et st.write.df.
+Avec ces trois lignes de code, il me reste à monter un serveur StreamLit pour délivrer ce script Python.
+Pour cela, on a une commande qui s'appelle StreamLit runapp.py qui va scanner le fichier app.py qui va contenir et votre code et les annotations StreamLit.
+Et va créer un serveur que vous pourrez pinger avec Firefox ou Chrome, votre browser habituel, pour récupérer la page Internet.
+Comme on est sur du full script, vous pouvez utiliser directement d'ailleurs l'URL.
+Si vous voulez, par exemple, la démo précédente qu'on a vu au début, vous pouvez directement rentrer StreamLit run et l'URL vers le fichier en dur sur GitHub.
+Donc, ça lancera directement un serveur StreamLit avec le script demandé.
+Une fois qu'on a ce StreamLit qui est allumé et qui délivre notre application web, on peut commencer à écrire du texte.
+Donc StreamLit propose différentes fonctionnalités pour écrire du texte, les grands classiques, mettre un titre, un header, un subheader avec des formules en latex et du markdown.
+Vous pourrez voir qu'on est un peu en Italie qu'en gras avec des emojis. Voir du code Python si vous avez besoin de montrer du code Python pour votre application.
+Si il y en a pas mal d'entre vous qui sont plutôt orientés d'eplanning, on a besoin, comme dans la démo précédente, d'un fichier du média, donc de l'audio, de la vidéo ou des images.
+Et pour cela, StreamLit propose aussi ces fonctions, donc STimage, STAudio ou STVideo, qui prennent en argument soit le chemin en local vers l'objet, soit une URL vers l'objet distant.
+Vous pouvez mettre directement STVideo, une vidéo YouTube ou une image vers Iris sur Wikipedia.
+Et enfin, en date à science, on a aussi l'habitude beaucoup de faire des charts, donc StreamLit a une fonction pour lire les principaux acteurs dans la date à vis en Python.
+Vous pouvez avoir Matplotlib et C-Born, Plotli, Eboquet, Altair et VegaLite, mais aussi les un peu plus à part comme DECGL pour faire de la géographie en 3D comme l'image en bas,
+ou de Gravi si vous voulez visualiser vos arbres de décision.
+Et si vous trouvez que ça fait beaucoup trop d'API à apprendre, vous pouvez toujours uniquement exécuter ST.write sur l'objet que vous voulez afficher sur votre page web,
+et c'est StreamLit qui se charge de décider de comment afficher l'objet sur la page web.
+Ce que je vous propose de faire maintenant, c'est de voir ça en live.
+On m'a toujours dit que LiveCoding, c'était une mauvaise idée, mais on m'a aussi dit que sur Twitch, c'était une bonne idée de faire du LiveCoding.
+Donc, je vais ouvrir, j'ai fermé une fenêtre en trop.
+Pendant que ma fenêtre se rouvre, n'hésitez pas à poser vos questions sur le chat, je les traiterai plutôt vers la fin de la session.
+Je vais ouvrir un StreamLit avec un éditeur VS Code.
+Cet éditeur VS Code contient un fichier app.py qui, pour l'instant, vide.
+Je mets mon TiferaFox à côté.
+J'ai ouvert un terminal.
+Je vais lancer StreamLit or app.py.
+Je vais attendre un peu.
+On va lancer un server StreamLit sur le fichier app.py.
+Il va scanner ce fichier qui est, pour l'instant, vide.
+On va attendre qu'il s'allume.
+Pendant qu'il s'allume, on va commencer à le compléter.
+Il s'est allumé sur le côté.
+Donc, sur la droite, on a une page blanche, ce qui est, pour l'instant, normal.
+On va commencer par importer nos librairies et faire, comme dans tout bon langage de programmation,
+faire un HelloWorld.
+On sauvegarde et là, on constate que StreamLit me demande,
+le fichier source a été modifié.
+Est-ce que je dois le relancer ?
+Il y a un concept intéressant que j'ai vu lors de mes pas dans le développement web.
+C'est qu'ils ont ce concept de life reload, qui est absolument génial,
+qui consiste à craquer les modifs sur le code source et afficher le rendu en temps réel.
+Ce qui veut dire que si je fais une modification sur mon titre avec,
+j'ai directement mon update sur la droite.
+Ça me permet de coder un peu incrémentalement ma démonstration StreamLit.
+Donc, on va continuer.
+On va, par exemple, mettre un peu de markdown.
+Ce qu'on va faire, c'est qu'on va étudier le Titanic.
+Ceci est un exemple bateau.
+C'est du markdown classique,
+avec StreamLit,
+avec toutes les règles de markdown associées,
+à savoir ce qui est en gras,
+ce qui est en gras se trouve entre deux asterisques,
+et la partie emoji.
+On va pouvoir ajouter un TADA pour avoir un emoji.
+Petit astuce, totalement au hasard.
+Je ne vous ai promis pas trop de HTML.
+Alors, promis, c'est la seule fois que je vais en faire.
+En markdown,
+il y a aussi parfois cette envie de mettre du HTML
+dans le markdown.
+Donc, pour cela,
+on va avoir une commande qui se charge de cette partie-là.
+On peut dire un markdown.
+OK, markdown,
+tu as le droit de lancer du HTML.
+Donc, on va voir si mon HTML n'est pas trop resti-resti,
+je vais être capable de changer en rouge,
+en espérant le verbe est,
+up et ctrl s,
+et vous avez la modification où mon est en rouge.
+Déjà, petit astuce en plus.
+Vous pouvez rentrer du HTML et du CSS via le markdown,
+il y a plus tard une méthode officielle qui va arriver
+pour injecter du HTML et du CSS directement,
+si il s'y besoin.
+Mais bon, pour l'instant, restons-en sur,
+on peut rentrer du markdown sans trop de difficultés.
+Ensuite, il manque quand même une image.
+Donc, je vous propose d'aller chercher une image du Titanic,
+st.image, image Titanic,
+et une image du Titanic.
+Je vais quand même vérifier que vous voyez bien
+ce à l'air de bien voir.
+Hop, je vais refermer.
+Donc ensuite, j'ai mon image, je suis bien content.
+Qu'est-ce que j'avais dit ?
+J'avais dit que je voulais lire mon dataframe Titanic
+et analyser le dataframe du Titanic.
+Donc, pour cela, il faut d'abord qu'on importe
+Pandas, ensuite faire un read du CSV,
+que j'ai dû mettre dans data comme un grand,
+et ensuite, si vous voulez,
+on peut écrire stwrite de DF plutôt que st.dataframe
+pour afficher le dataframe en dessous de l'image.
+Alors, cela, le world est un peu gros.
+Donc, je vais quand même réagir un peu.
+Exercice Titanic.
+OK, et cette image est un peu grosse.
+Je crois qu'il y a, alors là, il y a un 8 égal.
+Donc, si vous l'avez d'ailleurs constaté en streamlit,
+comme on est en pure scripting,
+on a toute l'autocompression.
+Mon image a un peu rétrécition.
+Je la trouve encore un peu grosse.
+Donc, j'avais mal 200 pixels.
+Ouais, c'est mieux ça.
+OK, donc on a notre dataframe, là.
+On a notre dataframe Titanic
+avec les gens qui ont survécu
+et les gens qui sont morts
+en fonction de différents paramètres.
+Notabene,
+le streamlit.write, il accepte
+ce qu'on appelle un dataframe stylé
+qui a été stylisé
+dans Pandas.
+On peut colorier les cibles comme monde ensemble.
+Et cela, il a accepté aussi par streamlit.
+Par exemple,
+il y a une méthode,
+il s'appelle, je crois,
+si je ne me trompe pas
+background gradient,
+qui va permettre
+de mettre en couleur
+sur les colonnes numériques
+en vers clair les valeurs
+qui sont les plus faibles
+et en vers foncée,
+les valeurs qui sont les plus élevées.
+Laisse tourner un petit peu.
+Et pendant qu'il tourne, je vais...
+Et on peut voir directement.
+Donc, comme vous pouvez le constater,
+on voit ici un âge
+qui se trouve en nul.
+Donc, du coup, il est bien noir
+alors que,
+si on trie, parce qu'on peut aussi trier par colonne,
+on a des gens qui ont 2 ans,
+le gène a 2 ans,
+et des 58, 55, 39 ans.
+J'ai tout le dataframe qui est chargé ici.
+700, 400, 600 lignes,
+700 lignes à peu près.
+Ça va.
+Faire des graphes.
+Donc ensuite, en tant que bon data scientiste,
+je vais pouvoir grapher
+la distribution d'une colonne.
+Donc, pour cela,
+les gens d'habitude
+font du matplotlib.
+Donc, je vais sortir matplotlib
+très rapidement.
+Alors,
+pyplot,
+splt
+et sans faute d'orthographe,
+si possible.
+Et derrière,
+afficher
+des subplots
+que je vais mettre dans une figure
+avec ces axes associés
+et puis utiliser la manière
+pendaisse de faire un histogramme
+à savoir df.
+Faire un histogramme
+et fais-le dans l'axe,
+dans l'axe-axe.
+Et ensuite, streamlit,
+je voudrais
+que tu affiches
+ces axes.
+Et derrière, streamlit
+va m'afficher
+il faut l'excuser,
+comme il fait du recordage en même temps.
+Alors, évidemment,
+si je fais des fautes,
+ce n'est pas l'axe qu'on veut afficher,
+c'est la figure.
+Alors, j'en profite.
+Là, vous avez vu
+l'erreur,
+elle a été affichée sur l'interface.
+Si je remets mon axe,
+si je remets mon axe,
+vous avez vu qu'il y a eu une erreur
+et l'erreur, elle est affichée directement
+sur l'interface.
+Vous n'avez pas allé
+chercher dans les logs de streamlit
+l'erreur qui est associée
+à votre code.
+Vous l'avez qui affichait là.
+Bon, je sais que c'est parce que
+j'aurais dû mettre fil le 2 axes,
+parce qu'un axe n'a pas d'attributs,
+c'est fil.
+Donc, on récupère
+notre figure met le clip.
+La manière dont streamlit
+a utilisé cette image,
+c'est qu'il a construit l'image
+côté serveur,
+il a envoyé l'image
+côté client.
+Donc, si ce sont des images
+qui sont assez lourdes,
+ce n'est pas une la manière
+optimale de faire.
+Donc, pour cela,
+il y a une autre librairie
+qui s'appelle Altair.
+Pour ceux qui ne connaîtraient pas,
+Altair, c'est un binding piton.
+Donc, c'est une librairie piton
+qui se connecte
+à l'écosystème Vega,
+et notamment Vega Lite.
+Donc, Vega,
+ce sont
+un ensemble de spécifications
+de JSON
+qui permettent de compiler
+un JSON
+en du code D3JS.
+Sachant que D3JS,
+c'est la librairie
+JavaScript
+pour des graffes
+interactives de base.
+Donc, si vous voyez
+des jolies
+des graffes
+très interactives
+sur Internet,
+vous pouvez vous dire
+qu'il y a pas mal de chances
+que ce soit du D3.js
+derrière.
+Donc, D3.js,
+si vous faites du piton,
+c'est assez difficile
+de rentrer en D3JS,
+c'est du JavaScript.
+Donc, on peut, à la place,
+passer par du Vega,
+qui lui demande
+un JSON en entrée.
+Il y a la partie Vega Lite
+qui est une couche
+au-dessus de Vega,
+qui permet
+d'utiliser
+l'interface
+plus orientée ggplot,
+donc Grammar of Graphics,
+pour compiler du Vega,
+pour compiler du D3JS.
+Et enfin, Altair,
+c'est le piton,
+c'est le langage,
+la librairie piton
+au-dessus de Vega Lite.
+Donc,
+ce que je vous propose,
+c'est que,
+comme on passe par du JSON,
+ce que va faire Streamlit,
+quand on lui envoie
+un diagramme Altair,
+ça ne va pas être
+de nous uploader
+l'image
+sur le client,
+mais d'uploader du JSON
+et laisser le client,
+le browser,
+faire l'affichage
+du JSON
+en un graphique,
+ce qui est quand même
+un peu plus léger.
+Donc, pour Altair,
+on va commencer
+par demander
+Altair,
+affiche-moi un chart
+sur ce dataframe.
+Je veux récupérer
+un histogramme,
+donc Marc Barre,
+et cet histogramme
+consistera
+dans l'axe des X,
+en l'âge,
+dans l'axe des Y,
+en un décompte des H,
+par exemple,
+c'est pas exactement comme ça,
+il faudrait faire.
+Et enfin,
+Altair
+propose aussi
+de l'interactive,
+je ne vais pas aller jusque là.
+Et enfin,
+je vais écrire charte directement.
+Ce que je vous avais présenté,
+c'est qu'avec Streamlit,
+on avait
+deux manières de faire
+pour afficher quelque chose
+sur le web,
+soit passer par
+st.lafonction type
+AltairChart,
+qui va lire du charte,
+soit st.write du charte
+qui va,
+Streamlit,
+derrière,
+va décoder, ok,
+c'est un charte Altair,
+il faut que j'utilise Altair
+underscore charte,
+soit carrément,
+vous mettez directement charte.
+En Python 3,
+il est capable de se dire,
+je sais un ST write devant,
+donc ce charte,
+je l'analyse
+et je vais afficher.
+Mon charte Altair
+interactif,
+je peux rajouter
+si vous voulez un
+petit tout type
+pour montrer
+que ce charte est interactif.
+Hop,
+l'âge,
+mon élage,
+ok,
+on voit qu'il y a des,
+il y a des bars
+qui sont vraiment trop petites.
+C'est un peu,
+alors l'inconvénient,
+c'est que ce charte
+est beaucoup trop petit.
+Je vais repasser par
+la fonction ST
+pour Altair charte,
+du charte
+et
+un argument pour dire
+astrimite affiche
+ce charte
+sur toute la largeur
+de,
+sur toute la largeur
+de la page.
+Bon,
+si,
+si vous ne connaissez pas
+encore très bien Altair,
+ce qu'on peut faire,
+c'est
+une méthode à part
+qui s'appelle ST ECO
+qui permet d'afficher
+et le code
+et le résultat.
+Ce qui nous permet,
+par exemple,
+d'en capsuler le code
+qu'on vient d'écrire,
+charte égal
+Altair.chartdf.marbar
+qu'on n'a pas l'habitude
+de manipuler.
+Si on,
+on le lindante
+tant
+dans un contexte manager
+ST ECO,
+on va avoir le code
+du graph
+qui s'affiche.
+Donc ce code
+est exécuté
+et en plus affiché,
+ça nous permet
+de débugger un peu plus
+facilement
+ce qu'on est en train
+d'écrire en dessous.
+Ok.
+On est,
+on est plutôt pas mal,
+je vais enlever le tout type,
+je vais
+revenir
+à l'état précédent
+et puis
+et puis je vais voir
+s'il y a
+très rapidement
+une question
+sur notre chat
+qui je répondrai
+à cette question
+un poil plus tard.
+Donc
+désormais on a vu,
+on est,
+on est quand même
+sur du très static ici.
+On est,
+j'ai affiché du texte,
+j'ai affiché une image,
+j'ai affiché un data frame,
+j'ai affiché
+un diagramme interactif.
+On aimerait bien aller un peu plus loin.
+Par exemple,
+si vous présentez ce site
+à votre manager,
+en lui disant,
+voilà mon analyse,
+le manager,
+il aimerait bien jouer
+avec ce charte en disant
+mais si je veux,
+par exemple,
+montrer l'âge
+une autre colonne
+comme la distribution
+des classes
+parmi les survivants et les morts,
+est-ce que je peux aller
+sélectionner cette colonne
+plutôt que d'aller
+dans le script,
+éditer le script
+et rejouer le script.
+Donc,
+pour cela,
+ce qu'on va déjà faire
+c'est sortir cet âge là,
+on va le sortir de,
+on va le sortir de cette colonne,
+je vais le mettre
+dans une variable
+et réenregistrer,
+normalement tout se passe bien.
+Donc,
+ce qu'on aura noté
+c'est que cet âge là,
+c'est ce qu'on veut contrôler.
+On veut avoir une interaction
+sur ça,
+j'ai envie d'avoir une liste
+déroulante avec toutes les colonnes.
+Donc,
+à la place
+de l'âge,
+j'ai
+en streamlit
+un ensemble de widgets
+qui me permettent
+d'interagir.
+Donc,
+par exemple,
+st.selectbox
+et un des nombreux widgets
+qui va nous permettre
+de créer
+une liste déroulante.
+Donc,
+je vais commencer par demander,
+demander,
+demander, demander.
+Bon,
+je suis un peu perdu.
+Je vais faire
+si comme moi,
+vous savez qu'il y a un selectbox,
+mais vous ne savez pas
+exactement comment il marche
+et que votre éditeur
+fait un peu des caprices.
+Vous avez
+une fonction
+st.help
+à laquelle,
+un peu à l'âge hupitaire,
+vous pouvez injecter
+une fonction Python
+et il va afficher
+l'aide
+de la fonction
+en ligne.
+Streamlit.selectbox,
+ce que je prends en entrée,
+c'est un label,
+donc,
+choisissez une colonne
+et des options,
+l'ensemble des colonnes,
+par exemple.
+Une fois que j'ai vu cette aide,
+st.
+Je reviens
+sur ma colonne,
+call
+va colonne,
+il y a le selectbox
+de choisissez
+une colonne
+et derrière,
+je vais mettre
+toutes les,
+toutes les colonnes.
+On va attendre un peu.
+Ok,
+donc,
+vous avez constaté,
+il y a une nouvelle colonne
+qui apparaît.
+Choisissez une colonne
+et une liste déroulante
+avec toutes les colonnes
+qui est apparu.
+Là, je peux remettre mon âge,
+par exemple,
+il relance le script
+en injectant directement
+l'âge
+dans la variable
+call,
+si vous aviez
+bien constaté.
+Et voilà,
+pour la partie
+interactivité,
+comment
+cela se déroule.
+Donc,
+si je reviens
+à mon petit slide deck,
+ma partie interactive,
+si on a besoin
+d'interactivité,
+ce qu'on a à faire
+en streamlit,
+c'est préciser
+âge égal
+mon widget,
+par exemple,
+st.slider
+pour demander
+un slider
+avec les valeurs
+minimum
+et maximum
+de mon slider.
+Et ce qu'il faut savoir,
+c'est que l'état,
+la valeur même
+du slider est directement
+intégrée
+dans la variable âge.
+Vous pouvez vous servir
+de cette variable
+comme une
+variable piton classique.
+Elle sera diffusée
+partout à la suite.
+Ce qui est intéressant,
+d'ailleurs,
+j'en profite
+par rapport
+à la question d'âge
+que j'ai vu
+dans le chat tout à l'heure,
+c'est que la partie
+reactivité de streamlit,
+c'est ça.
+Je ne connais pas
+assez bien d'âge
+de mémoire.
+Il y a des callbacks
+de mémoire.
+Peut-être que je me trompe
+dès que je le relise.
+En streamlit,
+en tout cas,
+on n'a pas
+de callback
+ou de programmation
+réactive à faire
+en disant le
+st.slider.onchange
+ou h.onchange,
+alors exécuter
+cette fonction.
+Ce qui nous évite
+d'avoir des changements
+d'états qui se font
+par ci par là
+à savoir, ok,
+je viens d'interagir
+avec ce stadeur
+et il y a la moitié
+de ma page qui a disparu
+et je ne sais pas pourquoi.
+Ici,
+à partir du moment
+où vous lisez votre script
+de haut en bas,
+en sachant que
+dans les variables
+vous avez la valeur
+de votre widget,
+vous savez
+l'état
+de votre application.
+Donc on est
+sur du code
+un peu plus simple
+à gérer
+par rapport
+à du code, bien sûr,
+plus puissant
+réactif.
+À partir de là,
+ce que streamlit
+vous propose,
+bien évidemment,
+c'est un ensemble
+de widgets,
+un ensemble de widgets,
+telles que
+une liste
+d'options
+ou
+un block texte
+qui vous fait du NLP,
+par exemple,
+je veux rentrer
+du texte
+à analyser
+un NLP.
+Je peux rentrer
+interactivement du texte
+et processer
+la phrase
+qui a été stockée
+dans la variable.
+J'ai un file uploader,
+un bouton,
+si j'appuie sur le bouton
+exécuter quelque chose,
+une date.
+Il y a un ensemble
+de widgets interactifs
+que vous pourrez aller
+tester en streamlit
+pour interagir
+avec votre application
+et avoir la valeur
+directement
+de votre script.
+Et c'est
+aussi le bon moment
+pour moi
+pour vous dire
+que maintenant
+qu'on a vu les widgets,
+vous avez vu
+dans la toute première démo
+qu'il y avait une sidebar
+dans laquelle se trouvaient
+les différents widgets.
+Si vous voulez associer
+un widget
+à un sidebar,
+vous aurez à rajouter
+entre le ST
+et le slider
+un sidebar
+qui va vous permettre
+d'injecter ce slider
+dans la sidebar
+et non pas
+dans la page principale.
+Moi,
+ce que j'aime bien faire
+en général,
+c'est mettre
+toutes les paramètres
+de configuration
+de mon application
+dans la sidebar,
+ça rend la chose un peu
+donc concrètement,
+si je reviens
+dans mon petit code
+exercice titanique,
+ce qu'on a vu,
+je vais commencer
+à nettoyer un peu.
+On a
+cette partie
+avec
+ici
+on a du texte
+et une image
+et une description.
+On a
+la partie
+je charge mon fichier ici.
+On a la partie
+je fais une privue
+de ma data
+et enfin
+on a
+toute la partie de chartes
+qui se trouve tout en bas.
+Donc,
+celui que j'aime bien,
+c'est le file loader,
+par exemple.
+Ce qu'on peut faire,
+c'est le file loader.
+On sait qu'il est
+dans file uploader.
+Pour le file uploader,
+je vais regarder
+l'auto complétion.
+Il me demande
+un label
+et un type,
+surtout.
+Donc,
+en label,
+choisir uploader
+un fichier CSV.
+Et puis,
+je vais mettre
+un type,
+je vais mettre
+c'est quoi qu'il demande?
+C'est un CSV.
+Donc,
+c'est un string
+ou un tableau
+par amètre.
+Ouais,
+c'est ça,
+un tableau.
+Pour être sûr,
+je vais mettre un tableau
+avec CSV.
+Pour être
+on the safe side.
+Donc,
+uploader.
+Donc,
+si vous avez bien compris,
+ce qui se trouve
+dans mon file uploader,
+c'est la variable f.
+Donc,
+cette variable f,
+c'est normalement
+mon fichier CSV.
+Donc,
+je vais l'injecter
+directement
+dans pandas.read CSV.
+Pandas me répond
+que tu m'as renvoyé
+un fichier qui est nul.
+Donc,
+je ne sais pas quoi en faire.
+Il faut aller chercher
+le fichier.
+Grossfiles.
+Là,
+vous avez l'occasion
+de voir dans
+mon browser,
+workspace.
+Alors,
+edit
+et sendbox data.
+Et bon,
+j'ai deux fichiers.
+J'ai le Titanic.
+On peut changer de fichier.
+Bon,
+je vais mettre le Titanic.
+Donc,
+j'ai mis mon Titanic.csv
+et j'ai directement
+mon application
+qui retourne avec
+les fichiers du Titanic.
+Alors,
+on peut changer de fichier.
+On peut mettre occupancy,
+par exemple.
+Normalement,
+ça ne devrait rien changer.
+Donc là,
+pareil,
+c'est streamlit.
+C'est vrai que je le vends.
+Là,
+pour cette présentation,
+je le vends en tant que
+interface web,
+application web
+pour de la data science.
+Il s'avère que moi,
+pour plusieurs de mes projets en interne,
+je m'en sers aussi
+pour tout ce qui est data processing,
+data quality.
+À savoir,
+j'ouvre un streamlit,
+je drag-and-drop des fichiers
+et j'ai un peu de code
+dans mon script
+qui permet de vérifier
+le fichier,
+vérifier la qualité du fichier.
+Si le fichier est bien encodé
+et ainsi de suite.
+Bon,
+je vais repartir sur le Titanic.
+Le ton qui charge
+Pour éviter le problème d'une nonne,
+ce qu'il faudrait faire,
+c'est quelque chose
+que vous verrez pas mal
+dans les applications.
+C'est de tester ici.
+Si c'est nonne,
+il vaut mieux ne rien faire.
+Il vaut mieux faire quelque chose
+quand il y a bien un fichier.
+Par exemple,
+if f is not nonne,
+alors
+exécuter tout ce code-là.
+Donc,
+à partir de là,
+ça veut dire que
+si je n'ai pas mis
+upload et fichier,
+ne fait rien.
+Si j'ai upload un fichier,
+exécute toute la suite.
+On est plutôt content.
+On va peut-être
+mettre ce file uploader
+dans la sidebar,
+tant qu'à faire.
+Je rajoute juste sidebar
+pour cela.
+Et je vais un peu ranger.
+Je vais un peu ranger tout ça.
+Pour ranger,
+j'ai par exemple une checkbox.
+C'est un peu une des manières
+de prodiguer,
+un peu de navigation rapidement.
+C'est de mettre des checkbox
+dans la sidebar
+avec par exemple ici
+data preview.
+Et if
+cette checkbox
+est coché,
+alors afficher le dataframe.
+Donc derrière,
+si vous avez suivi,
+là,
+mon dataframe a fiché.
+Il a disparu.
+Par contre,
+j'ai une nouvelle checkbox
+sur le côté
+avec data preview.
+Si je coche dessus,
+j'ai
+la partie de code
+à l'intérieur
+du sidebar checkbox
+qui s'affiche.
+Donc j'ai à nouveau
+mon dataframe
+qui s'affiche.
+Ça me permet
+de mettre
+un peu de séparateur
+ici.
+Et pareil,
+ce sidebar ici,
+data preview.
+Ici,
+je vais mettre
+univariate
+distribution
+et
+puis je vais sélectionner
+tout ça
+et remettre une tablature.
+Ça me permet
+de nettoyer un peu.
+Donc là,
+j'ai fait un peu de nettoyage,
+j'enlève mon data preview.
+J'ai mon file au plaudeur.
+J'ai mes cases data preview
+univariate distribution.
+Et ici,
+je suis vide.
+C'est un peu plus clean
+que d'habitude.
+40.
+Tout va bien.
+Donc,
+en conclusion,
+si vous l'avez suivi,
+la partie interactive
+consiste
+à utiliser
+des widow streamlets.
+Si un utilisateur interagit
+avec l'application web,
+la nouvelle valeur
+est mise
+à disposition
+dans la variate Python.
+Cette variate Python,
+elle est utilisée
+dans le script,
+comme un script classique,
+ce qui veut dire que streamlit
+en fait rejoute
+tout le script
+du début à la fin,
+comme je vous l'ai dit.
+Et enfin,
+update l'application.
+Donc il le fait intelligemment.
+S'il voit que seul le graph
+a été modifié
+par l'interaction,
+il ne va pas
+renvoyer toute la page,
+il ne va juste envoyer que le graph.
+Par contre,
+il y a un inconvénient,
+c'est que si à chaque fois
+je rejoue mon script,
+cela veut dire
+qu'à chaque fois,
+je relis mon data set
+pandas.
+Et donc potentiellement,
+si je fais encore du processing,
+si je fais du one,
+ou si je fais du processing
+plus lourd,
+et que je l'exécute
+à chaque fois que j'interagis
+avec un slider,
+il faut comprendre
+que ça va être
+beaucoup trop long
+pour mes besoins,
+ce sera plus très interactif.
+Donc pour cela,
+streamlit propose
+comme en tant que 3e fondament,
+notion fondamentale,
+la notion de cache.
+Si vous avez
+une fonction
+que vous voulez
+conserver en cache,
+à savoir,
+une grosse,
+une fonction process
+par exemple,
+le data set du Titanic,
+et vous lui mettez
+une colonne H,
+si
+vous rejouez
+cette même fonction process
+sur la même colonne
+plusieurs fois à la suite
+parce que vous avez
+sélectionné P class,
+revenez sur H
+et vous revenez sur H
+plusieurs fois,
+vous n'avez pas voulu
+reprocesser à chaque fois.
+Donc pour cela,
+vous décorez cette fonction
+avec st.cache,
+et cela va permettre
+à streamlit
+de se dire,
+ok, je recroise cette fonction,
+je vais utiliser
+le résultat
+qui a déjà été calculé
+pour un système de cache
+ou alors pour les csgrade
+qui sont
+dans le coin,
+j'ai de la mémoisation.
+Derrière cela veut dire
+concrètement,
+quand vous décorez
+une fonction,
+ce que streamlit va faire,
+c'est récupérer
+le corps de la fonction,
+récupérer les arguments
+avec lesquels la fonction,
+tiens, je vais tenter le point d'or,
+avec lesquels la fonction
+a été appelée,
+comme df1h,
+et enfin,
+le corps
+est la variable
+extérieur à la fonction,
+mais qui sont utilisés
+dans la fonction.
+Il va stocker tout cela
+dans un système,
+un cache-clé-valeur,
+donc ici,
+j'ai ma grosse clé
+qui consiste
+dans une concatenation
+d'un h,
+d'un h
+de ce bloc-là,
+de ce bloc-là
+et de ce bloc-là.
+Si je rejoue mon script
+avec
+le même corps de fonction
+et les mêmes variables,
+streamlit va directement
+récupérer le résultat
+et afficher le résultat
+à la place.
+Si dès que vous changez
+le corps d'une fonction,
+si là,
+je rajoute un print,
+par exemple,
+dans cette fonction,
+streamlit ne considère
+plus
+que cette fonction
+se trouve dans le cache,
+donc il va directement
+recalculer
+le recalculer,
+ce qui permet
+de continuer
+à coder en interactif
+sans se faire avoir
+par le cache.
+Il peut y avoir des cas
+où
+ce cache,
+on veut vouloir
+le manipuler à sa guise.
+Cela veut dire,
+imaginons concrètement,
+ce que ça veut dire
+d'appliquer un hashing,
+c'est pour chaque objet
+qui se trouve dans le corps
+de l'objet
+et dans les arguments,
+streamlit va lui
+appliquer un hashing
+automatique.
+En plus,
+il faut aller
+processer un hash
+pour chacun
+des objets
+dans l'objet.
+Cela peut prendre du temps.
+Si par exemple,
+vous avez un dataframe
+qui contient une colonne
+avec beaucoup d'images,
+il faut que streamlit
+va calculer un hash
+de chacune des images
+s'il y en a un million,
+c'est beaucoup trop lourd.
+Vous avez la possibilité,
+c'est déjà un peu plus avancé,
+de modifier
+la manière dont streamlit
+hash ses objets,
+si par exemple,
+vous voulez vous connecter
+à une base de données.
+Vous savez que cette
+connexion à la base de données,
+à l'intérieur de l'objet,
+il peut avoir beaucoup de variables
+qui sont modifiées
+au fur et à mesure
+de l'application.
+Mais si
+cette connexion
+à la base de données
+a la même ID,
+on ne veut pas
+se dire
+tu as changé
+si tu as la même ID
+mais tu as changé
+à l'intérieur,
+ce n'est pas très grave.
+Normalement, je récupère
+le même résultat.
+Donc on peut dire
+si tu crois
+une connexion d'ED
+le hash que tu vas calculer,
+ça va être uniquement
+utiliser l'ID
+de l'objet.
+Pareil,
+si tu trouves
+un dataframe
+qui est
+un dataframe,
+n'importe quel dataframe
+et qu'on n'a pas envie
+de faire un calcul
+de hash dessus,
+considère que ce dataframe
+renvoie un non.
+Donc tous les dataframes
+renvoient un non.
+Donc quelques sols
+qu'on envoie,
+il ne sera pas considéré
+dans le système de hashing.
+Donc ça nous permet
+d'accélérer le hashing
+à nos besoins.
+Là, c'est déjà
+relativement plus avancé.
+Mais en conclusion,
+ce que cela nous permet,
+ça va être
+si j'interagis
+avec mon application web,
+j'ai tout mon script
+qui est rejoué
+du début à la fin,
+sauf les fonctions
+qui ont été décorées
+avec un SDK
+et en plus,
+appelé avec des arguments
+qui sont les mêmes
+que les arguments
+qu'on a déjà manipulé
+avant.
+Donc cela nous permet
+de simplifier
+les tâches.
+Donc ça nous permet
+d'éviter la partie réactive
+et pour combler
+le trou
+qui est géré par
+le trou du genre
+envie de
+ne relancer
+que cette fonction
+spécifiquement,
+on peut jouer
+avec le système
+de cache
+pour faire cela.
+Donc pour
+récapituler,
+Streamlit
+consiste
+en une librairie
+pour vous fournir
+l'hybrique
+pour faire
+une application web
+avec votre code Python
+que ce soit
+data science
+ou data processing,
+data quality
+qu'importe final,
+même si c'est
+quand même très orienté
+data science.
+Avec Streamlit,
+vous restez
+dans votre script Python,
+vous ajoutez
+quelques invocations
+d'une M Space
+Streamlit,
+ou ST.
+Vous avez
+directement
+l'état de vos widgets
+au sein de variables pitons,
+sans avoir
+à faire de codes réactifs
+et enfin un système
+de cache
+qui vous permet
+de
+skipper
+les process
+et les calculs
+qui sont beaucoup trop longs
+à réexécuter
+ou à mesurer.
+Ça vous permet
+de gérer
+le contrôle
+de votre flow
+au niveau applicatif.
+Donc
+il ne me reste quand même
+plus beaucoup
+de démons
+à vous faire.
+Donc pour la partie
+des mots
+de ce système de cache,
+si je reviens,
+alors je vais réafficher
+le data preview.
+Donc pour réafficher
+le data preview,
+il y a un argument
+qui s'appelle value
+égal false,
+donc false
+égal,
+n'affiche pas la checkbox.
+La checkbox
+est désactivée de base.
+Donc si je le mets à trou,
+la checkbox
+elle sera cochée de base
+puisque je veux aller voir
+mon data frame.
+Donc nous,
+la fonction qui nous dérange,
+c'est celle-là.
+La fonction df
+égal pd
+pd.ry
+de underscore csv,
+elle est appelée
+à chaque fois
+que j'interagis
+avec ma selectbox.
+J'ai caché ma selectbox.
+Je vais quand même la remettre.
+Reviens selectbox,
+j'ai besoin de toi.
+À chaque fois
+que je joue
+avec cette selectbox,
+j'ai tout le lot de csv
+qui est réexécuté.
+Donc pour le montrer,
+on va extraire cela
+dans un lot de data
+de f par exemple.
+Et on va retourner
+un read csv
+de f.
+Et on va faire appel
+à ce lot de data
+ici.
+Et ce qu'on va faire,
+c'est que,
+avec stringit,
+on peut mettre
+un petit warning
+pour dire par exemple,
+cache miss.
+Donc ici,
+je veux afficher un warning
+quand je passe
+dans cette fonction.
+Donc là,
+on voit bien le warning.
+Il y a affiché ici
+cache miss.
+Donc si je rejoue
+sur le ticket,
+je réinteragis
+avec la fonction.
+J'ai encore le problème.
+J'ai encore le cache miss
+qui se trouve là.
+Donc,
+on ne veut pas rejouer
+cette fonction à chaque fois.
+On rajoute
+st
+parantes cache.
+Alors,
+notabene,
+je me permets
+de supprimer des warnings
+parce qu'il va me râler en disant,
+il y a un appel
+stringit
+dans la fonction
+qui est mise en cache.
+Je fais attention.
+Je vais supprimer
+ce warning
+pour l'instant.
+Et j'ai encore mon cache miss.
+C'est la première fois
+que j'utilise,
+c'est la première fois
+que j'utilise la fonction
+lotdata
+sur le fichier
+titanic.csv,
+qui est le fichier
+qui se trouve
+dans le uploader.csv.
+Si je rejoue, par contre,
+je demande la distribution
+sur l'âge,
+on remarque
+le warning
+cache miss a disparu.
+Ce qui va nous montrer
+que la fonction
+lotdata
+n'a pas été réexécutée.
+Donc, il a récupéré
+le dataframe dans son cache
+et il l'a réutilisé directement
+au niveau
+de son application web.
+Ceci nous permet
+d'aller esquiver
+la plupart des gros calculs
+qui nous sont imposés.
+Comment dire ?
+C'est 50 minutes
+de présentation.
+Moi, au niveau de la démo,
+on peut encore faire
+beaucoup de choses,
+mais
+je vais voir au niveau
+des questions
+si je peux
+improviser quelque chose.
+Il y a eu notamment,
+je vais lancer
+un random forest
+avec un bout.
+On peut,
+le temps que je dise
+les questions pour voir,
+voir
+si
+il y a eu
+des questions.
+Je vois
+les deux questions.
+Je vais finir.
+Je vais finir rapidement.
+Si jamais
+un lotdata scientiste
+vous fournit,
+par exemple,
+un utilis.pyg,
+c'est du piton classique.
+Dans ce utilis.pyg,
+j'ai des fonctions
+qui me permettent
+d'entraîner un modèle.
+Donc, je vais...
+Ce qui est bien
+l'appurement
+en mode software engineer,
+c'est que vous pouvez utiliser
+Streamlit
+dans un fichier
+uniquement dédié
+à l'interface.
+Et toute la logique
+du code,
+vous pouvez l'exporter
+dans un autre dossier
+et avoir votre setup.pyg,
+votre code coverage,
+géré,
+votre black, d'ailleurs.
+Votre formateur black
+qui passe sur
+tous les scripts piton
+dont celui de Streamlit.
+Ce n'est pas un problème.
+Intégrer Streamlit
+dans un projet,
+vous pouvez le voir,
+c'est PIP Installer Streamlit
+et afficher
+Streamlit underscore app.pyg.
+Et on y injecte
+directement nos fonctions
+et on peut l'utiliser
+directement.
+J'ai déjà, normalement,
+un load data
+dans Utils,
+donc je vais réutiliser
+ce load data.
+Et puis je crois
+de mémoire
+si ma mémoire
+ne me fait pas
+des faux
+checkbox
+de classification
+très rapidement.
+On a peut-être le temps
+de vite fait
+avant de passer
+aux quelques questions.
+Le data frame est recréé.
+Vite fait
+d'entraîner
+un petit random forest.
+Un
+petit random forest.
+Donc de mémoire
+cette personne,
+il faut que j'aille
+relire le code que j'ai créé.
+Donc là,
+d'ailleurs,
+vous pouvez le constater
+que dans mon load data
+j'ai fait le one auto-coding
+du sexe
+et de l'embarquer
+et j'ai enlevé
+la colonne survived.
+Non, elle est là.
+Je l'ai considéré
+comme target
+dans la fonction
+train rf.
+J'ai mis en argument
+quand même un estimateur
+et un max depth.
+Donc ce qu'on peut faire,
+quand même,
+c'est rajouter.
+Par contre,
+c'est vraiment l'impro.
+On va supposer
+que tout se passe bien.
+Max number estimators.
+On va quand même rester
+en data science.
+On va dire
+qu'un nombre d'estimateurs,
+ça va de 5 à 100
+et que
+il va commencer à 10.
+On va commencer par 10.
+10 à un estimateur
+par arbre
+pour notre random forest.
+Et un max depth.
+Donc la profondeur
+de notre arbre,
+on va
+mettre
+profondeur
+de l'arbre,
+des arbres,
+par exemple.
+On va mettre,
+je vais afficher,
+quand même,
+on va mettre,
+on va aller de 2
+à 10
+et on va commencer
+à 4.
+Donc,
+si je sauvegarde,
+on va vérifier
+que je n'ai pas fait de boulettes.
+Ça,
+là,
+c'est une boulette.
+Classification.
+On va recocher
+la classification
+pour afficher
+les 2 petits number inputs.
+Ok,
+j'ai mon max estimateur
+à 10.
+Ma profondeur d'arbre
+à 4.
+Je vais finir
+par
+entraîner mon random forest
+avec
+un estimateur
+et le max depth
+qui viennent
+du widget.
+Et
+enfin,
+par
+un grand film,
+parce que je ne sais plus
+si je crois fermer le clip,
+mais comme je ne sais plus.
+Ce que je peux
+faire quand même
+si je peux mettre des ballons.
+Voilà.
+Pour fêter
+la fin
+de l'apprentissage.
+Donc là,
+j'ai la fonction train.rf
+qui me fait l'apprentissage
+de random forest.
+Quand l'apprentissage
+est terminé,
+on affiche des petits ballons.
+Et enfin,
+on affiche la matrice
+de confusion
+qui n'est pas
+trop mal.
+Et on peut aller
+interagir directement
+avec
+la profondeur
+des arbres.
+Alors là,
+l'inconvénient,
+c'est qu'à chaque fois
+que je change un numéro,
+il réentraîne
+le modèle
+de machine learning.
+Donc c'est quand même
+c'est sympa,
+mais au plus
+là,
+il a peut-être un peu bugué.
+Donc ce qu'on va faire,
+c'est qu'on va mettre
+un bouton à la place.
+Si un bouton
+run training,
+et puis si j'appuie
+sur le bouton,
+j'exécute le code.
+Et on va arrêter
+la démo ici.
+Et enfin,
+peut-être aller un peu vite
+sur la fin.
+Donc,
+j'ai choisi le nombre
+d'estimateurs.
+Je vais nous mis
+l'estimateur.
+Non, je sens
+qu'il y a dix alors.
+Quatre profondeurs
+des arbres.
+Run training.
+Donc là,
+j'ai repris sur le bouton.
+Il lance
+l'apprentissage
+de la Random Forest.
+Et enfin,
+il a reparti.
+Il a décoché à chaque fois.
+Ah oui,
+non, mais je suis tombé
+sur le fond.
+C'est ça de
+faire les choses
+à l'impro.
+C'est que quand j'interagis
+avec le bouton,
+il se réexécute
+depuis le début
+et du coup,
+le bouton,
+ce n'est pas ici.
+Je n'aurais dû le mettre.
+Bon,
+je ne mettrais pas de bouton.
+Je n'aurais dû le mettre ailleurs.
+Je vais verrer ça.
+Ok.
+Je vais m'arrêter là
+pour l'impro
+sur la démo.
+Parce que sinon,
+on n'est pas arrivé.
+J'ai vu
+qu'il y avait des questions.
+J'ai vu,
+effectivement,
+la question sur...
+La question
+sur Dash
+avec Plotli
+pour faire des Dashboards similaires,
+ça marche plutôt bien
+et la grande communauté
+facilite beaucoup le développement
+car on trouve beaucoup
+de documentation en ligne
+qu'à l'avantage,
+je vais rétier
+à utiliser Streamlix
+plutôt que Dash
+pour visualiser des graphes Plotli
+ou plus globalement
+des résultats de ML.
+Pour répondre
+à cette question,
+moi,
+ce que j'ai vraiment aimé
+dans Streamlix,
+comme tu as pu le constater,
+c'est qu'à peu près une demi-heure,
+j'ai mon appli.
+Effectivement,
+avec Dash,
+on a un framer
+qui est bien documenté
+avec une bonne communauté
+et avec des bons...
+une bonne interface
+JS.
+Après,
+quand on veut ajouter
+des interactions un peu plus poussées,
+parfois, il faut rajouter
+du HTML
+et du JS
+de mémoire.
+Il y a le côté callback
+où j'ai été un peu...
+Ça se fait,
+bien sûr,
+c'était un peu compliqué.
+Ce n'était pas compliqué,
+mais il y a cet aspect
+callback supplémentaire.
+Et enfin,
+sur la partie Dash,
+on reste quand même
+sur un bon produit
+pour faire du bon dashboard.
+Là où avec Streamlix,
+moi,
+je le considère plus
+comme un produit
+pour monter
+une app web
+relativement rapide.
+On n'est pas non plus
+sur du gros dashboard
+avec Streamlix.
+On peut faire des gros dashboards.
+Ça me fait d'ailleurs
+ma transition
+vers la dernière slide.
+C'est que
+sur...
+par rapport
+à la roadmap
+de Streamlix,
+Streamlix, c'est encore relativement récent.
+Donc je reviens
+à la question des dashboards, d'ailleurs.
+C'est que
+il y a déjà beaucoup de personnes
+qui
+utilisent Streamlix
+pour coder notamment
+des dashboards
+et du multi-page
+avec de l'authentification,
+qui sont déjà peut-être
+dans Dash.
+Sur la roadmap
+Streamlix,
+il y a 4
+caractères
+qu'il faut prendre en compte.
+Il y a le côté custom components,
+primitives de disposition,
+état applicatifs
+côté client
+et Streamlix Fortimes.
+Côté composants custom,
+vous avez vu,
+là, j'ai fait beaucoup de altaïre.
+On peut faire du plotlix
+pour répondre d'ailleurs.
+On peut faire du plotlix
+sur Streamlix.
+D'ailleurs,
+du Dash,
+parce qu'on a injecté
+du Dash dans du Streamlix.
+Il faut voir
+si Dash
+il faut voir si Dash
+se met dans Streamlix.
+Je ne me suis pas posé
+la question.
+Bref, si jamais,
+par exemple,
+Dash ne peut pas être
+intégré dans Streamlix,
+la partie composant custom
+sert à ça.
+Elle est en cours
+de développement
+et elle sort normalement
+H1 2020.
+Je ne suis pas
+commercial Streamlix.
+Donc,
+je n'ai pas non plus
+l'intérieur
+et l'intérieur
+de ce qui se passe.
+Mais côté Custom Components,
+il y a beaucoup de gens
+qui demandent,
+par exemple,
+si je veux intégrer
+du Dash ou du Pi Heat Chart,
+il y a du Heat Chart,
+par exemple,
+ce n'est pas natif.
+Ou alors,
+je veux carrément
+faire du D3JS
+dans...
+Je veux avoir
+un composant D3JS
+avec lequel je puisse
+interagir
+en Python facilement.
+Donc,
+les Custom Components,
+ça va.
+Le rôle va être
+qui puisse,
+avec lequel on puisse
+interagir en Python,
+de la manière
+dont je vous ai montré
+tout à l'heure.
+Le layout primitive,
+si vous avez constaté
+mes boutons,
+la number input,
+ils sont tous
+à la suite,
+là au-dessus de l'autre.
+Donc,
+malheureusement,
+il n'y a pas encore moyen
+de les mettre tous à l'horizontale,
+enfin, à l'horizontale.
+Un bouton
+et un bouton
+juste à côté.
+C'est en cours
+de développement,
+notamment sur la partie
+est-ce que je peux mettre
+du grid layout
+pour ceux qui font du CSS.
+J'ai envie de faire
+un layout en gris,
+comment je peux faire
+ça facilement
+dans Streamlit
+avec la paye considérée.
+Il y a la partie
+état applicatif
+côté client.
+Si vous voulez faire,
+par exemple,
+je reviens encore
+sur Dash.
+Un cookie,
+je suis authentifié,
+je veux un cookie
+côté client.
+Aujourd'hui, je ne peux pas,
+parce que je relance
+ce script à chaque fois
+et je ne peux pas
+mettre en cache
+un cookie comme ça.
+Il faudrait que je le mette
+en cache.
+Il y a un hack
+qui permet
+de stocker
+côté état client
+de l'information,
+comme
+combien de fois j'appuie
+sur ce bouton
+ou un cookie client.
+C'est encore un hack.
+Je pense que c'est plus
+vers H2 2020,
+qui aura une vraie
+manière de faire ça.
+Ça permettra
+de gérer notamment
+la partie authentification,
+la partie multi-page
+pour dire je suis
+sur cette page-là,
+donc exécute ce code
+plutôt que ce code
+et ainsi de suite.
+Enfin, Streamlit
+d'épiement dans l'abstract,
+donc je n'ai pas
+trop le temps
+de parler d'épiement,
+mais notamment d'épiement
+avec Iroku
+ou AWS GCP,
+c'est du piton pur.
+Vous lancez
+votre Streamlit
+Run
+dans votre AWS.
+Par contre,
+sans Streamlit 4 Teams,
+c'est à vous de gérer
+le load balancing,
+la partie session
+des utilisateurs,
+la partie ouverture
+des firewalls
+du load balancer,
+et la web socket
+entre client
+et le serveur Streamlit.
+Streamlit 4 Teams,
+il y aura une partie
+open-source,
+c'est une partie payante,
+la partie open-source
+doit permettre
+de faciliter le déploiement
+vers le cloud,
+là où la partie payante
+se charge
+de toute la partie
+très enterprise,
+de j'ai besoin
+de m'authentifier
+au Streamlit,
+j'ai besoin de gérer
+des applications
+Streamlit
+et des déploiements
+Streamlit,
+ça c'est un peu plus
+renté
+à Enterprise,
+de ce que j'ai compris.
+Donc, si vous vous êtes
+intéressé par Streamlit,
+il y a deux commandes
+à lancer,
+PayPayInstall Streamlit
+et Streamlit Hello.
+Donc,
+ce qui est 19 heures,
+est-ce qu'on peut
+utiliser Streamlit
+en production
+ou est-ce que c'est plutôt
+réservé
+à du prototypage
+et des démos?
+Je dirais
+par expérience
+que Streamlit
+et encore jeune,
+Streamlit
+veut quand même
+monter sur la partie
+prode,
+c'est-à-dire je veux pouvoir
+afficher derrière
+ce site
+à du client
+avec de l'authent,
+avec de la robustesse,
+avec un bon load balancer.
+Aujourd'hui,
+c'est
+encore beaucoup
+à nous ingénieurs
+de gérer quand même
+la partie
+j'mène,
+la partie
+on va dire prode,
+prode,
+c'est à nous de la gérer.
+Il y a encore parfois
+des bugs,
+comme des sessions
+qui s'entrecoupent
+au niveau de la site bar,
+ce qui font que
+quand il y a
+votre appli Streamlit
+qui tourne,
+il y a 10 utilisateurs
+qui se connectent,
+parfois il y a
+deux utilisateurs
+qui partagent
+un widget,
+ça a été réglé
+il y a quelques mois,
+mais on n'est pas
+à l'abri de
+encore tommer
+sur ce genre de bug.
+C'est un type
+des mots rapidement
+que je montre
+à un client.
+Il y a quand même
+cette volonté
+de faire quelque chose
+de prode
+et pas limiter
+le data scientiste
+à juste
+t'as fait
+ton UI
+de démo,
+tu vas pas plus loin.
+Et c'est pour ça
+d'ailleurs qu'à Streamlit
+4 Teams,
+payant,
+qui est censé
+gérer cette partie.
+Je vais
+poser
+si on a
+un input
+utilisateur
+sur lequel
+on fait tourner
+un modèle
+de variables
+sur le côté serveur.
+C'est le ST.dataFrame.
+Par exemple,
+côté serveur
+il voit le dataFrame,
+il envoie
+ce qu'on appelle
+un objet protobuf
+qui contient le dataFrame.
+Ce que fait le serveur
+c'est qu'il vous renvoie
+les résultats
+sous forme protobuf
+et il affiche
+côté client.
+Il n'y a pas de stockage
+contrairement
+à par exemple
+si vous faites du
+TensorFlow.js
+vous pouvez charger
+votre mobile net
+au niveau client
+et vous faites
+vos prédictions
+côté client.
+Là,
+je réfléchis
+quand même à ce que je dis
+côté streamlit
+c'est fait
+côté serveur
+pour l'instant.
+Est-ce qu'il est
+possible de mettre
+des visuables
+BI Tableau
+sur streamlit?
+C'est une bonne question.
+Ça fait partie
+de la roadmap
+dans Compos en Custom.
+Dans la roadmap
+Compos au Custom
+il y a
+à partie
+je veux gérer
+un iFrame.
+Il y a
+la manière
+on va dire
+bateau
+je prends
+un iFrame
+qui représente
+ou l'URL
+du embedded Tableau
+par BI
+et je l'amène
+sur streamlit
+avec cet iFrame.
+ST.iFrame
+c'est quelque chose
+qui est prévu
+normalement pour H1
+aussi.
+Normalement
+H1
+on peut déployer
+un iFrame
+avec Tableau
+et par BI.
+Après
+il y a
+une issue
+sur le forum discus
+faut pas hésiter
+à les voir
+je pourrais te la
+re-pointer.
+Peut-on intégrer
+des applis
+sur streamlit
+avec d'autres sites web
+faut-il utiliser
+des applis
+spécifiques c8
+merci d'avance
+alors
+il y a eu
+pareil dans la communauté
+plusieurs personnes
+qui se sont posées
+cette question
+de faire
+est-ce que streamlit
+si je comprends bien ta question
+permettent de
+mettre par exemple
+une applis
+reste
+côté streamlit
+pour aller
+récupérer
+les variables
+qui ont été construites
+par exemple
+moi la
+à ma connaissance
+ce n'est pas codé nativement
+à ma connaissance
+c'est du tournado
+d'air streamlit
+donc ça veut dire
+qu'il faut
+aller
+ajouter un endpoint
+API
+dans le tournado
+pour dire
+bah tournado
+si tu reçois cette requête
+spécifique
+va chercher cet objet
+ça pour moi c'est pas codé
+donc
+à mon avis
+c'est possible
+en forquant le projet
+je pense que la question
+a été posée
+sur github
+et
+j'ai rire aussi
+recherché sur github
+je crois que la question
+a été posée
+et du coup
+on réfléchit à la question
+j'espère que ça répond
+à la question
+merci
+ok
+alors
+je vous ai
+fini la présentation
+donc
+ah oui
+n'hésitez pas
+comme ça il y a le
+sur le forum
+j'y suis assez régulièrement
+j'ai passé 4 mois dessus
+donc c'est pour ça
+que j'ai aussi vu
+les gens poser
+ce type de questions
+et du coup
+j'espère qu'on
+j'espère que
+franchement
+j'espère qu'ils
+pourront répondre
+à ce genre de questions
+le code devrait être
+disponible
+sur github
+sur
+andf.io
+slash
+trimnit
+lyondatatience
+202
+parce que c'est la date
+d'aujourd'hui
+n'hésitez pas
+je traîne sur twitter
+github
+vous pouvez m'envoyer
+des mails
+il n'y a pas de soucis
+pour le prochain meet up
+parce qu'il faut que je parle
+du prochain meet up
+il y aura bien
+un prochain meet up
+parce qu'on est sur du mensuel
+la semaine prochaine
+la semaine prochaine
+le mois prochain
+donc
+n'hésitez pas
+à suivre
+sur meet up
+le prochain meet up
+qui est sur le chat
+si
+il n'y a pas d'autres questions
+semaine prochaine
+j'ai vu des meet ups
+qui font toutes les semaines
+un meet up
+et je crois
+qu'ils vont faire ça
+toutes les 2 semaines
+maintenant
+Amsterdam
+et un meet up
+ils font un meet up
+toutes les 2 semaines
+on change tout
+le confinement
+et on va trouver des speakers
+merci à vous
+pour
+votre participation
+et mon PC
+n'a pas planté
+donc je suis très heureux
+et à
+très bientôt
+sur
+Lyon Data Science

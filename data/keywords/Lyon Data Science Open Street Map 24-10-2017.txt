@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science Open Street Map 24-10-2017", "keywords": ["Lyon Data Science", "OpenStreetMap", "geographic objects", "collaborative database", "map data", "machine learning", "GitHub repository", "WGS84", "coordinate systems", "sphere measurement"]}

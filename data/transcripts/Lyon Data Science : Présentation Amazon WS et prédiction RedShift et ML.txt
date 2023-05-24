@@ -1,0 +1,2327 @@
+Sous sa proposition de nous faire un petit topo,
+le code 9 est dans le post-providio, bonne année.
+Je suis assuré des rendez-vous de l'appli de plier
+et une session qui arrive au mois de mars au maximum
+qui va nous faire un retour d'expérience
+sur les alimentations qu'il faut avec un client
+et puis après, si vous avez des idées de sessions
+ou vous connaissez des codes plus, vous vous mettez pour des positions,
+allez sur celui-ci qui est l'amélioration de Slack.
+Je pense que vous avez tous compris qu'il y avait les limités pour s'enregistrer
+et qu'il y avait un petit, la fin de la limite,
+ça a été marqué fin de l'information et il y a un filmien
+donc vous arrivez sur le code 9.
+Et dans ce qui est d'expliquer, vous pouvez aller vous assquer
+sur un Slack, il y a le clip de l'amélioration
+et là vous pouvez faire les propositions,
+n'hésitez pas à poser des questions,
+il y a des propositions, on dit quelque chose.
+Et même, il y a des questions sur les cheveux
+qui vous posent problème pour savoir
+pour qu'on puisse essayer de trouver des gens
+qui peuvent faire des sessions.
+Et là, Julien, je te laisse la parole,
+il paraît que l'apport d'une heure.
+Bonsoir.
+Non, on va essayer de faire pire.
+D'ailleurs, merci beaucoup Maïté, c'est gentil,
+c'est toujours un plaisir de quitter Paris,
+je ne suis pas parisien.
+Il y a pas mal de monde, c'est impressionnant.
+Bravo, bravo Lyon.
+Pour l'instant, il y a plus de monde à Lyon
+qu'à Bordeaux, Marseille.
+Je vais te laisser avant.
+On va faire une petite compétition entre les films.
+Ah, il se passe des trucs là aussi.
+Je suis Julien Simon, je suis l'évangéliste,
+je suis là du Gleunesse.
+En 30 secondes, qu'est-ce que c'est qu'un évangéliste ?
+C'est un rôle assez particulier, assez bizarre,
+mais on est une dizaine dans le monde.
+On n'avait pas en France.
+Notre rôle, c'est de faire exactement ce que je fais ce soir,
+c'est-à-dire de bien parler
+aux différentes communautés techniques,
+de participer à des meet-ups, de bien présenter
+nos solutions, nos clics clients,
+de parler dans les conférences.
+Bref, voilà, d'être le bord-parole technique
+de AWS en France.
+Vous avez mon adresse de mail, je vous invite
+à vous en servir.
+Chaque fois, ça sera nécessaire.
+Alors, pas forcément pour des questions techniques
+quand vous avez un bug ou un problème sur un service,
+mais en particulier, si vous vous organisez des événements
+ce soir, si vous vous êtes...
+vous organisez une conférence d'un meet-up,
+si vous avez un blog,
+si vous voulez faire un article, etc.
+Voilà, n'hésitez pas à contacter, c'est mon job.
+Et puis, si vous êtes client à AWS
+et que vous ne savez pas trop
+à qui vous adressez, vous pouvez aussi y écrire.
+Vous auriez en scène à la bonne personne.
+Alors, évidemment, vous êtes...
+plus que les bienvenus,
+si vous voulez truter, prendre des photos,
+vous ne genez pas.
+Il ne faut pas hésiter.
+C'est plus qu'encourager.
+Vous pouvez me suivre sur Twitter,
+YouTube Simon,
+AWS Actu, c'est le feed français.
+Alors, Nihon Data, c'est celui du meet-up.
+C'était l'avantage des choses de l'année.
+Et puis, on a les hashtags qui tournent bien
+aussi sur les techniques qu'on va avoir ce soir.
+Donc, en particulier, Redshift et Amazon ML.
+Voilà. Donc, si vous voulez
+dire tout le bien ou tout le mal
+que vous pensez de la présentation, elle existe.
+Et c'est fait pour ça.
+Alors, ce soir, on est là pour parler de Git Data,
+qui est le pire buzzword
+de l'hier.
+Et qui ressemble à ça, maintenant.
+Tu sais pas qui...
+On discutera tout à l'heure.
+Qui a des vrais projets Git Data en production
+et qui...
+Qui a des vrais projets Git Data en production ?
+Enfin, pas forcément à une échelle, on se pose,
+mais des vrais projets
+avec des vrais gens, des vrais clients, de l'argent, tout ça.
+Ok.
+Donc, qui fait du développement
+de Git Data pour son intérêt personnel ?
+Qui pose ces techniques-là
+pour s'écutiver techniquement ?
+C'est pas grave.
+Voilà. Ok. Voilà.
+C'est le plus.
+Qui est juste là parce qu'il a vu
+de la lumière et...
+Il n'y a pas.
+Il n'y a rien à manger.
+Qui est là juste par intérêt ?
+Au rayon veille techno ?
+C'est bien aussi.
+C'est pour comprendre qui est dans la salle.
+C'est ce que ça s'équivre.
+Alors voilà.
+Pour ceux qui sont en prod,
+comme pour ceux qui s'y intéressent,
+voilà
+quand ça ressemble aujourd'hui, Git Data.
+Vous avez sûrement déjà vu
+ce genre de...
+de landscape, où
+le cabinet de conseils essaie de résumer
+sur un slide
+les différents blocs, etc.
+Alors voilà, il y a un bloc,
+il y a une infrastructure, il y a un bloc analytique,
+il y a un autre bloc infrastructure,
+il y a un autre bloc analytique, c'est bon.
+Voilà.
+Si vous vouliez commencer
+Git Data ce soir, vous pourriez vous dire
+ok, on va essayer de naviguer
+on va essayer de naviguer sur cette carte
+et puis on va voir ce qui se passe.
+Et pourquoi pas ?
+Le problème c'est que la plupart du temps
+ça va ressembler à ça à la fin.
+Et je parle d'espérance.
+Je n'ai pas vu me parler de ce que j'ai fait avant,
+pour en parler de ça aussi si vous voulez,
+j'ai fait des projets en boîte
+et ça a
+souvent ressemblé à ça.
+Voilà, donc ça c'est vous.
+Ça c'est votre boss,
+votre client.
+Voilà, et votre infrastructure elle est
+ensuite.
+Et au-delà de la blague,
+ce que je veux dire par là c'est
+qu'il y a
+juste un million de façons d'aborder
+des projets Git Data, il y a un million de solutions
+sur le marché, il y a un million de produits
+qui nous promettent tout et son contraire.
+Il est difficile de les comparer,
+il est difficile de choisir les bons.
+Vous devez choisir un hotel, vous prenez lequel,
+vous devez choisir une place muscuelle,
+vous prenez laquelle, vous devez choisir une structure
+à dout, vous prenez laquelle,
+vous devez choisir des serveurs pour mettre votre structure
+à dout, vous prenez laquelle.
+Vous voyez la conglimatoire, enfin c'est vous les matières,
+c'est pas bon. Donc ça devient vite infernal
+et statistiquement vous avez quand même de
+forte chance de prendre la mauvaise combinaison
+et d'avoir des yeux.
+Et le plus du jeu, c'est pas de nous avoir
+une course à l'armement, c'est pas de dire
+on veut le plus gros cluster, on veut le plus
+gros stockage, on veut les algos
+les plus rapides, etc.
+C'est d'être intelligent et d'arriver vite
+avec une solution qui marche.
+Et c'est super du Git Data, c'est super amusant.
+C'est un sujet qu'il y a de gros, on joue
+avec de l'infrastructure, on joue avec des gros
+volumes, on joue avec des algos, on joue avec
+plein de choses, très...
+C'est sympa.
+On peut convier de manière sympa. Le problème
+c'est que normalement, il se passe un de ces
+trucs là.
+Vous vous aviez stocké vos données dans un
+fals système et puis ça se passe pas bien
+et vous ne la redérais pas.
+Parce que comme c'est gros, vous n'avez pas fait
+de backup.
+Vous aviez un gros budget, vous avez convaincu
+votre patron de l'investir
+et puis vous avez acheté la solution
+X avec l'infrastructure Y
+et le service SED,
+vous avez essayé de faire tout ça et puis
+ça marche pas, vous avez perdu dans les
+cas où vous n'en sortez pas.
+Et votre projet va se bloquer 3 mois, 6 mois
+et tout est frustré.
+Voilà. Donc soit
+problème scalabilité, soit problème
+de pourvu, soit sincèrement
+tous.
+Là aussi, je parle d'experimentation.
+Et...
+Aujourd'hui,
+c'est pour ça que je fais la question, qui a
+des vrais projets d'iglata en production.
+Quand on pose ces questions-là, on se rend compte
+qu'il y a assez peu de gens, finalement.
+Parce que, souvent, le besoin
+n'est pas vraiment là.
+C'est une autre question. On fait d'iglata
+parce qu'on a envie d'en faire, mais
+peut-être une simple bête de données
+et il n'a pas bien codé, ça suffit.
+Et puis surtout, les gens essayent, essayent, essayent,
+ils tournent un peu en rond.
+Ils ont beau être bon techniquement,
+ils ont beau avoir tout ce qu'il faut.
+Ils n'ont pas forcément fait les meilleurs choix
+et puis le projet est chaud
+et puis on nous dit d'un autre d'iglata,
+finalement ça marche pas.
+Ce qui m'amène toujours
+à la question suivante
+qui est de se dire, bon,
+faire d'iglata c'est bien, mais en fait
+on ne cherche pas à faire d'iglata,
+on cherche à faire des projets, on cherche
+à développer son business, on cherche à créer la valeur.
+Et donc, est-ce qu'il n'y a pas un moyen
+dans toute cette complexité de trouver des services
+qui sont plutôt simples à utiliser,
+qui ne nécessitent pas un investissement
+massif avant même d'avoir commencé
+à travailler, qui soient manager
+d'une manière ou d'une autre, qui déchargent
+des stages d'administration.
+Et surtout, qui sont utilisés par un énorme expert.
+Parce que le problème
+du data et du machine learning
+c'est que ça devient encore plus que dans d'autres domaines,
+ça devient vite une discussion
+totalement jargonesque, critique
+et où on a l'impression
+que si on n'a pas un double
+puits EGT en maths
+et en machine learning, et je vais demander
+qui on a en la salle pour voir,
+qu'on y arrivera pas.
+Qui a un doctorat
+ou est en train de faire un doctorat dans la salle ?
+Math, machine learning
+IA
+Machine learning
+Je vais essayer de ne pas être désagréable
+de vous ce soir
+mais si jamais je le suis, c'est vraiment
+trop facile.
+C'est très bien d'avoir des experts
+on en a besoin
+mais voilà, ce que vous faites
+c'est ni à apporter tout le monde
+ni à apporter toutes les boîtes
+parce que c'est compliqué
+et tout le monde ne peut pas se payer
+les Data Scientist et les gens qui l'endettera
+et c'est bien tout ça qu'on n'aurait pas assez
+donc, quid des gens
+qui ont envie de faire
+d'inclusion, qui ont envie de faire la recommandation
+sans pour autant sortir
+l'artillerie lourde
+l'équipe de Data Scientist
+et l'infrastructure très chère.
+Donc le but de la discussion ce soir c'est ça
+c'est de montrer qu'on peut y arriver
+sans avoir à déployer tout cet artillerie
+même si c'est pratique aussi.
+Alors
+plutôt que
+que cette carte là tout à l'heure
+un peu incompréhensible
+moi je préfère beaucoup celle là
+parce que tous les projets Data
+d'une manière ou d'une autre
+ils vont toujours se trahir par quatre étapes
+qui est je collecte mes données, je les stock
+je les transforme un petit peu
+parfois je les analyse
+et après je les consulte
+parfois
+et donc
+les formes de collecte peuvent être très différentes
+alors on peut avoir des données
+sous forme de flux
+par exemple
+il y a de ce qui est très à la mode
+des devices qui vont monter
+tous les capteurs qui vont monter
+ça peut être des fichiers
+ça peut être des logs
+ça c'est des cas d'utilisation super courant
+je suis certain que les gens ici utilisent le web stage
+pour collecter leurs logs web
+pour analyser ces plans
+ou bien après ça peut être des données
+transactionnelles qui viennent
+d'Applymobil, d'Applymobil
+il y a des formes de correcte
+donc la première étape ça va être de stocker
+donc si vous avez des flux
+alors vous allez utiliser
+alors dans la galaxie AWS
+vous allez utiliser des technologies
+comme
+comme Kavka
+comme Kilesis qui est en service d'Amazon
+ou DynamoDB
+qui est dans notre base musculaire
+voilà pour des données
+en streaming qui vont arriver en flux tendu
+et qui sont des données plutôt chaudes
+si vous avez des fichiers
+vous avez tout un choix de
+vos solutions, vous pouvez utiliser S3
+je pense qu'on peut utiliser S3
+il faut faire le système de
+AWS, Glacier
+qui est un système d'archivage
+pour des données HDFS
+donc avec des données plutôt chaudes
+dans HDFS et plutôt froides dans Glacier
+et puis ensuite
+pour des données
+on va dire un petit peu plus
+transactionnelles, vous aurez envie
+soit dans une base de données relationnelle
+type RDS, donc la base relationnelle
+AWS, qui supporte MySQL
+Oracle, SQL Server, MariaDB
+Postgre, je l'en oublie le corps
+vous pouvez aussi les mettre
+dans DynamoDB si vous voulez faire du NoSQL
+et puis vous pouvez les mettre dans un
+délasticage qui est aussi un service madagé
+au même cache ou RELIS
+donc vous avez tout un tas de solutions
+de la nature des données
+que vous stockez en fonction de la
+température de vos données
+ensuite vous pouvez faire un petit peu
+d'ETL si vous voulez envie
+et puis vous allez vouloir les traiter
+donc les streams, vous allez les traiter
+au fil de l'eau, vous pouvez faire du sphare
+vous pouvez faire du storm
+et dans l'univers AWS
+vous pouvez les traiter avec Kinesis
+qui est
+un storm managé
+pour faire très simple
+et puis Lambda qui est une technique
+plus récente, qui est une technique
+de programmation
+inspirée par la programmation fonctionnelle
+qui paraît déployer du code
+sans aucun serveur
+c'est passionnant mais j'espère
+j'aurais l'occasion de revenir pour le pain
+si vous voulez faire plutôt du
+batch
+du traitement de fichier, vous pouvez toujours
+faire du spark, vous pouvez faire du high
+du pig, qui sont généralement les premières techniques
+pour se faire les dents sur un loop
+voilà, faire de la produce
+et puis ensuite
+si vous voulez des choses plus interactives
+vous pouvez faire du bala, vous pouvez faire du presto
+et vous pouvez faire de votre chiffre
+on verra tout à l'heure
+et bien sûr, du machine manive
+on verra tout à l'heure
+et puis une fois que ces données là sont
+analysées, modélisées etc
+vous allez les consorber
+tous les outils de la Terre
+on en a mis qu'une petite partie
+là s'il y a des petits balas
+qui sont très appendus
+des tableaux, j'utilise tous ces tableaux aussi
+c'est classique
+et puis on est en train
+de lancer un service avec XSide
+qui est encore en prévisu chez nous
+qui a un dash gorde
+assez bien fichier pour
+faire des data mining
+en temps réel avec des dash gords
+et puis on peut faire des prédictions
+voilà, on peut faire des prédictions machinomiques
+donc voilà un peu
+en deux minutes
+les différents techniques
+que vous pouvez trouver
+sur AWS
+pour
+stocker, analyser
+et aussi un petit peu consommer
+vos données
+vous avez pas mal de choix
+et ce qui doit guider votre choix c'est
+quelle est la nature de mes données
+et puis est-ce qu'elles sont
+froides, est-ce qu'elles sont chaudes
+est-ce que je vais faire ce batch
+d'interactive
+ça c'est vraiment, c'est ça
+qui doit structureur votre question
+puis après vous prototypez
+et vous essayez les différentes structures
+si on prend un scénario
+qui est un scénario assez courant
+qui est un petit peu celui pour voir
+ce soir
+c'est une architecture mix
+pour faire de l'analytique
+à la fois en mode batch
+et en mode interactive
+vous avez une source de données
+vous allez tout stocker
+donc dans Amazon S3
+tout vous fichier
+puis à partir de là
+vous allez pouvoir alimenter
+par exemple
+un cluster
+Elastic MapReduce
+qui peut s'appuyer sur Ive, Peak, Spark
+donc ça c'est notre service
+à d'autres planagers
+d'accord donc il va faire
+soit de l'OTL, soit de la légation
+ce que vous allez faire
+qui pourra utiliser Amazon ML
+pour faire des prévisions
+mode batch
+et puis qui emperra les données
+qui mettra la disposition
+des données
+pour un consommateur
+donc ça c'est un cas très courant
+et puis si vous voulez
+faire de l'interactive
+vous pouvez idem
+à partir de S3
+alimenter toujours un cluster
+qui va utiliser une des technos
+d'interactive comme Spark
+ou une Pala
+ou Ratchet
+ce que vous allez voir que Ratchet permet
+de traiter de très gros volumes
+avec des temps-réponses qui sont très très courts
+là aussi vous pourrez faire la prédiction
+mais cette fois en temps réel
+c'est ce qu'on va faire
+et puis idem
+mettre la disposition à consommateur
+et donc ça c'est des scénarios
+très courants tout simple
+qui nécessitent
+d'autres arbitres chez eux
+mais ça se fait assez facilement
+et ça récume déjà beaucoup beaucoup
+de cas d'usage
+alors un autre cas
+qui est le cas realtime
+donc analysis realtime
+qui d'aiment un producteur
+qui va devoir collecter
+qui va devoir collecter des données
+alors
+pourquoi pas dans Kafka
+il y a des gens qui utilisent Kafka
+comme ça
+ou d'Ankinesis
+ou d'Inamodestriums
+qui ont des technos
+il faut un middleware qui va recevoir les données
+les stocker, s'assurer qu'elles ne sont pas perdues etc
+puis derrière
+vous allez pouvoir les faire passer avec des technos
+qui va les traiter
+ça peut être Spark, Storm
+ça peut être Lambda
+et derrière vous allez les publier
+en fonction de ce que vous voulez en faire derrière
+soit dans un elastic search
+soit une base de données relationnelle
+soit une base de SQL
+soit un cache
+ça peut l'engager
+et puis derrière
+il y a un outil
+d'utilisation
+donc la idea
+c'est
+des trucs qui s'intègrent
+tous ces technos
+j'encourage à les essayer
+il y a des tutorials
+c'est pour absolument tout
+vous avez sur
+docs.ws.azout.com
+on a vu que vous lisez un peu
+on regardait les tutos, vous les faites
+c'est le meilleur moyen
+de se faire de l'organiser
+et ça c'est des architecture qui sont déployées chez nos clients
+c'est pas
+des choses sorties de ma tête
+c'est ce que font les gens, c'est des architecture de référence
+pour ceux lors des problèmes
+alors la première pour la regarder
+en détail
+c'est Redshift
+c'est un data warehouse
+qui peut
+dépasser le petabyte
+qui est managé
+on n'avait pas à gérer le server
+on n'avait pas à gérer le backup
+on n'avait rien à installer
+c'est assez clé en main
+la première chose importante à retenir
+c'est que c'est une base de données relationnelle
+donc si vous connaissez les bases de données traditionnelles
+vous connaissez les bases d'organisation en ligne
+là c'est des bases d'organisation en colombes
+parce que
+généralement quand on fait
+des data mining c'est pas tellement les lignes qui nous intéressent
+c'est d'avoir des très grandes tables
+avec beaucoup de colombes
+et de faire un analyse sur
+peut-être toutes les lignes de la table mais juste deux ou trois colombes
+et donc le fait d'orienter
+la base en colombe
+ça va nous permettre
+d'avoir des temps réponses qui sont bien meilleurs
+ça va nous permettre
+de faire la compression
+c'est un des facteurs importants
+de la performance
+donc elle est optimisée pour
+l'allap et la biais
+mais elle est rapide
+souvent quand on dit allap et biais
+on a l'impression que c'est des jobs qui vont tourner pendant 9 heures la nuit
+et puis qu'on aura un résumé calme matin
+là c'est pas le cas
+il va y avoir ça
+certes c'est pour faire de l'allap et de la biais
+mais c'est interactif
+on peut faire tourner des choses
+avec des niveaux de perte supérieure
+on va apprendre
+et donc si vous connaissez SQL
+c'est bon
+il y a une ou deux notions importantes
+à retenir
+mais si vous connaissez SQL
+vous savez utiliser SQL
+et ce que je vais vous montrer ce soir
+c'est 100% SQL
+il n'y a rien de désothérique
+il n'y a pas de langage à apprendre
+il n'y a pas de chose particulière
+si vous avez, vous pouvez connecter vos applications
+en DBC ou en GTBC
+n'importe quelle application qui supporte ça
+peut se connecter à un Ratchee
+il y a quand même évidemment des différences
+entre un Ratchee et les POMDRAIN
+vous trouverez les détails sur ce que je vais vous expliquer
+un peu important c'est de la sacoute
+la bonne nouvelle c'est que
+à hauteur de
+750 heures
+par noeud
+sur 2 mois
+ça ne coûte rien
+c'est ce qu'on appelle chez nous le free tier
+du niveau de usage gratuit
+vous pouvez créer un cluster
+consommer 750 heures
+d'instances
+par mois en 2 mois
+ça coûte absolument 0
+concrètement ça veut dire
+vous créez un cluster de 16 noeuds
+vous le laissez tourner
+je ne sais pas
+vous le laissez tourner
+40 ou 45 heures
+ce qui permet de jouer pas mal
+ça ne coûtera rien
+et vous pouvez faire ça 2.6
+il n'y a absolument pas besoin de 16 noeuds
+pour bien s'amuser la démo de ce soir
+ça va être sur 4 noeuds
+une fois que vous dépasser
+ce free tier ça coûte 25 cents
+par heure par noeud
+si vous avez un cluster de 4 noeuds
+ça coûte 1 $
+en journée
+quand vous avez besoin de faire tourner vos gros jobs
+vous pouvez tout à fait monter à 8, 16, 32 noeuds
+puis après redescendre
+à 3 noeuds ou à 4 noeuds
+quand le cluster est natif
+donc vous pouvez le profiter d'élasticité
+ça c'est le prix à la demande
+si vous avez un cluster
+vous utilisez vraiment intensifement
+vous pouvez car on appelle chez nous des instances réservées
+qui vont vous permettre de baisser le prix
+on peut en gros utiliser le prix par 3
+et arriver à des prix
+qui sont assez ridicules
+étant donné la puissance de ce système
+alors à quoi ça ressemble
+donc c'est un rate à l'avance parallèle
+donc on va avoir plusieurs noeuds
+donc on a
+un noeud principal
+qui va recevoir
+soit chez dbc soit par dbc
+qui va recevoir les ordres
+les requêtes escuels du monde de clients
+et puis il va aller dispatcher
+ce qu'on appelle le leader mode
+et il va aller dispatcher sur
+ce qu'on appelle les compute nodes
+dont le noeud c'est simplement d'exécuter
+une partie de la requête
+sur la partie des données qui possède
+donc on va faire un traitement parallèle
+si vous avez
+5 noeuds dans le cluster
+la requête est éclatée sur les 5 noeuds
+donc les 5 noeuds travaillent en parallèle
+donc on a
+comme je dis tout à l'heure on a du stockage en colonne
+on a de la compression de données
+c'est là que les colonnes sont intéressantes
+parce que
+conformer des données en ligne
+ça a pas beaucoup de sens
+parce qu'une colonne à l'autre sur la même ligne
+il n'y a pas beaucoup de liens entre les données
+par contre si vous donnez son stockage en colonne
+vous voyez qu'à l'intérieur du colonne
+imaginez que vous voyez les codes postaux
+les noms de départements français
+vous avez un milliard de lignes
+comme ça
+centaines de départements
+vous allez pouvoir compresser assez fort
+le rôle du leader nôtre
+c'est
+c'est pas juste de dispatcher la requête
+c'est de l'optimiser
+il va faire une optimization de la requête
+il va la compiler
+il va distribuer la requête compilée
+aux différents noms
+le complot nôtre
+il se pose vraiment pas de question
+soit une requête compilée, il l'applique à ses données
+et il répond
+et ensuite le leader nôtre va faire
+l'agrégation finale
+le sens qu'il en va de chiffre c'est qu'on peut gérer la charge
+on peut gérer des priorités
+entre les requêtes
+pour que des requêtes
+courtes ne soient pas pénalisées
+par les requêtes nômes
+il va y avoir des jobs qui durent 15 minutes
+20 minutes d'une heure
+puis vous avez envie, vos analystes
+nous avons envie de faire des requêtes de 1 seconde
+si ils sont obligés d'attendre la fin
+des gros jobs qu'on peut en travailler
+ça marche pas
+c'est des gens qui ont fait du pig
+ah il sera doux, ça veut quoi je parle
+c'est qu'un cluster est à 100% CPU
+parce qu'il y a une grosse aggregation
+ça devient pas très facile d'utiliser
+d'utiliser interactivement
+donc là on peut gérer
+à la fois la cohabitation
+les niveaux de priorités
+de manière assez forte
+les types d'instances
+je passe assez vite là dessus
+ça c'est les caractéristiques
+des nœuds que vous allez
+utiliser dans un cluster
+des nœuds dans en stockage
+et des nœuds dans en calcul
+donc les nœuds dans en calcul
+ce qui sont ceux que je vais utiliser ce soir
+un décès en large
+ils ont 2 cp virtuel
+15 GB de RAM
+160 GB
+de stockage en SSD
+donc j'ai une version
+3x
+et puis après, si vous foment
+on est très grosse volumétrie
+les SSD, les DS1 sont en train d'être supprimés
+il faut utiliser les DS2
+qui peut utiliser donc un stockage
+sur disque dur
+soit 2 TB par nœud soit 16 TB
+donc vous avez le nombre
+maximum de nœuds
+donc vous pouvez vous monter
+un cluster en SSD jusqu'à plus 300 TB
+et un cluster en disque
+magnétique
+à 2 pétales
+il y a une chose qui est au même poste
+donc vous pouvez choisir
+donc moi mon conseil dans ce cas là
+c'est de partez toujours du plus petit
+prenez le plus petit
+faites vos tests
+puis c'est toujours facile de rajouter des nœuds
+ou c'est facile de recréer un cluster
+avec d'autres
+avec d'autres
+alors
+c'est un des services qui a eu
+la croissance la plus rapide chez AWS
+il y a une boîte française qui a
+la suite c'est le photobox
+c'est une boîte qui fait des albums photo
+tout un tas de produits
+qui arrivent au photobox
+et je l'ai mis sur un
+parce que c'est un français
+c'est un profité
+donc eux stocker
+tout l'ordonnette commande
+tout l'ordonnette commande, tout l'ordonnette CRM
+toutes les campagnes d'emails envoyées
+au finance et tout
+et initialement
+il y a un système basé sur des technos
+au concurrent
+et ils appellaient les nœuds
+à la fois de scalabilité
+de stockage de ce système
+ils ont fait un prototype avec RadShift
+et ils en ont été assez confants
+je vous laisse lire
+la rapidité a été multipliée par 10
+c'est lui qui le dit
+et puis surtout
+un point qui n'est pas mentionné
+c'est que grâce à la compression
+en fait là où vous avez peut-être
+on a utilisé en avant
+5 terras utiles avant
+5 terras stockage
+5 terras utiles
+avec la compression en fait
+en ayant toujours 5 terras stockage
+on a peut-être 20, 30 ou 50 terras utiles
+parce que la compression des données
+et la gestion en code
+fait qu'on obtise énormément
+les spotifs
+et puis on les paye à l'usage
+tout à l'heure
+on a donné un très gros cluster
+pendant une journée ou deux
+on en a plus besoin
+on les enlève
+ils sont deux clusters
+un pour les données historiques
+sur du stockage magnétique
+et un pour les données temps réels
+et au passage
+par rapport à leur ancienne solution
+je vous laisse là l'article complet
+j'ai juste mis quelques petites citations
+mais vous verrez l'article complet
+c'est assez intéressant, ils rendent bien les détails
+et
+voilà, il n'y a pas de longue de roi
+je n'ai pas pu tout mettre sur mon slide
+c'est un peu délicat
+il y a un autre cas
+qui est super intéressant
+qui est le financial tax
+donc ils utilisent les données d'usage
+de leur site web
+pour savoir ce qu'il y a de classe les gens
+en lise
+à la limite quels articles écrivent
+en fonction des intérêts
+et aussi, on a une solution traditionnelle
+qui leur permettait plus
+de scaler
+qui leur permettait surtout de ne pas faire du temps réel
+ce qui est pour un journal est dommage
+parce que savoir ce que les gens lisaient il y a quatre jours
+surtout pour l'actu financière
+qui est très très opérissable
+c'est un peu domaine
+donc ils voulaient une solution un peu plus rapide
+ils ont fait un POP
+c'est un test pour l'ancien système
+avec les mêmes données
+entre l'ancien système et l'achif
+l'achif répondait tellement vite
+par rapport à l'ancien système
+que les gens pensaient ça ne marchait pas
+et il a valu que les gens d'Amazon
+la WSI
+ou FTI
+pour leur prouver que WMI ça fonctionnait
+ça répondait tellement vite
+que les gens disaient c'est trop rapide
+c'est pas possible le traitement aurait été fait
+c'est amusant
+le pleur CTO
+effectivement confirme
+que voilà il y a certaines pour requêtes
+qui tournent 98% plus vite
+faut voir c'est de l'air 98% plus vite
+c'est là
+c'est beaucoup plus vite
+c'est beaucoup beaucoup plus vite
+et puis toujours pareil
+il a possibilité de l'utiliser
+sans avoir à investir
+pour quelques dollars
+on dit toujours chez nous
+le POP sur Redshift
+le restaurant et encore
+donc ne nous demandez pas de vous l'offrir
+faites-le vous verrez le POP
+il va vous coûter 4 ou 100 dollars
+si ça ne vous fait pas
+c'est le portier
+mais au moins vous n'aurez pas d'esprit
+voilà et puis
+le fait de pouvoir sker
+le fait de pouvoir avoir des temps de réponse rapide
+pour eux ça veut dire qu'ils sont capables d'avoir des analyses en temps réel
+parce qu'à peu près en temps réel
+ce que les gens disent c'est ce qu'ils ne leur paient
+ce qu'il faut écrire maintenant
+alors justement parlons de la perte
+parce que ça c'est une des grosses différences
+donc dans une base de génie traditionnelle
+vous allez avoir des indexes
+vous allez avoir des partitionnements
+il y a des DB1 dans la salle
+non
+donc voilà
+c'est un verbeau
+j'avais la perte dans une grosse phase
+c'est un vrai verbeau
+c'est difficile c'est un tout d'expert
+et voilà j'en respecte entièrement ça
+avec le chiffre vous n'avez pas ce genre de
+on va dire de complexité
+vous avez deux notions
+qui sont vraiment super importantes
+et je vais vous les illustrer
+vous verrez l'impact sur les pertes après
+donc on a une clé
+qui s'appelle la clé de distribution
+la clé de distribution c'est en gros le colon
+qui va choisir
+et qui va décider
+de la façon dont les données sont éclatées entre les différents deux
+c'est une clé de répartition
+des données entre les deux
+il y a trois politiques
+une politique qui s'appelle Ivan
+qui est la politique par défaut
+tu es autant donné
+sur chaque nœud
+c'est pas une politique
+au moins on s'assure que tous les nœuds
+ont le bon nombre de lignes
+ça ça veut dire
+tu mets toutes les lignes de la table
+sur tous les nœuds
+c'est le casque de stockage
+on va répliquer
+toutes les nœuds
+on va vraiment utiliser dans des jointures
+des tables de référence
+ça vous garantit que vous avez tout sur tous les nœuds
+il faut pas le faire avec des très grosses tables
+et puis il y a celle qui est la plus intéressante
+qui est qui
+en fonction de cette colonne
+tous les nœuds
+toutes les lignes
+qui ont la même valeur pour cette clé
+tu les mets sur le même nœud
+on va faire ça tout à l'heure
+vous allez voir là-bas
+à vous contrôler ça
+il y a la clé de tri
+qui va elle décider
+du tri des données dans les blocs disques
+je vous apprends rien
+ce qui est très cher
+c'est les aéodisques
+et donc plus on va minimiser les aéodisques
+plus vite
+vos requêtes vont répondre
+et donc vous pouvez choisir de comment elles vont être priées
+donc si vous avez des requêtes qui font beaucoup de hors d'orballes
+qui sont toujours hors d'orballes
+sur les nômes colonnes etc
+ça peut être intéressant
+les données sont déjà priées sur disques
+et donc les nœuds n'auront pas à les faire
+vous pouvez faire les clés composés
+et les clés entre l'acier
+ce n'est pas forcément une colonne
+plusieurs colonnes combinées
+j'insiste
+les deux
+les deux sont absolument vitales pour les pertes
+donc il faut vous poser cette question
+vous êtes en train de jouer sur 10 000 lignes
+ce n'est pas très grave
+mais si vous n'y parlez pas de la prod
+c'est absolument vital
+il faut très très finement
+ces deux clés et faire des benches
+et tester les différents contenus
+maintenant on va jouer
+je vais essayer
+je ne sais pas comment je vais faire ça
+attention
+ça se passe plus là
+si il faut que je parle fort
+c'est bon
+ça va ?
+un peu plus haut
+c'est bon ?
+c'est juste après ça te plaît
+quand il n'y a plus qu'une ligne à l'écran
+je me suis dit qu'est ce qu'on peut me montrer
+c'est ce qu'on peut faire comme on dit
+j'ai fait un truc idiot
+je suis dit
+je suis dit
+il n'y a que 5 ou 6
+je ne sais pas
+je ne sais pas
+je ne sais pas
+c'est juste pour vous montrer
+donc ce que j'ai fait
+c'est que je me suis généré
+voilà, on voit la carte de Giga
+je me suis généré 1 milliard de lignes
+ça fait carte de Giga
+qui simule un log
+un log de transaction
+qui commerce
+ou quelque chose comme ça
+donc, chaque ligne c'est pour la carte de Giga
+qui simule un log
+un log de transaction
+qui commerce
+donc chaque ligne c'est quoi ?
+c'est un nom
+je vais vous montrer là
+il y a un nom après nom
+je ne sais pas
+il y a quelqu'un qui l'a été en partant
+je suis désolé un peu
+il y a une fraise
+il y a une fraise
+il y a un last name
+un first name
+le sexe
+l'état
+un âge
+le jour de l'année
+l'heure
+les minutes
+le nombre de dix thèmes achetés
+et pas du moins
+donc voilà
+j'ai un milliard d'une comme ça
+ok
+et donc
+j'ai créé les trois tables
+voilà vous voyez
+c'était du sketch
+donc ça c'est une table tout simple
+c'est vraiment du post-blog
+on va faire ici
+qu'il y a un milliard de lignes
+voilà
+vous avez pas de confiance sur le nom de zéro
+ok
+il y a un milliard
+donc j'ai créé la même
+avec une clé de tri
+sur
+last name et first name
+la seule chose que je veux préciser
+c'est à dire ok
+à l'intérieur des blocs disques
+tu tri les données
+en fonction du couple
+last name first name
+sinon c'est la même structure
+j'ai créé une troisième table
+toujours les mêmes colonnes
+avec la clé de tri
+la même plus
+une clé de distribution sur last name
+ça ça veut dire
+tous les gens qui s'appellent jones
+enfin toutes les lignes
+ou le last name de jones
+sont sur le même nœud
+non
+tous les gens s'appellent smith
+sont sur le même nœud
+et sur ce nœud
+dans les blocs disques
+tous les smiths
+sont triés etc
+vous voyez le feu
+donc là
+sur mon cluster
+j'en ai
+je l'ai pré créé
+je ne sais pas que ça soit long
+enfin j'ai tellement de choses à vous montrer
+je ne vais pas perdre de temps
+je vous montrerai la création
+c'est à remplir un formulaire
+en fin combien tu veux de deux
+si je ne vous le montre pas
+ce n'est pas que c'est pas de piège
+tiens d'ailleurs on va faire un truc tout de suite
+ouais on fait ça
+donc voilà j'ai quatre nœuds
+et puis on va dire
+le temps de 16
+entre 30 et 35 minutes
+donc faut surveiller
+entre 30 et 35 minutes
+je peux continuer le petit temps d'attendre
+ça c'est simple
+recisez le cluster
+sans contact c'est sympathique
+donc j'ai mes trois tables
+une vanilla on va dire
+une avec une clé de tri
+une avec la même clé de tri
+ensuite j'ai chargé les données dans les tables
+donc les données
+elles sont
+alors là elles sont sur le disque dure local
+mais
+donc
+donc
+il y a bien de personnes
+alors
+ok et puis
+ok
+donc c'est les 40 gigas de données
+tout à l'heure
+l'avantage de ça
+c'est que ça va permettre de faire du chargement parallèle
+parce que vous avez quatre nœuds
+les quatre peuvent charger en parallèle
+c'est pas doigt
+donc voilà ça c'est stocké dans S3
+et
+pour les charger
+il y a une commande
+alors là il y a une commande spécifique
+ça va être copie
+tu copies dans la table de test
+à partir de ce que je viens de vous montrer
+ça va faire toi
+là c'est la région dans laquelle je suis
+les données elles sont
+les credentials
+pas que les secrets
+pas un bon
+je vais pas vous en faire plus d'eau
+on va tuer à ma zone
+le délimiteur des données donc là c'est de virgule
+le format des données
+c'est comprimé
+en visite d'eux
+et puis un champ c'est le max error
+qui veut dire combien d'erreurs je vais se tolérer au chargement
+bon alors on pourrait mettre zéro
+ça veut dire que le chargement va échouer la première heure
+plus
+alors ce qui est sympa c'est que
+vous pouvez aussi
+vous avez une table qui s'appelle STL load errors
+qui contient
+les infos sur les erreurs de chargement
+ça va être le chargement à échouer
+parce que
+la ligue 158
+j'ai pas trouvé ce qu'il fallait
+bon là les chargements sont passés sans erreur
+mais il y a peut-être des vieilles erreurs
+des chargements précédents
+oui j'ai oublié de préciser
+tout ça c'est dans des slides bonus
+qui seront la fin de ma présentation
+vous ne vous embêtez pas
+à recopier
+les requêtes
+ou à recopier tous ces commentaires
+donc là il y avait plein de monde
+vous aurez tout ça
+bon
+j'ai fait les chargements
+parce que vous voyez
+ça prend quand même un petit peu de temps
+une milliarde de lignes
+et là je vais charger en 15 minutes
+ça reste expectable
+enfin je défais avant
+donc j'ai chargé les données dans les trois tables
+ça va vous avez pas de questions
+c'est assez bien
+et puis maintenant
+on peut faire des requêtes
+donc j'ai trois requêtes
+différentes
+que je vais exécuter sur les trois tables
+d'accord
+donc c'est pour ça qu'il y en a neuf
+alors les trois premières c'est la même requête
+je n'avais un à deux à trois
+et un de mes trois c'est un c'est de ces trois
+donc la première requête
+c'est
+tu me trouves les cinq
+on va la lancer
+tu me trouves les cinq
+combinaisons non prénoms
+les plus courantes
+donc là qu'est ce qu'on est en train de faire
+on est en train de lui dire
+il y a un milliard de lignes partagées sur quatre nœuds
+les données ont été
+réparties
+sans politique particulière
+elles sont patriées
+donc il fait
+un milliard de lignes
+sur quatre nœuds
+alors il y en a une envers
+un milliard de lignes
+à cinq minutes c'est pas de bon mal
+cinq minutes
+qui dit mieux
+une minute
+il y en a un
+on va voir
+je vous montre les autres requêtes
+les autres iront plus
+ensuite on passera la même
+sur la table test sort
+il y a la clé 3
+et puis on la passera encore sur la table test sortendiste
+qui a la clé distribution
+on va laisser finir
+je vous montre les autres requêtes
+on va toutes les faire
+donc la requête B
+c'est
+trouve moi les combinaisons
+non les plus pourrantes
+mais quand le nom commence par un J
+ou le nom commence par un W
+alors ça pour les gens qui font un peu de data
+les likes en perte généralement c'est abominable
+on dit toujours faut pas le faire
+ne faites pas de likes
+c'est horrible
+ça met en défaut
+on va la faire 3 fois
+sur les trois tables
+puis la dernière requête on fera
+c'est
+trouve moi les combinaisons
+trouve moi les combinaisons les plus fréquentes
+pour les gens c'est peut-être jones
+donc peut-être jones
+c'est plus un prénom c'est simple
+et puis on passera en parallèle sur les trois
+ok
+voilà la première
+122 secondes
+c'est normal c'est la table qui est pas
+c'est la table qui est pas aussi
+je vous montre
+alors
+c'est ça
+ah c'est arrêté
+alors voilà c'est la deuxième row
+ok donc on lance la même
+et sur la table avec la technique
+ah oh voilà je me suis levé
+pendant ce temps là mon cluster
+il va rammer un peu
+parce que je suis en train de le réinventionner
+il est en train
+de imaginer ce qu'il est en train
+de faire
+il y a 1 milliard de lunes sur 4 nœuds
+on lui a dit récitant les 12
+dispatch
+et il respecte les critères de
+clé pour lui adorer
+ok?
+et il reste disponible
+alors on va faire
+on va oublier celle-là
+ça doit se terminer
+1 seconde
+on lui montre c'était ça 3-4 minutes
+qu'est ce qu'il faut retenir de ça
+c'est se lire
+quand il y a plein de lignes
+et qu'on n'a pas réfléchi au clé
+le côté interactif
+il n'est pas là
+parce que ça ne va pas
+il y a 4 minutes pour l'enquête
+je ne sais pas
+c'est pas possible
+si ça prend 20 minutes
+je fais autre chose mais 4 minutes
+ce n'est pas assez long
+il n'y a pas de magie
+si vous avez des très très très grandes tables
+il faut se poser la question des clés
+alors ça se termine
+je pense que le redimensionnement
+ça va faire un petit peu
+on va faire la 3e
+ça c'est la console
+et
+je peux voir
+si ça peut le charger
+je vois les requêtes
+je vois les requêtes qui s'exécutent
+ça c'est celle qui me tourne depuis un moment
+donc je peux voir
+précisément la requête qui est exécutée
+je peux voir le plan d'exécution
+je peux voir la charge
+de métier 4-2
+je fais quelques métriques, réseau etc
+je peux voir les lectures
+ça c'est assez sympa
+parce que ça vous permet
+de
+comprendre un peu ce qui se passe
+sur votre cluster
+et éventuellement de dégager
+vous avez la même chose pour les chargements de données
+pas sur les dernières 24h
+alors
+c'est tout
+alors
+voilà on y est
+c'est passé
+j'ai dit je me rends ça va te continuer
+c'est parti
+on s'est déjà fini
+alors c'est peut-être mon client
+qui est parfois hyper
+sur une connexion réserve comme ça
+c'est possible
+ah oui 3 minutes 32
+oui alors c'est ça
+3 minutes 32
+là c'est mon client qui est dans les cheveux
+c'est pas grave
+ok 3 minutes 32
+voilà l'autre
+ça c'est
+la dernière c'était 40
+49 secondes
+c'est terminé
+voilà donc celle-là la 3ème
+la 49 seconde
+vous voyez entre la première
+pas optimisée qui prend
+on a dit quoi 4 minutes en gros
+ça fait quoi 200
+30
+c'est ça
+donc entre une table
+et l'autre je sais même pas où de passer
+mais on arrive à passer
+en rajoutant
+entre la table avec la clé de tri
+et la table avec la clé de distribution
+on passe de
+de 120 secondes
+à 40 secondes
+donc essayons
+alors j'ai
+donc ça voilà
+la requête qu'on va faire c'est ça
+c'est
+ça c'est sur 4 nœuds
+8 nœuds et j'ai fait 16 nœuds
+donc ce qu'on a fait nous c'est ça
+ok donc là les temps sont plus élevés
+parce que le redimensionnement
+ça lui bouffe de la ressource
+donc vous voyez sur un cluster stable
+la requête la table on a utilisé
+c'est 240 secondes
+la table avec
+une clé de tri
+avec une tri plus distribution
+c'est 24 secondes
+vous voyez c'est assez linéaire
+c'est assez linéaire
+quand on passe à 8 nœuds
+16 nœuds
+vous faites un full scan
+sur un milliard de lignes
+en 6 secondes
+on verra la main sur le cluster
+de 16 nœuds
+on verra si on arrive à 6 nœuds
+donc vous voyez avec l'optimisation
+le choix des clés
+il y a un facteur 10 de performance
+et ensuite rajouter des nœuds
+en gros vous avez
+c'est proportionnel
+je ne suis pas allé au plat 16
+ça c'est le temps de chargement
+en seconde la milliard de lignes
+16
+vous voyez c'est super linéaire
+on va essayer maintenant
+gardez en tête que là
+on a fait des trucs
+240 secondes
+on va passer sur l'autre requête
+c'est la requête avec le like
+la requête avec le like
+sur la table
+sur l'optimisation
+1
+2
+3
+4
+5
+6
+7
+8
+9
+9
+10
+10
+10
+10
+10
+voilà
+la requête est terminée en 1,17
+c'est celle sur
+c'est celle sur la table
+on a utilisé
+1,17
+l'autre après 45 secondes
+vous voyez
+on a 61 secondes
+45 secondes
+puis si on fait la dernière
+ça devrait faire
+c'est B2
+on va prendre un petit peu
+ça devrait faire
+30 secondes
+pour gagner le temps
+vous voyez
+vous pouvez les faire ces tests là
+il n'y a pas de magie
+c'est celle qui est intéressante
+c'est la dernière
+je vous rappelle
+c'est la combinaison
+avec un nom
+de famille fixée
+oui
+vous avez fini
+vous avez fini Joe
+ce prochain
+donc là oui
+la 3ème table
+elle va avoir
+tous les Joe
+d'accord
+et comment
+ce Joe
+c'est
+oui
+comment il choisit
+ce qu'elle voulait
+après je pense qu'il y place
+il essaie d'équilibrer les données sur les différents noms
+si il y a 3 fois plus de Joe
+je suis mis
+il peut avoir un déséquilibre
+il peut avoir un déséquilibre entre les noms
+c'est possible
+comment je peux définir
+c'est parce que je sais qu'il y a des Joe
+on peut imaginer
+là je me dis c'est la clé
+c'est le last name
+pour une valeur unique du last name
+je mets toutes les noms
+c'est le qui le fait
+donc là elle s'est finie
+sans optime elle a pris 18 secondes
+et pourquoi sans optime
+alors qu'il n'y a pas d'optime
+elle est plus rapide
+elle est plus rapide
+parce qu'il y a le wear
+il fait quand même
+il fait un full scan
+mais
+il y a un full scan sur un insouvence
+donc
+18
+c'est pas un full scan
+non c'est pas un full scan
+pourquoi t'es collé
+c'est nous sur ce nulat
+sans optime
+c'est soit une colonne soit une combinaison
+soit une colonne soit une combinaison
+alors là
+avec le tri
+ça a pris une seconde 7
+d'accord
+donc là on a juste les données de fleurs
+pourquoi
+parce qu'il y a le horreur bail
+pardon il y a le gros bail
+donc là on le dit c'est facile pour lui
+les données elles sont déjà criées
+par vrai nom non
+on va s'endouler les 5 plus courantes
+c'est beaucoup plus facile pour lui
+si à un moment donné
+je vais faire un test
+ok ça va super vite
+mais 2 minutes plus tard
+je vais faire un test
+donc maintenant clé de distribution
+voilà
+565 millis
+donc c'est 1 milliard de lignes
+qui sont réduites en 565 millis
+pourquoi
+on va taper car nous
+là il n'y a pas de parallélisme
+c'est toutes les données
+elles sont déjà placées sur un nom
+elles sont déjà triées
+et tout ce que je lui demande
+c'est de me dire c'est de les compter
+donc il va prendre les jaunes
+il va les compter et comme c'est trié ça va vraiment vite
+et de me sortir les 5 plus
+vraiment
+donc vous voyez
+je vais en mettre pour rappeler
+et je la donnerai après
+donc en fait
+dans un cas comme ça quand on choisit bien ces clés
+c'est plus linéaire
+c'est plus de flat
+c'est plus une question de
+je mets 32 nœuds pour les puits
+c'est flat
+donc ok
+donc ça veut dire que le choix des clés
+il y a un facteur entre qu'on peut passer de 18 secondes
+c'est 1 fois 40, 50
+je sais pas combien
+mais il vaut vachement mieux réfléchir à ces clés
+parce que c'est une bonne nouvelle
+parce que quand je t'ai née ça coûte de l'argent
+être intelligent normalement c'est un truc
+ce choix de clés il est vital
+alors pour répondre à ça
+ce que vous faites traditionnellement
+c'est qu'on va avoir une grosse table
+et il va tout charger comme j'ai fait
+la table de test on optimise pas
+et après dans une base traditionnelle
+vous auriez fait des vues
+vous auriez fait des vues matérialisées
+puis vous auriez éclaté vos trucs
+vous auriez préalisé
+parce que vos données sont chargées
+une fois qu'elles sont sur le cluster
+vous pouvez créer plein de tables
+avec les bonnes clés
+optimisés pour les bonnes requêtes
+vous faites un insert
+tout select
+et c'est vachement rapide
+parce que les données sont déjà sur le cluster
+donc là vous sur un système traditionnel
+on aurait pu lui faire ça
+là on crée des tables
+on met les bonnes clés et ça va très bien
+donc on peut quasiment faire une table
+ok
+bon
+oui oui
+il y a un cache de requêtes
+mais il joue
+quand les requêtes durent une minute
+il se fait gagner la compilation
+ok
+oui
+3 centimètres
+1 giga par mois
+peut-être de 50
+il ne faut pas nous décider sur part
+du coup on peut pas avoir plusieurs clés
+sur les différences
+alors tu n'as qu'une clé de distribution
+tu as qu'une clé de tri
+par contre tu peux avoir des clés
+ce qu'ils appellent des clés composés
+tu juge ta pause de clés
+2 colloques
+ou alors des clés entrelacés
+où là il va mélanger les bits
+ok
+j'accélère
+parce qu'il faut pas aller parler comme de machine d'Arnick
+le coup là
+le coup de la démo
+on va regarder si il va juste finir
+redimensionner mon cluster
+on va regarder rapido
+ah
+il est encore re-sizing
+ok il est encore re-sizing
+ok
+coup de la démo là
+25 centimètres par mois
+imaginez que vous ayez fait un peu
+que vous auriez commencé ce matin à 10h
+il est 20h
+il fait 10h
+à 1 dollar d'heures
+pour le stockage on prend pas
+c'est 10 dollars
+alors machine d'Arnick
+on y va
+j'ai plus de poids de machine d'Arnick
+donc
+ce service là
+il sert à faire, à bâtir des modèles de prédiction
+ok
+comme vous allez le voir il est très bien intégré
+avec S3
+et avec Redshift
+je vais vous montrer comment faire le chargement de données
+à partir de là
+on va voir rapidement
+comment les données sont analysées
+il y a quelques données qui sont intéressantes
+surtout après on va utiliser les API
+pour faire des prédictions en temps réel
+c'est ça qui rigole
+ok
+looking c'est 42 set par heure
+d'analyses et de construction de modèles
+sachant que voilà un modèle
+même avec
+je sais pas
+j'ai pu faire une relation de 10 000 lignes
+je pense qu'il y en 5 minutes il était fait
+c'est vrai
+et après vous payez 10 cents pour 1000 prédictions en batch
+ou 0000000
+pour faire prédictions en temps réel
+non pareil quand vous pouvez faire un toque
+pour un ticket
+donc
+Amazon Amel ça ne fait que de la prédiction
+ça peut faire la régulation linéaire
+ça peut faire du binet
+l'activation binaire
+ou de la classification multiple
+ça ne fait pas de recommandations
+ça ne fait pas de réseau de neural
+peut-être un jour pour l'instant
+c'est juste un système de prédiction
+il y a plein d'exemples de toques
+alors
+on a un client
+il y en a un particulier
+ça c'est marrant
+leurs clients c'est plutôt des assureurs
+et ils essaient d'estimer
+en fonction
+de les propriétés
+d'un bâtiment
+de son âge
+des travaux qui ont été faits
+ils essaient d'estimer
+l'état de la toiture
+pour pouvoir calculer les prix de l'assurance
+et ils font du machine d'orignes
+un cas d'utilisation intéressante
+ce qu'il aura plus
+c'est que pour eux
+ça démocratise le processus
+une boîte comme ça
+ce n'est pas une boîte qui va embaucher 58 data scientists
+ce n'est pas son coeur de métier
+ce n'est pas une boîte qui fait de la data pure
+une boîte qui vend la donnée
+de l'assurance
+pour eux
+ils prennent leurs données
+ils prennent les propriétés des bâtiments
+ils prennent les informations
+qu'ils ont sur l'âge
+ils construisent un modèle
+ils exposent une API
+et puis leurs clients peuvent s'en servir
+pour calculer les prix de l'assurance
+ils annoncent 10 milliards de data points
+ce n'est pas négligeable
+ce n'est pas négligeable
+ce n'est pas négligeable
+ce n'est pas négligeable
+ce n'est pas négligeable
+ce qu'on va faire
+je vais vous montrer comment
+on charge des données dans ma zone de l'aile
+comment construire un modèle
+et puis comment on va
+faire directement le
+je préférerai passer du temps sur la partie
+de temps réel mais sur la partie batch
+et puis je vous montrerai comment
+à partir d'une application d'avant on va invoquer
+ok
+alors la l'idée
+c'est pareil je pourrais gagner du temps
+j'ai tout constitué mais
+rapidement
+jusqu'à quel point c'est hyper compliqué
+pour créer un modèle
+vous allez donner une source de données
+dans S3
+donc là mon modèle
+j'ai 10 000 lignes identiques
+à ce que je vous ai montré tout à l'heure
+c'est pas mal
+je vais avoir assez de data
+le nom de la data source
+en fiches
+donc là il va s'en connecter
+et il va regarder un peu ce qu'il y a dans son fichier
+ok content
+c'est un CSV
+il m'affiche
+quelques exemples
+qui me permettent de choisir le type
+de mes colonnes
+pour les longues fondées de modèles c'est important de venir
+parce que ce n'est pas leur numérique
+parce que c'est un chintel
+parce que c'est une catégorie
+d'accord
+la plupart du temps ils ne se trompent pas
+il faut jouer sur la target
+moi ma target ça va être ça
+essayer de prédire
+si
+ce que tu vas prédire c'est ça
+est-ce qu'il y a une mortifiant
+euh
+une mortifiant
+voilà et donc là je vais cliquer
+onkiryu
+et puis il va ingérer
+les données
+et voilà
+c'est tout
+à partir de ça
+il faut construire
+donc je vais vous montrer ce que ça donne
+une fois que c'est fait
+donc
+on va
+regarder
+on va prendre modèles 3
+6
+100
+100
+ok donc là
+donc là j'ai ma data source
+donc c'est exactement ce que je viens de faire
+c'est de lui dire voilà
+t'as 10 000 lignes
+t'as 10 000 lignes
+qui sont dans l'espoir tu les ingères
+donc ce qu'il va faire ensuite
+c'est qu'il va les splitter
+parce qu'il y a besoin d'une partie
+des données pour faire
+la construction du modèle
+et il va garder une partie des données
+pour évaluer le modèle
+tout le monde sait dans la salle qu'il faut
+jamais construire le modèle et l'évaluer
+avec les mêmes données
+ok
+on peut le paramétrer mais par défaut
+il fait 70% 30%
+donc il va construire le modèle sur 70%
+et sur 30% il va faire l'évaluation
+donc les deux data sources que vous voyez là en fait
+c'est les deux split en 70 et 30
+ensuite il va faire l'évaluation
+il va construire le modèle
+et il va évaluer
+on va regarder un peu ce que ça donne
+les data sources c'est pas très intéressant
+c'est intéressant c'est ça
+ah si je peux juste peut-être vous montrer
+bon
+quand une fois qu'il a ingéré les données
+on peut regarder un peu ce qu'il y a dedans
+donc là ça c'est la distribution
+du panier moyen
+ça il n'y a pas d'attributions
+voilà ça c'est les attributs catégories
+pour le jour
+il y a 365 valeurs X
+le sexe on a deux
+commentaire
+et les états il y a un 56
+et il va vous dire
+que la correlation qu'il y a
+avec la valeur que vous s'il prévient
+donc 0 ou aucune correlation
+1, correlation parfaite
+donc on voit qu'il y a une petite correlation
+sur le jour
+il y a une corrélation faible sur le sexe
+une petite corrélation sur le state
+donc ça c'est intéressant
+il vous dit déjà
+bah assez variables là elles ont un petit intérêt
+d'accord
+on verra si on les retrouve
+d'accord donc vous pouvez voir
+déjà un peu sur votre data source
+vous pouvez voir ce qu'il se passe
+vous voyez cette data source là
+en fait c'est une table
+que j'ai mis dans la shift
+qui m'a permis de sélectionner
+juste les colonnes
+on peut alimenter soit à partir de S3
+directement avec la CSB
+soit on veut faire une requête
+un peu plus fine comme ça
+on met dans la shift et on me dit à machine morning
+on voit que j'ai mes timides
+on va regarder l'évaluation
+on va voir
+suspense
+donc c'est l'évaluation
+c'est quoi ?
+c'est j'ai construit mon modèle
+je rejoue 30%
+des livres que je m'étais gardé côté
+puis je regarde entre la valeur crédite
+et la valeur qui était
+fournie
+ça marche
+donc il vous dit voilà mon modèle
+le quantity score de mon modèle
+il est mieux que la baisse d'argent
+c'est un peu mieux
+je ne rentre pas dans les détails
+mais les gens qui font du machine morning
+dans la salle, le PNSE
+donc il va dire c'est assez équilibré
+c'est à dire qu'il y a
+une moitié
+des lignes pour lesquelles
+il est un peu au dessus
+il y a une moitié des champs pour lesquelles
+c'est pas un modèle d'une extrême qualité
+d'accord
+mais bon hier c'est un petit peu mieux
+que rendre de
+de toute façon c'est ça le machine morning
+c'est un peu mieux que rendre
+on va t'aider j'arrive
+ok
+donc voilà
+construit un modèle
+c'est ça, là je passe vie
+c'est ça hyper mécanique
+que vous pourrez refaire très facilement dans les tutos
+je résume
+il faut une data source
+d'accord, un CSV
+il faut
+l'ingérer soit dans s3, soit dans le shift
+créer la data source
+créer le modèle à partir de la data source
+et à partir de ce moment là il fait le reste tout ça
+il fait le split
+modélisation, évaluation
+et puis il vous produit ce résultat
+ok
+et maintenant
+j'ai un modèle
+il n'est pas extraordinaire
+mais j'ai un modèle
+ce que je veux maintenant c'est l'inserver
+faire des prédictions
+alors on pourrait faire du batch
+bon là je vais pas pour autant
+je n'ai pas le fait
+le principe du batch c'est quoi
+je vais vous montrer
+c'est de la graisse qui perd compliqué
+c'est je te fournis
+ou dans le shift
+je te fournis
+les lignes
+ça serait exactement les mêmes lignes que tout à l'heure
+sauf qu'il n'y a pas la valeur
+pour le champ basquette
+parce que c'est repris
+vous lui uploadez
+vous lui uploadez ça
+et
+il va vous retourner
+je crois que je ne l'avais pas
+il va vous retourner un csv
+voilà j'en ai fait un batch prediction
+c'est trop rapide
+ok donc vous lui uploadez le csv
+moins 1,5
+et il va vous retourner
+le résultat
+je vais essayer de le copier
+j'ai pris très très fort
+et là tant on a quoi
+on a
+la colonne félicite
+donc il a prédit pour la première ligne
+que le paguet ça serait
+$77,46
+donc ça c'est le mode batch
+vous lui donnez un csv moins la colonne
+il va vous retourner
+un fichier avec la colonne
+ça c'est raféros la ferme
+il avance qui est plus grosse
+c'est de faire
+tout en réel
+alors on pourrait le faire à la main
+si on a envie
+on va le faire à la main
+donc age
+jour de l'année
+et donc là il est bon
+pour une femme de 23 ans
+qui a mis au Texas
+je commence le 234e jour de l'année
+je prédis que le paguet moyen c'est 156
+du tronc de la main
+ça c'est bien pour jouer à la main
+vérifier que le truc marche
+maintenant c'est pas ça qu'on veut faire
+d'accord
+et là il va falloir soulever
+c'est bon
+c'est bon
+avant
+c'est bon
+ça marche
+ça marche
+il y a un expert
+il y a un expert
+il y a notre texte
+c'est là ?
+oui, écoute, il est arrivé
+il est arrivé
+ça, c'est un point que j'avance
+il va appeler la pays
+c'est super compliqué
+si tu prédis
+ça, on s'en fiche
+pour savoir où sont les credentials
+l'identification du modèle
+l'âge, le sexe, l'état, le jour
+c'est les mêmes chants que ce qu'on a passé
+il va chercher ses credentials
+on lui dit que c'est dans la région oeste
+ça me montre un peu la pays, l'ouest et l'hémado
+on lui dit
+tiens, sans prouver la liste de tous les modèles
+on pourrait aussi le faire
+dans l'occurrence, mon modèle c'est celui-là
+c'est modèle 2
+j'ai créé un API
+ça, ça se fait en un clic
+pas de magie
+mon programme, il va intérer
+il va afficher un peu de données
+il va m'afficher quelques données de base
+sur le modèle
+il va m'afficher
+les informations sur les portes
+ça c'est juste pour montrer les méthodes
+où ça marche
+on crée une ricoissme de permission
+qu'on va envoyer
+sur ce modèle API
+sur ses portes
+on a un builder pour construire
+le record que j'ai envoyé
+on fait
+la prémission
+c'est cette ligne
+c'est du boilerplate
+la ligne importante c'est ça
+et je vais juste marquer
+ça c'est un truc que vous pourriez intégrer
+alors là je l'ai fait en jabar
+on supporte
+je vais pas dire tout l'un ou l'autre de la terre
+on peut pas en c'est plus
+j'ai mis beaucoup de baratins
+mais il y a 10 lignes
+c'est pas très compliqué de dire que j'ai un modèle
+merci Clips
+merci
+il faut juste montrer
+l'instance
+là je suis sur
+une instance C2
+l'instance
+normalement il y a une courage art
+ok
+magnifique
+ok
+il a l'air de m'en fonctionner
+c'est vraiment aggassant
+je vois que c'est un profil
+je le semble aussi
+je pense que c'est celle-là
+je pense que c'est celle-là
+je pense que c'est celle-là
+c'est la plus proche
+si j'en pourrais
+je veux ça
+merci c'est moi un fait haut
+je suis en train defoncer
+je vais juste remonter
+je pense que c'est la plus proche
+ok, donc là j'aime
+j'aime bonjour
+non, ok, au point
+je vais tricher
+je pense que c'est encore une histoire
+moi je n'ai pas rien
+c'est juste pour que ça soit en sécurité
+donc
+rôle, peu importe, c'est pour les autorisations
+c'est pour oublier
+d'en prendre les bonnes créatures
+ça c'est l'invention du modèle
+d'accord
+on a vu là
+voilà
+ms pré-mc 70
+ok
+puis après je passe micro-champage
+les sexes, les tailles
+ok
+pour les machins de vent
+c'est juste pour oublier
+comme c'est un tout petit progrès
+je ne sais pas la telle pièce
+un gigal
+donc là il prend juste lui les gars
+et puis
+voilà
+voilà
+donc
+on est bien sur ce modèle là
+pour ça c'est tous mes affichages
+c'est un modèle de régulation linéaire
+c'est un
+un modèle radiant
+c'est ce que je m'ai donné tout à l'heure
+ça c'est la data source sur laquelle il a fait l'apprentissage
+le modèle est prêt
+il sera tombé bien
+qui est disponible
+là
+qui est réétis, ça tourne bien
+et qui peut taper à 240 secondes
+ok
+donc il m'a réglé du quoi
+il m'a réglé du que
+c'est 241 plus de dollars
+il m'a réglé de plus là
+on va essayer
+ok
+si j'ai envie d'essayer
+ça va
+exact
+merci
+ok
+ça va ?
+oui
+bon
+donc on résume
+on essaie de reboucler
+ce que j'ai raconté
+vous avez des data
+vous avez l'appli
+pas un expert de machine learning
+on savait juste assez
+il y avait un peu la doc en ligne
+et vous vous dites j'ai dédonné
+si j'ai exploré
+il y a des correlations entre les colonnes
+je pense que je ne peux pas être prêt
+comment je vais
+on s'aide
+en fonction de la volumétrie que vous avez
+si vous avez quand même une volumétrie importante
+et que vous voulez explorer
+moi je trouve qu'il y a un petit cluster redshift
+on va vérifier si il a fini de recaliser
+un petit cluster redshift
+c'est un moyen sympa
+de maîner
+les données vite
+plutôt que de mettre ça
+dans un majestuel
+ou ce soit quoi
+qui n'avait du temps rêve
+ça y est
+il l'a remis mentionné
+on va regarder combien de temps ça a pris
+ça est compliqué
+je l'ai lancé à 7h55
+il a fini à 8h17
+je suis passé de 4 à 16 nœuds
+en 28
+sans dentin
+et si je réexécute
+une petite requête
+juste pour ouvrir
+celle là elle avait pris
+46 secondes
+tout s'attend
+ah oui
+là je me reconnais
+je me perds juste la chaîne de collection
+c'est fait
+46 secondes
+on a fait 4
+si il n'y a pas plus de moins
+sur le seconde je vais voir la bête
+7 secondes
+parce que
+parce que les deux sont
+ok
+on va la refaire
+là c'est le cache
+c'est le cache à revue
+moi
+j'ai fait beaucoup de data
+j'ai aimé redshift
+à mon même travail chez le BGES
+je vous promets
+c'est vraiment de m'éteindre
+moi qui suis pas
+des B.A
+je ne sais pas
+ce que je suis
+mais avec ça j'arrive à faire la redshift
+je fais USQL
+j'ingère mes données
+je peux en envoyer des tonnes
+vous avez un milliard de lignes
+vous avez envie de miner en quelques secondes
+et de regarder quelles sont les colonnes
+qui ont l'intérêt etc etc
+vous faites comme ça
+ça nous rend une journée d'aujourd'hui
+vous éteignez le cluster
+ensuite une fois que vous avez trouvé
+ce qui est intéressant
+vous faites
+vous créez une data source
+à partir de la redshift
+vous recettez qui va explorer les colonnes
+je faisais vos modèles
+pour vous éteindre
+et vous éteignez
+de regarder les examens
+si vous voulez faire
+comparaison avec nos chevales
+anciens appris
+après vous créez
+la pays
+franchement
+là je pose la question
+ça m'intéresse d'avoir
+votre travail
+un développeur
+un développeur
+intelligent qui est capable de lire
+de comprendre ce que c'est
+les bases
+des machines learnings
+qu'est ce qui vous manque pour faire une appli
+qui fait l'appellation
+il vous faut un peu de Java, un peu de SQL
+le minimum du minimum
+de machines learnings
+voilà
+et vous y arrivez en
+voilà
+quelques jours
+quelques heures
+alors c'est vrai
+c'est pas aussi riche
+moi j'ai fait aussi du vadoo
+j'ai fait plein de
+j'ai joué
+avec toutes les maladies
+et ça répond pas
+mais ça répond à une classe de problèmes
+qui est la prédiction
+et avec un niveau de simplicité
+et de facilité d'intégration
+que je n'ai pas vu ailleurs
+moi j'aime déjà
+c'est pas
+le code de la cli
+et sur mon titel
+ok
+voilà
+j'avais dit une heure et demi
+j'ai presque par métier
+merci beaucoup
+je suis désolé pour l'étipement technique
+j'avais pas
+je ne pouvais pas deviner que le Michel
+s'est tombé
+ça c'est pas trop mal passé
+c'est dense
+il y a les bonus slides
+on verra il y a tous les commandes
+moi je vous incite
+si ça vous intéresse
+crée.com
+reprenez la presse
+tout ce que j'ai fait
+il n'y a rien ce que t'appuies
+vraiment rien
+j'ai fait quelques trucs a l'avance
+pour qu'on ne perde pas de temps
+à calculer des modèles
+il n'y a rien ce que t'appuies
+si jamais
+vous avez une difficulté
+ou un réel
+tout ce que j'ai fait
+vous pouvez le refaire
+avec votre data set
+ça vous intéresse bien
+n'hésitez pas à jouer
+n'hésitez pas à le refaire
+il n'y a pas de crainte
+ça va me coûter 2000 dollars
+sur redshift rien
+à hauteur de 750 $
+et sur le machine learning
+ça va coûter 1,50 $
+ça va prendre un moment
+ok
+alors
+si ça vous intéresse
+si vous voulez en savoir plus
+on va
+avoir plein d'autres événements
+2017
+pas juste à parer
+le meilleur moyen de rester en contact
+c'est de nous suivre
+de nous suivre sur Twitter
+je n'ai pas regardé les insultes sur Twitter
+on regardera après le tel
+ça vous escondait
+non
+mais
+non
+donc suivez-nous sur Twitter
+vous saurez comme tout limite
+de tous les événements
+on a un vrai événement
+un gros événement
+de l'esprit on a le 31 mai à Paris
+c'est gratuit
+ça vous l'appelle
+on est à 2 ans de TGV
+je suis la preuve de l'aliment
+n'hésitez pas à nous voir
+les inscriptions sont ouvertes
+et là c'est une journée
+de présentation au tech
+on essaie aussi
+d'organiser des choses en province
+mais je n'ai rien confirmé pour l'instant
+je vous promets que
+à revenir à nous
+c'est sûr
+à très court terme
+si il y a des gens qui s'intéressent à un docker
+je n'explique pas docker parce que sinon on est reparti
+je suis à Groma le 13
+mercredi prochain
+et je reviens à Lyon
+le 14
+les deux sont sur mithog.com
+si ça vous intéresse
+ou si vous voulez venir me harceler
+la scène prochaine de voyage
+j'ai essayé des trucs
+je reviens à Lyon
+et si vous vous intéressez
+à l'internet des objets
+à Yoti
+en Afrique
+il y a un bel événement à Lyon
+de l'internet des objets
+auxquels on sponsorise
+sur lequel on sera présent
+avec un stand
+ou normalement on va aussi pas
+cela tout ça c'est confirmé
+vous pouvez venir
+et puis pour le reste
+voilà je vous remercie infiniment
+merci encore de m'avoir invité
+je suis épousé
+je vous remercie
+je passe ma vie
+à répéter à mes collègues
+et à tout le monde
+la province se passe une autre chose
+je suis pas lyonnais
+je suis dignois
+vous pouvez faire des gestes obscènes
+si vous voulez y aller
+je pense que ça s'adjustifie
+mais non de frais
+merci beaucoup
+il y a des coups d'islas
+il y a des crayons

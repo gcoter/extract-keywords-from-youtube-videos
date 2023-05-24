@@ -1,0 +1,1623 @@
+Et aujourd'hui, je suis venue à vous parler de ce parc et alors en fait, j'ai eu le
+idea c'est de me partir sur 7 conseils pour déparer à l'Expa, on a été derrière ces 7 conseils, je dirais qu'il y a 7 galères.
+J'ai mis mon Twitter ici, si je mets mon Twitter, c'est pas au point de pas le voir, c'est parce que
+en les jours qui suivent, je mettrai une retranscription de tout ce que je vous aurais raconté, voilà si ça vous intéresse, je vais le plus bien.
+Donc je suis en fait data engineer et je travaille dans Enuka. Enuka, c'est une SSBZ qui fait pas mal de choses,
+en formatique, il y a un enchaînement qui fait de la GT, etc. Donc on essaie de monter un pool sur Lyon, si ça vous intéresse, on recrute.
+Et du coup, effectivement, la data c'est quelque chose dans lequel je suis, c'est, on va dire que l'une des mes facettes professionnelles,
+même si au départ je viens, je monte du web, j'ai fait beaucoup de PHP. J'ai commencé comme ça.
+Et puis j'ai eu une vision et je suis passée à autre chose.
+Et puis l'une de mes deuxième facettes, j'en profite pour faire un petit peu de pub pour un compte qui arrive, c'est tout ce qui est craft.
+Donc le craft, j'ai envie de dire que c'est un petit peu une vision de la GT qui est un peu proche de nos pratiques de l'EVE quotidienne.
+Et là, en fait, il y a une conférence qui aura lieu le 13 et 14 juin à Le Nauble.
+On devrait découvrir, apprendre et se perpétuer.
+Alors déjà, qui a déjà fait du spark?
+Bien cool.
+Qui en fait quotidiennement?
+Ok.
+Très bien.
+Ça marche.
+Alors en fait, quand j'ai commencé dans ce parc et dans le monde de la data, je dirais que pour moi, c'était un peu le far-west en fait.
+J'aime bien cette image parce qu'en fait, pourquoi c'était le far-west?
+C'était le far-west parce que c'était un monde que je connaissais pas.
+Donc un peu en mode découverte, on se lance en parc.
+Et puis c'est un monde aussi dangereux.
+On peut toujours rencontrer un animal sauvage que j'avais vu.
+On ne sait pas où est le pied et ce qu'on va se laisser chez au soleil dans la veille de la mort, etc.
+Et puis, pourquoi cette image du far-west?
+C'est parce qu'on nous a dit que la data, c'est le nouveau pétrole.
+Et moi, je regrette presque cette phrase, en fait.
+Parce que finalement, elle me pousse tous à y aller.
+Alors qu'en fait, on ne sait pas toujours vers quoi on va.
+Et il y a cette idée de dire, je vais trouver de l'ordre, au fin fond, de ce far-west.
+Et finalement, je vais réussir à construire quelque chose et à construire une civilisation.
+Ça, c'est la promesse que mon sonodo on me demandait.
+J'ai mis un peu cette image là, parce que dans ce parc, il signifie pincel, en fait.
+Donc, il y a un petit peu de pincel.
+On va réunionner avec cet outil.
+Mais en fait, je vais vous montrer que c'était un peu plus compliqué que ça,
+quand j'ai commencé une mort aujourd'hui.
+J'ai des galères.
+J'en parlerai aussi.
+Du coup, je vais vous présenter les choses d'un point de vue dont là, effectivement,
+plus technique, je ne rentrerai pas.
+Par exemple, dans les albos de Machinau, que vous pourrez trouver dans ce parc,
+ce sera vraiment une prise en main de l'outil.
+Alors déjà, pourquoi ça sert?
+Parce que je sais pas vraiment ce parc, à quoi ça sert.
+Bon, comme beaucoup d'autres outils,
+parce que là, on parle de ce parc, on parle d'autres outils qui l'ont ensemble.
+Ce qu'on va faire, c'est qu'on va prendre de la donnée contrée,
+la transformer pour les données de l'ailleurs, c'est ce qu'on cherche à faire,
+et puis on sort une autre forme de données.
+Avec l'experte, mais avec l'autre outil,
+la donnée qui rentre, ça peut être quelque chose,
+ça peut être du Kafka, des systèmes de fichiers distribués,
+et si on parle que de format,
+ça peut être du CIDON, des CSV, quelque chose.
+On va travailler tout ça, et puis on va en faire une sortie.
+Par exemple, supposant que nous sommes sur une plateforme en ligne
+qui permet de visualiser des vidéos.
+Tous les exemples que je prends sont plus ou moins tirés de ce que j'ai connu,
+mais c'est pas...
+C'est également inspiré de la réalité.
+Et pour donner une idée, en fait, mes deux grosses missions data,
+c'était chez N6, et puis chez N0,
+qui est un spécialiste de la data dans le format.
+Supposant que nous sommes sur une plateforme où on est là pour regarder des vidéos,
+et du coup, sur cette plateforme, on va enregistrer
+qui regarde les vidéos, ce qui est regardé, et puis à quelle heure.
+En fait, pourquoi est-ce qu'on enregistre ces données au départ ?
+C'est parce qu'en fait, on veut pouvoir...
+Quand un utilisateur regarde une vidéo,
+par exemple, quand il est en train de regarder une vidéo,
+ils s'arrêtent au chapitre d'eux,
+en tout cas, c'est d'écouper seulement la vidéo,
+mais quand il ne repart, on veut pouvoir le présenter là,
+on va essayer d'arrêter, c'est ce que vous avez sur YouTube tout le temps.
+Donc au départ, on enregistre ces données pour ça, en fait.
+Le truc, c'est d'un moment, c'est que ces données, elles peuvent être super utiles,
+et on peut valoriser ces données pour ne soit-ce que connaître,
+mais en fait, qui sont réellement nos utilisateurs,
+parce qu'à l'instant, on a un peu un mot d'optique, mais qui sont-ils ?
+Par exemple, est-ce que nos utilisateurs sont plutôt des addicts,
+des occasionnels,
+quelle proportion vient vraiment régulièrement,
+et puis, au-delà de la fréquence, ça peut être,
+comment ils consomment ces arrises ?
+Par exemple, la catégorie que j'aime bien, c'est ce qui vient de la nuit.
+Je trouve ça sympa, parce qu'en fait, on peut supposer,
+et c'est ce que nous viens de donner, que les gens qui viennent la nuit,
+ils ne regardent pas les choses de la même manière,
+et peut-être que du coup, ils n'attendent pas le même contenu
+ou la même présentation, enfin, tout un tas de choses.
+Et ça, c'est donc impossible,
+grâce à ce travail de la donnée,
+qu'on peut faire avec Spark.
+Alors pourquoi Spark en particulier ?
+Parce que les premières fois que j'ai présenté Spark,
+j'expliquais pas trop tout ça,
+et les gens étaient assez déçus, en fait,
+en disant, si tellement Spark, ça n'est que ça,
+j'aurais pu le faire avec beaucoup d'autres outils,
+j'aurais pu faire avec un langage de base
+sans entrer dans mon sainte-fraie-moi.
+Et c'est vrai et c'est pas vrai.
+Ce qui est vrai, c'est qu'on peut travailler de la donnée
+avec n'importe quel outil.
+Ce qui est pas vrai, c'est qu'on travaille de la grosse donnée
+avec n'importe quel outil, n'importe quel ordre.
+Ça n'est pas possible.
+Et du coup, je vous disais qu'on a des outils à faire,
+supposant que nous en ayons 10 millions qui viennent tous les jours,
+bon, ça commence un peu,
+mais en réalité, ce qu'on enregistre,
+c'est pas l'utilisateur a regardé ta vidéo,
+il a commencé à 21h.
+Non, ce qu'on enregistre en réalité, c'est plutôt,
+il a commencé à 21h,
+il a fait une pause tout de suite après.
+Là, il a sauté tel passage.
+En fait, ça donne plein plein d'événements
+et ça donne plein d'informations
+qui donnent beaucoup de données au final.
+Et Spark va la permettre.
+Du coup, le travailler, c'est à donner
+sur différentes machines,
+il va vraiment splitter les travails
+sur différentes machines,
+parce qu'après tout, on peut très bien travailler
+des utilisateurs, je ne sais pas pourquoi,
+des utilisateurs sur les machines,
+puis d'autres utilisateurs en parallèle,
+des autres utilisateurs sur les machines
+et des autres utilisateurs sur les machines.
+Donc là, on fait 30 en même temps
+sur des machines, sur les machines, c'est pareil.
+Et c'est tout l'intérêt
+de Spark qui permet
+ce calcul de manière distribuée,
+il y a aussi une particularité de travail
+pour les mois,
+ce qui fait qu'il est assez performant
+et qui nous permet de faire des choses
+qu'on a pu faire avec une petite classique,
+mais de manière différente.
+Alors, tout au long de cette présentation,
+je vais prendre le cas d'usage
+pour suivre un petit peu
+tout ce qui va se passer.
+Et du coup, mon cas d'usage,
+c'est les prix de diamants.
+Supposant que nous soyons
+un vendeur de diamants,
+par exemple un vendeur chinois
+et, de nouveau,
+nous implementer sur le marché européen
+du diamant.
+C'est plus bon, on a un peu
+repère, c'est pas trop chez nous.
+Donc du coup, on se dit
+on va étudier ce marché.
+Donc, comment étudier ce marché ?
+En fait,
+on y est, on pourrait, par exemple,
+faire un vendeur de diamants.
+Mais après bien, je vais prendre tous les jours
+les prix des diamants
+avec les caractéristiques de ces diamants
+et puis je vais pouvoir faire
+des toles, des toles, des choses
+de là-dessus et comme ça,
+j'aurais voulu des...
+de ce qui est attendu en termes de diamants,
+du prix qui est attendu, donc,
+etc.
+Donc on démarre avec ce cas d'usage
+et donc du coup,
+je démarre avec ce parc
+et en fait, je démarre en java.
+C'est déjà un premier problème pour moi
+parce qu'en fait, je viens de l'interpréter
+donc les mots de l'interpréter
+ne compilent pas.
+Donc la population, c'est un plein d'avantage
+et ça a aussi des défauts
+dans le sens où on ne voit pas
+directement ce qu'on doit faire.
+Du coup, moi, ça me perturbait pas mal
+et puis, je commençais pas rien de bas
+donc je comprenais rien en compte
+qu'il fallait monter là-dessus,
+je comprenais rien à un spark.
+C'était franchement un peu
+compliqué, je gagnais sur une vidéo,
+j'essayais de lancer des tests,
+c'était pas péril, bien sûr, je n'avais même pas encore trop
+comment tester.
+Et puis, quelqu'un de vous bien avisé
+m'a dit, moi, je te conseille
+de passer par le spark-chain
+et tu vas voir
+les choses dont c'est simple.
+Donc ce serait mon premier conseil,
+il serait d'utiliser le spark-chain.
+Alors, qu'est-ce que le spark-chain ?
+Le spark-chain,
+le spark-chain, en fait, c'est un outil
+en ligne de commande
+qui va lancer du spark
+avec du squelon.
+Du joyeux, ou tu peux mettre
+plus...
+Ça me va un peu près ?
+N'hésitez pas.
+Du coup, on va lancer
+spark-chain de cette manière-là.
+Et là,
+il va aussi s'initialiser un
+environnement dans lequel
+on va pouvoir
+tester
+plein de petites choses de manière
+beaucoup plus simple.
+Donc là, dans l'entrée du jeu, il va nous créer
+un spark-contexte et une spark-session.
+Donc, une entrée dans spark
+qu'on aura pas besoin de créer.
+Là, nous sommes dans spark.
+On voit que c'est jusqu'à là.
+J'ai un ordre.
+Et du coup, on s'en fout.
+Par exemple, qu'est-ce qu'on va faire ?
+J'ai ici un fichier
+qui présente mes diamants.
+Donc, première ligne,
+j'ai un ID.
+Deuxième ligne, j'ai le carrage,
+j'ai la coupe, la couleur.
+Plein de petits éléments.
+Ce qu'on va vouloir faire,
+c'est le spark.
+Très bien.
+Ce que je vais faire, c'est que je vais créer
+une variable.
+En ce cas là, pour créer une variable,
+on utilise le cléval.
+Je vais prendre le spark-contexte
+et je vais lui dire, ni moi,
+un fichier.
+Et du coup, je vais lui dire
+un fichier test.
+Donc là, ça me crée
+une RDD de stream.
+C'est un objet
+qu'on a dans spark.
+On ne voit pas tout ce qu'on a dedans.
+Je vais monter.
+J'ai entendu des choses.
+Non, tu peux faire chaud.
+Pas sur celui-là.
+Mais sur mes chiffres.
+Du coup, là, j'ai un ID
+premier élément.
+Et là, je comprends
+que pour chaque élément,
+j'ai une ligne avec des virgules.
+Donc il y a très bien.
+Supposons que nous,
+nous sommes notre cible,
+c'est les diamants de plus de 1 carat.
+Ce qu'on va faire, c'est qu'on va
+déjà filtrer nos éléments.
+Pour filtrer nos éléments,
+on va prendre ce délément.
+Et puis, on va dire, je veux un filter.
+On applique la fonction
+de filter à notre objet.
+Et puis on va lui passer
+une fonction.
+Dans cette fonction,
+avec des virgules, non, c'est pas terrible.
+On va donner une autre forme.
+Donc on va en faire un arrêt.
+On va lui expliquer
+ce qui va nous donner un arrêt.
+Et ensuite, on va dire
+je veux uniquement
+les éléments.
+Donc le carat, mon deuxième élément.
+Je le casse en double,
+qui font plus de 1 carat.
+Là, je le tire et on fait
+le gestring.
+Je prends les 10 premiers éléments
+et je les imprime
+sans que l'on voit.
+Voilà. Ok. Mais en fait,
+ce qui nous intéresse, c'est les prix.
+Ok. Bah cette fois-ci, on va
+faire non pas une fonction
+de filter, mais une fonction
+de mat ou on va prendre chaque ligne
+et puis m'en sortir que ce qu'on veut.
+On va toujours en reprenant
+notre premier élément qu'on a créé,
+qui est ailleurs.
+Donc là, on fait une fonction
+de mat.
+Donc là, je peux reprendre
+mon split.
+Et cette fois-ci,
+je vais prendre
+le 7ème élément, ce que l'on a pris.
+Je le casse en pinte.
+Voilà. J'ai pris.
+Là, c'est rien de bon.
+Et puis, si je faisais un point collègue
+qui me ramène en ce cas-là,
+du coup, j'aurai un arrêt de
+plus.
+En gros, c'est ça, Sparchel.
+Ce qui est super facile avec Sparchel,
+c'est qu'on peut tester
+tout un tas de choses,
+en soi, avant de se lancer.
+Ça, c'est le premier élément
+qui est plutôt sympa.
+Donc, on peut tester
+simplement l'aéros pour mettre une place.
+C'est juste pour rentrer dans Sparch.
+C'est quand même plus aisé
+quand on a juste envie de voir
+quoi ça ressemble, sans être obligé
+d'avoir un milieu, etc.
+Et puis, ce qui est super sympa,
+c'est que, pas plus tard que 7h20,
+j'ai passé peut-être
+une heure avec quelqu'un
+sur Sparchel
+pour simplement
+qu'elle voulait avoir des informations
+sur la donnée qui était dans le justeur.
+Dans ce moment-là, on n'a pas forcément
+destiné à ça.
+On n'a pas de manière de donner
+la donnée comme ça.
+Moi, je fais une petite requête
+sur Sparch. Je dis bah ok,
+ceci, c'est ça, et du coup,
+je l'ai beaucoup plus sympa.
+Et des faux,
+c'est qu'en proie de...
+forcément, ça se passe pas comme ça.
+À tester de longs algos,
+j'ai essayé, c'est...
+j'ai vraiment donné
+d'enregistrer,
+en vidéo, etc.
+Et puis, le troisième problème,
+je me dirais, c'est que là, vous voyez
+que je fais tout en Scala,
+j'avais commencé en Java.
+Ça voulait dire qu'à chaque fois,
+j'avais un coup de traduction
+entre ce que je faisais en Scala
+et ce que je devais implémenter en Java.
+En fait,
+j'ai pris Scala parce que c'est là
+où je suis plus d'alaises,
+mais je précise quand même
+qu'il existe Sparch
+avec Jupiter.
+Voilà, on s'appelle Sparch.
+On spise Sparch et on a exactement la même chose,
+sauf qu'on est...
+On est dans Jupiter.
+Oui.
+On n'est pas confiés, on a l'air d'artiller sur Jupiter,
+c'est à dire, enfin...
+C'est pas difficile.
+Voilà.
+Moi, chez la zone personnellement,
+j'utilise toujours Sparchel.
+Par contre, j'avais des collègues
+qui utilisaient Sparch.
+Je ne sais pas les programmes
+qui vont rencontrer.
+Par contre, ça n'existe pas en Java
+et ça n'existe pas en Père.
+Donc ça, c'était
+plutôt mon premier point.
+Le truc, c'est qu'il doit qu'on est entrés
+dans Sparchel. On peut se demander
+finalement ce qu'on est en train
+de faire. C'est cool, mais on voit
+qu'on a un coup, ça nous renvoie
+des RDD, un coup, ça nous renvoie
+des arrêts. Et ça, en fait,
+on ne se rend pas encore compte, mais c'est
+quelque chose qui va nous jouer des tours.
+Et je dirais, pour moi, c'est un peu
+les deux grands éléments qu'on trouve dans Sparch.
+C'est les transformations
+qui constituent
+la pays de Sparch
+et qu'on a manupulé
+là, mais dont on ne s'en est pas rendu compte.
+En fait, une transformation
+c'est tout ce qui va nous permettre
+de modifier
+votre donnée. Un filtre, un map,
+c'est une transformation.
+Une action, finalement, c'est tout ce qui vous permet
+de sortir de Sparch. C'est-à-dire que
+dès que vous vous
+prêtez quelque chose en console,
+vous sortez de Sparch,
+vous faites un point de collecte
+pour avoir un arrêt.
+Là, vous sortez de Sparch.
+Quand vous enregistrez votre donnée,
+ou peu importe, vous enregistrez
+parce qu'on vous donnait le but que ce soit accessible,
+vous sortez de Sparch
+et vous réalisez une action.
+Le problème, en fait,
+c'est qu'en réalité,
+il n'y a que les actions
+qui lancent
+la suite de transformations.
+En fait, vous pouvez faire des tonnes
+de transformation, et puis
+vous croyez que votre code
+marche, mais en fait, je ne marche pas
+parce que vous n'avez pas lancé la vue.
+Par exemple, si je reprends mes prix,
+donc là, je vais vouloir refaire
+mes prix, donc je vais donner
+une grosse plité, puis je vais faire un truc
+un peu d'aide. C'est que
+je vais le caster en boya.
+Là, il va me dire
+pas de problème.
+Il a même le culot de me dire
+que je vais me garder d'aide de boya.
+Et en fait, quand on va faire un point connect,
+qui constitue
+l'action, parce qu'on sort de Sparch,
+boum !
+Il va me dire qu'en fait,
+non.
+Donc, ça peut jouer
+des tours,
+pourquoi ça me vous doublance
+mon tour, mais en
+mois, je faisais un test, et j'attendais
+que ça lance une exception, et ça ne lancait jamais d'exception.
+Et en fait, évidemment, je le sens du code
+j'avais pas l'action, donc
+je ne pouvais pas avoir
+une exception.
+C'était normal.
+Ça, c'est quelque chose qu'on trouve beaucoup
+et qui peut être assez
+très très au début.
+Et ce côté, en fait,
+lazy,
+c'est quelque chose que vous vous retrouvez
+dans plein d'outils, enfin,
+dans la moire, mais c'est aussi quelque chose
+que vous vous retrouvez dans
+Scala, et c'est une
+raison pour laquelle je reviendrai
+à un troisième conseil qui serait d'apprendre
+les bases de Scala.
+Alors, j'ai fait un sondage, mais
+qui a utilisé Sparch
+avec Scala ?
+Je l'utilise toujours expert ?
+Qui a utilisé Sparch avec Python ?
+Avec R.
+Je vais.
+Ok.
+Je ne suis pas là du tout pour faire la programmation
+d'un anglais,
+j'ai les préférences comme tout le monde,
+mais c'est pas du tout
+du tout.
+Moi, j'ai envie de donner ce conseil là
+dans le contexte de Sparch,
+déjà, parce que je ne connais pas
+tout le contexte de Scala.
+Et pourquoi ?
+Pour plusieurs raisons, d'abord
+Sparch c'est d'écrire en Scala.
+Donc, ça fait déjà une bonne
+raison d'au moins pouvoir
+connaître les bases de boutiques
+qu'on va utiliser.
+Parce que quand vous allez rentrer
+dans la paix, quand vous allez
+faire des promresses, des isches, tout un
+peu de choses sur votre outil, vous allez
+forcément vous confronter
+jusqu'à là.
+La deuxième raison pour laquelle
+je dirais que c'est quand même cool
+d'apprendre un peu les bases de Scala,
+vous avez déjà l'année la plus
+complète, et puis vous avez beaucoup
+d'utilisations, et surtout beaucoup de gens
+qui vont parler sur Scala. Vous avez aussi beaucoup
+de pitons,
+des mincés, et vous en trouverez
+aussi beaucoup sur la toile.
+Mais vous allez facilement
+rencontrer des gens dans Scala, et du
+coup, au moins, comprendre ce que ça
+fait, c'est quand même assez sympa.
+Puis ensuite, il y a aussi
+Scala, par exemple,
+n'a pas le monopole du lazy,
+mais comprendre qu'il y a des choses qui viennent
+de Scala, ça fait qu'on
+comprend un peu plus le titre qu'on utilise.
+Par exemple, je pense à la programmation
+fonctionnelle, encore un peu, voilà, programmation
+fonctionnelle, Scala n'a pas le monopole
+de la programmation fonctionnelle, et c'est
+faire derrière autre chose que de la programmation
+fonctionnelle. Mais c'est vrai que dans Spark,
+si vous remarquez bien,
+en fait,
+on passe toujours
+d'une RDD
+à une autre RDD. On a vraiment
+ce côté
+où, en fait, on ne le mute pas
+dans le variable, mais à chaque fois, on
+passe d'une variable, d'une variable.
+Ça, c'est logique pour retrouver.
+Ensuite, quand je dis
+apprendre les bases de Scala, c'est pas
+forcément de devenir un cadeau
+de Scala, mais moi, par exemple, quand j'ai commencé
+avec Scala, du coup,
+j'ai appris les bases de Scala, mais déjà,
+ce n'est pas le coup d'utiliser Scala.
+C'était
+une option à en donner, il fallait bien
+choisir, et j'ai choisi Scala
+pour un petit peu toutes les raisons
+que je vous ai dit. Aujourd'hui,
+je suis en full Scala,
+et je reconnais
+que, pour moi en tout cas,
+l'expérience personnelle,
+c'est quand même bien plus agréable
+pour les raisons que j'ai citées,
+et aussi pour le fait que l'APU
+est assez complète
+pour Scala. Après, j'ai vu, par exemple,
+des comptes de personnes qui disaient
+bon, nous, on était des cadeaux en Scala,
+du coup, on est restés sur Scala.
+Pourquoi ?
+Je ne voudrais pas être assise,
+mais
+c'est simplement un conseil sur les bases de Scala.
+Alors, du coup, là,
+je vous ai présenté
+quelques éléments, mais sur le coup,
+on comprend un petit peu l'enfinement,
+le codé, d'autre chose.
+En fait, après, je m'a fait remarque
+qu'on a pu faire encore un show,
+parce que je vous ai fait faire un peu
+falsehood.
+Mais
+c'est la falsehood que j'ai moi-même
+empruntée, qui n'est pas non plus
+complètement déléguée d'intérêt.
+Je vous ai présenté d'abord les RDD.
+Mais en fait, les RDD,
+c'est une des appellies
+de Spark, et c'est pas forcément
+l'appellie
+aujourd'hui qui est
+à privilégier. C'est pourquoi
+j'ai rencontré un autre quatrième conseil
+qui c'est d'apprendre et de désapprendre
+les RDD.
+Bon, déjà, ce s'agit de
+d'apprendre et de désapprendre, on va peut-être commencer
+par désapprendre. Qu'est-ce qu'il existe
+d'autre ?
+Je vais partir sur l'espoir de chaîne.
+Puis je vais créer une variade de Diamonds,
+mais cette fois-ci
+je vais passer dans une appellie
+qu'on appelle
+l'appellie d'Adavain.
+Bon, je vais exciser ma Spark session cette fois-ci,
+et puis je vais aller lire mon fichier
+en réalité,
+mais qu'un fichier s'est élevé.
+Alors, je vais un petit peu modifier
+pour que ce soit un peu plus visible.
+Du coup, je vais mettre un Heighter.
+C'est pourquoi je vais m'asider l'option Heighter.
+Et puis, bon,
+alors, on a fait à la base
+que de Coolstream, ce que je vais lire,
+c'est en fait, essaye de devenir le chemin.
+Je peux dire, asider l'option
+de venir un peu le chemin
+de démon.
+Alors, en fait, ça,
+c'est pas forcément quelque chose qu'on ferait en prod.
+Nous, on a plutôt tendance
+quand on n'est pas que ça a ce genre de situation
+qu'il n'y en a pas, c'est sûr.
+De spécifier
+un moment le chemin,
+mais là, bon, on est là pour
+participer, donc, je dis,
+un deuxième chemin.
+Donc là, je tiens le DataFrame.
+On tient un autre objet
+de Sparks.
+Et ce qui est assez cool, c'est de pas assider.
+Voici, je peux faire un Prencho.
+Et mon Prencho
+me donne des choses
+quand même tout de suite.
+Donc le Prencho, en fait,
+va nous imprimer
+les 20 premières minutes.
+Donc, c'est plutôt sympa.
+Donc, déjà, j'ai rajouté un Header.
+On voit un petit peu
+ce qu'on manipule,
+les caractéristiques
+des diamants qu'on manipule.
+C'est quand même un peu plus
+visible,
+ce côté un peu colomére.
+Et puis,
+en réalité,
+on a aussi un schéma associé.
+Voilà. Il va nous décrire le schéma.
+On va nous dire, bah en fait,
+la première colonne n'est pas allumée.
+Après, j'ai un cara qui en fait
+le boule, etc.
+Avec tout un petit zéro.
+Ici, on essaie de faire les mêmes choses
+que ce qu'on faisait à l'heure.
+C'est-à-dire récupérer les caractéristiques
+les plus hauts.
+On va reprendre le traitement
+des diamants. On va appliquer
+aussi une fonction de fil.
+Sauf que cette fois-ci,
+on va mettre
+une string.
+Et on va récupérer
+les caractéristiques
+les plus hauts.
+Et puis, ce qu'on veut,
+c'est le prix.
+Cette fois-ci,
+on va pas faire un bas,
+mais on va juste
+récupérer
+le prix.
+Et voilà.
+Alors, ce que j'aime
+avec cet API,
+c'est qu'on a quelque chose
+de tout de suite plus expressif
+et
+de beaucoup moins bas niveau,
+mais un peu plus
+quelque chose d'un peu plus
+tout de suite métier
+qui ressemble, en tout cas,
+dans une logique espule qui me rend les choses
+tout de suite beaucoup plus expressif.
+Le problème,
+c'est que, je ne sais pas si vous me rappelez,
+mais on avait des RDD plus string.
+On avait des RDD de brouillard.
+Là, on a vécu d'être après.
+Ce n'est pas ce qu'elle contient.
+Puis, en fait,
+je dis, c'est vrai que c'est pas
+ça, il ne sera que
+quand je vais passer aux antennes.
+Pareil pour filter.
+Il y a des choses qui vont avoir du mal
+à avoir la compilation tout simplement.
+Du coup, ce qu'on peut faire,
+c'est qu'il y a une autre appellie de Spark
+qui collabore
+avec les dataframes, qui sont les dataset.
+Les dataset,
+les dataset vont fonctionner
+avec des classes.
+Ce que je vais faire,
+c'est que je vais représenter mes diamants
+par une classe.
+Une classe, c'est une classe
+améliorée en escalage.
+Je n'entre pas forcément dans les dataframes.
+Et du coup, je vais me servir
+de cette classe pour créer une dataset.
+Je vais en fait
+repartir
+de ma dataframe.
+Et je vais la caster
+en vrai.
+Et là, en fait,
+j'ai obtenu une dataset
+de diamants, cette fois-ci.
+Ce qu'il y a de magique,
+c'est que tout ce que j'utilise
+sur une dataframe, tous les selects,
+les filters, etc, je peux utiliser
+exactement les mêmes
+sur ma dataset.
+Mais ce n'est pas ce qui nous intéresse.
+Puisque nous, on veut quelque chose
+qui, justement, à la compilation
+puisse planter.
+Ce que je vais faire, c'est que je vais refaire
+la même chose.
+Mais cette fois-ci,
+avec ma dataset.
+Et du coup, cette fois-ci, je vais pouvoir
+de nouveau lui donner
+une fonction, sauf que
+c'est bon.
+Et cette fois-ci, je vais le dire,
+je veux les diamants, qui font
+plus de prengards.
+Voilà.
+Et puis, je veux les prix.
+Donc là, je reprends
+mon prengard. Cette fois-ci,
+c'est une fonction de l'art.
+Avec
+toujours une fonction
+à un prengard.
+Et puis,
+je sors le prix.
+Et là, si je fais la même chose,
+je vais la même chose, sauf que
+je me suis épargnée
+des erreurs à la compilation.
+Ok.
+Sauf que j'ai dit
+apprendre et désapprendre hier d'aider.
+Là, je vous ai présenté
+un peu trois API de ce parc,
+trois manières différentes de faire
+la même chose, mais pas complètement
+d'entre eux. C'est-à-dire qu'ils ont
+tous leurs avantages et leurs
+inconvénients, on va dire.
+J'en reprends historiquement déjà.
+Les RDD, c'est la première API
+qui apparaît dans ce parc.
+Donc, c'est celle que
+on trouve encore beaucoup.
+Je trouve que ça a pas
+changé, c'est pas forcément vrai.
+En tout cas, quand je commençais, c'est vraiment
+l'impression que j'avais. J'ai l'impression que c'était
+les RDD le mettre au bout de toute manière.
+Je pense que j'en ai fait beaucoup, peut-être
+beaucoup.
+Et du coup, les RDD, c'est vraiment le côté le plus
+banique. Et ensuite au-dessus, on va avoir
+les RDD qui vont, du coup, nous permettre de
+faire la chose, les mêmes choses, mais
+en fait, manière plus optimisée dans
+ce sens où, en fait, les dates
+à frein vont générer des RDD
+optimisées.
+Donc, on a des moteurs
+d'optimisation dans ce parc qui vont faire
+ce travail-là. C'est
+plutôt sympa et ça se fait que, généralement,
+les dates à frein sont plus
+optimisées et sont davantage
+préconisées. On peut
+avoir besoin
+d'un RDD dans certains cas, mais
+c'est assez douté.
+Les créateurs de ce parc
+ne pensaient pas, ne pensaient pas
+cette année. Et puis, les dates à frein
+qui paraissent magiques, le problème, c'est
+qu'on sait que, dans certains cas, elles ont
+un performant auquel ils devraient.
+Voilà, pour faire
+le point sur ces années.
+Et voyons, en fait, que quand je vous
+présente les dates à frein et
+les dates à frein,
+il y a une logique
+vachement escuel dans ce parc
+et, effectivement,
+c'est
+la raison pour laquelle je dirais
+que ce serait
+de se replonger dans l'esprit.
+Moi, je dis replonger, parce que c'était mon
+corps. C'est-à-dire que,
+avant ça, j'avais fait beaucoup de casse en bas.
+Je ne sais pas si on a dit que c'était le casse en bas.
+Au gros son de l'eau, c'est un moteur
+de base de données qui va faire des requêtes
+escuelles simples.
+Pas de aventures, pas de requêtes,
+on fait du select étoile
+avec quelques words en temps en temps.
+C'est vraiment très basique.
+Du coup, bon,
+c'est un peu fégnant.
+On ne finit pas roulier
+ce qu'il y a, effectivement, dans l'esprit.
+Il y a encore des gars, beaucoup, beaucoup
+de choses dans ce parc qui sont proches
+de l'esprit.
+Et la preuve,
+c'est que je vais vous couper
+pour que tout le monde ait pu faire
+tout ça avec du SQL.
+En fait, on a ce qu'on appelle Spark SQL
+qui permet de requêter tout ton SQL.
+En fait, si je vais
+sur ma Spark session
+et que je fais Spark SQL
+showtables,
+c'est un problème, on ne peut pas le donner.
+On ne dit que j'ai rien.
+Ok, très bien.
+Moi, ce que je vais faire, c'est que
+ma data frame, je vais dire
+que je fais en moi une table.
+Je vais enregistrer
+et j'en ferai une table d'alimentation.
+Et là, quand je fais la même chose,
+boum, j'ai une table.
+Et ce qu'il y a de
+super avec ça,
+c'est qu'on va pouvoir tout requêter
+en SQL.
+Donc on va pouvoir, par exemple,
+on va récupérer le prix
+maximum
+de nos dirons,
+ajouter la couleur.
+Puis on va récupérer par couleur.
+Là, quand je fais un point de show,
+je sais, c'est un peu étrange,
+mais dans le monde des diamants,
+les couleurs sont représentées en fait par
+les couleurs.
+Donc là, on a notre prix maximum
+par lettre.
+Ce qui est super avec ce parc SQL,
+c'est qu'on va avoir tout un tas
+de fonctions
+propres à SQL.
+Il y a des tonnes de fonctions
+SQL que je ne connaissais pas
+et que j'ai découvert
+vraiment en faisant du Spark et pas du SQL.
+Le truc, c'est que
+toute cette logique SQL,
+donc on a vu qu'on a des côtés colornes
+et des fonctions, en fait, on peut les utiliser
+sur notre data frame même.
+En fait, on a un package
+où on va avoir toutes nos fonctions.
+Est-ce que je viens de faire, en réalité,
+j'aurais pu le faire en restant
+purement dans la data frame.
+Je peux faire groupe avec couleur.
+Je veux une aggregation.
+J'utilise la fonction max,
+qui est bien en fait de toutes nos fonctions.
+Tu dis que c'est sur le prix que je veux faire.
+Donc, il y a cette logique SQL
+qu'on retrouve
+dans Spark.
+Personnellement, j'ai tendance
+à trouver un point magique dans tous les sens du terme.
+Magique
+J'ai vu plusieurs cas d'utilisation
+où
+il y a des personnes
+qui ne sont pas des brokers
+et qui ne veulent même pas
+à Spark, alors qu'ils sont
+sur l'autre développement
+mais qui ne veulent pas à Spark
+et qui, du coup, on peut voir
+quand même participer
+à tout ce travail de la donnée
+en envoyant des requêtes SQL
+qui vont ensuite être industrialisées
+automatiquement dans un ordre.
+Il y a un cas où il y a des personnes
+du marketing qui disaient
+je voudrais connaître telle utilisateur
+quel est le résultat, qu'est-ce qu'on a
+et elles sont tout à fait capables
+de faire une requête SQL
+et grâce à Spark SQL
+on va pouvoir l'exécuter
+l'industrialiser aussi.
+On va donner vie
+à quelque chose
+qu'on n'a pas pu donner
+sur Spark SQL.
+L'effet
+est un peu pervers de tout ça
+et
+dont je m'étais déjà rendu compte
+et dont je m'en compte que moi-même
+parfois je tourne dedans
+on se fait la réflexion récemment
+c'est qu'en fait
+dans l'esql
+on a l'impression que c'est facile
+mais en fait on cache pas mal
+de métiers
+et du coup il y a plusieurs cas
+du coup il y a des gens qui vont dire
+ça c'est du SQL donc je ne teste pas
+on va dire c'est un peu
+les capiers mais des fonds sont bas
+quand on se dit oui ça c'est
+les requêtes du marketing
+alors je ne le teste pas
+donc en fait la requête du marketing
+elle fait la terre entière
+et finalement on sait plus
+ce qu'elle fait donc c'est
+un peu dommage et puis au-delà
+d'un aspect je cache du métier
+c'est qu'on ne peut pas passer au déblog
+par exemple sur un requête SQL
+alors qu'on pourrait le faire avec un data frais
+et on peut le faire au fur et à mesure
+ça les fait
+mais il y a de cool c'est qu'au-delà
+de faire juste par SQL on a quand même
+cette logique SQL qui est là
+et qui nous apporte tout un tas de fonctions
+comme Max pour exemple
+et ce qu'il y a de
+qui peut paraître encore super chouette
+c'est que si il nous manque une fonction
+on peut toujours la ajouter
+c'est ce qu'on appelle les IDF
+mais les IDF c'est à d'autres gens
+c'est pour ça je dirais ne cherche pas
+à couvrir avec les IDF
+donc en fait
+c'est un exemple
+de fonctionnalité
+qui n'est pas propre à ce parc
+donc un système SQL
+n'est que j'ai découvert avec ce parc
+qui consiste en fait
+à créer
+soi-même la fonction
+par exemple
+supposant là
+nous avons
+les prix et les couleurs
+et pour une raison X ou Y
+pour une raison X ou Y
+nous voulons générer un code
+qui prend
+la première lettre de la couleur
+et puis
+qui prend le fond
+puis on se dit
+bah pour faire ça
+je vais créer une fonction
+et puis comme Max
+du coup je rentrerai pris les couleurs
+et du coup ça fera le travail tout ça
+donc du coup bah
+on va créer une fonction
+en cela
+ou le montage que vous avez décidé
+d'utiliser avec ce parc
+moi quand je découvert ça
+j'étais un peu dans cet état
+c'est-à-dire j'étais
+tout excité
+je me disais
+quand il y a un problème
+pas de problème
+je vais utiliser
+des IDF
+et en fait j'étais comme ce petit modem
+qui a une arme dans la main
+et qui tire partout
+de manière assez dangereuse
+c'est-à-dire pour moi c'était devenu la solution
+à tous les problèmes
+et pour moi c'est pas la solution
+à tous les problèmes
+parce que je fais
+des choses dangereuses
+je ne me rendais pas compte de ce que je faisais
+et assez rapidement je suis arrivée
+à des problèmes de permanence avec ces IDF
+et à la fin j'ai fini
+plutôt comme ça
+ce n'était pas forcément
+et aujourd'hui je me méfie encore beaucoup
+désolé
+et avec cette expérience
+je me suis dit
+qu'est-ce que déjà je peux tirer
+de cette motionnalité
+pour qu'elle puisse marcher et rester
+comme un problème
+je me suis dit plusieurs choses
+déjà être aussi simple que possible
+avec les IDF
+je faisais un peu vraiment d'outil
+comme je vous disais
+et puis des gros devres
+qui m'ont fait des petites choses
+être pure
+alors là pour le coup c'est vraiment l'idée
+de pas des faits de bord
+au sens où
+j'ai une donnée en entrée
+j'ai une donnée en senti et ça doit
+toujours être la même chose
+je ne dois pas faire un appel
+d'une abeille distance
+du temps je ne dois pas faire un appel
+à une base de données
+dans un courte quoi
+je dois vraiment rester dans quelque chose de simple
+et tester
+alors ça c'est assez paradoxal
+parce que les IDF
+c'est un peu comme le code SQL
+on se dit que c'est simple
+donc du coup
+je vois des cas où les gens sont bords
+je dois rester
+si on l'a fait un moment donné
+c'est que ça n'existait pas avant
+donc c'est qu'on doit vérifier que c'est pas
+n'importe quoi
+il parle d'actionnellement aussi
+je trouve aussi beaucoup de gens qui vont
+être très attirés par le côté
+IDF parce qu'en fait
+c'est relativement facile
+à tester par rapport au reste de l'esprit
+mais en tout cas
+si l'on en fait l'idée serait plutôt
+de l'esprit
+mais même au-delà de ça
+j'ai créé des problèmes
+de performance dans l'IDF
+ça n'était pas à cause de la consommation
+de l'appel sur l'outil
+mais par contre c'est vrai
+que c'est pas
+la fonctionnalité la plus optimisée de ce parc
+elle n'est pas optimisée
+les créateurs de ce parc disent que c'est
+un peu une voie de noir quand même
+et du coup on ne l'optimise pas forcément
+on l'optimise pas
+du coup ça peut être
+pas
+c'est une fonctionnalité
+qui peut être un peu faite
+du coup je vous ai parlé plusieurs fois des tests
+et effectivement
+je pense que vous avez peut-être compris
+c'est un sujet super important pour moi
+et je considère que
+malgré tout ça en fait
+tout ce que je vous ai présenté
+on n'est pas apte à développer avec Spark
+parce que
+on ne s'est pas testé
+et du coup
+quand on ne s'est pas testé on n'est pas capable de développer
+le problème
+c'est qu'avec Spark
+au moins il n'y a pas mieux que le jour
+dans mon esprit
+c'est à dire peut-être parce que j'avais pris mes marques
+en tout cas
+quand j'étais en PHP je ne me disais jamais
+ça je ne peux pas le gestifier
+j'avais pas ce genre
+de difficulté en fait
+je testais tout
+et puis c'est tout
+j'avais pas ce problème
+et avec Spark
+j'ai eu pas mal de problèmes
+pourquoi
+j'ai présenté un cas
+donc là nous avons une classe
+donc classe d'IAMMOM
+un petit peu simplifié
+nous allons lire le fichier CSV
+en créé une data set
+et puis sur cette data set nous voulons
+récupérer le prix
+donc là on dit
+ça c'est facile à tester
+parce qu'on ne peut pas pouvoir
+l'extraire dans une fonction
+donc la fonction select price
+qui prendra le diamond
+et qui nous ressortira
+que le prix
+n'a pas du coup la plait
+donc là on a vraiment
+exprès ce qu'on lui a testé
+et du coup c'est parti là
+select price
+et c'est facile
+à tester dans le sens où
+à partir du moment où on sait faire des tests
+on va pouvoir tester
+sans trop
+et on va pouvoir rester
+surtout en fait
+dans du scavature
+on voit le voyage que vous avez dû utiliser
+donc
+ne va pas interférer avec nous
+parce qu'on a les moindres
+c'est les tas de moindres
+le problème c'est que souvent on va faire
+des choses un peu plus touchées
+supposant par exemple
+toujours des diamonds avec la couleur
+et le prix
+et nous voulons voir
+si nous pouvons établir une corrélation
+entre les prix
+les diamonds qui se vendent
+et les couleurs tendances du monde
+et de l'autre côté j'ai les couleurs
+tendances du monde
+j'aurais décidé d'expresser
+les couleurs tendances du monde
+donc le verbe c'est la couleur tendance
+donc il y en a plusieurs qui sont en mer
+rouge
+quelle sorte de ça
+bon bah c'est vraiment un hasard
+que j'ai fait de ça
+et disons on va essayer de les faire matcher
+en sortir quelque chose
+ce qu'on va faire
+c'est qu'on va voir en sortir
+les prix
+les prix des éléments qui sont
+très nues
+donc on va joindre
+nos deux objets
+on va subtrer
+pour avoir les éléments
+des prix tendances
+on va sélectionner le prix
+et on va le casser
+dans
+dans notre data set
+de résultats au final
+d'ailleurs on peut
+je sais le simplifier mais en fait
+ce que je veux juste montrer là-dedans
+c'est qu'à si rapidement vous allez avoir besoin
+de votre Spark Session
+pour faire des tests
+alors il y a plusieurs solutions
+et on va bien ça
+j'ai essayé
+je suis pas la seule amie après essayé
+ça marche
+dans des cas quand même
+mais il y a quand même pas mal de tests
+on se rend compte qu'on est en train de faire tout Spark
+c'est un petit peu
+et du coup finalement
+cherchant un peu ce n'est pas mal
+en posant des questions avec des longs
+et puis on met dans même de la
+littérature officielle
+des personnes vraiment en comité
+dans le Spark
+ils en viennent à dire
+finalement osent utiliser la Spark Session
+c'est ce que tu veux faire
+c'est vrai mais tu veux tester
+que tu utilises bien la Spark
+et pour ça tu as besoin
+d'une partie de Spark qui est la Spark Session
+du coup on te convidait
+d'avoir un rubber
+qui va nous donner la Spark Session
+qui va avoir lieu en fait
+qui va courir
+dans le test et qui va nous permettre
+de faire tout un tablellement
+et du coup on va pouvoir
+la donner dans notre test
+et on va poser
+une partie de Spark
+souvent je vois
+des gens qui travaillent avec Spark
+qui vont tester
+tout ce qu'ils arrivent vraiment à extraire
+dans leur engage
+mais par contre ce qu'ils arrivent pas à extraire
+finalement ils ne testent pas
+ou alors ils passent pas
+ok donc
+l'effet perdère de ça
+c'est de pouvoir ralentir le test avec notre Spark Session
+et on va la ralentir pour plusieurs raisons
+d'une des raisons
+enfin qu'en tout cas on peut avoir
+et qu'on peut contourner
+c'est que là par exemple
+ce que je fais c'est que
+à mon élément résulte en fait
+je vais appliquer
+une première action qui est collecte
+qui va me rendre rien d'arrêt
+donc regardez s'il arrive que j'ai
+et bien celui qui est attendu
+puis ensuite je reprends un élément
+et puis je fais un compte
+c'est un peu du nom comme test
+simplement pour montrer qu'on a
+une même data frame résulte
+ou une data set
+et puis on peut faire
+deux tests dessus et pour faire ces deux tests
+on lance deux actions
+qu'est-ce qu'il se passe
+en fait ce qu'il se passe on lance une action
+je vous disais votre télévision c'est que ça va lancer
+toutes les transformations qui ont eu lieu avant
+qu'est-ce qu'il se passe et qu'on fait le poids collecte
+on lance une action
+cette action va lancer la gentille
+lancer une crash
+et ensuite on obtient le résultat
+ok on passe au deuxième élément
+et du coup on refait une action
+et du coup même chose
+évidemment c'est la transformation
+toutes les transformations qui ont eu lieu
+il y a plusieurs manières pour échapper
+à ce problème
+ou la manière la plus simple qu'on a trouvé
+c'est finalement de se dire
+on n'a pas besoin de faire deux actions
+on va être en faire que l'usule
+et pas tout tester dans ce cas
+ce qu'on fait c'est que
+on va exécuter une fois que l'acte
+donc une autre action
+et ensuite c'est là-dessus qu'on va faire
+nos tests
+on va dire est-ce qu'un autre élément
+est bien celui là-dedu
+est-ce que c'est bien avant
+et du coup ça fait que
+sur la première action effectivement
+on lance la gentille
+on lance le filtrage et on lance la sélection
+mais ensuite on n'est fait plus qu'utiliser
+le résultat
+on s'économise
+c'est quelque problème
+bon
+avec ces éléments-là
+je sais pas si on est capable
+de construire New York qui a une grande civilisation
+mais en tout cas
+au-delà de ce parc
+on s'exprime avec la data
+on peut un peu moins construire le village
+et
+je trouve que c'est vraiment
+quelque chose qui prend plus
+dans le moment
+et je comprends pas
+j'espère que ces éléments
+vous auraient aidé à avoir un peu plus le coeur
+ce que Stéphane a dit
+je vais vous raconter
+c'est beaucoup meilleur
+et d'ailleurs si vous avez
+d'autres conseils
+ou des choses à occuper
+si vous avez des questions
+je vous remercie
+merci
+merci
+bon
+je suis globalement d'accord
+sur les conseils
+sur les RDV
+je serai un plus catégorique
+oublié
+c'est un bon vous n'avez pas besoin
+c'est juste
+si vous avez un expert SPARC
+pour un besoin très très particulier
+vous pouvez le utiliser sinon
+c'est pas performant
+il ne faut pas les optimisations
+sur les tests
+il y a une hybride
+qui permet de faire des tests limitaires
+sur SPARC
+il n'y a pas de problème
+le SPARC test-base
+on peut même coder
+un TDDA
+avec SPARC
+donc
+ce n'est pas vraiment un problème
+pour
+il y a aussi un conseil
+à vendre de codés quoi que ce soit
+pour le SPARC
+il ne faut pas comprendre ce qu'il fait derrière
+comment il distribue le travail
+qu'est-ce qu'il est un driver
+qu'est-ce qu'il est un exécuteur
+qu'est-ce que c'est les stages
+les cheveux etc
+vous allez faire de l'invertisseur
+c'est un élément
+après je trouvais que c'était trop grand
+il a fait le renouvel
+il n'a pas d'émergence
+il a pas d'émergence
+il a pas d'émergence
+cette démonsion
+distribuée avec tout ça
+très rapidement
+on va trouver des problèmes
+c'est vrai
+il va ramener le cheveu
+il ramène tout sur un seul déneu
+pour faire l'opération question
+un joy
+il a fait un tour anglais à donner
+il a participé
+au dégoût
+je pense que mes premières erreurs
+c'était deux exécuteurs
+c'était quoi ?
+les exécuteurs
+c'est un peu mal
+c'est rapidement
+il faut savoir tout de suite
+en fait
+effectivement ça
+pour la partition
+c'est plus ou moins le plus haut
+ça n'a pas l'air de partitionner
+mais la partition de 10 par exemple
+et on va avoir un lieu de croix
+et elle était finie
+c'est aussi
+expérimental
+après on est pas mal sur
+quelque chose à la journée
+je pense que c'est pareil
+pour chez vous donc il y a déjà
+cette répartition là qui se fait d'elle-même
+et ensuite ça est
+c'est simple est-ce qu'on peut facilement mélanger
+du spark avec d'autres choses
+parce que du coup
+j'imagine qu'il y a d'autres noms
+pas forcément
+typiquement
+du preposé signes pour temps de sa flow
+ou des choses comme ça
+du coup il faut passer par le piton
+oui
+moi je n'ai jamais vu
+je pense qu'il y a des noms qui le vont
+c'est un bar déjà
+il y a des salibris de chine
+oui mais par contre je lui en serait
+parce que le noms que tu machines par nous
+et on s'est rapidement trouvé
+à des limites
+qui a prévoyé un temps pas l'entendant
+donc je me comprends le besoin d'aller les deux
+mais je l'ai déjà fait
+je te dirais des médecins
+c'est un truc qui s'entraîne
+dans le même sens que
+c'est un truc qui s'entraîne
+t'apparaît dans les postes de magie
+dans les postes de magie c'est parce qu'on est du cpu
+ou est-ce qu'on peut aussi parler de gpu
+dans cette période
+en fait je ne m'occupe pas trop de la partie poste
+oui c'est pareil
+il y avait pendant que si quelqu'un
+tu avais un cluster
+soit une gpu
+soit un cluster en sonore
+et puis tu as des posts de gpu
+et puis tu as un cluster en sonore
+soit un cluster en sonore
+ou sur les raves
+et tu as une magie gpu sur le gpu
+et tu as des posts de gpu
+et pour cpu que je l'ai vu
+j'ai fait un cas plus grandement bien
+mais c'est la fachéité
+pour ce type d'enclos
+pour ce type d'enlèvres
+mais non
+il est à France et là
+il est aussi né pour une magie marie
+il y avait des lunes effets
+il y avait des coups de termite
+et plus surement il y a à la salle
+qui a été une jeune
+dans la magie du pays en salle
+il y avait un tas de sortes de pensées
+c'est-à-dire sur la salle
+ou le chancel
+donc tu as reçu
+oui, c'est un petit travail
+sur le fait d'avoir des jobs
+qui sont au revoir des ressources
+en fait, c'est un travail
+en fonction de la typologie du job
+d'utiliser quelques autres sources
+qui sont en sécurité
+et donc d'avoir
+une fachéité un peu plus fort
+dans la partie
+de l'exécution
+c'est-à-dire pour la fachéité
+donc je vous le dis
+oui
+il y a des cours sur la partie
+avec le trajet des éducateurs
+et du coup je vais allumer
+si c'est plus grave
+il y a des cours
+il y a des cours
+il y a des cours
+il y a des cours
+il y a des cours
+il y a des cours
+il y a des cours
+qui sont plus près
+donc tu as fait que tu as juge
+des ressources
+pour l'avoir peut-être autour des pizzas
+est-ce que vous avez d'autres questions
+pour Dastasia, peut-être directement
+moi j'en ai peut-être une aussi
+parce que quand on parle de performances
+on parle des slides
+mais moi de l'expérience que j'ai
+des gens qui font du spark en prode
+c'est souvent de la rame en fait
+c'est beaucoup plus beaucoup de groupes
+donc est-ce que c'est un travail pour la soucie ?
+oui en fait c'est pas un travail pour la rame
+du coup
+c'est un travail
+mais après
+ça dépend
+au départ j'ai envie de dire
+on avait beaucoup de problèmes de performances
+et puis aujourd'hui
+c'est pour ça que j'ai dit
+que tu apprends
+puis c'est vrai
+que la manière dont tu vas configurer
+tes exécuteurs et tout
+il y a une partie
+que tu vas tester
+mais il y a aussi quelques règles
+qui sont ayancées
+tout le monde n'a pas pu mourir
+parce que c'est réagible déjà
+donc
+tu gères pas
+ou tu gères
+ou tu n'as plus envie de dire
+qu'il y a des problèmes
+oui tu n'en es pas alors en fait
+on a des deux gros problèmes que j'ai
+des deux grandes causes
+c'était à un moment donné on avait une infra
+de toute manière qui était trop faible
+parce qu'on ne l'ait pas
+mais la plupart du monde
+c'est parce qu'on teste notre truc
+et puis finalement il y a des manières
+mieux de le faire
+donc quand même
+aujourd'hui avec l'infra
+qu'on a qui n'est pas non plus une belle de cause
+mais ça va
+donc les problèmes qu'on a de l'éloir
+sont souvent des problèmes
+quand même
+on va avoir pas envie de
+montrer
+quelques astuces tu vois je te dis
+on est partitionnés au mois
+à l'année
+on sait qu'on n'a pas besoin
+de tout on va faire une nouvelle
+on ne se fâche plus que ça
+en fait c'est le problème c'est qu'il y a
+plusieurs dimensions
+il y a déjà une dimension de l'infra
+il y a le code, il y a aussi la structure de données
+la source de données
+souvent on arrive
+à améliorer les pertes
+on essaie de respecter les vos pratiques
+il y a énormément de différences de pertes
+par exemple si on processe
+les csv ou on le parquait
+donc
+c'est la différence
+fois-dix
+plus
+etc
+en plus le spark
+il est capable de faire
+les pushdown fitter
+ce qui veut dire qu'il va
+se voir dans le traitement du filtre
+qu'est ce que tu filtre et donc du coup
+coucher le filtre dans la source de données
+sur la base de données
+pour ne pas tourmenter de toutes les données etc
+mais il faut faire attention
+parce que typiquement en utilisant les dataset
+de toutes les façons que tu fais
+il va pas faire le pushdown
+est-ce qu'il y a d'autres questions
+pour l'astragé du coup
+le mieux c'est de parquaitre
+dans la vraie vie
+la base
+c'est
+c'est très pro
+c'est la base de données
+la base en classe a pas distribué
+pour l'ingère
+et ensuite on est sur un système
+qui est distribué
+c'était ça la question
+c'était fonctionnel
+exactement
+hdfs
+c'est ça
+c'est ça
+oui
+c'est ça
+oui
+c'est ça
+oui
+oui
+oui
+oui
+oui
+oui
+ce que je l'ai dit
+oui
+oui
+oui
+oui
+oui
+oui
+
+oui
+oui
+oui
+oui
+oui
+oui
+ben merci beaucoup
+merci

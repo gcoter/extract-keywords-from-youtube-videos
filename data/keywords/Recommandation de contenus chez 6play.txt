@@ -1,0 +1,1 @@
+{"title": "Recommandation de contenus chez 6play", "keywords": ["content recommendation", "Personalize", "AWS", "Python", "machine learning", "discovery feature", "monitoring", "flexibility", "item recommendations", "recognition technology"]}

@@ -1,0 +1,1661 @@
+Bonsoir à tout le monde, tout d'abord merci aux meet-up et aux organisateurs du meet-up de me m'accueillir parce que je les ai contactés un peu
+un peu de manière brute comme ça sur meet-up genre
+et je viens à Lyon ça vous dirait pas que j'avais une causé et donc ils m'ont très gentiment accepté ici donc bah
+merci à eux
+alors pour me présenter un tout petit peu
+donc moi je travaille dans une société que s'appelle Finker qui est une agence spécialisée en data science et particulièrement en langage R
+donc ça c'est ce que je fais le jour et la nuit j'ai aussi co-fondé une institution qui s'appelle le Bres Data Club
+donc vous vous en douterez en Bretagne
+et je suis aussi fondateur d'un site qui s'appelle DataBesedash qui est donc une plateforme de data blogging
+et donc vous pouvez trouver... vous avez rien du tout qui s'affiche c'est ça ?
+oui
+hop
+alors bon
+mets des boires avec Powerpoints
+commence bien
+c'est mieux comme ça ?
+oui
+donc je travaille dans une société que s'appelle Finker
+donc c'est ce que je viens de dire vous trouvez donc déviens vers tout ça
+vous avez le lien dans mon compte twitter juste en bas si vous avez envie de vous plaindre de ce que je suis en train de vous raconter
+c'est ici qu'il faut vous diriger
+donc je suis là pour vous parler ce soir de...
+puisque la slide de DataBesedash ne s'est pas montrée je suis là
+pour vous parler de DataScience en production
+notamment avec R
+je vais parler de ça pendant environ 45 minutes parce qu'il paraît qu'il faut aller chercher les pizzas à 45
+donc promis à 45
+je me serai arrêté
+donc je suis là pour vous parler un petit peu de R
+quels sont les enjeux de la mise en production dans l'engage comme R
+et quels sont les solutions qu'on peut adopter
+donc Finker très rapidement
+on est une agence d'expert en DataScience et en engage R
+on fait de la formation
+de l'analyse du développement et du consulting
+la partie formation donc c'est
+n'importe quoi du moins que ça en rapport avec R
+et la partie développement et consulting
+a trait aussi à la mise en production de R
+donc mise en production de R
+c'est un peu ce dont je vais vous parler ce soir
+assez fait la promo de Finker
+donc je vais rapidement vous parler de ce que c'est que R
+parce qu'il y a des gens ici qui n'ont jamais entendu parler de R de leur vie
+ok parfait
+est-ce qu'il y a des gens qui n'ont jamais programmé en R de leur vie ici
+personne n'est parfait mais c'est bon
+ça ira plus vite
+on peut vous présenter un petit peu rapidement
+c'est un langage de programmation
+Lingua Franca de la DataScience
+parce qu'en fait c'est un langage qui a été créé
+par des statisticiens pour des statisticiens
+donc en fait en 25 ans
+donc R a fait des ces 25 ans cet été
+c'est devenu le langage
+le langage qui est le plus utilisé dans le milieu de la DataScience
+qui est en train de se faire rattraper de près par Python
+mais on n'apprendra pas ce soir si vous voulez pas qu'on se fâche
+je plaisante bien sûr
+c'est un langage qu'open source
+c'est un langage qui est gratuit, multiplatformé
+ultra modulable
+alors R en prod
+qu'est-ce que c'est
+alors souvent on entend que R c'est juste un langage
+pour les universitaires
+que c'est juste les étudiants qui font ça
+que ce sont juste les profs qui
+qui vont l'utiliser
+donc ce sont des trucs de R&D, des trucs de recherche
+je sais que ça marche pas du tout en entreprise
+alors je vous ai mis une petite liste
+d'usages en entreprise
+de R
+donc notamment Facebook, Google, Twitter, Microsoft
+parce que bon faut bien un petit peu faire du name dropping
+ça fait toujours bien quand on commence
+une présentation sur R
+ça sont des grandes sociétés qui utilisent R
+en production, c'est pas des choses que j'ai inventées
+j'ai trouvé
+plein de ressources sur le web
+en France
+c'est aussi énormément adopté dans les grosses sociétés
+donc voilà, BNV Paribas
+la SNCF, ça nous fit RTE
+Orange, Vincé, Bande de France, le CNRS
+tout ça ce sont des gens qui ont
+des équipes de Data Science
+et des projets de Data Science
+et qui vont utiliser R en production
+si vous allez sur le GitHub de Finker
+j'ai fait un petit
+un petit repo où on liste
+beaucoup de cas d'usage de R
+je vais peut-être vous montrer si mon internet marche
+alors
+Tech
+et mon internet ne va pas marcher
+forcément
+vous avez une liste si jamais
+vous avez envie de convaincre votre boss
+que R en production ça marche
+j'ai fait une petite liste
+de énormément d'usages de R en prod
+donc ce soit chez Airbnb
+à la BBC
+BuzzFeed
+IB, Facebook
+Financial Time
+toutes ces choses-là
+donc ce ne sont pas
+juste des noms que j'ai
+que j'ai inventé
+il y a vraiment des liens
+soit les articles, soit les cas d'usage
+soit des choses comme ça donc je vous invite
+à en jeter un œil
+il y a le parisien au milieu parce que
+on fait un petit peu quand même
+de français dans l'eau mais il y a vraiment
+énormément de cas d'usage de R
+en entreprise
+mais en même temps
+passer R en production
+il y a énormément d'enjeux
+qui se posent
+pourquoi ? parce que justement
+c'est un statisticien
+qui a plus été utilisé dans les universités
+et donc c'est un langage qui à la base
+n'a pas forcément été pensé
+pour de la mise en production
+donc en fait
+R c'est vraiment un super langage
+on peut très vite avoir des bons résultats
+mais en fait
+avoir la démarche de passer
+de passer de notre ordinateur
+de la TITR&D qu'on va faire sur notre machine
+à quelque chose qui va passer en production
+c'est vraiment différent
+parce qu'au départ, touche une communauté de développeurs
+mais une communauté de statisticiens
+c'est pas forcément facile
+donc de mettre R en prod
+heureusement depuis quelques années il y a
+beaucoup d'outils
+beaucoup d'outils qui sont sortis
+et beaucoup d'outils qui sont en place pour
+justement passer R en prod
+donc les enjeux
+parce que j'ai voulu mettre des mots
+que j'aurais du mal à prononcer
+utilisabilité, accessibilité, escalabilité
+interoperabilité et mainténabilité
+c'est un petit peu ce dont je vais vous parler
+ce soit
+donc d'abord
+l'utilisabilité
+l'enjeu numéro 1 de R en prod
+c'est en fait
+justement de faire passer
+les gens qui vont faire de la R&D
+qui arrivent à communiquer avec les gens
+qui font
+de la IT
+le service IT
+une entreprise, je sais pas si vous connaissez
+cette série
+donc c'est une Anna qui était plutôt
+dans le marketing et qui se retrouve
+au service avec les mecs
+qui sont à la maintenance
+vraiment en formatique pure radio
+et en fait il y a tout le comique de la série
+qui repose sur le fait qu'ils n'arrivent pas
+à communiquer les uns avec les autres
+c'est comique dans la série, mais en fait
+dans la vraie vie c'est quand même
+ça, d'un côté parce que
+si on s'imagine
+que madame est une chercheuse
+qui a fait des modèles en R, qui a fait de la R&D
+et qui va vouloir amener R
+à son service IT
+qui maintiennent les serveurs
+qui maintiennent tout ça
+ces gens-là ne connaissent pas R
+les gens qui font
+l'administration système
+on ne leur a jamais appris R de leur vie
+c'est normal parce qu'en fait c'est pas un langage qui a été prévu
+pour faire ça à la base
+en même temps les gens qui font du R
+n'ont aucune conscience
+de toutes les contraintes qui vont être
+liées à l'administration système
+qui vont être liées au développement
+vraiment pur et dur, mais en même temps c'est normal
+parce qu'on ne leur a jamais appris non plus
+en fait ce sont des gens qui viennent d'un background
+peut-être statistiques, académiques
+et donc ils vont savoir super bien
+faire des modèles
+stats, des modèles de machine learning
+de deep learning de tout ce que vous voulez
+mais une fois qu'on va passer du côté
+un petit peu plus contraignant et un petit peu plus
+structurel de l'engineering
+en fait ce sont des choses qu'ils ne connaissent pas
+et qui n'ont pas forcément conscience
+donc le R en proie de l'enjeu numéro 1
+c'est quand même d'arriver à faire
+communiquer
+ces gens-là
+et d'un autre côté, si on imagine
+que sur notre gauche ce sont un développeur
+R et sur notre droite
+je ne sais pas, quelqu'un qui travaille
+au marketing
+on aura beau développer les meilleurs produits en R
+si on n'arrive pas
+à les rendre accessible à des gens qui bossent
+au marketing
+ça ne marche pas non plus
+je ne dis pas ça du tout contre-agent du marketing
+parce qu'en fait c'est juste que des gens qui ne codons
+jamais de leur vie, qui ne sont pas amenés à coder
+leur vie et c'est normal parce que c'est pas leur taf
+donc ça ce sont un petit peu les deux enjeux
+donc arriver à faire
+que les gens qui font du R
+arrivent à discuter avec Lighty et arriver à faire que
+les gens qui ne feront jamais de R
+de leur vie et accès
+justement aux choses qu'on peut développer en R
+donc tout d'abord on a
+donc R à la base
+c'est ça
+je sais pas si j'interrompre
+donc R à la base
+c'est ça
+ça c'est super bien quand on a mes commandes
+on est super content de faire tout
+en ligne de commande
+mais malheureusement ça ne va pas forcément
+plaire
+pas forcément plaire à tous les gens
+à qui on veut faire du R
+pourquoi ? parce qu'on a un petit peu cette petite image
+qui est plus chez lui parce que vous savez
+moi je suis chez moi avec ma 4 puces comme ça en train de coder R
+et donc si on présente
+si on a une équipe
+de recherche et de développement qui est habitué
+à faire du Excel, qui est habitué à faire du SAS
+qui habitué à des choses avec vraiment
+du clic bouton
+en fait ces gens là on ne peut pas les emmener
+directement
+dans un terminal
+les gens on leur montre un terminal
+il y a un côté
+ils veulent pas travailler dans un terminal
+parce qu'il est normal, parce qu'ils s'entend
+c'est pas à l'apporter tout le monde de tout faire
+en ligne de commande
+heureusement il y a un super
+IDE
+pas la promotion de RStudio mais moi j'aime beaucoup RStudio
+donc là on travaille toujours dedans
+il y a d'autres IDE pour faire du R
+que vous pouvez utiliser ici
+RStudio on est un parmi tant d'autres
+c'est le plus populaire je pense que c'est celui le plus accessible
+au débutant et celui qui va être
+le plus agréable d'utilisation
+après
+les bravous d'en utiliser d'autres
+mais en fait c'est une première marche
+qu'on a eu besoin de passer
+pour que les gens
+qui ne sont pas forcément
+amenés à être en capuche chez eux
+et à taper sur la clé avec des gaules en cuir
+parce que tout le monde sait que c'est super pratique
+en fait que ces gens là
+ils soient en mesure
+d'utiliser un langage de programmation
+donc vraiment faire du code
+toute la journée
+de manière agréable
+on peut être 12h d'affilée
+dans une interface comme ça
+et c'est quand même agréable de travailler
+dans des conditions comme ça
+donc ça c'est une première étape
+quand on veut amener R en production
+et donc là quand on veut amener R chez les gens
+qui faisaient du Sass avant
+qui faisaient du Excel, qui faisaient
+n'importe quel autre langage de programmation
+n'importe quel autre logiciel
+en clic bouton
+des choses comme ça donc là il y a beaucoup de choses qu'on peut faire
+encore en clic bouton on a beaucoup d'éléments visuels
+alors que si on est en ligne de commande
+forcément on est toujours dans
+cette boîte noire
+à tout faire
+sans jamais cliquer donc ça
+c'est une première étape
+de l'amener
+où on doit amener un langage de programmation
+en production
+mais ça c'est toujours pareil
+ça demande un petit peu
+il y a toujours un petit côté
+un petit côté nerd
+en fait
+à être toute la journée dans son interface
+comme ça, à taper des lignes de code
+dans des scripts, à les lancer
+toutes ces choses là
+ça demande d'une
+d'être à l'aise avec l'informatique
+ce qui n'est pas forcément donné à tout le monde
+d'avoir envie de coder, d'avoir envie de taper
+ces lignes de commande
+ce n'est pas non plus forcément donné à tout le monde
+en fait comme je le disais juste avant
+il y a plein de gens qui ne coderont jamais de leur vie
+à qui on ne te demandera jamais de coder et c'est normal
+tout le monde ne peut pas être à l'aise
+avec le fait de coder
+donc on ne peut pas imposer
+à tout le monde de se mettre à coder
+notamment avec des gens qui
+ce n'est pas leur taf premier de faire de la recherche
+faire de gire de la recherche
+en développement
+les gens n'ont sait
+ce n'est pas le métier premier
+on ne peut pas leur dire
+ok super on a développé
+on a développé un modèle génial
+t'as juste à
+télécharger studio
+t'installes tous tes packages intel
+et puis ensuite
+tu vas faire librairie le nom de ton package
+et puis t'as juste à lancer telle ou telle fonction
+ça va te sauvegarder un objet
+que tu peux ensuite exporter pour faire une carte avec tel
+c'est normal
+que les gens ce n'est pas le métier de coder
+ne
+on ne leur impose pas
+cette étape
+alors qu'est ce qui se passe
+on est passé de la ligne de commande
+à un développement
+dans une interface
+une DE
+à vraiment une interface utilisateur
+pour faire des choses comme ça
+on va utiliser un framework
+de développement d'applications web
+qui s'appelle SHINY
+SHINY
+c'est vraiment
+un super langage parce qu'au final ça peut être
+ça peut créer des applications
+qui pourront être utilisées
+par un BB donc on n'a pas besoin de savoir coder
+on donne juste
+à disposition
+de l'utilisateur
+une application web avec des boutons
+avec des informations
+avec toutes ces choses là
+et donc ensuite on mesure d'utiliser
+sans aucune connaissance en informatique
+d'utiliser des modèles
+qui peuvent être hyper compliqués
+SHINY
+donc c'est un produit RStudio
+c'est open source
+j'ai dit que c'est un produit RStudio
+parce que ça a été développé chez eux
+c'est relativement facile d'utilisation
+en fait n'importe qui
+qui a fait un petit peu de R
+peut facilement monter une petite application SHINY
+assez rapidement
+donc c'est vraiment super
+c'est vraiment super facile à prendre en main
+quand on te connaît un petit peu de R
+on n'a pas besoin de s'y connaître
+c'est une application web
+donc ça ce qui est aussi
+super intéressant
+c'est arrivé
+dans le monde de R
+en 2012 donc c'est pareil
+c'est relativement récent
+c'est encore toujours en train de changer
+c'est omniprésent dans les conférences
+et dans les meetups
+voilà je dis
+c'est omniprésent dans les meetups et je suis un meetup en train de vous parler
+c'est bien la preuve
+tout le monde en parle
+dans le monde de R
+c'est vraiment un gros truc
+dans le monde de R
+et donc je vais vous montrer deux exemples
+alors si ça va bien se lancer
+donc là j'ai une application
+je l'ouvre dans mon navigateur
+qui s'appelle collage
+et qui me permet
+alors est ce que je vais retrouver la photo avec mon bébé
+c'est une application qui prend
+une photo
+et qui va être en mesure de vous refaire cette photo
+avec des emojis
+donc en fait
+chaque couleur la plus proche
+en fait est faite à partir des emojis
+donc il y a plusieurs choses
+on peut prendre des petits chats aussi
+parce que on aime tous les petits chats
+donc en fait ça nous refait
+la photo
+donc là je suis à 85
+et je lui demande en cliquant sur le bouton
+de me faire ce calcul là
+ça vous paraît peut-être
+complètement débile comme application
+ça l'est
+mais qu'est-ce que ça prouve
+ça prouve qu'en fait si je vous montre ça
+et que vous trouvez ça super simpletisation
+et super débile
+et en fait c'est que c'est une application réussie
+parce que vous arrivez dessus
+vous choisissez une image, vous bougez un slider
+vous appuyez sur un bouton, ça marche
+vous avez aucune idée de ce qui est en train de se passer derrière
+vous avez aucune idée de l'algo qui est en train de tourner
+et de la complexité du truc qui est en train de tourner derrière
+vous imaginez qu'en fait la R
+est en train de prendre mon application
+de la découper
+en grille
+de prendre chaque grille et de faire un calcul
+où il va trouver une image de chat
+avec la couleur la plus proche de la couleur
+dans chaque une de ces petites grilles
+donc on est sur une grille de 85 par 85
+il y a énormément de calculs
+qui sont fait derrière
+et quand je vous montre comme ça ça paraît hyper simple
+et en même temps c'est le but
+et ce qui fait que pour moi c'est une application
+qui est réussie et qui est prête à passer en prod
+bon on ne mettra jamais ça
+en prod forcément
+mais quelque chose qui est prêt à passer en prod
+parce que n'importe qui
+je pense que je file cette application
+à ma mère elle est capable de s'en servir
+indépendamment de ce qui est en train de tourner
+derrière, indépendamment des algos hyper
+compliqués qui peuvent y avoir derrière
+l'usage que ça peut avoir
+en production d'une application comme ça
+on a besoin
+d'analyser des
+je ne sais pas des photos satellites
+au-dessus du désert pour des comportements bizarres
+des choses et en fait
+en faisant ça on peut être en mesure de détecter
+la présence ou non de certaines teintes
+de certaines teintes
+à l'intérieur d'une photo
+voilà on peut faire des choses très intelligentes
+comme mettre des photos de chats
+la plus proche possible
+Est-ce que SHINee
+permet d'abstraire
+l'algorithme qui tourne derrière
+visuellement ou est-ce que ça permet
+de développer des modèles
+En fait SHINee
+c'est juste
+ça fait l'interface
+entre ce qu'il y a de graphique ici
+et donc quand je clique sur un bouton
+ça te fait lancer le code R
+donc le code R qui est en train de tourner derrière
+ça ne change rien
+au lieu de dire à la personne
+tu vas installer le package
+tu vas charger la photo en faisant ta ligne de commande
+tu vas lancer telle fonction
+qui va faire le calcul et tu vas voir tes résultats
+que tu crois se regarder à tes endroits
+en fait tu lui dis juste bah écoute
+ça c'est sur notre serveur
+tu vas à tel adresse, tu mets ton image
+et t'as juste à faire ça
+et ça te donne le résultat
+pour interagir directement
+avec le code
+ah non tu peux
+oui bien sûr tu peux le faire avec d'autres
+moyens et d'autres moyens de le faire
+en fait tout ce que SHINee fait c'est vraiment
+créer un truc en achetant un mail d'un côté
+ça met un web socket entre les deux
+et ça écoute et ça envoie en fait
+avec R donc ça fait communiquer
+à ton browser avec R
+et c'est juste quand tu cliques le bouton
+tu dis bah lancer telle fonction, R est à l'écoute
+ce qui se passe sur le bouton
+hop
+un autre petit exemple
+donc la même chose c'est
+une autre application
+qui s'intéresse en naissance
+en France entre 1900 et 2016
+2017
+entre 1917 et 2017
+et on va pouvoir choisir
+choisir un prénom et on va noter sa popularité
+entre 1900 et aujourd'hui
+donc c'est basé sur l'open data
+de l'INSEE
+comme vous voyez Collin est un prénom très populaire
+parce qu'il y en a eu en 300 en 1999
+donc ça c'est pareil
+ça permet je sais pas si on met
+qui me donne un prénom
+un prénom
+Gaston
+c'est pareil
+ça fait juste des courbes
+il n'y a pas eu beaucoup de Gaston
+pendant la guerre
+même chose c'est super simple utilisation
+on rentre un prénom on appuie sur entrée
+malgré tout on est quand même sur un jeu de données
+c'est pas un gros jeu de données
+il fait quoi d'affaire 350 000 lignes
+donc c'est pas un gros gros jeu de données
+mais malgré tout en fait c'est derrière
+en train de faire le calcul, le filtrage
+et le rendu graphique
+et là on a une application
+qui est utilisable par n'importe qui
+sans aucune connaissance en R
+ça c'est un enjeu
+qui est assez important
+quand on veut mettre R en production
+parce que ça permet vraiment de faire parler
+les gens qui font du R avec les gens qui ne feront
+jamais de code de leur vie
+on peut pas demander à des gens qui ne code pas
+d'utiliser
+de retour à ce que je suis en train de raconter
+d'autres exemples
+genre je mettrais mes slides en ligne
+vous avez pas mal de...
+pas mal d'exemples en ligne
+justement d'utilisation de shiny
+avec des trucs plus ou moins compliqués, plus ou moins chadés
+je vous laisserai aller faire un tour
+si ça vous intéresse
+le problème
+parce que forcément
+il y a un problème
+je vous le disais tout à l'heure
+c'est facile de faire du R
+c'est facile de faire une application shiny
+c'est facile de faire une application shiny
+qui marche mal
+pourquoi ?
+parce que
+en fait
+une application shiny
+il faut quand même avoir une petite réflexion
+il faut quand même un tout petit peu
+faire passer shiny en production
+parce que souvent
+les applications shiny peuvent être développées
+genre
+bon j'ai fait ça, ça marche
+je sais pas trop pourquoi ça marche
+mais ça marche donc je le laisse
+le problème étant
+qu'on se retrouve très vite avec les applications
+qui tiennent pas la charge quand on est sur des gros fichiers
+quand il y a beaucoup d'utilisateurs
+quand il y a des choses comme ça
+pourquoi ?
+parce qu'en fait on peut se lancer dans shiny
+et en trois heures on peut avoir une application shiny
+même pas besoin on peut juste lancer un exemple
+appuyer sur un bouton
+et on a notre application shiny
+sauf qu'il y a plein de choses
+dont il y a besoin d'avoir conscience quand on fait du shiny
+que quand on est
+pas un développeur
+c'est pas facile à voir
+donc pas développeur et pas encore moins développeur web
+parce que même chose quelqu'un qui vient
+du monde des stats et qui a fait de la recherche
+qui a fait beaucoup de verts dans le cadre de ses études
+vous lui parlez de serveurs
+de websockets, de réactivité
+et de choses comme ça il n'a aucune idée
+de ce dont on est en train de lui parler
+ce qui est normal parce que c'est pas son taf
+on lui a jamais appris
+et donc on va demander à ces gens là
+on va demander à ces gens là
+de faire des applications shiny
+la grande mode actuellement
+étant, bon désolé s'il y a des profs
+dans la salle, les profs disent
+vous mettez en stage et vous vous faites une application shiny
+en moins d'un des gens qui ont fait des études de stats
+pendant 5 ans de faire une application web
+qu'est ce qui se passe
+ils font une application web avec
+bon ça marche
+mais je sais pas trop pourquoi
+et ce sont des gens qui n'ont jamais
+qui n'ont jamais
+à la fac appris
+le principe
+des principes de développement
+de développement web
+ils n'ont jamais de cours pour faire ça
+ils n'ont jamais de cours pour savoir
+si c'est un IP, si c'est des URLs
+si c'est un web socket
+c'est des choses qu'on ne leur a jamais appris
+ce qui fait que ce sont des gens qui sont très très bons en stats
+qui vont être très bons
+pour faire des modèles stats avec R
+mais à qui on va demander de faire des applications web
+et donc en fait on va se retrouver
+avec
+ce que vous voyez à gauche
+et ce que moi je vois quand j'en récupère des applications comme ça
+donc
+je sais pas si vous connaissez la notion de code spaghetti
+et bah en fait
+code spaghetti c'est l'idée
+que c'est tellement le bordel
+alors qu'une bonne application
+ce sont des lasagnes
+le code c'est tellement le bordel que ce sont des spaghetti
+voilà c'est ça
+c'est ça l'expression, c'est pour ça qu'on dit code spaghetti
+et donc en fait ça c'est un véritable enjeu
+parce qu'en fait
+il y a beaucoup de choses qui se passent
+quand on fait une application de chaine
+donc quand on essaie de la mettre en prod derrière
+il y a des notions de
+il faut qu'il y ait beaucoup de gens qui puissent l'utiliser en même temps des fois
+il faut qu'il y ait beaucoup de calculs qui soient fait en même temps
+il faut
+je sais pas il faut qu'on gère
+des gros jeux de données
+il faut que ça tienne la charge
+et donc le passage
+de la petite application chaine
+qui a été faite et qui marche sur sa machine
+a l'application qui va marcher pour 100 personnes
+sur le serveur de la boîte
+ça se fait pas juste un claquement de doigts
+parce que
+on peut faire des erreurs
+qui sont des erreurs
+de personnes
+qui on n'a jamais appris
+qui on n'a jamais montré
+comment faire du développement
+en R parce qu'en fait
+le problème de R étant une nouvelle fois
+que c'est le problème entre guillemets
+c'est l'engage de statisticiens
+qui est enseigné dans des cursus de statistiques
+où les gens on enseigne pas
+aux gens
+la culture du développement informatique
+on enseigne pas
+créer un paquette je sais pas renseigner à la fac
+dis moi en tout cas
+pas à ce que je sache
+donc en tout cas
+désolé si il y a des gens qui l'enseignent à la fac
+mais créer un paquette je sais de l'engineering pur et dur
+et c'est pas renseigner à la fac
+ce qui fait que les gens
+vont développer
+alors on va développer des applications chaine
+sans trop savoir
+ce qu'on est en train de faire
+et bien ça devient compliqué
+pourquoi ? parce qu'on a justement
+ce truc désolé ça marche
+ça marche sur ma machine
+et ensuite bah qu'est ce qu'on fait
+ensuite il faut quand même arriver à le mettre sur le server
+pour qu'il y ait 100, 200, 700
+1000 personnes peut être qui utilisent l'application
+qu'est ce qui se passe ?
+donc cette notion de scalabilité
+d'arriver à passer
+la petite application de la R&D
+à l'application qui va marcher en prod
+ça veut dire que c'est une application
+qui a du code rapide
+donc code est accessible
+donc ça veut dire que c'est facile
+à rentrer dedans
+et à maintenir sur le long terme
+l'application parce que ce sont aussi
+des choses qui sont importantes
+quand on fait en développement pur et dur
+rendre du code maintainable
+ça veut dire rendre du code maintainable, ce sont faire des tests de régression
+c'est faire du versioning sur Git
+faire tous ces choses là
+ce sont des choses qui ne sont pas renseignées à la fac
+et à la fac on demande aux gens de faire des applications web
+donc ça c'est vraiment un pas qui est à franchir
+quand on veut passer
+la petite application
+R&D
+à la production c'est d'arriver à faire
+ce passage entre un langage
+de stats, un vraiment
+voire R comme un langage
+de programmation et donc de prendre des réflexes
+d'engineering et de développeurs
+un langage
+une chose qu'on peut faire
+je vous donne quelques exemples
+de choses qu'on peut faire et qu'on fait
+pour que ça marche bien
+le problème de R
+c'est que R c'est ce qu'on appelle
+single phase donc en fait ça marche
+en fait ça fait une opération
+à la fois
+c'est à dire que
+vous avez votre application Shiny
+vous avez 10 personnes qui se connectent en même temps
+et la personne numéro 1 lance un process
+qui prend 10 minutes
+l'application est bloquée chez les autres
+parce qu'en fait R
+par défaut, nativement
+a été pensé pour nous faire
+qu'une seule tâche à la fois
+c'est normal puisque ça vient d'un monde
+où en fait les gens sont sur leur machine
+en train d'expérimenter, ils ont pas forcément besoin
+de toutes ces notions de
+programmation parallèle, de programmation
+de toutes ces choses là
+nativement ce n'est pas pris en charge
+c'est une solution notamment
+deux choses qui sont développées
+en tout cas quand on fait du Shiny
+pour un passage en prod
+ce sont deux packages qui s'appellent
+un que s'appelle Future et un que s'appelle Promise
+Future
+en fait on lance un job et c'est lancé dans
+une nouvelle session à côté
+donc en fait
+R principal n'est pas bloqué
+ça va ouvrir un nouveau R en parallèle
+et on récupère
+le
+on récupère le résultat une fois qu'il est prêt
+Promise
+c'est l'utilisation
+de Future mais pour Shiny
+donc en fait on peut lui dire
+écoute
+on a besoin
+de faire ce filter
+qui va prendre 5 minutes
+et ensuite de faire un grave dessus
+Promise
+on dit juste donc c'est vraiment basé
+Promise sur un truc qui vient du développement web
+sur les opérations à synchrone
+notamment Javascript
+en fait Javascript on peut lui dire
+fait toutes ces opérations
+donc tu pars dans haut, tu vas jusqu'en bas
+tu fais toutes ces opérations de manière à synchrone
+c'est à dire que tu les affiches uniquement
+quand elles sont disponibles
+Promise ça fait ça donc pour Shiny
+c'est à dire qu'on va lui dire
+écoute tu lances toute l'application
+et ce job là peut-être que pour afficher
+ce graph là ça va prendre 5 minutes
+mais donc tu ne l'affiches que quand
+c'est prêt donc ça ne bloque pas
+l'utilisation globale de l'application
+puisque en fait
+c'est fait de manière
+à synchrone donc en fait c'est
+fait en parallèle
+du R principal
+autre chose
+autre chose qu'on peut faire
+ça va
+c'est moche de dire des choses comme ça mais
+Javascript en fait il y a plein de
+il y a la main
+Air ce que ça fait
+c'est que ça génère un serveur
+d'un côté et du HTML
+et du CSS et du Javascript
+de l'autre
+il y a plein de choses qui peuvent être faites
+en Javascript
+juste dans l'application
+enfin juste du côté
+dans l'application du côté client
+donc en fait Javascript
+c'est pas un langage
+HTML était élu le langage le plus facile à prendre du monde
+donc vous avez aucune excuse pour ne pas le connaître
+Javascript ça demande un petit peu de temps
+un petit peu de temps à prendre en main
+mais qu'est ce que ça permet de faire
+ça permet
+de faire que
+donc le client, quand je parle du client
+c'est donc le navigateur
+que le navigateur
+calcule ce qu'il est capable de calculer
+notamment
+je sais pas, on a pas mal de choses
+on a souvent des dashboards avec des onglets
+une fois que le premier onglet est terminé
+on veut cliquer sur un bouton et que ça nous affiche
+l'onglet d'après
+on va demander à R de le faire
+javascript est capable de nativement le faire
+nativement on démarre l'application
+javascript peut nous cacher les éléments
+et quand on clique sur un bouton
+il nous affiche les autres éléments
+donc ça on va pas demander à R de le faire
+on va demander à Javascript de le faire
+donc ça c'est pareil en fait on
+on enlève de la charge
+côté R, R se concentre
+sur les agots, sur potentiellement des graves
+qui sont lourds à faire
+et on va laisser le navigateur
+faire son travail en javascript
+au lieu de demander à R de faire du calcul
+qu'il n'a pas besoin de faire
+normalement
+une fois qu'on a fait tout ça
+parce qu'on est dans la salle
+qui ne connaissent pas Docker
+une fois qu'on a fait ça
+on a donc
+une application
+qu'on a optimisé, qui marche super bien
+on l'a mis dans un package
+le problème étant qu'on se pointe
+avec un package R
+côté administrateur, système
+ils vont nous dire mais qu'est-ce que je vais en foutre de ton truc
+ou est-ce que je vais en salle, comment ça marche
+ce qui s'entend, même chose on ne l'aura jamais appris
+R, ils ont possédé peut-être
+ça fait 15 ans qu'ils font administrateur
+d'administration, système
+ils ont fait des grands études mais personne ne leur a appris
+ce que c'est que R, c'est normal, c'est pas un langage qu'on apprend
+chez eux
+ce qu'ils connaissent par contre
+c'est une techno qui s'appelle Docker
+qui est aussi super bien pour le passagement prode
+Docker qu'est-ce que c'est
+c'est un logiciel qui est assez récent
+parce que c'est en 2013
+si vous lisez les articles
+récents, de toute façon
+il est établi que Docker a conquis le monde
+apparemment
+Docker qu'est-ce que c'est
+c'est donc une définition
+de conteneur isolé
+sur une machine, conteneur ça veut dire
+que c'est en gros comme une machine
+mais en beaucoup plus light
+en fait on définit
+on définit notre application
+je peux dire par exemple
+je veux un Docker à Kubuntu
+qui contient uniquement tel paquet
+et qui va contenir mon application Shiny
+et voilà
+et c'est tout ce que ça contient donc c'est hyper light
+c'est super bien sur la gestion des ressources
+sur un serveur, c'est hyper facile à déployer
+et ça se déploie partout
+parce qu'en fait
+une image Docker
+quand elle est bien faite
+et quand on a bien fait tout ça
+on peut filer l'image Docker
+avec tout ce qu'il faut
+à n'importe qui, on peut le mettre sur n'importe quel serveur
+en théorie ça marche
+partout sur ce serveur local
+donc là on est plus sur le côté
+l'application marche
+sur ma machine
+mais ne marchera plus chez les autres
+à partir du moment où
+le Docker marche chez moi
+je peux dire qu'il marchera chez vous
+marchera sur un AWS
+il marchera sur un digital océan
+il marchera partout
+Docker pareil c'est une techno qui est assez rapide
+à prendre en main
+on comprend très vite
+comment ça marche
+mais il faut quelques connaissances
+pareil il faut savoir faire du Linux
+il faut avoir
+quelques notions en ligne de comment
+pour arriver à faire du Docker derrière
+on va lui décrire
+depuis l'image Ubuntu
+va me faire
+toutes ses commandes
+et quand tu lances le Docker
+tu me fais tel commande
+c'est pareil, il faut connaître un petit peu le Linux
+ce sont des choses que
+personne n'apprend
+à la fac en stats
+mais qui en même temps est une techno que
+tous les gens qui font du développement
+que ce soit le développement web
+que ce soit
+que ce soit l'administration de système
+c'est une techno qui a vraiment partout
+une fois qu'on a fait ça
+parce que forcément
+ça va être toujours pas là
+il y a une autre techno
+qui est super pour faire du
+air en prod
+qui est open source qui s'appelle shiny proxy
+donc là pour vous remonter un petit peu
+on en est, on a créé
+on a créé notre algo
+on a fait une interface graphique
+vers cet algo
+on l'a mise dans un package air
+ce package air là il est dans un conteneur
+Docker
+donc il y a une mini machine virtuelle
+mais c'est pas une machine virtuelle vraiment
+mais pour que vous compreniez un petit peu
+une fois que c'est ça
+on peut utiliser
+shiny proxy parce qu'en fait
+quand c'est dans Docker on est toujours sur la question
+de rc
+donc si
+tout le monde se connecte
+à la même machine Docker on va toujours avoir la question
+à la même instance
+Docker
+on va toujours avoir la question qui se posait tout à l'heure
+de tout le monde
+travailler sur la même application
+donc shiny proxy c'est une techno
+qui est open source qui est développée par open analytics
+qui sont des belges
+qui en fait permet
+de justement
+faire abstraction de ce problème
+que chaque application shiny
+c'est une image Docker
+et chaque personne
+qui se connecte
+sur shiny proxy
+a un conteneur qui se lance
+donc il a sa propre session air qui est en train de se lancer
+sa propre application
+juste pour lui il y a bien nos shows dans sa petite application
+et c'est vraiment
+conténérisé dans ce sens que
+chaque personne a
+sa propre application
+et ça c'est un moyen
+pareil de
+tenir la charge
+en ce sens que
+en fait s'il y a 100 personnes qui se connectent d'un coup
+il y aura 100 personnes qui auront
+chacun une application différente
+donc en fait s'il y en a une qui crache
+ça va pas faire planter
+les 99 autres
+parce que si tout le monde se connecte sur la même application
+et qu'il y en a un qui fait cracher l'application
+tous les autres
+on se crache alors que là on a 100 personnes
+qui ont 100 personnes sur
+un conteneur différent
+chacun
+après forcément ça demande de la ressource
+parce que si on compte de toute façon recevoir
+100 personnes sur un serveur
+il faut savoir que ce sont 100 sessions airs
+qui sont lancées et donc
+il faut avoir un petit peu de ressources
+niveau RAM
+mais de toute façon maintenant
+vu le prix que ça coûte
+les serveurs chez AWS ou digital océan
+on peut acheter de la RAM
+c'est super bien aussi
+mais le problème de Shiny Proxy
+étant
+que c'est un petit peu compliqué
+à mettre en place
+si je suis en train de vous raconter tout ça
+vous êtes en train de vous dire
+c'est super lourd, je vais jamais
+mettre ça en proche chez moi
+pourquoi je suis nu ?
+bah en fait
+ça donc Shiny Proxy
+les conteneurs Docker c'est super bien
+si on a quelqu'un qui est
+justement mettre en route tout ce process
+quelqu'un qui est assez à l'aise en dev
+pour faire tout ça
+après
+Air Studio a sorti
+des produits
+qui permettent justement de le faire
+en clic bouton
+on a des applications
+donc il y a notamment
+ShinyApps.io de Air Studio
+qui permet, ça offre
+pour de l'open source il y a 25 heures
+par mois gratuit d'accès à l'application
+et en fait ce que ça permet c'est
+la personne développe son application
+dans son Air Studio
+elle clique sur un bouton et c'est déployé
+elle n'a pas justement à se poser la question
+de toutes ses ressources, de gérer le serveur
+de toutes ces choses là
+ça c'est une solution
+donc après on peut avoir
+des Air Studio Server
+donc là
+il y a pareil
+il y a une solution
+d'open source donc pas avant Shiny Server
+en open source
+il y a des versions payantes
+la différence étant que si vous passez
+à la version payante
+en fait vous faites abstraction
+de toutes les questions de déploiement
+de gestion des ressources de tout ça
+c'est juste en fait héberger chez eux et puis c'est eux qui gèrent
+toutes les questions comme ça
+Shiny Server en open source a voulu
+l'installer sur votre propre serveur
+il faut quelqu'un qui soit même de l'installer
+et donc de le faire tourner
+c'est aussi très bien
+Shiny Server
+Air Studio Connect
+un autre produit
+de Air Studio qui est sorti tout récemment
+qui en fait
+fait encore plus loin dans l'abstraction
+parce qu'on peut publier
+toutes sortes de contenus
+un petit truc en demo
+Air Studio Connect
+ça ressemble à ça
+on peut publier sur Air Studio Connect
+ça par contre c'est que
+c'est que payant
+il y a un système de licence
+à l'aé
+on peut mettre
+des applications
+des applications Shiny
+tout simple
+il n'y a rien d'intéressant
+sur ceci
+on peut la rendre
+donc il y a l'administration
+de Air Studio Connect
+et ultra simplifié
+dans le sens où tout explique
+dans le guide et il n'y a pas besoin
+de s'y connecte énormément en administration système
+pour gérer tout ça
+on peut créer des utilisateurs
+donc il y a des notions de login
+toutes ces choses là qui sont pareilles
+facile à mettre en place
+une fois qu'on a de l'application
+qui est déployée
+on peut la déployer juste pour certains utilisateurs
+pour tous ou pour n'importe qui
+qui peut avoir accès
+à l'application
+on a quelques infos
+on peut gérer
+les run time
+les notions de run time dans Air
+ce que ça ne marche pas
+ici pour celui-ci
+mais en gros
+moi quand j'ai
+mon application qui est comme ça
+j'ai juste
+à faire un publish
+je peux le dire
+tu me publie
+à cet endroit-là
+l'application
+j'ai vraiment un mode click-button
+je ne peux pas le faire pour ça
+je suis sur mon téléphone
+donc bon
+ça va uploader tout ça
+et qu'est-ce que ça fait ?
+ça prend en charge la notion de version
+de version de package, de version de Air
+de version de tout ce qu'il faut
+publiez et c'est en ligne
+il y a un côté prototype
+qui est ultra intéressant
+parce qu'en fait
+l'utilisateur
+peut très vite faire son application shiny
+faire un petit prototype
+d'application shiny, il peut la balancer
+sur le client-serveur en clic-button
+sur le verset de connect en clic-button
+il peut le montrer aux autres
+il peut juste mettre certaines personnes
+en visibilité, dire tient t'as vu ma petite application
+t'en penses quoi ? testez la logo
+testez ces choses-là
+qu'est-ce qu'on peut publier ?
+on peut publier aussi
+des Air Markdown
+ça c'est du code R
+qui est exécuté au format
+ou c'est un reporting
+si vous avez fait un peu
+un peu de Markdown
+c'est le format des mots
+même chose, sur Markdown
+on a un bouton, on fait clic, on fait publish
+et ça va envoyer directement sur le serveur
+c'est intéressant avec
+les Air Markdown
+c'est peut-être quelqu'un comme moi
+et que vous êtes du mal à aller tous les lundis
+à la même heure faire la même chose
+vous avez une notion
+de timeline
+ou vous pouvez le dire
+je veux que tu m'envoies
+tous les matins à telle heure
+une version
+mise à jour de ce rapport
+on imagine que là c'est du code qui était né
+à changer tous les jours
+non c'est pas le cas sur celui-ci
+et en fait je peux lui dire
+tous les jours
+on me faire tourner ce rapport
+on me faire tourner ce code R et tu vas me l'envoyer
+ça c'est pareil pour un truc en prode
+c'est super parce que
+vous allez pas dire
+à votre chef
+ou à votre M-17
+j'ai les petits résultats de l'analyse
+il faudrait que tous les lundis matin
+tu te connectes à tel endroit pour avoir les résultats
+si ça t'intéresse
+tous les lundis matin dans ta boîte aux lettres
+tu vas avoir les résultats
+de l'analyse
+par mail
+comme ça vous pouvez dire
+tous les lundis matin ça va prendre une heure
+vous pouvez dormir une heure de plus lundi matin
+et arriver une heure plus tard
+donc même chose on peut publier juste
+des graphes ça marche aussi
+qui est un truc qui permet vraiment
+en clic bouton de publier
+super rapidement et de faire abstraction
+de toutes les techno
+que je vous ai montré juste avant
+la différence étant que ça c'est pas open source
+c'est ce que je viens de vous montrer
+à l'instant
+côté inter opérabilité
+un outil
+un outil qui est pas mal aussi
+sur plumber
+est-ce qu'on peut faire abstraction de shiny
+pour faire tout ça ?
+est-ce qu'on peut utiliser d'autres frameworks ?
+plumber
+en fait ça crée une API REST
+avec des points
+on peut faire une requête
+avec des paramètres
+on va récupérer le résultat
+ce qui fait que
+ça permet
+de rendre l'algo
+R ou le code qu'on a créé en R
+central et on peut le déployer un peu partout
+après sur n'importe quel autre langage
+je peux avoir quelque chose qui a été fait
+en full javascript et tout ce que ce javascript fait
+c'est qu'il envoie des requêtes en ajax
+vers mon plumber
+et dans ce cas là il va récupérer
+on peut lui dire de récupérer du JSON
+et tout va bien
+on peut créer d'autres choses
+on peut avoir créé tout son framework en piton
+et puis on a malheureusement un modèle
+qui a été développé juste super
+on va faire tourner
+sur le serveur et puis piton
+va aller faire des requêtes HTTP
+sur
+cette API là
+et réinterpréter les résultats
+donc ça c'est pareil
+la notion de qu'est-ce que c'est qu'une API
+qu'est-ce que ce sont des requêtes HTTP
+c'est que tout ces choses là
+c'est des choses qui sont propres pour développer mon web
+et donc qui permettent quand même de faire le passage vers
+la mise en production
+de R
+là j'ai dépassé l'heure des pizzas
+je vais être rapide sur le dernier
+il me reste plus que
+deux slides donc c'est bon
+dernier gros souci
+c'est juste d'y en R
+dernier casse-tête
+on a pas mal rencontré avec R en production
+R en production le problème
+comme vous faites du piton
+si vous dites je veux
+j'ai besoin de panda
+au minimum de panda 3.1
+je ne connais pas le numéro de version de panda
+mais j'ai besoin au minimum de panda 3.1
+si vous le dites ça
+piton il va installer
+panda 3.1 même si il y a un panda 3.7
+qui existe
+si j'ai R je lui dis R
+au moins
+dix player 0.5
+et si un dix player 0.7 est disponible
+il va installer 0.7
+sauf qu'entre la version 0.5 et 0.7
+il y a eu
+des breaking changes donc en fait
+potentiellement
+ce que vous avez développé sur votre poste
+avec dix player 0.5
+ne marchera peut-être pas avec dix player 0.7
+donc si vous arrivez que vous mettez ça en production
+on va faire un docker
+qui va l'installer dix player
+mais ça va l'installer dix player
+on va l'installer dix player 0.7
+donc c'est la même chose un producteur studio
+qui est sorti il n'y a pas longtemps
+qui est pas open source
+donc un open source il y a un package
+qui fait ça qui s'appelle packrat
+packrat ce que ça fait c'est que ça vous crée
+une mini librairie locale
+propre à votre projet
+donc en fait on peut lui dire
+je suis en train de développer mon application
+je lance un packrat
+et tous les packages que je vais utiliser à ce moment-là
+sont accompagnés de leur librairie locale
+donc c'est-à-dire que
+accompagnant mon projet
+j'ai toujours les packages dans la bonne version
+donc ensuite quand on installe l'application
+on donne
+l'application et la librairie packrat
+et donc
+c'est lancé directement on est sûrs
+les bonnes versions
+RStudio package manager
+a fait
+un petit truc qui ressemble à ça
+on va lui dire
+sur mon serveur
+tu me crées
+donc en fait c'est l'équivalent du
+l'équivalent du crâne
+donc le crâne étant le dépôt centralisé
+avec tous les packages R
+on va avoir
+ici on va pouvoir le créer plusieurs tripots
+et donc en fait je suis en mesure de lui dire
+créez-moi un ripot
+pour telle application que tu vas bloquer
+à tel date et donc ça veut dire que
+aujourd'hui j'ai développé mon application
+et je lui dis
+ce ripot là et puis en fait
+il n'y aura les packages
+qu'à ce moment là il ne se mettra jamais à jour
+ça permet aussi
+de gérer tout ce qui est
+un package qu'on a développé locaux
+et qui sont pas open source, les choses qui sont sur github
+toutes ces choses là en fait on peut créer
+un mini crâne
+avec juste ce dont on a besoin
+ce qui fait qu'après voilà on peut
+installer
+on peut installer de manière hyper simple
+donc ça c'est la commande
+Airbase pour installer des packages
+je peux lui dire installer mon package
+et là je vais lui donner
+l'adresse
+de mon ripot que je vous ai montré juste avant
+et là on est un peu pas sûr qu'il est
+les dépendances qu'il faut
+dans la version qui est
+les dépendances qu'il faut
+dans la version qu'il faut
+qui est vraiment tout ce qu'il faut quand on livre
+le produit pour qu'il soit mis
+en production et
+merci
+parce que vous avez les questions
+comment vous voulez parce que j'ai été
+passé lors des pizzas c'est ça ?
+moi je viens plutôt du monde de l'informatique
+ça va
+c'est une formation
+une formation comme une autre après
+tout ça prend après
+nous le coeur de notre activité
+quand on a activisé c'est de faire du air
+ou vraiment de faire du code
+car notre activité pas spécialement
+de faire des stats ou de faire des notes
+car notre activité c'est vraiment faire du level
+on a des missions qui sont orientées stats
+mais c'est pas le coeur
+c'est pas le coeur de notre métier
+en tout cas chez Finke
+en termes de multifrédie
+ça vaut quoi la distribution du microsoft
+en termes de performance
+que pour l'air ?
+ça vaut quoi la distribution
+de microsoft de air
+pour le multifrédie en termes de performance
+j'en ai aucune idée
+parce que je n'utilise pas du tout
+les produits microsoft
+j'ai pas du tout une idée
+d'utiliser sur ça
+j'ose espérer que ça marche bien
+si il m'aide et qu'il continue
+de le maintenir
+j'ose espérer que ça marche bien
+mais je ne le saurais pas
+j'ai jamais benchmarké le truc
+et je ne sais pas
+je ne saurais pas
+désolé
+les clusters avec beaucoup de feux
+c'est pas un libéré avec 6 heures ?
+justement le libéré qui s'appelle future
+oui
+en fait future donc ça permet de déployer
+ce que tu peux faire
+c'est plus du code air
+oui non mais c'est du
+en fait futur c'est un package air qui permet de faire
+justement les choses en parallèle
+en fait ça te fait du
+du parallèle
+du distribuer
+de manière native
+et donc tu peux
+lui dire de le faire en multiprocess
+et tu peux lui dire
+de je veux que ce multiprocess
+soit fait sur
+16 heures, 32 heures
+sur tant de choses je lui dis
+tu me l'envoies sur le serveur et débrouille toi
+pour me ramener ce qu'il faut
+ça c'est vraiment la librairie
+qui est utilisée quand on veut faire des choses
+distribuées en parallèle
+donc il y a vraiment
+c'est vraiment cette librairie là
+qui est plébiscitée en ce moment et qui marche bien
+Henry qui est chercheur en fait
+chercheur à l'université donc ça fait partie de ses travaux de recherche
+donc
+il a vraiment fait un truc
+qui marche très très bien
+et qui permet
+en fait
+ce qui est bien avec future c'est que
+en fait le code ne change pas
+c'est exactement le même code que tu le fasses
+ainsi que le freddit sur ta machine
+ou sur un WS sur 32 heures
+en fait il a réussi
+t'as juste
+une ligne de configuration
+et ensuite le code reste toujours le même
+et donc t'as juste cette petite configuration
+qui va juste expliquer comment le future
+va être exécuté
+par exemple j'ai
+plusieurs parcours
+pour la version fonctionnelle
+plusieurs grands miss
+chaque fonction
+je peux le définir sur un
+mon coeur
+c'est juste une configuration
+alors
+c'est plus de la pour la version fonctionnelle
+c'est chaque fonction
+il va en fait
+il gère, c'est pas à toi de le définir
+il va vraiment prendre
+ton code comme tu l'as
+il va l'envoyer et c'est lui qui va s'occuper de toute la distribution
+t'as pas à dire je veux envoyer
+tel truc à tel endroit
+tu lui dis juste prends moi ce code
+voici c'est escueur, débrouille toi
+et il va te le répartir
+de manière optimisée et te faire
+justement
+le map reduce
+il va distribuer entre tous les coeurs
+c'est un peu
+compliqué à prendre au début
+mais une fois qu'on voit
+qu'on gère bien
+tu peux envoyer, il a fait des grottesses
+sur des gros trucs
+je sais pas combien de coeurs
+et il dit que tu fasses sur ta machine tout seul
+ou que tu te fasses sur 100 coeurs
+il n'y a quasiment rien qui change
+puisque c'est le package qui prend en charge
+vraiment toute l'abstraction
+son but c'était vraiment
+que l'abstraction
+tout côté map reduce
+que lui disait on se doit de transparent pour lui
+qu'il est juste à dire tu le balances
+tu le débrouilles
+donc c'est ce package là
+c'est
+ce package là qui fait référence
+sur le calcul distribué
+oui c'est à toi de plus ou moins
+les définir ce que tu es comment tu veux le faire
+tout ça et justement
+il met dans le titre
+pour tout le monde
+après c'est discutable
+tout le monde peut le prendre en main
+assez facile
+et donc tu n'as pas besoin de distribuer
+toi même les choses c'est vraiment lui qui gère tout
+vas-y
+oui
+c'est assez récent
+je ne saurais pas te dire de quand il date
+mais
+juste un an ou deux peut-être
+donc oui c'est relativement
+relativement récent
+je ne sais pas si je le réserve
+au moment de 2016
+c'est plus vieux
+non c'est plus vieux que ce que je croyais
+tu vois juin 2015
+tout premier publication
+donc
+après il a vraiment fait
+enfin c'est vraiment devenu super stable
+il a eu la chance un universitaire
+il a eu la chance de travailler
+d'avoir des financements
+notamment par le reconsortium
+ou en fait il a plus testé
+enfin testé l'utilisation
+sur les trucs avec des centaines de coeurs
+avec des gros trucs
+il a vraiment la chance de pouvoir tester
+de manière énorme
+ça peut cacher
+je suis seul à pas venir des statistiques dans ma boîte
+ça a l'air d'aller
+mais
+je pense qu'ils ont toujours eu un petit peu
+une appétence pour la programmation
+programmation avant
+enfin
+on est développeur R
+on a aussi
+des connaissances en stats
+mes collègues on a encore plus
+Seb a fait une thèse en stats
+il a vraiment senti de thèse en stats
+il a poussé en tant que chercheur
+pendant trois ans
+et après il est venu
+maintenant
+il est développeur
+pour le crochet
+dans le fond
+qu'il soit développé
+que les gens
+qui développent R travaillent
+à le passer
+non je pense pas que ça soit dans leur plan
+de changer ce comportement
+après c'est le comportement
+qu'il a depuis 25 ans
+je sais pas si c'est
+utile ou pas aujourd'hui
+mais il est comme ça
+il y a des changements
+dans le coeur du langage
+d'arriver à mettre un nativement
+multiflédique
+surtout qu'il y a plein de packages
+je pense pas que ce soit dans les plans
+des gens qui développent R
+de faire ça
+mais en tout cas Henrik
+qui a des futures
+vient d'arriver
+dans le coeur du verre project
+donc il a inclus dans
+les membres du verre project
+j'ai juste une petite question
+je suis débutant dans
+ce monde
+j'ai déjà un petit script
+en R
+j'aurais aimé savoir
+qu'une IA dans le sens de Dabakuka
+comment est-ce qu'elle fonctionne
+au niveau du code
+si on a un script
+à exécuter donc on lance
+c'est exécuté pour ce choix
+mais si on a une IA qui doit tourner en permanence
+je vais demander comment c'est fonctionnel
+ou c'était via l'utilisation
+des pays comme on dit tout à l'heure
+après c'est dur à dire ce que c'est
+devant cette IA sur quoi elle se basse
+qu'est-ce qu'elle écoute
+comment en fait c'est quoi c'est elle est tout le temps en train de tourner
+ou elle écoute des inputs qui sont en train de
+c'est ça donc des requêtes
+c'est un peu fou
+c'est juste pour avoir une idée
+de comment fonctionnerait
+une IA qui tourne en permanence
+après
+ton R est bloqué parce qu'il est en train
+d'écouter donc tu crées
+c'est pas un web socket
+il y a l'écoute de toutes les inputs qui sont en train d'arriver
+donc après plusieurs façons
+soit c'est ce format-là
+et donc ton code R
+est en train de tourner
+et en mode serveur il y a l'écoute de tout ce qui va arriver
+ou tu peux avoir un code qui tourne pas
+toutes les minutes
+donc c'est là que tu as un code job
+en Linux donc tu dis bah toutes les minutes
+tu m'exécuter les minutes de code
+ce sont deux approches
+un peu différentes
+mais soit ton code s'exécute
+il tourne une seule fois mais plein de fois
+ou soit
+t'as lancé R en mode serveur
+et puis en train d'écouter ce que tu vas lui envoyer
+sur le train
+merci

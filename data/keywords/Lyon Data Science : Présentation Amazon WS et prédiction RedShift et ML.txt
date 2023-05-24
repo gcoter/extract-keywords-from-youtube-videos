@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science : Pr\u00e9sentation Amazon WS et pr\u00e9diction RedShift et ML", "keywords": ["Git Data projects", "data collection", "data storage", "data transformation", "data analysis", "AWS technologies", "Redshift", "machine learning models", "APIs", "technology events"]}

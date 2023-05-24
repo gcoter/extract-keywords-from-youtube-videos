@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science : Place de R et Python dans les formations en Data Science", "keywords": ["R", "Python", "data science", "teaching", "software design", "programming", "data analysis", "job market", "functionality", "investment"]}

@@ -1,0 +1,1 @@
+{"title": "L'Industrialisation des mod\u00e8les de machine learning via la conteneurisation", "keywords": ["machine learning", "containerization", "OpenShift", "Python", "R", "CI/CD", "monitoring", "Kubernetes", "Docker", "data engineering"]}

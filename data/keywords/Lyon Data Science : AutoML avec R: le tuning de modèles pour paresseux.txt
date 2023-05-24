@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science : AutoML avec R: le tuning de mode\u0300les pour paresseux", "keywords": ["data science", "R", "neural networks", "auto-ML", "PSO algorithm", "optimization", "parallelization", "transfer learning", "machine learning", "problem-solving"]}

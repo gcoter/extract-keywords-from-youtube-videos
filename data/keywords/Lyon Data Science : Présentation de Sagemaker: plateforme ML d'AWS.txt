@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science : Pr\u00e9sentation de Sagemaker: plateforme ML d'AWS", "keywords": ["Amazon Web Services", "machine learning", "deep learning", "cloud computing", "cost savings", "scalability", "pre-trained neural networks", "transfer learning", "ethical considerations", "Jupyter notebooks"]}

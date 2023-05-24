@@ -1,0 +1,1217 @@
+Juste pour m'assurer, ça fait pas de problème le micro plus celui-là, en termes de non, ok.
+Déjà tout d'abord, merci Annie, la toute l'équipe de Lyon, du Meetup Lyon Data Science,
+sans qu'il ne soit pas pu être possible, de par la salle, de par l'organisation,
+tout ce qui suit après derrière, donc déjà merci à eux, merci beaucoup.
+Et aujourd'hui, on va vous présenter avec Damien, AWS, qu'est-ce qu'on peut faire sur AWS,
+et on va DeepDive, parce que c'est ça qui est le plus intéressant, directement sur Amazon SageMaker,
+le service DIA, donc Delia pour moi, après Damien dira aussi ça partie,
+mais ça regroupe du Machine Learning et du Deep Learning, c'est deux catégories distinctes.
+On peut voir le Deep Learning comme une sous-catégorie de Machine Learning, n'est-ce pas ?
+Je suis pas d'accord, mais ça c'est personnel.
+Donc voilà, on va DeepDive là-dessus et on va attaquer.
+Donc l'agenda de ce soir, donc introduction rapidement, on l'a déjà faite.
+On va parler du Cloud Computing, qu'est-ce que ça peut faire ?
+Je ne vais pas passer énormément de temps là-dessus, il y en a qui savent déjà ce que ça peut faire,
+d'autres un peu moins, pour qu'on soit tous à peu près au même niveau, à ce niveau-là.
+On va parler d'AWS et des services qu'on peut avoir sur AWS,
+et enfin on va démarrer directement avec SageMaker, et ensuite je vous laisserai,
+et on vous laissera avec Damien, continuer votre propre aventure.
+On espère que ce soit la même que celle que BibonSaker.
+Donc on s'est déjà présenté, je ne pensais pas la peine de continuer.
+On a de beaux petits médaillons pour même les imprimer.
+En quelques mots Teamwork, Damien, je te laisse la main là-dessus.
+Donc Teamwork, c'est ce type de service qui vient là-bas, tu m'en dessapais,
+il y a 800 personnes à peu près aujourd'hui qui travaillent chez Teamwork,
+c'est réparti une quinzaine, enfin j'ai du mal à le compter,
+mais de l'occasion dans le monde.
+En fait à la base, c'est pour la service 24h sur 24h en termes de maintenance.
+Et voilà, c'est une société qui est très chouette,
+le HQ est basé à Genève, en Suisse.
+Vous m'excusez, c'était pour un un peu l'ordre culturel.
+Et donc il se trouve qu'au sein de Teamwork,
+il s'est monté il y a quelques années, très peu temps en fait,
+une équipe d'innovation qui s'appelle Intuit,
+où on bosse Arnaud et moi.
+Chez Intuit, il y a trois, on appellera des tributs,
+donc trois tributs, une plutôt spécialisée Data,
+donc la Data Squad, on est tous les deux,
+qui s'occupe des sujets Data Engineering, Machine Learning, etc.
+Il y a une autre tribu qui est la Cloud Factory,
+donc c'est plutôt accessoire au Dev Cloud.
+Et la Star Ops qui s'occupe de tous les sujets,
+notamment Dev Ops, il y a plein de trucs que je connais pas,
+Phenops, Psycho Ops, Seas Ops, ça a l'air cool.
+Et voilà, on est vingt-vingt-cinq personnes à peu près,
+dans cette équipe.
+Alors, on va attaquer maintenant avec...
+Ah merde, les couleurs, on les a perdu,
+ou alors c'est le blanc qui fait que...
+on a normalement du rouge et du vert,
+mais bon, on va faire ça.
+Qu'est-ce que le Cloud Computing ?
+C'est dit plus ni moins que si on pourrait troller
+le datacenter de quelqu'un d'autre.
+En l'occurrence, celui d'Amazon Web Services,
+dans notre cas.
+On va y déporter des charges, on va y construire,
+on va y développer des applications,
+et ces applications,
+ben, quand on les construit,
+on a plusieurs versions.
+Dans le sens où on peut construire
+une application de prème, on peut la construire sur le Cloud,
+et on va avoir des briques plus ou moins supportées
+en fonction de ce qu'on fait sur le Cloud.
+Dans le cadre d'une application
+qu'on développe et on prémise,
+c'est comme réaliser une pizzastre même à la maison.
+C'est super, c'est un super goût.
+On est fiers de ce qu'on a fait
+parce qu'on l'a fait nous-mêmes.
+Par contre, il faut tout faire par nous-mêmes.
+Il faut prendre la farine de blé,
+faire de pâte, prendre des tomates,
+les couper, mettre en rondelle, le fromage,
+le jambon, l'enfourner,
+la découper par égale,
+mettre de la sauce picante pour ceux qui en veulent,
+et ensuite, on la met à disposition
+sur la table et tout le monde se régale.
+Deuxième chose,
+si on passe maintenant
+dans une optique Cloud,
+que ce soit AWS Azure ou GCP
+ou Alibaba, même si vous êtes un peu maso,
+les parties,
+la confection de la pâte et la sauce tomate
+sont déjà préfaites. Vous achetez une pâte,
+vous achetez la sauce tomate déjà plus prête,
+vous n'avez plus qu'à poser votre fromage,
+les morceaux de jambon, de parme si possible,
+qui vont bien,
+l'enfourner, on découpant par égale
+et on met la sauce picante.
+Si on est sur le mode IAS,
+c'est à savoir infrastructure de service.
+Ensuite, on va passer sur du passe, du platform
+à ce service, donc on avance
+d'un pas dans la gestion
+et dans
+le management
+fourni par le cloud provider
+des services en question, que ce soit de l'OS ou autre.
+Donc on va avoir une pizza surgelée
+qu'on va acheter, qu'on va enfourner, qu'on va découper
+et qu'on va mettre la sauce picante.
+Et enfin, on va avoir la partie SAS
+pour software à ce service
+où on va prendre un service sur l'étagère.
+On va uniquement le configurer
+avec la sauce picante
+et on va le mettre à disposition.
+Toutes ces étapes, en fin de compte, je ne l'ai pas évoqué,
+mais le fait de
+réaliser la pâte,
+la sauce tomate, le fromage,
+ça peut se représenter par
+j'ai mon data center, c'est ma pâte.
+J'ai
+ma virtualisation, c'est ma sauce tomate.
+J'ai mon fromage, c'est mon stockage.
+J'ai mon jambon, c'est tout ce qui est mis de l'oeil.
+J'en enfourne.
+C'est tout ce qui est configuration, administration.
+Je découpe
+et je mets la sauce picante.
+C'est tout ce qui est logique métier qui est implémenté derrière.
+Donc on voit qu'en fonction des étapes,
+on est plus ou moins
+manager, si je puis dire.
+Les avantages rapidement,
+la différence
+déjà, c'est qu'on n'achète plus forcément
+de machines noyées pour réaliser ce qu'on veut faire,
+notamment des machine learnings ou deep learnings.
+Donc du coup, on va remplacer
+le capital par des cours variables.
+On va faire d'importantes économies d'échelle,
+puisqu'on va prendre les bonnes machines
+et on va pouvoir surtout tracher les machines qu'on a provisionnées
+et en prendre de nouvelles par rapport à notre besoin.
+Donc on va pas se sur et sous des missionnés.
+On va aller plus vite
+dans le site de développement et de réalisation
+et de mise à disposition de modèle, comme avec l'autobopie
+que Damien vous présentera tout à l'heure.
+On va dépenser uniquement
+ce qu'on consomme et on va pouvoir
+aussi être international en quelques minutes
+en changeant de régions.
+Toutes les applications
+que vous allez pouvoir développer sur AWS,
+que ce soit de l'IA, que ce soit du web,
+que ce soit de la data ingestion, etc.
+vont s'appuyer sur ces cinq piliers,
+l'excellence opérationnelle, c'est-à-dire
+se pouvoir monitorer l'application qu'on développe
+et s'assurer qu'il n'y a pas d'incident.
+Par exemple, j'ai mon modèle, j'ai un endpoint pour mon modèle,
+je le requête, ah, je n'arrive pas à le requetter,
+j'ai une alerte qui est trigger,
+parce que je n'arrive plus à requetter mon modèle
+et donc je vais analyser pourquoi.
+La sécurité, les données d'utilisme
+et le modèle, s'il a été entraîné
+sur des images pour voir les défauts
+de production sur une chaîne de production,
+je veux que ces images soient sécurisées,
+je ne veux pas qu'elles puissent sortir,
+qu'elles soient disponibles pour d'autres clients
+ou pour le web de façon générale.
+Donc, il faut assurer une sécurité.
+Fiabilité,
+de part la conception
+des services dont SageMaker,
+on assure une vote disponibilité,
+c'est-à-dire ce que vous allez développer
+sur SageMaker va vous permettre
+d'utiliser des performances,
+c'est-à-dire que vous allez pouvoir sélectionner
+la juste performance par rapport à vos besoins
+et optimiser les coûts, vu qu'on paye pour ce qu'on consomme,
+on va chercher à réduire cette dépense-là.
+Tout dépayant, de toute façon,
+sur les Cloud Pro Raider, il faut juste le garder en tête
+et optimiser.
+Pour information, sur AWS,
+on a à peu près 170 services
+et
+il n'y a pas un service point,
+tout liable qu'à l'usage, mais
+majoritairement, c'est le cas.
+On va pouvoir faire la data, comme je l'ai évoqué,
+du transfert de données.
+Parce que pour requêter, pour entraîner des modèles,
+il nous faut de la données.
+Pas forcément beaucoup, mais on peut en faire.
+De la robotique, du développement
+d'intégration d'applications. On a vraiment une pléthore
+d'outils à disposition. C'est comme jouer avec des Legos.
+Vous avez des Legos, moi j'ai ma fille
+qui a son château d'Elsa en Lego
+et moi je suis un peu plus fat de Star Wars,
+du coup j'ai des Legos Star Wars,
+mais rien n'empêche de prendre une partie du château d'Elsa
+et de le mettre sur l'abriques de Star Wars de mon côté.
+Ça fera une application différente,
+mais ça fera une application quand même.
+Et en fait, on se sent un peu comme Jean-Claude.
+Je ne sais pas si certains se rappellent de l'appui
+de Vendam, l'original,
+dans lequel il est sur deux trucks,
+deux Volvo Trucks, et les Volvo Trucks
+reculent en marche arrière et on voit
+Vendam qui parle et puis d'un coup
+on le voit commencer et puis il tombe
+en grand écart et il est en grand écart sur
+deux Volvo Trucks qui reculent. Le but était de montrer
+la stabilité des Volvo Trucks, mais là c'est pareil.
+Avec AWS,
+on peut exactement faire ce grand écart
+en terme de développement d'applications
+et précisément on peut le faire
+sur de l'intelligence artificielle,
+avec SageMaker.
+Juste pour que vous ayez encore
+les notions à ce niveau-là,
+SageMaker est un service
+dit manager, c'est-à-dire que
+pas mal de couches
+qu'on a pu voir via la pizza de service
+sont gérées par AWS.
+On n'est pas dans un architecture
+totalement serverless, mais en moins on s'y approche.
+C'est pour ça, pourquoi je voulais montrer
+cette commit strip, où les gens disent
+parler de serverless, mais il y a toujours
+des serveurs derrière, oui, mais on n'a pas la gestion
+et on n'a plus qu'à se concentrer
+sur développer notre modèle, ce qui est vraiment
+notre cœur de métier en fin de compte.
+Les avantages, on n'aura pas de gestion server,
+je l'ai évoqué, on va pouvoir se
+dimensionner de façon flexible,
+scale-in ou scale-out en fonction de la charge,
+la haute disponibilité qui est gérée pour nous,
+on n'a pas à l'implémenter, on n'a pas à la gérer,
+c'est gratifiant, je ne dis pas le contraire,
+moi aussi, c'est très gratifiant, mais c'est
+quand même un vrai plus un terme de temps
+de développement. Et en fin, on paye
+l'usage, ça, il faut toujours la voir en tête,
+ça, c'est vraiment important.
+Maintenant, on va passer sur
+les stacks.
+Donc, l'écosystème
+de machine learning et de deep learning
+sur AWS, il est assez rare,
+comme vous pouvez le voir, on va se concentrer
+sur SageMaker, parce que je pense qu'il faudrait
+vous avez tout ce qui est en haut,
+tout ce qui est vision,
+avec le service recognition qui permet
+de faire la reconnaissance d'image, d'identifier les personnes
+si elles sourient ou pas, avec des modèles
+déjà pré-entraînés où vous pouvez remporter le vôtre,
+vous avez tout ce qui est texte-to-speech
+avec du transcript et du poly pour vraiment
+la reconnaissance de... je parle,
+c'est traduit en sous forme de texte directement,
+la partie langage avec
+translate et comprenne, des comprennes
+médicales qui est dédiée à la pharma,
+et enfin, on a tout ce qui est
+l'ex forecast, donc forecast,
+c'est le même algorithm qui est utilisé par AWS
+par Amazon, le site Amazon.com
+pour afficher les recommandations
+pour produits qu'on achète
+sur le site internet.
+Toutes ces AI services qu'on peut avoir en haut,
+concrètement, d'un point de vue
+implementation, ça se traduit par des librairies,
+donc c'est des SDK qu'on utilise et qu'on m'a dit bu
+pour les utiliser. Donc, moi
+qui suis pas data scientist,
+ou un machine learning comme Damien,
+c'est vraiment...
+ça permet un accès facile à l'utilisation
+de ces services pour pouvoir réaliser
+ces applications d'IA.
+Ensuite, le gros du gros qui vient derrière
+c'est SetMaker, et SetMaker
+vient avec une panoplie de fonctionnalité
+dont on va parler là justement
+à présent, on a
+les notebooks, donc qui sont des Jupyter Notebook
+pour pouvoir développer, sauf que c'est uniquement
+des IDE, derrière on va utiliser tout ce qui est
+API à disposition, donc les algorithm,
+on peut développer ses propres algorithm
+et utiliser des algorithmes mis à disposition
+par AWS, donc il suffit d'appliquer
+une dernière sur-couche d'entraînement
+à ces modèles pour pouvoir les entraîner
+par rapport à notre besoin. On peut faire du reinforcement
+learning pour
+une petite histoire, ils ont sorti
+une deep presser,
+c'est une voiture radio commandée
+avec une caméra, et de
+mi-80p, et cette voiture
+on lui déploie un modèle de machine learning
+dessus où on lui fait du reinforcement
+de learning, on lui fait tourner sur un circuit
+et on lui dit, ben là t'as réussi, là t'as réussi,
+on te donne la table quand ça va pas, et quand ça va
+tu continues, donc on peut faire du reinforcement
+learning, on va faire du training de modèle,
+Damien va vous le présenter,
+et enfin une fois que tout est entraîné
+et optimisé, on va le déployer
+sur notre site, que ce soit sur
+une machine simple, c'est une
+machine virtuelle, qui va avoir une API
+reste pour pouvoir requêter le modèle, ou
+sur comment on va vous le présenter avec le Tobobi
+sur un Raspberry Pi.
+SageMaker
+on peut développer
+sur SageMaker, avec
+du Dead Sunflow, du Mixnet, ça c'est mon goût
+de cœur, du Bytorch,
+du gluon qui est l'interface pour la Mixnet,
+qui est race, et on a
+d'un point de vue d'infrastructure
+des instances qui s'appellent en P3, c'est tout ce qui est GPU
+Damien, t'avais peut-être
+un poudre un peu plus que moi là-dessus
+sur GPU on a des P3 et du G3
+P2 P3
+en fonction de la puissance GPU
+dont vous avez besoin, vous pouvez
+choisir, c'est ce qui vous intéresse.
+Concrètement, sur SageMaker
+concrètement, comment ça se passe
+de buvd, entraîner
+et déployer votre modèle de machine
+mernie. La première chose
+je pense que la plupart de vous le réalisent
+et c'est assez pénible, c'est de
+collecter et de préparer votre
+données d'entraînement, de tuning data
+c'est la phase la plus fastidieuse
+mais une fois qu'elle est faite, au moins on sait
+qu'on peut aller s'amuser avec SageMaker derrière
+une fois qu'on a nos données qui sont
+lavelisées, qui sont disponibles et qui sont stockées
+on va utiliser un service stockage
+comme Amazon S3 pour stocker les données
+derrière on va choisir
+le modèle, est-ce que dans le cas
+d'utobobi c'est, je spoile un peu mais c'est
+une image classification
+ou un autre type
+d'algorithme de machine learning
+et on va le
+non on va pas entrer tout de suite
+une fois qu'on a sélectionné, on va setup et manage
+l'environnement, donc on va définir
+les hyperparamètres, tout ce qu'on a besoin
+pour pouvoir entraîner notre modèle
+une fois qu'on a défini nos hyperparamètres
+à ce niveau là, on va
+entraîner et faire du fake tuning
+sur notre modèle, je sais pas
+on va peut-être développer 10 modèles
+on va voir les résultats, on va comparer
+les F1 score, on va comparer la QACI
+et on va voir la fonction de ce qu'on a
+lequel est plus pertinent ou pas, est-ce qu'on rejoue
+ou pas, une fois qu'on est bon
+on va sélectionner un modèle et qu'on dit on est bon
+on reste avec celui là, on va le déployer en production
+on va le déployer en prod
+et avec ça, avec cette maker on a ce qu'on appelle
+les endpoints et en fin de compte on va pouvoir
+les déployer nos modèles et qu'ils soient disponibles
+pour les autres applications de l'entreprise
+et enfin, le déploiement
+des endpoints étant managé par WS
+on n'a pas besoin de s'occuper de la scannabilité
+de la gestion
+hop, du coup
+parce que j'ai évoqué assez rapidement
+et répété ici
+donc on a des notebooks
+des jupitaires notebooks qui sont managés
+dans cette maker, vous pouvez avoir à disposition
+pour collecter et préparer votre données
+d'entraînement, pour faire data nasting
+et data préparation
+ensuite
+on va choisir le modèle de machine learning
+en fonction du SKS qu'on a adressé
+donc on entre
+dans cette étape de modélisation
+qui s'ensuit justement
+par l'entraînement
+sur l'infrastructure qu'on a sélectionnée
+si on a besoin de GPU, on va prendre une P3
+et une P2 en fonction de ce qu'on souhaite
+on a besoin de CPU pour faire du clusterings
+avec un bon vieux camion
+du coup on va le faire avec un petit instance
+on va faire l'optimisation du modèle
+il y a dans cette maker
+il y aura dans la console, il vous montrera
+après la démo autobobie
+on peut utiliser
+une feature qui s'appelle Neo
+qui permet de sélectionner
+le devise sur lequel le modèle va déployer
+est-ce que c'est un Raspberry, un Intel
+le compute stick d'Intel
+est-ce que c'est la deep lens
+qui est une caméra faite par WS à disposition
+ou un autre
+un autre processeur avec du x86
+on peut vraiment choisir le hardware
+sur lequel on va déployer notre modèle
+on va déployer
+donc après Damien vous présentera
+ce niveau-là avec
+l'interface
+et enfin
+l'autoscaling va se gérer via l'endpoint
+donc on a pas
+d'un point de vue infrastructure
+dans le sens d'un modèle
+c'est du maker déployant production
+la présence je te laisse la main
+c'est à ton tour
+petite post technique
+donc je vais vous présenter
+un projet concret qu'on a réalisé chez Teamwork
+donc on a appelé le Togobee
+je vais vous rappeler
+de ce que c'est le Togobee
+il y a 20 ou 30 ans
+en plastique
+mais voilà c'est un faisait marré
+donc voilà le Togobee
+c'est un système
+il y a une sorte de petit tapis roulant
+un tapis roulant qui fait avancer des billes
+et il y a un Raspberry Pi
+avec une caméra
+de 6 bits quand elle passe
+et qui va l'étrier
+complètement autoritaire
+qui va mettre
+les mauvaises aborates et les bonnes à gauche
+donc c'est un truc un peu
+un toy project
+mais il faut voir
+ce qu'on a utilisé pour le concevoir
+à part les légos
+c'est que des éléments qui sont utilisés en production
+dans des vrais projets en production
+parce que ça c'est un use case
+qu'on retrouve assez souvent dans l'industrie
+avec une chaine de production
+avec un objet qui sera enfin
+et on veut savoir s'il a des défauts
+c'est ça qu'on a mis en oeuvre
+à travers les petites billes
+mais voilà c'est quand même du sérieux derrière
+et actuellement d'ailleurs on est en train
+d'éployer la chaine de nos clients
+exactement le même projet
+d'ailleurs ce matin je vous ai dit
+les deux projets ça m'ajoute
+mais c'est exactement le même principe
+sauf qu'on est en production
+avec de la caméra professionnelle infrarouge
+donc l'autobobis c'est ça
+qu'est ce qu'on va lui faire faire
+en fait on a acheté des billes
+et on les a mis dans deux catégories
+un peu arbitraires
+donc à gauche les bonnes
+c'est celles qui sont monochromes
+et à droite les mauvaises
+on avait des petits couleurs
+et puis on avait deux billes un peu chelous
+donc une bille avec des points et puis une bille transparente
+donc il n'y a pas de couleur à l'intérieur
+et ça c'est nos mauvaises
+alors comment on va faire ça
+je ne sais pas si vous connaissez un peu
+le deep learning
+enfin les notions de transfert learning
+on va utiliser un réseau de neurones
+qui a été pré-entraîné
+qui a un réseau rest net
+c'est ce qu'on trouve
+disposé sur ces jumequins assez facilement
+et on va le tuner
+pour notre tâche particulière
+ce qui permet de faire des entrainements
+sur des jeux de images qui sont assez réduits
+c'est un modèle pré-entrainement
+juste pour préciser AWS
+mais à disposition des modèles pré-entraînés
+de réseau de neurones comme l'a évoqué Damien
+et en fin de compte il suffit d'appliquer
+juste la sur-couche derrière
+avec notre data set
+pour pouvoir obtenir le soleil
+en fait on rajoute une couche
+de neurones par-dessus du modèle
+en mode pleinement connecté
+et on va tuner
+ce nouveau modèle
+il y a plusieurs manières de le faire
+soit on réajuste
+un peu tous les poids du modèle
+soit juste la dernière couche
+il y a plein de manières d'arriver à ses fins
+mais c'est l'idée générale
+c'est de prendre une connaissance
+qui était acquise
+d'entraînement très beau
+souvent sur image net on parle
+de plusieurs millions d'images je crois
+et ensuite de l'appliquer
+à un petit use case
+où on a à peu près 800 images d'entraînement
+on passe moins de temps à collecter ces données
+à l'inabiliser
+et ça permet
+sur des industries
+des fois on n'a pas beaucoup d'images à disposition
+des quatre défauts
+dans une chaîne de production
+on va pas s'amuser à les générer
+pour faire un entraînement de data set
+sur des objets qui écoutent
+des fois plusieurs milliers, millions d'euros
+donc rapidement l'archi
+qu'on a monté pour faire tourner ça
+donc sur 7 makers
+ce que je vais vous montrer après
+on a réalisé l'entraînement du modèle
+qui est posé sur un outil
+AWS qui s'appelle S3
+qui est en fait un espace de stockage
+et on a utilisé des briques IoT
+pour pousser ça sur le Raspberry Pi
+et donc en fait le modèle
+ne tourne pas
+sur les server cloud
+d'Amazon mais il tourne directement
+sur le Raspberry Pi
+donc c'est vraiment la IoT
+c'est pas obligatoire
+on aurait pu avec une connexion internet
+faire tourner le modèle sur un server
+et là c'est le premier le faire tourner
+et je vais changer le PC
+donc je vais vous montrer concrètement
+comment ça repasse dans 7 makers
+pour réaliser ce genre de projet
+donc je vais essayer de vous montrer en live
+en même temps je vais le manipuler
+je vais attendre
+pour plus que ça vienne
+pour ceux qui ne m'ont pas connu le tobomi
+c'est ça
+donc Amazon
+ces makers
+ça ressemble à ça
+on a sur la partie gauche
+tous les outils de notre disposition
+pour réaliser tous les étapes
+qu'on a vu tout à l'heure
+donc dans la grande live
+my ground truth
+c'est ce qui permet de préparer le dataset
+et il y a des possibilités
+avec l'utilisation des dataset
+notamment des images
+et des outils qui sont assez pratiques
+vous avez entendu parler du mechanical torque
+on peut vous l'utiliser pas
+nous c'est l'article qu'on fait pas
+de manière éthique
+si justement
+c'est pour ça que j'ai l'air bon à dire dessus
+avec Virginie
+c'est notre responsable
+on peut utiliser des mechanics d'articles
+mais d'un mechanical torque
+vous pouvez dire je ne veux pas ce qu'il vous propose
+et je veux des projets
+plus communautaires
+et notamment il y a un projet d'aide
+des femmes en centre afrique
+qui cherchent justement à avoir l'éducation
+à s'en sortir et aller de l'avant
+et donc du coup
+c'est une société éthique
+qui est réminère à la juste valeur par rapport au travail
+qu'elles produisent sur le mechanical torque
+ce qui permet d'avoir
+une conscience et de faire pour la bonne cause
+plutôt que de prendre des gens qui sont vraiment exploités
+dans ce qu'on appuie moi
+sinon on peut utiliser le même outil
+pour envoyer un peu de connaissances
+des étudiants qui veulent faire ça
+les notebooks
+normalement
+je pense que la majeure t'éconnait
+donc c'est ce qui permet de lancer
+des notebooks jupitaires à la demande
+donc j'appose à lancer une machine d'évier
+on peut vraiment choisir la tête de la machine
+ce qui est très pratique pour lancer des agro
+un peu long à tourner
+on peut directement lancer un notebook sur une p3
+c'est pas de problème
+une p3 pour info
+je l'avais là
+c'est tous les instants
+des types d'instances
+donc
+généralement quand on fait des trainings
+quand on veut que ça va s'y vite
+on se m'appelle des p3
+ça part de 8 cpu avec 1 gpu
+on peut aller jusqu'à 32
+on peut aller jusqu'à 64
+on peut aller jusqu'à 16 cpu
+760 kg gainera
+ça peut permettre assez de reconnaissance
+en fait souvent
+on a la peur que ce soit trop cher
+il faut voir que si je lance une p2
+donc elle est moins puissante
+mais qui mettra deux fois plus de temps
+en pratique elle est deux fois moins chère
+c'est assez équivalent
+on va uniquement les utiliser
+après Daniel va le présenter
+mais on va uniquement les utiliser pour la partie
+entraînement du modèle
+et une fois qu'on a terminé on kille
+cette machine on a plus besoin et ça fait le training
+et on paye uniquement la consommation
+ça c'est bon c'est à la demande
+vous payez à l'institut
+on va faire des factures de max 5$
+pendant l'entraînement d'un modèle
+après oui on va faire plusieurs modèles
+après il y a la partie training
+donc vraiment l'entraînement de modèle
+et la partie inference
+comment j'utilise ces modèles en production
+je vous montre rapidement
+l'abling jobs qu'on peut faire avec
+donc les types de jobs
+qu'on peut générer
+on a un date à cette image
+mais on sait pas c'est pas l'exploité
+elle n'est pas stabilisée
+on peut vite créer des jobs
+qui vont permettre de demander à des gens
+d'enterrer
+des objets
+de dire si les labels sont correctes
+la segmentation etc
+ça se fait assez facilement
+je l'ai pas utilisé moi directement
+donc je vais pas trop trouver le temps de dessus
+ensuite on définit donc notre work plan
+c'est parce qu'ils m'ont travaillé dessus
+et les dates à 7 passent les dates à 7 de base
+dans la business
+je l'ai passé rapidement aussi sur les notebooks
+donc
+c'est assez facile
+on peut créer des notebooks à la demande
+et ensuite j'ai utilisé
+puis les tuer de soir
+pour pas qu'ils consomment
+des machineries
+on va aller directement
+sur la partie training qui nous intéresse
+donc pour le topo bill
+qu'est ce qu'on a fait ?
+on a des photos en fait de bill
+que j'ai fait en condition réelle
+c'est vraiment de passer aux machineries
+d'abord construit le Lego
+et j'ai fait tourner des billes et j'ai plus de photos
+c'est important qu'on ait des photos en condition réelle
+donc ça donne quoi ?
+ça donne
+ça donne ça
+voilà alors là c'est
+les defectueuses
+donc vous voyez aussi qu'il y a beaucoup de casse vide
+on considère c'est les billes de faux aussi
+et il est ok
+même système avec cette fois
+qui sont monochromes
+ces photos je les rassemble
+au sein de liste
+donc il est resté qu'on va à côté
+et qui contient en fait
+qui vont permettre d'associer
+à chaque une des photos
+une catégorie donc 1 ou 0
+1 pour les bonnes
+et 0 pour les mauvaises
+et ça permet aussi de faire une liste de traits
+et une liste de belles dessins
+donc on fait
+80 à 80 là-dessus
+et ensuite ça on va le déposer
+sur l'espèce de stockage chez Amazon
+ici
+sur la bouquette S3
+et comme ça on va pouvoir directement
+utiliser dans ces genécaires
+donc je crée un prémis
+donc là il y en a plusieurs
+que j'ai fait aujourd'hui pour m'entraîner
+pour ne pas trop me planter
+les premiers en général
+ça finit en rouge et ça finit en fake
+parce qu'il y a des tas de petits détails
+à connaître
+qui sont propres à Amazon
+qui sont parfois pas très agréables
+mais voilà
+c'est pas très grave
+on arrive toujours à le faire tourner au final
+et
+voilà quoi ça ressemble
+donc je vais dire tout le monde du piqué
+donc on commence pas à les donner un nom
+on a l'histoire de
+le rôle d'Amazon donc c'est pour le gestion des grands
+et on choisit de machiner
+donc là j'ai une P3 avec large
+on dit combien on en veut
+on peut faire tourner sur plusieurs machines en parallèle
+donc là j'en prends juste une
+et je prévisionne 50 GB
+de disque à côté pour soquer
+le modèle
+on peut mettre un time out
+si jamais
+elle est à tourner un définiment
+quand même qu'elle soit tuée au bout d'un moment
+donc là au bout d'une heure ça devrait suffire
+à la tue
+au mois de juillet
+on a fait tourner
+j'avais oublié d'éteindre vingtaines de machines comme ça
+et on a eu quelques frais
+belle facture
+je pensais qu'elle était cassée dessus
+tous les jours
+de ma garnige
+ensuite
+avant ça on va choisir
+le type
+d'algo qu'on veut
+donc là on est dans un mode image
+classif
+mais on voit qu'on a accès
+à tous les grands
+à goût de machine learning
+qu'on peut connaître sur le sujet
+et on peut faire
+autre chose que de l'image je peux dire vraiment que tout
+on peut faire du NPD aussi
+on peut faire de la rente en forest
+du XGBoost
+donc on a tout un tas d'algorithmes
+qui sont prélefinis par Amazon
+et on peut aussi
+aller créer même des algorithmes
+sur quelque chose de très particulier
+donc là je prends un algo
+de image classification
+et
+j'ai tous les hyperparamètres
+à fixer
+donc le premier
+c'est à ce que je vais utiliser un réseau
+pré-entraîné au nom
+donc dans ce genre de cas
+je vous conseille de le faire
+sauf si vous avez vraiment beaucoup de data
+alors qu'est ce qu'on a d'important
+le nombre d'époque, le nombre de cycles
+sur lequel ça va tourner
+les learning rates
+les moments tours, les optimiseurs
+il faut jouer avec
+il faut aller regarder un peu à chaque
+il ne faut pas trop faire à l'âve non plus
+parce que ça découle
+il faut aussi très mieux avec
+voir les choses qui marchent le mieux
+le nombre de classes aussi
+le nombre de classes important donc on a 2 classes
+la taille de mon training
+etc
+c'est une petite future qui est intéressante
+c'est le early-stopping
+ça permet
+à l'algo détecté
+si l'accueil racide la faune un moment
+il va arrêter le même goût, il ne va pas faire
+les 30 ou 50 années à l'époque
+pour aller
+et ensuite on dit
+où est-ce qu'on a stocké nos images du train
+et nos images
+de test
+donc là je vais juste les chemins
+en fait vers le stockage S3
+c'est tout à l'heure
+donc
+il faut le faire d'aujourd'hui
+ça c'est des petits trucs
+on met un lien vers la liste
+et puis un lien vers le
+il y a de la part toi
+ça vous permet aussi de
+vous tracher la dernière et tracher après ce qu'il a fait
+la donnée elle va rester dans S3
+elle ne va pas disparaître avec le disque
+vous aurez toujours la donnée à disposition
+que vous pourrez réutiliser pour entraîner de nouveaux modèles
+et ensuite je le dis
+où est-ce qu'on a stocké nos images
+pareil sur le stockage S3
+et
+on y va
+donc voilà
+ça crée un train
+donc voilà
+mon train s'escopie
+donc il va tourner
+la première chose qu'il fait c'est qu'il lance une C2
+le C2 c'est les machines et serveurs
+qu'on peut provisionner chez Amazon
+donc là c'est une C2 de type P3
+ça ça met 4-5 minutes
+donc on va pas
+on va pas l'attendre
+parce que j'ai des résultats
+plus qu'ils sont l'un
+mais ce que je voulais vous montrer aussi
+c'est qu'on peut faire des trainings comme ça
+en faisant varier le paramètre
+mais c'est plus intéressant aussi
+de laisser
+d'un algo qui permet de faire du
+tuning d'hyperparamètres
+et on va le laisser choisir les hyperparamètres
+en lui finissant des plages
+sur lesquels il peut jouer
+donc ça s'appelle le hyperparamètre tuning job
+et j'en ai lancé un ici
+donc je vous montre rapidement à quoi ça ressemble
+donc
+en fait je vous ai dit de me lancer
+10 training jobs
+sur deux instances en parallèle
+et en faisant varier
+je lui ai demandé de jouer
+à la fois sur le learning rate
+de manière logarithmique
+entre 00001 et 01
+et
+de jouer sur le momentum en même temps
+de manière logarithmique
+en inverse
+de 09 à 0089
+et
+il va aller tester
+différents paramètres
+et différents communions de paramètres
+donc il va en tester 10 exactement
+donc si on va être plus précis
+dans la détermination
+on peut lui dire d'en lancer plus
+mais j'en fais juste 10
+et on voit que
+sur les 10
+donc je lui ai dit qu'il fallait qu'il regarde la cure assis
+et on voit
+qu'on a différents types de résultats
+et il va nous sélectionner le meilleur
+en fonction de la cure assis
+et le meilleur on le retrouve ici
+donc le meilleur
+il se trouve que c'est avec
+un learning rate
+de 5 secondes et 4
+et un momentum de 0088
+donc on va prendre pour essayer de jouer
+encore autour de ces pages-là
+et déjà ça nous donne une bonne indication
+une fois qu'on a trouvé
+notre modèle, qu'on a fait le meilleur entrainement
+ce modèle on va utiliser
+on va vouloir l'utiliser en production
+donc comment on fait ça
+eh ben je prends
+le modèle qui m'a sélectionné
+et je vais pouvoir le dire
+de générer un modèle à partir de ça
+donc un modèle c'est quoi en fait
+c'est...
+en fait c'est des fichiers
+ou il y a
+à la fois la structure du réseau
+qui est spockée
+et un ensemble de poids
+donc tout le jeu de poids
+de réseau
+c'est pour ça que tout à l'heure
+vous allez procurer 50 GHz
+pour stocker le modèle
+ouais voilà
+c'est très large comparé
+à ce que j'ai réellement besoin
+en fait sur cet exemple-là
+il me génère 20 GHz
+modèle par training
+quand même et là on a dit training
+pourquoi ?
+parce qu'en fait à chaque époque
+il va générer un modèle comme ça je peux aller voir
+ensuite exactement les stats
+l'évolution de mon accuratie
+en validation et en train
+et choisir exactement la bonne époque
+qui me convient bien
+donc il stoppe tout et à prendre on prend un
+puis le reste on peut mettre à l'accordé
+mais c'est vrai que ça prend vie de la place
+de la zone neurone avec beaucoup de couches
+ça va pas aller vite
+donc
+ce modèle je vais l'utiliser
+donc je l'ai fait tout à l'heure
+pour m'entraîner donc j'ai créé un modèle
+à partir de
+les meilleurs paramètres de mon training
+et ce modèle je vais l'utiliser dans un input
+un input c'est quoi ? c'est une machine
+avec une entrée
+qui va permettre
+d'envoyer les images une par une
+des domaines images
+qui viennent par exemple de chaîne de production
+on va envoyer ces images et on va le réveiller à la pence directement
+donc je vais montrer directement comment ça se passe
+j'ai fait une utilisation depuis
+un autre boot
+de jupiter
+donc c'est intéressant de s'y massager avec eux pour savoir
+tout ce qui peut être fait par la console
+on va te cliquer
+vraiment sur la console d'administration
+peut être fait là en code
+c'est que des API
+et notamment en Python
+donc là
+donc j'ai à d'autres boot
+j'ai été chargé une bonne image et une mauvaise image
+je sais pas si vous arrivez bien à voir
+donc je vais exécuter
+donc là c'est une bonne image
+et là en fait
+je fais appel
+à mon np que je crée
+le tout bobine point numéro 1
+et
+salut
+dans le notebook
+en fait c'est du maker
+on a
+les API et le SDK
+de c'est du maker de façon générale
+donc toutes les opérations que Damien vous a présentées
+donc tout peut s'utiliser directement
+dans un importe ampliton et en les utilisant derrière
+donc
+c'est ce qu'il fait avec le runtime.invoq and point
+on va attendre la console
+en bas
+ah
+ça explique
+ah bah oui c'est budget saviant
+on a
+une personne qui les a rejoint et inalternante
+et en fait on a voulu les faire monter
+elles sont dans la squad mais on a voulu les faire monter
+sur AWS parce que c'est la principale plateforme
+qu'on utilise pour réaliser des applications data
+et en fait on a demandé de développer
+suite à ce qui s'est passé avec Damien
+sur on l'oublie la machine
+et aussi
+les collègues, Pablo et Corexpert
+qui ont oublié aussi des tas donc ça arrive
+deux fois donc on s'est dit pas une troisième fois
+et on a développé un outil qui permet de
+s'il n'y a pas de tags et qui est mis c'est à dire de
+pouvoir cibler la route sans question
+ça détruit le endpoint et ça évite qu'il y ait des coûts supplémentaires
+donc je pense que tu n'avais pas tagué
+je n'avais pas tagué et vu que
+je crois que c'est la digiteur que ça tourne
+c'est un du tout coup
+bref, c'est pas grave
+donc le L-Bot c'est une manière d'utiliser l'Ago
+donc en mode entre les one shots
+c'est à dire qu'on envoie une image
+on envoie un individu, un nouvel individu
+qui n'est pas dans le train et dans le test
+et il nous renvoie la réponse qu'il a apprise
+on a un autre moyen d'utiliser
+les modèles c'est le batch transform
+donc comme c'est moi la geek
+en fait on va lui mettre
+l'expression de plusieurs individus
+donc autant qu'on veut en fait
+pareil on va le stocker sur un bucket
+et là il va nous retourner
+l'ensemble des réponses pour ces individus
+donc le temps que l'endpoint
+se montre toujours à quoi ça ressemble
+et le batch transform
+permet de ne pas avoir de endpoint up and running
+donc du coup de payer moins
+donc il tourne le temps
+qu'il fasse son inférence
+sur tous les individus qu'on lui a donné
+puis ensuite il dispare
+donc voilà je lui ai donné quelques images
+alors elles s'appellent toutes kaos
+mais elles sont pas forcément toutes kaos
+parce qu'il y a eu des problèmes de traitement
+mais toutes les images dont je lui ai dit
+traiter tout ce réperture là
+et dans out il m'a sorti
+pour chaque image un petit fichier
+soit une sorte de G-Zone
+qui me donne des scores
+pour chaque catégorie
+on voit pas très bien
+en prédiction
+et donc j'ai un tableau
+j'ai un ray de case
+avec en gros 3x10.6
+donc sur le
+sur le kao
+et 0.8999
+je pense qu'un peu tu rentres
+donc le batch transform ça peut être utile
+si vous n'avez pas besoin
+d'interroger en temps réel
+si vous avez trop l'autre donné à passer
+vous lui envoyez sur votre modèle
+et ça vous donne la réponse
+voilà
+qu'est ce que je voulais vous montrer
+d'autre
+la démo
+donc le topo bien lait
+comment ça marche
+on va
+on plie ça au bouton
+et là on pourrait venir tout à l'heure
+pour jouer avec
+donc à droite
+il y a une bille qui normalement
+sont sur valide
+ça c'est une bille valide
+donc là le pie store
+c'est écrit ok relancement
+et ça vient de basculer à droite
+pour dire c'est une bille valide
+et je la fous à droite
+il prend, il fait une pause photo
+donc là il n'y a rien donc il dit kao
+il se remet sur le statut kao
+et là c'est une bille qui est kao
+ça c'est aussi une bille valide
+donc il a bien basculé
+il prend une pause photo qui cherche
+il n'y a rien, kao
+et là il arrive sur une bille valide
+et il va lui dire je reste en kao et je le renvoie là-dedans
+tout simplement
+et il continue, ça vaut du sable
+et du coup comme tu l'as dit c'est tout en local
+il n'y a aucune connexion réseau donc on fait du edge computing
+merci
+voilà
+donc je sais pas si vous avez des questions sur
+vos petits sur ce qu'on peut faire
+si
+moi j'ai une question par rapport
+quand j'ai vu cette bille
+il n'y avait pas une bille
+d'entraînement
+donc il y avait 6 millions de chacune
+ça coûte combien plus de moins que ça
+alors
+je ne suis plus pris
+pour une heure d'entraînement
+de fin
+d'épargner la tertuinine comme ça
+une heure sur 2 instances
+peut-être 30€
+peut-être un peu moins
+à 2 $
+on va faire live
+c'est formation du modèl
+3,50
+crystal
+p3
+4 $
+donc du coup ramener à 6 minutes
+ça peut être quelque chose de moins d'un dollar
+c'est en fait 6 minutes
+4 $
+pas sachant pendant une heure qu'on tournait donc 8
+en fait
+tu n'as pas le temps d'accélérer
+alors faveur
+alors faveur
+je vais commencer
+après un visage
+oui alors quand tu t'inscris
+tu as des frits
+des frits de tir
+il y a un fritir sur cette lecture
+il y a un fritir
+c'est un certain nombre d'heures
+d'entraînement
+j'ai pas la maîtrise
+mais voilà
+là on paye vraiment l'utilisation
+donc dès qu'on lance un entrainement
+on sait que c'est un coup derrière
+il faut pas faire n'importe quoi
+c'est une accumulation de petits cons
+c'est un peu le business model
+d'OWS aussi
+c'est de mettre un petit type de bruit
+qui coupe tout un peu
+un peu décollable
+on peut faire du coup
+on peut avoir un jupiter notebook
+pendant 250 heures par mois
+pendant les 12 premiers mois
+donc ça permet de
+après on peut l'avoir en local
+donc c'est pas grand intérêt
+mais le fait que le jupiter soit gratuit
+donc ça fait tourner une machine derrière
+vous le payez pas
+vous allez payer les batches transform
+ou les endpoints si vous déployez des endpoints
+autant on fera de là du temps
+que vous allez les utiliser
+c'est vraiment le modèle du payasugo
+et comme l'a dit Damien
+sur lequel il faut faire attention
+juste une dernière petite chose
+là tu as développé ton propre modèle
+c'est du coup on peut soit
+développer son propre modèle
+utiliser un modèle pré-entraîné par AWS
+ou utiliser forcément la même logique
+sur AWS avec le marketplace
+et du coup prendre des modèles
+réalisés par une société tierce
+si on a besoin en fonction de la stratégie
+de l'entreprise et d'autres
+pour pouvoir réaliser ces applications là dessus
+c'est facile aussi
+une fois qu'on a formé un modèle
+sur cgmcoeur ou même de le pousser
+sur le marketplace et d'aller
+il y a des acheteurs ?
+je pense qu'on est bon
+je pense que
+vous pouvez essayer de bobber
+et puis merci beaucoup pour votre attention
+et en espérant qu'on a pu
+un peu exécuter sur AWS et deepdive sur cgmcoeur
+et que vous allez être fan comme nous
+merci

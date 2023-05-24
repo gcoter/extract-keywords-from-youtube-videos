@@ -1,0 +1,281 @@
+Je vais vous parler d'une problématique un peu particulière, j'imagine qu'il y a pas
+mal d'entre vous qui ont entendu parler de qu'est-ce que c'est un AB test, pourquoi
+on fait ça dans certaines industries, etc. Là, je vais essayer de m'être en lumière
+un peu qu'est-ce qu'il se passe avant. C'est une perspective un peu différente
+de ce que vous avez pu voir à droite à gauche. Et on va explorer en fait un certain nombre
+de méthodes, d'évaluation quand on fait un changement sur un système, d'une manière
+générale. Et on va voir qu'est-ce qui peut mal se passer, pourquoi on a besoin de
+certaines méthodes et pourquoi certaines fois on peut se contenter d'autres. Alors
+je vais rappeler dans une première partie, je vais d'abord rappeler qu'est-ce que
+c'est un AB test, pourquoi est-ce qu'on a besoin de faire ça. Et dans une deuxième
+partie, ce sera peut-être un peu plus avancé, je vais montrer différents types de problèmes
+quand on fait de l'appareil de la sélection de modèle avant de faire un AB test.
+Alors, qu'est-ce qu'on appelle un AB test ? Il y a deux choses très importantes dans
+un AB test. Alors, ça s'appellera AB test dans l'ensemble de la présentation, mais
+c'est quelque chose qui existe pas seulement dans les industries internet, ça existe aussi
+dans les industries de la santé. On fait ce qu'on appelle des études avec Placebo
+ou d'autres études en Randomize Control Trial, on s'en trouve aussi en anglais, ce genre de chose.
+Donc il y a deux aspects importants. Il y a un premier aspect, c'est l'aspect aléatoire. C'est-à-dire
+qu'on a un groupe de sujets qu'on va diviser sans l'ordement de leur avis, sans que personne
+ait le droit de dire dans quel groupe il veut être. Et ensuite, on va les traiter différemment
+suivant le groupe dans lequel ils sont. Alors, malheureusement, on ne voit pas super bien,
+mais un exemple d'AB test en fait dans les industries plutôt internet, c'est ce genre
+de choses. Donc, ça, c'est deux formuleurs différents pour faire une recherche de maisons
+ou d'appartements à louer ou à acheter. Donc, on peut imaginer qu'il y a deux façons de faire
+ce formulaire, soit à droite, on tape dans une boîte le code postal, puis ensuite on appuie sur
+le bouton OK. Et à gauche, il y a une espèce de petite procédure ou avec des icônes mignons,
+etc. Et typiquement, qu'est-ce qu'on veut faire avec ce genre de choses ? On veut identifier un effet.
+Donc, dans l'exemple avec les deux façons de chercher des annonces immobilières, on veut savoir
+est-ce que la façon dont on présente cette boîte a un effet sur le fait que les gens l'utilisent
+ou qu'ils en soient contents. Le deuxième type de questions qu'on se pose en général quand on fait
+ça, c'est ok, mais ça fait une différence de combien. Par exemple, sur l'exemple des petites
+boîtes pour chercher une maison, c'est en gros, combien de personnes qui s'arrêtent et qui
+ne continuent pas. Dans le cas où j'affiche la variante A avec les petites icônes mignons et la
+variante B où il y a juste une boîte de recherche avec du texte, on tape le code postal.
+Alors, première question qu'on peut se poser, c'est ok, c'est très bien, mais si on a une
+expertise du sujet, si par exemple ça fait 20 ans qu'on travaille dans certains domaines ou si on a
+des données historiques, on peut se dire « mais pourquoi est-ce que j'aurais besoin de faire
+un A des tests ? » Pourquoi est-ce que j'aurais besoin de faire un souple compliqué comme ça ? Parce
+qu'après tout, j'ai une assez bonne idée de ce que ça peut donner ou alors j'ai des données qui
+tentent à dire quand même que, historiquement, on devrait être capable de décider. Alors pour
+mettre le doigt vraiment sur ce qui fait mal, on va aller regarder une petite étude. Alors,
+ça, c'est dans le domaine plutôt médical. Et on va voir suivant la façon dont on analyse les
+données, quel type de conclusion on peut avoir. Donc, c'est une étude sur le traitement des
+calculs renaux, un truc qui fait assez mal en général quand ça vous arrive. Et bon, c'est une
+étude où il y a des docteurs qui ont prescrit d'autres types de traitements, un traitement en
+numéro 1. Alors là, c'est la chirurgie ouverte, le historie, etc. Et le traitement numéro 2,
+là, c'est une sonde qui envoie des ultrasons, c'est un truc assez soft. Et bon, si on regarde les
+résultats globaux de cette étude, on voit que dans le traitement 1, on a 78 % de rémissions,
+78 % des gens qui sortent du traitement 1, donc de la chirurgie et qui sont guéris. Parfait. Dans
+l'autre cas, dans le traitement 2, il y a 83 % des cas ou le malade est guéri. Donc juste avec
+100 chirurgies ouvertes, juste avec les petites impulsions ultrasons, apparemment on arrive à
+avoir un meilleur taux de rémission. Quand on regarde les données juste comme ça, on se dit
+« wouah, c'est le traitement 2, on envie de le prescrire à tout le monde ». Alors à ce stade,
+je me réfère un petit vote. Si vous pouvez lever la main, si vous pensez qu'il faudrait faire
+quelque chose de supplémentaire, en particulier un abe test, pour pouvoir être correctement décidés
+de l'effet du traitement 1 ou du traitement 2. Ça fait un petit écart, c'est vrai.
+Alors effectivement, il y a un truc dont je parle assez peu ce soir, c'est tout ce qui
+est étude de variation. C'est-à-dire que c'est quoi l'intervalle de confiance,
+par exemple, qu'on peut calculer sur cette différence et à quel point il est statistiquement
+significatif. Alors ça, on peut en parler aussi, c'est super intéressant. Mais là,
+c'est un effet encore plus grave que je voudrais mettre en lumière. Alors en particulier,
+c'est le fait de dire qu'il y a une phrase importante dans le premier slide,
+c'est le fait que c'est le médecin qui décide quel type de traitement il va donner.
+En fait, il y a une variable qui influe beaucoup sur la décision du médecin et aussi sur la
+rémission des calculs, sur la chirurgie ou sur le traitement médical quel qu'il soit.
+C'est la taille du calcul. Donc là, c'est les deux cas, Small Stone, Big Stone. Donc,
+est-ce que le calcul est petit ou est-ce qu'il est gros ? Alors ce qui se passe,
+c'est que si on ajoute cette variable, en fait, les données, on peut les voir d'une
+manière assez différente. En particulier, si on regarde sachant la grosseur du calcul,
+l'auto de rémission, on est assez surpris parce qu'on dit, mince, on a exactement la conclusion
+inverse. Dans les petites pières, le traitement 1, il y a 93% de rémission par rapport à 87%
+et dans le traitement 2, 73% par rapport à 69%. Ça paraît paradoxal. C'est un paradoxe qui est
+assez connu qui s'appelle le paradoxe du système. En fait, qu'est-ce qui s'est passé là ? C'est que
+le traitement n'a pas été administré au hasard. Les chirurgiens sur les petites pières ont préféré
+les traitements en moins invasifs. Donc, si vous avez un petit calcul, en général, c'est moins grave.
+Donc, on va plutôt vous prescrire un traitement qui marche peut-être moins bien mais qui évite de vous
+ouvrir le corps et puis de vous faire passer trois jours à le stop. A l'inverse, si vous avez des
+grosses pières, du coup, on va avoir beaucoup plus tendance à vous prescrire le traitement 1 qui,
+lui, il est vachement invasif, il fait super mal et tout. Mais à l'autre côté, il a une meilleure
+chance de traiter les plus gros calculs. Donc, il y a un autre mot pour dire ça,
+c'est le biais de sélection. C'est-à-dire que parmi les gens à qui on a donné le traitement 1
+ou le traitement 2, on ne l'a pas donné au hasard. Il y a vraiment une décision par rapport à ça
+et du coup, ça influe sur la proportion. On le voit assez clairement. Donc, le traitement 1,
+là, il n'y a que 87 personnes dans les petites pières qui ont donné le traitement 1 alors que la
+majeure partie, c'était des gros calculs. Alors, bon, si on veut faire une inférence correcte,
+une façon de régler ce problème, c'est de rajouter toutes les variables de confusion possibles.
+Donc, toutes les variables comme celle-là, le petit c, qui peuvent à la fois affecter le
+traitement. Donc, là, c'est la GMI A pour action et R pour récompense ou pour rémission dans ce cas.
+Donc, une première façon d'avoir la bonne décision, c'est de rajouter des variables
+comme ça qui sont susceptibles d'influer le résultat. Alors malheureusement, on ne peut pas
+toujours faire ça. En particulier, il y a des fois des variables où on se dit « ah, tiens ça,
+ça pourrait peut-être influer mais je n'ai pas accès à cette variable ». Par exemple, là,
+dans ce cas-là, peut-être qu'on n'a pas enregistré les âges des personnes qui ont
+donné le traitement ou peut-être qu'on n'a pas enregistré d'autres informations médicales.
+Et dans ce cas-là, ça peut être des variables de confusion qui expliquent que le
+traitement va plus ou moins bien réagir, mais on n'y a pas accès. Alors, la solution dans ces
+cas-là, c'est de faire un abétesse entre guillemets, en tout cas, de s'arranger pour qu'il n'y ait pas
+un choix dans le traitement, on va casser cette influence-là. C'est-à-dire que notre variable
+de confusion va plus influer sur le traitement ou alors si elle l'influe, elle va l'influer d'une
+manière qu'on le connaît. À la limite, on pourrait même imaginer le chirurgien y tirer un dé. Si vous
+avez une grosse pierre, dans tous les cas, sauf si il fait un 6, il vous donne le traitement 1 et si
+il fait un 6, il vous donne quand même le traitement 2. Alors, éthiquement, ce n'est peut-être pas
+péril, mais pour vous donner une idée de ce qu'on peut faire. Ok. Alors, maintenant, la question,
+c'est qu'est-ce qu'on fait avant ? Les abétesses ou les études qu'on fait pour qualifier les
+médicaments, quand c'est des tests avec qui fait Placebo, il y a une partie des sujets pour lesquels
+on donne une petite gradule où il n'y a que du sucre, où il n'y a rien du tout dedans et on regarde
+du coup la différence. C'est très bien. On sait que ça casse tous les types de confusions
+qu'on peut avoir. Sur la conclusion, on est à priori très robustes. Par contre,
+c'est un coup. C'est-à-dire que avant de faire un abétest pour un site internet ou avant de tester
+un nouveau médicament, il faut déjà valider que ça ne va pas exploser en production ou que ça ne va
+pas rendre mal à les gens. Enfin, il y a tout un tas de trucs. On est peut-être obligé de certifier
+le médicament. Enfin, voilà. Ça coûte finalement assez cher. En particulier, si on a des mauvais
+candidats. L'idée qu'on va développer dans toute la suite du taux, c'est comment est-ce qu'on
+peut faire pour sélectionner les meilleurs candidats avant d'arriver à l'étape où
+vraiment on va déterminer leur performance de manière causale. Je vais restreindre encore un
+peu plus le champ d'application. C'est-à-dire qu'on va se donner une cible privilégiée qui est des
+modèles de prédiction. Ce qu'on veut abétester infiné, ce sera des modèles de prédiction.
+Pourquoi des modèles de prédiction ? Parce que bon, c'est quand même un avion de data science.
+A priori, il n'y a pas mal de gens qui ont déjà fait des modèles ou qui travaillent pour construire
+des modèles, pour faire de la prédiction ou quoi que ce soit. Là, j'ai mis deux exemples très
+différents, mais il y en a plein d'autres qu'on peut utiliser. Là, l'exemple de gauche, c'était
+sur un modèle de ranking pour les résultats de recherche, où on dit j'ai un modèle qui va
+trier les résultats et je veux tester une autre variante. C'est un problème de prédiction.
+On va changer les variables, on va changer l'optimisation, on va changer les hyperparamètres de la
+procédure d'entraînement, le prétraitement de certaines variables, etc. L'autre exemple,
+c'est plutôt médical, donc c'est la détection de tumeur. Imaginons qu'on développe un algorithme,
+un produit, disons, Package, utilisé par des médecins, par des neuroschargiens, qui dit « Ok,
+je vous prends l'IARM et je vous sors la probabilité que cette personne a une tumeur du cerveau ».
+Ce n'est pas vraiment la science fiction, il y a déjà des boîtes qui vendent ce genre de trucs.
+Donc là, on va dire « Ok, qu'est-ce qui se passe si je veux mettre à jour ce genre de
+produits et dire « Ok, j'ai un autre algo qui, je pense, je voudrais en tout cas,
+qui fasse mieux ». Le tester en vrai, c'est un peu peur, donc on voudrait être sûr qu'il soit
+au maximum le meilleur possible. Après, on peut imaginer tout un tas d'autres exemples. Par exemple,
+si vous travaillez, je ne sais pas, pour un fournisseur d'électricité, vous faites un modèle qui prédit
+la consommation du lendemain ou la consommation de la semaine prochaine, et en fonction de ça,
+c'est à juste le niveau de combustion de la pile atomique dans un centre nuclear. On peut
+imaginer tout un tas d'applications. En fait, il y a pas mal d'endroits où on a des modèles et on
+les met à jour régulièrement. Et on aimerait bien les améliorer. Alors, il y a quelque chose qu'on
+peut faire déjà de manière très basique, c'est d'essayer de le valider avec des données historiques,
+alors on peut regarder des métriques techniques du modèle lui-même. Donc par exemple, si c'est
+un modèle de régression, on peut regarder la RMS-E, si c'est, je ne sais pas, bon, n'importe quel
+type de modèle, on peut regarder la vraie semblance, on peut regarder les métriques de précision, de
+rappel, F1, si c'est un modèle de classification. Enfin, il y a tout un tas de métriques techniques qui
+a priori quantifient l'objectif de l'algorithme lui-même, du modèle lui-même.
+Un truc qui est important à faire aussi, et donc ça, c'était l'ordre de tout à l'heure,
+c'est de faire de la cross-validation, c'est d'être capable d'avoir une idée de la variance
+de cette performance. Donc de savoir, ok, là j'ai fait un run, ça m'a donné 76, mais
+si je le fais tourner plusieurs fois et que je remélange un peu mes données, ça donne toujours
+76, ou ça donne un truc entre 60 et 90. Auquel cas, suivant les applications, ça ne veut pas dire
+exactement la même chose. Et puis il y a un autre problème, c'est qu'en général, les métriques
+techniques, elles ne sont pas forcément très proches des métriques, on va dire, applicatives.
+Par exemple, dans l'exemple du modèle de ranking pour les résultats de recherche,
+on a fait un modèle qui a une meilleure RMSO, que forcément ça va permettre
+au moteur de garder plus d'utilisateurs ou d'afficher, enfin de gagner plus d'argent
+avec la publicité, etc. De la même manière, si l'algorithme, le détection de tumeur, il nous dit
+oui, sur le data set d'entraînement, j'ai une meilleure rassemblement, on peut être, ok,
+ça peut être très bien, mais est-ce qu'il a une meilleure, est-ce qu'en pratique, il arrive
+à prédire peut-être plus tôt des patients, ça sera peut-être plus important que de prédire
+très bien les patients pour lesquels il y a une tumeur la plus avancée ou de toute façon,
+on ne peut pas faire de mirent. Donc il y a tout un tas de cas où ça ne suffit pas forcément.
+Alors, une idée qu'on peut avoir aussi, c'est de dire très bien.
+On peut avoir des données historiques qu'on a récoltées et on peut se dire mais après tout,
+si on a des données historiques et qu'on a des modèles de prédiction, on pourrait prédire
+la performance de l'algorithme sur des numétriques applicatives. Par exemple, on pourrait dire,
+ok, si on récolte un data set, on dit, ok, ça c'est la RMSO de mes algos, ça c'est
+le combien d'argent j'ai gagné effectivement à la fin, est-ce qu'on ne peut pas prédire à
+partir d'une métrique l'évolution d'une autre ? Alors ça c'est une idée. Alors en gros, j'ai essayé
+d'écrire en termes mathématiques mais en gros, si on a une politique qui a un contexte associé
+d'une action, donc XA, on a une politique PI avec laquelle on a récolté des données historiques et
+nous ce qui nous intéresse en fait, in fine, si on fait un AB test, c'est de calculer
+son espérance, l'espérance de la récompense de cette politique en sachant qu'on a appliqué
+SCL qui génère en gros nos exemples. Alors si on prend ce genre de méthode, qu'est-ce qu'on
+dit ? En fait, on se dit, ok, j'ai un modèle qui me permet de prédire la récompense à partir
+des actions prises par la nouvelle politique dans chaque contexte qui ont historiquement été
+rencontrés par la politique précédente. Donc par exemple, dans le cas de la détection de Tumeur,
+on dit ok, je sais dire, enfin j'ai eu les images d'un batch de patients précédents, j'ai eu leur
+rémission à six mois, maintenant j'ai un autre algorithme et je pense que je peux le tester
+sur les mêmes données et que ça va me donner les mêmes rémissions à six mois. Alors dans le
+fond, quand on dit ça, on a l'impression de faire un truc assez valide, ça peut être dangereux
+dans certains cas. Par exemple, si des choses qui se passent en fonction du diagnostic, c'est-à-dire
+si on peut, par exemple, on détecte mieux les patients avec un cancer avancé, ces gens-là,
+on va les revoir plus tard dans le processus, ils vont revenir après être traités pour refaire
+des images d'IRM et on va réappliquer le même algorithme pour vérifier si effectivement la Tumeur
+a régressé ou pas. Et dans ces cas-là, en fait, l'application de l'algorithme dans l'application
+va générer une distribution sur les exemples qui va être différente de ce qu'on a utilisé.
+Si on prend l'exemple du tri des résultats dans le moteur de recherche, le fait d'avoir un
+algorithme, par exemple, bien meilleur va nous faire que le moteur de recherche va en
+en général gagner des nouveaux utilisateurs et donc ça va changer la distribution d'entrée,
+parce que les nouveaux utilisateurs ne seraient peut-être pas forcément les mêmes que ceux-là.
+Je ne sais pas si il y en a qui se rappellent le jour où Google est arrivé. Au début, c'était
+un truc de geek, la distribution d'utilisateur était très spéciale. Au fur et à mesure qu'il a
+gagné de l'adoption, la distribution d'utilisateur, c'est à finit par être monsieur et madame tout le
+monde. Voilà, c'est un peu de ce genre d'effet dont on parle. Et puis finalement, les données
+historiques, finalement, c'est quelque part assez proche de ce qu'on a vu avec l'exemple des
+calculs renaux, c'est que si nous manquent des variables de confusion, on risque toujours de
+prendre des mauvaises décisions. Alors, qu'est-ce qu'on peut faire avant ce qu'elle a ?
+Alors, il y a une approche qui est de dire, ok, je vais essayer de modéliser au maximum
+non seulement la tâche de mon modèle de prédiction, mais en plus ton impact sur le
+monde extérieur. Alors là, je vous donne un exemple qui est tiré du monde de la publicité
+sur Internet. Donc, le monde de la publicité sur Internet, si je le résume très grossièrement,
+en gros, quand vous affichez une page web, il y a derrière une enchère qui est exécutée et
+sur laquelle des plateformes publicitaires donnent une enchère, disent un prix, disent
+que moi je suis prêt à avoir 15 centimes pour afficher une cube sur cet anchor-là.
+Et derrière, si jamais l'utilisateur clique et achète quelque chose, la plateforme publicitaire
+reçoit une récompense. Donc dans ce cas-là, on peut imaginer un modèle de prédiction,
+par exemple le modèle qui prédit si effectivement l'utilisateur clique sur la pub et achète
+quelque chose, c'est un modèle qu'on peut appliper et on peut collecter des données de
+l'utilisation d'un modèle P. Donc ces données, il va y avoir différentes choses, il va y avoir
+donc pour chaque exemple qu'on va numéroter I, on peut calculer, on va avoir différentes choses,
+on va avoir la valeur qui a été générée par I, c'est-à-dire est-ce que la personne a cliqué ou
+pas, est-ce qu'elle a effectué une vente ou pas et qu'elle a été éventuellement le montant
+de cette vente. Après, on va enregistrer une autre donnée qui est C, qui est le coût,
+combien ça a coûté d'acheter cet espace publicitaire. Et puis finalement, si on a ça,
+du coup on peut faire une métrique pour évaluer un autre modèle de prédiction P prime en disant
+pour avoir accès à cette récompense VI, moins le coût, encore faut-il que le nouveau modèle
+de prédiction gagne les mêmes enchères que l'ancien. Parce que s'ils gagnent pas les mêmes
+enchères, on ne peut pas savoir ce qui se passe. C'est-à-dire que si ce terme-là,
+en fait, c'est cette indicatrice, il faut que ce qu'on rit. Soumis comme en chair le
+modèle, le nouveau modèle P prime soit suffisamment haut pour gagner l'enchère,
+historiquement, le modèle d'avant avait gagné. Alors, ça, c'est une possibilité.
+Il y a plusieurs effets. Alors, c'est un peu mieux que juste regarder par exemple la RMSO du
+modèle P et la RMSO du modèle P prime, ça, elle est lâche parce que ça donne
+une idée de l'impact business. C'est-à-dire, en d'autres termes, si P prime, il est très,
+très fort, mais beaucoup plus fort pour prédire certains types de clics, mais qui sont des clics,
+peut-être, sur des publicités, je ne sais pas, pour des chaussettes. Auquel cas, si la
+paire de chaussettes vaut un euro, l'annonceur, il donnera peut-être un dixième de centime
+pour un clic sur une paire de chaussettes. A l'inverse, si c'est sur des voitures ou
+si c'est sur des biens qui sont chers, l'impact ne sera pas le même. Et ça,
+l'allage du modèle, vous le direz juste en moyenne sur les ventes, je suis mieux que le
+modèle d'avant. Mais par contre, vous n'aurez pas d'idée sur l'impact business. Donc ça,
+c'est une manière de corriger un peu ce problème. Mais néanmoins, ce n'est pas idéal pour
+plusieurs raisons. Donc il y a une raison qui est que le coût historique qu'on a observé,
+c'est la barre bleue. Donc si le nouveau modèle en chérie moins, il ne reçoit rien. Si il est
+en chérie plus, il reçoit toute la valeur. Mais par contre, ce truc-là, c'est assez violent. C'est
+à dire qu'il suffit qu'on décale d'un dizaine de pouillemmes la prédiction pour qu'on passe
+d'un côté ou de l'autre de la braille. Donc une possibilité pour faire. On est encore en train
+de raffiner notre espèce de simulation du monde. C'est de dire, ok, on va injecter du bruit sur le
+coût historique de cet emplacement. C'est une distribution de probabilité, c'est plus un paramétrix
+et c'est une distribution de probabilité dont ça range pour que l'espérance soit le coût qu'on a
+observé. Ça rend le truc un peu plus robuste. Malgré tout, ce n'est pas parfait non plus parce
+qu'il y a quelque chose quand même dans cette métrique qui cloche, c'est que la valeur et le
+coût d'une enxère, on l'a que si, on l'a gagné. En l'occurrence que si le modèle précédent l'avait
+gagné. Et il y a un truc qu'on ne maîtrise pas dans ce cas-là. C'est une zone d'ombre complète.
+C'est les enxères que le nouveau modèle va gagner, mais que l'ancien n'avait pas gagné. Et là,
+on n'est pas capable de dire ce qu'il va se passer. C'est là que vient la dernière idée qui va
+corriger en fait d'une partie de ce problème, c'est de dire qu'on voudrait infiner, c'est de dire
+qu'on a nos modèles, la paix, les primes, les secondes, etc. On voudrait pouvoir évaluer différentes
+variantes, mais à partir des mêmes données. Et on voudrait aussi, le beurre, l'argent du beurre,
+on voudrait aussi que ce soit un maximum causal, c'est-à-dire que ce soit le plus proche possible
+de ce qu'on fait pour faire un AB test. Et là, l'idée du coup, ça va être de dire,
+ok, pour faire ça, on va intervenir sur nos actions de notre modèle de production,
+celui qui est en train de collecter les données au début. Et on va introduire une dose d'aléatoire,
+une dose d'aléatoire, un contrôle sur lequel on sait exactement ce qu'on va faire. Si on revient,
+en fait, en gros, par exemple, à ce modèle-là, si on fait juste qu'introduire une dose d'aléatoire
+et de dire, ok, je ne sais pas, 1% des cas, je vais bidé un peu plus, enfin, je vais encher un peu plus
+que ce que je faisais avant. Et bien ça déjà, ça va donner des informations supplémentaires puisque
+ça va rajouter des enchères. Mechaniquement, on va gagner un peu plus sur une population
+qu'on n'aurait pas dû gagner. Ça, ça va donner un peu plus d'informations. Mais si on fait que ça,
+bon, ça reste assez limité. Là, on va aller encore un cran plus loin, on va essayer de faire de l'inférence.
+Alors pour ça, je vais prendre un exemple. Alors, je suis désolé, je travaille dans la
+publicité, donc c'est encore de la publicité en ligne. Mais, imaginons un exemple un peu simple,
+un peu toille. On a notre modèle de production, lui, il a deux actions. Soit il affiche la
+publicité rouge, soit il affiche la publicité verte. Et il le fait avec un modèle aléatoire,
+mais ce qu'on lui demande, c'est quand t'es en production, dans 80% des cas, tu affiches la pub rouge.
+Dans 20% des cas, tu affiches la pub verte. Mais tu le fais, tu ne sais pas toi qui choisis. En gros,
+tu lances une pièce et tu te mets dans ces deux cas. Et en production toujours, on a observé donc
+1000 clics sur des pubs rouges et 300 clics sur des pubs vertes. Ça, c'est les données dont on
+dispose. Est-ce qu'on va donner la valeur, là, c'est par exemple un modèle de test qui aurait une
+politique où il dit, OK, dans 20% des cas, je vais afficher la pub rouge. Et dans 80% des cas,
+je vais afficher la pub verte. Alors, question, combien de clics on va récolter avec ce modèle de
+test ? Est-ce qu'on peut en avoir une idée sans aller jusqu'à la déteste ?
+Alors, ce n'est pas très compliqué. En fait, comme on sait exactement avec quelle probabilité on a
+affiché du rouge, on sait qu'en gros, afficher 80% de rouge, ça génère 1000 clics. Donc, si on veut
+afficher seulement 20% de rouge, c'est-à-dire 4 mois, ça va faire en moyenne probablement 4
+mois une clique, soit 250. On applique exactement le même raisonnement sur les verres. On sait que
+si on affiche du verre sur 20% du trafic, on récolte 300 clics. Si on applique sur 80% du
+trafic, donc 4 fois plus, on va probablement récolter 4 fois plus, soit 1200 clics.
+Alors, d'une manière un peu plus générale, en gros, qu'est-ce que ça veut dire ? Ça veut dire
+que quand on a une politique qui est randomisée, donc qui prend des décisions de manière aléatoire,
+mais avec un aléatoire contrôlé, on sait exactement, c'est nous qui imposons la distribution avec
+laquelle il va prendre ses actions. Et bien, à partir de ce qu'on récolte comme donné.

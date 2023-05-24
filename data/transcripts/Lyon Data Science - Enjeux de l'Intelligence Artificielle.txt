@@ -1,0 +1,865 @@
+Bonjour à tous, bienvenue pour le dernier meet-up de Lyon d'Otta Science de la saison.
+Moi, c'est Clément Sages, le trésorier de l'association.
+Aujourd'hui, on a l'honneur d'accueillir Jeremy Espinas qui est aussi membre de LDS
+et qui va nous présenter un meet-up sur les enjeux de l'intelligence artificielle.
+J'ai envie de te rester présenté et de continuer avec le meet-up.
+Merci Clément, bonjour à tous.
+C'est le dernier meet-up de la saison en discutant entre nous.
+On s'est dit qu'on va partir sur un meet-up un peu moins technique.
+On voulait proposer un met-up qui arrive un peu plus loin que le fonctionnel
+et qui parle en fait de discuter un peu des impacts que va avoir un algorithme,
+du moins une fonctionnalité qui est liée à l'intelligence artificielle.
+Pour ma part, je suis juste pour me présenter rapidement, je m'appelle Jeremy Espinas,
+je suis membre de Lyon d'Otta Science.
+Parallèlement, je suis également ingénieur en recherche et développement au sein de la société ESCARE.
+ESCARE qui est sponsor de Lyon d'Otta Science, tout comme Datalio et UpFluence.
+On les remercie tous les trois pour leur participation.
+Avant de vraiment commencer la présentation, j'en profite pour présenter vite fait ESCARE,
+qui est quand même le sponsor de Lyon d'Otta Science depuis plusieurs années.
+Donc rapidement, ESCARE c'est une société lyonnaise qui a été créée il y a plus de 35 ans.
+C'est un éditeur de logiciel.
+Avant 35 ans, ESCARE a fait beaucoup de choses,
+mais aujourd'hui, leur activité principale, c'est principalement de proposer à travers le plateforme 3D,
+une manière de gérer des documents business et de gérer les interactions au sein de l'entreprise,
+que ce soit avec les fournisseurs, avec leurs clients.
+Donc pour gérer ces interactions, ESCARE propose plusieurs solutions sur la plateforme que vous pouvez voir ici.
+Pour rappel, c'est une entreprise qui a 36 ans, qui possède plus de 6 000 clients sur le plateforme SAS,
+qui représente plus de 600 000 utilisateurs.
+C'est une entreprise qui possède plus de 750 employés et on continue toujours à embaucher.
+Donc si vous recherchez du travail au sein d'ESCARE, n'hésitez pas à vous connecter sur le site internet d'ESCARE.
+C'est une entreprise qui a eu un label en best workplace pour dire que c'est une entreprise aussi agréable de travailler.
+En termes de plateforme, on arrive à gérer des paiements qui arrivera à dépasser un milliard de dollars.
+Même si c'est une entreprise dionnaise, ESCARE a plusieurs filiales à travers le monde entier,
+et leurs principaux revenus ne sont pas seulement liés à la France,
+on peut voir qu'ils sont liés aux États-Unis, à d'autres pays européens, ou à d'autres autres géographiques comme l'Asie.
+Pour aborder la présentation d'aujourd'hui, donc une petite introduction.
+Donc l'idée de la présentation, je le rappelle, c'est surtout la destination de gens qui travaillent dans l'intelligence artificielle,
+c'est essayer de leur donner, tenter de donner une vision globale, des conséquences que peut avoir un algorithme
+ou une fonctionnalité de DIA qui sont des fois souhaitées ou non souhaitées, avec différents exemples pour les illustrer.
+Il va y avoir quatre thématiques principales dans la présentation.
+D'abord, l'impact éthique que peut avoir certaines fonctionnalités, l'impact sociétal, l'impact environnemental,
+et aussi la notion d'interaction utilisateur qui remet en cause certaines moyens de penser
+du fait du fonctionnement de l'intelligence artificielle.
+Donc je vais commencer par une petite introduction.
+Avant de parler de l'intelligence artificielle d'un point de vue fonctionnel, donc d'un point de vue micro,
+je voulais en parler d'un point de vue macro.
+Et avant d'arriver à l'intelligence artificielle, je voulais vous parler des révolutions industrielles.
+Donc les révolutions industrielles, on en a quatre principalement.
+En fait, c'est des phénomènes qui font basculer notre monde, qui font transformer notre société.
+Généralement, le point de départ, il est d'un point de vue technologique et ça a souvent des répercussions géopolitiques
+sur notre quotidien, sur le progrès au social.
+Et donc la première révolution industrielle, elle date de 1784.
+D'un point de vue technique, elle a le textile, la métallogie ou les machines à vapeur.
+Ce qui est engendré la mécanisation par exemple de l'arriculture.
+La mécanisation de l'arriculture qui a, par exemple, engendré un exode rural,
+parce que finalement, les besoins en termes de main-d'oeuvre sont retrouvés maintenant plus dans les villes que dans les campagnes.
+Cette première révolution industrielle a également redessiné un peu la géopolitique,
+parce qu'elle a été favorable surtout à la rembretagne de la France et l'Allemagne.
+Et une autre chose qu'on peut dire, cette première révolution industrielle,
+il y a certains historiens qui vont même jusqu'à dire que l'évolution de l'estavage
+est elle-même une conséquence de la révolution industrielle, car finalement en mécanisant la main-d'oeuvre
+pour gérer l'arriculture, on avait moins besoin de personnes dans les champs.
+Nous avons une seconde révolution industrielle qui est arrivée en 1870.
+Donc celle-ci en fait, elle est née de l'arrivée de nouvelles énergies,
+qui sont le gaz, le pétrole, de nouvelles techniques, technologie,
+donc on a le moteur explosion qui a pu amener les avions, les voitures,
+l'arrivée de la chimie, l'électricité ou la sidémologie.
+D'un point de vue géopolitique, ça a permis aux États-Unis d'asseoir un peu
+une place prédominante dans le monde.
+Et d'un point de vue social, cette révolution industrielle a amené le thélorisme.
+Nous avons une troisième révolution industrielle qui est arrivée en 1969.
+Donc là, d'un point de vue énergie, elle a amené le nucléaire.
+D'un point de vue technique, technologique, elle a amené l'électronique, l'informatique et internet.
+Les produits de synthèse, tout ce qui est automatisation, l'hérospatiale.
+Et d'un point de vue géopolitique, ça a redessiné un peu les cartes,
+puisque le Japon avec les États-Unis et l'Europe, justement,
+se sont mis à jouer un rôle stratégique dans notre monde.
+Et enfin, le quatrième, qui est, maintenant, on a du mal encore à lui donner une date,
+vraiment, de début, qui est liée à de nouvelles techniques,
+technologie, donc en comment peut-il avoir l'intelligence artificielle,
+le big data, la réalité augmentée, l'impression 3D.
+D'un point de vue social, on peut déjà voir les impacts.
+Les entreprises sont un peu plus éclatées.
+Il y a beaucoup plus d'autos entrepreneurs.
+On parle même des fois d'uberisation de notre société,
+au technologie qui permet actuellement de le faire.
+Après, il y a toujours quand même une discussion pour savoir
+si nous sommes vraiment dans une quatrième révolution industrielle,
+dans le sens où on n'a pas de nouvelles énergies qui sont arrivées récemment.
+Peut-être qu'avec ITER, le projet de fusion nucléaire, ça arrivera.
+Et en termes de géopolitique, c'est également en cours.
+On peut voir que de grandes nations, comme la Chine,
+investissent énormément pour réussir à reprendre,
+à redessiner un peu les cartes de notre monde
+et prendre une place plus importante
+qu'aujourd'hui dans notre monde actuel.
+Et donc, je finis avec cette introduction
+pour dire que nous, on se retrouve dans la quatrième étape,
+où en fait, on est ici. Tout est encore à écrire.
+Enfin, l'avenir n'est pas encore décidé.
+Et justement, pour essayer de mieux faire respecter,
+peut-être, certaines valeurs que des gens peuvent avoir.
+Le but de cette présentation n'est pas parler de bien ou de mal,
+mais au moins de réussir à aller au bout de ce qu'on recherche,
+parce qu'on développe de nouvelles fonctionnalités,
+alglorisme ou besoin.
+Et si ça, c'est notre vision macroscopique maintenant,
+on a notre vision plus microscopique dans la suite,
+qui va être, quel va être l'impact, justement,
+de nos algos à une échelle,
+cette fois-ci, vraiment, du programme.
+Donc, le premier thème, ça va être l'impact éthique.
+Donc, pour en parler, je vais surtout prendre l'exemple
+des biais dans les données,
+mais pour rendre cette présentation accessible,
+je vais quand même rappeler ce que c'est
+un algorithme de machine learning supervisé
+pour comprendre l'impact des données dans un algorithme.
+Donc, un algorithme, c'est quoi ?
+C'est juste un programme qui prend une information en entrée
+et qui retourne une information en sortie,
+une information attendue.
+La méthode traditionnelle pour développer cet algorithme,
+celle que généralement on apprend
+en école d'ingénieur ou à l'université,
+c'est d'utiliser un langage de programmation
+pour définir explicitement que va faire cet algorithme.
+La méthode de machine learning supervisée,
+elle est un peu différente.
+Le but, c'est pas qu'un langage de programmation
+de définir directement ce que va faire cet algorithme,
+mais on va coder un algorithme intermédiaire
+qui va apprendre.
+Et pourquoi cette méthode ?
+Par exemple, les algorithmes qu'on n'arrive pas à effectuer
+avec un langage de programmation,
+on va réussir à déporter la complexité
+sur autre chose, et en particulier sur les données.
+Par exemple, dans l'exemple suivant,
+si je veux écrire un algorithme
+avec un langage de programmation
+pour différencier dans cette image
+un muffin avec un chien.
+En fait, c'est un problème très compliqué,
+mais on peut essayer de déporter la complexité
+en demandant un algorithme,
+un ensemble d'images pour lesquels
+sur certaines images on veut lui dire
+que c'est un muffin pour d'autres images,
+ou c'est un chien, pour, afin que,
+par optimisation mathématique, il soit capable
+de généraliser et d'avoir
+infiner tout en haut un programme
+qui permet vraiment de différencier
+un muffin et un chien.
+Donc, ça, c'est l'approche
+de machine learning
+de se superviser pour essayer de faire un algorithme.
+Et donc, cette approche-là
+l'a été utilisée par exemple par Amazon,
+qui va, justement,
+aller vers des conséquences. Amazon a eu
+une idée très simple pour essayer de réduire
+le temps consacré à traiter leur CV.
+Ils ont eu l'idée
+de faire passer les CV par un premier algorithme
+qui va filtrer en fonction
+des CV,
+enfin, des CV des employés
+d'Amazon. Ça veut dire qu'ils ont pris
+tous les employés d'Amazon, ils ont
+récupéré leur CV au moment de leur uprutement.
+Ils ont rempris
+un algorithme de machine learning
+de pouvoir différencier un CV
+qui ressemble au CV d'Amazon
+pour essayer de déterminer si, finalement,
+le candidat, enfin, il peut être intéressant
+ou pas.
+Donc, là, je le rappelle,
+l'idée, c'est d'aider les ressources humaines
+à embaucher le meilleur candidat,
+présélectionner un pourcentage à peu près
+des meilleurs candidats en fonction des mots.
+Et après, utiliser des informations qui sont dans le CV,
+comme les années d'expérience
+ou les connaissances générales.
+Donc, au premier abord, ce qui est intéressant
+dans cet exemple, c'est qu'on pourrait se dire
+qu'il est
+en fait, on a quelque chose de juste
+parce que, finalement, l'être humain n'est pas intervenu
+ici dans l'algorithme. On a juste pris
+des données qui représentent, justement,
+les employés d'Amazon.
+Cependant, en fait, ne pas toucher
+les données, c'est aussi de leur donner du biais.
+Parce qu'on s'est retrouvé avec une première conséquence,
+c'est que notre algorithme, il avait tendance
+à exclure tous les CVs où il y avait
+des femmes. Parce que, finalement,
+dans les développeurs au sein d'Amazon,
+c'était quasiment composé en majorité d'hommes.
+Donc, l'algorithme,
+il en a déduit quoi par rapport à son jeu d'entraînement ?
+Que, finalement, le profil idéal
+ce serait un homme.
+Donc, en fait, ne pas vouloir
+traiter la donnée pour l'apprentissage,
+on se retrouve avec des biais qui sont très forts
+et donc, un impact
+éthique, puisqu'on
+se... enfin, on évole une partie
+de la population sans raison valable.
+Au-delà de ça,
+on se doute qu'il y avait certainement
+des... enfin,
+il y a certainement des biais au niveau des ethnies
+du background social
+qui ont été engagés automatiquement
+par rapport aux CVs
+qui ont servi à l'entraînement de cet algorithme.
+Donc, je sais juste une petite remarque,
+mais c'est juste pour arriver qu'un algorithme
+n'est pas forcément juste. En fait, on lui fait
+un apprentissage à partir de données
+ou à partir d'une métrique qu'on peut optimiser.
+Une autre remarque, c'est qu'on pourrait se dire
+qu'est-ce qu'il faudrait faire pour que cet algorithme
+soit parfait, en quelque sorte,
+dans son recrutement. Et en fait, c'est très compliqué
+parce qu'il faut qu'on ait un équilibre
+parfait dans les données.
+Donc, ça veut dire un équilibre homfable,
+un équilibre en fonction du background
+social, un équilibre ethnique.
+Et finalement, peut-être qu'on va se retrouver
+à la fin avec pas de données
+ou très peu de données. Et même dans ces cas-là,
+peut-être qu'il y a un équilibre auquel on n'a pas pensé
+au moment de trier nos données et à ce moment-là,
+on se retrouve toujours avec un algorithme
+qui n'est finalement n'est pas éthique.
+Je vous propose un second exemple.
+Donc, cette fois-ci, c'est PredPol.
+C'est une entreprise américaine
+qui propose à des villes
+un algorithme pour prédire
+justement les crimes au sein de la ville.
+Donc, l'idée, elle est simple.
+C'est un algorithme de décision
+qui permet de dire aux policiers
+à quel endroit ils doivent effectuer leur ronde
+parce qu'il y a une fin de probabilité
+de criminalité qui devrait apparaître
+à ces endroits-là à un moment, à une perte de temps donné.
+Donc, ça se présente de cette manière-là.
+On a une carte sur la gauche
+qui est une hit-map,
+des lieux probables de crimes.
+Et à partir de l'historique,
+on détermine les zones
+sur lesquelles les policiers doivent faire leur ronde
+et doivent intervenir.
+Donc, au premier abord,
+cette méthode, elle semble aussi pertinente
+parce que finalement, on utilise un historique
+qui a une certaine innocence
+dans l'algorithme parce qu'on n'a pas l'impression
+forcément que le développeur ou l'être humain
+a volontairement créé des discriminations
+en faisant cet algorithme-là.
+Et en fait,
+l'entreprise en même temps
+n'a pas été accusée de discrimination
+ou quoi que ce soit, mais là, je relève
+justement de nombreuses réflexions
+aux articles qui sont sortis justement
+sur leur fonctionnement.
+Et on se rend compte qu'il y a beaucoup de difficultés
+par rapport à l'algorithme. C'est déjà très difficile
+de prédire si l'algorithme
+n'a été efficace ou pas.
+Ce que je veux dire, c'est que si finalement
+on demandait un policier de se rendre
+assis dans la ville, parce qu'il y a un risque de criminalité,
+s'il y a eu un crime,
+l'algorithme dira, grâce à moi,
+finalement, on a pu arrêter la personne
+et assister au crime qu'on avait prédit.
+S'il n'y a pas de crime,
+à ce moment-là, l'algorithme peut très bien dire aussi
+c'est grâce à moi, parce que grâce à la présence
+d'un policier à cet endroit-là, grâce à son intervention,
+finalement, il n'y a pas de crime
+sur ce secteur.
+Donc finalement, on s'entendait
+quelque chose qui est très difficile
+à donner du sens. Donc après, on peut se dire
+ces algorithmes-là, on peut leur donner du sens
+en ayant une vision toute globale, est-ce que
+globalement dans la ville, la criminalité
+a diminué.
+Justement, des études
+là-dessus, et ils se rendent compte
+qu'au final,
+la criminalité n'est pas forcément diminuée.
+Elle s'est juste
+déplacée au sein du territoire.
+On se retrouve en fait
+à avoir des interventions
+de police dans les zones
+où les gens ont plus tendance
+de porter peintes, ou du moins définir
+qu'il y a eu un crime dans leur secteur.
+Ce qui sont généralement liés à des zones
+qui sont peut-être plus riches, parce que dans des quartiers populaires
+où la criminalité est plus fréquente,
+ils auront moins tendance justement
+à annoncer la criminalité
+et à porter peintes pour des petits délits.
+Donc au final, on se retrouve
+avec un déplacement
+de la police dans ces zones
+où les gens ont tendance
+à dénoncer la criminalité.
+Et donc on se retrouve
+avec une criminalité,
+ou d'un point de vue statistique, elle diminue,
+mais
+par des études sur la ville
+d'un point de vue statistique global,
+en fait, elle reste assez constante
+et on a juste un déplacement
+dans certaines zones de criminalité.
+Et je reviens sur le troisième point aussi,
+c'est que dans leur algorithme,
+en fait, ils ne rendent plus pas leur données
+en fonction des personnes
+qui ont été jugées coupables,
+ils le font en fonction des personnes qui ont été arrêtées.
+Ce qui veut dire que
+si les policiers ont tendance
+à arrêter
+certains individus plus que d'autres,
+en fait, d'un point de vue statistique,
+l'algorithme va forcer justement à faire des rondes
+pour toujours gérer
+le même ensemble d'individus
+au sein de la ville.
+Voilà pour montrer un exemple.
+Et pour continuer
+en fait, sur le biais des données,
+je voulais juste montrer aussi que
+en fait, c'est un sujet
+qui divise vraiment la communauté
+et qui est énormément parlé.
+Et en fait, on peut voir la discussion entre
+Yann Leca, qui est un grand scientifique,
+c'est le président R&D de Facebook.
+Il y a en même temps, c'est
+un des précurseurs du deep learning
+qui est en discussion avec Timmy Grébault
+qui est une chercheuse d'éthique de Yann
+où
+l'importance est le biais des données
+justement, soulève toujours des grands débats
+et continueront à soulever.
+Dans la partie précédente,
+j'ai abordé l'aspect
+d'un point de vue éthique
+qu'est-ce qu'un algorithme peut avoir
+comme impact.
+Maintenant, je voulais apporter
+d'un point de vue sociétal quels peuvent être
+les impacts justement.
+Et je vais vous donner deux exemples.
+Le premier, c'est Facebook,
+que je pense que tout le monde connaît.
+Facebook, c'est un réseau social
+qui permet aux individus
+de communiquer entre eux,
+d'avoir des notifications.
+On estime qu'il y a environ 3 milliards d'utilisateurs
+qui se connectent chaque mois sur Facebook.
+Et en pratique, en théorie,
+le fonds de commerce de Facebook
+c'est faire de la segmentation marketing
+pour proposer des produits
+qui correspondent parfaitement
+à l'utilisateur
+et à ses besoins.
+Cependant, je vais vous parler
+d'une autre entreprise
+qui peut-être que vous connaissez, qui s'appelle Cambridge Analytica.
+Donc en fait, c'est
+une entreprise anglaise
+qui existait entre 2013
+et 2018,
+qui officiellement
+son rôle,
+c'est de faire de conseils de gestion.
+Et cette entreprise anglaise,
+en fait, elle a été jugée
+pour
+avoir récupéré plus de 87 millions
+d'informations d'utilisateurs de Facebook
+de données personnelles.
+Et également avoir utilisé ces données
+plein de fins différentes
+donc dont les plus connus
+sont d'avoir permis
+d'avoir contribué au fait que le Brexit
+soit accepté par les Anglais.
+Et le second, il serait accusé d'avoir aidé
+également Donald Trump
+à devenir président de l'Etat-Unis
+en ciblant des personnes particulières
+et en réussissant
+à orienter justement leur choix politique.
+Un autre exemple
+d'impact sociétal
+que peut avoir
+une intelligence artificielle,
+cette fois-ci on est toujours dans la collecte de données
+et
+là, j'aborde le GPA,
+c'est le social creative system
+qui existe en Chine. Donc en fait, l'idée
+elle est
+elle est un peu dans la mode actuelle
+quand on voit justement les outils de notation Google
+ou de plein d'autres applications,
+c'est facile de noter en fait
+et les choses qui sont pris en compte
+dans la notation des individus entreprise
+ça peut être le fait
+des dettes
+qui sont payées ou impayées,
+le fait d'avoir triché dans les examens,
+le fait de ne pas vous citer les chers,
+le respect de code de la route
+ou tout simplement
+l'attention qu'on peut porter à ses parents
+et à partir de ceci en fait
+l'idée ça serait d'avoir des impacts
+qui seraient par exemple
+l'augmentation du prix du transport public
+et l'accès à de grandes écoles pour les enfants.
+Donc s'il faut savoir
+c'est que ceci est en face de tests
+depuis 2018 en Chine,
+ce n'est pas encore mis en place.
+Je ne suis pas forcément là
+pour en juger mais en fait
+l'idée c'est de montrer
+qu'est-ce qui permet également l'intelligence artificielle,
+cette chose-là on ne pouvait pas le faire avant.
+Il y a une quantité astronomique de données
+à faire de remettre en corrélation
+ce qu'on peut actuellement faire
+et dans certaines sociétés
+ils vont certainement le mettre en place.
+Troisième impact
+que je vais vous présenter
+sur l'intelligence artificielle
+cette fois-ci c'est l'impact environnemental
+quelques statistiques pour le démontrer
+le premier c'est
+l'empreinte carbone
+qui est présentée dans ce tableau
+donc on peut voir qu'un trajet
+New York sans Francisco
+on est à 1988
+pendant pas le carbone
+la vie d'un être humain pendant un an
+on est à 11 000
+la vie d'un américain pendant un an
+qui est supérieur en est à 36 000
+et la vie d'une voiture
+incluant son essence on est à 126 000
+pendant pas le carbone
+et en fait si on étudie ça par rapport
+aux algorithmes de machine learning
+d'intelligence artificielle
+entraîner en fait un modèle NLP
+pour Natural Language Processing
+c'est un modèle qui permet de comprendre
+du moins le langage
+pour l'entraider
+enfin pour en utiliser un seul
+on est assez faible on est à 39
+mais finalement le fait de concevoir un modèle
+c'est-à-dire de faire des tonnes d'expérimentation
+pour avoir les meilleures îles par paramètres
+et le
+et le tuner c'est-à-dire réussir
+à le rendre
+le plus efficace possible
+ça demande des tonnes et des tonnes d'entraînement
+et là on monte facilement jusqu'à
+60 000
+juste pour développer un algorithme
+et pour un algorithme qui est plus important
+encore qui sert aussi pour la NLP
+qu'on appelle le Transformers
+donc déjà pour voir que
+un réseau c'est on est à 192
+mais que la conception
+d'une architecture
+on monte jusqu'à 626 en termes
+de consommation de carbone
+donc tout ça en fait ça englobe
+toutes les infrastructures machées
+qui sont utilisées et mises ensemble
+pour obtenir notre réseau à l'infini
+on peut
+on peut aussi essayer d'extrapoler
+est-ce que dans l'avenir
+on va avoir tendance
+à augmenter ces besoins ou pas
+donc pour les illustrer
+voici 4 benchmarks
+donc en fait un benchmark
+ce qui est sur la colonne de gauche
+c'est un jeu donné avec une tâche particulière
+qui lui est associée
+et l'idée c'est que sur internet
+on a un cours pour essayer de développer
+l'algorithme pour répondre au mieux
+à la tâche à partir du jeu donné
+qui est présent donc imaginette
+c'est
+en base de données à l'ensemble d'images
+et la tâche qui faut réussir à accomplir
+c'est essayer de deviner quelles sont les objets
+des éléments qui sont présents dans une image
+donc actuellement le taux d'erreur
+il est de 11,5% on peut voir
+les ressources en gigaflote
+et l'empreinte carbone que ça demande
+pour avoir ce résultat-là
+un second jeu de données sur la MS Coco
+qui permet à partir d'une image
+faire de la segmentation, c'est à dire réussir
+à extraire précisément des éléments clés
+au sein de l'image
+nous avons un troisième jeu de données
+qui est le squad 1.1
+donc là c'est du question answering
+c'est à dire que c'est un jeu de données
+on a des questions d'utilisateurs
+avec des réponses attendues
+et pareil ici c'est essayer de faire le meilleur algorithme
+pour de nouvelles questions données
+on obtient la réponse souhaitée
+donc là c'est un jeu de données
+de phrases traduites entre l'anglais et le français
+et l'idée c'est essayer de faire
+la meilleure traduction possible
+et on est à 4% d'erreur
+alors je crois qu'il y a une erreur en fait
+on est à 54% d'erreur
+j'ai une erreur dans ma slide
+et donc si on se projetait
+pour essayer d'avoir un taux d'erreur beaucoup plus faible
+par exemple pour ImageNet
+au lieu d'avoir 11,5% d'erreur
+on essaie d'avoir 1% d'erreur
+en fait on se rend compte que
+par rapport aux ressources nécessaires
+pour arriver à 1%
+il faudrait faire
+fois 10 puissance 14
+en termes de coûts d'environnement
+d'empreinte carbone pour réussir à ce score
+pareil pour MS Coco
+si on veut arriver jusqu'à 10%
+on est obligé de faire fois 10 puissance 28
+pour le squad on est
+fois 10 puissance 6
+et pour le WMT 2014
+on est à 10 puissance 31
+donc autant dire que l'empreinte carbone
+est énorme dans ces cas-là
+et le souci c'est que
+finalement l'empreinte carbone
+là on a parlé de l'apprentissage
+en fait c'est les étapes de création d'algorithmes
+enfin de modèle, l'empreinte carbone
+pour créer un nouveau modèle pour répondre
+à des besoins ou développer des nouveaux algorithmes
+mais finalement
+une fois que l'algorithme est créé
+c'est pas là où l'empreinte carbone a été le plus important
+c'est
+l'empreinte carbone dans la vie d'un algorithme
+80 à 90% d'empreinte carbone
+il sera surtout dépensé pour l'inférence
+c'est à dire pour
+l'utilisation ou l'application de ce modèle
+qui a été généré
+autant dire que l'impact
+environnemental peut être très important
+je fais quand même quelques slides pour dire que
+on peut avoir des solutions
+souvent c'est des solutions un peu de bon sens
+la première il existe des outils
+d'essayer de prédire l'empreinte carbone
+de développement d'algorithmes
+ou des fois c'est un peu transparent
+enfin c'est pas très transparent
+les hardware
+qui est disponible sur des providers comme
+AWS ou Azure
+et il existe des outils
+en fait pour faire une estimation
+de l'empreinte carbone qui va engendrer
+le fait d'utiliser cette plateforme
+pour développer de nouveaux modèles
+d'autres choses qui sont un peu du bon sens
+pour réduire l'empreinte carbone
+c'est finalement quand on a créé un modèle
+on peut le réexploiter pour d'autres tâches
+on n'est pas à chaque fois obligé de repartir de zéro
+pour créer un nouveau modèle
+l'exemple pour ceux qui ne connaissent pas
+il faut voir le premier graphique du dessus
+ou finalement on a créé un modèle
+pour essayer de différencier certains animaux
+comme le panda ou le racoon
+et si j'ai besoin d'avoir un modèle
+pour retrouver, pour différencier des chiens et des chats
+je vais pas partir d'un réseau de neurones vides
+je vais partir du réseau de neurones précédents
+pour développer
+et je vais le spécialiser
+c'est-à-dire que je vais refaire un petit entraînement
+avec de nouvelles données
+pour éviter de repartir de zéro
+et là en fait l'algorithme apprend
+le modèle apprend beaucoup plus vite pour sa tâche
+et si il apprend beaucoup plus vite
+ça veut dire qu'on utilisera beaucoup moins de ressources
+pour être développé
+voilà pour l'empreinte environnementale
+et une autre chose d'autre impact
+que peut avoir l'intelligence artificielle
+quand on développe
+l'interaction utilisateur
+donc j'ai deux exemples à montrer
+pour ses spécificités un peu
+qu'il peut avoir lié sur l'usure interaction
+donc le premier c'est un algorithme
+qui a été développé à Esquire
+c'est la version 1 de la découpe de l'autre facture
+donc en fait
+au sein d'Esquire, certains clients, surtout des clients français
+ils reçoivent en fait des factures parcouries
+une fois qu'ils ont l'ensemble des factures
+ils vont les scanner ensemble
+ça génère un énorme PDF
+qui est une concatenation de l'ensemble des factures reçues
+ensuite elle s'est envoyée sur la plateforme
+et sur la plateforme
+il y a un utilisateur qui va de nouveau regarder
+sur l'autre facture et redécouper ce lot
+pour dire de la page 1 à 2 il y a une facture
+la page 3 c'est une facture toute seule
+la page 4 c'est une nouvelle facture pour que les factures
+puissent être traitées de nouveau indépendamment
+donc pour ça Esquire propose une interface
+pour ces utilisateurs
+la tâche n'est pas assez évidente
+parce qu'une facture ça peut faire entre 1 et 15 pages
+donc automatiser en fait la découpe
+automatique de
+de l'autre facture n'est pas une tâche facile
+et donc à Esquire on a répondu
+à cette question à partir d'un algorithme
+de deep learning
+donc la tâche en allemande c'est à partir d'un autre facture
+on passe à cet algorithme et ils nous retournent
+l'ensemble des factures prédécoupées
+ou par exemple Invoice 1 c'est vraiment
+la page 1 et la page 2 de la facture
+Invoice 2 c'est uniquement la page 1 de la seconde facture
+et ainsi de suite
+et pour ça on a utilisé une solution assez simple
+c'est une fenêtre glissante qui prend 2 pages consécutives
+on les passe dans un réseau de neurones
+un réseau de deep learning
+et en retour ça nous retourne
+une valeur comprise entre 0 et 1
+et si la valeur est superbe à 0,5
+ça veut dire qu'il faut qu'on découpe ces pages
+si elle a faillé à 0,5 ça signifie qu'il faut pas les découper
+ces 2 pages consécutives d'une même facture
+et en fait on était assez satisfait de notre algorithme
+pourquoi ? parce que déjà
+c'est la marche en production, c'est rapide
+c'est efficace
+on obtient 93%
+de bonne décision
+et en plus, comme on sait qu'on a pas 100%
+et même le 100% est inatteignable
+mais bon pour d'autres raisons
+en fait
+au client, on ne lui impose pas une prédécoupe
+d'un point de vue interface
+on lui propose l'autre facture déjà découpée
+et lui, avec la molette, il peut corriger
+et valider
+dans le but d'avoir le moins d'actions possibles à faire
+parce qu'on pense que le nombre de corrections est inférieur au fait
+de devoir tout redécouper
+l'ensemble du vote facture
+donc au premier abord, notre algorithme
+il semble seduisant
+et pourtant, pour certains clients
+ils ont demandé de le retirer
+pour une raison assez inattendue
+c'est que
+quand l'algorithme se trompe
+il peut se tromper sur des
+deux factures consécutives qui sont complètement différentes
+en fait, l'apprentissage a été fait
+à partir de données, il n'a pas été fait par un être humain
+donc, quels sont pour l'algorithme
+les éléments discriminants qui lui permettent
+de savoir s'il doit
+découper de pages consécutives
+ou pas, on sait pas
+et le problème
+c'est que dans les 7% de cas
+où il y a une erreur, où l'algorithme se trompe
+il doit y avoir dedans un tout petit pourcentage
+où il se trompe
+avec deux factures qui pour un humain
+c'est une évidence qu'il faut découper
+mais lui, il n'a pas découpé
+et le fait que
+l'utilisateur final, finalement, n'est pas conscience
+de comment fonctionne l'algorithme
+il a l'impression que ça a été mal programmé
+ou du moins, ça a été mal pensé
+et donc, il perd confiance
+en la fonctionnalité
+alors que la fonctionnalité est
+parfois meilleure qu'un être humain
+il y a des fois où un être humain, il faudrait une heure des 5 ou 6 secondes
+pour faire le bon choix
+l'algorithme le fait tout de suite immédiatement
+le fait qu'on utilise les données
+pour construire des algorithmes
+et qu'on n'a pas
+cette attraction fait par un être humain
+en utilisant un langage de programmation
+on se retrouve avec des comportements
+qui sont différents
+parce qu'on n'utilise pas entre
+le développement d'un être humain
+et l'optimisation par des données
+par des données par l'entraînement
+sont différentes
+et donc, c'est juste une remarque
+quand on sort un algorithme
+il faut toujours essayer d'avoir conscience
+des connaissances un peu techniques
+du utilisateur final
+pour qu'un utilisateur qui sait comment fonctionner
+l'algorithme de machine learning
+il va dire ici, il a utilisé un discriminant
+en termes de score
+ça reste acceptable donc
+pour moi je peux garder, c'est pour ça que le nombre de clients
+qui ont retiré la fonctionnalité était faible
+mais c'était des personnes qui perdaient conscience
+à l'algorithme
+parce qu'elle avait l'impression
+que le fonctionnement était incorrect
+je propose un autre exemple
+d'interaction utilisateur
+qui est un peu mal tourné
+donc c'est en mars 2016
+Microsoft sort une intelligence artificielle
+qui il a appelé TAI
+donc l'idée
+c'est que cette intelligence artificielle
+et on peut interagir avec elle
+à partir des réseaux sociaux
+et l'objectif de Microsoft c'était que
+l'interaction qu'aurait l'intelligence artificielle
+avec des êtres humains à partir des réseaux sociaux
+nous permettent
+de devenir quelque sorte plus intelligent
+ou de se confondre
+avec un utilisateur qui serait humain
+et c'était mal pensé pour Microsoft
+parce qu'au bout de 24 heures
+juste une journée Microsoft a stoppé le service
+parce que l'intelligence artificielle
+commençait à avoir des discours
+non recommandables en fait
+avoir des discours un peu nazistes
+nazis, légèrement fascistes
+et en fait c'était tout simplement
+parce que les attentions des utilisateurs
+à partir des réseaux sociaux
+il faut avoir conscience que des fois
+c'est des jeunes qui veulent juste s'amuser
+et on réussit à influencer
+justement ce que l'algorithme
+a appris de ces interactions
+et donc j'ai juste fait une petite remarque
+mais c'est vrai quand on développe un algorithm
+il faut quand même toujours avoir conscience
+des intentions que peut avoir l'utilisateur final
+voilà pour les différents impacts
+présentés
+je finis pas de conclusion
+j'avais pas forcément
+d'idées pour la conclusion
+je voulais rappeler que l'intelligence artificielle
+est encore une technologie nouvelle
+et comme toute technologie nouvelle
+il y a des déceptions par rapport
+à ce qu'on peut faire
+et je pense qu'il faut prendre du temps
+pour en connaître les conséquences
+et pouvoir les maîtriser
+pour qu'à la fois on obtient un algorithm
+qui correspond vraiment
+à ce qu'on voulait au départ
+et partage des valeurs que pourraient avoir
+les personnes qui la conçoient
+et j'ai parlé un peu
+de choses un peu négatives
+sur l'intelligence artificielle
+juste pour dire d'un point de vue positif
+on peut essayer de faire en sorte
+qu'il y a un moyen
+de résoudre les principaux problèmes de notre temps
+qui sont l'écologie
+la santé
+ou les égalités sociales
+tout simplement
+en maîtrisant ce qu'on fait au sein des algos
+voilà pour ma présentation
+merci à tous
+et si vous avez des questions
+n'hésitez pas
+merci
+c'était très clair
+il y a un peu
+d'épaule
+merci
+merci et je vais mettre un peu de recue
+sur cette technologie
+c'est vraiment
+excellent
+et je voulais te dire
+oui comme tu l'as dit
+si des personnes ont des questions
+n'hésitez pas à les poser dans notre chat Twitch
+et j'ai aimé se faire un plaisir

@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science : 7 conseils pour d\u00e9marrer avec Spark", "keywords": ["Spark", "data engineering", "user behavior", "diamond prices", "Scala", "testing", "IDF", "SQL", "resource allocation", "performance"]}

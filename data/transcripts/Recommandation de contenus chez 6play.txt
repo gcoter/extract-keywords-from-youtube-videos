@@ -1,0 +1,1419 @@
+Bonsoir tout le monde.
+Merci d'être venu aussi nombreux, c'est le premier nouvel événement
+de l'Union d'Attention depuis le début de cette année.
+Donc c'est cool de voir autant de monde.
+Pour commencer cette année on a un super thème, du coup
+sur la recommandation de contenu pour Sisplay.
+Donc je vais laisser la parole à toute l'équipe Bedrock
+pour faire une sure présentation. Et juste un petit mot avant de commencer.
+À la fin de la présentation on va commander des pitas, des boissons.
+Si vous êtes déjà venu vous avez l'habitude.
+Le but c'est qu'on en profite aussi un peu à la fin pour discuter cinq minutes.
+Donc voilà, je vous laisse la parole.
+Ok, alors bonsoir, ce qui n'en a pas du bonsoir.
+Et du coup effectivement on va vous présenter notre travail chez Sisplay.
+Parce qu'en fait on est trois personnes, quatre personnes ici
+dans les gradients de l'équipe personnalisation de Bedrock.
+Donc je m'appelle Nastasia et je suis tech lead dans l'équipe.
+Du coup moi c'est Thomas et je suis data ingénieur en alternance
+dans l'équipe depuis à peu près un an.
+Bonjour à tous, moi c'est Benjamin, je suis data scientist dans l'équipe
+depuis deux ans.
+C'est parti, on va commencer par une petite présentation un petit peu du contexte
+de la boîte dans laquelle on travaille qui est Bedrock de Sisplay.
+Quel lien en fait avec Sisplay que j'imagine que vous connaissez
+mais sinon c'est le replay de la chaîne M6, on en discutera
+et on vous présentera un petit peu l'architecture.
+Alors Bedrock, qu'est-ce que c'est Bedrock ?
+Bedrock en fait c'est un créateur de plateforme de streaming, B2B, B2C.
+En fait initialement on est M6 web et puis on est devenu Bedrock.
+Donc ça fait longtemps qu'on s'occupait de du replay de M6 avec Sisplay
+et en fait on a plein de plateformes, plusieurs plateformes qui sont venus rejoindre
+comme Salto qui est peut-être un peu connu en France,
+qui est une plateforme qui a été fait en France télévision M6
+et puis après il y en a des moins connues mais qui sont quand même connues
+dans leur pays, je pense, à Vidéoland par exemple
+qui est hyper connu en Hollande, mais nous effectivement on ne connaît pas.
+Voilà, donc il y a plusieurs plateformes de streaming.
+Donc en fait du B2B, B2C, qu'est-ce que ça veut dire ?
+Ça veut dire que grosso modo on a deux exigences.
+On a à la fois les end-users, donc le classique B2C,
+donc c'est un petit peu tout le monde,
+est-ce que les personnes qui regardent sont satisfaits et puis à le côté B2B
+parce qu'en fait finalement et bien Salto c'est aussi notre client.
+Sisplay c'est aussi notre client.
+Donc en fait c'est cette notion-là de B2B, B2C.
+Alors en quelques chiffres, voilà, on a 7 plateformes, 5 pays
+et en tout 45 millions d'utilisateurs et utilisatrices.
+Sisplay, alors Sisplay c'est vraiment la plateforme
+qu'on développe à l'origine avec M6Web.
+Bon grosso modo ça ressemble à ça.
+Là je vais vraiment prier la page d'accueil.
+C'est le replay des chaînes du groupe M6,
+donc il y a M6 qui est assez connu,
+du groupen off par le premier.
+J'ai présenté juste un petit peu l'architecture.
+Juste en fait c'est pas pour vous souler avec toute l'architecture de la boîte,
+c'est juste pour vous donner quelques bidentrés
+qui vont servir après dans la présentation.
+Grosso modo on travaille sur AWS,
+donc notre cloud provider,
+et en fait on a nos clients dans différents comptes.
+On a un compte partagé avec Sisplay, la plateforme angloise,
+on a une pour Videoland, une pour Salto,
+donc du coup en fait on a une infra qui faut répliquer à chaque fois.
+Donc il y a un fort enjeu de justement pas la répliquer à la main
+ou de manière un peu artisanale,
+donc on utilise beaucoup terraformes
+qui va faire le lien avec AWS
+et qui va nous permettre de mettre en place toute notre infra.
+On utilise tout un tas de services,
+on reviendra dessus,
+mais juste pour mettre au contexte,
+donc on utilise Python,
+comme j'imagine beaucoup de monde en data,
+Spark pour tout ce qui est pré-processing,
+Databricks pour faire tourner un petit peu tout notre job
+et puis Airflow pour orchestrer le tout.
+Donc pour les objectifs,
+donc du coup on nous a fixé des objectifs à la création de l'équipe,
+donc pour le coup déjà pourquoi on va faire de recombination,
+tout simplement parce que nos clients,
+donc tout ce qui est M6, Salto,
+souhaiter qu'on leur fournisse un système de recombination,
+donc c'était l'une des principales raisons
+et l'autre raison aussi c'est que
+en général dans les plus grandes plateformes de services VOD,
+actuellement ont déjà un service de recombination
+et du coup le but c'est quand même d'essayer
+de faire une plateforme qui peut les égaler,
+voire même être meilleure qu'elle.
+Je comprends qu'en bas ça a été,
+c'est ce qu'on a actuellement
+sur la plupart des utilisateurs,
+on s'est extrait qui est du coup un blockchain pour l'avoir,
+et ça proponder pour vous avec
+des programmes en fonction de leur consommation.
+Donc il faut savoir que la recombination,
+beaucoup de gens n'aiment pas trop ça,
+mais il y a eu plusieurs rossondages
+qu'on a fait en 2021,
+c'est par des organisés externes du coup,
+et qui ont montré que la plupart des gens
+en fait souhaitaient avoir des recombinations,
+des programmes sur la plateforme,
+même des meilleures recombinations
+pour rester sur la plateforme,
+parce que pour la plupart
+ça pouvait les aider à trouver
+un contenu qui souhaitait regarder,
+et que même certains étaient prêts
+à donner plus d'informations
+si ça leur permettait d'avoir
+une meilleure recombination.
+Donc le plan,
+la stratégie qu'on a eu
+quand on a créé l'équipe,
+ça a été de faire deux étapes.
+Tout d'abord la première étape,
+c'était d'utiliser Personalize,
+d'AWS.
+Personalize, un service AWS
+recombination assez facilement,
+et du coup c'était la première étape qu'on devait faire
+pour pouvoir sortir quelque chose
+en production assez rapidement.
+Et ensuite,
+en parallèle de ça,
+faire notre système de recombination
+homemade, donc personnel,
+et créer à terme notre propre service de recombination
+pour pouvoir se détacher de ce service
+et pouvoir un peu plus personnaliser
+nos services et ce qu'on peut faire avec.
+Ok, donc vous l'avez compris,
+nous on utilise Personalize,
+et donc je vais vous expliquer
+en fait comment ça fonctionne,
+et après on fera un petit retour
+sur l'outil.
+Donc, je vais vous donner
+quelques éléments de vocabulaire.
+Donc déjà, il y a plusieurs éléments
+dans Personalize, la première chose
+c'est le data set goût.
+Alors le nom est un peu étonnant parce qu'on pouvait s'attendre
+avant un truc sur un jeu de données.
+Au final, c'est juste une ressource qui contient
+la vocabulaire juste après.
+Ensuite, on a les data sets.
+Les data sets, c'est les jeux de données
+qui nous permettent de constituer la recommandation.
+On a la solution, c'est vraiment le modèle
+en tant que tel, le modèle de machine urnaud.
+La campagne, c'est la surcouche en fait
+qui va venir se poser sur la solution
+et qui va nous permettre de requêter le modèle.
+Et pour finir les filtres,
+en fait les filtres c'est juste en gros
+les faits qu'on va appliquer
+sur les recombinations qu'on reçoit,
+par exemple pour dire en fait
+on ne veut pas de contenu de la chaîne W9
+ou bien que des contenus de la chaîne M6.
+Pareil.
+Donc là, vous avez un exemple inscrit
+de ce que c'est qu'un data set group
+sur personalize, enfin sur AWS.
+Donc là, nous on en a le deux,
+enfin pour différents calculs
+de toute complétion, bref, c'est pas important.
+Et donc là, quand vous avez cliqué dessus,
+vous allez arriver sur un ensemble de pages
+et notamment du coup sur celles des data sets.
+Et donc la data set, si vous voyez,
+il y en a trois, il y a les interactions,
+il y a les items.
+Donc les interactions, c'est un jeu de données
+qui est obligatoire, on ne peut pas s'en passer.
+En revanche, le data set des users
+et des items, on va le détailler juste après,
+mais vous pouvez vous en passer, c'est pas quelque chose
+qu'il y a obligatoire.
+Donc pour revenir en particulier
+sur chacun des jeux de données,
+donc vous allez dans le jeu de données
+interaction, les informations qui concernent
+les interactions en tant que telle.
+Donc le numéro du programme, l'identifiant,
+l'identifant du client, le timestamp
+et les mesures explicites
+ou implicites de l'intérêt
+que porte l'utilisateur pour le contenu.
+Donc par exemple, ça peut être un like,
+enfin ça peut être le nombre de likes,
+ça peut être le nombre de complétions,
+donc c'est ce qu'on a de la complétion,
+le nombre de clics, le nombre de secondes par exemple.
+Cette mesure
+d'intérêt, elle n'est pas obligatoire.
+Donc vous pourriez mettre juste par exemple
+juste le numéro d'identifiant du programme,
+ainsi que celui du user, et ça suffit à personne à l'aide.
+Dans le data set item,
+je rappelle qu'il n'est pas obligatoire,
+mais si on le met, on doit
+bien sûr mettre le numéro
+du programme, l'identifiant.
+Et ensuite on peut rajouter plein d'informations
+sur le device par exemple, sur la plateforme,
+sur plein de choses qui concernent
+vos activités.
+Et ensuite sur le data set user,
+d'une façon que sur le data set item,
+vous pouvez mettre plein d'informations qui ne sont pas obligatoires,
+mais vous pouvez être là, etc.
+Donc ça c'est la solution,
+ici on a 4 solutions,
+et en fait chaque solution est rentrée de fin.
+Une solution est rentrée par semaine,
+grâce à Airflow.
+Donc ça c'est vraiment la partie modélisation,
+c'est le modèle
+de machine learning qui est entraîné ici.
+Et en fait vous avez plusieurs types
+de solutions que vous pouvez entraîner
+en fonction de votre besoin.
+Donc nous on est sur le premier truc, c'est user personnalisation,
+c'est de la recommandation un peu classique.
+Ensuite vous avez plusieurs autres
+façons de recommander de la contenue.
+Par exemple le popularity count,
+ça permet en fait de faire un top 10 par exemple de programme,
+comme vous pouvez le trouver sur Netflix.
+Le personalized ranking
+permet en fait de
+donner à personalized
+une liste de contenu qui va être ordonné.
+Donc par exemple vous n'avez pas tout le catalogue,
+vous voulez juste ordonner 10 programmes,
+il va vous les ordonner pour vous.
+Et ensuite le item to item,
+c'est juste de la recommandation de contenu similaire.
+Donc vous avez consommé un contenu,
+on va vous recommander un contenu qui est proche,
+qui va passer à votre historique de consommation.
+Donc là je vais passer rapidement,
+mais vous avez 3 ou 4 paramètres que vous pouvez
+modifier dans le personnel aïe.
+Donc voyez c'est pas énorme
+et en tant que data scientist du coup c'est plutôt limité.
+C'est pas l'intérêt en fait de l'outil,
+l'intérêt c'est d'avoir un truc
+managé.
+Mais donc en gros vous avez des paramètres
+pour choisir l'étendue de l'historique
+de l'utilisateur.
+Est-ce que vous mettez plus ou moins de poids
+de tendance récentes,
+ce genre de choses.
+Et du coup après vous avez la campagne.
+Donc la campagne c'est comme je disais la sur-couche
+qui va venir se mettre sur la solution
+et qui va vous permettre de requetter
+cette solution, donc le modèle.
+Ici vous voyez en fait dans l'interface on peut mettre
+un username et en dessous ça nous propose
+un ensemble de recommandations.
+Et là vous voyez il y a un truc qui s'appelle
+des fibres et on va en parler juste après.
+Donc là dites-vous que ça c'est juste une sur-couche
+qui nous permet de requetter le modèle.
+Là l'identique de la solution a des paramètres
+qui sont plutôt en gros
+utiles pour explorer
+plus ou moins le catalogue.
+C'est-à-dire que vous voulez par exemple éviter
+que l'utilisateur se retrouve dans des bulles
+qui soit tout le temps, qu'on lui recommande tout le temps
+le même type de programme, vous allez pouvoir mettre
+en fait un critère d'exploration du catalogue
+plus élevé.
+Maintenant sur les filtres,
+donc ça c'est hyper important, c'est une des forces
+de personalize, c'est qu'en fait ça va faire
+des filtres à la volée. Donc par exemple
+pour un utilisateur en particulier
+il lui donnera un certain nombre de filtres
+donc par exemple pour nous ça serait
+sur tel type de device, donc par exemple tablette
+et la personne est sur la page
+WV9 et donc là on lui raconterait
+que des contenus qui sont effectivement
+que sur tablette et que
+sur WV9.
+Donc si je résume, on a du coup
+trois autres données, interaction user items,
+ces deux étant facultatifs,
+on entraîne une solution, on crée une campagne
+qui va permettre en fait de requetter la recommandation
+on a des filtres obligatoires
+enfin pas facultatifs
+et après on demande
+une recommandation et en sortie
+on a du coup un table en fait
+qui contient les scores et disons de différents
+de programmes, ce qui nous permet en fait de faire
+de la recommandation. Donc tout ça est organisé
+et orchestré par Karek.
+Donc voilà, Ben nous vous a présenté
+une boutique personnellise
+et on vous propose à présent un petit
+retour sur cette boutique.
+Donc en fait, est-ce que
+ben c'est un petit qui est fait pour vous
+ça dépend
+si en fait vous avez besoin
+d'une recommandation de contenu
+que voilà vous n'êtes pas forcément
+expert, vous n'avez pas forcément envie de gratter
+dans tous les trucs d'un modèle
+ben c'est
+plutôt pas mal
+parce que ben c'est un service qui est
+managé dans AWS, donc
+ça dépend de votre cloud provider
+mais typiquement ben
+ça marchait bien
+donc on a pu l'utiliser de cette manière-là
+les performances
+sont plutôt bonnes en fait
+on en discutera un peu plus
+mais
+déjà on voyait avant même
+de pouvoir le mettre
+à destination des end-users
+la scalabilité
+que le mot difficile est très bonne
+c'est-à-dire que
+en fait
+l'outil n'est jamais tombé
+peu importe les personnes
+qu'il y a sur la plateforme
+donc voilà, là aujourd'hui
+on l'a déployée à 50%
+on n'irait pas plus loin
+on n'explique pas pourquoi
+mais donc du coup 50% de disciples
+c'est quand même
+et ça tient
+il n'y a pas de problème
+les temps de réponse aussi sont très
+bons puisqu'on est de l'ordre
+de 35 secondes
+par exemple c'est un bémol c'est que c'est en Irlande
+donc on se paye
+le coût de le rapatrier
+à Paris
+donc en fait on met double de temps
+que ça réarrive mais en soi
+l'outil répond
+plutôt pas mal
+il y a très peu d'erreurs
+voilà donc en fait on peut avoir
+les 400-500 qu'on a
+et en fait on en a 4 ou 5 par mois
+donc autant dire qu'en fait c'est
+un projet
+qu'on a maintenant
+c'est quasi nul
+donc c'est plutôt intéressant pour ça
+mais
+forcément il y a des trucs qui sont
+moins intéressants dans l'outil
+donc voilà je disais
+au début que terraforme pour nous c'est
+super important et ça venait
+sans provider terraforme
+alors bon en vrai il faut
+prendre avec un bémol parce qu'en vrai
+terraforme on pourrait très bien
+développer quelque chose en open source
+c'est tout à fait possible pour que
+ça marche à réclotier
+bon c'était pas notre souhait pour d'autres raisons
+c'est pas une white box d'itou
+et ça c'est l'un des éléments
+d'un de ceux qui nous embête le plus
+c'est à dire qu'AWS
+ils vont vous donner
+un éclé de ce qu'il y a
+à l'intérieur mais par définition
+c'est un service manager donc on ne savait pas
+en temps réel j'ai envie de dire
+ce qu'il y a derrière
+c'est plus difficile de faire de la recommandation
+explicite ou ce genre de choses
+après c'est pas forcément le but
+mais nous ça nous a mis un peu
+en une gestion fine des coûts
+c'est à dire que forcément c'est un service
+mal âgé donc il y a un coût qui vient
+vous avez quelques paramètres sur lesquels
+vous pouvez jouer et après c'est un coût fils
+c'est pareil c'est aussi apprendre avec
+des bémols parce que ma mine de rien
+personnalise pas besoin
+il y a quand même une équipe derrière
+il y a quand même fallu de dev
+mais il n'y a pas forcément besoin
+d'une équipe de maintenance qui est assez
+importante alors que maintenant pour faire
+notre propre roco l'équipe elle est
+quand même plus conséquente
+il y a des personnes qui fournissent la
+donnée en amont il y en a
+qui exposent
+assinotermis donc voilà
+ça dépend
+ce qu'on peut
+je pense le point le plus important
+dans notre contexte forcément c'est
+un service mal âgé il y a quelques paramètres
+mais ça s'arrête là et
+nous en fait on a besoin d'aller
+loin la recommandation
+de contenu c'est qu'une première
+phase
+de ce qu'on veut faire et du coup on a
+besoin de beaucoup plus de flexibilité
+et par exemple il y a aussi ok on a
+des filtres mais les clients
+ils ont souvent besoin
+de booster des produits
+pour avoir des règles de gestion
+un peu plus complexe et avec un
+cheat comme personalized c'est un peu
+plus compliqué à mettre en place
+au final
+nous dans notre cas
+on décide d'arrêter
+personalized
+mais c'est surtout un choix
+d'organisation où on a fait le choix
+d'avoir une équipe vraiment dédié
+à ça et de
+faire plein de choses et puis on est
+une plateforme de streaming
+comme tu l'expliquais de tout à l'heure
+c'est un peu difficile de pas faire
+de recommandation et de pas proposer
+des produits comme la recommandation
+et plein d'autres choses qui vont avec
+des recommandations explicites
+etc
+alors on a vu
+personalized
+je vous propose de voir comment
+lancer ce système
+ok donc on parle de personalized
+du coup on a quand même personalized
+et il a quand même fallu l'évaluer
+donc là les choses que je vais vous présenter
+ça va être les métriques qu'on a utilisé
+pour évaluer le modèle à la fois offline
+online et après on discutera
+des limites de nos métriques
+ce que je vais dire là est vrai aussi pour les modèles homemade
+qu'on a fait nous-mêmes
+donc pour commencer sur la métrique offline
+donc
+manière classique en fait
+en recommandation d'un besoin de métriques de ranking
+pour évaluer la capacité de notre modèle
+après dire des bonnes recommandations
+donc on a un truc un peu classique
+dans les papiers de recommandation
+ça s'appelle le NDCG
+il y a par exemple le MRR
+bon bref il y en a plein
+nous on bosse principalement avec le NDCG
+donc le score de NDCG va entre 0 et 1
+ou sur Personnala ils ont la 0,75 et 0,70
+je vais essayer de vous expliquer
+comment ça fonctionne avec ces 3 tableaux
+alors disons que
+ça c'est la consommation
+d'une personne qui a du coup
+consommé et ça c'est la toute compression
+qui est consommée à 94%
+et après d'exclusive à 87%
+et vous laissez voir pour les autres
+on aimera en fait dans une position idéale
+dans une recommandation idéale
+recommander cet ordre précisément
+donc ça c'était le top
+ça c'était la position idéale
+maintenant si notre modèle de recommandation
+il n'arrive pas à faire ça
+il va proposer d'être les parseillés en deuxième position
+et en fait notre NDCG va descendre
+donc on n'a pas 1 bien sûr
+comme on pourrait la voir ici
+donc c'est une erreur de mettre
+le programme le plus pertinent
+en deuxième position
+donc on va le sanctionner pour ça
+la même manière en fait vous voyez
+si notre modèle n'arrive vraiment pas
+à bien recommander par exemple les marseillais
+qui est le contenu le plus consommé
+et qu'il est mis en attendant de l'imposition
+donc on va avoir un NDCG très faible
+donc en gros le NDCG se base vraiment
+sur le rang et sur la pertinence
+vis-à-vis de la personne qui la regarde
+donc on utilise vraiment cette métrique
+pour personnaliser donc ça personnalise
+nous offre cette métrique et nous on l'a implémenté
+sur nos avos pour obtenir du coup le NDCG
+cette fois qu'on mesure les performances
+donc ça c'est quand en fait on est en offline
+donc avant de mettre en production notre modèle
+notre recommandation
+avant que ça arrive sur les plateformes de streaming
+on le teste en fait en interne
+enfin en offline et après on arrive du coup
+en industrialise
+et du coup en pouvoir mesurer en fait
+les performances en live en gros
+donc pour ça en fait on utilise ce qu'on appelle
+pour l'expliquer rapidement en fait
+on va avoir deux populations
+une population témoin et une population
+dans laquelle on va appliquer une variante
+là nous dans notre contexte
+le témoin c'est sans recommandation
+et la variante c'est avec recommandation
+et on va chercher à voir en fait
+sur une ou plusieurs métriques
+s'il y a des différences
+en fonction des populations
+donc pour résumer nous on a fait un lab test
+on a fait 50% de la population
+en fait on a un million d'exposés
+ce qu'on regarde
+c'est qu'on observe
+c'est qu'il n'y a pas de différences
+en tout cas les performances sont similaires pour les deux populations
+sur une métrique on n'en rendra que ça
+qui s'appelle le viewing time
+ce qu'on observe en 2-3 mots c'est
+que la strata est positionnée en haut de la page
+donc ça c'est important parce que ça va
+jouer sur le fait que les gens cliquent le nom
+si on a la strata en haut
+on n'a pas observé de baisses de consommation
+et ça reste dans le top
+des strata les plus cliqués
+c'est le bord d'euro de recommandation
+quand on arrive sur la plateforme
+pour revenir sur la métrique
+le viewing time c'est une métrique
+qui est implémentée chez Bedrock et que beaucoup utilisent dans les tests
+qui mesure le temps passé
+à consommer une vidéo donc le temps moyen
+par utilisateur sur la plateforme à consommer des vidéos
+quand on fait de la recommandation
+l'objectif c'est pas forcément
+d'augmenter cette métrique
+on aimerait nous par exemple
+avoir le time to play
+qui est le temps entre le moment
+où la personne se logue et le moment
+où la personne commence son contenu
+et en fait c'est ça qu'on a envie d'améliorer
+avec la recommandation, c'est arriver plus rapidement
+au contenu qui est intéressant
+donc c'est pas un réflecte external
+en revanche c'est encourageant parce qu'on se dit
+qu'avec peut-être un meilleur modèle
+et une meilleure métrique qui mesure vraiment l'effet de la recommandation
+on pourrait peut-être obtenir un ABTS qui est intéressant
+J'ai parlé d'élimines de la métrique
+bon Ben on a un petit peu parlé
+mais effectivement on se base
+sur le viewing time
+et on est en droit de se demander
+si est-ce qu'on veut toujours faire consommer
+un plus
+au end user en fait
+voilà
+est-ce que consommer ce plus c'est toujours ce qu'on veut
+en fait
+déjà ça va
+ça va dépendre tout simplement
+déjà du business model c'est-à-dire
+qu'on n'a pas trop dit au début mais nos plateformes
+aujourd'hui les placements nous streaming
+peut-être que vous en récompte ou pas
+elles sont de plus en plus hybrides
+c'est-à-dire avec des formules payantes
+avec moins de pubs
+et des formules qui sont plutôt sous forme d'abonnement
+et en fait en fonction
+de la formule
+vous pouvez avoir
+plus ou moins envie que la personne consomme
+je prends un évent très concret
+vous avez un abonnement
+bon vous en foutez concrètement
+que la personne elle consomme
+trois heures ou quatre heures dans le mois
+satisfaite de la consommation qu'elle a eue
+et qu'elle revient le moins suivant
+ce qui est pas forcément le cas si vous êtes
+dans un cas plutôt orienté publicité
+parce que là plus la personne regarde
+plus il y a de la publicité, plus ça engrange
+c'est un grand jeu
+du revenu
+déjà ça va complètement dépendre du
+business model de la formule
+qui est choisie par le end user
+et ensuite comme tu disais effectivement
+est-ce que la recommandation ça sert toujours à consommer
+plus
+et on se rend compte que dans la littérature
+bah non c'est
+l'idée c'est que ce soit
+satisfaisant pour le end user
+mais c'est pas parce qu'il regarde plus
+qu'il est forcément
+plus satisfait il y a d'autres manières
+de le mesurer que pour l'instant on n'a pas
+mais qu'on aimerait
+qu'on aimerait bien plus développer
+on a vu
+tout ce qui est fonctionnel
+comment on teste fonctionnellement que ça marche
+pour l'emmener
+jusqu'à des end users
+là on me repose de voir un petit peu
+techniquement
+comment on s'assure qu'on va pas
+pour casser, grosso modo
+il y a plusieurs manières de faire ça
+il y a d'abord le fait de vérifier la charge
+en amont
+et qu'à la réteste je vais entrer dans chacun des éléments
+et puis c'est aussi
+vérifier qu'on
+n'explose pas
+on vérifie la charge
+vérifier la charge qu'on a fait
+c'est qu'en amont
+avant même de déployer
+quoi que ce soit
+en fait on a lancé
+des tests de charge avec un
+outil qui est retiré
+il existe des tonnes sur le marché
+il fait
+la faire chez nous
+on a pas forcément fait un benchmark
+ça marche et du coup
+on met des scénarios comme si
+on allait vraiment avoir des personnes
+qui consomment la recommandation
+si ça marche
+et en fait
+on a eu une petite surprise
+non ça marchait pas
+on s'est retrouvé en fait avec un arrêt
+quand on arrivait à 500 requêtes
+par seconde
+donc là on s'est dit bon 500 requêtes
+par seconde est-ce que c'est vraiment
+un cas d'usage ou est-ce qu'on a été gourmand
+bon on a aller regarder dans le monitoring
+oui c'est vraiment un cas d'usage
+qui arrive pour de vrai
+donc c'est mieux si ça tient
+on avait un boom
+on a fait simplement un boom parce qu'il y avait vraiment
+une limite
+je ne ferais pas vous dire exactement parce qu'on n'est pas derrière
+mais dans personalize qui disait non c'est non
+500 requêtes par seconde
+c'est non, on ne le fait pas
+donc du coup là pour le coup on a discuté
+avec AWS qui sont vraiment
+eu un support
+vraiment top parce qu'ils nous ont
+permis de
+débloquer cette limite
+ils ont quand même fait vraiment du travail spécialement
+donc ça nous a permis de
+déployer jusqu'au bout
+c'est plutôt cool
+une fois qu'on a fait ça
+on s'est dit ok on y va
+mais tout doucement
+on lance qu'on appelle des
+calorie test alors
+c'est le moment que j'aime bien
+mais calorie test, qu'est-ce qu'est-ce
+en fait c'est un concept
+qui vient des mineurs de charbon
+dans les mines en fait
+il y a plusieurs gaz
+il y en a un dont on parle pas beaucoup
+c'est des carbone et qui est
+un dollar
+qui a un color, on ne le voit pas, on ne le sent pas
+et du coup
+c'est un peu problématique
+donc ce que faisaient les mineurs c'est qu'ils mettaient des petits canaries
+les canaries chantent et quand les canaries
+arrêtent de chanter il faut fuir
+et en fait c'est le même principe qui existe
+dans les canaries test et c'est pour ça que
+ils s'appellent canary test
+c'est qu'on va mettre des petits canaries
+si ils continuent à chanter on continue
+donc grosso modo
+l'idée c'est de dire
+la première semaine on est sur 10%
+d'utilisateur donc on met un petit canary
+il continue à chanter tout va bien
+pas d'incident très bien
+deuxième semaine on en met 2
+20% d'utilisateur etc etc
+et du coup en fait
+on est
+on est sûr que ça se passe bien
+on est sûr que ça tient la charge
+et s'il y a un incident au moins
+l'idée c'est qu'on n'impacte pas tous les
+utilisateurs et on se retrouve
+flouder le message sur twitter etc
+d'ensuite on peut y aller
+tout doucement
+et ça se passe bien
+même principe
+pour les coups
+j'ai dit on ne pouvait pas
+trop
+jouer sur
+les coups de personalize
+c'est vrai c'est faux c'est-à-dire que
+oui on peut pas aller jusqu'en dans le détail
+dire je veux 3 serveurs
+j'ai dit
+non ça effectivement
+on peut pas faire ça mais on peut quand même
+jouer sur quelques variables
+une en l'occurrence
+pour être plus précis
+et l'idée en fait c'était pareil c'était d'avoir
+le coup le plus juste
+par rapport à ce qu'on va faire
+donc là c'est plutôt toujours par jour
+mais l'idée c'est de dire auquel
+le premier jour on met plus que prévu
+pour être sûr que ok
+ça va tenir on a assez de serveurs
+pour supporter la charge
+on va la diminuer
+on vérifie les coups
+on vérifie les incidents si jamais il y en a
+là on ajuste et puis on continue
+et comme ça à la fin en fait on arrive
+au coup qui est à peu près le plus proche
+ok du coup je vais vous parler maintenant
+de ce qu'on fait actuellement
+des choses qu'on a mises en place
+donc la première partie c'est le modèle
+donc c'est ce qu'on a vu de développer
+ce qui est machine learning et Thomas vous parlera
+du coup de l'APD qui a été développé aussi
+juste un rappel sur les modèles de recommandation
+donc vous avez plusieurs types de recommandations
+nous on se situe là
+sur la partie collaborative filtering
+et donc vous avez plein de choses
+et nous on est bien sûr la LS ici
+qui est un type de factorisation de matrice
+il y en a plusieurs sortes
+pour expliquer en quelques mots ce qui est
+une factorisation de matrice
+disons qu'on a plusieurs utilisateurs
+on a une matrice qui contient
+les informations
+les informations en fait sont issues
+du taux de complétion du programme
+par exemple on sait que ce petit bonhomme vert
+a consommé à 92% ce contenu de main
+donc on va le retrouver dans la case en haut à gauche
+je n'ai pas de pointeur donc c'est en haut à gauche
+et on va pouvoir compléter la matrice de cette façon
+pour tous les programmes et tous les utilisateurs
+et en fait une fois qu'on a cette matrice
+du coup on peut essayer de la décomposer
+en deux sous-matrices
+la matrice des useurs et la matrice des items
+donc ça on va l'obtenir en fait
+grâce à un algo sur
+nous on n'utilise pas il se passe
+ce qui fait qu'en fait on va avoir
+des descripteurs en fait pour chacun des useurs
+et les descripteurs pour chacun des programmes
+et on va pouvoir en fait
+quand un nouvel utilisateur arrive
+utiliser cette deux sous-matrice
+pour obtenir le résultat de votre complétion estimée
+pour un nouvel utilisateur
+et pour un nouveau programme par exemple
+donc juste quelques mots sur la LS
+de PySpark
+donc alterating
+dix squares
+en gros le truc c'est qu'on n'a pas
+une factorisation de matrice c'est qu'il y en a
+une alternance c'est-à-dire qu'on va chercher
+à minimiser une erreur en fait
+en fixant dans un premier temps par exemple la matrice
+des useurs en optimisant
+la seconde matrice et ça autour de rôle
+il fait quoi ?
+on y mise une erreur
+donc je vous ai mis un lien
+il y a quelques paramètres qui n'a pas tant que ça en vrai
+sur la LS le rank pour en dire quelques mots
+c'est le nombre de facteurs qu'on va conserver
+pour les useurs et pour les items
+donc les descripteurs en nombre
+on a un paramètre de régularisation
+et ensuite un paramètre alpha qui
+et on voit un paramètre de confiance qu'on attribue
+aux données
+qu'on a
+enfin aux taux de complétion
+quelques
+enfin un truc de comparaison
+sur personalize et sur la LS
+en gros sur personalize
+on avait un NDCG entre 075
+entre 035 et 070
+nous avec la LS on arrive à 08
+en termes de temps de calcul
+on est aussi plus rapide
+et en termes de prix on est aussi
+mieux placé
+donc là je vais vous montrer
+quelques résultats qu'on a obtenus grâce à la LS
+donc
+par exemple pour un misédeur
+qui a consommé un seul programme qui est marié au premier regard
+je n'ai pas mis toutes les recommandations
+mais on en a autant qu'on veut en soi
+on obtient du coup
+et si on se rencontre est top chef pkx
+je ne sais pas si vous connaissez tout ce programme
+mais on arrive à avoir un lien avec et si on se rencontre
+et c'est des programmes qui sont plutôt aussi
+des programmes qui sont beaucoup consommés sur la plateforme
+donc c'est ok
+ensuite sur un autre utilisateur
+par exemple qui a consommé plutôt
+la télé-réalité donc le reste du monde est marseille
+les apprentis à ventrille c'est plutôt la télé-réalité
+on va lui recommander des contenus qui sont aussi
+de la télé-réalité majoritairement
+et sur un autre utilisateur qui a consommé plutôt
+des films, télé-filmes, ce genre de choses
+on va aussi lui recommander
+des programmes qui sont plutôt des films et télé-filmes
+donc ça fonctionne bien
+maintenant je vais vous parler d'appli
+bon vous allez nous dire pourquoi on va parler d'appli
+dans ces présentations
+donc personnalise, l'avantage qui est donné
+c'est qu'après
+c'est qu'il nous donnait une interface
+qui était facile d'utilisation pour que ensuite
+les autres équipes puissent afficher
+les recommandations qu'on a
+personnellisées
+sur la page de 6 play et autres
+et nous du coup on devait
+reproduire la même chose proposer
+un outil qui permettait aux autres équipes
+donc les équipes par exemple du pack
+de pouvoir récupérer les recommandations qu'on avait
+créées assez facilement
+sans en ayant un temps de latence
+plutôt
+donc l'idée qu'on a eu
+c'était du coup de concevoir une API
+qui est le plus simple possible
+d'utilisation et assez robuste
+pour pouvoir supporter du coup
+le trafic important
+qu'il y a sur les sites comme 6 play et autres
+donc là on va, je parle un peu
+d'architecture du coup de tout
+de tout ce qu'on a fait
+donc on vous a parlé du coup du modèle
+de recommandations ALS
+ce modèle de recommandations
+il est sur un notebook
+qui est qu'on exécute via Databricks
+ou je sais pas si vous connaissez
+Databricks du coup c'est un service
+c'est un service qui permet du coup
+de pouvoir lancer de manière
+industrialisée, automatique
+des notebooks
+et c'est assez performant
+et de pouvoir contrôler facilement
+les ressources qu'on veut utiliser pour
+je vais parler du coup de la pays
+qui est du coup qui va être
+hébergée sur Kubernetes
+donc en fait c'est une API
+qu'on a transformée en image de
+ochre et cette image de ochre
+est exécutée via Kubernetes
+qui est du coup un orchestrateur
+un orchestrateur de conteneurs
+voilà
+donc au tout début
+nous les données qu'on reçoit
+du modèle ALS on va les sauvegarder
+dans un bucket S3
+sur AWS
+si vous ne connaissez pas c'est juste un service
+de stockage assez simple
+mais malheureusement
+ce service de stockage si on faisait
+juste, on le sauvegage juste dedans
+pour requetter là dessus c'est plutôt long
+c'est pas très performant et c'est pas fait
+pour supporter des centaines
+de requêtes à la seconde
+donc pour ça on a besoin d'utiliser
+un autre endroit pour stocker les données
+et pour stocker ces données là
+on va les mettre sur DynamoDB
+qui est une base de données assez efficace
+et qui a été 10 années exprès
+pour pour supporter des charges
+une grosse charge de requêtes
+sans problème
+donc du coup pour ça
+pour
+pouvoir sauvegarder ces données
+on va créer
+une sorte de pipeline, un processus
+qu'on a utilisé et cette function
+qui va permettre de transférer toutes les données
+qu'on a eu de S3 vers DynamoDB
+en filtrant et en gardant ce que
+ce que l'on souhaite
+donc
+vous avez dit avec Personalize
+Personalize nous permet
+de filtrer les programmes
+pour pouvoir obtenir par exemple un programme
+que sur la plateforme W9
+que sur la plateforme
+que des programmes de la chaîne W9
+et on devrait aussi reproduire
+ce même système
+le problème c'est que les données
+qui sortent de Databricks
+c'est juste un ID
+on n'a pas d'autres infos dessus donc on ne peut pas filtrer
+un programme, on ne garde
+aucune info là-dessus
+et du coup ce qu'on va faire
+c'est qu'on va sauvegarder
+les données sur l'API
+directement on va sauvegarder
+le catalogue de tous les programmes qu'il y a
+sur nos plateformes
+comme ça l'API quand elle va
+recevoir une requête
+elle pourra tout simplement trier
+pour récupérer l'ID
+d'un utilisateur et du coup
+trier avec le catalogue qui est là en local
+donc du coup pour ça, pour pré-générer
+ce catalogue on utilise
+une lambda assez classique
+qui nous permet très rapidement de créer
+ce fichier là
+et du coup par exemple
+entre nous quels utilisations
+ça va être une API front
+qui va nous appeler pour pouvoir
+requêter par exemple les recommandations
+d'anister en particulier
+quand elle nous envoie
+elle va nous envoyer une requête directement sur l'API
+l'API va dans ce cas
+chercher les données sur DynamoDB
+qui va le répondre
+en retour de manière assez rapide
+et après s'il y a des filtres qui ont été demandés
+par exemple je ne veux que les programmes
+de W9, l'API va
+du coup trier les données
+conserver que les
+programmes souhaités
+et les renvoyer à l'API front
+et du coup tout cet stack là
+qui est encadré au rouge
+c'est tout de l'architecture qu'on a créé
+pour ce projet là
+pour parler un peu technologie
+l'API que nous avons développé
+a été codé en Python
+et on a utilisé le framework
+Fast API pour pouvoir
+créer cet API qui est un framework
+très très simple et assez efficace
+assez rapide à mettre en place
+on avait quand même
+un enjeu de sécurité
+dans le sens où on ne voulait pas que
+n'importe quelle requête
+soit acceptée
+et du coup on a sécurisé les requêtes
+d'AWT qui ont permettait d'authentifier
+que la requête venait bien d'un service
+qu'on avait autorisé
+un token JWT c'est tout simple
+c'est un token
+qui est encrypté avec
+une clé particulière
+dans un type de achat particulier
+et dedans on peut rajouter des infos en plus
+comme par exemple l'expiration du token
+ou autre
+il y a aussi d'autres technologies
+comme je vous ai dit on a utilisé
+Kubernetes
+pour pouvoir orchestrer
+les compétences
+parce que du coup
+l'API va potentiellement avoir
+en fonction de la charge plusieurs instances
+plusieurs API en parallèle qui vont tourner en même temps
+pour pouvoir supporter la charge
+de trafic qu'on va avoir
+et comme vous l'avez dit au début
+ce qui nous importe c'était que tout
+le plus possible soit terraformable
+et du coup la totalité
+des ressources AWS que nous avons créées
+sur ce projet là
+sont créées via terraform
+du coup qui nous permet d'avoir
+une maintenance plutôt efficace
+de ce qu'on crée et de pouvoir surveiller
+qu'on ne fasse pas de bêtises
+donc
+voilà pour
+tout ce qu'on avait prévu de faire
+maintenant dans l'état
+qu'est-ce qui a été fait, qu'est-ce qui a été pas fait
+donc comme vous l'avez dit
+maintenant on a
+déployé du coup Personalize
+en ABTS
+donc il y a 50% de la population qui est
+exposée
+à la recommandation
+enfin la proposition qui a consenti à la recommandation
+de la conduite
+on a du coup le modèle qu'a présenté
+BenDLS qui est développé, qui est industrialisé
+du coup on reçoit, on a des recommandations
+qui sont créées toutes les semaines
+sur les utilisateurs
+et on a une API du coup
+qui est fonctionnelle et qui est déployée en production
+actuellement
+mais du coup
+l'OMN n'est pas encore en production
+on n'a pas encore remplacé totalement Personalize
+parce qu'on a encore quelques petites étapes
+encore à terminer donc notamment
+les tests de charge qu'on a parlé
+on a encore vérifié si notre API
+du coup tient la charge
+et que Dynamo aussi
+soit assez performant pour tenir les charges qu'on
+souhaite
+et il reste une dernière petite étape qui est du coup
+le transfert des données entre
+de S3 et DynamoDB
+qui est encore
+à terminer, mais on arrive
+vers la fin
+donc voilà
+je vous remercie du coup
+pour nous avoir écoutés
+et je vous laisse
+si vous avez des questions
+Cachez la Personalize
+parce que si
+des données
+en relation
+d'items individus
+ils ont un actuel un peu similaire
+à l'état d'autorisation mafrix
+je crois que c'est des zones neuropes récurrents
+d'ailleurs
+ils ont un papier dessus
+et je pense qu'il n'est pas conclu
+il ne décrit pas exactement ce qu'il y a
+et surtout je pense que ça dépend aussi
+des solutions qui sont impliquées
+nous on a un type de recommandation
+que ça serait un autre modèle pour
+la recommandation d'items
+par exemple
+donc tous les modèles ne sont pas décrits
+mais je crois que c'est des zones neuropes récurrents
+il n'y a pas moyen de ne pas être récurrent
+non tu peux pas
+Les questions sur les logiques de recommandation
+et ce qui est que vous utilisez
+les activités de visionnage
+pour faire des suggestions
+on ne fait pas du tout d'annotations pour le contenu
+de la vision terralité
+déjà aujourd'hui il n'y a pas la possibilité
+de mettre des likes
+et ensuite après
+ça dépend
+il faut de répester parce que
+dans la littérature il y en a aussi qui disent
+tu peux liker différemment
+d'un pays à un autre
+il y a aussi la tendance à beaucoup liker
+quand tu n'as beaucoup aimé
+ou quand tu n'as pas du tout aimé
+c'est vraiment la notation qu'on trouve
+c'est-à-dire que c'est de la vision terralité
+non on n'a pas ça
+et en plus le modèle qu'on utilise
+aujourd'hui de l'ALS
+tu peux lui donner seulement
+l'identification du programme
+et un autre complétion ou autre
+tu ne peux pas rajouter des variables
+qui seraient liées au programme ou au user
+ça c'est d'autres modèles
+qu'on est en train de développer
+mais avec l'ALS tu ne peux pas
+en tout cas c'est une piste pour améliorer le modèle
+c'est tout
+est-ce que vous avez pu faire des recommandations explicites
+avec l'ALS
+c'est-à-dire que vous ne pouvez pas faire le personnel
+on ne les a pas encore
+oui on les a pas encore fait
+oui c'est possible dans une certaine mesure
+explicite c'est par exemple
+vous devez regarder ça mais vous ne pouvez aimer ça
+oui je pense qu'il y a plusieurs...
+oui il y a plusieurs manières de faire de la recommandation explicite
+oui
+il y a ça et je sais qu'on fait plus point de pourcentage
+oui mais ce qui est sûr c'est qu'on pourrait donner plus d'informations
+oui
+par exemple on peut se baser sur ce que t'as consommé
+en termes de contenu
+on va te recommander ça
+tu vois
+mais après il y a plusieurs façons d'expliciter la recommandation
+vous avez pensé qu'il y a un métier à jour
+dans les semaines
+c'est quoi ?
+pour personne à l'aise
+ou pour les...
+pour personne à l'aise
+oui pour personne à l'aise
+on a un réentraînement qui fait toutes les semaines
+je ne sais pas
+je ne fais pas trop ça
+en fait déjà il faut savoir que personne à l'aise
+on testait
+donc on était parti la maille semaine
+et vous savez que ça rajoute aussi du prix
+de plus on entraîne
+et plus c'est plus écouté
+alors que typiquement avec la recommandation
+pour l'instant on arrive à entraîner
+tous les jours
+je parle que du prix
+je parle les semaines
+c'est plus pour
+optimiser le performance de notre modèle
+en calculant les meilleures hyperparamènes
+en fait je n'ai pas parlé mais il y a un peu de workflow
+en gros tu as un truc
+hebdomadaire
+qui permet de lancer
+je ne sais pas si vous connaissez mais c'est une librairie
+qui permet de chercher les meilleures hyperparamènes
+pour un modèle donné
+donc tu as ce truc là qui est lancé toutes les semaines
+et à côté tu as un modèle
+qui est lancé tous les jours
+qui permet de réentraîner le modèle
+mais avec les meilleures hyperparamènes
+et en fait c'est important de réentraîner le modèle
+parce que si on a de nouveaux users
+ou de nouveaux programmes
+il faut les intégrer dans le modèle
+sinon on les a pas et on peut pas leur faire de recommandation
+dans votre cas
+dans votre cas
+que les semaines n'ont pas encore fait la semaine dernière
+non on a tout un historique
+on fait ainsi les derniers mois
+vous avez une question
+vous avez eu des paroles
+c'est des carénés
+j'ai vu qu'on peut aussi déployer
+et
+de payer à des présents que ça va laisser
+avec Tanda
+si vous avez regardé cette vidéo sur moi
+si ça peut me faire
+on est revenu
+on l'a testé en fait je pense c'est pareil
+ça dépend aussi du cas d'usage
+c'est toujours pareil
+mais non en fait finalement notre API
+c'est trop complexe mais c'était plus complexe
+on ne pouvait pas la profiter
+on ne pouvait pas la monitorer
+comme on voulait quand on avait dans notre contexte
+et les temps de réponse sont bons
+mais
+il y a un moment donné qu'il y a une limite
+ça dépend de la flexibilité
+et le
+c'est déjà fait qu'on veut avoir
+en fait
+j'avais une question sur
+tout dans votre modèle
+ALS
+vous avez
+amélioré vos scores de rente
+oui
+est-ce que
+il n'y a pas un risque
+à terme
+pour
+qu'on trouve que ça ressemble énormément
+à ce que l'une d'eux a déjà vu
+et qu'il finisse par se lasser
+est-ce que vous envidagez à terme
+d'oblir un peu de discovery
+ou de
+ça c'est un truc un peu compliqué à gérer
+parce qu'effectivement on a envie d'avoir de bonnes performances
+et la fois il ne faut pas non plus
+enfermer le utilisateur
+dans uniquement ce qu'il aime
+donc aujourd'hui on n'a pas de stratégie
+mais probablement qu'il faut en mettre une
+pour intégrer un peu de random
+ou mettre une option pour se dire
+on va explorer un peu plus ce contenu
+personnalise le fait qu'il a un paramètre
+d'exploration du catalogue
+pour l'instant pas ce genre de choses
+mais effectivement on l'a en tête
+je ne pense pas qu'il est fritiaire
+c'est un test
+enfin un truc pour tester gratos
+ah pardon
+je ne crois pas
+je ne crois pas que ça fait partie des services avec africains
+il faut voir mais je ne suis pas sûr
+quel était votre stratégie
+pour promouvoir des contenus
+vous aviez dit que parfois
+vous deviez faire de la promotion
+commencer à s'intégrer
+la promotion
+pour l'instant il n'y arrive
+en fait non c'est pas vrai
+en fait on parlait de strats
+en fait on a plusieurs banderos
+et en fait
+là pour l'instant il y a
+une strat de recommandation
+qui est entièrement automatisée
+et pour l'instant qui va l'être
+et après
+les dito à tout le reste du site
+pour promouvoir
+mais c'est vrai qu'à terme on sait qu'il y aura peut-être besoin
+d'avoir des règles de gestion
+un peu plus fin d'interne
+mais pour l'instant ils n'ont pas implementé du tout
+est-ce que tu as une stratégie
+pour proposer des recours à un nouvel utilisateur
+d'ailleurs qu'est-ce que ce qu'il y a après
+l'enformement du dernier modèle
+pour l'instant on n'en a pas
+personnaliste de fait par exemple
+si on n'a pas d'historique sur l'utilisateur
+on va lui recommander une sorte de top programme qu'en gros
+manière automatique
+nous on n'en a pas pour l'instant
+et c'est ce qu'on appelle le problème du call start
+en fait on n'a pas d'informations sur l'utilisateur
+donc il y a des stratégies
+il y en a plein
+par exemple le top c'est une des solutions
+on peut en aimer
+il y en a des dizaines qu'on veut
+comme tu as une possibilité
+oui c'est ça
+du coup c'était pas possible d'imaginer
+une solution qui
+mixait personnalise
+et votre solution à vous
+en production c'est pas une bonne idée
+je pense que c'est un genre d'engagement
+je pense que c'est compliqué
+en fait je pense que c'est vraiment compliqué
+parce que les modèles sont pas
+pareil
+il y en a un qui répond live
+et l'autre qui répond fin
+je sais pas comment on aurait pu faire
+on s'est pas posé la question
+parce que stratégiquement c'était vraiment
+on utilise une solution qui existe
+mais en tête après
+on fera une solution
+dès le début en vrai
+c'était pensé en même temps
+voici les dents
+on regarde comment ça marche
+et après on étudiera
+éventuellement d'autres possibilités
+on n'est pas forcément fermé
+on verra
+les sources de données
+vous pouvez dire
+je pense que c'est un système à long
+on a dit que je suis à 1h
+il n'y a pas moyen
+d'aller graphède
+oui
+c'est pas possible
+je vois que
+c'est vrai que
+actuellement en fait
+toutes les données qu'on récupère
+c'est les données des personnes
+sur la plateforme
+après
+sur la partie où j'ai parlé des sondages qu'il y avait eu
+et plusieurs sondages
+quand on parlait de donner plus d'infos sur la reconnaissance
+c'est justement avoir un service
+qui permet de récolter des informations
+de plusieurs services
+d'avoir Netflix, Amazon Prime
+tout ça en même temps pour pouvoir
+avoir une banque de données un peu plus grosse
+et pouvoir faire une reconnaissance
+plus efficace
+actuellement
+c'est surtout un projet, une idée
+il n'y a pas de
+solution concrète qui a été faite
+pour ça
+il faut faire des apports entre chaque entreprise
+c'est pas...
+pour l'instant les données qu'on récupère
+c'est uniquement les utilisateurs qui ont consenti
+à la personnalisation
+déjà ça restera un peu les données
+on n'a pas toutes les données
+pour calculer ton MBCG
+tu as besoin de donner
+de base pour
+c'est pareil
+oui en gros
+là j'ai présenté une façon de le faire
+nous c'est un peu différent
+en gros on prend
+le dernier item qui a été vu par l'utilisateur
+le dernier programme
+on fait le top recommandation, le top 20 par exemple
+et on va voir en fait si on place
+ce dernier programme qui a été vu
+au sein des top 20 prédictions
+donc s'il n'est pas dedans c'est pas bon
+c'est à dire que le MBCG est égal à 0
+et s'il est dedans et plus en haut il est
+parce que j'ai montré c'est une version un peu simplifiée
+nous c'est un peu différent
+pas du coup je pense qu'on a terminé
+c'est déjà comme vous pouvez le dire
+c'est super intéressant

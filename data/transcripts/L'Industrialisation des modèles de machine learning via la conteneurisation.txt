@@ -1,0 +1,1423 @@
+Sous-titres réalisés par la communauté d'Amara.org
+Bonjour à toutes et à tous.
+Bienvenue dans cette nouvelle session liée en datation sur Twitch.
+Pour ceux qui ne connaîtraient pas cette association liée en datations
+et la première association lyonnaise qui aborde des sujets
+autour de l'IA et du machine learning, lors d'e-beatup,
+je tiens donc à les remercier et de m'avoir accordé ce créneau
+pour partager avec vous un retour d'expérience sur l'industrialisation Amel.
+Je tiens aussi à remercier les sponsors de cette association
+qui sont DataLio, DataGalaxy, Esker et Upliance.
+Tout d'abord, je vais me présenter rapidement.
+Je m'appelle Saïf Hedim-Benkabou et je suis consultant data chez IPON Technologies.
+IPON est une boîte de conseils spécialisés dans l'écosystème Java, Cloud, DevOps et Data.
+Moi, je fais partie du poll data de l'agence lyonnaise
+et j'accompagne mes clients sur les sujets ML,
+notamment l'industrialisation, que ce soit dans le cloud,
+par exemple dans AWS via le service manager SageMaker
+ou en premise directement dans l'aprastructure du client.
+Aujourd'hui, je vais partager avec vous un retour d'expérience
+sur une mission qui a duré à peu près trois mois
+et sur le déploiement des modèles de machine learning
+via la containerisation dans la plateforme OpenShift.
+Dans un premier temps, je vais aborder le contexte de la mission
+qui était un peu particulier
+et les différents acteurs impliqués dans ce projet
+et j'en profiterai pour faire un rappel sur les bases de l'apprentissage automatique.
+Je sais que la majorité d'entre vous c'est des data scientistes
+et c'est assez évident pour vous
+mais sachez qu'il y a parmi nous aussi des devs, des ops, des architectes
+qui, eux, se voient souvent impliqués dans des projets d'industrialisation
+et souvent ça bloque faute de communication
+donc on va essayer de voir comment appallier ce problème.
+Ensuite, je vais aborder la notion des pipelines
+et l'encapsulation des prétraitements
+et la notion du modèle augmenté,
+de modèle complet qui sont livrés par les data scientistes.
+Les pipelines sont des outils très puissants
+qui, au-delà de permettre aux data scientistes
+d'être productifs dans la phase d'apprentissage,
+il facilite davantage la mise en production des modèles
+et évite souvent tout ce qui est violation des données dans la phase de test.
+Ensuite, je vais présenter l'architecture modèle-as-service
+que nous avons mis en place et implémentée dans la plateforme OpenShift
+et c'est l'occasion, alors, d'introduire ensemble des outils que nous avons utilisés
+donc ce soit de la containerisation via Docker,
+l'orchestration via Kubernetes en passant par OpenShift
+ou en passant par OpenShift ou le versionnik des modèles
+donc dans l'outil Inaxis
+et je parlerai ici de la CI-CD qu'on a faite sur GitLab
+et on s'est fixé pour objectif d'utiliser en fait que les outils qui existent déjà chez le client
+donc c'est des outils qui sont utilisés dans d'autres projets
+donc ça c'était une des contraintes.
+Enfin, je vais parler de la notion du train automatique dans 10 images Docker
+et comment on peut intégrer ça dans notre architecture.
+Donc, le contexte chez le client, il y a des équipes data ingénieurs,
+il y a des développeurs et il y a un architecte
+et d'un côté il y a les DevOps donc contre les deux la communication allait très bien
+il faut savoir que chez notre client toutes les applications tournent dans des conteneurs
+et dans la plateforme OpenShift
+et de l'autre côté il y a aussi des data scientistes, c'était une dizaine de data scientistes
+avec des profils un peu différents donc il y a des statisticiens,
+il y a des actuaires, des informaticiens
+malheureusement il n'y avait pas de collaboration entre les data scientistes
+et les autres acteurs du projet
+parce que premièrement ils sont vraiment concentrés sur leur travail
+qui est la modélisation et la création du modèle
+deuxièmement ils ne sont pas forcément intéressés par la technique
+et ce qui est tout à fait compréhensible
+et troisièmement en fait géographiquement ils ne sont pas sur le même site
+donc ce qui complique davantage la communication
+donc on peut dire que mon rôle principal c'était de faire communiquer les data scientistes
+avec les autres acteurs qui s'occupent de l'infrastructure et de l'architecture
+par exemple expliquer aux devs et aux architectes ce que c'est un modèle
+comment le data scientiste crée un modèle et qu'est-ce qu'on attend dans la phase d'inférence
+et en même temps aussi demander aux data scientistes de faire un effort sur ce qu'il produise
+sur la notion de modèle augmentée pour faciliter la mise en production des modèles
+donc l'objectif de la mission c'était de proposer une solution aux data scientistes
+pour qu'ils puissent déployer depuis leur notebook Jupiter
+ou depuis leur RStudio ou n'importe quel outil
+qu'ils aient la possibilité de déployer directement des modèles
+donc des modèles comme des services
+de telle sorte que les autres applications puissent consommer ce modèle
+donc on a fait le choix de découpler le modèle et les autres applications
+ça a un inconvénient de localité donc il y a une latence
+mais ça a l'avantage que le modèle est indépendant de l'application
+donc on peut faire des mises à jour du modèle sans impacter les applications
+on peut et aussi on peut faire de l'inférence en temps réel
+et on fait aussi du traitement batch
+techniquement les data scientistes avec qui j'ai collaboré
+donc ils utilisent des méthodes de machine learning traditionnelles
+sur du ML classique
+il y a des modèles de supervisée, des modèles non supervisés
+de la détection d'anomalies et des clustering
+à peu près une soixantaine de modèles à déployer
+et on l'utilise des données tabulaires
+donc il y avait des données temporelles
+mais c'était déjà prétraité ailleurs
+donc comme je l'ai dit
+l'ensemble des modèles sont entraînés par des données tabulaires
+donc une donnée tabulaire c'est quoi ?
+c'est simplement l'équivalent d'un fichier CSV ou d'une table SQL
+donc en ligne on a les clients, les sociétaires
+donc nous ce qu'on appelle une observation, une ligne, une liste statistique
+et en colonne on a la notion de dimension, de variable, de futures
+et ça peut être de plusieurs types
+donc string, float
+donc je vais représenter par un rectangle
+ce qui est donné tabulaire
+un seul client je vais le représenter par un rectangle assez fin
+une seule ligne
+et on peut remarquer que ces mêmes clients
+on peut les représenter différemment
+donc les identifiés on reste les mêmes
+en revanche les valeurs changent
+par exemple ici on a la situation familiale
+avec un string donc marié, divorcé et veuf
+là on va le représenter avec 3 variables binaires
+soit 1, si il est marié, soit 0, c'est le célibataire variable
+donc à chaque fois que vous voyez un changement de couleur
+ou un changement dans la largeur du rectangle
+cela implique qu'il y avait un prêtraitement
+qui a été fait sur les données d'apprentissage
+sur les données tabulaires
+donc brièvement qu'est ce que c'est l'apprentissage ?
+il y a deux étapes, il y a l'étape d'apprentissage
+donc là par exemple on a un fichier d'entrée
+et on veut créer un modèle
+pour faire tout ce qui est score
+pour calculer le score d'appétence d'un produit pour les clients
+donc le data scientist il va passer ces données à un algorithme
+donc là c'est un algorithme d'optimisation
+ça peut être éterratif ou alternatif
+pour avoir un modèle
+et le modèle c'est quoi ?
+donc pour ceux qui font de la programmation orientée et objet
+c'est on peut le voir comme une classe
+qui a des attributs avec une fonction
+prédicte qui est déjà implémentée et qui utilise ses attributs
+et ce sont les données avec l'algorithme
+qui vont instantier cette classe
+et qui vont nous donner l'objet modèle
+qu'on va sérialiser après et mettre en production
+les outils utilisés dans cette étape
+qui est propre au data scientist
+dans notre cas c'était du pitant et du air
+on a utilisé les frameworks like et learn, MLR3
+et l'IDE, il y a du RStudio, Anaconda, Unoutbook
+et il y a même du DataIQ
+pour ceux qui font du drag
+ça ne complique un peu la tâche dans la partie industrialisation
+ensuite il y a la phase d'inférence
+d'inférence c'est quoi ?
+c'est juste on va prendre notre objet modèle
+on va le désérialiser
+et on va faire des prédictions lorsqu'on va recevoir une donnée
+pour calculer le score
+donc là on a reçu un client et on va lui calculer un score
+et les outils ici qu'on utilise
+c'est pour la sérialisation
+donc on est parti sur la solution la plus facile
+donc sérialiser l'objet
+en tant qu'un fichier binaire
+avec pickle pour pitant et RDS dans air
+la paysation
+on le fait avec la partie en pitant
+on le fait avec flasque, en air, en plumber
+la notion de serveurs d'application
+donc c'est l'équivalent pour ceux qui font du Java
+de gboss
+on le fait avec GUINICORN, UI3
+et on peut aussi rajouter une couche serveurs web
+si jamais on veut exposer nos modèles à l'extérieur
+donc nous dans notre cas on n'avait pas de contenu statique
+par exemple du CSS ou des HTML à délivrer
+donc on n'a pas utilisé cette possibilité
+mais sachez que c'est tout à fait possible
+notamment si vous voulez exposer ça à l'intérieur
+et que vous voulez utiliser un reverse proxy par exemple
+donc toujours pour faire l'analogie
+avec ce qui se fait dans le développement classique
+on peut dire que ça pourrait, c'est un peu la partie
+l'intégration continue
+donc là par exemple on peut faire des tests unitaires
+pour tester les différentes transformations
+pour tester les différentes transformations
+et en finir avec un test qui va tester le modèle
+si il dépasse un certain seuil
+on va donner le OK pour qu'il soit déployé par exemple
+malheureusement nous on n'avait pas accès à cette
+on n'avait pas la main sur le code des datasventistes
+donc on n'a pas fait la partie CI
+on s'est focalisé uniquement sur la partie CD
+donc la notion de déploiement continue
+et ça ça veut dire quoi ?
+ça veut dire que chaque fois que le datasventiste change un modèle
+ou s'est réalisé un modèle
+nous on est capable de mettre à jour l'application
+avec la nouvelle version
+donc concernant le workflow chez mon client
+c'est un peu classique
+donc d'un côté on a
+l'équipe Data Engineer qui va s'occuper de la collection des données
+donc il faut un travail formidable
+donc là vous avez plusieurs sources
+du JSON, des données qu'on peut requêter via des API
+des Data Warehouse
+donc l'objectif c'est de filtrer, de faire des jointures
+de faire des aggregations pour fournir des données propres
+et quand je dis des données propres
+ça ne veut pas dire des données qui ne contiennent pas
+des valeurs manquantes par exemple
+et ces données propres en fait avec la représentation rouge
+c'est là où le Data Scientist va commencer son travail
+pour créer le modèle
+et c'est aussi les données que vont utiliser
+les applications qui vont consommer le modèle
+sauf que moi je n'ai pas dit que le Data Scientist
+il ne va pas directement utiliser son algorithme
+sur les données rouge
+ou sur les données propres pour créer son modèle
+il va faire pas mal d'eux prétraîtement orientés d'attations
+donc il va peut-être faire de l'imputation des données
+ça veut dire remplacer des valeurs manquantes
+s'il existe
+normaliser ou remettre à l'échelle certains variables
+et encoder par exemple les variables catégories
+donc là j'ai changé la couleur parce que les données
+ont changé de représentation
+par contre les clients restent les mêmes
+ensuite il va peut-être faire une étape
+de réduction de dimensionnalité
+pour réduire le nombre de variables
+et c'est uniquement à ce moment là
+qu'il va décider d'utiliser son algorithme
+pour créer le modèle
+ensuite lorsqu'il va créer le modèle
+il va sérialiser le modèle
+et c'est là où ça se complique
+parce que nous on sait pas comment faire ça
+si vous donnez ce modèle sérialisé
+à quelqu'un pour l'exposer en API
+les applications qui vont utiliser ce modèle
+ils vont envoyer des données de type rouge
+or que le modèle on voit bien
+qu'il a été appris
+ou qu'il a été instantié avec des données vertes
+donc ce qu'il fallait
+c'est plutôt la sérialisation du pipeline entier
+donc c'est ça ce qu'on va recommander
+et c'est de ça que je vais parler aujourd'hui
+donc pour donner un exemple
+si on sérialise uniquement le modèle
+dans la partie API-isation
+on va commencer par décérialiser le modèle
+ensuite on va recevoir une donnée
+tout à fait logique parce qu'une donnée propre
+une représentation rouge
+sauf que là il y a un crash pourquoi
+parce que le modèle ne connaît pas cette représentation
+donc le modèle qu'est ce qu'il va faire
+il va tout simplement
+enfin on va avoir une exception
+parce qu'il faut passer à la représentation rose
+après à la représentation verte
+donc si on fait ça avec le pipeline
+on n'a pas ce problème parce que lorsque l'application
+on va envoyer le client pour prédiction
+on a déjà le pipeline
+on va l'exécuter
+donc l'ensemble des paramètres
+on va faire l'imputation des données dans la phase test
+on va faire la réduction de dimensionnalité
+et là notre modèle est prêt pour faire une prédiction
+ok donc ça peut paraître un peu compliqué
+mais on a heureusement on a des outils
+qui permettent de faciliter la tâche
+donc dans ce qui suit je vais donner un exemple
+de classification avec un modèle type stacking
+et un modèle type détection d'anomalie en sembliste
+et les frameworks que nous avons utilisés
+c'est scikit-learn pipeline et MLR3 pipeline
+MLR3 pipeline c'est un peu l'équivalent de scikit-learn pour R
+et ça va encore beaucoup plus loin
+parce que ça offre des fonctionnalités vraiment intéressantes
+et là je vais commencer par l'apprentissage supervisé
+par exemple on a des données tabulaires
+on a des données tabulaires donc des clients
+par exemple d'anasyureur ou de la banque
+ils me disent que le sang est faible
+donc je vais augmenter un peu le sang
+est-ce que ça va maintenant ?
+tu me diras à Nil
+je vais augmenter le sang
+on est dans un cadre apprentissage supervisé
+on a des clients et on veut calculer un score d'appétence
+donc ça c'est des données tabulaires
+ce que je mets en rouge c'est juste pour montrer
+que ces colonnes ont un type différent
+donc catégorielles, ça veut dire situation familiale
+par exemple ici ou le sexe
+et ici c'est des données numériques
+que je représente avec la couleur jaune
+donc ça peut être le salaire, le nombre de contrats
+et en orange c'est aussi des données numériques
+mais que je vais les traiter différemment
+ensuite ce que je représente en bleu
+c'est les données, c'est la réalité terrain
+donc j'ai des données historiques
+des clients et cette colonne va me dire
+à ce que ce client a été intéressé par ce produit
+je vais utiliser cette information
+pour créer un modèle
+pour pouvoir généraliser ensuite
+donc lorsque je vais recevoir un client
+je vais pouvoir calculer son score d'appétence
+donc je vais commencer par charger mes données
+ensuite ce que je vais faire
+c'est sélectionner l'ensemble des données catégorielles
+que je vais les traiter différemment
+donc il faut toujours faire l'imputation des données
+même si vous n'avez pas des valeurs manquantes
+dans les données d'apprentissage
+il faut toujours faire de l'imputation
+parce que ça va être utile après dans la phase de test
+et parce que le fait de faire ça dans les pipelines
+ça implique qu'on va sauvegarder la moyenne
+dans l'objet pipeline, après on en aura besoin
+donc je vais faire ici l'imputation par la valeur la plus fréquente
+et ensuite je vais encoder
+par exemple si j'ai la situation familiale
+avec 3 modalités, je vais créer 3 valeurs binaires
+ce qui explique que le rectangle
+c'est un peu agrandi
+ensuite je vais sélectionner les données numériques
+que je vais imputer par la moyenne
+et que je vais remettre à l'échelle
+avec, enfin j'enlève la moyenne
+et je dévisse par les quartiers par exemple
+l'autre type de données je vais les sélectionner aussi
+je vais faire une imputation par la médiane
+et cette fois-ci je vais normaliser par min max
+pour que ce soit entre un intervalle
+tout ça on peut le faire en parallèle avec les pipelines
+que ce soit scikit-learn ou mlr3
+donc c'est du déclaratif, il n'y a rien qui est exécuté
+ensuite qu'est-ce que je vais faire ?
+je vais joindre les futures que j'ai créées
+donc les nouvelles variables que j'ai créées
+donc là j'obtiens une nouvelle représentation de mes données
+maintenant je décide de réduire l'espace de mes données
+parce que c'est assez conséquent
+et j'ai pas assez de puissance de calcul
+pour faire un algorithme sur ces données
+donc je vais utiliser PCA
+ensuite quand je vais réduire mes données
+je vais faire du stacking
+ça veut dire je vais créer trois modèles
+non seulement un mais trois modèles
+donc le premier je vais créer un modèle SVM
+et je fais des prédictions
+je crée un modèle de régression logistique
+et je fais des prédictions
+et je fais un XGBoost à la fin
+ensuite qu'est-ce que je peux faire ?
+je peux aussi joindre ces prédictions
+pour avoir un nouveau jeu de données
+passer la variable de réalité terrain
+et créer un modèle avec Naive Base
+notez que ici la variable bleue
+en fait la réalité terrain
+ça n'a pas été utilisé dans les prétraitements
+donc je n'ai pas touché à cette variable
+je l'ai simplement utilisé ici
+dans la phase d'apprentissage
+donc une fois que je sérialise ce pay-pline
+celui qui va exposer ce modèle
+dans une API
+il va commencer par le desserrealiser
+et quand il va recevoir une donnée
+vous vous rappelez la donnée originale
+c'est du rouge, jaune et orange
+on va pouvoir exécuter le pay-pline
+donc là on va faire tout ce qui est imputation
+on va faire des jointures
+on va faire du PCA
+ensuite on va faire des prédictions
+on va obtenir des prédictions par SVM
+par régression logistique
+et par Exibust
+on va joindre toutes ces prédictions
+et on peut passer enfin au modèle principal
+qui est Naive Base
+donc là il n'y a aucun problème
+un autre exemple d'apprentissage non supervisé
+là on n'a pas de réalité terrain
+ce qui nous intéresse c'est de détecter
+les clients qui ont un profil anormal
+donc là à base de distance
+on va dire que les clients qui se trouvent
+à une certaine distance du reste
+on peut les considérer comme des clients anormaux
+donc toujours on rouge les données catégorielles
+et on jaune les données numériques
+donc pareil que pour l'apprentissage supervisé
+sauf que ici je ne vais pas utiliser la réalité terrain
+je suis vraiment supervisé
+donc je commence par sélectionner
+les variables catégorielles
+je fais l'imputation par la valeur la plus fréquente
+et je fais l'encodage
+ensuite je vais faire la sélection des données numériques
+ici je fais l'imputation par la moyenne
+et je remets à l'échelle mes variables
+je fais une jointure ici
+ensuite je réduis cette fois-ci par SVD ou par PCA
+je fais du stacking aussi
+donc je passe mes données à un détecteur
+donc là ou un classe SVM
+ici je crée un autre modèle isolation forest
+et je fais du loft
+ensuite j'obtiens un décor d'anormalité pour chaque client
+que je vais joindre
+et passer à un autre détecteur qui s'appelle L2GAD
+pour faire des prédictions
+donc vous voyez que c'est valable
+à la fois pour l'apprentissage supervisé
+mais aussi pour l'apprentissage non supervisé
+on peut utiliser de la détection d'anomalie
+et aussi tout ce qui est clustering
+maintenant on peut se poser la question
+de comment faire
+si je n'ai pas de pipeline dans mon framework
+ou dans mon langage
+c'est toujours possible
+la réponse oui parce qu'il suffit
+de créer un objet
+et on va voir que par exemple
+si vous faites de l'imputation dans la partie d'apprentissage
+ça implique
+que vous êtes en train d'estimer
+une moyenne, c'est comme un modèle
+vous estimez des paramètres
+donc pensez à sauvegarder la moyenne, la médienne etc
+si vous faites de la normalisation
+ou de la standardisation
+sauvegarder aussi les moyennes de vos variables
+si vous faites de la réduction de dimensionnalité
+par PCA ou SVD
+et bien dans ce cas là
+il y a une matrice de projection
+à sauvegarder
+et si vous faites de l'encodage
+binaire, il faut sauvegarder le nombre
+de modalités que vous avez
+dans vos variables
+et le mettre tout
+dans un objet
+et le sérialiser
+et il faut savoir aussi que avec les pipelines
+et MLR on ne va pas trouver
+toutes les transformations possibles
+parfois c'est à nous de coder nos propres transformations
+et vu que c'est à base de
+programmation orientée aux objets
+donc vous pouvez par exemple
+créer vos propres
+transformateurs
+et les utiliser comme si c'était
+du scikit-learn
+classiquement
+donc voilà
+on peut faire plein de choses avec
+ces outils
+donc maintenant que nous avons vu
+ensemble que le Data Scientist
+a fait un très bon boulot
+et a fait
+et nous a livré un modèle augmenté
+qui comprend
+prêtraitement et
+modèle
+on va voir ensemble comment
+les autres acteurs du projet
+ont fait pour déployer automatiquement
+ces modèles d'une manière
+générique
+mais avant de parler de l'architecture
+je vais introduire rapidement
+OpenShift
+c'est ce qu'on appelle
+une plateforme as a service
+c'est un projet open source
+qui est développé par Radat
+et qui s'appuie
+sur Kubernetes
+en lui ajoutant
+des fonctionnalités intéressantes
+comme la construction
+des images Docker directement
+depuis le Git
+depuis un gestionnaire
+de source
+donc rapidement
+pour rappel les différents modèles
+de cloud computing
+on a l'infrastructure
+l'IAS
+infrastructure as platform
+ça c'est
+sur le plateforme manager
+qui va gérer des machines virtuelles
+et qui fait abstraction à tout ce qui est
+à tout ce qui est server physique
+un niveau au dessus on a tout ce qui est
+CAS donc le container as platform
+ça c'est une plateforme manager
+qui permet
+de déployer des conteneurs
+en faisant abstraction à tout ce qui est
+machine virtuelle
+nous on est dans le cas
+de plateforme as service
+avec OpenShift
+c'est une plateforme qui permet
+de déployer des applications en faisant abstraction
+à tout ce qui est container
+et enfin
+on a la notion aussi de FAS
+qui est fonction as service
+qui permet
+une plateforme manager qui permet de
+déployer des fonctions
+en faisant abstraction à tout ce qui est
+à tout ce qui est application
+donc
+lorsqu'on parle d'OpenShift
+il faut parler de la containerisation
+et parmi les outils qui existent
+on a Docker
+qui est une technologie libre qui permet
+d'impacter et de packager nos applications
+avec leur dépendance
+et les mettre dans un container isolé
+ce qui fait que cette application
+peut être déployée un peu n'importe
+où donc on peut la déployer
+dans une VM, on peut la déployer
+dans un serveur, dans le cloud, peu importe
+et c'est assez intéressant
+par exemple si on a un modèle
+et qu'on veut l'exposer avec Flask en Python
+si on n'utilise pas Docker
+il faut demander à l'administrateur système
+d'installer Python, d'installer la version
+Scikit Learn 0.22 ou 0.20
+et d'installer quelques packages
+et ça devient vite
+compliqué, surtout si on utilise
+aussi R parce que tout le monde ne connait pas R
+et nous
+dans notre cas on a 60 modèles
+et chaque modèle il utilise des versions
+différentes donc c'est un peu
+différent
+donc la seule condition
+c'est d'avoir Docker installé
+dans le host qui va héberger notre application
+ce qui rentre en jeu après
+c'est la notion d'orchestration
+des containers
+c'est des technologies qui existent
+comme Docker Swarm
+ou Kubernetes
+qui permettent de
+déployer par exemple automatiquement
+des containers
+de gérer la montée en charge
+de définir la stratégie de rédémarrage
+des applications pour faire du blue-green
+par exemple deployment
+ou pour avoir plusieurs versions de modèles
+par exemple nous
+on peut créer une application Docker
+enfin une image Docker
+la long c'est cette application
+manuellement avec Docker Run
+mais
+c'est pas faisable en fait si on a
+plusieurs containers à manager
+c'est pour ça qu'on utilise cette technologie
+d'orchestration
+ce que vous voyez ici en rose c'est la notion
+de pod donc c'est une notion propre à Kubernetes
+dans un pod c'est une idéologie qui va
+regrouper plusieurs containers
+donc nous on a fait l'objet d'utiliser
+un container par pod
+mais vous pouvez tout à fait faire
+un container dans un pod par exemple
+on peut imaginer un container qui va faire
+le prétraitement en sparkaml
+et ensuite un container qui va héberger
+le modèle exit boost par exemple
+enfin
+OpenShift rajoute
+une couche
+enfin certains outils qui facilitent
+qui facilitent la prise en main
+de Kubernetes par exemple
+rajoute la notion d'intégration
+avec les gestionnaires de source
+Git et là on peut par exemple
+automatiquement des images
+en passant par OpenShift
+sont créés
+par exemple des docker files etc
+donc ça c'est très intéressant
+on a la notion de gestionner
+enfin de registrer en termes
+donc là c'est un peu l'équivalent de docker hub
+mais c'est propre à OpenShift
+c'est là où on va stocker nos images
+il y a les notions de pipeline, c'est propre au DevOps
+et il y a tout ce qui est gouvernant ces sécurité
+donc les images qui sont créées
+automatiquement par OpenShift
+sont conformes aux normes de sécurité
+de Red Hat
+donc quand je l'ai
+déjà mentionné
+en OpenShift on trouve plusieurs objets
+supplémentaires à Kubernetes
+nous ce qui va nous intéresser
+c'est l'objet build configuration
+donc c'est l'objet
+cet objet est responsable
+de la construction de l'image docker
+donc c'est lui qui va aller chercher les sources
+donc Git et va créer l'image docker
+sans passer par un docker file
+ensuite il y a l'objet image stream
+donc image stream c'est l'objet
+qui est responsable du stockage
+de notre image qui a été créée par le build config
+dont le registre interne
+de OpenShift
+ensuite il y a l'objet deployment configuration
+qui est responsable
+du déploiement
+de notre application
+et qui va gérer le cycle de vie
+de notre application
+par exemple comment gérer la montée en charge
+si notre application tombe et bien comment
+après on trouve la notion de service
+qui est propre à Kubernetes et qui permet d'exposer
+notre application en interne
+dans le cluster et la notion de route
+qui rajoute OpenShift
+qui permet d'exposer cette fois-ci
+l'application
+qui permet
+d'exposer le service
+en HTTP
+donc nous le modèle on y accède via des routes
+donc grâce
+au modèle
+enfin grâce au pipeline et au modèle augmenté
+que fournit le data scientist
+on peut se permettre de créer
+des projets génériques
+pour faciliter le déploiement
+donc concrètement nous on avait
+des projets Python et R
+donc le projet Python qu'est-ce qu'on va trouver
+dans le projet Git
+on va trouver de la configuration OpenShift
+donc là c'est des fichiers de configuration que le DevOps
+va faire
+donc il va configurer comment faire le build configuration
+comment faire le
+le deployment comment faire l'image stream
+et comment donner un nom à la route
+donc
+ensuite
+ça le DevOps
+c'est pas très compliqué il le fait tous les jours
+il fait plusieurs fois par jour donc ça peut paraître
+compliqué pour nous mais c'est
+quelque chose de quotidien pour le DevOps
+ensuite il y a la partie GitLab CI
+donc c'est un fichier de configuration propre à GitLab
+que le DevOps aussi va configurer
+pour
+pour
+pour exécuter enfin pour lancer
+le déploiement de notre application
+donc instantier tous les objets
+d'OpenShift et déployer l'application
+après il y a la partie appellisation
+en flasque dans ce qui concerne Python
+ça ça va être codé par
+par le développeur
+donc concrètement c'est quoi c'est la définition
+des routes on va définir une route
+qu'on va appeler invocation qui va
+faire des prédictions on va appeler
+et on va aussi définir
+une route qui va
+qui va par exemple
+donner le schéma avec lequel
+il faut communiquer avec le modèle
+et dans cette partie il ne faut surtout pas
+charger le modèle dans les routes il faut le charger
+en dehors des routes donc ça
+ça c'est très important pour gagner
+en performance en plus
+on a un fichier aussi serveur d'application
+donc là on nous on fait du
+Whiteress
+pour c'est
+quand je l'ai dit c'est un peu
+l'équivalent de Jboss
+c'est pour pouvoir traiter
+plusieurs requêtes en même temps
+et enfin on a le Recrement
+Text donc ça c'est un fichier
+de dépendance qu'on va utiliser
+pour créer l'image Python
+par exemple si vous avez utilisé
+Cycadler, Panda et tout on va voir ça ici
+et on va pouvoir installer tout ça
+grâce aux objets OpenShift
+concernant le projet R
+il y a de la configuration OpenShift
+il y a du GitLab CI CD
+il y a la partie à payisation avec
+le micro service
+avec le framework de micro service Plumber
+et il y a le packrat.loc
+qui est un peu équivalent
+de ce qu'on voit
+à piton mais là ça permet
+ça permet de
+gérer les dépendances de notre projet R
+donc Docker plus packrat
+c'est une reproductibilité
+vraiment 100%
+de votre projet R
+il faut savoir aussi que
+lorsqu'on utilise Docker
+donc il y a de Linux derrière
+souvent on a pas
+des binaires
+concernant les dépendances R
+donc parfois ça prend du temps
+tout ce qui est compilation
+donc nous par exemple ce qu'on a fait
+c'est de créer des images sur le R
+et on va se baser sur 6 images
+pour faire le build pour aller plus vite
+donc l'architecture
+comment ça se passe
+il y a les équipes Data Scientist
+depuis son notebook Jupiter
+il va déposer automatiquement
+le modèle dans Nexus
+et cette partie
+elle est codée par le développeur
+donc concrètement c'est quoi
+le Data Scientist dans le notebook
+il va faire modèle.deploy
+et la fonction Déploy
+a été codée par le développeur
+derrière c'est quoi
+il y a juste une requête
+qui va upload le modèle serialisé
+et va le déposer dans le Nexus
+Nexus c'est un repos
+qu'on utilise pour mettre les dépendances
+par exemple pour ceux qui font du Java
+ils utilisent Maven
+souvent on va stocker les dépendances ici
+donc c'est des binaires
+et nous on l'utilise aussi pour stocker le modèle
+donc dès qu'il y a un modèle qui tombe
+dans le Nexus
+on déclenche automatiquement
+il va créer un GitLab
+de lancer le workflow
+et donc le GitLab s'il y a et qu'est-ce qu'il y a
+il y a un job qui s'appelle Build
+qui va créer tous les objets OpenShift
+qui va créer notre application
+ensuite il y a le JobDeploy
+qui va déployer
+notre application et il va être
+disponible pour tout le monde
+donc cette partie elle est faite par le développeur
+et cette partie elle est faite par le DevOps
+donc le DevOps qu'est-ce qu'il a à faire ici
+il va juste configurer Nexus
+et quand on écoute sur un dossier
+spécifique
+dès qu'il y a un modèle qui tombe
+il va envoyer un webbook
+ou un requet de poste pour déclencher
+un pipeline ici
+donc concrètement
+qu'est-ce qu'on va avoir
+au début on va avoir par exemple
+deux applications qui se créent
+mais avant la création
+de ces applications
+on utilise la notion de Prehook
+ou de l'initialisation de container
+via le
+DeploymentConfig d'OpenShift
+on va dire à l'application avant de se démarrer
+il faut que tu ailles chercher le modèle
+dans le Nexus et demande
+à Nexus de le mettre
+dans le NAS
+donc le NAS c'est un système
+de stockage
+distribué
+nous on n'a pas fait le choix
+d'inclure le modèle dans l'image
+donc il y en a qui le font
+parce qu'on ne voulait pas mettre
+des binaires dans les repos Git
+et aussi le Data Scientist
+n'avait pas accès
+à notre GitLab
+et surtout aussi pour rendre
+les images beaucoup plus légères
+donc une fois
+le modèle, par exemple, ça c'est le modèle Pickle
+et ça c'est RDS, une fois le modèle ici
+et bien l'application
+peut le charger et peut commencer
+à faire des inférences via des requettes HTTP
+donc là on voit la partie Flask
+la partie Server d'application et la partie
+HTTP et tout ça c'est dans un pod
+et comme j'ai dit, nous on est partis
+sur un container dans un seul pod
+si jamais il y a eu montée en charge
+et on a besoin d'autres applications
+donc Kubernetes
+OpenShift va automatiquement créer
+d'autres pods, et bien dans ce cas là
+le pod il va aller directement chercher
+le modèle dans le NAS, il va pas aller le chercher
+dans Nexus
+donc concrètement
+lorsqu'on va
+déployer
+notre application
+le modèle va être consommé
+par plusieurs
+applications, donc les applications Java
+C-Sharp ou même en batch
+et on va
+enfin renvoyer la réponse
+donc ils peuvent envoyer soit du JSON, soit du CSV
+donc qu'est-ce qu'on va faire après
+on va envoyer ce qu'on a pris
+dit dans un broker
+il faut utiliser Spark, Spark Stream
+donc
+il n'y a pas de contrainte
+et derrière on va balancer
+les données à un framework
+qui s'appelle DQ
+qui a été open sourcé par AWS
+et qui permet de faire
+des tests unitaires sur les données
+donc on peut le configurer pour dire
+si la distribution change
+ou si il y a de nouvelles modalités
+ou si il y a beaucoup de valeurs
+manquantes, et bien il faut
+faire des notifications
+donc là on peut
+dès qu'on va
+détecter un changement dans les données
+dans la distribution des données
+on va notifier les datas scientistes
+et dans ce cas-là on va faire du train manuel
+on va leur envoyer un email donc ils vont télécharger
+les données, ils vont explorer ça dans un out-book
+et
+ils vont
+réentraîner leur modèle et ils l'envoient
+vers Nexus donc
+on va refaire la même chose
+mais on peut faire le train automatique
+ça consiste à
+ne pas communiquer avec les datas scientistes
+de directement envoyer
+les données dans une image
+et l'exécuter dans OpenShift
+cette image, c'est quoi ?
+il y a du Python, il y a quelques frameworks
+qu'on utilise, Scikitler ou MLR
+on va demander aux datas scientistes
+de nos données le script qu'il a utilisé
+pour l'apprentissage donc éventuellement
+il va le mettre dans le zip
+qu'il a envoyé dans Nexus
+et ce script
+donc
+il aura besoin de 3 choses
+donc
+éventuellement les hyperparamètres
+et
+l'adresse ou mettre le modèle
+et
+un lien vers les données
+d'accord ?
+donc
+cette image on va la lancer
+et c'est un conteneur
+qui n'a pas vocation
+à tourner à vie
+elle va être exécutée le temps
+de l'entraînement
+donc à la fin, qu'est-ce qu'on va avoir ?
+on va avoir un modèle
+qui va être directement envoyé dans Nexus
+et dès qu'il y a un envoi
+à Nexus, on va redéclencher
+un pipeline à GitLab CI
+mais ça c'est un peu dangereux
+pourquoi ? parce que
+si on fait
+une notification
+c'est parce que
+il y avait un changement
+de distribution dans les données
+ici il y a un changement de distribution
+c'est que
+il faut réentraîner le modèle
+mais souvent il faut aussi
+changer le prêtraitement
+par exemple si dans le script
+que le data scientist nous livre
+il y a une partie de prêtraitement
+il va falloir aussi la changer
+par exemple le cas le plus simple
+vous avez une variable qui est normalement distribuée
+avec le temps elle va changer de distribution
+du coup il faut adapter la manière
+de la normaliser ou de la remettre à l'échelle
+par exemple donc moi je suis plutôt
+enfin nous ce qu'on préfère
+c'est notifier les data scientists
+pour faire un train manuel
+mais rien ne les empêche
+d'utiliser cette image
+pour exécuter le train sur d'autres machines
+et non pas sur leurs machines
+non pas sur leurs machines locales
+voilà donc
+j'ai terminé
+cette présentation
+l'idée c'est
+enfin
+ce que j'ai envie de dire c'est que la communication
+enfin la clé
+du réussite de ce projet c'était
+la communication entre les différentes équipes
+et
+donc on voit que la
+continuellisation ça nous aide beaucoup
+dans tout ce qui est
+tout ce qui est apprentissage
+que ce soit pour l'exposition de modèle
+ou pour
+pour l'entraînement
+des modèles
+la seule chose
+qui est un peu
+enfin qui est un peu
+qui limite un peu
+c'est la sérialisation
+au début j'ai évoqué
+le fait qu'on a utilisé
+la sérialisation binaire pour
+par facilité
+ce qui fait que
+si un data scientist
+a fait un modèle ampitant
+ça nous oblige en quelque sorte
+si le modèle ampitant s'il a fait en R
+il faut créer la paye en R
+donc il y a d'autres
+il y a d'autres types de
+sérialisation qui sont à base de fichiers
+plats par exemple et MML
+donc on peut représenter ça comme un fichier xml
+mais de mémoire je pense que
+ça répond pas
+ça répond pas en fait ça prend pas
+en compte tous les modèles
+et c'est un peu difficile d'inclure les pipelines
+dedans donc
+il y a d'autres
+standards qui ont été initiés
+récemment par Facebook
+et NVIDIA
+notamment
+le standard ONX
+et donc l'objectif c'était
+d'unifier
+la description
+des modèles
+de telle sorte que si
+moi j'utilise un modèle
+avec scikit-learn
+j'apprends un modèle avec scikit-learn
+on va pouvoir le charger
+avec
+un framework type TensorFlow
+et c'est assez important pourquoi
+parce qu'on va pouvoir
+faire de la paye
+par exemple avec Java, avec Scala, avec n'importe quel langage
+parce que derrière ONX
+il y a aussi la notion de moteurs d'inférence
+donc on trouve souvent
+des moteurs d'inférence qui permettent d'accélérer
+les inférences que ce soit
+dans des serveurs
+ou dans
+de la UTI donc tout ce qui est embarqué
+donc c'est un standard
+qu'il faut regarder
+de près et ça donne
+pas mal de possibilités
+donc là je vous remercie pour votre
+écoute et si vous avez des questions
+je répondrai avec plaisir
+merci
+il faut que je voie le chat
+donc la question
+quelle algorithme avez-vous choisi
+pour la combinaison des 3 prédictions
+en fait c'est du
+c'est du stacking
+en fait c'est
+par exemple dans le cas
+de
+de
+de
+de
+de
+de
+de
+de
+de
+de
+de
+que
+par exemple ici
+on fait
+des predictions avec X-BOTH
+des prédictions avec La Regression Logistique
+des prédictions avec SVM donc nous ce qu'on va prendre
+c'est simplement les prédictions
+on va construire un novo jeu de données
+et on va appliquer à notre algorithme
+ça peut être du SVM
+mais on peut utiliser n'importe quel modèle
+donc c'est de l'apprentissage
+classique et rien de particulier
+et ce type de
+ce type d'approche s'appelle de stacking donc le fait
+de regrouper des prédictions
+en fait on peut voir ça
+comme une pondération
+des prédictions
+alors pourquoi il utilisait R et Python ?
+parce que
+quand j'ai dit il y a plusieurs data scientiste
+c'était une dizaine
+il y avait des actuaires qui bossaient uniquement avec R
+il y avait d'autres qui bossaient aussi avec Python
+donc
+l'objectif c'était pas
+de forcer les autres à utiliser de Python
+ou les autres à utiliser R
+donc on s'est adapté
+quand j'ai dit on pouvait pas accé...
+on avait pas accès à leur code
+ce qui fait
+que ce qui fait
+qu'on s'est adapté
+avec la conteneurisation c'est beaucoup plus facile
+en revanche ce qui est compliqué avec R
+c'est qu'il est monotrade
+donc avec l'appellisation
+Plumber
+en fait dans R on n'a pas la notion
+en tout cas on n'a pas beaucoup cherché
+on n'a pas la notion de serveurs d'application
+ce qu'on trouve en Python
+on peut utiliser GUNICORN ou Y-13
+qui va jouer le rôle d'un gboss
+par contre en R il va falloir gérer
+le traitement
+en parallèle des requêtes
+donc créer d'autres sessions R etc
+donc ce qui est un peu compliqué c'est un peu long
+ensuite pour GFS
+exactement on peut gérer ça on peut mettre du binaire
+dans GitLab LFS
+mais ça
+ça peut répandre un autre
+problématique
+mais
+ce qui était le plus handicapant
+c'était le fait d'avoir des images
+très très très faibles
+parce qu'on peut avoir facilement
+des modèles qui font plusieurs méga
+voilà nous on ne fait pas de deep learning
+mais si jamais on commence
+à faire du deep learning
+les images peuvent avoir
+une taille importante
+et lorsque par exemple
+il y aura une montée en charge
+OpenShift il va créer plusieurs applications
+et si l'image est assez importante
+il va prendre beaucoup de temps
+mais vous avez tout à fait raison
+LFS c'est fait pour
+un binaire dans GitLab
+je suis pas dévops
+à l'époque
+parce qu'utilisateur de coeur peut lancer
+effectivement donc OpenShift
+donc quand je dis il n'y a pas la notion
+de serveurs d'applications de R
+c'est à l'intérieur de l'application
+par contre le fait d'utiliser OpenShift
+nous ça nous permet de créer
+autant d'applications pour des requêtes
+donc on crée carrément
+un conteneur pour chaque utilisateur
+alors qu'en pittant
+on a à la fois cette possibilité
+et en même temps on peut faire du parallelisme
+à l'intérieur de chaque pod
+donc toujours pittant
+c'est toujours beaucoup plus performant pour faire
+des...
+pour faire des
+des prédictions en temps réel
+est ce que ça passe
+à l'échelle
+qu'est ce qui passe à l'échelle
+qu'est ce qui passe à l'échelle
+en fait si on fait
+si on fait le train
+via le conteneur
+et bien on a
+la possibilité de lancer notre
+conteneur
+dans une machine EC2 très puissante
+ou en local ou dans un serveur OpenShift
+donc la question
+de monter en échelle
+concernant l'apprentissage et bien ça dépend des ressources
+que vous avez
+par exemple si vous regardez
+SageMaker
+le service mal-agw vs
+derrière
+enfin un algorithme c'est un conteneur
+faire des prédictions c'est à base de conteneurs
+donc c'est exactement la même architecture
+on s'est d'ailleurs inspiré de SageMaker
+pour l'architecture
+après si vous parlez
+de le passage
+à l'échelle
+à l'échelle concernant
+les prédictions là c'est géré par OpenShift
+et ça dépend aussi des ressources
+que le département des data scientists
+voudra louer pour
+leurs applications
+voilà on peut monter horizontalement en échelle
+il n'y a pas de soucis
+donc comment évaluer
+comment évaluer le changement
+de distribution
+donc le changement de distribution on utilise
+le Framer DeepQ
+par exemple on peut faire des techniques
+de détection d'anomalie
+mais on peut utiliser des techniques de traitement de signal
+de Qsomes par exemple
+on peut considérer les données comme une série
+et de détecter le changement avec le temps
+on suppose qu'il y a une distribution
+et avec le temps cette distribution a changé
+donc Qsomes qui est un algo très très simple
+permet de répondre
+à ces questions
+là je vois les questions sur
+quel algorithme dans SageMaker
+répitons
+est-ce que ça passe à l'échelle
+comment
+évaluer le changement de distribution
+juste des écarts à la moyenne
+ou des méthodes beaucoup plus complexes
+en fait
+la détection de changement
+on la fait via le Framer DeepQ
+on peut créer
+nos propres scripts
+on peut demander aux data scientists de créer
+ses propres scripts
+donc on peut utiliser des méthodes
+de détection d'anomalie classique
+dès que par exemple une donnée
+on commence à s'éloigner
+par exemple la moyenne à les quartiers
+on peut dire qu'on commence à avoir un changement
+et après
+il y a la notion aussi d'évaluation des feedbacks
+nous pour le moment on n'avait pas de feedback
+on peut tester la performance du modèle
+et notifier le data scientist quand la performance décroît
+mais
+c'était quoi la question ?
+après ce qu'on peut faire aussi avec DQ
+c'est
+l'utilisation
+des assertions par exemple
+dès que
+tu remarques qu'il y a des nouvelles modalités
+dans une variable
+ou dès que l'Instagram change
+tu fais une notification
+c'est vraiment un framework complet
+il va falloir
+vraiment
+avoir de prêt pour
+améliorer toute cette partie
+de gestion de feedback
+et de changement de distribution
+donc
+c'est quoi la question ?
+je ne suis pas expert
+la jointure des variables
+semble être une concatenation
+native exactement
+cela ne biaiserait pas la méthode
+le modèle si les espaces de description
+sont très
+hétérogènes
+en fait ce que j'ai montré ici
+c'est pas exactement les modèles qui sont en prod
+c'est juste pour montrer
+qu'avec les pipelines
+on peut faire n'importe quoi
+on peut faire n'importe quel
+prétraitement
+on peut l'utiliser comme étapes de prétraitement
+mais vous avez tout à fait raison
+si on change d'espace
+c'est normal que le modèle risque
+d'être biaisé
+oui L2GAD
+c'est un algo que nous avons publié
+il y a un certain temps sur la détection
+d'anomalie
+oui c'est ça
+je sourds mon algo
+donc à la fin le train automatique
+on va éviter
+parce que
+qu'est ce qu'on fait en fait
+c'est que on va notifier le data scientiste
+il va prendre le temps d'analyser
+les nouvelles données dans son notebook
+et ensuite il va prendre
+peut-être un échantillon
+il va créer un script
+il va utiliser
+si il n'a pas assez de puissance dans sa machine
+utiliser notre solution
+d'entraîner automatiquement
+ou il entraîne directement
+directement
+son modèle depuis le notebook
+c'est bon
+quel était la place du train
+c'est bon j'ai appris cette question
+donc est ce qu'il y a un regard
+sur la traçabilité de ce café
+le data scientiste
+non
+pourquoi ? parce que quand je l'ai dit
+le contexte
+de cette mission est très particulier
+parce qu'on n'a pas travaillé avec les data scientistes
+on n'avait pas accès à leur code
+mais ceci on peut le faire
+si on avait accès à cette partie
+si on avait accès à cette partie
+on pourrait par exemple faire
+des tests unitaires pour vérifier
+est ce que les transformations vont bien
+pour on peut faire aussi des tests
+pour vérifier la performance des modèles
+et donner le ok pour qu'ils soient déployés
+on peut aussi vérifier
+en termes de sécurité
+est ce que la sérialisation correspond
+vraiment à ce qu'a envoyé
+à ce qu'a envoyé le modèle
+donc non
+il n'y a pas de
+traçabilité de ce café
+le data scientiste
+parce que le contexte ne le permet pas
+il y a un autre point aussi
+c'est que
+il y a un autre point intéressant
+c'est que
+lorsqu'on va
+mettre le modèle dans le Nexus
+donc il va être référencé
+c'est comme une dépendance quelconque
+ce qu'il faut peut-être rajouter
+c'est de
+stocker les modèles
+stocker les métadonnées du modèle
+les informations par exemple
+ce modèle s'appelle
+modèle XGBoost
+qui a été
+développé par le data scientiste
+numéro 1
+qui a été appris avec tel paramètre
+donc on peut créer un document par modèle
+et mettre ça dans une base
+de document tel que MongoDB
+et après
+on va pouvoir faire du monitoring
+du modèle par exemple
+le chef data scientiste
+il va pouvoir consulter cette base de données
+pour savoir
+quel est le data scientiste qui fait
+le plus de modèles qui ont beaucoup plus
+de performances etc
+et pour revenir en arrière
+parce qu'on peut aussi
+sauvegarder enfin on peut aussi stocker
+l'information selon
+cette modèle il a été appris avec ce jeu de données
+avec tel paramètre
+ça a pris tel temps et ça a
+généré telle performance
+voilà
+merci Anil pour
+la référence vers l'algo
+donc si vous avez pas
+d'autres questions
+je vous dis
+à très bientôt
+et merci encore
+et quelle est
+la place
+de BI dans ce
+framework
+et bien la place de BI
+nous si vous avez remarqué
+on a pas
+fait de post
+prediction
+le modèle il fait
+juste les prédictions
+c'est aux applications qui vont consommer
+ce modèle
+c'est à ces applications
+de faire le post traitement
+donc il y a des applications BI
+qui vont requêter notre modèle pour avoir
+des prédictions
+donc nous on s'occupe pas de cette partie
+pas de visualisation
+la visualisation
+le data scientist
+il fait sa partie de visualisation
+dans son outpook
+il y en a qui utilisent data IQ
+donc voilà nous on s'occupe pas
+de tout ce qui est visualisation
+BI et l'objectif c'était simple
+mettez nous des modèles en production
+pour qu'il soit facilement
+accessible à toutes les applications
+voilà
+merci à vous
+si vous avez pas d'autres questions
+je vais
+couper
+le stream
+et à très bientôt
+dans un autre meetup
+liant d'attations
+n'hésitez pas à les contacter
+et répondre généralement assez vite
+merci

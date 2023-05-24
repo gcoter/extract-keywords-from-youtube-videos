@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science : L'importance de la normalisation en analyse de donn\u00e9es", "keywords": ["normalization", "data analysis", "machine learning", "z-score", "geometric z-score", "assumptions", "errors", "natural language processing", "exploration", "discovery"]}

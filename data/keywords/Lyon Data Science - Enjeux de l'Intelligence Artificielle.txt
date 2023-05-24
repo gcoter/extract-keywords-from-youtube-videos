@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science - Enjeux de l'Intelligence Artificielle", "keywords": ["artificial intelligence", "ethical concerns", "biased data", "societal impacts", "Cambridge Analytica", "China's social credit system", "environmental impact", "machine learning algorithms", "end user", "technical knowledge"]}

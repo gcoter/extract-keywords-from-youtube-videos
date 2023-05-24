@@ -1086,121 +1086,113 @@ il y a énormément de trucs neutres,
 des trucs positifs
 et peu de trucs qui gagnent.
 Donc,
-un G d'apprentissage
-qui est particulièrement
-déséquilibre.
-Donc, ça,
-ça a été un vrai problème
+c'est un délicieux,
+un délicieux d'apprentissage,
+qui est particulièrement déséquilibre.
+Donc ça,
+ça l'est un vrai problème
 pour nous aussi,
-pour le bout d'apprentissage.
+pour nous d'apprentissage.
 Donc,
 on a fait,
 au départ,
 voilà,
-on a fait du test,
+on a fait du TFDF,
 on a testé différents
-adleries d'apprentissage
+algorithmes d'apprentissage
 standard.
 On n'est pas
-lancés
-dans le,
+lancé dans le,
 comment dire,
-dans la classification,
-peut-être là,
+dans la classification.
+Peut-être là,
 c'est de la classification,
-classique.
-Trois adleries,
-logistique,
-Pond of Forest,
+ou un classique.
+On a fait des algorithmes,
+avec l'action logistique,
+Pond of Forest
 et
-My Bayne.
-Mais les règles de Bayne,
-non ?
+MyBind,
+mais les algorithmes bien.
 Ouais.
 Donc, on s'est dit,
 bah voilà.
 Hopstier.
 Super résultat.
 En fait, non.
-On avait un peu
-oublié,
+On avait un peu oublié
 un petit quelque chose.
 C'est très léger.
 C'est très léger.
-C'est à dire que là,
+Là,
 on a pris tous les éléments,
-on a fait le TFIDF,
-etc.
-Et on a fait le test
+on s'est vu,
+TFDF, etc.
+Et on a fait
+le test
 avec
 un sous-ensemble
 qu'on avait extrait,
 etc.
 Sauf que le sous-ensemble,
-lui, il avait aussi
-participé au TFIDF.
-Bah oui, ouais.
-Sauf que, en fait,
+lui,
+l'avait aussi participé
+au TFDF.
+Bah oui.
+Sauf qu'en fait,
 dans la réalité,
 quand il y a un nouveau poste
 qui arrive,
 c'est un poste qu'on n'a jamais vu.
-Donc, à l'intérieur,
-il faut y avoir des
-mots qu'on n'a jamais vu.
-Donc, voilà.
-Donc là, on s'est dit,
-ah ouais,
-trop beau pour être vrai.
-Mais il y avait un lieu
-où qu'elle lui ajoutait
-cette vérité à ça,
-qui était connue.
-Donc, en fait,
+Donc,
+à l'intérieur,
+il faut y avoir
+des mots qu'on n'a jamais vu.
+Donc,
+donc là,
+on s'est dit,
+mais il y avait un lieu
+auquel lui ajoutait
+cette vérité.
+Donc,
 ça paraignait
 comme
 erreur.
 Je sais bien combien.
 Mais bon,
-on était dans
-une espèce de
-fondieux.
-Mais bon.
+on était dans une espèce
+de fondieux.
 En réalité,
-on a
-corrigé ça
+on a corrigé ça
 et là,
-les résultats
-ont été moins bons.
-Mais, on s'est renversé.
+les résultats ont été moins bons.
+Mais,
+on t'a réveillé là-dessus.
 Donc, poste négatif,
 poste positif,
-on a le TFIDF,
-l'administration en commun,
-le TFIDF,
+on a un téléphone,
+on a des réalisations en commun.
+Le poste négatif,
 que pour
-le train peste.
-Et puis ensuite,
-il y avait,
-on retrouvait
-les éléments
+le trend test,
+et puis ensuite,
+on a retrouvé les éléments
 par rapport
-à la
-poste hiérée.
+à la poste tirée.
 Bien.
 Alors,
 ce type d'amélioration,
 on a fait plein de choses,
 parce que là,
-il y a du temps,
+il y a eu du temps,
 tout ça,
 19, 2021.
-Donc, au résultat,
-voilà,
+Donc,
+aux résultats,
 augmenter la taille
 du vocabulaire
-sur le pain de tête,
-c'est pas la chose.
+peut-être,
+meilleure les choses.
 On monta le ratio
 de poste positif.
 Donc là,
@@ -1215,25 +1207,25 @@ les meilleures ratios
 d'augmentation
 du nombre d'éléments,
 enfin,
-le ratio de négatif et de politique.
+le négatif,
+le polygne.
 Là,
-on avait fait du TFIDF,
+on avait fait du TFIDL,
 on a testé
-le retrouvé classique,
+une retrouvée classique,
 en fait,
-comme aux représentations
-des coquettes.
-Ensuite, on avait
-fait là aussi,
+comme haute représentation
+ensuite, on avait,
+et là aussi,
 il faut dire,
 poste,
 quand on parle de poste,
 alors,
-les gens se disent,
-bah oui, c'est un petit texte,
+les gens, tu te dis,
+ben oui, c'est un petit texte,
 ils parlent d'un truc,
 voilà.
-Dans le temps,
+Dans un temps,
 il y a des gens
 qui mettent des pages,
 qui parlent de tout
@@ -1241,107 +1233,109 @@ et n'importe quoi.
 Enfin,
 au début,
 ça parle de pneus,
-après,
-ça parle de...
+après ça parle de
 plus dernier,
 de mon garage,
-rallye de formula,
-après,
-certain,
+rallye de formule 1,
+un vrai certain,
 avec des choses.
 Bon,
 donc,
-voilà,
-différentes entités nommées,
+là,
+il y a différents éléments,
+il peut y avoir
+différentes entités nommées
 qui sont à l'intérieur.
 Donc,
 l'objectif,
-c'est de
-découper le poste,
+c'est de découper le poste
 de telle manière,
-à dire, oui,
+à dire,
+oui,
 je le prends,
 l'entité nommée,
 je le prends,
 tous les textes,
-qui sont autour de cet entité,
+qui sont autour
+de cette entité,
 soit directement,
-soit par coquetteur.
+soit par
+coucure.
 Donc,
 voilà.
-Donc,
-là,
+Donc là,
 on a les pages complets
 et les pages découpées.
 Comme ça,
 au moins,
+parce que,
 on faisait que les pages
 découpées avant,
-on a préféré
-avoir les deux.
-Donc,
+bon,
 le roi de la
 de la classification,
 où j'ai tous,
-bon, voilà,
+bon,
+là,
 on va intégrer.
 La notion de sali de califière,
 on reviendra là-dessus,
 par rapport à tous les tests
 qu'on a fait,
 parce que là,
-c'est que tester,
-tester,
-pour voir les résultats,
+c'est qu'on a fait que tester,
+tester, pour voir les résultats,
 etc.,
+pour dire,
 c'est quoi les ratios,
 les plus optimales,
 par rapport au nombre
-de poste en un,
+de poste en 1,
 etc.
 Et,
 donc,
-notion de sali,
+une notion de sali,
 et puis ensuite,
 à la fin,
-on a fait un bally,
+on a fait un baili,
 donc le but,
 c'est de regrouper,
-d'avoir plusieurs modèles,
-et ensuite,
-aussi,
+un bot,
+enfin,
+un peu d'aliment.
+Et ensuite aussi,
 pour des raisons de performance
-et aussi d'être
-plus éligentaires,
-enfin, plus directs,
-l'immigration du moteur du l'air.
+et aussi,
+d'être populiste et volontaire,
+enfin, plus direct,
+l'implication du moteur du verre.
 Donc,
 les classes dramaticales,
 en fait,
 elles sont importantes,
-parce qu'à l'instant,
-on me conservait
-que les classes pertinentes,
-en fait.
+parce que,
+à la fin,
+on me conservait que les classes
+pertinentes, en fait.
 Les éléments,
 le la,
 le machin,
 les trucs,
 la verbe,
-le bat-touche,
+le verbe,
+le touche,
 ça,
 on a tout dit à eux.
 Bon.
 Et,
-à la fin,
-on a tout dit à eux.
-Et puis,
+puis,
 de petits trucs,
 on va pas dire,
-très gaises,
-non, c'est bien.
-Vous êtes trucs
-très très ciblés,
+ils sont très gaises,
+donc voilà.
+Bon.
+Non, je m'y agris.
+Vous êtes trucs très très ciblés,
 c'est pas mal.
 Donc voilà,
 quand je disais
@@ -1349,137 +1343,138 @@ qu'à la fin,
 on a essayé de
 découper ça,
 c'est nos familles,
-en fait.
-Voilà,
+en fait,
+voilà,
 les typologies,
-on va dire,
-non,
-ce truc,
-cette langue-là,
+de dire,
+bah bah,
+non, ce truc,
+pour cette langue-là,
 etc.,
+bah,
 est-ce qu'il y a des familles
-de qualité ?
-Et,
-il y a des familles
-de qualité ?
-C'est ça,
-ça c'est l'objectif.
-C'est une une compagnie
-de l'utilisation,
-etc.
-Et donc,
-on définissait,
+de qualité?
+Oui, non.
+Il peut être normal
+et ça,
+c'est l'objectif.
+MAN stitches,
+batteries comp Skills,
+國 Jugais, etc.
+On définissait,
 finalement,
 un certain nombre d'éléments
 qui nous permettent
-de piloter
-le choix qu'on va faire
-d'aussi hyper-paramètes
-qu'on va impliquer
-sur la Valla-Péretédoche.
+de piloter le choix
+qu'on va en faire,
+dosés hyperparamètes
+qu'on va,
+ography,
+sur radar.
 Et alors,
 on a retenu
-peu de modèles
-qui étaient l'immédiat,
-ou vous pouvez,
-d'où je vous couse,
-que de la sautite,
-en tout cas,
-sur les artistes qui viennent.
+peut-être
+tous les modèles,
+ok,
+mes wegen我很
+sou dólares pour le commun,
+et régression logistique.
+En tout cas,
+sur les artificies,
+combien.
 Donc voilà,
 on peut les résultats.
 C'est toujours sympa
 de voir les résultats.
 Bon évidemment,
 vous allez dire,
-bros, c'est un peu déprimant.
+bros,
+c'est un peu déprimant.
 Bon,
 il y a quand même des résultats
 qui sont pas mal.
 Pour
-le Califfeur
-483,
-c'est vrai que j'aurais dû
-mettre le nom,
-à part,
+le cas du Sphere
+493,
+c'est vrai
+que j'aurais dû mettre
+le gant,
 ça correspond.
 Oh,
-on est super bons.
-Enfin,
-moi,
-j'appelle ça,
-super bons.
+c'est super bon.
+Bon,
+j'appelle ça
+super bon.
 Mais,
-on n'est pas bons du tout.
-Bon, après,
+sur le 619
+on n'est pas bon du tout.
+Bon après,
 c'est une vision,
 typologie,
-ça, c'est du normal.
-Donc,
-dans les normaux,
+ça c'est du normal.
+Donc dans les normaux,
 on est plutôt vrai.
-Quand on a des ratios
-faibles, etc.,
-donc, c'est par rapport
+Quand on a des ratios faibles,
+etc.,
+donc c'est par rapport
 à la typologie précédente,
-effectivement,
-on n'a pas assez de textes,
-on n'a pas assez d'exemples,
+exactement,
+on n'a pas assez de
+le texte,
+on n'a pas assez d'exemple,
 etc.
 Le ratio,
 finalement,
 de base,
 même si on bouche le truc,
-puis,
-dès que c'est extrême,
+d'excès extrême,
 alors,
 il y a des extrêmes,
 on y arrive bien,
 finalement,
-transformés.
-Vous voyez,
-dans le Nair allemandais,
-là, c'est...
+transformé.
+Bon,
+et vous voyez,
 on a très peu de postes
-sur le Nair allemandais.
-C'est une langue particulière,
-donc,
-bon,
+sur le Nérandais.
+C'est une langue particulière.
+Bon,
 mais toujours est-il que,
-ça,
-enfin,
+ça allait bien.
+Enfin,
 du cas,
 on a fait,
-alors,
-ça,
-c'est le pipeline total
+alors ça c'est le
+pipeline total,
 final,
 full option.
-Enfin,
-oui,
+Non mais,
 on va dire,
-c'est pas ce délinire,
-non,
-mais il y a des trucs,
+c'est pas ce délinir.
+Non mais,
+il y a des trucs,
 c'est tout bête,
+on détecte la langue,
+parce que,
 on entend,
-il y a la langue ou le truc,
+il y a des trucs,
 mais c'est pas toujours la bonne langue.
 Bon,
 on charge les modèles spécifiques.
-Bon, voilà,
+Bon voilà,
 voilà,
-on...
+on,
 on fait,
-comment dire,
-un nettoyage,
-une ligne, le poste tagging,
+comment dirais-je,
+nettoyage,
+délinible,
+post-tagging,
 on les baptise,
 on applique les synonymes,
 voilà,
 et là,
 on applique l'abstiture,
-mais non,
+maintenant,
 splitting, etc.
 On coupe les éléments,
 et puis là,
@@ -1491,62 +1486,59 @@ c'est la partie pré-processing,
 et la partie classification,
 c'est vraiment celle-là.
 Donc,
-ça fait quelque part,
+ça fait quelque chose,
 donc là,
-on récupère les modèles,
-tout le monde,
-faire la classification,
-c'est ça,
-le pipeline,
-le timing,
-le g,
+c'est pour récupérer
+les modèles,
 tout le monde.
+Faire cette situation,
+c'est pas une plainte,
+non,
+c'est une plainte,
+une logique.
 Et ça,
 c'est la partie
 apprentissale.
 Donc là,
-on obtient des modèles
+on nous tient des modèles
 à la fin,
 il faut faire une assurance,
 c'est la fin.
-Donc, on a aussi
-un petit truc d'inférence,
+Donc,
+on a aussi un petit truc
+d'inférence,
 quand même.
 Voilà.
 Mais là,
 plus simple,
 on load les modèles,
-on a un pré-processing,
+on a le pré-processing,
 et après,
 la classification,
 on a un nouveau post-post,
-quels entités,
-quels machins,
-quels conditions,
-hop,
-ça sort.
-Donc,
-après,
+quel antiterre,
+quel machin,
+quel canifereur.
+Hop, ça sort.
+Donc après,
 dans la réalité,
 la vraie vie.
 Donc là,
 il y a les résultats
-de l'apprentissage,
-dans la vraie vie,
+de l'apprentissage.
+Dans la vraie vie,
 bah voilà,
 les sorts qu'on a.
 Alors,
 c'est vrai que
 on a une amélioration,
-par rapport à l'ancienne version,
-elle est appelée
-le catalysme.
-Bon.
+par rapport à l'ancienne version.
+Elle est appelée le catalysme.
 Bon, là,
-c'est plus classif,
-c'est plus classif,
-plus raisonnable.
-Voilà.
+c'est plus classique.
+Alors ça, c'est plus classique.
+Le plus raisonnable,
+Ronald.
 Alors,
 je ne sais plus
 ce que ça veut dire.
@@ -1555,123 +1547,113 @@ Alors,
 il n'y a pas
 une grosse amélioration
 du catalysme,
-avec toutes ses règles
+avec toutes ces règles
 d'extraction, etc.
 Enfin,
 finalement,
-elle est nouvelle,
+avec nouvelle,
 quand elle qualifiait,
-il y avait beaucoup de plateaux,
+il y avait beaucoup de plateaus,
 c'est-à-dire,
 il y avait beaucoup de postes,
 bah non,
 on ne trouve rien.
 On ne trouve rien.
 On ne trouve rien.
-Donc,
-une grosse amélioration
-de couverture.
-Donc,
-voire ça,
+Là,
+dans la plupart du temps,
+on trouve toujours quelque chose.
+Il faut aussi voir ça,
 le pourcentage par rapport
 à la couverture.
 Donc,
-on a augmenté le pourcentage
+on a augmenté le pourcentage,
 et maintenant,
-on a augmenté la couverture
-par rapport à ça.
+on a augmenté la couverture par rapport.
 Donc,
-donc,
-il y a un point
-d'article,
-le plus grand.
-Après,
+donc, il y a avant,
+c'est-à-dire,
+c'est-à-dire,
+après,
 on peut s'amuser
 avec les éléments passés.
-Il y a aussi,
-tout dépend de ce qu'on veut faire.
+Là aussi,
+tout dépend
+de ce qu'on veut faire.
 Est-ce que,
 là,
-c'était, dans la vision,
-d'essay d'aider
-les gens qui calient.
-Prémâché,
+c'était dans la vision
+d'essayer d'aider
+les gens qui qualifiaient.
+Prémâcher,
 finalement,
-le travail de qualification manuelle.
+c'est de la qualification manuelle.
 Si on était
-dans une vision,
-je veux dire,
-du foule automatique,
+dans une vision
+où je veux faire du fou,
+le thématisme,
 c'est différent.
-Et maintenant,
+Là,
 on pourrait te faire bien vivre.
-Mais,
-on va être beaucoup plus arne.
+Ah oui, mais
+on va être beaucoup plus arnes.
 C'est-à-dire,
 on va augmenter
 la masse
-de données
-qu'on va récupérer,
-nourrir les vannes,
-comme on le disait,
-pour l'eau,
-pour l'air,
-pour tout ce qu'on a.
+de données qu'on va récupérer,
+ouvrir les vagues,
+comme on nous dit,
+on nous touche,
+on touche qu'on a.
 On ne basse pas uniquement
-les éléments,
-on ne basse pas les gens
+les éléments et les sous-ensemble
+qu'on passe aux gens
 pour la qualification.
 Et là,
-par rapport
-à tous nos dipertas,
-on va en être
-beaucoup plus arne.
+par rapport à tous nos diverses paramètres,
+on est beaucoup plus arnes.
 Donc,
-l'idée,
+pour l'idée,
 on va monter grandement
 tout ce qui est
 le résultat.
 Mais,
-peut-être qu'on va
-dégringoler
+peut-être qu'on va dégringoler
 à ce niveau-là.
 Mais,
 tout dépend,
 parce qu'on veut dire
 qu'ici,
-l'action de base
-est de dire,
-je considère que,
+l'action de base est de dire
+je considère que
 finalement,
-on va pas avoir de billets
+on ne va pas avoir de billets
 par rapport à ça.
-C'est-à-dire que,
-on va voir
-qu'on ouvre les mains
-de notre édition
-d'une manière full-automatique,
-mais en étant
+C'est-à-dire que
+les résultats qu'on va avoir
+en ouvrant les mains
+de l'automatique,
+mais
+en étant
 certains du résultat,
 statistiquement,
-quand on va revenir,
-voilà,
-c'est un actio,
-un lettre,
-enfin,
+quand on revient,
+on a l'action,
+on a l'aide,
+en fait,
 c'est
 ce que l'on dirait,
-une paranie,
+le paranime,
 ce que l'on croit,
-bah,
-ça va quand même
-donner des résultats perçants.
+ça va quand même donner
+des résultats perçants.
 Voilà.
 Donc ça,
-c'est, voilà,
+c'est
 les petits éléments.
 Donc là,
-avant et après,
-donc,
+c'était avant et après.
+Donc,
 bah,
 c'est un peu,
 finalement,
@@ -1684,46 +1666,50 @@ une défendrement
 des caliceurs
 qui manquent.
 Donc on en trouve beaucoup plus.
-Bon, effectivement,
+Bon,
+effectivement,
 il y a une montée des caliceurs,
 ce qu'on parle,
-qui ne sont pas bons,
+ils ne sont pas bons,
 parce qu'on a ouvert les mains.
 Donc si on avait été
 plus réducteurs,
 bah,
 c'est vrai.
-Mais l'objectif, c'était de dire,
+Mais l'objectif,
+c'était de dire,
 il n'est pas bon,
 c'est facile de chiffrir.
 Enfin,
-au niveau d'interface,
-hop, hop, hop, hop,
-je supprime, je supprime,
+hop,
+je supprime,
+je supprime,
 je supprime.
 Créer un truc,
 c'est que je vais me chercher,
-je m'achange à ceci,
+je m'achange,
+je vais associer,
 etc.
 Donc pour les gens
 qui étaient
 pour la qualification,
 bah,
-ils prétraient ça.
+ils feraient ça.
 Alors,
 et là,
 on a créé des caliceurs.
-Dernière étape,
+Dernier étape,
 je ne sais pas,
 au point de délire,
-je ne pense pas.
-On me délirait,
-en termes de temps.
+non,
+ça ne va pas.
+On délirait en termes de temps.
 Détection de la ténagité.
 Donc,
 ça,
 qu'est-ce qu'on a fait ?
-On a mixé de choses.
+Bah,
+on a mixé de choses.
 On a mixé,
 parce qu'il y a plein de bibliothèques
 qui existent
@@ -1731,11 +1717,12 @@ pour faire des détections
 de ténagité.
 Donc,
 la bibliothèque
-qu'on a choisi,
-c'est par rapport
-à différents tests
+qu'on a choisie,
+bah là,
+c'est par rapport à différents tests
 de bibliothèques,
-textblocks.
+c'est texte bloc.
+Bon.
 Bon,
 ce n'est pas terrible,
 quand même.
@@ -1743,67 +1730,65 @@ Mais bon,
 ça sort quand même un résultat.
 L'intérêt,
 c'est
-que l'on dirige
-pour le cas
-où on a
-que l'on dirige
+comment dirais-je,
+pour le cas où on a,
+comment dirais-je,
 aucune information,
 c'est pertinent.
-Si tout d'un coup,
+Puis tout d'un coup,
 on est sur un nouveau domaine
 qu'on ne connaît pas,
-qu'on n'a pas de bas de l'apprentissage,
-c'est que rien.
+qu'on n'a pas de base d'apprentissage,
+bah,
+c'est mieux que rien.
 Autrement,
 on a pris
 un autre modèle d'apprentissage,
-cette fois-ci.
-Donc,
-on n'a rien pris
+cette fois-ci,
+donc on n'a rien critiqué
 exactement le même principe
 que précédent,
 mais cette fois-ci,
-la ténagité.
+à la tonalité.
 Donc,
-on a appris la ténagité
-qui était définie
-dans la base d'apprentissage.
+on a appris la tonalité
+par rapport à tout ce qui avait été
+fini dans la base d'apprentissage.
 Donc là,
-un gros élément
+gros élément
 et
+bon,
 beaucoup de résultats
-à la haute,
-comme la visite.
-On est pour la visite,
-on va dire
-aléatoire en haute
+à la hauteur,
+comme la visite,
+bah,
+on est bon,
+on est positifs,
+on va dire,
+aléatoires en nôtre
 et en égalité.
 Non, non.
 Alors,
 de toute façon,
 c'est la mille,
-c'est un peu
-un store, etc.
-C'est le nombre d'éléments
-vraiment
-qu'on a raccroché,
+être un store, etc.
+C'est le nombre d'éléments, vraiment,
+qu'on a raccrochés,
 etc.
 Bon.
-Donc là,
-finalement,
+Donc là, finalement,
 le choix du modèle hybride
 a été plutôt
-meilleur
-que l'utilisation
+meilleur que l'utilisation
 de la bibliothèque.
 Donc,
 c'est ce qu'on a sélectionné.
 Et maintenant,
-c'est vraiment
-tout l'honneur,
-tout l'honneur, pas mal.
+tout l'unard,
+tout m'avait dit l'unard, pas mal.
 Alors,
-hop là.
+il faut poser une question après.
+Hop là.
 Alors,
 dit pitcher.
 Parce que là,
@@ -1811,41 +1796,39 @@ ce qu'on a fait,
 notre objectif,
 c'est de faire d'autres choses.
 Parce que là,
-on a fait des trucs par rapport
-à
-voilà.
+on a fait des trucs
+par rapport à
+les coups.
+Voilà.
 Sauf que
 tout ce qu'on a,
 tous les modèles,
 tous les trucs,
 ça ne marche que pour les coups.
-Mais
+Mais,
 voilà.
 Notre objectif,
 c'est justement,
-c'est de faire
+c'est de faire,
 d'appliquer la même chose
 sur d'autres domaines.
-Bon,
-l'hubrision,
-personne,
-etc.
-On ne pense pas que c'est
+Bon, l'hybrision,
+parce que non,
+je ne pense pas que c'est
 pénage-chanson mouillée
 qui les intéresse beaucoup.
-C'est pas le baisse.
-Bon.
+Je ne sais pas,
+mais c'est super.
 Or,
 là,
 on n'a pas le temps
-de mettre X bonhomme
-pour quelqu'un.
-Vous avez fait
-cet appel
-pour les gens qui ne m'ont pas
-de bon vieux.
-Enfin,
-un coup,
+de mettre X-bonon
+pour qu'elle ici.
+Alors,
+il n'y a pas le temps
+de mettre X-bonon
+de faire un coup,
+ou ça,
 de calificier, etc.,
 plein de temps,
 il y a dit ça.
@@ -1864,98 +1847,107 @@ fait l'objet de la thèse
 qui va être
 soutenue en mars,
 c'est de dire
-bah,
-à partir de tous les textes
-qu'on a sur
-tout.
-J'ouvre les valles,
+qu'à partir de
+tous les textes qu'on a
+sur le jeu,
+j'ouvre les valles,
 je prévue tous les blogs.
 Donc là,
 c'est pour
 le revêtement de sol.
-Ça,
-on a fait des trucs
+On a fait des trucs
 pour le revêtement de sol.
-Voilà,
-on a plein, plein, plein
-d'éléments qui arrivent,
-on mouline
+Voilà.
+On a plein, plein, plein
+d'éléments qui arrivent.
+On mouline
 la durée.
 Et ça nous sort
-via,
-la durée,
-c'est dans la philosophie topique
-manuelle,
-donc ça extrait,
+via...
+Alors, la durée,
+c'est dans la philosophie
+topique manuelle,
+topique modeste.
+Donc,
 ça définit
 et sans apprentissage,
-ça sort des telles principaux
-automatiquement.
-Donc c'est
-autant que ce que vous avez
-vu précédemment,
+ça sort
+des thèmes principaux.
+Automatiquement.
+Donc, c'est
+autant que ce que
+vous avez vu précédemment,
 c'est du supervisé,
 base d'apprentissage.
 Là,
-c'est totalement non-supervisé.
+c'est
+totalement non-supervisé.
 Alors,
 ça va être génial,
-des telles comme ça.
-Bon, c'est plus simple
-que ça
-parce que,
-ce que l'on appelle un thème,
+des thèmes comme ça.
+Bon, c'est
+plus simple que ça
+parce que
+ce que l'on appelle
+un thème,
 c'est
 une connexion de mots,
 en fait,
-qui sont rangées par fréquences,
-etc.
-Donc toujours est-il
+qui sont rangées
+par fréquences, etc.
+Enfin, bon.
+Donc, toujours est-il
 qu'il y a des mots
-avec des voix, etc.
-et ça représente les thèmes.
+avec des mots, etc.
+et ça représente
+les thèmes.
 Bon, évidemment,
-alors pour utiliser
+alors,
+il devrait utiliser
 gp3
-ou gp2,
-c'est-à-dire
-que ça bruit
+ou gp2.
+Avec cette lignement
+que ça bruit,
 un nom de thème sympa.
-Bon,
-c'est pas vrai.
-Ça, ça pourrait être intéressant.
+Bon.
+C'est pas vrai.
+Ça,
+ça pourrait être intéressant.
 Bon, la plupart du temps,
 c'est les mots principaux
 qui sont élus.
 Donc,
-ça représente ces thèmes,
+ça représente ces thèmes
 et finalement,
 c'est nos thèmes.
 Enfin,
-c'est tous lesquels
-ils sont existés automatiquement.
+c'est tous les qui sont
+élus automatiquement.
 Ça va être, finalement,
 les thèmes.
 On ne connaissait rien
 dans ce domaine.
-Bah voilà, les thèmes principaux
+Bah voilà,
+les thèmes principaux
 qui ont les noms.
 À partir de là,
 on a des thèmes.
-On peut appliquer
+Alors,
+on peut appliquer
 de la classification
 par ces thèmes
 qui sont associés bien
 à des éléments
 dans les blogs
-par rapport à des mots
-importants, etc.
-Donc, on peut
+par rapport
+à des mots importants,
+etc.
+Donc,
+on peut
 reconnecter
-sur
-les augmentissages
-qu'on a précédemment.
-Et je veux dire,
+sur le technique
+d'apprentissage
+et de dire,
 je base sur ces thèmes
 qui ont été détectés
 pour apprendre
@@ -1964,9 +1956,8 @@ au sein
 du modèle.
 Enfin,
 au sein de tous les blogs
-que l'on a créés,
-finalement,
-un modèle,
+qui ont été créés,
+finalement, un modèle,
 sans que personne
 n'ait qualifié
 quoi que ce soit.
@@ -1974,1302 +1965,1317 @@ Donc,
 c'est ça,
 l'idée
 qui est derrière
-la big picture.
+la beat picture.
 Donc,
 évidemment,
 il y a toujours
-voilà.
-Je vais pour le revêtement de son.
+l'extraction
+qui était nommée.
+Donc là,
+voilà,
+le revêtement de sol.
 Donc,
-on doit toujours
-retrouver les entités nommées.
-On a un truc
-avec ses topiques qualifiaires.
+on doit
+toujours trouver
+les entités nommées.
+On a le truc
+avec ces topiques qualifiaires.
 Par contre,
 pour la tonalité,
 là,
-il n'y a pas de miracle,
-on ne va pas faire de la quantisation.
+il n'y a pas de miracle.
+On va pas faire de l'apprentissage.
 Donc là,
-on va devoir utiliser
+on va devoir
+utiliser
 une bibliothèque
 ou
-un petit XOV-RIP
-pour détecter,
+un petit x-ray
+pour
+détecter,
 finalement,
 la tonalité
 qui va être associée
 à ce morceau de texte
-et donc ensuite,
+qu'on va suivre.
+Et donc,
+ensuite,
 c'est terminé.
-Donc là,
+Là,
 on a créé un modèle
 que personne n'ait jamais intervenu
-par rapport à un idéalité de 3 trucs.
+par rapport
+à une idéalité de trois trucs.
 Il faut intervenir sur
 peut-être les topiques,
-leurs travailleurs, etc.
+leurs travaillées,
+etc.
 Donc,
 ça sera un truc coréen.
 Mais en tout cas,
 on n'aura pas fait bosser
-X personne
+x-personne
 pendant 10 ans
-avec un site
-chacune des blogs.
+avec un ici,
+chacun des deux oeufs.
 Elle veut dire
-c'est ça,
-c'est l'approcher,
-c'est nommé.
-Et
-l'objectif,
+c'est ça.
+C'est la prochaine
+qui est nommée.
+Et l'objectif,
 après,
 on a un nouvel élément
-et ça nous sort
-le résultat
-avec ces thèmes.
-C'est
-tel site nommé,
+et ça nous sort.
+Le résultat
+c'est
+tel or si t'es nommée,
 tel thème
-ou tel collection de thèmes,
-quel tonalité
-pour chaque année.
+ou tel collection de thème,
+quel tonnage pour chaque année.
 Voilà.
 Donc ça,
-d'un moment,
 il va y avoir un premier test
 qui va avoir lieu
 en 2023.
-Alors,
-ça va être sur des...
-on diversifie,
-donc ça va être
+Alors ça va être
+sur des
+diversifiés.
+Donc ça va être
 sur les produits blancs
 et produits bruns.
 Merci.
-Donc,
-les machines à laver,
+Donc les machines à l'aéros,
 les machins,
-et voilà,
+les...
 les utilisateurs.
-Donc,
+Donc
 pour sortir les thèmes
 les plus
 utilisés,
 enfin,
-discutés,
+les plus discutés,
 évidemment,
 et ensuite,
-canoniser
-une manière automatique,
-les éléments qui sont...
-qui sont sortis.
+canifier d'une manière automatique
+les éléments qui sont
+sortis.
 Voilà.
-D'une heure.
-On t'a mis la pression.
-Oui, tu vas aller d'une heure.
-Hop, petit.
-Je sais pas
-si vous avez...
-je pense que tout le monde
+Pile une heure.
+Merci.
+C'est parfait.
+T'as mis la pression.
+Oui, tu as mis d'une heure.
+Apptiez.
+Je sais pas si vous avez...
+Ah, je pense que tout le monde
 a envie de boire un cours
 et manger des pizzas,
-mais si vous avez déjà
-des questions
-ou quelque chose,
-ou que vous vous avez
-assommé
-une manière automatique,
-ou quelque chose...
+mais si vous avez
+déjà des questions
+ou des choses,
+vous vous avez assommé
+une manière active.
 Ah,
-je sais pas si...
-je vous le dis.
-Alors,
-c'est un algorie
+c'est fatigué.
+Je ne sais pas.
+Je ne sais pas.
+Bon, je ne sais plus
+que vous avez mis
+des questions.
+Alors, c'est un algorithm
 qu'on a développé.
+Ah, OK.
 Donc,
-qui est présentée,
+qui est présenté,
 d'ailleurs,
 il y a une conférence,
-bah là,
-c'est la spécidinalie
+c'est la sphédianique
 qui est présentée,
 je crois,
-le GT là.
+le GC, là.
 Et donc,
-c'est un algorie
-particulier.
-Donc on s'est basés
+c'est un algorithm
+particulier,
+donc on s'est basé
 sur les travaux,
 on va dire,
-ça s'appelle déjà
+mais ça s'appelle déjà
 un...
 un gain.
-Le gain.
 Voilà.
-Le gain, voilà.
-Il y a deux grand masters en fait
-et il y a une
-déclinaison
-qui a utilisé effectivement
-le mandir
+Voilà.
+Il y a deux Grands Masters, en fait.
+Et il y a une déclinaison
+qui a utilisé, effectivement,
+le bandirage
 de la...
-bah une transformation de l'algorithme
+enfin,
+une transformation de l'algorithme
 de telle manière
 à être plus pertinente
 et aussi
 à permettre
 l'évolution dans le temps.
-Il y a deux algories
-qui ont refait.
+Il y a deux algorithmes,
+en effet.
 Une vision
+que bandirage
 en utilisant
 la propagation lexicale
 à l'intérieur
 de l'algorithme
-de topique, on va dire,
-et ensuite la vision
-dynamique
+de la topikmonie, on va dire,
+et ensuite,
+la vision dynamique,
 parce que le gros problème
-du topique
+du topikmonie
 c'est que
 on en a déjà fait
 pour d'autres
-cuillants
-l'extraction thématique
-de telles
+étudiants,
+l'extraction automatique
+de telle,
 sauf que
-le mandir
-il nous veut le suivre
+comme on dirait,
+nous voulons suivre
 les telles
-pour dire justement
-les telles larmes, chingues, etc.
-sauf que au fur et à mesure
-et moralité
+pour dire, justement,
+les telles, l'alarme,
+les chingues, etc.
+sauf que, au fur et à mesure,
+une telle,
+vous pouvez évoluer.
+Et,
+en réalité,
 quand on fait le classement
-dans la classification
-bah là ça commence à
-poser des problèmes
-parce que finalement
+dans la classification,
+bah là,
+ça commence à
+poser des problèmes,
+parce que, finalement,
 il y a des nouveaux thèmes
-qu'il y a par là
-et donc la vision
+qu'il y a pas,
+et donc,
+la vision
 qu'on avait
 dans le temps
 se déforme.
-Donc
-bah
-pour l'instant
-on va
-on est dans un mode
-on part
-comme on est dans un mode
-que mondial
-nouvelle donnée
+Donc,
+ça va s'il vous plaît,
+vous avez pas de problème
+dans la justification ?
+Bah,
+pour l'instant,
+on va,
+on est dans un mode,
+on part,
+comme on est
+dans un mode
+comme on dirait,
+une nouvelle donnée,
 on va pas avoir
 beaucoup de données
-dans le temps
-donc là
+dans le temps.
+Donc, là,
 on est
-donc on va dire
-on espère que
-bah je sais pas
-typiquement
-sur le domaine
-des produits blancs et bruns
-j'espère qu'il n'y a pas
-des thèmes
-qui apparaissent
-une génération spontanée
-bon je sais pas
-je ne suis pas très au fait
-de ces produits-là
-par contre
-les éléments
+on espère que,
+bah, je sais pas,
+typiquement,
+sur le domaine des produits blancs et bruns,
+j'espère qu'il y a pas
+des thèmes qui apparaissent,
+générations spontanées.
+Bon,
+je sais pas,
+je suis pas très au fait
+de ces produits-là.
+Par contre,
+les éléments,
 les tests
-que
-le cancer
-lui c'était sur
-des jeux de données classiques
-on va dire
-qui étaient par rapport
-tous les contenus
-qui étaient
-aglonus etc
-donc là évidemment
-les thèmes sur plusieurs années
-ah c'était sur
-on ne le ferait pas un temps
-en temps
-là on voyait bien
+entre tes arts,
+lui, c'était sur,
+bon,
+des jeux de données classiques,
+on va dire,
+qui, par rapport
+à tous les contenus,
+de l'ONU,
+etc.
+Donc là,
+évidemment,
+les thèmes sur plusieurs années,
+ah, c'était sur,
+pas un temps, un temps,
+un temps,
+là, on voyait bien
 l'évolution des problèmes
-qui a bien changé
-la crise climatique
-c'est pas
-bah c'est
-voilà
-on n'a pas eu
-relativement restant
-donc
+qui a bien changé,
+la crise climatique,
+c'est pas,
+bah, c'est,
+voilà,
+le câble,
+on n'a pas reçu
+relativement ça,
+non,
+donc,
 c'est pas parce que
-vous me regardes
-qu'il faut faire une question
-oui
+vous vous regardez
+oui,
 comment vous mettez
-un productif en fait
-franchement
-par de la recherche
+en production, en fait,
+franchement,
+par de la recherche,
 à vraiment
-mettre sa check-finance
-c'est tout
-alors
-très bonne question
-je reviendrai
-une petite expérience
-je remonte dans le temps
-pas forcément
-sur les DLP
-à une époque
+mettre ça chez le client,
+c'est tout.
+Alors,
+très bonne question.
+Je reviendrai,
+petite expérience,
+je remonte dans le temps,
+pas forcément sur les DLP,
+à une époque,
 on était vraiment
-un truc de R&D
-pure R&D
-voilà
-un truc que ça
-me fume
-donc on développait
-nos algorithmes
-en autre coin
-en R
-en machin
-voilà
-plein de trucs
-et on disait
-bah voilà
-l'algo c'est ça
-alors c'est ça
-on expliquait
-c'est une forme
-d'une fun
-voilà
-un truc de succession
-fun
-et je me rappelle
-ça m'a beaucoup marqué
-ce qui fait qu'on a changé
-en l'éclu maintenant
-ça m'a beaucoup marqué
-où il y avait
-l'algorithme qui permettait
-de détecter automatiquement
-le cycle de vie d'un produit
-c'est-à-dire de dire
-est-ce que
-le produit que j'ai
+un truc de R&D,
+pure R&D.
+Voilà,
+comme ça,
+donc, on développait
+nos algorithmes en d'autres coins,
+en R, en machin,
+pas de trucs,
+et on disait,
+bah, voilà, l'algo, c'est ça,
+alors, c'est ça,
+on expliquait,
+c'est une forme d'une feuille,
+voilà,
+parce que je me suis accepté en feuille,
+et je me rappelle,
+ça m'a beaucoup marqué,
+ce qui fait qu'on a changé,
+en l'éclu, maintenant,
+ça m'a beaucoup marqué,
+où il y avait un petit algorithme
+qui permettait de détecter
+automatiquement
+le cycle de vie d'un produit,
+c'est-à-dire de dire,
+est-ce que le produit que j'ai,
 est-ce qu'il est en phase
-d'apparition sur le marché
-de stabilisation
-d'éclins
-ou de
-de morts
-ça c'était important pour nous
-parce que hélas
-les produits morts sur le marché
-il y en a énormément qui s'en remettent
-ils sont toujours en pente
-bon ouais
-je ne sais pas pour toi
-la rémanence des produits
-sur le marché
-sur le net
-c'est comme ça
-bon
-là j'aurais eu des
-deux pages
-l'implémentation
-dans la prod
-ou avec l'anti
-du realm
-alors
-je mets un petit bémol
-quand même c'est méchant
-parce qu'en même temps on était
-on migrait
-enfin on changeait de paradis
-aussi on passait en mode
-build after, architecture
-à nous
-pour découvrir plein d'autres choses
-donc la prod
-découvrir aussi
-de nouvelles infrastructures
-etc
-mais là on s'est dit
-il y a comme un petit problème
-donc maintenant on a changé
-complètement de clics
-c'est à dire que
-là maintenant on est très proche
-de la prod
-enfin
-de l'environnement
-on développe vraiment
-presque dans
-un environnement du prod
-avec les mêmes technologies
-donc typiquement là
-on est
-chez nous
-on a encore changé
-maintenant on est sûr
-mais bon ça reste la même chose
-on était à l'expact
-pour la partie vraiment massive
-voilà
-et on s'est spécialisé
-on ne fait que du piton
-pour la partie
-vraiment machine learning
-etc
-comme ça le stack
-boum
-il peut être mis vraiment
+d'apparition sur le marché,
+de stabilisation,
+d'éclins,
+ou de mort.
+Bon, ça, c'était important pour nous,
+parce que, hélas,
+les produits morts sur le marché,
+il y en a énormément qui se marment.
+Ils sont toujours en compte,
+bon, voilà,
+je ne sais pas pour toi,
+mais...
+Les produits sur le marché,
+sur le net,
+c'est comme ça.
+Bon,
+et donc ça,
+dans l'algorithme,
+il y avait deux pages.
+Je me souviens...
+L'implémentation,
+dans la prod,
+on va être gentil,
+du rien.
+Alors,
+je mets un petit bémol,
+quand même, c'est méchant,
+parce qu'en même temps,
+on était, on migrait,
+enfin, on changeait de paradis,
+aussi, on passait en mode
+build after,
+architecture adou,
+pour découvrir plein d'autres choses.
+Donc la prod,
+découvrir aussi,
+nouvel infrastructure, etc.
+Mais là, on s'est dit,
+il y a comme un petit problème.
+Donc,
+maintenant, on a changé
+complètement de clics.
+C'est-à-dire que,
+là, maintenant,
+on est très proche de la prod.
+Enfin,
+de l'environnement,
+on développe vraiment,
+presque,
+dans un environnement
+du prod,
+avec les mêmes technologies.
+Donc,
+typiquement, là,
+on est...
+chez nous,
+on a encore changé,
+non, on est sûrs,
+mais bon,
+ça reste la même chose.
+On était avec Spark,
+pour la partie vraiment massive,
+voilà,
+et on s'est spécialisé,
+on ne fait que du piton,
+pour la partie,
+vraiment machine learning,
+etc.
+Comme ça,
+le Spark,
+il peut être mis,
+vraiment,
 et déployé directement
-sur notre prod
-et le piton
-en fait ils en capsules ça
-le coeur etc
-il n'y a pas de
-pas de soucis
-donc là maintenant on est vraiment
-on va dire
-quasi enfin
-on va dire ils ont
-plus grand chose à faire
+sur notre prod,
+et le piton,
+en fait,
+ils encapsulent ça,
+le coeur, etc.
+Il n'y a pas de soucis.
+Donc, là,
+maintenant,
+on est vraiment,
+on va dire,
+quasi,
+enfin,
+on va dire,
+ils ont plus grand chose à faire,
 à part des petits problèmes
-de déploiement
-de machin
+de déploiement,
+de machin,
+de mise
 dans l'infrastructure
-de prod général
-mais en tout cas
-on est conforme
-et ça
-c'est un truc fondamental
-que là
-je me rappellerais toujours
-c'est de pas
-ça m'a tué
-donc
-ça c'est pas possible
-voilà
-donc voilà
-donc être le plus proche possible
-de la prod
+de prod général,
+mais en tout cas,
+on est conforme.
+Et ça,
+c'est un truc fondamental.
+Et là,
+il m'en repérerait toujours,
+c'est de pas.
+Il faut me tuer.
+Donc,
+ça ne se passe pas possible.
+Voilà.
+Donc, voilà.
+Donc, être le plus proche possible
+de la prod,
 je pense que c'est fondamental
 pour
-un truc de rédé
-quand même on me demande
-quand même de temps en temps
-des résultats
-merci
-je cherchais un peu du monde
-pour
-formuler
-la question de manière
-à peu près de vous
+un truc de rédé,
+quand même,
+on me demande,
+quand même,
+de temps en temps,
+de résultats.
+Merci.
+Je cherchais un peu de monde
+pour formuler
+la question
+de manière
+à peu près de vous,
 mais
-quelle est
+quel est
 l'approche
-de votre système je dirais
+de votre système, je dirais,
 et désolé
 si vous avez
-déjà abordé cette question là
+déjà abordé cette question-là,
 vis-à-vis
-des fautes d'orthographe
-par exemple
-ah bah
-enfin c'est
-non mais
-on fait quelque part
-les fautes d'orthographe
-bon après
-il y a beaucoup de choses
-bah justement
+des fautes d'orthographe,
+par exemple.
+Ah ben,
+ça, c'est...
+Non, ben oui.
+En fait, quelque part,
+les fautes d'orthographe,
+bon, après,
+il y a beaucoup de choses,
+justement,
 l'intérêt
-du
-tout veille
-etc
-c'est qu'en fait
-ça fabrique pas mal de modèles
-en fait
-par rapport à ça
-alors il y a deux choses
-il y a les bonnes distances
+du World2V, etc.,
+c'est qu'en fait,
+ça fabrique pas mal de modèles,
+en fait, par rapport à ça.
+Alors, il y a deux choses.
+Il y a les bonnes distances
 de base
 qu'on emploie
-pour réduire ça
-et
-le sec
-que je m'en dirais
-il est
+pour réduire ça.
+Et le STEC,
+comment dirais-je,
+il est...
+comment dirais-je,
 la prolongation lexicale
 positionne quand même
 les mots
 qui sont
 avec un orthographe
-proche
-évidemment
-utiliser
-un certain nombre de fois
-parce que la réflexion
-même qui est une utilisation
-bah ils sont proches
-et justement
-le truc de synonyme
-alors
-donc tu apparaisses
-il y a un petit truc de synonyme
-c'est tout au fond là
-ah là là
-voilà
-ça
-est basé sur
-des prolongations lexicales
-donc on le fait
-à la fin voilà
+proche,
+évidemment,
+utilisé un certain nombre de fois,
+parce qu'il y a d'ailleurs
+une utilisation,
+mais ils sont proches.
+Il y a également le truc de synonyme.
+Donc, il y a pas assez,
+il y a un petit truc de synonyme.
+C'est tout au fond, là.
+Voilà.
+Ça,
+c'est basé sur
+des prolongations lexicales.
+Donc, on le fait à la fois,
+à ce niveau-là,
 et on fait aussi
-à la fin
-du coup il y a des...
-oui
-je me permets
-de rajouter
-juste
-dans un second temps
-il y a un autre casque
-qui a été mis en tête aussi
+à la fin.
+Oui.
+Oui.
+Je me permets
+de rajouter,
+juste,
+dans un second temps,
+il y a un autre cas,
+peut-être aussi,
 c'est
-parfois
-les doubles
+parfois les doubles,
 les doubles
 comme je
-double le langage
-ah oui bah ça
-ça
-est-ce que c'est
+double le langage.
+Ah oui,
+bah ça,
+c'est pas ça.
+Est-ce que c'est
 peut-être pas spécifiquement
 dans le domaine
-du pneu
-parce que ça
-bah c'est un peu moins
-mais
-le double langage
-l'ironie
-les machins
-et tout comme ça
-là je peux le...
-c'est une phrase
-bout de l'égarément
-comme non
-à nous, à notre niveau
-comment nous...
-non mais là
-à la fin
-comment le domaine va s'adapter
-face à ça
-ça
-j'espère que
-enfin nous on considère
-que
-statistiquement
+du pneu,
+parce que ça,
+c'est un peu moins,
+mais oui.
+Le double langage,
+l'ironie,
+les machins,
+et tout comme ça,
+là,
+je peux le...
+C'est plus frère.
+Vous,
+l'égarage,
+comme...
+Non.
+A nous,
+à notre niveau,
+le domaine va s'adapter
+face à ça.
+Ça,
+j'espère que,
+enfin,
+nous,
+on considère que,
+statistiquement,
 il y a peu
 de gens
 qui utilisent
-le double langage
-là aussi
-notre but c'est de faire
-des indicateurs
-donc c'est
-une vision macro
-donc s'il y a
+le double langage.
+Là aussi,
+notre but,
+c'est de faire des indicateurs.
+Donc,
+c'est d'être une vision macro.
+Donc,
+s'il y a
 x%
-d'air
-évidemment c'est tout le monde
-qui utilise le double langage
-qui fait des jeux de mots
-ou des trucs un peu vachins
-alors on est mort
-mais là la vision c'est
-c'est quoi la tendance
-c'est quoi le positionnement
-d'un produit par rapport
-à un autre
-vis-à-vis de telles propriétés
-donc quelque part
-c'est pas le fait de dire
-oui j'ai bien trouvé
-sur
-ce blog-là
-ou cet élément
-ce petit texte
-ah oui j'ai bien trouvé
-que c'est positif
-ou négatif
+d'éros,
+évidemment,
+si tout le monde
+utilise le double langage,
+on fait des jeux de mots,
+des trucs un peu vachins,
+alors,
+on est mort.
+Mais là,
+il y a beaucoup d'un produit,
+par rapport à un autre,
+vis-à-vis de telles propriétés.
+Donc,
+quelque part,
+c'est pas le fait de dire,
+oui,
+j'ai bien trouvé,
+sur ce blog-là,
+ou cet élément,
+ce petit texte,
+ah oui,
+j'ai bien trouvé que c'est positif
+ou négatif,
 etc.
-bon je me suis planté
-j'espère que dans la majorité
-des cas
-je me planterai pas
-donc c'est
-pour bien se dire c'est
-l'agrégation
-et d'ailleurs
+Bon,
+je me suis planté,
+j'espère que,
+dans la majorité des cas,
+je me prendrai pas.
+Donc,
+c'est,
+pour bien se dire,
+c'est l'agrégation.
+Et d'ailleurs,
+d'ailleurs,
+d'ailleurs,
 on avait fait une étude
-pour justement dire
-le fait de remonter d'un cran
-en fait de le dire
-parce que là
-ce mot quand on a vu le résultat
-c'est un peu déprimant
-voilà
-si on remonte au niveau
-simplement de la marque
-je parle pas du produit élémentaire
-mais de la marque
-ou renautement propriété
-pour ça qu'il y a des familles
-de propriété
-bah en fait ça
-on est beaucoup plus juste
-c'est-à-dire si on agrège tout
-en fait quelque part
-l'erreur
+le fait de remonter d'un cran,
+en fait,
+de le dire,
+parce que là,
+souvent,
+quand on a vu le résultat,
+c'est un peu déprimant,
+voilà.
+Si on remonte au niveau,
+simplement,
+de la marque,
+je ne parle pas du produit
+élémentaire,
+mais de la marque,
+ou renautement propriétés.
+Pour ça,
+il y a des familles de propriétés.
+En fait,
+ça,
+on est beaucoup plus juste.
+C'est-à-dire,
+si on agrège tout,
+en fait,
+quelque part,
+l'erreur,
 se
-distarre
-enfin distarre
-c'est
-ce nom
-ouais ce nom
-nous nous touchons notre philosophie
-de dire finalement
-augmentons donc
-de flux de données
-qu'on qualifie
-et espérons
-enfin
-c'est un peu star
-cette vision
-notre vision de dire
-voilà c'est comme ça
-qu'on va
-quitter le
-bah il faut beaucoup de données
-merci
-désolée
-même d'où le langage
-l'ironie et les trucs
-si on veut ça c'est
-je n'y crois pas
-la partie du coup
-abréviation
-c'est partie des signalis
-oui
-et puis on a aussi
+dista,
+enfin,
+c'est...
+Ouais, c'est non.
+Nous,
+toujours,
+notre philosophie,
+de dire,
+finalement,
+augmentons le nombre de flux
+de données qu'on qualifie
+et espérons.
+Enfin,
+c'est un peu,
+c'est un peu star.
+Cette vision,
+notre vision,
+de dire,
+voilà, c'est comme ça qu'on va
+quitter le...
+bah,
+il faut beaucoup de données.
+Ok.
+Voilà.
+Merci.
+Désolée.
+Mais,
+le double langage,
+l'ironie,
+les trucs,
+si on veut ça,
+c'est...
+Je ne crois pas.
+La partie,
+du coup,
+abbreviation,
+c'est partie des signalis?
+Oui.
+Et puis,
+on a aussi,
 il faut bien se rendre compte
-qu'on a
-dans ce cas particulier
-c'est vrai sur les nouveaux
-systèmes
-ça sera compliqué
-mais même pour les noms
-de produit
-en fait
-nous on a
-tout un tas de règles
-de matching etc
-qui ont été stockés
-donc ils nous permettent
-de passer
-non finalement
-dans ma partie qui
-détectent
-enfin rematch
-les produits
+qu'on a,
+dans ce cas particulier,
+alors c'est vrai,
+sur les nouveaux systèmes,
+ça sera compliqué.
+Mais,
+même pour les noms de produits,
+en fait.
+Nous,
+on a
+tout un tas de règles,
+de matching, etc.
+qui ont été stockées.
+Donc,
+ils nous permettent de passer,
+non,
+finalement,
+dans la partie qui
+détecte les,
+enfin,
+matchs,
+les produits,
 qui sont poules
-sur les
 sur les pages
-achetées même
-pour dire
-ça correspond
-à telle ligne
-dans le référentiel
-en fait
+achetées,
+même,
+pour dire,
+ça correspond à telle ligne
+dans le référentiel.
+Là,
+en fait,
 on utilise
-ce système-là
-pas le truc
-on parle des éléments
-et en fait
+ce système-là,
+on parle
+le truc,
+on parle les éléments,
+et en fait,
 il nous trouve
-celui qui est le plus proche
-c'est l'avantage
+celui qui est le plus proche.
+C'est l'avantage
 d'avoir un historique
-par rapport à ça
-on sera que mon frontier
-sans doute au problème
-si on est dans le
-enfin
-on va le voir
+par rapport à ça.
+On se traque mon frontier,
+sans doute,
+au problème,
+si on est dans le,
+enfin,
+on va le voir,
 parce que je ne connais rien
-dans les produits
-enfin à part avoir acheté
-de temps en temps
-une machine à laver
-un peu comme ça
-c'est vrai
-les noms
-les noms de produit
-à part arriver
-d'ouvrir un truc mieux
-je sais pas ce que c'est
-on verra
-oui
-j'ai une question
-il y a
-enfin je peux m'en dire
-mais non c'est pas pour une
-et en fait
-je vais vous recevoir
-vous avez vu ça
-j'ai arrivé de perte
-ah oui
-alors perte
-tous les systèmes
-qu'il y a
-très de beaux suivants
-etc.
-enfin toi
-avec du basting
-c'est moderne de l'avantage
-moderne
-comme tout ce
-alors
-on l'a bien pris
-déjà
-mais le problème
-c'est que
-par rapport à ce problème
-hyper précis
-qui est de dire
-moi je veux
-comme on dirait
-c'est vraiment
-trouver un élément
-enfin
-il faudrait que
-typiquement on a testé
+dans les produits blancs,
+à part avoir acheté de temps
+en machine à laver,
+un peu comme ça.
+C'est vrai,
+il y a des noms,
+les noms produits,
+à part arriver,
+vous le verrez vachement,
+un truc mieux,
+je ne sais pas ce que c'est.
+Bon.
+On verra.
+Oui.
+J'ai une question,
+il y a,
+enfin,
+je peux m'en dire,
+il n'y a un nom,
+c'est pas pour une.
+En fait,
+je ne vous reçois
+que vous n'avez plus ça,
+j'ai arrivé de perte.
+Ah oui !
+Alors,
+perte,
+tous les systèmes,
+il y a très de bons suivants,
+enfin,
+toi,
+avec du basting,
+c'est moderne de l'enriage moderne,
+voilà,
+comme tout ça.
+Alors,
+on a bien pris,
+mais le problème,
+c'est que,
+par rapport à ce problème,
+hyper précis,
+qui est de dire,
+moi, je veux,
+comment dire,
+c'est vraiment,
+trouver un élément,
+enfin,
+il faudrait que,
+typiquement,
+on a testé
 perte
-et les grands modèles de langage
-pour autre chose
-en fait
-l'idée qui était derrière
-justement on a peu de trucs négatifs
-donc
-l'idée qui était derrière
-c'est de dire
-eh bah on va faire générer
-avec ces grands modèles
-de langage
-qui sont faits
-qui sont super bons
-en génération
-en fait
-de dire bah je
-on va faire générer des choses
-sauf que
-comme on dirait
-c'est
-pour l'instant
-enfin moi on avait testé
-sur
-pas d'hôpitalier
-mais la version précédente
-qui était disponible en ligne
-machin etc.
-bon pour dire
-on met
-un liste de propriété
-d'éléments
-et
-fabrique moi du texte
-en fait
-donc on a fait ça
-et le problème c'est
-incontrôlable
-je m'explique
-on met Michelin
+et les grands modèles de langage,
+pour autre chose.
+En fait,
+l'idée qui était derrière,
+justement,
+on a peu de trucs négatifs.
+Donc,
+l'idée qui était derrière,
+c'est de dire,
+eh ben,
+on va faire générer,
+avec ces grands modèles de langage,
+qui sont faits,
+qui sont super bons en génération,
+en fait,
+de dire,
+on va faire générer des choses.
+Sauf que,
+comment dire,
+c'est,
+pour l'instant,
+enfin,
+moi, on avait testé sur,
+pas chaque GPT,
+mais la version précédente,
+qui était disponible en ligne,
+machin, etc.
+Bon,
+pour dire,
+on met un liste de propriétés,
+d'éléments,
+et,
+fabrique-moi du texte,
+en fait.
+Donc,
+on a fait ça.
+Et le problème,
+c'est incontrôlable.
+Je m'explique.
+On met Michelin,
+en fait,
 on met toute la liste
-des propriétés du feu
-on dit bah voilà
-ça
-pas pour le point de texte
-machin
+des propriétés du feu,
+et on me dit,
+bah,
+voilà,
+en fait,
 et il m'a fait
-quatre
-lignes sur
-Michelin
-grande société française
-machin, leader
-pas de problème en fait
-donc
-c'est le fait d'arriver
-le problème
-pour moi
-pour ces
-grandes modèles de langage
+quatre lignes
+sur Michelin,
+grande société française,
+machin,
+leader,
+ici,
+ce n'est pas un problème,
+en fait.
+Donc,
+c'est le fait d'arriver à compte,
+ce n'est pas un problème,
+pour moi,
+pour ces grands modèles de langage,
 c'est de contrôler
-ce qu'ils produisent
-oui, oui, vas-y
-après
+ce qu'ils produisent.
+Oui, oui, vas-y.
+En fait,
 je crois qu'une partie
-intéressant de Berth
-c'est surtout en fait
-de récupérer comme on lui
-en tant que temps
-oui, c'est pas la barre bleue
-comme les warped
-forcément le texte
-oui, oui
-le texte
-plus
-c'est carrément
-de genre
-test
-mais cette fois-ci
-pour l'aspect
-justement
-voilà
-parce que là finalement
-on utilise soit du TFIDF
-en fonction de nos règles
-soit du warped
-ou avec
-c'est beau
-bah là
-on s'est dit
-quand on aura le temps
-oui, je sais ça en fait
-c'est de dire
-on va faire du Berth
-pour coder
-mais ça serait une utilisation
-pour coder
-moi je sais que c'était par rapport
-non, parce que je sais
-que ça va être beaucoup utilisé
-et qu'en fait
-actuellement
-on va être publié
-surtout dans le domaine
-du NLP
-c'est très compliqué
-parce qu'il y a Berth
-en fait
-et que ça
-c'est plutôt un niveau de foire
-je suis pas obligé de poser la question
-parce que je n'ai pas compris
-je me suis dit
-ça a été compliqué
-mais là
-sur cette partie-là
-on publique
-sur les parties
-vraiment
-parce qu'on a ça en ligne
-euh
-uniquement là
-on a des parties du monolabel
-donc on a un algorithme
-multilabel
-qu'il faisait à la fois
-le labeling
-la détection de qualifier
-et aussi la qualification
-donc ils faisaient
-la totalité
-ça veut dire à la fois
-finalement ils faisaient
-à la fois la détection
-multilabel
-qui est associée
-à la tonalité
-et que ça
-ça a été une publication
-une tasse
-il y a pas mal de publications
-et là
-sur le topique modeling
-là-dessus
-on n'a pas publié
-parce que
-sur le truc
-qui en prend d'aujourd'hui
+intéressante de Berth,
+c'est surtout en fait de récupérer
+comment lui,
+en pensant.
+Oui, c'est que là,
+comme les Warpers,
+forcément,
+le texte,
+plus,
+c'est qu'on avait dit
+c'est qu'un moment de jour,
+on fait le test.
+Mais cette fois-ci,
+pour l'aspect,
+codale, justement.
+Voilà.
+Parce que là,
+finalement,
+en fonction de nos règles,
+soit du WorldWake,
+c'est beau.
+Là, on s'était dit,
+quand on aura le temps.
+Oui, je sais que c'est ça, en fait.
+C'est de dire,
+on va faire du Berth,
+pour coder.
+Mais ça serait une utilisation
+pour coder.
+Moi, je sais que c'était par rapport...
+Non, non, c'est parce que
+je sais que c'est beaucoup utilisé,
+et qu'en fait,
+actuellement,
+on va être publié,
+surtout dans le domaine du NLP,
+et même...
+Oui, oui, oui.
+C'est très compliqué,
+parce qu'il y a Berth,
+en fait, et que ça...
+Bah oui, ça avait plus de suite,
+Attendez, je vais poser la question,
+parce que vu que vous l'oubliez,
+je me dis,
+ça a été compliqué.
+Sur cette partie-là,
+on publique sur les partis,
+vraiment,
+et on a ça en ligne.
+Épiquement là,
+dans les partis du Monolabel,
+donc on a un algorithme multilabel
+qui faisait à la fois
+le labeling,
+la détection de qualifier,
+et aussi la qualification.
+Donc ils faisaient la totalité.
+Ça veut dire,
+à la fois,
+finalement, ils faisaient,
+à la fois,
+la détection multilabel
+et la réagression
+qui est associée à la tonalité.
+Donc ça,
+ça a été une publication,
+une thèse,
+il y a pas mal de publications.
+Et là,
+sur le topique modeling,
+là, typiquement,
+là-dessus,
+on n'a pas publié,
+parce que,
+sur le truc qui en prend
+aujourd'hui,
 on a publié
-sur le topique modeling
-etc
-mais effectivement
-sur
-ce
-mégalisme
-actuel
-on n'a pas publié
-voilà
-parce que là
-je trouve que c'est bon
-pour ça
-je publie
-8-9
-mais pour dire
-mais tout peut être amélioré
-parce que
-perte c'est apparu
-c'est qu'elle est verte
-c'est un peu
-bon
-mais c'est un peu
-un peu non
-trop
-je sais
-ça suffit
-il y a un peu de voix
-voilà
-donc
-effectivement
-pour plus c'est actuel
-avec Vap
+sur le topique modeling,
+etc.
+Mais effectivement,
+sur ce...
+mégalisme actuel,
+on n'a pas publié.
+Voilà.
+Parce que là,
+je trouve que...
+Pour ça,
+je publie viteux.
+Mais pour dire,
+non,
+mais tout peut être amélioré,
+parce que,
+perte,
+c'est apparu.
+C'est qu'elle a dit,
+perte.
+Bon.
+Mais on s'est interrogé,
+mais après,
+on est trop...
+Ça suffit.
+Voilà.
+Donc,
+effectivement,
+en plus,
+c'est à tout.
+Avec Val,
 vous aurez des problèmes
-pour l'intérance de produits
-évidemment
-oui mais là c'est
-voilà mais c'est ça que
-pour le codage
-en fait pour moi
-c'est remplacer le codage
-finalement
-les tokens en fait
-tu dis moi
-bah c'est un autre technique
-de codage
+pour la différence du produit,
+évidemment.
+Mais là,
+c'est...
+Voilà,
+mais c'est que pour le codage.
+Enfin,
+pour moi,
+c'est remplacer le codage,
+finalement.
+Les tokens,
+en fait,
+tu dis moi.
+C'est un autre technique
+de codage,
 qu'il utilise aussi
 comme un autre technique
-de codage
-j'ai une petite question
-sur le côté ML
-plutôt une
-scaping
-on n'avait pas trop parlé
-ah bon non
-ça a été
-non
-c'est moi le
-si vous n'avez pas du connaissance
-c'est pas grave
-non non mais
-pas de problème
-quand vous achetez
-sur vos produits
-ou il y a vos scraping
-vous aurez encore plus les vannes
-en quelque sorte
-ah bah de toute façon
-nous quand on
-on aspire
+de codage.
+J'ai une petite question
+du genre
+de côté ML,
+plutôt,
+une scrapping,
+on n'avait pas trop parlé.
+Ah bon, non.
+Ça a été...
+Non,
+c'est pas grave.
+Si vous n'avez pas du connaissance,
+c'est pas grave.
+Non, non, mais...
+Pas de problème.
+Quand vous achetez le produit,
+vous écoutez vos scrapping,
+vous aurez encore plus les vannes,
+en quelque sorte.
+Ah bah,
+de toute façon,
+nous, quand on aspire,
 on n'aspire pas
-par vos produits
-d'accord
-on aspire la totalité
-d'ici
-tout
-donc
-justement
-l'objectif
-c'est de récupérer
-aussi des nouveaux produits
-donc
-quand on aspire un site
-enfin un site de pneus
+par vos produits.
+D'accord.
+On aspire la totalité
+d'ici.
+Ouais.
+Tout.
+Donc,
+justement,
+l'objectif,
+c'est de récupérer aussi
+des nouveaux produits.
+Donc,
+quand on aspire un site,
+enfin, un site de pneus,
 on aspire tout le contenu
-du site de pneus
-ainsi
-pour
-bah pour
-comme on dit
-pour les huiles moteurs
-on n'y connaissait rien
-on n'avait pas de référentiel
-on a pris
-toutes les
-les segmentations
-huiles moteurs
-etc
-et on a tout aspiré
-bon évidemment
-à l'intérieur
-on s'aperçoit que
-c'est mal glacé
-dans les sites
-tout est n'importe quoi
-il y a aussi des musulmes
-c'est une nourriture
-c'est Amazon
-donc
-je sais pas ce que ça faisait là
-mais bon
-il y a chacun
-le
-le dealer
-a du mal rongé
-son truc
-c'est pas grave
-mais donc
-l'objectif c'est justement
-ce qu'on vend aussi à nos clients
-c'est le fait
-de détecter
-les nouveaux produits
-sans arrêt
-de nouvelles choses etc
-donc on a des alertins
-par rapport
+d'un site de pneus.
+Un site pour,
+bah,
+pour les...
+comme on dit,
+pour les huiles moteurs,
+on n'y connaissait rien,
+on n'avait pas de référentiel,
+on a pris toutes les
+segmentations
+huiles moteurs,
+etc.,
+et on a tout aspiré.
+Bon, évidemment,
+à l'intérieur,
+on s'aperçoit que c'est mal glacé,
+dans les sites.
+Tout est n'importe quoi.
+Il y a aussi des huiles,
+mais c'est une nourriture,
+c'est Amazon.
+Donc,
+je ne sais pas
+ce que ça faisait là,
+mais bon,
+il n'y a pas le...
+comment dirais-je,
+le dealer a dû mal ronger
+son truc.
+Bon,
+c'est pas grave.
+Mais donc,
+non,
+l'objectif,
+c'est justement
+ce qu'on vend aussi
+à nos clients,
+c'est le fait de détecter
 des nouveaux produits
-donc
-ah non non
-faut plus aspirer
-est-ce qu'il faut qu'il y a un local
-ou
-alors avant
-c'est
-on a tous
-depuis l'origine
-dans stock tout
-alors avant on avait
-un centre serrat
-et maintenant
-c'est chez
-un petit
-petit fournisseur
-parce qu'on s'est cloubifié
-complètement
-c'est aussi chez Amazon
-j'espère qu'ils ont bien vu
-les références
-comme quoi
-Amazon c'est pas la propriété
-d'Amazon
-mais
-bon
-là pour l'instant
-on a fait vraiment
-au démarrage
-c'était que
-du truc classique
-SQL
-machin etc
-ensuite on a fait
-des gros clusters
-à doutes machins
-puis là maintenant
-on a tout retranster
-chez
-Amazon
-pas mal
-voilà
-maintenant chaque fois qu'on lance
-un truc en réalité
-on fait attention
-parce qu'il y a
-des frontières fournes
-hors camon
-on s'est raté
-ça fait 48 heures que ça tourne
-non pas ça
-on va attendre
-on a une alerte
-oui
-parce qu'il faut faire fréquement
-qu'on vienne s'engager
-qu'on m'a donné une fréquence
-j'ai des call points
-ah bah
-là pour l'instant
-justement l'objectif
-c'est
-en fait on est deux
-j'avais dit qu'on était
-très bestial
-donc là
-quelque part
-la vision c'est
-tous les ans
-on va calculer tout
-voilà
-donc c'est pas vraiment
-parce qu'on compte
-là aussi
-qu'on est dans le monde
-thématique
-il va pas y avoir une révolution
-quoi qu'en ce moment
-on parle beaucoup d'électriques
-machins etc
-donc il y a des nouveaux éléments
-des nouveaux problèmes
-qu'ils ont associés
-mais bon
-on a dit
-pas vraiment de s'emmener
-donc
-après
-je me dis que
-si vraiment il y a une alerte
+sans arrêt,
+de nouvelles choses,
+etc.
+On a des alertings
 par rapport
-les gens qui disent
-bah non
-c'est bon ça va durer
-mais
-non
-on a
-résolu le problème par
-tout
-j'ai plus d'autres questions
-les choses
-avant l'NGB
-donc les données qu'on se travait
-c'est par contre
-c'est absolument
-après les données
+des nouveaux produits,
+par rapport...
+qu'ils sont plus aspirés.
+Est-ce qu'il y a une liste
+au quart en mécale,
+ou...
+Alors,
+avant,
+on a tous,
+depuis l'origine,
+dans stock tout,
+alors avant,
+on avait un centre serrat,
+et maintenant,
+c'est chez
+un petit fournisseur,
+parce qu'on s'est cloubifiés complètement,
+c'est donc que c'est chez Amazon.
+J'espère qu'ils ont bien vu
+les références,
+comme quoi,
+chaque fois qu'on pose un truc chez Amazon,
+c'est pas la propriété d'Amazon,
+mais...
+Bon,
+là, pour l'instant,
+on a fait vraiment au démarrage,
+c'était que du truc classique,
+SQL,
+machin, etc.
+Ensuite,
+on a fait
+des gros clusters
+à doute,
+machin,
+puis là,
+maintenant,
+on a tout retransteré
+chez...
+Amazon.
+Maintenant,
+on lance un truc en réalité,
+on fait attention,
+c'est qu'ils seront turfournes.
+Horsqu'un an.
+On s'est ratés.
+Ça fait 48 heures que ça tourne,
+non,
+pas ça,
+on va attendre.
+On a une alerte.
+Oui ?
+Ah bah,
+là, pour l'instant,
+justement,
+l'objectif,
+c'est
+en fait, on est deux.
+J'avais dit qu'on était très bestiaux.
+Donc là,
+quelque part,
+la vision,
+c'est
+tous les ans.
+On va calculer tout.
+Voilà.
+Donc c'est pas vraiment...
+Parce qu'on compte,
+là aussi,
+dans le monde thématique,
+il va pas y avoir
+une révolution quoique.
+En ce moment,
+on parle beaucoup d'électriques,
+machin, etc.
+Donc il y a des nouveaux éléments,
+des nouveaux problèmes,
+mais bon,
+on a dit,
+pas vraiment de s'emmener.
+Donc,
+après,
+on me dit que ça,
+si vraiment,
+il y a une alerte par rapport
+à les gens qui disent,
+bah non,
+là,
+c'est pour ça qu'on s'aviguerait.
+Mais,
+non,
+on a résolu le problème
+par...
+J'ai plus de questions.
+Il y a une chose
+avant l'NJPD,
+que le données qu'on se travait,
+c'est, par contre,
+quand on se travait,
+après une minute de données,
 qu'on ne peut pas utiliser
-parce qu'on est pas loin
-c'est qu'on reste assez donné
-quand
-oui
-parce que
-que vous direz
-quand on se trappe
-déjà quand on se trappe
+parce qu'on n'a pas le droit,
+c'est qu'on reste assez donné qu'au...
+Ah oui, oui.
+Parce que,
+comment dire,
+quand on se trappe,
+déjà,
+quand on se trappe à site internet,
 il n'y a pas d'information
 particulière
-sur
-sur
-la partie des individus
-sur les blogs
-on nettoie tout
-c'est-à-dire que quelque part
-tout est annulé
-les noms, les machins
-c'est fou
-les personnes qui parlent
-qui parlent
-c'est le cadet de l'office
-donc on n'extrait
-que les fausses
-ah ça c'est par contre
-on a
-le légal
-et là
-après il y a des sites
-je ne le ferais pas
-des sites aussi de commerce
-machin etc
-dans leur truc
-des sites appareillants
-de gagner un poster
-et ça vend
-par rapport à ça
-on le fait de dire
-parce que globalement
-on a un nom
-ce qu'on n'a pas le droit
-quelque part c'est de dire
-j'espire
-et je revends
-exactement ce que j'espire
-s'il n'y a pas de plus value
-par rapport à ce qu'il espère
-là c'est totalement
-c'est de la
-comme on dit là
-c'est du bol
-nous on n'en rend jamais
-qu'on d'espire
-on en vend les produits
-matchés
-requalifiés etc
+sur...
+sur la partie
+des amnibus,
+c'est-à-dire,
+sur les blogs,
+on nettoie tout.
+C'est-à-dire que, quelque part,
+tout est amnibus,
+les noms, les machins,
+c'est fou, en fait.
+Les personnes qui parlent,
+qui parlent,
+c'est le cadet de l'office.
+Donc,
+on n'extrait que les fausses.
+Ah, ça, par contre,
+on a...
+qu'est-ce qu'on a chez nous,
+je vais le faire,
+le légal,
+et là,
+non.
+C'est pas possible.
+Voilà.
+Il dit non.
+Après, il y a des sites,
+je ne le ferais pas,
+des sites aussi de commerce,
+machin, etc.,
+ou dans leur truc,
+des sites à Paris,
+j'en ai gagné un pour serre,
+et ça va un peu bon.
+Par rapport à ça,
+on le fait de dire,
+parce que,
+globalement,
+on a non.
+Ce qu'on n'a pas le droit,
+quelque part, c'est de dire,
+j'espire,
+et je revends exactement
+ce que j'espire.
+S'il n'y a pas de plus-value
+par rapport à ce que j'espire,
+là, c'est totalement,
+c'est de là,
+comme on dit,
+c'est du vol.
+Nous,
+on n'en rend jamais,
+qu'on bête.
+Pour le moment,
+on vend les produits,
+matchés,
+qualifiés, etc.,
 avec plein d'informations
-supplémentaires
-les textes
-des
-comment il y arrive
-des postes
-qu'on a reçu
-comment il y arrive
-le client
-on ne le voit jamais
-oui ce qu'il veut
-c'est des indicateurs
-bon après
-non
-il se regarde
-le chien
-il doit bien voir
-mais bon
-après il voit le poste
-mais c'est totalement asinisé
-il n'y a pas de
-il n'y a pas de lien
-de remonter vers la personne
-qui a
-rien de
-j'ai une autre question
-il se détermine
-bon
-c'est le genre de
-mon travail
-voilà
-il détermine effectivement
-ce bêtement
-le nombre de
-les plus pertinentes
-d'accord
-voilà
-il a dit
-hein
-mais ça
-bah oui
-c'est un des affaires
-il a dit qu'il a besoin
-d'un
-d'un seul
-sur le parcours
-de la situation
-voilà
-donc
-vous voyez quand même
-des petits apports
-il a fait une thèse
-c'est bon
-d'accord
-après pour la question
-c'est un nouveau topic
-tu as parlé
-ça c'est
-on va le voir
-bon
-ça c'est notre vision actuelle
-on va déjà voir
-que ça va donner
-sur ces fameux produits
-puis on verra
-l'évolution effectivement
-donc on refrape
+supplémentaires.
+Les textes
+que l'on y arrive,
+des postes,
+qu'on a reçu.
+Que l'on y arrive,
+le client,
+on ne le voit jamais.
+Oui, ce qu'il veut,
+c'est les indicateurs.
+Bon, après,
+le client,
+il se regarde,
+machin,
+il doit bien voir,
+mais bon,
+après, il voit le poste,
+c'est vraiment aignisé
+qu'il y a pas de liens
+à remonter vers la personne
+qui a,
+alenne.
+Ah ben, il se...
+Il y a des termines d'automhte.
+Vam.
+...
+Voilà.
+Il détermine, effectivement,
+le nombre d'automne
+de plus-pertimente,
+d'accord.
+Oui.
+Il y a d'autres.
+Ah.
+Bah oui, c'est un des d'autres.
+Vous voyez quand même des petits apports.
+Il a fait une thème.
+Des petits apports.
+Ah ben, ça c'est...
+On va le voir.
+Bon.
+Ça c'est notre vision actuelle.
+On va déjà voir
+ce que ça va donner
+sur ces fameux produits.
+Puis on verra
+l'évolution, effectivement.
+Donc on refrape
 où on est
-dans un moment
-pour dire
-est-ce qu'il y a
-une
-évolution etc
-justement il y a
-ce fameux topic
-dynamique
-qu'il a fait
-voilà
-mais pour l'instant
-on sait pas
-en fortement
+pendant un topique modeling
+pour dire est-ce qu'il y a une...
+une évolution, etc.
+Justement,
+il y a ce fameux topique
+dynamique, là.
+Dernier.
+Il a fait.
+Voilà.
+Mais pour l'instant,
+on sait pas importement
 on va intégrer ça
-la classification
-parce que là
-quelque part
-le niveau élément
-très souvent
-c'est
-en remplacement
-d'un topic
-qui s'éteint
-il y a des autres choses
-là pour là
-c'est
-fait comme si
-ce problème
-n'existait pas
-voilà
-pour l'instant
+dans la classification,
+parce que là,
+quelque part,
+un niveau élément,
+très souvent,
+c'est en remplacement d'un topique
+qui s'éteint,
+il y a des autres choses.
+Bon.
+Là, pour là,
+c'est comme si
+ce problème n'existait pas.
+Voilà.
+Pour l'instant,
 on va déjà voir
-si on a des éléments
-des cas qui arrivent
-comme ça
-là pour
-essayer
+si on a des éléments,
+des cas qui arrivent comme ça.
+Là, on pourra réfléchir.
+Mais pour l'instant,
+on va...
+On est dans une note,
+on va déjà essayer
 d'appliquer
-sur un carrière
-donc des graves
+sur un carrière.
+Donc,
 sur un domaine
-qu'on ne connaît pas
-du tout
-et voir ce que ça donne
-donc c'est ça
-vraiment
-les gens seraient déjà
-bien contents
-si ça marche
-ce truc
-parce que
+qu'on connaît,
+pas du tout.
+Et voir ce que ça donne.
+Donc, c'est ça.
+Déjà,
+on sera déjà bien contents
+de ce truc.
+Parce que
 sans obligation
-de qualification
-ça serait déjà génial
-en fait
-quelque part
+de qualification,
+ça, c'est génial.
+En fait, quelque part,
 c'est un truc
-important
-parce que là
-dans les délinations
-c'était qui
-je pense
-les gens qui étaient
-embauchés chez nous
-qui l'avaient visé
-donc à un moment
-il n'y avait qu'un seul
-personne
-qui disait
-que c'est ça
-bon il y a d'autres choses
-dans le moment
-c'est ça
-c'est l'armée d'un opérateur
-c'est ça
-donc
-vous avez d'autres choses
-c'est sûr
-mais il est lâché
-mais
-il était du tylain
+important.
+Parce que dans le débénisation,
+c'était plus...
+Ah, les gens,
+les gens qui étaient embauchés
+chez nous,
+ah, j'ai compris.
+Qui l'avait visé,
+donc,
+à un moment,
+il n'y avait qu'un seul personne.
+Qui faisait que ça.
+Bon, il y a d'autres choses,
+parce qu'il est normalement
+dégardé d'un modérateur.
+Donc,
+vous avez d'autres choses.
+C'est sûr, mais il est lâché, etc.
+Mais,
+il était d'outilien,
 il avait aussi
-il avait
-qu'il maîtrise
-c'est si long
-c'est grave
-c'est long
-donc
-voilà
-on était très
-de petit
-de petit
-de petit
-là c'est pas moi
-c'est pas moi
-c'est pas moi
-c'est l'heure d'arrêter
-c'est ça
-c'est ça
-merci
-bon
-merci
+il avait qu'il maîtrise les langues
+dans les six langues.
+Donc,
+voilà.
+On était très
+d'outilien.
+Le petit péterage.
+C'est là.
+Là, c'est à moi.
+C'est le skat.
+C'est pas mal.
+Putain, c'est l'heure d'arrêter.
+C'est ça, c'est ça.
+Merci.
+Bon,
+allez.

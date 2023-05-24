@@ -1,0 +1,1792 @@
+Bonsoir à tous, désolé qu'on ne voit pas. Je vais rebondir sur le mot favoriser l'échange.
+Je suis content de pouvoir venir échanger aujourd'hui sur ma découverte de l'auto-machine learning
+qu'on avait accueillie machine learning pour les fédéants.
+Tout le monde sait ce que c'est que l'auto-ML, l'auto-machine learning concrètement le tuning automatique des hyperparamètres.
+Le gros travail du data scientist c'est de préparer les données et l'autre grosse partie du travail c'est de modéliser
+et modéliser c'est de choisir les bons hyperparamètres des fois qu'on n'a pas préparé les barrières.
+Et concrètement, avec l'auto-machine learning, moi concrètement le juge gagne 80% du temps de modélisation.
+Pas de préparation des données, ça n'en coûte pas, il faut encore de la intelligence humaine.
+Mais je vais vous en parler rapidement, optimisé pour la phase fastidueuse qui consiste à tuner tous les hyperparamètres pour apprendre vite et vite.
+Alors je vais en profiter pour me présenter cette chronologie de la découverte de l'auto-machine learning, c'est un peu mon histoire.
+Donc avec vous l'angez, je suis chief data scientist.
+Pour moi ça commence en 2010, en 2010 j'étais proche de niveau 0, je n'ai pas fait des colls d'ingénieurs, je n'ai pas de PG en data science.
+Mais par contre, j'ai démarré de la data science avec le travail d'une société qui distribuait des produits Cognos, qui était acheté par IBM.
+Et un an plus tard, IBM a acheté SPSS et ça a été pour moi l'occasion de trouver dans les statistiques qui est très rapidement dans machine learning.
+Parce que SPSS a véracheté quelque temps par avant un logiciel qui s'appelait Clémentine, qui permettait de faire du visual programming et de faire de tout process de machine learning de manière assez graphique et assez facile.
+Donc j'ai passé toutes les certifications d'IVL, de statistiques, j'ai repris mes cours de statistiques.
+En 2011, j'ai découvert Kaggle, pour ceux qui ne connaissent pas Kaggle, qui est une plateforme de data science.
+J'ai commencé mes premières compétitions en 2011.
+Sur le Cognos Cognos, j'ai eu 3 milliers en gros, sur le placement global.
+J'ai dû faire 30 compétitions.
+J'avais très bien en fait un 2 cet été, mais finalement j'ai écrit une package à la place.
+J'ai 3 médailles, c'est pas de l'or, c'est pas de l'argent bon plus, c'est du grand or.
+Je ne suis pas comme Horan.
+L'année dernière, c'était Pop qui m'a présenté comment il avait gagné sa première compétition de data science.
+Je peux le relancer.
+Donc moi, dès que j'ai découvert Kaggle, je me suis rendu compte qu'avec les outils propriétaires, on était assez vite limités.
+Tout ce qui gagnait des compétitions, c'est que les gars qui faisaient du air ou de putain.
+Moi, j'ai choisi air, je ne le répète pas du tout.
+Comment j'ai appris air, en autodidacte, c'est pas vraiment vrai.
+C'est avec Rattles, c'est l'interface graphique de air qui permet à l'instar de ce que fait Clémentine ou SPSS
+d'avoir le processus de machine learning, de manière graphique.
+Je charge mes données, j'analyse mes variables, je choisis mes modèles.
+Et le gros avantage de Rattles, c'est que derrière, il fournit le code qui l'a généré en air.
+Donc c'est comme ça que j'ai appris air.
+Ensuite, l'autre gros déglis, puisque j'avais des bases avec ça, mais ce qui m'a beaucoup aidé et qui en a aidé beaucoup, je suppose parmi nous,
+c'est le cours de machine learning d'Andrew NJ sur Coursera.
+Et là, comment je m'y suis mis, c'est qu'il y avait un gars qui avait gagné une compétition de Kaggle qui disait,
+j'ai juste écrit mon réseau de neurone, je ne joue pas dans la même cour.
+Et par contre, ce qu'il a dit, c'est que j'ai appris ça sur Coursera.
+Donc je suis mis ce cours là, effectivement, j'ai appris à créer un réseau de neurone à cette époque, mais là, on va dire la génération 1.
+Ce qui est assez énorme dans ce cours, c'est qu'on en dégât de mon âge avec les maths qui sont très, très loin.
+Et en 15 jours, il vous a réappris à faire du calcul matriciel,
+et en 15 jours, il vous a dit que vous êtes considérez-vous comme un expert de la réglation logistique
+et vous pourriez gagner autant d'argent des gens qui se font des taux d'argent à Silicon Valley.
+Bref, il vous met assez vite à l'aise et il nous apprend beaucoup de choses.
+Je conseille vraiment ce cours.
+Pour moi, ça a été le début de, comment dire, je me suis structuré dans la façon d'emborder les problèmes de la science.
+C'est pour ça que j'ai fait un petit tiré noir.
+C'est à partir de ce cours-là que j'ai commencé à écrire tous mes scripts en me disant que je vais y rendre paramétrable.
+Ce qui a donné, donc je me suis associé en 2015 et ce, c'est morceaux de scripts paramétrable que j'avais créé.
+Alors on a créé une société et on lui a donné un nom à cette ensemble de scripts.
+5% donc la pivale, 5%.
+Parce que vous m'avez associé, il faut avoir un chiffre d'ordre, un environnement de domaine.
+5% voilà.
+Il y a des pictures et de transitions.
+En 2017, Andrew NJ a sorti un autre module pour aller cette fois dans le deep learning.
+Un cours en 5 spécialisations.
+Là où l'autre était en 5 semaines, est-ce que juste une spécialisation, là il y en a 5.
+Donc on verra plus tard que ce que j'ai implémenté dans le package, c'est concrètement tout ce qu'il y a dans les 3 premiers modules.
+Pas les deux derniers, les réseaux convolutionnels et les réseaux récurrents, je ne sais pas quoi implémenter.
+J'ai besoin principalement des réseaux d'interception classique.
+Mais le deep learning, tout ce qui est abordé, s'il y en a parmi vous qui ont suivi cette spécialisation, j'ai tout implémenté.
+Je m'aimais un petit peu plus loin parce qu'il parle de la patch normalisation mais il ne donne pas d'exemple et on ne fait pas d'exercice dessus.
+Donc c'est un mois là-dessus, j'ai été fait de ma graphique sur internet pour bien décomposer les graphes et les différentes déribuées.
+Et c'est dedans.
+C'est pour ça qu'il est payable.
+Celui-là n'est pas payable, c'est sûrement le 7e.
+Oui.
+Mais celui de l'autre, il est payable.
+J'ai oublié le fait que c'est 50 euros par mois, c'est l'euro.
+Oui.
+Pour moi, c'est rien.
+Je m'arrêche, mais 50 euros pour le contenu du cours et la pédagogie d'Androidji, c'est un bâtable.
+Pas la fin de la 7e, c'est le cours.
+Le cours, oui.
+Alors moi, j'ai peut-être passé un peu de temps.
+J'ai commencé en septembre.
+Fin de l'essent, j'avais fini les trois premières.
+Mais tout de suite, je retraduisais tout en air.
+Tous les exercices qu'on avait fait, je les remettais en air.
+Non, non.
+Oui, effectivement, le premier, c'était octane.
+Et là, c'était tout du putain.
+Alors là, moi, c'est bon.
+Je vais se faire un bout.
+Je traduis en air.
+Et l'autre élément fondateur,
+alors c'est juste une urn.
+C'est complètement...
+Donc d'abord, au sein du data de cette année,
+en 2018, j'ai rencontré Henri Lo,
+qui a écrit Jean-Luc Schubert.
+Donc on a sympathisé.
+On a disputé sur notre stand.
+Et il m'a dit, vous devriez creuser PSO.
+C'est pas énigmatique.
+Jusqu'à tester un bout de papier, PSO,
+particules sur l'organisation.
+Et puis voilà.
+Et peu de temps après, il m'a dit, mais on a rééchangeé.
+Il m'a dit, on devrait faire un paquet de gens ensemble.
+Après, il n'y a pas le temps.
+Mais je l'ai eu au téléphone aujourd'hui.
+Il m'a dit, on pourrait rajouter le transfert learning,
+rajouter des tas de choses.
+Donc ça viendra.
+Et il m'aidera peut-être à le faire.
+On m'aidera à des idées.
+Et donc moi, comment j'ai implémenté ça,
+d'un autre pédagogue exceptionnel,
+c'est...
+Je n'ai pas son nom.
+Mais aussi, c'est Yartist.com.
+Et il explique comment implémenter le PSO.
+Je sais peut-être bien...
+Peut-être.
+Je sais, je l'ai tout de suite traduit en R.
+C'était fait.
+Je crois qu'il y a une dernière transition.
+Voilà.
+Donc la naissance de l'auto machine learning pour moi.
+Intellectuellement, j'ai vraiment eu cette...
+ce déclique.
+Mais d'autres, on dit que quand on a une idée,
+si c'est long en même temps,
+d'auto machine learning faire...
+tuner mes hyperparamètres monnaie,
+d'autres l'ont eu exactement en même temps pour moi.
+Je vais faire un petit page de pub,
+social attention, ce qui sera court.
+Contrairement, l'ensemble de script que je crée depuis 2012,
+c'est le mode Kaggle.
+Je rentre deux fichiers.
+Tout ce que j'ai appris sur toutes les compétitions
+que j'ai faites sur la préparation des variants,
+donc la Chine Tree, la Vélancoie, le TextMind,
+et j'en passe la segmentation automatique.
+Ensuite, j'ai une partie de mes scripts qui va s'occuper
+de sélectionner les bonnes variables.
+À partir de cette étape, je vais avoir toutes mes données,
+qui est du texte, qui est des dates, qui est quoi que ce soit.
+Ce sera un fichier numérique pour que tous les modèles
+soient égalités ensuite.
+Et derrière, j'ai une partie de modélisation
+où je vais avoir une vingtaine de modèles différents,
+où ça va du fur et à boire,
+ou du j-boost et puis du verrou, forcément.
+Et j'ai une étape ensuite d'ensemble,
+d'ensemble ou de state,
+donc je remets une touche de verrouille
+sur des sorties de mode résistant.
+Et tout ça, du jeu, c'est que ce soit entièrement paramétrable.
+Ça couvre la réglation, l'un qui classe...
+qui classe la représentation, l'autre en poly,
+enfin, tout coupé.
+À chaque fois, je ne m'arrangerai plus de tout faire tenir dedans.
+Et tout ça, c'est prêt, ça veut dire, c'est prêt pour la production.
+L'idée pour moi, c'est comme quand je fais une compétition
+d'atamanique, j'essaye de...
+je vous limite à 3 solutions,
+et j'y passe quelques heures.
+C'est juste pour tester que je suis en train de prendre du retard.
+C'est comme ça que je me suis négé au XGBoost,
+parce que je réalisais que les foréatoires,
+non, les cheveux qui disaient que l'XGBoost m'attaque.
+Et puis voilà, c'est comme ça que, doucement,
+grâce à Cagheul, j'ai enrichi ce modèle.
+Quand on l'a créé, on a proposé notre service en mode safe,
+donc Software as a Service.
+L'idée, c'était de faire du scoring,
+de la segmentation pour nos clients,
+et qu'ils le consomment via le web,
+ou via une appellie,
+ou en notre patch.
+Je pose mon fichier client,
+et je récupère, une heure après, le scoring,
+ou alors je le score directement.
+Et en 2018, on a rencontré...
+C'est signé, c'est Annéo,
+c'est le groupe qui est derrière Brickoman,
+Oui, le roi Merlin.
+Ils nous ont dit, ben nous,
+ça nous appréhend.
+Il y a une équipe de data scientist,
+mais votre outil, c'est quoi ?
+On voudrait voir.
+On est allé leur faire une démonstration,
+et les data scientists ont bien accroché,
+parce qu'ils m'avaient préparé des fichiers
+que moi, je ne connaissais pas.
+Et finalement, j'arrivais assez rapidement
+à avoir le même performance que eux,
+pour vous voir un peu plus,
+en deux heures de démons.
+On avait traité deux sujets.
+On s'est dit, et ils nous l'ont demandé,
+donc maintenant, on est on-previse.
+Et moi, je ne savais pas ce que ça voulait dire,
+on-previse, c'est-à-dire en local.
+On n'est plus en notre soutenir à ce service,
+mais en la stade chez le client.
+Ça veut dire aussi, c'est du R,
+donc, nos clients aux sources.
+Ce que je débloque depuis quelques années,
+c'est chez le client.
+Transparance.
+Donc rapidement,
+ce package que je vais vous présenter,
+c'est un mix des réseaux de rose,
+des deep learning,
+pour tout ce que vous pouvez nous apprendre
+dans les propres premiers modules,
+avec toutes les dernières astuces.
+Et on regarde dans la site d'après,
+l'OPSO et comment je vais fixer
+les deux manures.
+Donc le réseau de neurones,
+très rapidement,
+c'est toujours des
+couches d'entrée
+et puis des couches intermédiaires de sortie,
+de, si on est plus sur le bouton,
+des matrices.
+Ce qui est bon, c'est que c'est tout bêtement
+l'ensemble des produits matriciels
+avec une fonction d'activation intermédiaire.
+Donc le réseau de neurones,
+dans lui-même, est facile,
+mais moi, je vois deux inconvénients,
+que je ne suis pas un mathématicien,
+que je suis bien plus chanteur,
+c'est que quand on rétropopage
+l'erreur pour pouvoir réajuster
+les coins en conséquence,
+je peux aider à arriver,
+pour pouvoir intérer dans le processus correctement.
+Je ne suis pas un grand fan
+de ça.
+Le deuxième inconvénient
+du Deep Learning
+et des réseaux de neurones en général,
+c'est de funer tous ces super paramètres.
+Donc il y a des paramètres de bas,
+c'est le nombre de couches et le nombre de nœuds
+dans les couches.
+Mais après, pour que le réseau
+converge rapidement vers la bonne solution,
+c'est d'ajuster les poids et de faire
+depuis un peu vite.
+Quand je ne savais pas faire des réseaux de neurones,
+alors qu'avec le mini-batch,
+c'est de traiter votre fichier en entrée
+même s'il ferme bien le registrement,
+mais le traiter par petits morceaux et faire des bourses.
+C'est pour cet évice de temps,
+les jours deviennent des heures,
+les heures deviennent des minutes,
+c'est juste énorme.
+Toutes ces petites astuces sont dedans,
+toutes les différentes optimisations, le learning rate.
+Le souci de tout ça,
+c'est que vous vous dites bon,
+je vais essayer un learning rate de temps,
+je vais essayer la dame optimization
+et la tête du learning rate, ce sera ça.
+Et puis, vous pouvez passer à côté de la beautification.
+Donc, il faut essayer, essayer, tu l'es.
+Tiens, c'est un premier,
+quand je mettais le learning rate.
+Bref, pour moi,
+deux inconvénients du deep learning
+et des zones neurones
+en général.
+Alors là,
+ça, c'est génial.
+Parce qu'en plus, ça s'explique super simplement.
+Ça, c'est...
+Oui, ce moment, il n'a pas réussi plus,
+je le fais voir quand je vois ça.
+Et derrière,
+concrètement, ce que ça veut dire,
+c'est que je jette des particules,
+elles font un pas,
+et elles vont dire,
+à chaque pas, moi, j'ai trouvé tel erreur.
+Et donc, toutes les autres,
+celle qui aura le coup de plus faite,
+qui aura trouvé la meilleure solution,
+elle va dire, c'est moi qui ai la meilleure solution,
+et elles vont toutes converger vers cette meilleure solution.
+Sauf qu'entre temps,
+il y en a une qui peut trouver un autre,
+c'est pour ainsi défournir, il y en a une part à l'aventure,
+et puis il y en a une qui va en arquer une théatoire,
+ou tous les abeilles, je peux pas les dire,
+que j'en parlerais tout à l'heure.
+Voilà, donc c'est typique
+pour tinser
+le geur de Trimamo.
+Donc ça, moi, j'ai regardé
+sur...
+sur R, il y a un paquet,
+qui s'appelle PSO, mais
+vous lui donnez une fonction, moi, ça ressemble pas
+à ce dont il y avait besoin, moi, c'est que je m'infiche
+sur l'entrée, je le dis dessus, et je veux qu'il me tins.
+Alors,
+donc le problémique
+que j'ai fait entre
+les réseaux de neurones
+et le...
+parce que c'est une soirée qui nous échaîne, PSO,
+on va la prépare son nom maintenant.
+Voilà, donc
+la première chose, donc voilà,
+ce qu'Androidji nous apprend,
+il nous parle pas de PSO, mais il nous parle de ça,
+il me dit, pour tester différents jeux
+d'hyperparamètres, de the new way,
+choisis ces ans
+de bazaar, et puis analyser,
+et puis...
+Moi, je me suis dit, on va rajouter
+le PSO,
+et PSO, lui, va se charger de dire
+ce jeu d'hyperparamètres
+correspond à une particule,
+concrètement,
+vous avez tout à l'heure sur le schéma,
+je jette des particules aléatoirement, et elles vont dire
+ce qu'elles ont trouvé.
+Voilà, ce sera jeu, une particule est égal
+à un jeu d'hyperparamètres,
+je fais tourner mon réseau de neurones avec ça,
+et je produis tel erreur, j'ai un modèle qui a
+telle performance. L'autre particule,
+avec un autre jeu de paramètres,
+c'est-à-dire, moi, j'ai produit tel coupage,
+telle solution, et je passe
+un coup d'horloge, et on va dire
+c'est la particule 30, qui est le meilleur.
+Donc, vous pourrez converger,
+c'est pas que vous allez converger, pas tout,
+il faut un pas aléatoire, un pas
+vers le dernier, le meilleur obtivone que vous avez trouvé
+elle, et un pas vers la meilleure solution,
+c'est ça, en gros, l'algorithme,
+mais qui est simplissime.
+J'ai pas besoin de commencer par le cynique, j'ai pas
+l'ensemble derrière, c'est ça,
+ça j'aime.
+Donc, le mixe 2,
+alors là, on le voit pas, j'ai marqué
+expérimental,
+mais ça marche plutôt bien, sur des plus petits jeux de données,
+j'ai encore pas pu jouer beaucoup avec,
+bah là, je vais partager avec vous, si on a parmi vous
+derrière qui vous l'essayez, n'hésitez pas,
+et n'hésitez pas à me faire des retours. Donc, moi,
+c'est le deuxième point noir que je
+mettais en avance,
+c'est la dacropague et choc, par exemple
+je veux, en sortie de mon réseau,
+appliquer la fonction softmax,
+je trouve la dérivée de la fonction softmax.
+Tout le code est assez modulaire,
+et systématiquement, si j'utilise
+la tangente hyperboli, ici,
+ou comme fonction d'activation,
+il faut que j'y s'adérive, et donc j'ai la
+tangente hyperboli, j'ai
+la simuri, j'ai la relue,
+la relue qui est relue, enfin tout ce qu'on a appris.
+Mais j'ai pas toutes les fonctions en sortie,
+j'ai que la croisse entrepies et
+une supérieure, je fais de la régression,
+bref,
+donc l'idée là, c'est
+chaque particule maintenant, c'est
+plus un jeu d'hyperparamètres,
+c'est l'ensemble des points de mématrice.
+Concrètement, une particule, c'est
+un réseau de rôde, parce que finalement
+un réseau de rôde c'est un matrice de
+quoi ?
+C'est ça.
+Donc l'idée, c'est de dire, je lance
+30 particules, ça va dire que je vais
+initialiser aléatoirement, en fonction
+de la fonction d'activation quand même,
+mes matrices de poids, mais de manière aléatoire,
+ce sont comme on le fait en temps normal,
+les réseaux de rôde sont toujours
+initialisés aléatoirement, et à chaque
+coup de relâche, ils vont produire, on le
+voit bien, quand on fait première époque
+et on voit un coup, qui est peut-être important,
+mais il y en a peut-être un qui va tomber
+sur un coup moins important. Donc vu que
+toutes mes matrices sont similaires,
+toujours même principe,
+je vais entraîner, par exemple,
+pour 10 particules, 10 réseaux de rôde, donc
+10 ensembles de matrice, et puis
+celui qui produira les résultats
+va faire converger les rôdés à lui.
+Le changement des poids des matrices
+en fonction de la custom, quand ce qu'on
+vient, c'est plus avant
+de la corporation, mais c'est quoi,
+justement, je fais plus du fourgarde.
+Voilà, merci, fait la transition pour moi,
+parce que j'en ai un peu rappelé.
+C'est effectivement ça, c'est que je fais
+plus de back propagation,
+c'est, j'ai la revue ici,
+la donjante hyperbole, et derrière,
+je peux faire mass of max, rapidement,
+et du coup, j'ai des poids,
+je prends une particule, j'ai des poids,
+je fais mes produits, je mets mon fichier
+en entrée, je compare l'erreur par rapport
+à ce sur quoi je dois apprendre, et
+cette particule dit, moi j'étais l'erreur,
+la suivante, j'initialise aléatoirement,
+je joue le fourgarde, je calcule mon
+back propagation, et du coup,
+tous les réseaux sont entraînés,
+et lequel a le meilleur, et je vais
+ajuster tous les poids,
+ce qu'on verre, je verre celui qui a trouvé
+la meilleure solution, c'est le vrai
+avant de donner, comment on a vu sur le dessin,
+mais vous allez voir, ça marche
+sur le data set iris, c'est juste
+exceptionnel, ça marche super bien, sinon
+je joue un peu avec le petit tableau,
+c'est super.
+Il y a un changement des poids dans les matrices
+de chaque...
+sur mon graphique d'avant,
+elle avait deux coordonnées,
+x et y, là,
+c'est un vecteur
+de tous les poids, donc
+elle a une valeur, finalement, pour chaque
+vecteur, et je vais ajuster
+tous ces poids, quelques marseillais,
+80e et 80e, les autres vont s'admire
+dessus, mais il n'y a
+plus de back propagation, du coup
+je peux avoir les fonctions que je veux,
+je peux écrire, moi je veux
+deux choix, les faux positifs,
+tu n'as pas besoin de fonctions
+forcément dérives,
+tu n'es pas obligé d'avoir une fonction
+dérives.
+Je peux inventer
+la fonction que je veux.
+Alors du coup,
+je vais vous présenter
+rapidement,
+la librairie auto-email,
+donc il y a trois fonctions,
+cet qui permet hardaction
+donc ce que j'ai appris
+pour les noms, je ne suis pas forcément inspiré,
+auto-email, train,
+manuel, sous-entendu,
+c'est le deep learning,
+cette fonction là, permet d'implémenter le deep learning
+qu'on n'a pas avec Andorre G, donc
+la totalité, la page normalisation,
+on a autant de couches qu'on veut, autant de neurones qu'on veut,
+les fonctions d'activation qu'on veut,
+le learning rate qu'on veut, mais il n'a pas de
+entre guillemets d'intelligence,
+une formité paramètre, un fichier en entrée,
+et il va converger,
+c'est-à-dire combien tu fais d'intérations,
+quelle est la taille du match,
+et il va faire.
+Par contre, j'ai une option que je peux lui passer,
+c'est arrête le gradient descent,
+et tu passes, ce que je fais donc dans mix 2,
+c'est tous les poids
+pour être ajusté par le PSO.
+Ça c'est ma première fonction,
+et puis le auto-train,
+c'est le vrai auto-machine learning,
+c'est celui qui va,
+où je vais lui dire,
+tu vas me créer,
+tu vas me tester 50 réseaux de neurodifférents,
+pas 50 jeux
+de hyperparamètres,
+telles leurs niveaux,
+et tu vas entraîner tes modèles.
+Et derrière, je vais lui faire ajuster,
+en suivant l'optération,
+le meilleur 7 hyperparamètres.
+Et puis là, le classique,
+la fonction prédite.
+Il y a les deux produits en modèle,
+le meilleur modèle retenu,
+et la fonction prédite les utilise.
+Ce que ça donne,
+c'est donc là, je prends le data set iris,
+ça, c'est un problème de régression classique,
+c'est prédire la taille de,
+c'est pas de la ligne,
+en fonction des autres paramètres,
+donc ça ne me fichait plus petit,
+et c'est seulement le registrement,
+il y a 4 colloles et 5 espèces,
+donc 5 colloles avec l'espèce.
+Donc là, je lui dis,
+ça ne ressemble pas très bien,
+donc j'ai besoin de ma matrice
+de jeu d'enregistrement,
+avec des caractéristiques,
+voilà, je le passe.
+J'ai la matrice avec la réponse,
+donc c'est la columne 1,
+et puis j'ai juste à dire,
+j'appelle ma fonction, je dis la matrice
+X, c'est celle-là,
+la matrice Y, c'est la deuxième.
+Et puis je lui dis, dans les hyperparamètres,
+je lui dis, tu vas m'exécuter ça
+avec le, qu'il l'appelait,
+train with DSO,
+et puis derrière,
+je préviens,
+donc là, le résultat,
+je combine la vraie réponse
+avec ce qu'il a prédit.
+Pour le faire prédire,
+c'est le modèle, tu vas me chercher
+le modèle qui a été généré,
+et puis en fait, je te donne la matrice,
+et tu dois faire le prédiction.
+Et la classification,
+c'est prédire les espèces
+en fonction des autres paramètres.
+Donc là, j'ai les 4 colloles avec les dimensions,
+et j'ai les espèces comme cibles,
+donc les 7 autres, il y a 3 espèces.
+Voilà, pareil, je prépare la matrice,
+donc je lui dis, c'est
+154 avec 4 caractéristiques,
+et puis je transforme un peu la cible,
+parce qu'il me faut une matrice numérique,
+si j'ai 3, comment dire,
+3 catégories dans la cible,
+bah j'aurai 3 colloles.
+Et en sortie, il va me dire, leur première,
+oui, c'est celle-là,
+on le verra, je vous montrerai.
+Et puis, la même chose, je vais dire,
+je vais passer sur...
+Et après, je vous ferai mon
+retour d'expérience.
+Voici ce que vous intéressez,
+comment on publie un package R.
+Ce n'est pas...
+C'est amusant.
+Ah, j'arrive pas.
+Il arrive.
+Il arrive.
+Il arrive.
+Il arrive.
+Il arrive.
+Il arrive.
+Il arrive.
+Il arrive.
+Il arrive.
+Il arrive.
+Donc,
+je vais appeler ma librairie
+PML.
+Ouais,
+les charger.
+Il arrive.
+Là, je ne vois pas l'index mot.
+Il arrive.
+Il arrive.
+Il arrive.
+Voilà, c'est en fonction très vite.
+Voilà.
+Donc là, j'explique
+ce que ça peut faire
+et j'ai mes exemples
+qui sont tout près.
+Donc là, je vais charger
+le data set.
+J'ai bien ma matrice
+avec mes 151
+et puis les 4 caractéristiques
+et puis un vecteur avec la réponse.
+Là, la réponse est
+de prédire la longueur du pétale.
+Comment je lance
+le modèle
+simplement ?
+Je lui dis
+j'ai préparé ma triche de la norme entrée, on sortit.
+Et puis là, je vais le mettre en mode verbose
+pour voir ce qu'il se passe.
+Donc là, il me dit que le coup, ce sera le MSL.
+Il n'y a pas d'erreur.
+Donc j'ai un cross validation
+qui est automatiquement assez paramétrable.
+J'ai du prendre 10%
+et puis je vois bien
+les 10 premières idérations.
+Je suis passé
+0,21, 0,26
+à quelque chose, un modèle
+qui a bien pourvergé les réseaux de solution.
+Alors là, dans tout ce dont je vous parlais,
+mes photos de matrice de poids,
+ma matrice en entêtres 135 caractéristiques.
+La première matrice de poids que je viens de multiplier
+c'est la 7 caractéristiques
+et la deuxième, donc j'ai 2 matrices.
+Et donc, on peut regarder tout de suite
+le fonction Prédict tout seul.
+Elle va faire ça.
+Donc là, il produit tout de suite mes prédictions.
+Je vais lui mettre ici.
+Donne un nom en colonne.
+Là, j'ai fait un aperçu du fichier.
+La vraie valeur c'est
+0,20, 0,4
+Donc là, ce que j'ai fait, c'est vraiment le mix 2.
+Ce n'est pas de back propagation.
+C'est le PSO qui a ajusté les poids tout seul.
+Alors,
+pour du big data, du ré-big data,
+j'ai eu de la 100 000 enregistrements.
+Ça me paraît gourmand en ressources quand même.
+Parce que concrètement, ça veut dire
+50 particules, 50 réseaux de neurones
+et chaque iteration, chaque pas
+où ils vont converger les uns vers les autres,
+ça veut dire, je re-fais 50 fois qu'il n'y a plus.
+C'est un peu lourd.
+Mais là, je suis...
+Il n'y a rien à vous dire et à lui dire, regardez.
+Il n'y a que 150 enregistrements.
+On dirait un
+exemple de grande société de l'édition logicielle
+qui montre toujours des choses qui vont super vite
+parce qu'il y a très peu d'enregistrements.
+Alors, la classification, la même chose.
+J'ai toute la phase de préparation des données
+parce qu'il me faut mettre 2 matrices numériques.
+Donc,
+la matrice, c'est quoi ?
+Cette fois, j'ai mes 4 dimensions
+et je dois prédire.
+Alors là, il n'y a pas les noms, mais on les verra après.
+Donc, si c'est CETOSA,
+puis j'ai mes 2 matrices,
+une avec les 4 à prédire
+et puis l'autre avec la racine.
+Donc, j'ai entraîné mon modèle.
+Je dois mettre le mode verbaux,
+ça aurait été un peu plus dur.
+Alors, il a fini le jeu.
+Je vais opérer.
+Je vais opérer.
+Il faut savoir que quand on
+poste un package sur
+Cloud, il teste et on a un temps très limité.
+Moi, j'ai utilisé fonction de parallelisation,
+mais dès le 1er test, ils m'ont dit
+« Ah non, on n'a pas broqué un cœur ».
+Donc, je revois mes exemples.
+Après, il fallait qu'il dure moins de 10 secondes.
+Donc, je vous fais potentiellement des modèles pourris,
+mais j'ai que 4 secondes à chaque fois.
+Dans les exemples que je poste là,
+ça tient dans le temps imparti.
+Donc, la même chose,
+j'ai entraîné avec
+le PSO.
+Donc là, c'est
+une vraie valeur.
+Il fait quelques erreurs,
+quand même.
+C'est du vrai machine learning.
+Il est où mon résultat ?
+Il est là.
+On voit qu'il fait
+quand même quelques erreurs là.
+Normalement, c'est versicolore
+et il a prédit virginica.
+Alors, qu'est-ce que je peux vous montrer d'autre ?
+Ça, c'est la fonction
+d'exemple de As,
+mais je peux vous montrer...
+Il y a 2 coloncés.
+Il y a 2 catégories prédites
+pour la ligne
+85.
+Sur la ligne 84 des résultats,
+il y a
+2 catégories
+détalées.
+C'est mon arrondi, ça.
+J'ai pas utilisé la fonction softmax,
+donc il y a 2 probats qui sont supérieurs
+à combien, du coup.
+S'il y a une question,
+on se fera 0,5.
+En fait,
+quand tu mets pas de sigmoïs,
+tu poses d'affilée pour assommer un dépendant.
+J'ai même pas vu, non ?
+C'est du mutilable,
+je n'ai pas utilisé la fonction softmax,
+donc c'est vraiment chacune.
+En fait, ce sont, oui, complètement la sœur des produits,
+fais pas un.
+Tu mets de la fonction softmax,
+parce que dans tous les cas, tu es obligé.
+Merci de faire une transition pour moi.
+J'ai un exemple, justement,
+qui est dans
+manuel.
+Dans mes exemples,
+c'est-à-dire, quand je soumets le texte
+le package à la validation,
+n'exécuter pas ça.
+Cela dure un peu plus longtemps.
+J'ai mon exemple avec la fonction softmax.
+Alors, je vais vous commenter un peu.
+La seule fois que j'ai créé
+les deux matrices,
+les hyperparmets,
+ça va être entrainé avec le PSO,
+donc j'ai accès à quelque chose de souhait.
+J'ai pas écrit que c'est la version
+de la version softmax,
+mais je vais vous commenter un peu.
+Je vais vous commenter un peu.
+La seule fois que j'ai créé
+les deux matrices,
+les hyperparmets,
+ça va être entraîné avec le PSO,
+c'est la fonction que je souhaite.
+J'ai pas écrit que c'est la version
+que je l'ai créée, mais je peux en passer
+une complètement personnelle.
+On pourra le voir dans un exemple pas très.
+Donc là, la layer chef,
+j'utiliserai
+la fonction relue.
+Là, c'est pas la pleine de remplir,
+parce que c'est la sortie, donc il sera
+exactement comme les éléments.
+Je pourrais utiliser
+la reparte.
+En gros, faire apprendre
+le poids.
+C'est ça l'image.
+Voilà, on va aller actuellement,
+on l'enlève des poids,
+il apprend très mal.
+Alors, le nombre d'intérations,
+c'est combien des poids qu'il va faire,
+et l'âge qui est 50,
+participe.
+C'est simple.
+Et puis, on va pouvoir en comparer le résultat.
+Alors, du coup,
+c'est reprendre le poids que j'avais
+vu juste avant.
+Pour faire la prédiction,
+voilà, c'est pour ça que ça m'ouvre le modèges.
+J'ai qu'à exécuter ça, priori.
+Non, non, pas ça.
+Celle d'après, j'ai vu.
+C'est une prédiction.
+On va le refaire pareil,
+pour l'entraîner le modèle.
+C'est la ligne combien ?
+4.
+Qu'est-ce qu'il veut, là ?
+Là, on a bien utilisé la softmax.
+C'est un parmi l'ensemble.
+Alors que l'autre, c'était le vrai, le petit classe,
+multilabel aussi.
+Est-ce que je peux vous montrer d'autres...
+Bon, je suis arrivé en retard,
+je ne vais pas non plus déborder sur le temps.
+Mais, si je ne mets pas
+d'ident layer,
+j'ai de la régression classique ou de la régression logistique,
+on peut rentrer sur deux.
+Donc, c'est de la régression logistique,
+on rajoute des couches tout simplement
+en ultra-révue, tout à l'heure.
+Je suis fait 1,2, le nombre de nœuds qu'on veut.
+La fonction d'activation.
+Et voilà.
+Je vais pas vous montrer l'auto machine learning,
+c'était un peu le but du jeu.
+Donc, celle-ci.
+Je vais chercher l'exemple.
+Là, je vais lui faire,
+je vais lui faire d'entraîner le modèle.
+Alors, j'ai voulu que ce soit simple d'utilisation.
+Donc, j'ai initialisé tous les paramètres
+à une certaine valeur.
+Donc, c'est justement dans l'aide.
+Donc là, je lui dis, maintenant, tu fais de l'auto machine learning.
+Donc, alors là, voilà,
+il fallait que ça prenne très peu de temps.
+Donc, je vais quand même faire...
+Je vais lui mettre 3 particules
+et puis 2 itérations.
+On va faire très petit.
+Et puis, chaque réseau de neurones,
+je ne vais pas dépasser des itérations.
+Donc là, en gros, qu'est-ce qu'il a fait ?
+Il a fait 2 itérations avec 3 particules.
+Donc, il a essayé, concrètement,
+3 jeux de différents paramètres différents.
+Et à l'utilisation suivante,
+il n'a pas trouvé le meilleur modèle.
+C'est-à-dire que celle qui avait trouvé un bon modèle
+et elle a bougé,
+elle s'est éloignée de son néant.
+Donc, il faut rajouter...
+Je veux pas que ça...
+Je suis sur la batterie un peu.
+Je vais pas trop charger ma machine,
+mais le nombre d'itérations,
+on va lui en faire faire avec 5.
+Quoi que moi ?
+Je vais lui dire que je vais faire 3 itérations,
+et on va mettre plus de particules.
+Allez, 6.
+Le meilleur modèle, quand même.
+Là, ça pourrait être le meilleur modèle.
+Ça veut dire qu'en fait,
+concrètement,
+qu'est-ce que j'ai fait,
+ce que je nous apprends,
+c'est que j'ai essayé 3 sets
+de différents paramètres aléatoires,
+et en convergeant,
+je n'aurai pas trouvé le meilleur.
+Là, il n'a pas trouvé un,
+il n'a pas trouvé le meilleur.
+Il faut rajouter des particules,
+il faut rajouter des itérations.
+Là, je m'en cède,
+ça marche.
+Donc, sur les mains,
+je peux vous parler
+de mon retour d'expérience
+sur la création d'un package.
+J'arrive à retrouver mon écran.
+Le retour d'expérience,
+c'est qu'il faut,
+les outils nécessaires,
+c'est Air Studio,
+qui facilite probablement la tâche,
+quand même,
+je vous dis,
+je vais vous préparer
+un nouveau package,
+je vais vous créer tout un bon essence,
+le fichier d'escription,
+le space,
+là où vous iriez ranger
+vos scripts Air,
+et là où vous rangeriez
+vos pages d'air.
+Je me suis aidé
+d'un blog, là,
+qui est assez connu
+à Analytics,
+les postes qui sont intéressants,
+et là,
+il me dit comment j'ai créé
+mon package
+en 3, 2, 1.
+Moi, j'ai tout mis
+dans un seul fichier,
+toutes les fonctions
+sont dans un seul fichier,
+et puis j'ai fait
+des fichiers RD,
+donc des fichiers d'aide
+pour chaque fonction,
+et j'ai utilisé
+très peu de balises
+pour l'aide, finalement,
+c'est quand on décrit
+ces items,
+il faut utiliser cette syntaxe.
+Faire des liens
+à l'intérieur de l'aide,
+c'est suffit d'avoir ça.
+On sautait à la ligne,
+c'est htr,
+et, pour les dire,
+n'exécutent pas
+les scripts trop longs.
+Et après,
+je me suis fixé
+d'un space de dire
+j'exporte,
+parce que j'ai 30 ailes
+de fonctions,
+j'échète
+un petit module
+et j'ai publié
+les trois principales
+que je vous ai présentées.
+Donc il suffit
+de décréter ça
+dans le fichier name space.
+Et puis,
+il vous génère votre package.
+Vous allez sur le...
+1 et 2,
+deux étapes, en gros,
+en théorie, il y a deux étapes.
+Sauf que celle-ci
+prend un peu plus
+de temps,
+c'est que vous vous soumettez
+pour recevoir un mail
+de validation.
+Donc,
+vous pouvez arriver
+du premier coup,
+bonne chance,
+parce que moi,
+j'ai eu une erreur,
+j'ai eu une erreur
+de validation automatique.
+Alors,
+qu'est-ce que c'était?
+Pourquoi j'ai beaucoup,
+beaucoup, beaucoup galéré?
+C'est qu'à un moment donné
+j'avais un caractère uniquement
+qui se baladait dans mon aide
+et ça me faisait un message
+d'erreur
+pour se générer le PDF.
+Est-ce qu'il m'a sauvé la vie?
+Ça.
+S'il y a eu un package
+qui fait
+4 RD files,
+tous PDF.
+Et il vous dit
+à Tending
+il est là le caractère.
+Là je commençais là.
+Je vais un peu de malure.
+Donc,
+une fois,
+j'ai eu un PDF,
+juste un truc qui s'abloquait
+et je rejoue toujours.
+Donc à chaque fois,
+il me dit,
+s'il vous plait,
+fixe tout le problème,
+rejoue.
+Après,
+quand vous passez
+le stade automatique,
+on vous dit bravo.
+Ça a été,
+vous avez passé
+la phase d'inspection automatique.
+Maintenant,
+il y a un humain
+qui va s'encharger.
+En tout temps,
+je me l'avais prête
+pour le boot up.
+Il y a eu un caractère de vacances
+qui vous plait bien au lendemain.
+Je ne l'avais pas.
+Et après,
+systématiquement,
+il y a eu des échanges de mail
+qui vous plait bien au lendemain.
+Alors,
+là,
+vous avez mis
+le titre
+sans majuscule.
+Merci de mettre
+une majuscule
+à chaque mot
+resumété.
+Et à chaque fois,
+il me disait quand même
+est-ce que vous pourriez citer
+les références
+des auteurs
+des papiers de recherche
+et compagnie.
+Et la question
+a revenu trois fois.
+Donc,
+à la fin,
+avant-hier,
+j'ai partimé,
+on disait,
+j'ai un boot up,
+j'aimerais bien
+présenter mon paquet.
+J'ai quitté le chargeur
+et il m'a dit,
+je n'avais jamais eu
+un paquet de recherche.
+Tout ce que j'ai appris,
+j'ai appris dans les MOOCs
+et puis,
+il m'a dit,
+voilà,
+Sites,
+Pun its way to plan.
+Et en fait,
+il a fabriqué sur le couteau en presse.
+C'est bon.
+Voilà.
+Mais donc,
+on voit beaucoup de gens qui râlent
+sur le process de validation
+d'un package R,
+ce qui est plutôt bien,
+ça veut dire
+que c'est
+l'université de statistiques
+de Hong Kong
+en Allemagne,
+qui a écrit des bouquins
+sur R,
+ou des codes de sujets.
+Et puis,
+je vais changer un peu
+avec lui.
+Donc,
+c'est bon,
+il n'est pas buté,
+c'est un guerrier.
+Voilà.
+Là,
+ça date hier,
+en fait.
+Depuis hier,
+il était chargé.
+Merci.
+Merci.
+Merci,
+parce que j'ai passé un peu de temps.
+Donc,
+si vous avez des questions,
+on a dit,
+voilà,
+devant l'épisode,
+parce qu'on est peut-être en retard.
+Non,
+on a le temps pour des questions.
+Ah,
+pour l'épisode.
+Pour le registrement,
+tu répètes les questions.
+Oui,
+oui,
+parce que
+si vous me posez une question,
+j'arrête.
+En fait,
+j'en ai deux,
+mais je vais peut-être
+en poser une pour les uns
+de plus d'autant,
+les autres.
+Sur,
+du coup,
+c'est
+ce qui se substitue
+à la bad-prod.
+Oui.
+Si je suis bien,
+on fait cet algo
+pour chaque couche.
+On
+applique
+cet algo de swarms
+pour chaque couche,
+enfin,
+pour les poids synatiques
+de chaque couche.
+Alors,
+la question,
+c'est est-ce qu'on applique
+la fonction
+de chaque couche
+concrètement
+toutes les,
+quelque part,
+toutes les matrices de poids
+sont mises en ligne,
+ça devient un vecteur,
+et ça,
+c'est dans une particule.
+D'accord.
+Donc,
+en fait,
+c'est le réseau
+que je fais bouger ma particule,
+c'est tous les poids
+qui bougent en même temps.
+D'accord.
+Ça,
+oui,
+ça résume
+même du
+radium-panishing
+sur les,
+sur les,
+sur les réseaux.
+Alors,
+j'ai juste dit,
+oui,
+ça résume.
+J'ai dit,
+quoi, du coup,
+c'est super bien.
+C'est une question
+de désaffirmation.
+Voilà,
+c'est parfait.
+Ça résume
+du radium-panishing.
+Alors,
+ça, c'est la patte
+sur normalisation
+qui le résume.
+J'ai laissé,
+quand même,
+la patte sur normalisation
+dans le...
+D'accord.
+Je vais laisser.
+D'accord.
+Alors,
+j'ai essayé avec,
+et sans,
+j'ai encore pas fait beaucoup,
+beaucoup d'expériences.
+Mais,
+c'est,
+est-ce que
+vous avez à l'esprit
+de défendre
+ce fonctionnement aussi
+et pour tout ce qui est optimisé
+sur l'adduction
+de l'overcopie?
+Alors,
+quelque part,
+je...
+C'est ce genre de choses,
+est-ce que c'est la prochaine étape?
+Et si, oui,
+comment on commence
+à appliquer avec ça,
+étant donné que
+ça pensera, du coup,
+avoir deux PSO
+qui prendraient
+tous les deux,
+les mêmes arguments
+à savoir les idées
+de paramètres,
+les droits d'outre,
+et du coup,
+comment les synchroniser
+tous les deux
+à la fois sur
+à quel point on fixe les données,
+mais à quel point
+on arrive
+à ne pas les opérer
+les autres.
+Je ne sais pas si
+ma question est très claire.
+Alors, je vais essayer
+de la reformuler.
+Donc, le premier point,
+c'est l'overfitting.
+Comment je le gère?
+Alors, déjà,
+je le gère
+quand je
+test différents paramètres.
+J'ai un cross-validation,
+quand même,
+dans un coin,
+et quand je les note
+entre eux
+pour dire que celui-là
+est meilleur que l'autre,
+je prends la performance
+du train
+et l'écart
+et je lui enlève
+et je suis aussi
+dans mon 5p100
+à mon ensemble de scripts.
+Je le plombe
+toujours celui
+qui apprend bien,
+mais je le plombe
+avec l'écart
+qui est entre le...
+Voilà.
+Par contre,
+je veux
+répondre
+à la question
+comment je fais
+pour l'overfitting.
+Ce que l'on trouve
+et que je nous apprends,
+déjà, la première étape
+c'est de chercher
+l'overfitting
+et ensuite de régulariser.
+Donc,
+je réponds
+très bien
+à la première étape
+qui est de
+essayer d'apprendre
+le plus possible.
+Et clairement,
+ce qu'on pourrait voir
+dans la...
+ce qui est assez
+des fois répandu,
+c'est pas en rajoutant
+des couches et des neurones
+qu'on apprend bien.
+C'est déjà un en ajustant
+le learning weight.
+Leur mot,
+j'ai très rarement
+utilisé plus de couches
+des neurones.
+Par défaut,
+je crois que j'en mets 10.
+À des couches,
+je mets une couche
+avec dix neurones.
+À dix neurones,
+de sortie.
+On va refitting.
+On va refitting.
+J'avais l'impression
+que c'est la question
+du dropout.
+C'est un quelque chose
+qui te plaît en cours.
+Alors le dropout,
+pour l'instant,
+je ne l'ajuste pas
+avec le PSO.
+D'accord.
+Voilà.
+Ce que j'ajuste
+avec le PSO,
+c'est le learning weight,
+le taille de mini-batch,
+ce qu'il y a d'autre.
+Le monatome,
+enfin,
+le dame qui pose les chaînes
+monatome
+ou le RMS.
+Et un autre.
+Je le fais pas comme ça.
+Oui, ça, c'est l'ensemble.
+C'est mode beta 1, beta 2.
+Pour...
+Le learning weight decay,
+je n'ai pas encore mis,
+non plus,
+parce que ça,
+je le ferais quand même
+encore un peu là-bas.
+Et j'ai dit que j'ai
+colonisé 80% du temps de modélisation,
+pas tout le temps de modélisation.
+Mais déjà,
+je trouve ça assez énorme
+de pouvoir se retrouver.
+Le learning weight
+a été choisi,
+le taille de mini-batch.
+Dans l'exemple que je donne
+dans le...
+Cette fois,
+je fais quand même
+d'un bac propagation.
+J'ai pas trouvé tout seul
+que le learning weight,
+c'était 0, 0, 1.
+La taille de mini-batch,
+c'était 4.
+C'est ce qui donne
+le meilleur résultat
+au début, j'ai essayé à la main.
+Non, j'ai utilisé mon auto-ML.
+J'ai lancé les particules
+et il m'a dit,
+c'est celui-là le meilleur résultat.
+Mais c'est une première version.
+Mais j'aimerais bien
+rajouter des choses.
+Ce que Henri Lodre,
+donc que j'ai rencontré
+en ça, on dit data,
+m'a suggéré tout de suite.
+Il m'a répondu aujourd'hui,
+il m'a dit,
+j'aimerais bien,
+par exemple,
+procharie que je ferais.
+Il m'a dit,
+est-ce que tu peux me récupérer
+des matrices de poids
+générées par Google,
+par ouf,
+faire du transfert en ligne.
+Je l'ai,
+la partie apprentissage de ça,
+qui a été appris par Google
+avec des millions d'hommages,
+et puis juste rajouter
+les étapes de différenciation.
+Ce qui est superbe,
+c'est à faire,
+dans ma fonction de prédic,
+déjà, je lui dis,
+tu me renvoies la
+deuxième couche
+ou la troisième couche,
+pas forcément la dernière.
+Quand je fais de l'autant en codine.
+Donc il y a,
+dans les paramètres de prédic,
+renvoie-moi la couche intermédiaire.
+Donc si je veux faire de l'autant en codine.
+C'est pour ça
+que moi,
+j'ai investi du temps
+sur les réseaux neurones.
+C'est que c'est
+pas mal à la base de tout,
+et je m'en sers
+beaucoup, beaucoup,
+beaucoup,
+beaucoup,
+notamment le,
+le,
+l'autant en codine,
+quoi,
+le superbe,
+le feature learning,
+quoi,
+la réduction de dimensionnalité,
+mais aussi la réduction
+du bruit,
+enfin,
+beaucoup de choses.
+Il y avait combien
+de données?
+Pardon?
+Combien de données
+pour la,
+alors combien de données
+pour entraîner,
+alors ça dépend,
+quoi.
+Ah là,
+là,
+il n'y a rien,
+là, c'est l'iris,
+c'est 150 enregistrements.
+Ça prend un classe?
+Non,
+il y a 50
+enregistrements
+par classe,
+voilà.
+C'est ce qu'on voit
+dans la maquette,
+oui,
+mais c'est pour ça
+que je vous conseille
+à l'autre point,
+c'est que je finis
+sans la propagation
+avec le PLSO.
+Je pense que c'est
+un,
+je vous le crée
+un weekly order,
+si j'avais beaucoup
+d'enregistrements,
+déjà c'est trop gourmand
+en ressources,
+donc c'est pour ça
+que j'ai mis
+expérimental.
+Mais il n'empêche que
+sur les glisses,
+sur le Titanic,
+et sur les petits jeux
+de données,
+j'ai un client
+avec 4 000 enregistrements,
+ça a marché super bien.
+Je suis pas réunis
+dans le monde.
+Ouais,
+on voit mon ensemble
+de paramètres,
+maintenant,
+mon package auto-ML
+fait partie
+de tous les parables,
+comme les que j'ai vous,
+s'il est,
+il a sa petite case,
+je l'active ou pas,
+c'est ça.
+Du coup,
+au niveau
+des temps de calcul,
+tu l'as dit,
+l'idée,
+c'est de gagner 80%
+en temps de fitting
+de paramètres.
+Après,
+c'est vrai que si jamais
+tu perds beaucoup,
+en temps de calcul,
+c'est pas forcément
+interventable.
+Est-ce que,
+déjà,
+par rapport
+à une technologie
+comme TensorFlow,
+sous Python,
+est-ce que t'es
+beaucoup plus lent,
+pas beaucoup plus lent,
+et ensuite,
+est-ce que t'as
+implémenté des fonctions
+de paralyzation
+ou des morceaux
+de code dans C
+pour accélérer un peu
+le truc derrière ?
+Alors,
+il y a plein de questions.
+J'ai été faim dans les fonds.
+Est-ce que j'ai optimisé ?
+Alors,
+moi,
+ce que je m'étais fixé
+comme qu'il y a des charges
+en haut,
+c'est d'utiliser
+d'autres paquets.
+Donc,
+c'est from scratch,
+c'est que du R.
+Et
+il y a juste paquets
+de paralyzation,
+mais il est
+dans AirBase, maintenant.
+Et puis,
+il y en a deux autres,
+mais qui sont inclus
+dans AirBase.
+Il n'y a pas de paquets
+supplémentaires
+chargés.
+Je me suis fait ma propre
+fonction
+de
+ce que j'ai appelé le broadcast.
+C'est que,
+comme le piton,
+vous avez une matrice,
+puis d'un coup,
+vous vous retrouvez avec
+une matrice qui n'a plus qu'une colonne.
+Là,
+il va
+coulercer ça
+en s'invecteur.
+C'est plus les mêmes méthodes,
+c'est plus tout ça.
+Pourquoi ?
+Je vous donne l'attention
+de la paralyzation des matrices.
+Ça me restait une matrice.
+Donc,
+je m'empêche plus tard
+d'utiliser
+une biotech graphique
+pour faire faire mes
+produits matriciels.
+Pour l'instant,
+je fais la paralyzation.
+Pour ceux qui ont Windows,
+ça ne marche pas.
+C'est que l'inux.
+Et Mac,
+c'est une fonction
+native.
+Il aurait fallu que j'utilise
+le package
+il y en a un autre.
+Moi,
+j'ai utilisé parallèles.
+C'est native, c'est l'inux.
+Ça marche bien.
+Alors,
+la première question,
+c'était
+l'optimisation du code.
+Donc,
+c'est tout du R.
+Il n'y a pas de C.
+Je suis très coincé.
+C'est une bonne raison.
+Donc,
+l'autre question,
+c'est que...
+Ça n'a pas d'un sort d'eau.
+Tu dirais comment
+en termes de performance ?
+Quels signes ?
+En termes de performance,
+alors,
+si on parle de performance,
+performance,
+pour l'instant,
+tu as une surflow,
+c'est très récent aussi.
+L'auto ML,
+ça vient de sortir,
+c'est en train de sortir.
+Les hyperparamètres,
+faut quand c'est tapé à la main.
+C'est...
+Je dis...
+Enfin moi,
+j'utilise Keras
+comme front.
+Donc,
+je vais intégrer
+dans mon ensemble de scripts
+5p100.
+Parce que,
+justement,
+quand je suis monté au point
+la batch normalisation,
+j'avais besoin de savoir
+si je n'étais pas en train
+de m'agir des...
+J'ai essayé avec des...
+J'ai essayé,
+j'avais un client
+qui avait 60 000 clients,
+donc je travaillais
+avec 60 000 enregistrements.
+C'est beaucoup de...
+de variables,
+de futures.
+Peut-être que j'ai été
+une mauvaise soie,
+j'ai pas trop optimisé
+les paramètres avec Keras,
+mais les performances,
+j'étais meilleur
+avec mon...
+Je l'appelle Androgyn,
+mon oiseau de neurones.
+Je pensais plus
+en termes temporels.
+Temporels, alors,
+ce serait...
+Il faut dire que je suis
+un peu plus...
+J'ai pas installé
+les optimisations cartes graphiques.
+Finalement,
+ils utilisent les processeurs.
+Il faut y comparer
+ce qui est comparable.
+Enfin, en tout cas,
+ça va...
+R, d'ailleurs,
+depuis la version 3.5,
+il y a des super temps
+sur les calculs matriciels.
+R n'a plus à rougir
+là où on l'attaquait
+souvent sur les performances.
+De toute façon,
+ça fait gagner beaucoup de temps,
+c'est le l'heure de rate
+et le mini-batch.
+Ça, c'est juste énorme.
+C'est le mini-batch
+qui fait passer
+deux jours à des heures.
+Et à la quantité de mémoire
+ça consomme.
+Il y avait une question?
+Non.
+Eh ben, j'ai vu un article
+qui n'a pas longtemps
+que R était en train...
+Ah, pardon.
+La présence de...
+Alors, c'est quoi la question,
+finalement?
+L'implémentation de R,
+là, je vais vous raconter
+justement
+chez LDO, là.
+Donc, j'ai installé
+On Primize.
+Donc, j'ai installé ma solution.
+Vu que j'utilise, pardon,
+Keras
+pour les réseaux convolutionnels
+et les classiques,
+j'ai pas encore
+implémenté les récurrents.
+Alors, je me suis retrouvé
+avec le service sécurité.
+Donc, R, c'est facile.
+Ils m'ont dit,
+dites-moi
+quelles ouvertures
+vous avez besoin
+vers l'extérieur.
+Donc, j'ai dit
+Bacral, surtout.
+Donc, j'ai installé R.
+J'ai un strip
+qui m'installe
+les 10 paquets
+de Keras.
+Il faut installer un Daconda
+qui est plutôt dans l'arrière.
+Et après,
+on n'a pas réussi à installer
+en deux jours.
+Parce que, à chaque fois
+qu'on a commencé le script,
+il a besoin d'une URL.
+Il avait cherché quelque chose.
+Donc, c'était bloqué
+par la sécurité en interne.
+Donc, il fait la tente
+deux heures que la sécurité
+ouvre le port
+et le URL.
+Et c'était reparti.
+Et on s'est arrêté au bout de 10.
+Au bout de 10, on a dit
+bon, stop.
+J'ai pas besoin de Keras.
+Donc, moi, je me suis installé
+avec son Keras,
+quelque part.
+Vous choisissez
+des courbières
+que vous allez mettre.
+Vous choisissez votre URL.
+Pareil, hein.
+Ce sont des maths implémentaires.
+Pareil.
+Donc, c'est un problème
+totalement différent.
+C'est pas de l'accès.
+Alors, c'est le point que...
+Mais, par contre,
+quand j'utilise...
+quand je coche la case Keras,
+moi, si je l'utilisais
+pour un client,
+jusqu'à ce qu'elle,
+j'utilise la pays...
+J'ai installé
+un Daconda
+et...
+j'ai pas besoin
+de COVID avec les questions.
+C'est pas vrai
+qu'on peut être protégé.
+Donc, l'implémentation de l'air,
+moi, je trouve...
+Donc, oui,
+c'est ce que je disais.
+Il y a un artiste qui a parlé
+qui disait que les entreprises
+adoptent de plus en plus l'air.
+Et moi, je le vois chez les clients,
+parce que...
+ça leur pose pas de soucis
+que ce soit sous l'air.
+Alors, effectivement,
+il y a des tasseurs d'autistes
+qui sont plus hautes que moi.
+C'est quelque chose d'impact
+que l'on lance.
+C'est un programme
+impact, il n'est pas...
+il n'est pas intégré
+d'un programme.
+C'est un programme
+qu'on a renseué.
+Alors, ils vont le lancer
+via un ordonnance.
+En gros,
+pour entraîner un modèle,
+donc là,
+je ne parle plus d'automne,
+je parle de la solution.
+C'est...
+il y a une ligne de commande
+en gros.
+C'est une ligne de commande
+qui est lancée,
+R se lance,
+qui prépare mes futures,
+il fait la segmentation
+automatique,
+il les sélectionne,
+il choisit les meilleures modèles
+avec le poulet saut.
+Ça, c'est sûr,
+maintenant, je fais ça.
+Et après, d'ailleurs,
+je combine mes modèles
+et c'est prêt.
+Et si jamais ils veulent
+juste scorer,
+ils posent le fichier à l'endroit,
+ils disent,
+option 2, scorer.
+Et c'est parti.
+Quand je disais
+que c'est tout de suite
+prêt pour la production,
+la R s'y prête très bien.
+Alors, j'utilise
+R-Serve,
+réémane mes appellants.
+Merci.

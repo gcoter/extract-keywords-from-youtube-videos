@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science : What to do before an A|B test? An exploration of offline evaluation methods", "keywords": ["AB testing", "confounding variables", "machine learning", "algorithms", "medical diagnosis", "energy consumption prediction", "causal inferences", "model performance", "randomized policy", "counter-factual reasoning"]}

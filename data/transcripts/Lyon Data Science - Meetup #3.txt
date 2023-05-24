@@ -1,0 +1,1761 @@
+Bon, bon, bon, bonjour.
+Je suis Marc Fackin, de Trai au Tuba.
+Quel Trai au Tuba ? Je vous expliquais maintenant ce qu'on fait ici
+et des projets qui s'engagent avec tout ce qui est Tata.
+Je vous présente aussi ces connais-là, non ?
+Donc déjà, bienvenue à tous. Merci d'être venu si nombreux.
+Donc le Tuba, c'est littéralement le type d'expérimentation, et on l'aime.
+C'est un lieu unique pour accompagner l'innovation et expérimenter et développer les nouveaux services
+qui sont appliqués demain à la ville.
+On est focalisés sur des services qui utilisent ou qui génèrent des données numériques.
+Alors, c'est être...
+On va accompagner autant des start-ups, des BLE, des déconcoupes.
+Notre but, en fait, c'est de foudrir tout à l'écosystème autour de l'innovation,
+de coquer avec un utilisateur final, donc en général, le citoyen,
+et de l'expérimenter des services qui ne sont pas appliqués devant la ville.
+Par exemple, en ce moment, on expérimente un service de plateformes client, GRDF,
+qui est relié au compteur de BESPA, au compteur public de BESPA.
+Donc on s'occupe de la phase 0, jusqu'à la phase de déconcoupement,
+pour éviter personne en test utile d'étard.
+Donc voilà, ça, c'était vraiment un très ami de Vavé du Tuba.
+On peut savoir que si c'est un lieu qui ouvre l'autre pli, on présente des projets.
+Et à l'étage, on a des grands soins.
+Donc on a un espèce de couverturier.
+On a une vingtaine de bureaux, des startups qui peuvent venir travailler.
+On a une sèche de gratidité, sèche de sieste, sios, aviaires, tout à l'heure du monde.
+C'est très important.
+Alors rapidement, des projets sur lesquels on a ou on va travailler.
+Il y a un projet des infos, je ne sais pas si j'ai entendu pas du projet des infos,
+qui ne vend plus pas la film.
+Film, c'est une frustration entre les nouvelles générations.
+Alors le but de ce projet, en fait, c'est de réutiliser des projets personnels d'auvent.com.
+Vous devez passer à des clients profonds de grande entreprise.
+Alors comment ça se passe ?
+C'est un truc qui a disparu vachement.
+Vous m'entendez derrière ? Maxime, tu m'entends ?
+Donc en fait, les infos, donc c'est la file qui s'est retrouvée de pas même de partenaires.com
+comme intervaché, la banque postale, la société générale, orange.
+Et on a récupéré les données personnelles de 300 utilisateurs de ces grandes entreprises.
+On les a récupérées, il y a donc plus d'études et de valoriser ces données sous forme de sales.
+Donc on a créé un concours, une enquête entre le comarque où vous pouvez proposer d'utiliser
+toutes ces données et puis utiliser aussi les dernières open data.
+Et puis avec ces données de la génération de la service, on a aussi créé des services interne.
+Donc moi je me suis par exemple occupé de 3 services interne.
+Tout le cas c'est basique.
+Je ne suis pas développeur, je suis designer.
+Maintenant je me suis donné un peu de billet d'avril.
+Mais on projetait Acuba et un developer, on s'occupait de 3 services.
+Et c'était très intéressant.
+Donc on voyait déjà tous les données qui avaient un grand goût comme intermarché,
+ou comme AXA, AXA à 4 pieds.
+AXA c'est à l'ambiance gauche presque.
+Donc voilà, c'est mon désinfos.
+Donc maintenant on a des infos à l'ambiance jeuronale.
+Et on va faire le même pour que le même projet dédié à l'ambiance jeuronale.
+Et on va s'entrouver de grands groupes qui sont porteurs de projets en réaction.
+Par exemple en ce moment on est pas mal assis à l'énergie,
+avec le compteur public comme il y a ce part.
+Le RDF, le compteur du PI, le compteur public comme il y a le regard.
+Donc on va s'entrouver de grands groupes là.
+Donc on crée des nouveaux services pour les données énergétiques.
+On a l'implatation de ce challenge qui est née en fait,
+qui est née, c'est marrant,
+parce qu'il est née un peu dans un meetup comme ça.
+Enfin même dans ce meetup là.
+Donc j'ai rencontré Maxime Jeunek,
+gagnant là-bas un meetup ici.
+Et on a décidé de,
+enfin il y avait déjà cette idée de monter et domicile de ce projet.
+Et moi c'est les publics des data sets.
+Un email qui est un email et un hash positif qui se trouve à le nom,
+qui s'appelle Le Cléneuse de l'Ultimonu,
+et qui génère un maximum de données.
+Donc là ça c'est un dashboard que Soprastaia a fait,
+qui concerne les emails pour qu'on parle.
+Il y a une ligne de données,
+et on va récupérer des données sur 3 ans de cette email.
+Donc ça va de la production en kilowattheures photovoltaïque,
+jusqu'à la recherche de la tale,
+en passant par...
+Enfin voilà, on voit qu'il y a plein de choses.
+Il y a énormément de choses.
+Donc là le but de l'utilisation structure,
+qui tiendra le fin de novembre,
+c'est de réglir des étudiants en dernière des masters,
+et de ne pas travailler sur des tas concrets,
+enfin des données réelles,
+et de la faire sortir des algorithmes magnétiques.
+Tu m'arrêtes, Maxime.
+C'est bon, c'est parti.
+Très bien.
+Donc il sera accompagné par la startup de radio,
+et il a dégout.
+Ensuite, on a monté un test,
+ça s'appelle le test de l'énergie avec le DF,
+et alors là, ce qu'on a fait,
+c'est qu'on est en train de faire la deuxième édition.
+Et là, sur la première édition,
+ce qu'on a fait, c'est qu'on a fourni à chaque équipe
+un évêter radio,
+ainsi qu'un Raspberry,
+avec une AB qui va venir en temps,
+et on a revu, en fait,
+à récupérer des données en temps bel ou compteur.
+Il y a l'interne de se donner à récupérer en temps réel,
+en compteur, plus une édition de 500 euros
+qui va venir être achetée.
+Les objets connectés avec tous les équipes sous éveil,
+il fallait créer un service
+qui permettait de mieux consommer son énergie.
+Donc, on a eu, on a eu une édition de service
+qui aurait été présentée au SITO,
+c'est mon dernier des objets.
+C'était mon dernier, mon dernier.
+Et si vous voulez retrouver toutes les idées de service,
+elles sont sur, enfin c'est le même,
+puisque les idées de service,
+qui sont dans des produits de service,
+ils sont sur notre site web,
+du bâtiment.com,
+il faut le rechercher un peu.
+Tout ça, c'était fait avec EDL,
+et là, on lance le deuxième,
+le deuxième en expérience énergique,
+il y aura eu le cas de campus creation,
+je ne sais pas si vous avez été offert par les concentrations,
+c'est un programme d'accompagnement
+pour l'entrepreneur.
+Voilà.
+Et je vous fais juste un dernier,
+après je laisse la parole
+au suivant.
+Donc on est en train de monter un A4,
+c'est un peu la spécialité,
+on est en train de monter un A4 avec la caisse d'épargne,
+où la caisse d'épargne vous fournit
+un maximum d'objets connectés,
+alors ça va dégouer le glace,
+parce que oui, dégouer le glace,
+il existe encore,
+jusqu'à des descripteurs automatiques de biais,
+des talons de paiement,
+des smartwatchs en tout genre,
+des hiccones, des lecteurs annexés,
+des data,
+il y a pas mal de data clients
+qu'il faut et tout ça,
+et donc il va falloir, en fait,
+c'est le création salue d'enquête innovante
+à partir de tout cet environnement,
+plus de l'environnement,
+de tout ce qu'il en veut,
+dans le club data etc,
+et le création salue d'enquête innovante de demain.
+Et donc ça, ça aura lieu le 27,
+ou après tout le moment,
+depuis 2 semaines.
+Donc si vous voulez vous inscrire, c'est un peu tard,
+par contre, vous pouvez toujours venir me voir,
+et tout ça.
+Donc voilà, c'est genre de challenge,
+il y a de l'accompagnement,
+et de projets qu'on mène ici,
+au Cubase.
+Donc ça fait un moment pour vous faire.
+Là, c'était vraiment un autre projet
+qui vous était très emplant,
+si vous voulez apprendre à parler de l'enquête,
+et voilà.
+Donc s'il vous plaît des questions,
+je suis prêt également.
+On m'a dit 10 000 YouTube,
+j'ai fait 10 000 YouTube.
+C'est 20, c'était 20.
+Donc allez, on a 10 minutes.
+Donc aujourd'hui, les quatre intérêts au Cubase
+sont en train d'y aller.
+Non, il y a Astro-Petition,
+il s'appelle Benard.
+Il y a un socialiste,
+il y a Benard qui est là-bas,
+et le directrice,
+qui est là-bas.
+Et donc, on a regardé un an,
+on a rencontré 9 partenaires
+en groupe,
+et 32 autres partenaires
+qui ont 5 PME,
+comme 4City,
+Cosmo-Companie,
+Charvatistère-Bédias,
+et d'autres.
+F2O-City,
+et au Cache, je crois.
+Et après, on a tout ce qu'il y a,
+une cluster pour les compétitivités, etc.
+Et le but vraiment, c'est de procréer
+tous les partenaires, c'est procréer,
+et s'investir pour appliquer de mal à vie,
+pour faciliter la mobilité,
+et la consommation d'énergie,
+et de plus, etc.
+Vous voilà,
+ça fait 2 minutes de plus.
+Des questions ?
+Quelle question ?
+Qu'est-ce qu'il y a ?
+En tout cas, si vous n'avez pas les résultats,
+c'est différent avec les groupes,
+donc il y a le 21 novembre à qui eux,
+il y a le 22 octobre,
+et si vous n'avez pas les résultats,
+vous n'avez pas de participe,
+vous pouvez voir si on peut vous trouver des places,
+et si vous êtes intéressés pour participer,
+à ce genre de challenge,
+on vous montre assez régulièrement,
+donc n'hésitez pas
+à venir vous solliciter après.
+Voilà.
+Merci.
+2 ans de vie ?
+Ah bah bon, on n'a pas fait d'un tour.
+C'est pas une cause ?
+Je suis désolé, c'est pour l'organiser.
+C'était le meet-up, je sais pas où c'est.
+Donc je vais nous raconter.
+Bonsoir à nous,
+donc on est de la science,
+on est un petit groupe qui est en train de se former,
+et vous êtes dans des bonboeux,
+ces soirées,
+on fait la deuxième de la grosse soirée.
+On a fait une soirée au début,
+sur ce que l'on voulait aller,
+on est en train de le dire.
+Ce soir, on va l'expliquer par les phalisons.
+La première session,
+il y avait eu une petite introduction
+sur les machines d'ordine, les organisations,
+et puis là, il y a eu...
+on va vous faire la présentation
+sur la partie d'humanité.
+Ok, je vous laisse,
+si on a pas de la situation pour l'instant,
+donc il n'y a pas de collation
+d'appeler en la fin,
+on essaie de le résumé, on verra
+en perturOFF
+Pour la championne,
+on a une question,
+qui parle du participement
+de soirées.
+On est neuf et on est
+rest nasıl à questions,
+mais on a réalisé des choses,
+notamment, en représentation
+de la DSA Démocrata,
+sur le fil de la société.
+Donc il y a une bonne soirée,
+et puis il y a un certain part,
+là-bas.
+Je vous remercie.
+Tout ce que vous avez fait,
+je vous remercie des autres.
+J'espère que tout ça va s'enchaîner,
+il n'y en a pas,
+parce que sinon,
+j'espère que vous allez bien,
+et je vous promets que vous êtes
+aussi nombreux à être présent sur
+la partie, la de moi,
+s'intéressante et la de moi
+sexy des têtes assez non foquentes,
+parce que je n'ai pas parlé d'algorithmes,
+je n'ai pas parlé de statistiques,
+je n'ai pas parlé d'algorithmes,
+je n'ai pas parlé d'argorithmes,
+rien de tout ça.
+Moi, je vais tout de vous parler
+de toute la partie Data Engineering,
+c'est-à-dire comment est-ce que je vais
+faire de temps pour donner,
+comment est-ce que je vais la sécruire,
+comment je vais faire en sorte qu'elles ne sont pas
+pourront plus pendant son sélection,
+selon ma formation.
+Alors, juste un petit sondage,
+pour commencer le siège sondage,
+est-ce que tous les gens qui se considèrent
+de l'aimants de la main gauche,
+et tous ceux qui ne se considèrent pas
+comme un thomboïdition,
+doivent donner la main droite.
+À trois, à deux, à trois.
+Alors, la main gauche
+est de faim, à deux, à trois, à l'autre.
+Alors, la main gauche,
+il n'y a pas une main droite.
+Alors, la main gauche,
+il n'y a pas une main droite.
+Alors, la main gauche,
+il n'y a pas une main droite.
+Alors, la main gauche,
+il n'y a pas une main gauche.
+Alors, on commence
+cette programmation
+présentée pour ceux qui ne nous connaissent pas.
+Je m'appelle Alinou Anténas-Laut.
+C'est Claude Alissa, c'est la personne qui peut le savoir.
+Je suis le chef d'ingénieur
+de l'Héritata à l'Aventail,
+qui est l'activité de transaction
+de la société à deux.
+Donc, la main gauche principalement
+de l'agent d'agent d'envêche
+de l'Aventail, qui est le carte bleue
+du terminal des services de l'Ogénie.
+Alors, je suis le chef d'ingénieur
+de l'Aventail, qui est le chef d'ingénieur
+de l'Ogénie.
+Alors, avant de nous concentrer
+sur l'analyse de données,
+j'aime faire un recours en arrière
+en 1880, lorsqu'on disait
+l'analyse de données, justement.
+C'est que la vie d'Héritata,
+c'était super convivient.
+Donc, pour ceux qui ne connaissent pas l'histoire,
+en 1880,
+le gouvernement américain
+faisait son 10e recensement,
+pour les savoir combien il y a de femmes,
+combien il y a de hommes, combien il y a d'enfants,
+quels sont les métiers de
+des différentes personnes,
+comment font les interventions, etc.
+Ils ont évoqué ce
+sondage à toute une façon concernée,
+ce qui faisait environ 50.000 personnes.
+Ils ont réglé la réponse
+sur l'effet de papier. Donc, vous imaginez
+qu'à cette époque, l'effet de papier
+a très manipulé par des ordinateurs.
+Donc, c'était assez difficile à fréter
+et il a faimu 7 ans
+pour faire l'analyse
+du recensement américain.
+Vous imaginez qu'en 7 ans,
+la population a eu tant de changées
+et que les résultats ne pouvaient pas faire la grand chose.
+Donc, c'est un temps
+cet oxyclate, que le gouvernement américain
+a décidé de demander l'aide
+de certains ingénieurs, tout le monde est nommé
+Herman Price, pour concevoir
+une solution qui est également
+justement de processer
+peu rapidement ce type de données.
+Et ce cher monsieur
+a mis au point une machine
+qu'on avait d'amilatrice
+qui était capable de bien justement
+d'écartes perforées.
+Donc, l'instruction émettée,
+je vais m'annonce que vous réunissez
+les cartes perforées, on va avoir
+24, 15 colonnes, je crois
+et je vais remporter la réponse comme du trou.
+Et ma tabélatrice sera capable
+de lire ses cartes et d'incrémenter
+des compteurs, à part justement
+de comptabiliser le monde de personnes
+qui ont répondu, il s'apprépond, il s'apprépond, il s'apprépond.
+Il y avait 63 millions de personnes
+à recenser
+et cette poèce,
+la poèce est là parce que
+il a été estimé qu'il faudrait 11 années
+en utilisant le système précédent
+et on ne descendait pas si longs sachant
+que la population américaine
+on a eu nombre de personnes en année
+au bout de quelques mois.
+Donc, il y a déjà relativement plusieurs.
+Et dès l'année cette période-là
+on disait que c'était un coup d'etat.
+Pour ceux qui ne veulent laisser
+cette histoire, du coup, ce cher
+monsieur Albright a fondé en 1917
+la compagnie IBM qui aujourd'hui compte
+le but de faire différents systèmes
+de processus.
+Donc, qu'est-ce qu'il faut
+derrière le mien de cette semaine
+de cette histoire de 1890 ?
+Vous avez aimé qu'il faut la processer
+l'argument, pour qu'elle soit vanille,
+pour qu'elle soit exploitable,
+pour qu'on puisse en faire quelque chose.
+Et il se pond à processer une petite.
+Et il y a deux choses à prendre en compte.
+La première, c'est qu'il faut qu'elle soit
+facilement existée et facilement processable.
+On a vu un certain droit de la
+plantation que l'alimentation
+c'est à ce qu'il fonctionnait
+et qu'il fonctionne bien
+avec des colonnes, on montait des
+dômes d'autor dans une colonne.
+Et la deuxième chose, c'est que lorsque
+la donnée est soignée de l'alimentation
+durable et qu'elle ne peut être
+plus manièrequée par la chaine,
+la lannélité donnée qui vient derrière
+ce qui va faire que ces trois résultats
+même en chaine du jour,
+qu'une bonne data analyse
+pour avoir ça, il faut avoir
+des dômes d'autor.
+Il faut être capable de
+collecter la dôme d'autor.
+Comme ça, on va les améliorer
+à naissance prochaine.
+Moi, je vais faire toute la partie.
+La production, je veux dire.
+Très bien.
+N'hésitez pas
+qu'il y ait quelque chose
+qui n'en déplace pas sa propre idée.
+N'hésitez surtout pas.
+Donc, là, on a
+le même modèle pour exercer
+premièrement un peu de définition
+pour savoir que l'on parle
+et traiter un peu des différents
+systèmes de fichiers qui existent
+pour sauver la donnée.
+Vous parlez un peu de tous les systèmes
+de fichiers qui existent pour traiter
+de gros vues de données comme
+les systèmes à loupes.
+Et enfin, les différentes bêtes
+de données SQL et SQL,
+on peut utiliser pour sauver
+la donnée galvée.
+Et on finira très rapidement par
+les différentes sources de données
+parce que c'est ce qui intéresse le monde.
+Quelqu'un peut changer la donnée.
+Donc,
+juste là, je vous ai parlé
+d'analyse de données.
+Mais comment ça,
+qu'est-ce qu'est-ce que tu as donné ?
+Ça,
+c'est une donnée
+214.17. 30. 00.
+c'est ça quoi ?
+C'est une représentation
+informatique
+de quelque chose dont la vieille aide.
+Ce monde,
+il peut être processé par une machine,
+on peut faire des additions en veille,
+je l'avais coupé en deux, c'est processal
+et ça ne signifie pas ce qu'est-ce que c'est de données.
+La donnée est en sens ou une valeur.
+Il faut qu'elle aille un contexte.
+Il faut que je sache
+cette partie donnée, c'est ça.
+Cette partie donnée, c'est ça.
+Ça, c'est une information qui est donnée
+à l'aéroport contexte.
+On a la substitution de la structure,
+on sait tout de suite que la première est
+ça va être celle de la personne.
+Et avec ce contexte-là, on sait uniquement
+que ce numéro, en fait, c'est un numéro
+de sécurité sociale de quelqu'un.
+À partir de là, on peut structurer la donnée.
+On est capable de mettenir les différentes
+parties de données.
+Et à partir de là, on peut être capable
+que je demande de la mettenir.
+Et enfin, qu'est-ce qu'une observation,
+en termes scientifiques de la chose,
+une observation, c'est la collecte
+d'informations que n'ont d'une même source.
+Et on a admé
+que lorsqu'on collecte
+un ensemble d'informations
+dans un univers temporal
+qui est suffisamment court, on peut
+estimer toutes ces observations, elles ont la même structure,
+elles ont le même contexte.
+Typiquement, si je collète
+tous vos numéros, par exemple,
+tous vos numéros de sécurité sociale,
+je ne peux pas le mettre dans toute la structure.
+Et donc, je n'ai pas à voir le problème
+à des années.
+Donc, à partir de là, il y a 3 choses
+à noter, à vos pouvoirs.
+Même comme on sait la prétendue de la donnée,
+il y a 3 choses à prendre en compte.
+La première, c'est que ma donnée, avant même
+d'expliquer, j'ai besoin
+de définition et de description pour la donnée.
+Donc, tous ces temps-ci, le contexte va s'appeler
+l'élite à nous.
+Dans un deuxième temps, il faut que je m'assure
+qu'on ne compute pas de données historiques, correct ?
+Donc, qu'on ne perdrait en milieu.
+Et enfin, que sa donnée soit accessible.
+Typiquement, si la donnée, elle est
+parfaite, mais qu'elle est rangée au fin fond
+d'une base de données que je n'en sais pas utiliser,
+elle est inaccessible, je ne peux pas l'expliquer
+que sa donnée, elle ne sert à rien.
+Donc, avant quelque chose, avant même
+de passer à tout ce qui est fiché,
+il faut vérifier à chaque fois que l'ensemble
+de la donnée, on est bien limité à donner
+l'associé et à l'encombre humain.
+Donc, comment on va faire ça en utilisant
+les fichés ?
+Donc, un fiché, quitte à revenir
+sur toutes les définitions.
+Un fiché, c'est un peu comme la carte
+perforée que l'on avait tout à
+derrière. C'est un stockage durable de la donnée
+qui peut être ensuite mise de côté
+et reprise à un moment donné pour être
+relu par l'ordinateur.
+Donc, un fiché, c'est pareil. C'est un contenant
+durable pour une donnée.
+Typiquement, ici, on a un fiché
+qui s'appelle Compact-SRCV
+et qui va contenir
+des noms,
+un en peste qui définit le nom
+de chacune des colonnes et ensuite
+une observation par ligne.
+Et, pour ce fiché,
+on va définir ce qu'on appelle
+une expansion fichée qui définit
+la manière pour qu'on peut interpréter
+typiquement un point CRSV.
+Lorsqu'on voit un point CRSV, on sait
+que ça va être un fiché de texte
+dans lequel l'endelle sera une endelle
+qui définit le nom des colonnes
+et ensuite, ça va être une ligne
+avec des séparations par ligne.
+Par exemple.
+Je vais vous écraner bien sûr
+avant de les séparer. Tout le monde
+parce que c'est CRSV.
+Alors, le CRSV,
+c'est un fiché
+classique
+que vous avez eu pas zéro en faisant des compétitions
+pagues par exemple pour ceux qui l'infoncent.
+C'est un format d'échange qui est très facile
+à utiliser pour ceux qui ne connaissent
+pas forcément.
+Il est composé d'un en peste qui définit
+le nom de la colonne et ensuite
+une observation par ligne.
+Donc, chacune des colonnes est séparée par le drug.
+C'est très facile à utiliser
+pour toutes les applications
+que vous pouvez utiliser,
+d'un type de basonnée que vous pouvez utiliser,
+sinon qu'elle peut, c'est-à-dire de 16.
+Et derrière, ce 16 n'est fait quasiment
+inévitable et je pourrais voir un petit exemple
+que j'ai pu tester
+qu'il n'y a pas longtemps.
+C'est que, typiquement, ici,
+j'aurais pu créer un 16 avec
+un fiché CRSV
+qui est ici partout.
+Ici, il y a eu un en peste
+de l'espace dans les cas de l'air du fond
+parce qu'il n'y a pas de l'air si je ne le fais pas à l'air.
+Et il y a un morceau dans sa relation.
+Donc ça, ce fiché, c'est un fiché
+que tout ce qui s'est passé
+dans un mètre,
+donc derrière, très facilement,
+ce fiché, je peux le processer
+par exemple en piton.
+Déjà, de manière habituelle,
+j'ai un indicateur qui tombe,
+c'est-à-dire que je débrie
+un peste, je délie ce CRSV
+et je peux déjà commencer à m'inculer.
+Donc ici, vous avez déjà
+ma représentation telle,
+une dernière représentation telle
+du l'air de mon fiché CRSV
+que je peux regarder.
+Je peux devoir constater qu'il y a
+39 colonnes qui n'ont pas de nos.
+Ça, c'est déjà assez cacheux.
+Ensuite, vous pouvez aussi constater
+qu'il y a des colonnes qui sont dits.
+Il y a des colonnes qui ont des nos.
+Peut-être, c'est typiquement, ça s'appelle
+par le duel par la tie.
+Je ne le sais pas en fait.
+En fait, je vais reprendre justement
+d'un système de fiché.
+Je peux continuer juste pour vous
+parce que j'ai écrit
+des petites manipulations.
+Donc ici, on peut voir directement
+que j'apprends à manipuler le CRSV
+et faire les loguettes que je veux
+pour typiquement récupérer
+tous les joueurs qui ont du tuaire
+un CRSV, je ne sais même pas
+ce que veut dire un CRSV, parce que
+vous savez que le CRSV,
+c'est très bien, c'est facile à lire,
+c'est populaire.
+C'est aussi très compact.
+Par contre, le gros problème
+de ce format de fiché
+c'est que si un tournage
+de formatage, aussi que vous voulez
+changer de chemin.
+En fait, c'est assez compliqué.
+Vous ne savez même pas, tout de suite,
+à partir du moment de ces informations,
+vous n'êtes pas capables de dire
+si ça, c'est une date ou un entier.
+Il y a de l'autre fiché CRSV,
+où j'arrive le lendemain,
+et que quelqu'un se soit décidé
+à remplacer le contenu de cette colonne
+par, par exemple, un string.
+Et 20 mois,
+je ne serai même pas capables de remarquer
+que ce n'est même pas quel est le type de cette colonne.
+Donc là, il y a déjà un de ces fichés CRSV
+qui est comme il n'y a pas vraiment de standard.
+Ça peut être n'importe qui,
+mais n'importe quoi dans ce CRSV.
+On a déjà fait aussi des gens qui mettent
+dans les conservations la description d'un fichier.
+Au final, tout le monde se veut et tout le monde se débrouille.
+Je l'extrapole beaucoup.
+Alors un autre problème de CRSV,
+c'est typiquement que
+c'est une solution de données qui est plaxte.
+On ne va pas pouvoir vous représenter
+de la donnée hérarchique en intervalle.
+On ne va pas pouvoir mettre des sous-colones
+dans une colonne. On pourrait en détender.
+Des points de rues, d'ailleurs,
+d'un côté, moi, ça, c'est des points de rues,
+et ça veut dire qu'il y aura du passé expressif qu'à faire,
+donc en de loin 14 décides européens et sous-colones,
+bah mon parti de spécifique, il faut que je le reclète.
+Donc le CRSV, c'est très facile,
+mais il y a beaucoup de problèmes idéal.
+Deux fichiers de CRSV,
+c'est un deuxième format fichier
+qui est très populaire.
+C'est un modèle de balisage de données.
+Il est...
+Non, typiquement, ici, j'ai deux observations.
+J'ai deux personnes.
+J'ai même pu marquer une balise complémentaire
+d'une personne avec une position égalpante.
+D'ailleurs, je peux rajouter
+les attributs qui m'intéressent.
+Donc, la première, c'est caméry,
+qui a l'intention de la deuxième, c'est claire,
+et à la tâche. Et comme on est en semi-staturel,
+vous pourrez avoir des d'autres attributs.
+Ça, c'est aussi très facilement
+le domaine.
+C'est aussi très facilement éliminable.
+Peu importe qui s'amélaient,
+et tout ce qui est déroulé, comme le CRSV,
+sont préclinés, parce que vous avez juste
+la tâche crampée en semi-staturel.
+Ouais, et par exemple,
+je suis allé sur le fil de la tâche,
+et je me suis intéressé
+par toutes les chansons,
+que kanji, jirage, hein.
+Je sais pas.
+Peut-être que la sœur est kanji, jirage.
+Bon, ici, c'est encore...
+c'est encore donc, c'est vrai.
+Donc, la première,
+c'est le semelle,
+bon, je n'ai pas réussi à aller jusqu'au bout de...
+Je n'ai pas réussi à trouver les chansons,
+mais comme on le réussit, pour ici,
+je sais qu'il n'arrive pas à y aller.
+J'ai demandé à récupérer toutes les balises
+qui continuent au moins le titre kanji, jirage.
+Bon, j'ai au moins réussi à faire ça,
+parce que les deux...
+Donc, avec la première fichée
+de semelle, on est capable
+de représenter des structures
+qui n'ont plus de contexte françaises,
+mais on peut faire de l'irarchie,
+on peut rajouter encore des balises
+sous le noyage, on peut faire de l'irarchie.
+Avec une semelle,
+on est aussi capable,
+comme on a un appellissant d'artisan
+pour dire que l'irarchie et l'irarchie,
+on est aussi capable de définir
+des fichures, de balidation
+de fichée, ou aussi de défliction de chemin.
+Donc, on est capable de dire
+qu'à quelle balise va se retrouver
+dans 7 ans, et ça va obligatoirement
+de se retrouver dans 7 ans.
+Donc, déjà, on a un peu plus évolué
+qu'en CSE.
+Parce que, juste en partant de fichions,
+on est capable de dire qu'à celles données là,
+je sais absolument que ça va être un enjeu.
+Donc, là, déjà, par contre,
+c'est un enjeu.
+Bon, par contre, le problème
+majeur qu'il y a avec cette fichée,
+c'est qu'il est 3 fois plus
+qu'au CSE.
+À chaque observation, je vais faire du marquéal.
+Ça va être probablement beaucoup plus gros.
+Il y a un format de fichée
+de 3e format de fichée que l'on entend
+d'attaque sur le CSE.
+C'est le format que j'isole.
+On s'est extrêmement similaires au CSE,
+mis à part que c'est totalement différent.
+On parle ici des structures d'osé
+qui ont été définies en javasquets,
+donc, que ce soit des tableaux, des vapes,
+des strings, etc.
+Et on a définit un système arabe.
+Ce n'est pas obligé d'avoir des âges.
+Ils contiennent une personne
+qui n'ont pas été riches
+et qui n'ont pas été des familles
+qui peuvent être un autre objectif.
+On retrouve un nouveau système de hiérarchie
+qu'on peut exprimer dans cet objet.
+On peut montrer un éluisant
+qui est assez connu.
+Ce que je suis allé récupérer
+est de l'étudeur pour tester.
+L'étudeur est un pays
+mais il y a un régime derrière
+et justement, comme il est publié,
+on peut récupérer les demi-tuites,
+donc, j'ai récupéré les tuites
+d'une personne à l'autre part.
+Et puis, à nouveau,
+c'est d'informations,
+c'est parce que c'est beaucoup curieux.
+Il y a eu notamment une compétition à 11,
+mais il est noté que c'est parce que c'est beau
+qu'il y a une compétition à 11.
+Et jamais que je n'en referai pas.
+Bon,
+alors,
+si j'ai une semelle judo,
+vous me direz que tout ça,
+vous connaissez déjà,
+que tout le monde utilise ça,
+que ce soit sur Internet,
+que ce soit pour échanger l'efficac de la venue,
+ça exige.
+Le problème, c'est qu'aujourd'hui,
+on se retrouve dans un environnement
+où on a régulterait beaucoup
+de gros volumes de données.
+On est en train de créer des architectures
+distribuées,
+c'est-à-dire qu'on va avoir un cluster de machines
+dans lequel on va stocker
+de données de manière distribuée.
+Et le gros problème de stocker
+est qu'il y a 16 V,
+ou 16 N,
+ou 10 N dans ce genre d'architecture
+distribuée.
+Ces affichés, ils sont trop gros.
+Et que lorsqu'on se retrouve,
+justement, à séparer ces affichés
+en plusieurs morceaux,
+et à les transiter en différentes machines,
+à mener à travailler, à défendre
+en distribuée comme à la Chadouche,
+ce sera, vous n'aurez pas forcément
+d'agulterie du 16 V.
+À partir de là, vous avez plutôt
+d'agulterie des données qu'on appelle
+serialisées.
+Donc, les données serialisées,
+ici, c'est une donnée.
+Par exemple, ça a un objet gisole,
+suppliquement.
+On veut pouvoir le transformer
+dans un format qui soit compact,
+et qui soit facilement épaisé
+d'une certaine donnée
+dans l'ensemble de Bix,
+Bix01, etc.
+Et je veux être derrière capable,
+une fois que je vais transférer une machine avec nous,
+je vais être capable de donner des serialisées
+pour retrouver mon objet initial.
+Donc, ce qui est important,
+lorsqu'on se réalise, c'est de
+toujours avoir la description
+des affichés serialisées et des serialisées,
+mais aussi le code dont
+j'ai besoin pour transformer l'objet
+dans les deux sens.
+Donc, j'ai croisé très souvent
+ces trois nomables,
+qui se changent de ça.
+On a fait une petite démonstration
+en fait.
+C'est l'endroit de la démonstration.
+Les trois nibes des milles
+qui sont en ce contexte l'est,
+on ressemble à une qui est une coquelle
+et une qui a été faite pour l'écosystème.
+Et la troisième,
+je n'ai oublié,
+je n'ai oublié, je n'ai oublié,
+je n'ai oublié, je n'ai oublié.
+Les trois sont là sur la définition
+d'une interface, donc d'un objet
+d'ici une table seule,
+parce que je n'en profite pas de personne,
+je n'utilise pas de personne,
+qui contient comme un début, un nom et un email.
+Donc, ici, je définis mon objet
+que je vais se réaliser en table X.
+Je vais lui dire que ça
+est le nom et l'email,
+et avec les livres que je vous ai suscité précédemment,
+je vais être capable de ménéler
+du code qui va
+être utile pour transformer
+le 7 honnets typiquement
+dans du code, dans du binaire,
+et inversement.
+Je peux vous le montrer
+très rapidement comment ça fonctionne.
+Typiquement,
+ce que vous arrivez à dire,
+c'est qu'il y a un moyen
+de ce qu'on essaie de faire.
+Donc, je ne sais pas nommé,
+donc, imaginez que
+vous pouvez imaginer
+qu'il y a un richeur de gisonne qui contient
+trois attrées, ils sont le numéro
+favori et la couleur favorite.
+Et vous pouvez imaginer
+que vous avez reculé notre testeur à bouffe,
+ce fichier du binaire.
+Alors, en fait,
+en gros, c'est une plus difficile,
+mais il stoppe toujours le schéma
+dans le fichier du binaire, comme ça,
+on n'a pas forcément besoin d'avoir
+l'interface pour pouvoir relire le fichier
+sur la vie, même pour voir que tout à
+droite, vous avez la donnée binaire.
+C'est parfait, il y a tous ces...
+Tout ce que c'est bizarre, c'est que
+vous avez la donnée en fichier.
+Et, bon, je suis encore désolé
+pour ceux qui sont très loin,
+mais imaginez que dans la première ligne,
+je lise mon schéma et dans la troisième ligne,
+je lise mon fichier qui contient la donnée binaire,
+mais que j'ai succulé du coq pour attesté
+réalisé. Donc, tout ça,
+c'est pour vous dire que vous pouvez aussi
+reculé la donnée, vous pouvez reculé la donnée
+s'est réalisée, une donnée en fichier.
+Du coup, je vous ai parlé de fichier,
+je vous ai parlé du système de fichier
+qui est sauvé.
+Et il semble que c'est le bon moment
+pour vous en parler un peu plus.
+Comme en plus,
+on s'y vient d'écrire
+par leurs expérimentations à Tuba,
+on est à une dégoutte plus grande,
+à la rété donnée du revenu
+de différentes sources,
+donnant de millions d'utilisateurs
+qui consulteront un téléphone, ok?
+Et on est amenés à récupérer ces événements
+et à stocker, par exemple, plus
+dans les réveils de données.
+Donc pour cela,
+on va beaucoup plus souvent
+utiliser les systèmes de fichier
+de distribuer comme un plancher de stockage.
+Donc, l'écosystème
+de l'écosystème de l'écosystème
+se charge de tout ce concept
+d'une distribution pour beaucoup.
+Il consiste en première brosoprique
+de stockage distribué.
+Donc, ça s'appelle HDFS
+pour afflucler sur les détails
+d'un système.
+Donc, en installant HDFS
+sur votre classant de machine,
+imaginez que vous avez une compagne de machines
+qui sont réparties dans votre tata semper
+et que vous restez à l'écosystème de celui-ci.
+J'ai exprimé le truc sur le plan d'un tour de carrière.
+La donnée que vous allez pouvoir stocker
+va être distribuée.
+Donc, il y a 22 stockés,
+beaucoup de données de manière répartie
+sur plusieurs machines.
+Il y a derrière, on va avoir une autre, une deuxième règle
+qui se charge de distribuer de calcul pour beaucoup.
+Il y a beaucoup de développeurs
+qui ont travaillé et ont écrit des librairies
+qui sont capables d'utiliser
+l'albéquian pour se répartir
+sur le cluster HDFS,
+sur le cluster HDFS.
+Donc, pour ceux qui ont un petit peu plus de bédènes
+de la future, comment ça marche.
+Le cluster HDFS
+va être organisé comme
+un cluster maîtresse clair.
+Dans le sens où il y aurait une machine
+une machine d'épresse
+qui va être responsable de la nuit
+de la donnée.
+C'est cette machine qui sera capable de dire
+tiens cette donnée, elle est pour cette machine.
+Donc, suffisamment, si je recule
+tous les événements de 2012,
+je donnerai une égneuse
+ou j'avais aussi pour stocker les fichiers
+en demandant une égneuse
+sur quelle machine d'atanoge je vais pouvoir stocker mon fichier
+de mes notes qui tient
+la tienne sur laquelle elle est stockée, sur ces fichiers.
+Moi, derrière, un dégout
+mon fichier en bloc de 64 négales
+et je vais les stocker.
+Je vais stocker de chacun de ces blocs
+dans une machine différente.
+Ici, par exemple, j'aurai mon bloc numéro 1
+pour le fichier.
+Ici, mon bloc numéro 2, mon bloc numéro 3
+de reclure dans une machine.
+Et sachez que, juste pour sauvegarder
+le fichier et être sûr de ne pas la perdre
+parce qu'on peut le mettre dans un cluster de 100 machines,
+il y aura beaucoup plus de chance qu'une de ces 100 machines
+tombe en panne.
+On va répliquer chacun de ces blocs.
+Ce qui fait que, au final,
+notre fichier va être divisé en blocs
+et le bloc de 100 machines va être répliqué
+3 fois sur toutes les machines.
+Donc, une fois que j'ai stocké
+les distribuées, vous avez demandé
+tout à l'heure que tu avais parlé
+de l'accessibilité de la donnée.
+Comment je fais ici pour accéder à ma donnée
+sachant que si elle fait un terrain de données,
+je n'aurai rien de pouvoir faire dessus.
+Alors, du coup, le concept
+et elle a été popularisée par Google
+depuis les années 2000, c'est le concept
+d'impréduce parce que Google c'est fichier.
+Là, moi, c'est donné,
+j'ai constaté que je les ai accumulés
+et que derrière, je n'étais pas forcément
+capable de faire un accès unitaire
+à un endroit du fichier. Moi, ce qui m'intéresse plutôt
+c'est de faire du traitement par l'eau
+et être capable de lire tout ce fichier
+en beaucoup pour faire du processus
+et de manière distribuée.
+Du coup, il a popularisé le framework
+d'impréduce que je vous présente ici.
+Aujourd'hui, plus personne ne connaît
+le code d'impréduce, ne vous inquiétez pas,
+vous ne passerez plus souvent par la donnée
+que je peux dessiner ici
+pour discuter ou arrêter
+pour faire de l'esclavage sur les données
+sur HDFS pour encore spark
+et pour être traitement immémoriste
+sur les données HDFS.
+C'est juste pour montrer
+que le code d'impréduce distribuait
+quelque chose un peu différent
+par rapport à ce que vous venez d'actualité
+de manipuler.
+Donc, même avec Google,
+typiquement, ici, j'ai un fichier
+Google qui s'avore être et s'avore faire
+sans faire savoir
+que vous comptez le nombre de mots
+qu'il y a en dehors de ce fichier.
+Donc, la première partie, c'est que ce fichier,
+comme sur HDFS, si vous avez bien compris tout à l'heure,
+il va être utilisé en blocs.
+Donc, j'aurai trois blocs.
+En blocs, j'aurai une machine différente.
+Donc, totalement en dépendant
+de l'un ou l'autre.
+Donc, j'aurai une première étape
+qui s'appelle l'étape de maths
+qui consiste
+à créer, pour chaque bloc,
+pour chaque bloc de données que l'on soit,
+donc par exemple, à partir de la vie
+de savoir être et,
+je vais pouvoir créer ensemble de clés valeurs
+savoir 1, être 1
+et 1.
+Donc, je vais la créer pour la première et la valeur
+la deuxième.
+Ensuite, j'ai une étape,
+j'ai une pseudo étape de tri dans lesquelles
+je vais trier ces clés valeurs
+pour rassembler toutes les clés valeurs
+qui ont la même clé sur une machine,
+toutes les autres clés valeurs
+avec une autre clé sur une autre machine, etc.
+Et sur une machine,
+j'aurai typiquement tous les données qui ont la même clé.
+Par exemple, sur une machine,
+j'aurai trois fois la clé valeurs
+savoir et avec 1 comme valeur
+et sur une autre machine, j'aurai peut-être, par exemple,
+la clé valeurs 100 avec 1
+parce qu'il n'y a pas d'écule que la clé valeurs 100 et 1
+qui viennent de cette machine, qui viennent de la machine.
+Et avec, à partir de là, j'aurai une étape
+de récuses qui définit exactement
+qu'est-ce que je dois faire
+de cette ensemble de valeurs qui sont en social à la même clé.
+Donc, moi, quand je vais compter
+le nombre de noms qui viennent,
+le nombre de foils que moi apparaissais dans le pichier,
+je vais dis, je vais assurer tous les noms.
+Donc, typiquement, si je sais savoir
+qu'un qui apparaît trois fois, je vais assurer
+tous les noms et ça va me revenir
+une clé valeurs avec comme valeur 3
+qui va me donner
+le nombre d'occurrence du mot dans le pichier.
+Donc, en conclusion, pourquoi, comment il a réussi
+à populariser ma production
+parce qu'avec ce crème noir, je n'ai plus facilement
+capable de me distribuer le traitement.
+C'est-à-dire que le traitement
+va être amené sur la donnée
+et pas inverse. On ne va pas
+transporter de la donnée,
+pas trop de donnée, on va être bien
+entre les différentes machines.
+Et en plus, on aura tout ce qui est
+fault tolerance, que je ne sais pas
+traduire en français.
+Dans le cas-ci, une des machines, pendant le traitement
+tombent en panne. Une fois que je vais être capable
+comme les noms qui étaient exécutés
+et bonbon, je vais pouvoir transporter
+le traitement bas sur d'autres machines.
+Donc là, il y a des sortes.
+Là, il y a bien de tout ce qui est
+système de pichier et de pichier.
+Jusqu'à présent, on a pris
+à stocker la donnée dans un pichier,
+le travailler sur votre propre machine
+ou le travailler sur les machines
+distribuées en faisant du mable de pichier.
+Et puis, il me dit, on va écouter
+vous avez parlé tout aussi
+de toute cette production donnée
+sur les petits pages de données, etc.
+Moi, j'ai envie d'un système
+qui soit capable de gérer ma donnée.
+Tout ce qui concerne les bases de données
+très rapides.
+Alors, une base de données,
+tout le monde a fait la base de données
+aussi.
+Donc, une base de données, ça va être
+un système qui va gérer pour vous
+l'ensemble des données, l'ensemble
+de vos cases, qui va être exécuté
+sur cette donnée à votre place.
+Vous n'aurez pas à connaître
+de but au grand votre code pour aller
+rechercher les différentes colonnes
+ou les différents champs de la donnée
+qui vous intéresse.
+Donc, celui que le général tout le monde
+connaît, ça va être le système
+de base de données relationnelle
+qui est fondé sur un système
+encore, comme d'habitude,
+un système tabulaire
+dans lequel je vais avoir plusieurs tables
+qui sont représentés ici
+en tant qu'une colonne, donc, une
+circule d'une ligne bas aux observations
+avec 20 pages types des colonnes.
+Je crois que je vais définir la table de parts.
+Je vais dire pas toutes les données
+qui vont être contenues dans la colonne de parts.
+Ça va être extrême et tout ce qui est contenu
+uniquement dans la colonne prix
+de la table de parts, ça va être
+présentier. Donc, là,
+déjà, je suis sûr que
+dans ce que je manipule ce système,
+je sais que les observations que je manipule,
+le contenu des données va forcément
+être corrompu pour les lettres.
+En tout cas, tout le rire m'empêche.
+Mais, ce sera quand même beaucoup de robustes.
+Et en plus, comme j'ai un système
+de requêtes qui vient avec,
+ici, ce sera beaucoup plus grand de l'esclève.
+Avec l'esclève, je vais être capable
+de manipuler ou faire la donnée structurelle
+multiplement. Si je recherche
+tous les endroits où on va vendre la vie
+arrière à moins de 2 €,
+là, j'ai une requête à l'esclève
+que je vais m'indiquer, parce que
+il est fermé de faire sac.
+Donc,
+l'esclève, c'est très bien.
+Donc, en tant que dadesa
+un petit jeune, le que vous conseillez
+de la montre
+est de correctement par cœur. Parce que
+l'esclève, c'est quelque chose qui est
+optimisé, c'est quelque chose qui a été travaillé
+pendant dix à vingt années pour traiter
+l'état de vie structurelle. Et il y a de plus
+en plus d'applications autres que les bases
+de données qui utilisent. Que ce soit
+smart SQL, de la page drill,
+de l'HAL, de plus en plus de librairies
+d'analytiques. Qu'on propose
+elle aussi dans proposer SQL. Donc, c'est
+quelque chose qui est très envoyé et qui
+devrait continuer à être dans les années
+à venir.
+À la fin, je me dirais, mais
+le problème de ce genre de présentation
+de l'esclève,
+c'est que, moi,
+en développant, si je dois gérer une main
+de données qui est censée contenir des millions
+d'équipes, des millions, des milliards,
+d'observations, et peut-être que certaines
+observations vont avoir un schéma
+qui change, peut-être que certains clients
+vont avoir un schéma différent en société
+à cette observation. Moi, je ne peux pas gérer
+ce genre de flexibility
+lorsqu'on utilise un système de données
+relationnel. Donc,
+là, il y a un mouvement
+qui est un mouvement de NoSQL qui s'est créé
+aussi.
+Ou des développeurs se sont-ils, moi,
+je n'ai pas forcément envie de stocker la
+donnée tabulaire dans ma base de vie. Donc,
+nous allons avoir
+4 grandes familles de base de données de
+NoSQL qui se font
+sur des systèmes de données différents
+que la donnée tabulaire.
+Donc, on pouvait
+aussi amener à traiter avec
+ce genre de données.
+L'un ou l'autre est
+un système de clé valeur.
+Donc, pour le système de clé valeur,
+vous allez être amené
+à stocker des petits clés
+de clé valeur dans un
+sort de cache. Donc, excusez-moi,
+on a un raytis, on a un RIAC
+qui sont des bases clé valeur
+peuvent être distribuées dans le gain
+de stock. Dans l'exemple, mon nom
+est FaniBlo et que je pourrais quitter
+derrière. Donc, je peux aussi
+augmenter les compteurs, etc.
+À partir de là,
+par exemple, 8 heures utilisent les raytis
+pour stocker les 600 bytes.
+Les 6 sont derniers de 8 par personne.
+Je vais derrière, comme ça,
+à chaque fois que je vais sur la page 1
+personne, il a juste à taper
+directement sur le cache,
+à l'abonnement structuré qui récupère, qui barre
+et qui vous renvoie, et vous avez
+qui recommande la page 1 telle.
+Un deuxième,
+une deuxième famille de bases de données
+on peut croiser
+les bases de données qui sont orientées
+que là. Donc, comme
+Cassandra ou McFly, c'est uniquement
+dans ce genre de bases de données.
+On n'aura pas,
+vous avez lu que j'ai mis un schéma.
+En réalité, ce schéma, il peut être
+beaucoup moins flexible que ça.
+Dans le sens où, je peux rajouter
+d'observation qu'il ne contient aucune
+des colonne d'ex,
+mais qui a, par exemple,
+une nouvelle colonne qui s'appelle
+Bayfield.
+On peut avoir ici un système où le schéma
+il ne sera pas forcément emplaisé
+par la base de données. Par contre, on est capable
+de staller une partie de la table
+par rapport à la sacrée
+et être capable de faire des attitions
+sur la colonne qui n'existe pas.
+Donc ça, c'est une deuxième
+famille de bases de données
+industrielles.
+Je vais continuer avec une troisième
+en disant que tout ce qui est
+document orienté, ça va ressembler
+beaucoup à une base de données qui
+stocke du système en fait. Donc, dans le sens où
+je vais être capable de stocker
+des documents, ce qui est un document
+qui est un d'autres documents
+qui ne sont pas forcément les mêmes
+d'autres documents que les documents
+qui ont stocke précédemment. Donc, ici, on est
+très chez MaDES, parce que les documents
+qu'on doit appuyer n'est pas de données.
+Par exemple, ici, je veux récupérer
+un de ces documents qui s'appellent
+qui ont pour non faillite l'eau. Peut-être
+que je l'aurais oublié chou, parce que
+en fait, il n'y a pas d'autres données
+qui s'appellent chou.
+Trois à trois d'années de l'esprit,
+et enfin, une belle règle
+que vous pouvez en venir
+de l'avant.
+Là, complètement,
+dans un tableau, c'est
+la différence profonde avec le SQL.
+Alors,
+dites-moi, imagine...
+Tu peux répéter la question ?
+La question, c'est vrai qu'elle est
+différente en ce temps.
+En quoi ça différente en tant qu'un
+mentalement du versuel ?
+Alors, tu peux imaginer cibliquement,
+je vais le donner pour quelqu'un
+d'une zone. Imagine
+une zone qui a
+des millions de produits
+avec des atrépts
+différents et qui peuvent changer dans le temps.
+Ce qui est bon, ce produit, il y a une définition
+comme ça, il y a ce nom, il y a ce prénom,
+il y a cette atrépte d'opérations ou pas.
+Si c'est une bouteille, il y a une atrépte d'opérations,
+si c'est un jouet, il n'y a pas d'opérations.
+Peut-être qu'il y aura un autre atrépte, etc.
+Le problème de SQL, c'est que je serai incapable
+de définir en avance
+un schéma pour prendre en compte
+les éléments là.
+Ce qui est quelque chose que je suis oublié de faire
+au début avec SQL, c'est de me dire
+moi de ma donnée, je veux qu'elle soit structurée comme ça,
+parce que derrière, pour mes analyses, pour mes requêtes,
+ça va être
+beaucoup plus en plus.
+Par contre, si je vais dans la zone
+et que je veux stocker justement
+des observations qui ont
+une structure qui peut changer,
+je vais pouvoir acheter des colonnes à la volée
+ou fermer des colonnes à la volée.
+Alors, le SQL, ça ne tourne rien pas,
+chaque fois que je vais ajouter une observation
+qui ne colle pas au schéma, il faudrait que je change
+le schéma. Du coup, il faudrait en plus
+que je change le million d'observations
+qui sont dans cette table existante,
+que je change même ici
+leur propriété, etc.
+Et moi, je n'ai pas le temps de faire ça quand je m'appelle Amazon,
+parce que si je m'appelle Amazon et que je fais ça,
+mon site, pendant 3 jours, il ne marche plus
+et du coup, je perds quand même millions d'euros, par exemple.
+Bon, le plus système de grâce,
+c'est parce que les gens qui sont
+qui, moi, ont dit que c'est de plus
+d'influences ici.
+Donc, suffisamment, on pouvait faire
+avec les bases de grâce,
+donc vous imaginez que les gens qui
+sont utilisés ça pour établir
+les relations de différents utilisateurs,
+qui ne vous sentent pas.
+Donc, j'étais même déterminé entre
+les deux, et je me suis dit que c'est
+un système de grâce,
+et je me suis dit que c'est un système
+de grâce.
+Donc, j'étais même déterminé entre
+les différents deux,
+des relations éclats de recherche
+sur sa relation.
+L'exemple
+qui est le même connu est de France 2,
+je crois que c'est le...
+C'est le principe de ça, je me suis dit
+que c'est encore...
+Bien, il y a...
+Bon, j'ai beaucoup,
+j'ai beaucoup à côté de stockage
+et de systèmes de fixer,
+donc maintenant, désormais, vous savez,
+comment stocker votre données
+de manière à toujours préserver
+les mythes à données,
+les liens, les liens, les typesages,
+ce sont aussi vos données à chaque point.
+Ça, c'est la partie, il y a un peu pas sexy
+d'adolescence.
+Maintenant, à partir de ça, je vais être capable
+de répéter de la donnée et de ne pas
+de la lire.
+Le problème, c'est qu'en fait,
+sur Internet, il y a un million
+d'adolescentes qui existent,
+vous pouvez en présenter
+certains liens renouvelés
+si vous voulez.
+Qu'est-ce qu'il y a ?
+Bon, de toute façon,
+sur Internet, tout ce qui concerne Open Data
+où, désormais, il y a
+un autre mouvement qui se lance comment
+qui est de mettre en...
+qui est d'essayer de mettre en Open Source public
+pour en accélider
+les différents datasènes qui ont été
+utilisés par chacun des données de recherche,
+donc peut-être que d'ici 10 ans d'année
+vous aurez accès aux différents
+d'observations qui ont été utilisées
+par chacun des données de recherche.
+Mais, c'est bon, ici, vous avez le plus connu, donc
+plus ci, il y a une machine d'enlever
+cause et de risque qui existe
+depuis fort longtemps, qui contient des
+datasènes, on va dire, de base, à être
+expatés par des data miners, etc.
+Et ça va jusqu'à la...
+Jusqu'aux datasènes publics, à la zone
+de service, pour nous, petit toutement
+en vrai général, c'est des datasènes publics
+qui font plus de 30 gigas,
+30 gigas voire
+en thérapelle de données.
+Donc, en vrai général, ici, vous pouvez
+plutôt utiliser des librairies
+de 4, 10 régleries, comme Spark
+ou Contraïf, plutôt que le Faire,
+donc il y a de l'eau relativement facile.
+Donc, sur l'internet, vous trouverez
+beaucoup d'étercettes, voire, c'est un problème,
+vous pouvez créer un client
+un client qui va
+récupérer, à ce qu'il y aille,
+toutes les pages, même pour les années 10.
+Alors, il y a quelque chose qui commence
+qui est très né en avance,
+mais aussi, c'est qui se concerne
+les appels et restes.
+Une appellie, ça va être une interface
+entre un service web et un client.
+Et quand je définis
+une appellie comme une en reste, c'est qu'elle définit
+un ensemble de verbes
+définis pour des requêtes
+comme poste
+et définis un dictionnaire de requêtes
+qui est accessé. Par exemple, ici,
+je fais un guest de data
+avec cette ID. Alors, je vais
+faire ce type de données. Donc, typiquement,
+des appellies très connues
+que l'on existe, la plus connue
+en plus de temps réel, ça va être la meilleure
+de 8 heures, vous pouvez accepter
+le...
+Alors, en public,
+sans payer, je crois que c'est
+10% d'études seulement. Mais, typiquement,
+il y a d'autres appellies très connues,
+comme l'appellie grave de Facebook,
+ou justement, d'appeler tous les amis
+de vos amis, si il faut s'occuper
+d'autorégation. Ou, typiquement,
+des appellies qui s'appellent Data Science appliquées.
+Ils disent activiser, justement,
+les données au compte source, les données
+au plan d'athalie
+pour l'accès du gouvernement pour faire
+l'analyse. Et typiquement, leurs premiers
+appellies ont été concentrés
+à essayer d'utiliser
+les données de l'homme.
+Donc, typiquement, je vous en prie
+à pouvoir le prendre,
+à quoi il a besoin de s'entraîner.
+Donc,
+ici, je vais... Il est parti que ça va
+de l'analyse sur l'analyse.
+Bon, je commence à le faire.
+Ici, je chat à l'instant qu'il ne permet pas
+de régler l'HGTP.
+Et je vais lui demander de taper directement
+l'URL de
+l'appellie de Grand-Lui-Hontesset.
+Donc, ici, je voudrais lui donner
+un fichier... Il a grand bruit un fichier
+que j'y veux.
+Donc, je vais l'enlever.
+Je vais l'enlever.
+Je vais l'enlever.
+Donc, voilà.
+Ici, j'ai jusqu'à mon regret
+de l'HGTP sur l'analyse de Grand-Lui-Hontesset.
+Et je récupère un schizop
+qui contient toutes les informations nécessaires
+pour savoir qu'on est, à effet d'homme,
+à côté, par exemple, par deux.
+Donc, ce disonne vient avec un ensemble
+de méthodonnées qui ont pu plus.
+Et ensuite, un ensemble de paddards.
+Et derrière tout, je pense que j'ai juste marqué
+ce schizop.
+Ce schizop, c'est ce que j'ai fait
+au niveau de la 2D, avec un ennemi par exemple.
+C'est
+de marcer un nouveau fichier.
+Tant avec le schizop,
+directement,
+en temps réel, vous savez
+que vous avez rentré de plus par deux.
+Donc, je dirais pas par deux. C'est pas grave.
+Mais si vous voulez arriver à la mairie
+du Saint-Père, il y aura
+combien de téloge, je ne sais pas
+parce que je n'ai pas encore regardé
+cette scène, il n'y a plus que 3
+dans la tâche, entre ces moments,
+d'y aller.
+Et donc, tout ça pour dire
+que les applis restent, c'est aussi quelque chose
+de très bon poste, et en vrai, le général,
+des grands services internet,
+vous proposez des applis restent, vous pouvez t'appeler
+plus de deux.
+Pour conclure,
+malheureusement, on n'a pas parlé
+de plus de travail de la donnée,
+quels sont les quidavis
+que je peux utiliser pour travail de la donnée,
+que ce soit piton, ou air,
+ou tout à l'âme pour BK,
+ou même je trouvais récemment un projet
+Google qui s'appelle OpenMécrite,
+qui sert justement à la manipulation
+et aux nettoyages de données.
+Donc tout ça, je n'aurais malheureusement pas le temps
+de s'assurer pour cette présentation.
+Et encore autre chose,
+que certains de vous connaissent qui est
+moi, je n'ai pas envie de me gérer une machine
+entière juste pour stocker la donnée,
+parce que je peux t'assurer.
+Et donc, on a des plateformes à servir,
+ce qui propose justement de stocker ces bichets
+pour vous, et de mettre à disposition pour vous
+des quidavis, d'analyse,
+sur les zones d'observés,
+ce que vous pouvez stocker, de bichets
+sur les zones d'observés,
+et d'analyser, en passant par
+les deux transpenses d'OCD.
+Donc ça, c'est relativement pénant.
+Il s'égrape alors, si vous êtes
+relativement trouvés, c'est gratuit pour non pas mordre.
+Si vous utilisez très, très peu d'anspenses,
+pour les autres, vous ne pouvez pas trop regarder.
+Et puis, on a Google,
+Cloud 4.20, de ce qu'elle vous propose,
+sur les zones d'observés. Donc, si vous oubliez
+déjà comment ça a changé au jour,
+et que ça doit payer trop trop de sous,
+mais que son couleur aussi le fait
+sur une propre machine, vous avez la disposition
+qui vous t'arrête de le faire.
+Qu'est-ce que je voudrais redire de tout ça ?
+C'est que je ne sais pas vous soumettre
+avec les autres points de données, que c'est important,
+qu'elle émette la donnée, c'est important,
+que la structure, c'est important,
+mais que d'ailleurs,
+tout ce qui est sur le point de données,
+c'est en tout cas que les agronomies
+ont une énorme participe de travail
+que l'on t'a sentu, et que sans celle-ci,
+on n'aurait jamais de données forcément
+dans l'information. Elles ne sont pas forcément
+mises en valeur, et ce serait vraiment dommage
+de ne pas profiter de toutes les données
+que vous avez créées encore précédemment,
+qu'elles soient en open data pour l'accident.
+Donc,
+je vous remercie pour votre temps.
+Pensez-vous que la publication
+ça n'est même pas oublié.
+On a fait le fait que c'est un test
+à faire des choses, et pourra tout se donner
+à vos yeux.
+Une question sur les
+databases maria SQL et nos SQL,
+est-ce qu'ils commencent à exister
+des systèmes hybrides qui permettent
+d'hérositer les avantages
+de chacune des données technologiques ?
+Alors, il y a donc un grand impression,
+que je n'ai pas vu.
+Effectivement, il y a une nouvelle
+information qui se fait.
+Ça peut être le new SQL,
+qui justement essaie
+de fusionner
+les deux données.
+Donc, pas que les gens connaissent pas
+pour plus. Je t'en fais pas regarder
+le new SQL.
+Je n'en fais pas de voisins.
+Qu'est-ce que c'est ?
+Qu'est-ce que c'est ?
+Qu'est-ce qu'il commence à faire aussi
+avec le new SQL ?
+Après, il y a aussi l'inverse,
+des systèmes new SQL qui essaient
+de faire le new SQL.
+Ce qu'ils demandent, c'est qu'ils essaient
+de faire la base
+de la base des colonnes que vous avez
+vu tout à l'heure.
+En disant, moi,
+mon CQL, qui est un engage
+d'Eucalype, c'est celui qui est le plus
+proche du engagement SQL
+en termes de specifications.
+Donc, c'est quelque chose
+qu'on va chercher par travail.
+On a vu qu'il y avait beaucoup de sites
+avec des sources de données au coût de data.
+Est-ce qu'il existe sur la susceptictionnaire
+de tous ces socials ? C'est finalement
+avec tout le temps, en train de filer, en train
+de filer beaucoup de sortes dans les CQL,
+quels est la structure, où est-ce que vous allez
+chercher la data ? Donc, finalement,
+c'est tout ça avec, je sais pas,
+les signaux entre les thématiques
+ou plus plus comme ça.
+Je pense qu'il existe plusieurs dictionnaires
+comme ça. Ce qui que je connais,
+je l'utilise plus souvent, c'est le canet d'agress.
+Oui.
+Quand j'étais sur la site, mais c'est très marqué.
+Alors, je ne sais pas
+si ça s'est passé.
+Oui.
+Je ne l'ai pas trouvé.
+Mais je savais très bien
+qu'est-ce qu'il y avait.
+Enfin, en fait,
+la réponse à la question est
+facilement petite.
+Parce que, suffitement, si on dit
+que l'une des recensés, justement,
+tout, qu'il y ait une tasse de sites qui se compliquent
+en avant, aujourd'hui, ça va être un problème.
+Sinon, qu'on paye quand il est resté fiable.
+En récolgénéral, le gars, il y a un truc
+que l'une des recensés qui s'est produit
+c'est qu'on va dire
+qu'il y ait des sites qui sont les plus connus
+et les plus utilisables.
+Il faudra essayer de se mêler
+sur ce qui est de plus à plus à plus.
+Mais après, en récolgénéral,
+c'est vrai que c'est plutôt en fonction
+de ce que je veux de l'utilisation.
+Sur Internet, il faut que je recherche,
+mais si j'y ai accès dans l'EU,
+il faut qu'il y ait un petit collège.
+Trois, quatre,
+cinq, quatre, six,
+cinq, quatre,
+cinq, quatre, cinq, quatre,
+et là, on va très bien vous rencontrer
+une question
+que vous pouvez lui voir concrètement.
+Oh, merci.
+Ok, merci.
+Juste pour rappeler un petit peu
+ce qu'on fait dans le groupe
+de l'EU
+pour ceux qui ne savent pas comment marchent
+sur le Twitter
+ou sur les GitHub.
+Il n'y a rien
+qui pourrait avoir un nouvel noc
+qui est ouvert dans un kit
+où vous pouvez regarder, où vous pouvez rajouter
+des choses.
+Et dessus, il y a l'explication des commandes
+d'un système de collaboration
+qui est un système Slack.
+Donc, c'est un espèce de
+système d'un type IRC
+sous lequel il y a différentes
+colonnes, différents boulges de discussion
+sur la partie Machine Learning,
+de la science et le groupe de la science
+appliquée. Donc, si vous voulez
+continuer à travers le groupe,
+dans le soirée, n'hésitez pas
+à aller sur cette page
+et à vous inscrire sur le système Slack.
+C'est tout à fait.
+C'est le système Slack
+qui permet
+il y a différents
+parties,
+différents salauds,
+quel en fait
+dont vous avez une question
+ou une question, etc.
+Et, peut-être,
+dans le système Slack,
+il y a ça un peu,
+peut-être, un peu.
+Là, vous avez
+comment, vous allez
+mettre un gros climé et vous allez avoir
+un long climé qui va vous permettre
+de vous venir sur le site Slack
+qui vous a été montré personnellement
+pour pouvoir discuter avec vous.
+Et puis après,
+il faut qu'on commence à
+discuter du projet sujet,
+parce qu'on fait un petit bon effet de vote.
+Si vous avez des idées pour
+faire une prochaine session,
+vous pouvez faire le Slack pour poser des choses,
+poser des questions sur les choses
+qui vous utilisent.
+On va terminer en vous expliquant
+en 10 minutes ce que c'est que le groupe
+va être appliqué.
+Alors, en 10 minutes,
+Data Science est appliqué.
+C'est un espèce de sous groupe
+au groupe de Data Science
+qui réunit les gens parmi vous.
+Les gens voiles qui sont ici,
+qui ont envie de mettre en pratique
+ce que vous voyez pendant
+ces présentations
+donc on s'est réunis
+depuis un mois.
+Et ce qu'on a commencé à faire,
+c'est qu'on a créé une petite machine virtuelle.
+C'est un programme qui
+représente un ordinateur qui tourne
+dans votre ordinateur.
+Il est capable aujourd'hui de récupérer
+toutes les 5 minutes
+les données des stations de l'oeuvre
+du Grand Lyon
+et de les représenter graphiquement
+sur le cart.
+Pour l'instant, ce système y fait ça.
+C'est maintenant qu'on a collecté la
+données, qu'on la visualise,
+de commencer à la retraiter,
+se poser des questions, essayer de trouver
+des réponses grâce aux méthodes
+d'analyse de données.
+Donc on a parlé de machine learning,
+de la classification, etc.
+Voilà. On s'est pris ce sujet
+au hasard,
+parce que les données au Grand Lyon
+étaient disposées et on a choisi
+les vélos parce que c'est marrant.
+On peut se poser des questions rigolotes.
+On n'en demande jamais les vélos.
+Il va y avoir une raison.
+On veut la trouver dans les abans.
+Je vous invite à nous rejoindre,
+à discuter avec nous des prochaines étapes
+sur le Slack.
+Ce que vous avez, le système que vous a présenté
+Franck, il y a un challenge qui s'appelle
+Data Science Appliqué.
+Vous avez bien vu. Merci.
+Merci.

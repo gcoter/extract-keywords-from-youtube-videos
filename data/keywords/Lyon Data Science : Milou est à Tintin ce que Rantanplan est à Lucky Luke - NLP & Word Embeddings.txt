@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science : Milou est \u00e0 Tintin ce que Rantanplan est \u00e0 Lucky Luke - NLP & Word Embeddings", "keywords": ["natural language processing", "word embeddings", "Word2Vec", "context", "similarity", "polysemy", "Python", "data scientists", "neural networks", "vectors"]}

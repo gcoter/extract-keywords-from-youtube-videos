@@ -1,0 +1,1 @@
+{"title": "Efficacit\u00e9 'r\u00e9elle' d'un test de cat\u00e9gorisation", "keywords": ["categorization test", "quality indicators", "prior probability", "Bayesian statistics", "COVID-19 testing", "population distribution", "negative results", "medical testing", "accuracy", "public education"]}

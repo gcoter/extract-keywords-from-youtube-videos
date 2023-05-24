@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science - Machine Learning en production", "keywords": ["machine learning", "production", "data", "training", "inference", "monitoring", "versioning", "testing", "notebooks", "retraining"]}

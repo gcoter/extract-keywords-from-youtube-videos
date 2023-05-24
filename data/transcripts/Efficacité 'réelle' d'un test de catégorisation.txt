@@ -1,0 +1,469 @@
+Bienvenue à tous, je suis Clément Sages, trésoré de l'association Lyon Data Science qui essaye de promouvoir la donnée autour de Lyon.
+Aujourd'hui, on se me réunit pour un meet-up en visio.
+Et nous souhaitons remercier tout d'abord nos sponsors qui sont Datalio, Scare et UpFluence.
+Le meet-up d'aujourd'hui est animé par Dominique Marais et portera donc sur l'efficacité réelle d'un test de catégorisation.
+Donc je te laisse te préhanter Dominique et poursuivre avec ton meet-up.
+Ça marche, merci Clément.
+Oui bonjour, donc Dominique Marais, j'ai bossé une trentaine d'années en intelligence artificielle, principalement des applications utilisant des technologies linguistiques plutôt sur les textes,
+donc en extraction d'informations, en recherche d'informations spécialisées, traduction automatique.
+Donc disons que les deux premiers tiers, c'était essentiellement sur des applications avec de la linguistique embarquée.
+Et le deuxième tiers, le dernier tiers, c'était sur des projets Data Science un peu tous azimuts.
+J'ai une boucle de son qui revient, je ne sais pas si c'est le cas pour vous.
+Donc voilà.
+Alors l'objet de cette présentation qui va être assez concise, je suppose qu'il y a un certain nombre d'entre vous qui ont envie de vous profiter des beaux jours de la fin du confinement pour aller voir un verre ou quelque chose.
+C'est assez bref.
+Donc ça porte sur une propriété ou un petit problème que vous avez déjà rencontré dans vos activités Data Science ou que vous rencontrerez, c'est obligatoire.
+Donc ça porte sur l'efficacité réelle d'un test.
+Alors ça veut dire quoi ? L'efficacité réelle veut dire que quand on met au point un logiciel de catégorisation,
+là les exemples c'est en catégorisation binaire, ça peut être sur des catégorisations à plusieurs catégories.
+Je pense qu'on met au point un test de catégorisation par apprentissage supervisé.
+Donc en fait, on suit l'évolution de son apprentissage et on livre le produit final avec des indications de qualité.
+Des slides sont bloqués en fait, je ne sais pas Dominique, je ne sais pas si.
+Pardon ?
+C'est resté bloqué à la slide numéro 1, je ne sais pas si c'est normal.
+D'accord, tu as raison de m'interrompre par rapport.
+Donc je vais faire comme tout à l'heure, je vais couper la présentation et je vais la relancer.
+Deux secondes ?
+Oui, pas de soucis, pas de problème.
+C'est bon, on a le deuxième slide ?
+D'accord.
+Donc en fait, mise au point dans un test de catégorisation en apprentissage supervisé,
+donc le test de toute façon, le logiciel est livré à la fin avec des indicateurs que vous avez calculés tout au long de la mise au point,
+par exemple du type rappel précision, des choses comme ça.
+Il y a la question que je voudrais qu'on pose ici pendant le fardeur qui va suivre,
+les 10, 15 minutes qui va suivre, c'est est-ce qu'on peut utiliser les valeurs de ces indicateurs ?
+Par exemple, je ne sais pas, on a une utilisation de 90%.
+Est-ce que ces indicateurs, ces numériques nous donnent en fait correspond à la probabilité que l'on a de présenter un objet au catégoriseur
+et de voir qu'il affiche la catégorie 1 ou des choses comme ça,
+est-ce qu'il y a un lien entre l'indicateur numérique qu'on a calculé et cette probabilité ?
+Pour faire beaucoup plus simple et plus concret, je vais commencer par cette question.
+C'est dans le contexte des choses que l'on a vu pendant un an et demi, un test de dépistage de maladies,
+donc si c'est un test de catégorisation, soit on est positif, donc on a a priori la maladie en question, soit on est négatif, on n'a pas.
+Le problème se présente comme ça. On a un test de dépistage de maladies qui est fiable à 99% en admettant.
+Ça n'existe pas, c'est jamais aussi fiable, mais admettons.
+Qu'est-ce que c'est que fiable ? Ça veut dire quoi fiable ?
+Si c'est appliqué à quelqu'un de malade, dans 99% des cas, le test rendra un résultat positif.
+Si il est appliqué à quelqu'un de sain, dans 99% des cas, le résultat de test sera négatif.
+Donc ça correspond à des indicateurs de rappel.
+La question qui se pose, c'est celle-là. Toto passe le test.
+Son test est positif et la question, c'est quelle est sa probabilité d'être malade ?
+On a les indicateurs qui ont été calculés au moment de l'apprentissage de la mise au point.
+Il y a un individu, un objet qui passe le test, il est positif.
+Vous voulez le catégorie C1, si vous voulez, et quelle est sa réelle probabilité d'être positif ?
+Je vous laisse 10 secondes, 10, 20 secondes, comme ça, juste donner une réponse dans votre tête intuitive à cette question-là.
+Et puis on passe à la suite, on analyse tout ça.
+Donc en fait, normalement, si on y va tranquille, on dit que si le test est positif, le test est fiable à 99%.
+J'ai 99% de chance d'être malade.
+En fait, on n'a absolument aucune idée de la probabilité que Toto soit réellement positif.
+On ne peut pas qu'un coup.
+Ok, c'est bizarre, parce que les slides ne restent pas.
+Là, c'est mieux, c'est stabilisé.
+On va repartir comme ça.
+On va faire comme ça, mais c'est vrai que ça, c'est dur à suivre.
+Je ne sais pas si ton écran, il saute ou...
+Non, moi, ça saute pas.
+Ok, on va continuer comme ça, mais c'est vrai que c'est pas très agréable.
+Je te laisse pour sûr.
+Non, mais c'est pas ce qu'il y a avant.
+Donc la réponse, c'est qu'on ne peut pas conclure.
+Quelle est sa probabilité d'être malade, on ne peut pas conclure.
+L'analyse du problème, c'est la suivante.
+On a une personne ou une population d'objets qui se présentent à l'entrée d'une boîte noire,
+une boîte grise, un logiciel de catégorisation.
+Et puis, il y a une sortie test positif.
+La question qui se posait, c'était,
+connaissant la fiabilité du catégoriseur,
+quelle qu'elle a été définie,
+est-ce que le fait de sortir positif nous indique
+qu'on a tel pourcentage de chance d'être réellement positif ou pas.
+Donc la réponse, c'est non, et on va voir pourquoi.
+En fait,
+en fait, si on analyse le problème en essayant de coller
+aux données que l'on a, c'est-à-dire aux indices de fiabilité du test,
+on s'aperçoit qu'en fait,
+il y a une personne qui rentre ou une population d'objets,
+ces personnes, on soit la maladie,
+soit on soit de catégorie plus positive, soit de catégorie négative.
+Et puis, pour la population qui est positive,
+dans 99% des cas, le test sera également positif.
+Mais ce qu'on voit ici en bas, là,
+c'est que la population qui est de catégorie négative,
+dans 1% des cas,
+sortiront aussi avec un test positif.
+Donc en fait, le fait de sortir avec un test positif,
+il y a deux cas possibles, soit on est réellement positif, soit on n'est pas.
+Donc du coup, la probabilité d'être réellement positif
+avec un test positif,
+ce serait, on pourrait l'aider par le nombre de vrais positifs
+sur le nombre total qui sortent avec un test positif.
+Pareil pour les négatifs.
+Et la question, la deuxième question qui suit,
+c'est comment on fait pour estimer ces nombres,
+quelle est la donnée, le paramètre qui manque.
+Et en fait, ce qui manque, c'est la probabilité a priori
+d'avoir la maladie, ou d'être traduit
+dans une problématique data science de catégorisation.
+La probabilité a priori d'être que l'objet, les objets présentés,
+soit de catégorie C1 plutôt que C2 par exemple.
+Donc si on repart sur le diagramme de tout à l'heure,
+donc en fait,
+ce qui nous manque ici pour faire notre calcul final,
+c'est-à-dire quel est le nombre de vrais positifs par rapport
+à l'ensemble des positifs,
+ce qui nous manque, c'est la distribution de départ,
+comment la population en entrée va se répartir
+en personnes qui sont réellement positives,
+ou personnes qui sont réellement négatives.
+C'est bon, jusqu'à là, ça suit clairement les slides, c'est bon.
+C'est juste que c'est toujours un peu saccadé,
+mais bon, ça se suit, avec ton discours,
+on s'en sort.
+Donc voilà, c'est ce qui manque pour conclure.
+Je passe le test, la probabilité
+que je sois positif, c'est la même chose
+que la fiabilité de départ.
+Parce que ce qui manque, c'est ça.
+Si on a ça,
+tout devient clair.
+Ce que j'indique par TMP, c'est le taux moyen de personne positive.
+C'est le taux moyen de positive dans la population.
+Et 1 moins TMP, c'est le taux moyen de personne négative.
+Donc avec ces indicateurs sur le réseau,
+si on a une seule personne en entrée,
+on obtient après des pourcentages de personnes.
+Si on prend une population de 100 000 personnes en entrée,
+on peut calculer des effectifs en sorties
+et puis répondre à la question.
+En connaissant, ça, c'est les indices de fiabilité,
+il n'y a qu'en connaissant la distribution
+de départ moyenne des catégories
+dans la population qu'on peut répondre à la question.
+Je vais vous faire voir sur 2 exemples.
+Il y a un sacré écart entre les indices de fiabilité et la réalité.
+Je prends 2 exemples.
+TMP, la fiabilité du test.
+Dans les exemples, on suppose qu'on a une fiabilité symétrique,
+sinon il n'y a aucun soucis pour avoir une fiabilité
+dans le cas positif ou dans le cas négatif.
+C'est ce qui se passe dans les tests Covid.
+En général, ce n'est pas symétrique.
+On se prend 2 exemples.
+Le premier exemple qui prend l'indice de fiabilité du problème précédent,
+là, 99%, et là on va supposer que le taux moyen
+de personnes positives dans la population, TMP,
+c'est 0,1%, 1 pour 1000, donc très très faible.
+Dans l'exemple 2, des données plus proches de celle du Covid, par exemple,
+le taux moyen de personnes positives dans la population 1%,
+c'est peut-être 2, 3%, 3, 4, 7, 3, 1 et 5 actuellement,
+et une fiabilité plus basse de 90%.
+On arrive à des données
+plus proches de celle du Covid et puis
+les indices de fiabilité sont souvent de ce ordre
+là lorsqu'on est au point logiciel de catégorisation sur des choses
+un peu succes. Alors là, à partir de là,
+on peut faire le calcul. Donc la probabilité d'être
+réellement positif si on sort avec un test positif,
+donc c'est le nombre de vrais
+positifs, c'est le nombre de vrais positifs
+sur le nombre total de gens qui sortent avec un test
+positif, c'est-à-dire les vrais positifs et les faux positifs.
+Donc ça c'est par rapport au diagramme
+Bayesian tout à l'heure, c'est
+l'exploitation directe du diagramme, pareil pour le négatif.
+Et donc, vous verrez là si vous faites ce calcul
+on arrive à ces résultats là. Pour l'exemple 1,
+donc fiabilité 99% une personne sur mille touchés
+si on sort avec un test positif, en fait la probabilité qu'on soit
+réellement positif c'est de l'ordre de 9%.
+Donc ça fait 10 fois moins que l'indice de fiabilité.
+Pour l'exemple 2, c'est du même ordre, donc fiabilité
+90%, 1%
+de personnes à peu près positives en moyenne dans la population
+on passe le test, le test, la probabilité qu'on soit
+réellement positif c'est de l'ordre de 8%.
+Donc il y a un écart extrêmement fort avec
+les indices qu'on a calculés, c'est normal
+c'est peut-être pas imputif, mais c'est tout à fait normal.
+C'est comme ça que ça se passe.
+Si on peut conclure là-dessus, donc que ce soit
+dans un contexte de dépistage, une maladie
+ou dans un contexte d'atacience, un test
+binaire ou NR, mis au point par apprentissage
+supervisé, un filtre anti-spam, catégorie C1, C2, etc.
+On ne peut pas conclure
+sur l'efficacité réelle du test, sans connaître les probabilités
+de théorie, de distribution, des positives et négatives
+dans la population ou des catégories C1 et C2 dans les objets qu'on va
+représenter ou le pourcentage de mails spam
+par rapport aux mails qui sont OK, donc on ne peut pas conclure
+sur l'efficacité réelle, l'efficacité opérationnelle, ce qu'on va observer.
+Et puis la deuxième conséquence
+de ce problème
+de cette formulation, c'est que si les probabilités a priori
+de distribution des catégories, positive, négatives,
+catégories C1 et C2 dans la population sont très déséquilibrées, donc
+sont loin de 50%, l'efficacité réelle du test
+sera différente, elle peut être très différente
+de la fiabilité annoncée. Donc les conséquences
+dans un projet d'atacience, quand vous faites la livraison de votre catégoriseur
+à l'équipe métier ou à votre responsable
+ou celui qui a commandité la logistielle, donc
+à mon avis, il faut expliquer
+ce problème
+par rapport aux indicateurs de qualité que vous allez
+livrer, sinon il va y avoir une grosse déception.
+Vous livrez un catégoriseur qui est précis à 90%,
+qui sert à catégoriser des objets de catégorie
+C1 et C2, la catégorie C1
+est environ 1%
+d'écart,
+du coup ce qui va être observé par l'utilisateur, c'est qu'en fait
+la fiabilité du test, ça sera de l'ordre de 8%.
+Donc il faut mieux prévenir avant que de
+générer une grosse surprise. Sinon, moi personnellement
+sur les tests Covid, là j'ai eu ce genre de réflexion
+ou de questionnements en direct, je vous rappelle avoir discuté ici
+avec le secrétaire de l'Amérique, il me disait mais voilà, mon mari a passé
+le test, il était positif, puis en fait il n'était pas malade du tout, tu te rends compte
+et puis bon voilà, j'en ai entendu souvent,
+j'ai entendu beaucoup de remarques de ce type-là, ben oui c'est normal
+que les tests étaient annoncés à 90%, on retient
+ce chip à 90% et puis la réalité c'est qu'en fait
+c'est pas du tout ça, puisque le taux de personne malade
+est très très loin du 50%.
+Juste pour finir
+il y a
+quelques URL ici qui présente ce problème
+de manière plus imputive peut-être
+et je voulais juste vous présenter le cas particulier
+où le taux moyen de personne positive
+lorsque le taux moyen de personne positive est à 50% pile
+donc si on reprend la formule de tout à l'heure
+on remplace ce taux là par 0,5, donc 0,5, 0,5
+ici 1-0,5 ça fait 0,5, donc on simplifie par 0,5
+il reste ça sur ça et donc il reste la fiabilité
+du test, donc le seul cas où la
+probabilité réelle d'être positive lorsqu'on a passé un test
+qui est positive, cette probabilité
+sera égale à la fiabilité annoncée que dans le cas
+où les populations positives négatives, catégories
+c'est 1, c2, spam, pas spam, si le taux moyen c'est 50%.
+Et dans tous les autres cas, ça sera
+dégradé. Le mieux pour
+faire des idées précises de ce qui se passe suivant les fiabilités
+de test et les taux moyens de personne
+de catégories plus ou moins etc,
+c'est de faire un petit script plus bon et de faire varier
+les fiabilités et les taux
+initiaux pour se faire une idée
+plus précise de ce qui se passe.
+Voilà voilà, donc en fait si vous devez retenir, enfin à mon avis,
+il y a une chose de ça, c'est lorsque vous serez en opérationnel,
+lorsque vous présentez votre logiciel après apprentissage
+pour déploiements en production etc avec les indicateurs,
+passez un moment pour expliquer à la personne
+ce genre qui réceptionne ça, quelle est la différence entre
+une fiabilité calculée et puis
+une fiabilité réelle qu'on va observer après en opérationnel.
+Ça évitera de grosses déceptions.
+Voilà, moi j'ai terminé, je vais couper le
+slide et repasser sur la...
+Tu peux garder le slide
+Oui oui d'accord.
+Donc la présentation est terminée, n'hésitez pas
+à poser vos questions si vous en avez dans le chat
+de Twitch et puis Dominique pour y répondre
+avec plaisir si vous n'êtes pas
+déjà aveuglé par les slides et vous avez tenu jusque là.
+Alors oui
+Si les gens m'entendent
+moi ça m'intéresse de savoir si parmi les gens qui sont là
+s'il y en avait déjà pas mal qui connaissaient
+ce problème là ou si c'est nouveau et puis
+si c'est surprenant, est-ce que c'est contraintuitif ou pas
+moi pour l'instant les échos que j'en ai c'est que c'est très
+contraintuitif et c'est peu connu
+Oui tout ce qui est statistique baïsienne en général
+ça surprend, il y a beaucoup de paradoxe
+c'est peu intuitif
+Les gens ont tendu ta remarque
+il y a déjà une première remarque de Marcel Chafroin
+dans le chat qui dit une petite remarque concernant
+si on teste type Covid c'est la probabilité d'une personne
+donnée d'être malade qui doit être prise en compte
+ça n'est pas pareil si on teste quelqu'un totalement au hasard ou si on teste quelqu'un qui présente des symptômes
+Tout à fait
+tout à fait réel
+tout à fait oui
+En fait j'ai utilisé l'exemple du Covid
+c'est assez marquant
+j'ai entendu aucune information sur la différence entre
+une fiabilité de test et une fiabilité réelle
+comme ça j'ai eu
+l'occasion d'entendre plein de gens
+j'ai passé le test
+mais effectivement c'est
+plus compliqué est-ce que le taux
+moyen de personne qui sont positifs
+qui sont touchés par la population
+parce que c'est les gens qui ont eu le Covid il y a 3 mois
+ou juste maintenant
+mais si on fait le lien avec un problème de data science de catégorisation
+ça devient un peu plus clair
+qu'ils transfisent rames par exemple
+oui c'est sûr
+ils rebondit justement en disant que ce problème est souvent utilisé comme argument
+en défaveur du dépistage systématique de toute une population sur une maladie donnée
+du fait du risque d'un nombre élevé de faux positifs
+si la maladie est très peu répandue
+comme tu le très bien dis on obtient des tests qui sont positifs
+c'est peu en fait
+il suffit d'expliquer
+c'est presque une loi de la nature
+c'est les maths qui disent ça
+qui sont un outil pour nous
+pour matérialiser ce qu'on va observer en réel
+après il suffit d'expliquer le truc
+ce qui est important c'est que si vous sortez
+avec un test négatif
+vous êtes quasiment certains d'être négatifs
+dans un problème de data science
+avec des proportions qui sont déséquilibrées
+donc très peu de côté positif
+si vous sortez en test négatif
+vous êtes au dessus de votre probabilité d'être négatif
+et au dessus de votre avis de fiabilité
+oui ça écarte les probats
+dans les sens opposés par rapport à la fiabilité annoncive
+voilà donc ça aurait pu être présenté
+comme ça expliquer et dire aux gens
+ça permet de...
+il n'y a aucun souci
+il y a un risque qui reste
+oui c'est vrai que ça n'a pas forcément été toujours bien présenté
+expliquer la stratégie de test
+d'ailleurs comme quelqu'un me l'a fait remarquer
+dans un cours que je commençais généralement
+pour accrocher un peu l'attention
+si vous repassez un test sur la population qui a eu un test positif
+les données vont être plus fiables
+donc si vous avez un test positif
+il faut repasser un deuxième derrière
+ça commence à faire beaucoup de moyens
+pour être sûr d'être positif
+pour éviter la quarantaine de semaines
+oui c'est comme j'ai vu la science maladie
+mais tant qu'il va y avoir les autotests qui allaient recommander de les faire une à deux fois par semaine
+je ne sais pas si les gens s'y tiendront bien
+par contre effectivement
+dans une problématique d'attention
+si vous livrez directement des gens du métier
+il y a très peu de gens qui sont
+qui connaissent ce problème
+donc il faut paraître à la déception possible
+ok très bien
+c'est dommage mais non
+les slides ont arrêté de sauter
+donc c'est dommage que ça soit stabilisé en fin de distribution
+mais bon
+on pourra aussi partager
+les slides si tu le veux bien
+avec les gens qui sont intéressés
+sur notre chaîne youtube
+je ne sais pas je vais redessayer encore de nouvelles questions
+encore Marcel qui dit une question un peu naïve
+est-ce qu'il y a des approches en data science plus bayesdiennes qui prennent en compte
+une question vraiment du sens
+en fait je pense que si on livre
+des gens du métier
+on met au point un test de catégorisation
+il faut s'intéresser
+à la technique initiale dans la population d'objets qu'on va tester
+par exemple les spams bon ça va être des taux
+30% de spams par rapport au mail
+il faut s'intéresser à ça
+si c'est déséquilibré
+il faut expliquer le problème mais peut-être le tester autrement
+ça va générer une sacrée déception
+on est au top et ça donne 8%
+je dirais la déception
+parce que comme c'est un problème très peu connu
+on a plutôt des indices
+90, 95, 98%
+il faut gérer ça
+une des possibilités de livrer un indicateur
+qui est la probabilité réelle
+c'est simplement d'appliquer la formule
+ou bien simplement de
+présenter une population au hasard
+en apprentissage supervisé
+on vérifie que c'est bien positif sinon on corrige le système
+et puis on passe au négatif
+mais là en fait il faut présenter une population d'objets
+qui va respecter les proportions moyennes
+et puis noter le résultat à la fin
+ça va être le résultat opérationnel
+sinon je ne connais pas d'autres moyens
+d'accord très bien
+je ne sais pas si ça répond à ta question marcell
+je n'ai jamais eu l'occasion de tester
+c'est pas possible
+quand on a une statistique déséquilibrée de la population
+sur les deux catégories
+donc là positif négatif
+on aurait intérêt à obtenir un test
+sur les négatifs le plus précis possible
+c'est celui là qui va falloir soigner
+au dénominateur de calcul qu'on faisait
+donc le nombre de faux positifs
+qui divise la fiabilité de départ
+par 2 ou dans le casque c'était par 10
+donc si c'est possible
+on a intérêt à avoir
+c'est si possible des fiabilités déséquilibrées
+et de faire en sorte qu'on ne faut pas y avoir
+des fiabilités déséquilibrées et de faire en sorte que la
+de bien insister sur la fiabilité des tests sur les négatifs
+ça justement est ce qu'ils calibrent les tests
+c'est ce qui prend en compte ça aussi la priorité a priori d'être malade
+pour pouvoir mieux calibrer les tests
+qu'il y a de faux positifs et de faux négatifs qui ne sont pas la même
+il y a souvent
+en suivant ce qu'on utilise comme technique
+pratiquement tout le temps la possibilité d'insister
+plus sur les vrais négatifs
+par effet miroir de minimiser
+davantage les faux positifs ou les faux négatifs
+il y a toujours cette possibilité en apprentissage
+mettre un poids plus fort sur une erreur de tel type
+donc en fait on peut essayer de jouer là dessus au moment de l'apprentissage
+oui en apprentissage oui mais après je disais plus
+pour rapport au test de maladies etc je ne sais pas si
+toujours cette possibilité là de jouer là dessus
+non sur les tests des dépistages de maladies
+c'est compliqué c'est des tests
+biochimiques mais dans la
+mise au point dans quelques réserves d'attentions
+il y a beaucoup de domaines où on préférera
+une fiabilité déséquilibrée
+suivant la nature du problème
+je vois qu'il n'y en a plus de questions dans le chat
+tu as bien répondu à Marcel
+je propose qu'on en reste là sauf si tu ajoutais
+un dernier mot
+merci pour ces questions
+à la prochaine
+c'était un plaisir de t'accueillir
+merci à toi d'avoir présenté
+c'est le pia et à bientôt
+pensez à sortir
+nous on se dit à une prochaine fois
+pour un meet up en espérant que ça soit
+plus en visio mais en présentiel
+il y aura peut-être un d'ici la fin du mois de juin
+et sinon après on se retrouvera la rentrée prochaine
+en septembre après l'été
+bien mérité
+tout ce qu'on a en durée
+merci à vous
+au revoir

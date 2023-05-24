@@ -1,0 +1,633 @@
+Bonjour à tous, moi c'est Alexandre Allais, je suis leak data chez Inato depuis un an.
+Mon rôle chez Inato, c'est de structurer l'équipe data et de contribuer aussi à mener les
+différents projets.
+Avant ça, j'étais trois ans chez Warner Bros en tant que data analyst aussi et encore
+avant, j'étais en cabinet de conseil chez Equimetrix en tant que data analyst.
+Je suis heureux d'être là.
+Moi c'est Louise Gaéry, je suis Product Data Analyst chez Front, qui est une boîte
+américaine qui a été fondée par deux Français.
+Je travaille du coup dans les bureaux parisiens.
+J'ai rencontré LX chez Equimetrix, où on travaillait plutôt sur des sujets marketing,
+CRM, toujours avec un manque de data et après je me suis plus rapprochée du produit et
+j'ai passé trois ans chez BlaBlaCar.
+Aujourd'hui, avec LX, on a décidé de se concentrer sur, vous montrez un peu quelles
+peuvent être les collaborations entre PM et Data.
+On va d'abord commencer par vous présenter un peu nos deux boîtes et les teams Data
+chez Front et chez Inato et ensuite on va s'appuyer sur un framework produit de la
+discovery à la delivery pour vous montrer quelles sont les points d'entrée du Product
+Analyst.
+On s'arrêtera, on finira sur nos défis pour les prochains trimestres et on
+laissera un peu de temps pour les questions, si il y en a.
+Alors déjà, Inato, qu'est-ce que c'est ?
+Inato, c'est une marketplace qui connecte des labo pharmaceutiques avec des hôpitaux
+dans le contexte d'études cliniques.
+Le problème qu'on essaie de résoudre, c'est que traditionnellement, les labo pharmaceutiques
+contactent les hôpitaux pour des études cliniques et ils finissent par aller toujours
+voir les mêmes et donc on a 5% des hôpitaux qui concentrent 70% des études cliniques.
+Grâce au modèle de la marketplace, on donne la chance à plus d'hôpitaux d'accéder
+aux études cliniques et donc plus de patients.
+En quelques chiffres, Inato, c'est une belle levée de fonds cette année pour accélérer
+la croissance sur les prochains mois.
+On est 45 employés, répartis entre les États-Unis et la France.
+On est en remote first, ça veut dire que le mode part des faux,
+chez Inato, c'est le mode remote, mais on a quand même des locaux assez sympas à Paris.
+Depuis deux ans, depuis le lancement de la marketplace, on a pu sélectionner des hôpitaux
+pour 46 études cliniques à travers 11 labo pharmaceutiques et aujourd'hui, on donne
+la chance à plus de 2600 hôpitaux de candidatés à des études cliniques à travers 66 pays.
+L'équipe d'attache et Inato, elle s'organise en trois piliers.
+On a un piliers-piliers-cors dont le rôle est de mettre à disposition de la donnée.
+Sur ce piliers-là, c'est tous les dates à l'analyse qui contribuent et ensuite on
+a deux piliers qui sont au contact de nos clients en interne.
+Le premier, c'est le piliers business intelligence où là, nos interlocuteurs,
+ça va être les équipes sales, les équipes marketing, les équipes customer successes
+et notre rôle, ça va être de leur apporter soit des analyses, soit du reporting pour qu'ils
+puissent prendre des meilleures décisions au quotidien.
+Ensuite, on a la partie product analytics qui est du coup un poll dédié où là,
+le rôle des analyses, ça va être d'accompagner les product managers dans le
+développement produit orienté par la donnée.
+On a une vision globale, long terme dans l'équipe data, c'est de faire une plate-forme
+self-service, de promouvoir un maximum le self-service pour que l'équipe data soit
+pas un goulot d'étranglement pour la prise de décision et pour augmenter la culture data au sein d'entreprise.
+Du coup, pour passer à France, France, pour ceux qui ne connaissent pas, c'est un hub de
+communication qui permet d'agréger plein de canaux de communication différent, donc ça peut
+être WhatsApp, email classique, ddm Facebook ou Instagram et de les redistribuer sur la bonne
+équipe et les bonnes personnes.
+La proposition de valeur de front, c'est vraiment d'associer efficacité opérationnelle et des
+relations clients qui restent fortes parce qu'on garde la valeur humaine ajoutée.
+Pour parler rapidement de front, on a aussi fait une levée de fond l'année dernière qui nous
+permet d'être un peu plus serein face à l'environnement un peu macro-économique en ce moment,
+mais de rester ambitieux.
+Aujourd'hui, on est à peu près 250 employés entre les bureaux de San Francisco, les bureaux de
+Paris et Dublain et on a à peu près 8000 clients qui payent des licences de façon annuelle.
+La team data chez front, elle est un peu structurée différemment, elle va être plus transverse sous
+différentes organisations.
+Donc on a une partie business operation qui va être sous la direction financière avec
+d'abord des data analys qui vont avoir pour interloputeurs privilégiés, logo to market,
+donc des sales, des customer success, une partie stratégie bizops qui va traiter des
+sujets tels que la refonte du pricing, ce genre de choses, donc des sujets très strat et une
+partie data engineer qui va être responsable de nous donner de la donnée structurée, clean et
+fraîche.
+Et de l'autre côté, on a l'équipe product analytics dont je fais partie qui, elle, dépend de la
+direction product engineering design parce que ce sont eux nos interlocuteurs privilégiés et cette
+équipe, elle est séparée entre les deux continents pour être au plus près des équipes qu'on assiste,
+qui sont, elles, séparées entre son franco et paris.
+Voilà un peu pour le tour.
+Donc merci pour l'intro, on espère que vous avez bien compris le contexte de chacune des chez
+Inato et chez Front, en réfléchissant à comment au mieux présenter le sujet, Louise et Alex ont
+proposé d'expliquer en fait comment les product data analysts interviennent à chaque phase de la
+conception. Et du coup, vous allez suivre tout au long de la présentation, un peu l'histoire de la
+conception d'importe quel produit, de l'identification des opportunités, puis la spécification de la
+solution, le développement et enfin la mesure de succès. Et à chaque fois, Louise et Alex vont
+expliquer un petit peu leur rapport en tant que product data analyst sur chacune de ces phases.
+Donc je pense qu'on peut démarrer avec du coup la partie identification des opportunités.
+Pour que vous compreniez, pour que vous ayez un peu le contexte et que vous compreniez mieux en fait
+là où on va intervenir, je vais commencer par vous expliquer déjà comment il est construit le
+produit Inato rapidement. Donc Inato c'est une Marketplace et le but c'est de sélectionner des
+hôpitaux quand on a une nouvelle étude clinique qui est publiée sur la Marketplace. C'est un peu
+comme sur Airbnb sauf que plutôt qu'avoir un appartement, une annonce d'appartement avec des
+visiteurs, là vous avez une étude clinique et des hôpitaux. Donc ça commence par déjà une
+étude qui est publiée, une annonce pour une étude qui est publiée sur la Marketplace et là à
+partir de là, ce qu'on va faire c'est en interne, on va regarder quels sont les caractéristiques de
+l'étude, on va regarder quels sont les caractéristiques de nos hôpitaux et on va identifier quels
+peuvent être les bons candidats potentiels pour une étude. Quand on les a identifiés on va les
+contacter pour qu'il soit au courant qu'il y a une étude pertinente pour eux sur la Marketplace.
+La deuxième étape c'est pour les hôpitaux qui seraient intéressés, ils peuvent du
+coup se connecter sur Inato et là ils doivent remplir un formulaire qui est quand même assez long
+dans lequel ils vont mettre tout un tas d'enseignements qui vont nous permettre de savoir si ça peut
+être des bons candidats ou pas. Donc nous on reçoit ces candidatures et à partir de là on
+a des équipes d'experts en interne qui vont revoir la candidature et qui vont recommander
+uniquement les bonnes candidatures au labo pharmaceutique, au sponsor. Et enfin la sélection
+finale c'est le labo pharmaceutique qui va la faire, il va dire je vous fais confiance Inato
+sur cette recommandation, on sélectionne l'hôpital. Du coup deux exemples d'initiatives
+produits sur lesquelles je vais revenir pendant la présentation. Un c'est un planificateur
+d'essai qu'on a fait qui permet à partir de quelques prérequis donc par exemple une maladie
+de estimer combien à peu près d'hôpitaux on pourrait avoir qui seraient de bons candidats et à
+partir du passé d'essai de déterminer à peu près combien d'hôpitaux on pourrait sélectionner.
+Ça c'est un outil qui est dans le produit qui a été construit et la deuxième initiative
+produit c'est un petit questionnaire qu'on met avant la candidature et qui va permettre aux
+hôpitaux de savoir très vite avant qu'ils remplissent le long formulaire, très vite si ça peut être
+des bons candidats ou non et donc ça leur permet de sortir de manière autonome du process
+et de gagner du temps à part remplir la candidature et pour nous gagner du temps à pas revoir des
+candidatures qui seraient de mauvaise qualité. Donc on revient à identifier les opportunités. Le chef
+de produit son objectif c'est d'améliorer la performance de ce cinéma. Améliorer la
+performance ça veut dire faire en sorte qu'on a le plus possible d'hôpitaux qui passe d'une étape
+à l'autre. Et c'est là où l'équipe d'Atal va intervenir pour la première fois en construisant
+un outil de reporting qui permet de piloter la performance du tunnel. Donc là vous avez vu
+un tunnel en quatre étapes juste avant. Là on a un reporting avec un tunnel qui est plus détaillé.
+L'avantage de ce type de reporting il y en a deux. Quand c'est du reporting sur quelque chose qui est
+coeur d'activité déjà il est utilisé par plusieurs équipes. Il n'y a pas que les équipes
+produits qui vont le regarder. Il y a aussi les équipes sales, les équipes opérationnelles. Donc
+on a beaucoup d'utilisateurs et donc un gros impact. Le deuxième avantage c'est que c'est
+complètement self service. Il n'y a pas besoin d'un data analyse. Il y a besoin d'un data analyse
+pour construire le dashboard mais il n'y en a pas besoin pour analyser les résultats, trouver des
+opportunités produits. Par exemple dans ce cas là en fait les deux cases qui sont encadrées. La
+première c'est le nombre de candidatures qui ont été soumises. La deuxième c'est le nombre de
+candidatures qui ont fini par être recommandées. En regardant en analysant les chiffres en voyant
+ce tunnel les product managers ont vu qu'on avait un gros drop. On perdait beaucoup d'hôpitaux et
+ils en ont conclu qu'on passait beaucoup de temps sur des candidatures qui étaient de mauvaise
+qualité. Ça a donné lieu à une initiative produit qui était réduire ce nombre de candidatures
+de mauvaise qualité en mettant un formulaire tout au début pour identifier très tôt quelles
+sont les mauvais candidats et essayer de les sortir le plus rapidement possible. Ce type
+de projet dans une équipe data c'est important de les prioriser et d'accorder le bon nombre de
+ressources parce que s'il est bien fait en fait vous économisez beaucoup de temps sur les demandes
+d'amélioration qui vont perturber les équipes data ou gérer des bugs qui vont aussi perturber
+le flow du équipe data. Donc ça ça permet de faire un peu l'identification du premier niveau
+mais en général quand on fait de l'exploration les product managers ils veulent en savoir plus et
+ils vont commencer à demander pourquoi ils vont commencer à vouloir aller plus dans le détail et
+là un dashboard ça suffit plus. Dans ce cas là le data analyst du coup va vouloir commencer à
+creuser les questions et il ne voudra pas repasser deux semaines à concevoir un dashboard parce que
+en fait les réponses il en a besoin maintenant et donc les outils que l'outil qu'on utilise nous
+en chinato c'est pas du dashboarding c'est des notebooks SQL. Les notebooks SQL c'est un peu
+comme une page word sauf que dedans vous pouvez intégrer du code pour récolter de la donnée et
+vous pouvez visualiser vos analyses et vous pouvez mettre vos enseignements. Là je vous ai mis
+un exemple où vous voyez le haut du document mais en fait il continue encore où on met la
+première analyse qu'on met en général dans nos notebooks à savoir on rappelle le périmètre
+super important pour toujours comprendre de quoi on parle s'assurer qu'il n'y a pas de billets et
+donc vous pouvez voir là sur le screenshot vous avez déjà le contexte ensuite vous avez un morceau
+de code c'est du SQL pour ceux qui connaissent vous avez la question à laquelle on veut répondre
+la visualisation et l'enseignement. Ici c'est un notebook SQL ospreay que vous voyez ici c'est une
+boîte lyonnaise d'ailleurs pour ceux qui connaissent et du coup ça a vraiment à changer la
+donne en interne depuis qu'on utilise cet outil là parce que quand on veut lancer une analyse du
+coup on est beaucoup plus réactif beaucoup plus rapide on n'a plus besoin de faire un peu d'analyse
+sur un outil mettre nos enseignements dans un outil de documentation tout est centralisé au même
+endroit et donc c'est plus facile à maintenir parce qu'on n'a pas besoin d'aller à différents
+endroits pour rafraîchir l'analyse et surtout ça a beaucoup amélioré la collaboration avec les
+product managers parce qu'en fait ça rendait les toutes les analyses beaucoup plus accessibles
+parce que mettre à jour c'était automatique avec les outils pareil que Spray en l'occurrence
+on peut mettre à jour toutes les heures tous les jours comme on le souhaite et surtout on a une
+intégration avec Notion qui est notre outil de documentation qui permet en fait de directement
+avoir ce doc sans le code qui va peut-être moins intéresser le product manager directement ce
+document transformé en page Notion qu'on peut directement mettre dans la documentation du product
+manager donc lui en fait il a tout le contexte même toute son analyse au même endroit et il a
+accès plus facilement à tous les résultats et ça facilite beaucoup la collaboration notamment
+dans un environnement qui est à synchrone, full remote comme chez Inato.
+Très bien merci beaucoup Alexandre pour la présentation c'est hyper clair et je pense que
+du coup ce petit notebook là ça parlera à tous les états scientistes qui sont dans la salle
+ce petit bout de SQL finalement ça représente bien l'échange qui est entre le produit et
+data. Toi Louis c'est front comment ça se passe un peu le produit et finalement la
+spécification au début pardon la détection des besoins qu'on a au début de projet comme celui-là.
+Alors du coup une fois donc Alex a mentionné le fait que le data analyse va débloquer ou aider
+le product manager à identifier des problèmes une fois que ces problèmes sont identifiés et que
+le PM a déjà une ébauche de solution. Là le product analyse va également intervenir pour
+essayer de saisir l'impact que pourrait avoir cette potentielle solution. Je vais juste prendre
+un exemple chez front une des propositions de valeur de front c'est d'automatiser un certain
+nombre de process qui n'ont pas de valeur humanité grâce à des règles donc ça peut être si vous
+regardez l'exemple que j'ai mis en bas un email arrive notre client a créé un certain nombre
+de règles qui sont exécutés cette conversation donc cette email va être taggée avec des tags
+spécifiques qui vont permettre de donner un peu plus de contexte à la prochaine personne qui
+va ouvrir la conversation et ensuite ce tag va déclencher la redirection vers la bonne équipe
+et l'assignation à la bonne personne qui va devoir traiter la conversation entre autres. C'est
+vraiment l'exemple sur lequel je vais appuyer tout au long de la présentation pour front. On a
+eu ce cas chez front comme dans tous les boîtes d'un PM qui arrive en nous disant on sait que nos
+gros clients utilisent vraiment front et utilisent les règles et il se trouve qu'il y en a certains
+qui ont des milliers de règles parce qu'ils trouvent que c'est génial mais ils se rendent compte que la
+gestion du coup de ces règles devient très compliquée parce qu'à chaque fois qu'on fait une nouvelle
+modification il faut aller chercher dans la liste des règles trouver la bonne la modifier et vérifier
+que ça n'impacte pas les règles suences. Donc le PM fait son travail de recherche trouve des
+exemples parmi ses clients et essaie de comprendre ce qu'ils font spécifiquement et il se rend compte
+qu'on a un client qui en fait duplique un certain nombre de règles. Il y a une conversation qui
+arrive il veut la taguer avec la région du monde à laquelle ça appartient et la rediriger l'équipe
+qui s'occupe de cette région du monde sauf qu'il a 100 régions donc il doit s'occuper donc il a
+100 règles différentes, 100 versions de règles différentes qui ont la même structure. On se
+dit ok solution on va avoir une règle avec une structure et plein de variations possible dans
+un tableau ça va être beaucoup plus facile à gérer. Le PM vient de voir et me dit est-ce qu'on
+construit ça juste pour ce client qui est énorme qui paye très cher front est-ce qu'on est sûr
+que l'on se lance dans ce développement et du coup là le product analyste va avoir la valeur
+d'arriver avec un sizing précis de ok il y a 200 clients qui sont impactés potentiellement par
+ce projet je pense qu'on peut y aller. Donc ce qu'on a fait nous product analystes on a essayé de créer
+un fingerprint pour identifier chaque structure de règles qui peut être assez compliqué parce qu'on
+a plein de conditions, plein de connecteurs logiques, plein d'actions différentes. Une fois qu'on a
+construit ce fingerprint on valide avec les équipes techniques que la logique qu'on a prise elle
+correspond avec l'implémentation qui vont en faire ensuite et on identifie ensuite les clients
+potentiels. Du coup ça a été vraiment notre analyse qui a permis de se lancer sur le projet et en
+plus de ça on a réussi à prioriser les différentes briques d'implémentation et de commencer par la
+structure qui avait le plus d'impact. C'était le tagging donc c'était souvent les règles qui
+pouvaient être coupées c'était souvent des règles de tagging donc on s'est dit ok on va commencer
+par ça peut-être que ce sera une demi solution mais au moins on va essayer de toucher le plus de
+monde avec cette première solution. Merci beaucoup. Du coup maintenant qu'on a une bonne image de
+Inato et Front qu'on voit comment utiliser un peu la data sur cette première étape ensuite
+l'étape suivante on l'a vu au début c'est la spécification du besoin. Quid de la spécification
+de besoin. Côté spécification je reprends un exemple chez Front toujours sur les règles donc on
+oublie un peu les gros clients sur lesquels on a travaillé pendant des mois et on se rend compte
+enfin on sait que beaucoup de nos petits clients n'exploitent pas front comme ils le devraient et ne
+créent pas de règles. Du coup le PM réfléchit à une nouvelle expérience d'unboarding qui va
+amener les gens plus facilement vers cet espace de règles où l'administrateur de front va pouvoir
+créer ces règles et il pense aussi à catégoriser les différentes règles de montrer à l'utilisateur
+tout ce qui est possible de faire avec Front sous différentes familles qui sont vraiment tournées
+actions avec Front tu peux taguer tes conversations qu'est ce que ça veut dire ça veut dire que
+tu peux donner plus de contexte à tes collaborateurs ensuite tu peux les assigner à la bonne personne
+en fonction de leurs skills de leurs de leurs charges de travail et avec cette ce
+nouvelle espace de règles on a aussi créé un certain nombre de recettes de templates de règles
+déjà prêts que nos clients pouvaient utiliser directement sans avoir à se poser trop de questions
+le PM arrive avec cette solution ces designs qui sont très beaux et un certain nombre de
+règles de recettes prédéfinies et là vient la question de valider toutes ces règles et l'équipe
+productinétique ça a été vachement impliqué dans dans cette partie là parce qu'en fait on a
+créé un peu une une boucle de d'itération entre le produit le design et le data analyst pour
+finalement valider que les rétemplaïs étaient les bons et qu'il n'en manquait pas et de prendre
+des décisions sur l'exacte recette qu'on allait proposer à nos utilisateurs donc les questions
+auxquelles on a répondu en fait on a utilisé l'existent on allait voir dans nos différents clients
+on a essayé de les segmenter entre ceux qui exploitent front de la bonne manière et qui
+gagnent en efficacité avec l'automatisation ce qui ne le font pas ce qui le font qui continue
+en place est ce qu'il n'y a pas des choses qui utilisent que nous on aurait oublié de mettre
+dans nos templates parce qu'on a décidé de pas faire 150 templates différents on a vraiment
+essayé de se restreindre à ce qu'il y avait de plus de valeur pour nos clients dès le début
+et du coup c'est comme ça qu'on a vraiment impacté les décisions produits et design
+au moment des spécifications
+mon côté je vais vous donner un exemple de comment on a utilisé au moment de la conception
+comment on a utilisé la data pour essayer d'anticiper toutes les possibilités de ce qui pourrait
+apparaître à l'écran d'un utilisateur pour contrôler on ne va pas avoir des cas des
+cas un peu des effets de bord qu'on n'aurait pas antipé donc là je vais revenir sur le cas du
+planificateur des scènes dont je vous ai parlé tout à l'heure pour rappel le but de cet outil
+qui est dans le produit c'est à partir de quelques points d'entrée donc là en l'occurrence à partir
+d'une maladie de savoir à peu près combien d'hôpitaux on pourrait proposer à un sponsor
+en tout cas combien d'hôpitaux on pourrait contacter et compte tenu de ce qui s'est passé dans le
+passé à peu près combien d'hôpitaux on serait susceptible de recommander à un sponsor donc là
+en haut vous avez le sélecteur dans lequel vous avez 406 possibilités de maladies et en bas
+ce qu'on a rajouté c'est un top 3 donc on a fait un classement pour chacune des maladies on a
+fait un algorithme pour chacune des maladies on va proposer les trois hôpitaux les plus pertinents
+pour cette maladie là et donc au moment des débuts de la conception on a commencé à tester et
+on a du coup un membre de l'équipe produit l'ux designer qui en faisant des tests s'est aperçu que
+en fait même quand il changeait la maladie on avait régulièrement le même top 3 qui
+apparaissait donc là il a commencé à avoir un doute pour essayer et c'est là où l'équipe data
+est rentré en jeu pour essayer de confirmer ce doute et essayer de voir à quel point c'était
+vrai est-ce que c'était vrai partout et ce qu'on pouvait expliquer pourquoi ben on avait cette
+redondance du classement même quand on changeait les maladies donc ce qu'on a fait c'est que
+ben vu que nous on a accès à la donnée qui alimentent le dashboard on a repris la donnée et
+on a projeté toutes les possibilités de choix dans le dans le sélecteur de maladie et ça nous a
+permis de reconstituer en utilisant l'algorithme reconstituer à chaque fois le top 3 qui sera
+affiché et ensuite ce qu'on a fait va c'est qu'on a un peu agréger ses résultats pour les rendre
+plus digestes on les a regroupés par catégories de maladies par groupes de maladies et on a pu
+constater cette redondance et en fait on a vu que ben on avait beaucoup de redondances donc beaucoup
+de fois le même top 3 que sur certains groupes de maladies et c'est des groupes de maladies en
+fait qu'on connaissait bien parce que c'est les groupes de maladies sur lesquels on a beaucoup
+de maladies mais non on n'a pas beaucoup d'expérience et ce que fait l'algorithme en fait c'est qu'il va
+récupérer les trois meilleurs hôpitaux sur la maladie sur lequel on a fait les études et il va
+extrapoler ce top 3 sur l'ensemble du groupe de maladies et ça ça faisait partie de l'algorithme
+en fait on aurait pu peut-être y penser mais c'était là ça a permis de confirmer une intuition
+via juste une analyse chiffrée qui n'a pas forcément pris trop trop de temps mais qui a
+permis de expliquer ce que pouvait constater un utilisateur quand il allait utiliser le produit
+et du coup rassurer sur les choix qui avaient été fait au moment de la conception de l'algorithme
+et du coup ça a permis d'avancer en validant que l'algorithme qu'on avait choisi c'était le bon
+et on a pu aussi briffer les équipes en interne qui ont utilisé l'outil sur pourquoi est-ce qu'ils
+pouvaient s'attendre à parfois voir les mêmes résultats dans ce fameux top 3
+super intéressant merci du coup maintenant qu'on a bien vu qu'il y avait une opportunité il y avait
+un besoin on l'a bien spécifié maintenant l'étape finalement qui en découle c'est le
+développement comment la data s'intègre dans cette partie là
+alors sur la partie développement l'équipe data c'est pas elle qui construit la feature
+c'est des ingénieurs mais nous on va intervenir pour préparer l'étape d'après qui est la mesure
+en rajoutant du tracking donc au moment donné où les équipes d'ingénieurs conçoivent le produit
+ou intègre la feature ils peuvent rajouter des bouts de code qui vont permettre d'analyser ensuite
+par la suite avec des outils appropriés d'analyser comment les utilisateurs interagissent avec
+le produit et donc cette question du tracking c'est un peu une question un peu compliquée parce que
+on peut tout traquer en fait on peut traquer n'importe quelle interaction avec n'importe quel bouton
+on peut remonter tout un tas d'informations quand on met du tracking et du coup il y a un peu la
+question de qui s'en occupe qui décide qu'est ce qu'on met c'est quoi les règles et donc il y a
+cette question de qui s'occupe du tracking chez natto historiquement l'équipe data n'a pas trop
+regardé le tracking parce que pour la mesure de succès donc en général le tracking c'est pour
+mesurer ensuite le succès d'une fonctionnalité faire du monitoring nous on n'avait pas besoin de
+cette donnée tracking parce qu'on regardait de la donnée en base de données dans la base
+donnée de l'application qui elle est 100% fiable et compte tenu de nos volumes on voulait vraiment
+avoir cette fiabilité et qu'il est suffisante pour savoir si une fonctionnalité c'est un succès
+homme cela dit du coup en parallèle l'équipe produit elle elle rajoutait quand même un peu
+de tracking mais elle le faisait avec ses propres règles et ce qu'on a remarqué c'est que aujourd'hui
+on commence à regarder un peu les événements de tracking parce que on commence à regarder un peu
+dans le détail en fait ce qui se passe en termes d'interaction on va regarder si un utilisateur
+il a utilisé tel filtre parce qu'on a rajouté ce filtre là et on s'attend à ce que ça améliore la
+navigation par exemple et on a constaté que quand on regarde ce qui est traqué depuis plusieurs mois
+parfois on a du mal à retrouver certains événements parfois c'est pas clair au niveau du nom qu'est-ce
+qui est traqué en fait qu'est-ce que ça veut dire dans les interactions sur le sur le produit et
+parfois il va manquer de l'information quand on va traquer un clic par exemple on a envie de savoir
+si la personne qui a cliqué c'est un hôpital ou un sponsor ou un utilisateur interne et parfois
+il manquait cette information et du coup on est en train de revenir un petit peu de ce monde où
+c'est plutôt l'équipe produit qui fait le tracking pour vers un monde où en fait on a envie de mettre
+en place la place des règles. Nous côté front c'est un peu différent c'est plutôt le product
+analytics qui est responsable de ça du tracking parce que c'était fait comme ça depuis le début
+du coup les points positifs c'est que celui qui met en place le tracking c'est aussi celui qui va faire
+l'analyse donc il va s'assurer que le tracking est bien en place avec les bons noms et que c'est
+bien envoyé au bon moment donc a priori on devrait avoir une data qui est vraiment fiable pour l'analyse.
+Le problème dans nos petites boîtes et nos petites équipes product analytics c'est que ben
+il n'y a pas un product analyst sur chaque projet et il y a plein de choses qui sont développées à
+côté sur lequel il n'y a pas il n'y a pas de tracking et quand on veut y revenir parce qu'on
+commence à s'intéresser à cette fonctionnalité là on est un peu coincé. Du coup à la fois chez
+front et chez inato on est en train de se poser enfin pas de se poser question mais de travailler
+pour arriver au plus près d'un monde idéal où toutes les règles donc sur le nom des événements
+et le contexte associé donc tous les petits trucs dont on a besoin pour utiliser au mieux les
+événements tracking ça peut être des clés pour les ramener à la data du backend par exemple.
+Ça ces règles elles doivent être inébranlables elles doivent être créées par pensée par la
+team data et de l'autre côté une fois qu'on a fait ça on va essayer enfin on est en train d'essayer
+de transférer la responsabilité de la création des événements plutôt côté produit et tech.
+Par exemple en rajoutant une nouvelle étape dans le processus de QA à la fin du
+développement et que ce soit les ingénieurs qui soient responsables d'ajouter le tracking en suivant
+les règles qui sont établies par la team data au préalable. Voilà notre monde idéal et on espère
+y arriver un jour. Bientôt. Du coup maintenant qu'on a développé notre figure et moi qui répond
+en besoin qu'on a réussi à le traquer dans ce monde idéal avec des superbes mesures qu'est ce
+que c'est la dernière étape ? Oui sur la dernière étape donc le tracking a été mis en place souvent
+ce qu'on a fait en amont on en parle ici dans cette étape de mesures du succès parce que ça a plus
+de temps mais c'est souvent quelque chose qu'on fait dans les premières phases d'un projet c'est
+de définir comment on va mesurer le succès d'une nouvelle fonctionnalité de ce qu'on est en train
+de développer et le fait de le définir avant permet aussi de mettre en place le tracking qui est
+nécessaire et d'être sûr qu'on va pouvoir mesurer ce qu'on avait fini au début. Pour revenir
+à l'exemple de front toujours autour des règles je vous ai parlé de cette nouvelle expérience
+d'unboarding avec les PM on sait vraiment enfin on a vraiment fait une réunion de cadrage autour
+de ce projet pour essayer de voir comment est-ce qu'on allait mesurer le succès de cette nouvelle
+expérience qui changeait complètement l'unboarding de nos clients donc on a décidé de regarder
+étape un peu étape par étape avec d'abord est ce que nos clients complètent l'unboarding et
+suivent la checklist qu'on leur a proposé ensuite une fois qu'ils arrivent sur ces nouvelles
+espaces de règle est ce qu'ils ont vraiment une vraie découverte de ce qu'on leur propose
+et ce qui finissent par utiliser les règles et ensuite plus compliqué est ce que ça a vraiment
+un impact sur leur conversation est ce qu'elles sont vraiment impactées par un processus d'automatisation
+est ce que ça leur permet de gagner en efficacité donc ça c'était notre framework de mesure ce qu'il
+a fallu ensuite faire c'est de définir les targets qu'on voulait mettre à chaque étape et le
+plus compliqué dans ce projet ça a été de définir le timing sur lequel on voulait regarder
+ces différents événements parce qu'on sait qu'un processus d'unboarding sur un outil peut
+prendre plusieurs mois dans une boîte et c'est vrai que le timing du coup c'est un gros sujet
+dans la mesure et c'est en particulier c'est un sujet chez nato qui est une boîte bitoubi
+pour deux raisons déjà qu'on a envie de faire de la mesure on va avoir beaucoup de résultats
+mesurer des grands écarts pour avoir des chiffres robustes et du coup chez nato faire tout le funèle
+ça peut prendre jusqu'à plus de deux semaines et vu qu'on est sur du bitoubi on n'a pas forcément
+des gros volumes donc le timing pour la mesure c'est vraiment un enjeu essentiel et là je vais
+vous montrer un exemple où en fait la mesure de succès qu'on avait définie à la base
+finalement on l'a un peu relégué en deuxième place pour choisir plutôt privilégié une mesure
+de succès pour lequel on aurait une mesure plus rapide pour le contexte je reviens sur l'auto test
+donc je parlais tout à l'heure donc pour rappel auto test le but c'est que des hôpitaux
+ils fassent ce petit formulaire en début de candidature à partir de ce petit formulaire on leur dit
+de manière automatique si ce serait des bons candidats ou peut-être qu'en fait c'est pas pour eux
+cette étude clinique le but c'est qu'on écarte plus rapidement les mauvaises candidatures que
+du coup nos équipes d'experts en interne elles et moins de mauvaises candidatures à revoir et du
+coup qu'on ait des meilleures taux de recommandation et qu'on se concentre que sur des candidatures
+plus qualifiées là vous pouvez voir à gauche c'est ça le message que un hôpital y reçoit justement
+quand il a rempli ce petit formulaire on lui dit ben automatiquement voilà pour telle et telle
+raison vous ne seriez pas vous seriez pas un bon fit pour la pour l'étude et on leur donne
+la possibilité de sortir du process à ce moment là et donc en termes de définition de mesures de
+succès en fait en général la mesure de succès c'est ben la mesure du problème qu'on a eu à la
+base quand on a fait l'exploration et à la base quand on a fait l'exploration parce qu'on avait
+constaté c'est que on avait dans le funèle on avait une grosse perte entre deux étapes et nous
+ce qu'on veut ben c'est réduire cette perte le problème c'est que à partir du moment on lance
+la fonctionnalité pour vous constater qu'on a amélioré la situation ça va nous prendre à
+peu près deux mois le temps que on ait suffisamment de résultats pour que on puisse conclure sur
+l'efficacité de la fonctionnalité de moi ça fait trop pour pouvoir prendre des décisions
+yterrer et s'améliorer du coup on est en a changé en fait de mesures de succès et en
+fait ce qu'on s'est dit c'est qu'on allait regarder une autre mesure qui est le pourcentage des
+hôpitaux qui appuie sur le bouton vert en fait et normalement si la la recommandation le diagnostic
+est bien fait et que quand on dit qu'un hôpital est un mauvais candidat ben en fait c'est
+effectivement un mauvais candidat et qu'il appuie bien sur le bouton vert normalement en bout de
+chaîne on devrait voir une amélioration de l'objectif business la première mesure qui
+était défini sauf que grâce à cette mesure en fait on peut avoir des résultats beaucoup plus
+nombreux et en un temps beaucoup plus réduit et ça notamment ça nous a permis du coup de passer
+de deux mois à deux semaines et ça nous a permis de mesurer plus rapidement l'efficacité de la
+fonctionnalité et de plus rapidement réagir quand on a vu que au début notamment en fait les gens
+appuyer pas beaucoup sur le bouton vert donc en fait on a rajouté des contraintes ça nous a permis
+d'être beaucoup plus réactifs et d'iterrer beaucoup plus rapidement sur sur le produit
+et ça permettait de boucler la boucle ok je pense que ça fait une belle histoire de comment la
+data contribue au développement de produit et du coup c'est voilà c'est quoi la suite pour vous
+ouais du coup nos priorités dans l'équipe data pour les pour le prochain trimestre donc au-delà
+des projets qu'on a en cours on en a parlé c'est le tracking donc définir des règles pour
+que en fait ça soit simple de définir un plan de tracking quand il y a une nouvelle fonctionnalité
+qu'on se pose pas tout le temps à milliards de questions sur comment on nomme qu'est ce qu'on
+met comme règle et ça c'est l'équipe data du coup qui va prendre l'onarchie pour créer cette
+standardisation en partenariat avec l'équipe produit et le deuxième point c'est le seul service
+j'en parlais tout à l'heure nous on veut promouvoir le self service que les personnes en interne
+puissent explorer la donnée de manière autonome on a fait un gros travail d'organiser mieux nos
+données par le passé aujourd'hui on veut mieux documenter pour que n'importe qui qui va consulter
+les données qu'on a dans nos systèmes puisse voir chaque colonne chaque point de données à quoi
+il correspond et que ça soit facile pour lui ensuite de pouvoir l'analyser ça ce sera encore
+après chez front on a à peu près les mêmes défis donc toujours autour du tracking c'est
+quelque chose sur lequel on veut pas mal investir parce qu'on se rend compte qu'on passe beaucoup
+de temps là dessus et on espère avoir quelque chose de standardisé et de pouvoir transférer du coup
+cette cette responsabilité aux équipes produit et tech on fait assez peu d'exploration self service
+et donc on va essayer de de mettre plus d'efforts sur cette partie là parce qu'on
+n'a pas assez de data analyse pour couvrir toutes les parties de notre produit et avec la team data
+vraiment transverse on est un peu en train de re-réfléchir notre stack d'outils de data
+de data visualisation et d'exploration parce que c'est à faire un moment qu'on utilise les mêmes
+qu'on commence à avoir de nouveaux besoins et du coup on est en train de faire un peu une
+rétrospective sur ce qu'on doit garder ce qu'on doit changer et voilà nos défis front-inato c'est
+ça tourne un peu tout le temps autour de l'enjeu de dégager du temps et du focus pour le produit
+data analyst pour qu'il ait en fait plus de valeur pas forcément à créer des dashboards
+de sensès ou à répondre à des petites requêtes mais de consacrer la plupart de son temps sur des
+projets où il va vraiment avoir une valeur ajoutée qui pourrait pas être fait automatiquement du
+cours en mot de la fin vous voulez partager une bonne pratique qu'on a qu'on a constaté en général
+le data analyst il peut adresser plusieurs types de besoins il va avoir plusieurs interlocuteurs
+dans différentes équipes et du coup il pourrait avoir des organisations où le data analyst il va
+parler avec les équipes customer success sales etc et en même temps en parallèle travailler sur
+les sujets produits et on pense que c'est pas la meilleure organisation l'organisation qui marche
+la mieux c'est quand il ya un data analyst qui est dédié aux enjeux produits et qui
+travaille en collaboration avec le product manager le designer l'engineer qui fait partie de l'équipe
+en fait du développement produit ça permet de développer des skills spécifiques je parlais
+de tracking c'est vraiment particulier au produit les sujets de mesure de succès c'est assez
+particulier au produit aussi il ya aussi le fait de changer de contexte avoir tout le contexte
+depuis les premières étapes d'exploration jusqu'à la mesure de succès sans changer tout le temps
+de problématique ça permet vraiment d'avoir le focus dont par les louises et ça permet de ce
+qu'on a vu d'avoir un vraiment un impact maximum avec ce type d'organisation et c'est le mode
+d'affrontée est-ce qu'il y a des questions dans la salle oui et que j'y vais avec ça c'est ça je
+demanderai la technique moi j'ai une petite question sur les ressources
+franchement ce que c'est le nair de la guerre les ressources data pour le produit surtout
+ma question c'est dans quelle mesure les product product manager honneur ils sont autonomes en
+data et où ils dépendent vraiment de l'heure d'attacher ce qui est rattaché du coup ce qu'on
+n'ont pas comment ils font comment ils ont fait comment ils feront alors chez natto je donne
+l'exemple un peu de chez natto il ya différents types de profils il ya donc il ya des product
+manager qui s'appelle déjà utilisé SQL et dans ces cas là ce qu'on va faire en général le
+maître mot c'est de développer un maximum l'autonomie pour libérer du temps et donc donner
+les bons outils pour que la personne puisse de manière le plus pro le plus automne possible
+faire les analyses et donc pour un prém qui s'est bien utilisé du SQL c'est lui donner de la bonne
+documentation les bons outils pour qu'ils puissent faire l'exploration par exemple et pour un product
+manager qui n'a pas des compétences SQL pour aller explorer par lui même c'est plutôt mettre à
+disposition un maximum de dashboard reporting qui permettent de faire l'exploration autonome et la
+partie tracking aussi c'est quelque chose qui permet notamment au product manager d'utiliser des
+outils d'analytique justement pour pouvoir faire des analyses un peu d'autonomie c'est un peu comme
+ça que faisais avant qu'il y ait avant que j'arrive par exemple chez nato que l'équipe produit
+faisait les analyses c'était via le tracking du coup c'est juste dev et product ouais c'est ça
+c'était ça le contexte chez nato en fait c'était que c'était dev et product qui faisait le tracking
+et les problèmes du coup qu'on a rencontré c'est que sur le long terme après on a plus de mal à
+s'y retrouver mais au début ça fonctionne nous du coup je pense que chez nato c'est la même
+chose mais on a à peu près un data analyse pour trois équipes produits enfin produits tech donc
+forcément on ne peut pas suivre tous les chaque projet et il y a des squads enfin des équipes
+qui ne sont pas supportées par un data analyste dans ces cas là ce qu'on essaye de faire c'est
+justement d'avoir soit des ingénieurs imageurs soit des techs qui peuvent se débrouiller un peu
+en SQL et de leur donner en fait soit des tables déjà agrégées déjà enrichies avec la documentation
+sur lesquelles ils vont pouvoir travailler un peu en autonomie et là ça va vraiment être du
+consulting de j't'aide à débuiller ta query SQL pour te permettre d'avancer mais je vais pas aller
+plus loin dans l'analyse parce que j'ai priorisé mes projets et ça en fait pas partie et le monde
+idéal c'est fin d'avoir un producte analyst par équipe c'est assez compliqué dans nos tailles de
+boîte ce qu'il y a d'autres questions dans la salle
+merci pour la présentation déjà petite question c'est quoi la structure de vos équipes tech product
+data chez minato chez front le nombre de personnes et les postes chez front il y a pas mal d'équipes
+différentes mais à l'intérieur d'une équipe c'est un product manager souvent un engineering
+manager et si sous cette dev et un designer qui lui pour le coup est souvent associé à une
+équipe en particulier il y a un peu plus de retour sur ce designer et on a eu à une époque
+aussi un UX researcher qui lui s'est occupé plutôt de la partie user interview définissons
+avec avec les nos clients chez minato il y a un peu plus d'une dizaine de software engineers avec
+un engineering manager et après sur la partie produit on a trois product managers qui ont son
+collaboration à chaque fois avec un product designer qui est décollable par périmètre produit et
+quand il y a des initiatives produits ils vont embarquer un ou deux ou trois software engineers
+sur une période de temps limitée qui correspond en fait au développement de la nouvelle fonctionnalité
+et les groupes data du coup en parallèle elle a deux product data analystes aujourd'hui et on
+se répartit en gros les scopes donc il y a trois product managers aujourd'hui on dit il y a pendant
+cette période de temps ce product data analyst il va être avec ce product manager et ce data
+analyst va être avec ces deux autres product managers va s'occuper de ces problématiques
+particulières et toi tu fais partie des deux product ouais c'est ça
+alors moi j'avais une question séparée à l'exemple de tout à l'heure tu sais le designer qui avait
+remarqué qu'il y avait peut-être une erreur est-ce que vous avez un peu interpellé est-ce que vous
+avez des outils en data d'analystes là je sais pas si je peux dire qualité de la data qui est proposée
+c'est à dire scepté d'incroyance voilà d'attaque qui sont proposés et scepté le point de vue d'un
+chiffre d'attaque qui s'en rend compte parce que vous avez des outils automatiques pour détecter
+ces incroyances alors oui en fait grossièrement l'équipe data elle récupère la donnée de
+plusieurs sources de données donc une source de données par exemple ça peut être la base de données
+de l'application et à partir de là on va appliquer plein de transformations pour qu'elles soient
+clean et prêtes à être analysées et au moment de faire ces transformations on utilise un
+outil qui s'appelle dbt dans lequel on peut intégrer des tests et donc en fait on fait des tests de
+à la fois des tests de non-régression enfin des tests de contrôle qualité quoi et ça ça nous
+permet nous d'être sereins quand on fait des changements de voir que si on casse un test c'est
+que probablement on a cassé on a fait une régression et on l'utilise un peu pour faire du
+test de qualité aussi même si c'est pas une très bonne pratique ou par exemple si elle la
+donnée bizarre qui arrive en entrée normalement ça peut enfin on a mis des tests en place pour que
+ça fasse casser la pipeline quoi c'est sans entrer trop en détail il y a un peu les tests
+non-régression on casse rien quand on fait des changements et les tests de qualité pour la
+qualité de ce qui est en source et aujourd'hui on fait tout au même endroit et on aimerait bien
+séparer les deux justement pour faire plus de tests de qualité mais voilà c'est un moyen de le faire
+dbt les tests nous on fait à peu près pareil alors on n'a pas dbt mais sur airflow notre date
+à ingénieur il met pas mal de tests de d'alertine en place si jamais un moment collecte pas assez de
+données ou ce genre de choses et après en fin de fennel on a un peu des choses qu'on a mis en place
+à l'intérieur de la team data où on on reporte des métriques qu'on suit ça nous permet à la
+fois de vérifier qu'il n'y a pas quelque chose qui s'est cassé mais aussi de détecter un problème
+qui arrive chez chez nos clients donc c'est un peu en entrée en sortie de fennel donc ça c'est
+davantage et c'est inconvénient il y a pas mal d'outils qui existent vraiment sur la partie
+qualité de données comme monté carlot ou des choses comme ça où là il y a des choses plus
+fines que tu peux mettre en place mais du coup c'est un setup c'est un outil un setup assez complet
+moi j'ai une question surtout dans vos équipes la priori comme vous avez dit vous
+avez pas de produit data analystes par par par pm du coup c'est quoi vos cérémonies comment
+vous faites pour que le produit data analyst il soit quand même dans le métier qui est la
+convention du produit du du métier pour avoir des analyses qui sont qui sont pertinentes en fait
+voilà quel regard vous avez avec le produit avec les pm avec pour transmettre cette compétence
+culture produite alors du coup nous chez frontes les product analytics ils ont quand même un scope
+assez défini même si on va pas supporter tous les projets de toutes ces squads moi je m'occupe
+que des équipes qui sont à paris et je vais pas forcément bosser sur d'autres sujets donc c'est
+un premier focus où j'ai de l'expertise déjà sur sur sur ces équipes là on participe pour toutes
+les équipes même celles qu'on va pas supporter pendant le quarter aux cérémonies de roadmap
+planning donc nous ça arrive tous les quarters ça permet de définir avec eux de comprendre
+quel projet il est sur lesquels ils vont travailler de définir là où on va nous avoir le plus de
+valeur et se concentrer sur cela et de définir des aucaires globaux et là normalement on est censé
+aider un peu toutes les équipes au même niveau pour qu'ils aient au moins un framework global sur
+leurs aucaires qui en lien avec les projets sur lesquels ils le font et après une fois qu'on a
+plus ou moins priorisé nos projets et qu'on se dit c'est sur cette équipe qu'on va passer le plus de
+temps là moi je vais à presque toutes les cérémonies de la squad donc ça va être les stand-up les
+rétros parfois et j'ai un one-one avec l'EPM pour parler seulement des sujets data voilà et en
+fait on fait un peu une catégorisation comme ça des équipes il ya une équipe dans laquelle on est
+vraiment intégrée et les autres qu'on supporte et donc là forcément bah on va moins de on va
+moins de stand-up on est un peu plus loin et on intervient j'ai quand même des one-one avec les
+épm pour intervenir sur les questions les plus chaudes voilà et chez nato du coup on a un rituel au
+moins hebdo enfin un point de contact hebdo avec le product manager et le software engineer sur
+un sur une fonctionnalité ou un périmètre à particulier donc ce point de contact hebdo c'est
+déjà beaucoup plus fréquent que ce qu'on a sur la partie biaille on fait beaucoup d'asynchrone
+et c'est des échelles de temps beaucoup plus longs donc voilà on a des rituels weekly et on a un
+point de contact quotidien aussi mais dans lequel on ne va pas tous les jours mais dès
+qu'on fait on a des résultats d'analyses à partager on peut on peut se connecter et du
+coup on peut prendre ce temps en ass on a en tout cas cette cette liberté de se connecter pour
+partager des résultats et avoir l'opinion du product manager et du software engineer
+des enjeux un peu standard quant à des équipes qui grossissent et qui se démultiplient c'est de
+partager les mêmes définitions pour les mêmes choses des essorments bêtes on va avoir l'équipe
+commerciale qui passe concentré sur un nombre de clients on va avoir une autre équipe support qui
+va aussi se concentrer sur cette même data et le produit également mais on va tous avoir des
+définitions qui peuvent être légèrement différentes c'est que moi un client pour un
+commercial ça peut être la personne qui a signé un de là ou pour le customer succès ça va être
+quelqu'un qui a au moins un mois d'ancienneté enfin qui est abonné depuis au moins bas comment
+vous faites dans votre respectif pour avoir une définition harmonieuse harmonisée de métriques
+un peu clés je peux donner un exemple en fait en gros le problème que ça s'appose c'est
+qu'en général on a des chiffres on s'attend à avoir le même chiffre à deux endroits différents et
+en fait on a deux chiffres différents et ça en gros en général c'est parce qu'on a des sources
+de vérité différentes donc la source de vérité c'est des méthodes de calculs différentes à deux
+endroits différents la manière dont on a résolu ça en tout cas qu'on essaie de résoudre ça chez
+natto c'est en retravaillant notre modèle de données donc tout à l'heure je parlais de on
+récolte des données et ensuite on fait la transformation et on la met à disposition pour
+faire des analyses au moment de mon arrivée en fait il y avait plusieurs silos de transformation
+ce qu'on a fait c'est qu'on a unifié ce silo de transformation en utilisant justement des
+bt et ça a permis en fait de centraliser les sources de vérité d'un exemple on avait le
+nombre d'hôpitaux qu'on a sur la marketplace on pouvait trouver un dashboard avec un nombre un
+autre dashboard avec un autre nombre parce qu'en fait ça n'interrogeait pas le même la même source
+de vérité ce qu'on a fait c'est qu'on a tout regroupé et donc la liste des hôpitaux en fait
+ça avec une seule table dans laquelle on pouvait la trouver c'est l'équipe d'attache vous parles
+et tout à l'heure l'équipe corps qui est responsable de l'honorship de ces données là et donc ça
+ça nous a permis de résoudre beaucoup beaucoup de problèmes manière concrète ça a permis de
+résoudre beaucoup de questions d'incohérence entre des dashboards parce que du coup on avait
+qu'une seule source de vérité mais voilà. Donc une équipe sentait qu'à l'honorship de ces data
+clés. Oui des data clés. C'est ça. Pour juste rajouter du coup chez Blablacar on y avait
+énormément d'analystes différents qui bossaient sur des sujets différents et chacun avait un peu
+sa propre tambouille ce qu'on a essayé de faire alors que soit avec DBT ou avec Airflow on a un
+ripot githèbre sur lequel toutes nos transformations sont et du coup on essayait un peu de dévangéliser
+toute l'équipe d'atta à utiliser ces tables qui étaient déjà agrégées dans lesquelles les
+indicateurs étaient déjà calculés pour être le plus constant possible. Parfois c'est pas hyper
+simple en fonction de l'outil de visualisation qu'on utilise par exemple chez Blablacar on
+utilisait Tableau. Tableau ça incité pas mal à utiliser des requêtes SQL custom donc chacun
+faisait un peu son propre truc. Aujourd'hui chez front l'équipe goto marquette utilise looker
+où là c'est un peu plus simple de définir déjà des calculs et à chaque fois qu'on rajoute un
+nouveau modèle on doit le définir et donc ça permet d'être un peu plus consistant. L'équipe
+propnique d'analytique ce n'est pas sur looker donc c'est un peu cette réflexion qu'on a de se dire
+est-ce que si on est sur le même outil on peut exploiter ce truc de looker d'aligner tout
+le monde donc ça passe un peu par l'outil plus utiliser les mêmes sources de données agrégées
+et pas seulement à l'intérieur d'une sous-équipe d'atta.
+Je vous ai remis sur la question d'avant. Vous avez une question peut-être un peu différente parce que je
+n'en fais pas dans la question. C'est vraiment sur la définition des mots. La question c'est
+d'en remplir dans l'utiliser des mots et il y a plein de personnes qui vont utiliser des mots les
+mêmes mots pas par les mêmes définitions. On va avoir la même donnée à la fin et le même résultat
+c'est une chose mais c'est comme responsabilité que cette couleur allait diffuser avec tout le monde
+et qu'ils aillent les mêmes mots dans l'article. Ça on n'a pas résolu encore trop de problèmes.
+Non mais alors on n'a pas encore résolu les problèmes. En gros on voudrait résoudre ce
+problème là en ayant déjà un support qui permet d'être connecté à la donnée
+et de faire de la documentation justement pour faire cette définition et que ce soit la source
+de vérité. Notre angle c'est d'utiliser un petit documentation. Là c'était ce qu'on a fait
+pendant le premier trimestre. On a commencé à regarder quels étaient les outils de documentation
+qui existaient. On a testé quelques uns. Par exemple vous avez Select Star, Caster qui sont
+des outils de documentation et le but c'est qu'on ait un seul outil de documentation qui
+soit partagé par l'entreprise dans lequel on va retrouver ces définitions clés. C'est ça notre
+angle mais on n'a pas encore résolu. Aujourd'hui on n'a pas le référentiel avec la définition
+qui doit être utilisée par tout le monde sur chaque item.
+C'est un outil de doc qui est connecté directement avec la donnée. Ça veut dire qu'en fait si vous
+faites en gros dans nos chaînes, si tu fais un glosser et que par exemple tu dis cette métrique
+là elle se base sur ces données là, tu dois le maintenir à la main en fait. Tu vois si tu
+changes les données d'un moment on va pouvoir le maintenir et ça c'est un supportable en gros,
+ça marche pas. Et donc les outils comme Caster, ta documentation qui est directement
+reliée à ta donnée. Donc si ta donnée elle change, tu peux facilement refaire la connexion.
+C'est ça le gros avantage en fait de ces outils, c'est que c'est de la doc connectée avec ta donnée.
+Je pense qu'il y a un levier aussi, on disait tout à l'heure, enfin notre conclusion c'était un peu
+faut que le product analyse soit un peu au même niveau que le PM. Souvent quand tu regardes dans
+les boîtes c'est souvent l'EPM qui présente les résultats, enfin c'est lui qui est responsable de
+la fonctionnalité qu'il a été amené à construire avec l'équipe. Je pense que le
+product analyse il a aussi un rôle un peu plus important d'évangélisation de l'équipe et du
+PM et du coup le fait d'être un peu plus au même niveau c'est un peu difficile de le faire
+mais de pas être seulement une équipe support qui va répondre à des questions et d'être moteur
+et ça permet peut-être aussi un peu plus d'alignement là-dessus et c'est un angle un peu
+enfin plus compliqué mais je pense ce sera la dernière question. Je vois une question c'est
+par rapport à ce que vous avez des exemples de fois où vous avez repéré des fausses bonnes idées
+où le product manager il y avait une idée de produit qui lui paraissait génial et en fait
+vous en voyant les données vous avez dit en fait non ce projet il va pas être pertinent
+en fait souvent enfin souvent ça se passe pas mal pendant les l'héro de ma planning justement
+où on a l'impression que c'est des choses alors c'est peut-être pas une mauvaise idée mais en
+tout cas ça va pas forcément avoir de l'impact pas en termes de plus de sous qu'on va gagner mais
+juste à améliorer l'expérience et du coup là souvent cette étape de d'impact sizing elle est
+assez importante pour les product managers qui se disent que ça va être un game changer pour
+l'expérience et en fait dans la réalité quand on réfléchit bien à qui va être impacté quelle
+est le delta qu'on peut gagner sur ces gens là on se rend compte que finalement il y a peut-être pas
+une si grosse opportunité que ça donc souvent on se rend compte dans ces moments là après après
+le choix reste à la discretion du product manager qui peut aussi prendre des décisions ok ça va
+pas impacter mais on pense que c'est déterminant pour d'autres projets ensuite mais au moins on
+est rassuré enfin on est conforté sur le fait que ça n'a peut-être pas fait bouger des choses
+alors étonner je sais pas mais là par exemple je m'occupe aussi de la partie search à paris donc
+c'est tu recherches tes emails d'encontre c'est une fonctionnalité qui est assez compliquée on a
+plein de projets qui sont super lourd en termes de développement et en fait en faisant l'impact
+sizing on s'est rendu compte qu'on allait vraiment gagner peanuts parce que les gens qui allaient
+être impactés par cette fonctionnalité finalement c'est 0,5% de nos clients et c'est des gens qui
+font pas beaucoup de search et du coup ça a remis un peu en cause le projet moi j'ai un exemple de
+on avait un filtre en fait qui permettait de passer d'une exploration des essais soit de
+manière complète on avait toute la liste soit on était dans un mode pré-filtré un peu customisé
+et on se posait la question de est ce qu'il faut mettre le choix par défaut toute la liste ou par
+défaut la liste déjà filtrée et en fait il y avait un an produit à la base qui était de mettre
+le choix déjà pré-filtré et on s'est rendu compte en faisant de l'exploration qu'en fait il y
+a très peu de gens qui utilisait ce mode filtre et donc en fait c'est en regardant un peu on a
+regardé un petit peu les chiffres le tracking en regardant en fait que les gens jouaient pas trop
+avec avec ce filtre là on est revenu à la le mode avec toute la liste voilà plus simple et on a
+calmin une maîtrise de contrôle pour voir si les utilisateurs finissaient par jouer avec parce que
+peut-être potentiellement avec le nombre d'essais qui va grandir les gens ont plus besoin de cette
+fonctionnalité de pré-filtre donc on moniteur mais pour le moment on n'a pas besoin c'est un exemple
+de il voulait faire comme ça on a regardé les chiffres en fait c'était pas trop pertinent et on
+l'a pas fait, tu pouvais de taux gueule passer de pré-filtre à pas tout
+je propose qu'on s'arrête là parce que sinon on n'a pas le temps de boire un poux et on peut nous
+proposer de descendre

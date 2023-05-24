@@ -1,0 +1,753 @@
+Bonsoir à tous, bienvenue donc à ce Meetup Lyon Data Science qui est pour une fois hébergé
+à la tour du web, une fois n'est pas coutume. Donc notre speaker vient de chez Quante Maîtrie
+et va nous parler de détection de fraud. Donc voici Romain. Et donc dans le principe de l'association,
+on va essayer ensuite de boire un coup tous ensemble, enfin pour ceux qui veulent rester
+discutés avec ceux de l'association parce que ici on a même accès à de la bière d'une
+éncasi donc bon avec modération mais ça sera sympa quand même après coup si vous voulez venir
+discuter avec nous de l'association ou de la conf et de la suite qu'on peut lui donner. Donc voilà
+je laisse la parole à Romain. Et nous remercions bien sûr nos sponsors donc son data lieu et
+data galaxy pour leur soutien financier et moral. Et donc n'hésitez pas à aller sur notre site Meetup,
+sur notre site internet qui est en train d'être recondue pour être vachement plus intéressant
+et à faire passer le mot autour de vous pour qu'on soit toujours plus nombreux. Merci. Alors bonsoir
+à tous, bien je suis ravi d'être là et merci beaucoup de m'accueillir pour qu'on puisse
+parler un peu de détection de fraud. Donc ce soir spécifiquement, j'essaie de me caler comme
+il faut pour que tout le monde puisse voir. Donc on va parler de détection de fraud spécifiquement
+dans la subscription d'abonnement ou un cas qui peut être similaire dans les défauts de crédit,
+dans la prédiction de défauts de crédit. Donc on va regarder, alors je vais vous mettre le
+sommaire directement comme ça, ça sera plus simple. Ce qu'on va regarder, déjà en fait c'est une
+première mise en contexte, c'est-à-dire dans quel cas on a fait une mission de détection de fraud
+parce que l'ensemble de la présentation ça représente un retour d'expérience sur une mission
+qu'on a réalisée avec ma société, une mission qui a duré à peu près huit mois en fait pour
+un opérateur télécom, donc dans la subscription d'abonnement téléphonique dans ce cas là. Le but c'est
+déjà de mettre un peu en contexte, de dire quelles sont les processus, dans quel cadre on
+travaillait et quel type de modèle on attendait et de vous présenter en fait les principales
+problématiques qu'on peut rencontrer dans ces cas là. Donc une des principales problématiques c'est
+le biais de sélection. On va aller en détail dedans et voir un peu des techniques qui permettent du coup
+de contourner ce biais là d'une certaine façon, faire une petite synthèse comparative des différentes
+techniques à la fin. On va parler de score de risque qui est une façon de améliorer la
+performance du modèle en sortie plutôt que de se contenter d'avoir simplement une probabilité et
+on va voir comment. Un des points importants sur ce projet c'est que le projet a été industrialisé
+donc il a été mis en production, donc il tourne en ce moment même chez notre client et donc il
+y a un modèle de détection de fraud si vous souscrivez un abonnement téléphonique chez cet
+opérateur dont je ne vous donnerai pas le nom du coup vous allez passer par cet algorithme de machine
+learning et donc à accepter ou rejeter par rapport à ces conditions là. Et donc on va voir du
+coup ce que je trouvais aussi intéressant c'est de voir de quelle façon on passe du Pog donc de
+l'expérimentation à l'industrialisation et quelles sont les contraintes que ça peut apporter et
+du coup ce à quoi il faut faire bien attention. Et à la fin une dernière partie de Retex Global,
+donc un retour d'expérience globale sur comment était organisé la mission,
+combien en était, quels étaient les différentes équipes, comment ça s'est passé,
+les interactions entre les personnes et du coup un point de vue un peu plus globale sur la façon
+dont ça s'est dans ce cas là bien passé pendant ces 8 mois. Donc on va commencer de suite par le
+contexte. Le contexte c'est quoi ? Donc on est chez cet opérateur télécom, on est sur un process
+qui est déjà en cours et qui marche chez eux qui permet de traiter la fraude. Ce process c'est quoi ?
+C'est des règles automatiques suivies d'analyse manuelle par des analystes fraude. Donc comment
+ça marche ? Les règles automatiques c'est des règles type requêtes SQL classiques qui disent
+selon telle condition on va valider ou rejeter en fait une commande. Donc si on se manque condition
+c'est vous souscriverez un abonnement téléphonique vous avez 48 heures donc votre abonnement est
+soit activé. Pendant ces 48 heures en fait il y a ce process qui est mis en place et qui tourne.
+Les règles automatiques, validation, annulation et l'analyse manuelle donc d'analyse fraude qui sont
+dédiées à ça et qui vont regarder chacun des dossiers un par un et qui vont dire ok celui-ci
+il y a un risque de fraude où il n'y a pas de risque et du coup on peut l'accepter ou pas. Ça
+c'est le process qui était mis en place avant qu'on arrive et donc le but c'était de pouvoir y
+insérer un algorithme de machine learning et donc c'est pour ça que j'insiste là dessus. Le but c'était
+pas que l'algorithme remplace l'ensemble du process donc ni la totalité de la partie automatique
+ni la partie manuelle. Est-ce que vous pouvez définir ce que vous entendez par fraude dans ce cas
+alors du coup on va définir du coup ce que c'est que la fraude et la fraude à la subscription
+dans le cas particulier alors c'est une très bonne question parce que la fraude la définition
+elle dépend de l'entreprise qu'il entend et donc par exemple dans ce cas là on peut dire que la fraude
+c'était un défaut de paiement en particulier dans une période de temps donné donc le client
+considérait qu'il s'augmentait en fait la temporalité de l'abonnement et disait qu'il y avait les
+premiers mois ça correspondait à la fraude les mois d'après s'il y avait un défaut de paiement ça
+correspondait plus à de la fraude mais un problème d'utilisation en fait de l'abonnement et donc
+on supposait que c'était plus quelqu'un qui essayait de contourner les règles et de frauder mais
+quelqu'un qui avait des problèmes potentiellement techniques et du coup qu'il fallait adresser
+différemment donc du coup il y a une période de temps et c'est un défaut de paiement et on va voir
+après justement cette définition elle n'est pas si claire que ça et c'est ce qui est en fait le
+plus compliqué à mettre en place et à valider avec l'ensemble de la chaîne et donc là dans la
+subscription d'abonnement téléphonique alors on va voir différents cas donc quand vous
+souscrivez un abonnement soit l'abonnement il y a un téléphone avec soit il n'y a pas de téléphone
+donc quand il y a un téléphone là on était dans le cas particulier des subscriptions web et
+souscription par téléphone et donc on peut en fait on paie un compte au départ on n'est pas obligé
+de payer la totalité de la souscription dès le départ ce qui fait que les gens peuvent payer le
+petit à compte et ensuite récupérer le téléphone et plus jamais rien payer donc par exemple la fraude
+c'est récupérer le téléphone donc c'est le coup direct c'est le coup du téléphone qu'on perd
+quand c'est des abonnements téléphoniques sans téléphone du coup le risque derrière c'est de
+faire de la surconsommation il y a des gens en fait fraudur c'est un métier c'est carrément un métier
+il récupère plein de cartes sim il les met dans ce qu'on appelle des pondeuses et donc ils enchaînent
+en fait les cartes sim et il crée plein d'appels en même temps et ce qui leur permet en fait de faire
+de la consommation en même temps ils vont faire du phishing en fait ils vont vous appeler pour vous
+les rappeler ils créent une société à côté du coup ça leur fait du chiffre d'affaires sur
+leur société etc et en fait pour pouvoir faire ça il faut qu'il fasse tout en même temps parce
+que l'opérateur téléphonique il suit en fait les consommations et donc au bout de une heure de
+surconsommation l'opérateur téléphonique il va vous bloquer quoi qu'il arrive et donc du coup vous
+êtes obligé si vous êtes fraudur d'enchaîner les appels en même temps sur la carte sim pour dire
+ok de toute façon chacun des chacune des lignes va être bloqué mais le volume qui est fait en même
+temps fait qu'on génère beaucoup beaucoup de chiffres d'affaires pour ces fraud là donc c'est
+les deux principales types de fraud en fait qu'on a dans la fraude à la souscription et donc c'est
+on va voir d'ailleurs le modèle prenait en compte il y avait plusieurs modèles pour prendre en compte
+chacun de ces aspects là et donc du coup alors comme je disais le but c'était de mettre un
+algorithme en plein milieu pourquoi parce que certaines correspondaient en fait à des règles
+stratégiques de la société donc il s'agissait pas de dire est-ce qu'elle fonctionne bien ou est-ce
+qu'elle fonctionne pas bien est-ce qu'on bloque des gens qu'on ne devrait pas bloquer etc c'était
+juste de dire bah nous notre client il voulait que faire comme ça pour ses abonnements sur certaines
+règles donc on les laisse en place quoi qu'il arrive par contre après derrière ce qu'on veut
+c'est éviter de bloquer des gens bah qui ne sont pas fraudeurs et du coup perdre du chiffre d'affaires
+derrière ou bah de laisser passer des gens qui vont faire de la fraude derrière et le coup que
+ça génère un coup pour l'entreprise en fait donc en fait l'algorithme était placé en plein milieu
+et permettait d'éviter alors on va voir les faux positifs et les faux négatifs et ce qui est très
+important c'est que l'ensemble des traitements allait tout au bout de la chaîne continuer
+juste aux analystes manuels c'est à dire que la sortie de l'algorithme c'était pas une décision
+qui était net et précise en disant l'algorithme il valide où il refuse le but c'est l'algorithme ne
+pouvait pas refuser c'est ça qui était important quand vous avez un client que vous lui dites enfin
+que vous lui dites vous refuser son abonnement qui va vous rappeler après derrière il va vous dire
+mais comment ça se fait que mon abonnement il était refusé vous pouvez pas lui dire bah c'est un
+algorithme d'intelligence artificielle dont on ne comprend pas exactement le fonctionnement qui
+veut refuser donc du coup c'était hyper important que tout ce qui sort d'ici ça soit contrôlé après
+par un analyste manuel donc en fait le le challenge c'était limiter les coûts et aussi limiter la
+charge de travail des analystes manuels en fait en sortie on va voir comment comment ça se passe
+donc pour ça le type de modèle qu'on a mis en place c'est ce genre de modèle on va voir en
+détail après c'est juste pour vous le présenter en premier lieu il y a trois modèles de machine
+learning qui ont été stackés de certaines façons qui sont chacun entraîné sur un jeu
+différent groupe de contrôle kgb on va voir ce que c'est et un autre groupe de contrôle et ensuite
+on assemble les prédictions en passant par un score de risque donc ça fait un modèle volumineux
+ça fait beaucoup de code et ça permet de traiter les différents types de fraude qu'on peut rencontrer
+par exemple c'est ce qu'on disait juste à l'instant on a un modèle pour l'usage et donc
+bah les gens qui vont prendre plein d'abonnements sans téléphone et qui vont faire plein d'appel et
+là c'est modèle terminal c'est pour le modèle qui correspond à ceux qui vont frauder par rapport
+aux téléphones qui vont récupérer et ensuite ça c'est des techniques de débiaisage qui permettent
+d'avoir un jeu propre et d'éviter le biais de sélection le biais de sélection c'est quoi ce biais
+de sélection c'est la principale problématique en fait qu'on va rencontrer et pas que dans
+la détection de fraude d'ailleurs et on va voir d'où ça vient en fait alors pour faire l'historique
+on récupère un jeu de données qui correspond à l'historique des données et donc un jeu classique
+avec les différentes variables un label puisqu'on est ici dans le cadre d'un modèle
+supervisé et donc on a des labels négatifs des labels positifs et chaque ligne correspond à une
+commande qui a été passée et donc on a un historique sur un an et demi selon selon les données
+dont on dispose dans le cas de la fraude le label donc quand on dit label positive ça veut dire
+que c'est une fraude label négative ça veut dire pas de fraude on peut transposer ça au cas du
+défaut de crédit en disant le label positive c'est le client le potentiel client va faire
+un défaut de paiement et label négatif il n'y aura pas de défaut de paiement c'est vraiment la même
+typologie ça c'est pour poser les bases le biais de sélection ça va être quoi c'est que dans l'historique
+de données qu'on récupère en fait la commande elle aura été avant soit validée soit rejetée par
+les analystes manuels qu'on a vu on a vu qu'il y avait un process avant qu'elle était mis en place
+automatique manuel toutes les commandes qu'on a dans notre historique elles ont été validées
+ou rejetées à un moment donné quand la commande elle a été validée elle a vécu dans l'entreprise
+via les différentes les différents paiements d'abonnement tous les mois et donc si la personne
+a été fraudeuse on le sait elle était dans l'entreprise elle a fait un comportement qu'on a
+qualifié de fraude et donc du coup on a résilier son abonnement si elle n'a pas été fraudeuse on le
+sait aussi puisque du coup elle a suivi son cours et qui s'est jamais rien passé de particules
+si l'analyste fraude a rejeté en fait la commande on sait pas ce qui s'est passé donc on sait
+qu'il y a eu suspicion de fraude au moment où ça a été rejeté donc je vous rappelle c'est on
+souscrit l'abonnement on a 48 heures pour l'activation et au bout de ces 48 heures on a accepté
+où on est rejeté si on est rejeté on a juste une suspicion de fraude on sait pas si en fait on a
+eu raison de le rejeter ou pas et donc ça ça constitue le principal biais de sélection qu'on
+a sur notre jeu de données et donc pour schématiser en fait on a donc les dossiers acceptés on fait
+une petite matrice qui ressemble à une matrice de confusion donc avec les dossiers acceptés
+les dossiers rejetés et la réalité est-ce que le dossier était non fraudeur donc un négatif
+où est-ce que le dossier était fraudeur un positif quand le dossier a été accepté on sait ce
+qu'il a devenu après du dossier s'il a été fraudeur on sait c'est un vrai fraudeur s'il a
+pas été fraudeur on sait exactement qu'il a pas été fraudeur s'il a été rejeté on a deux cas
+bah en fait soit il se trouve que on a rejeté quelqu'un qui n'était pas fraudeur à ce moment là on a
+eu tort et donc en fait ça constitue une perte d'opportunités pour la société donc on a un
+manque à gagner soit bah il était réellement fraudeur et on est raison de le rejeter donc là
+il n'y a pas de soucis par contre ça vous ne le savez pas vous n'avez aucune façon de savoir en
+fait cette distinction là tout ce que vous savez c'est que le dossier il a été rejeté donc après
+la question c'est qu'est ce qu'on fait on prend quoi on prend pour définir la fraude en fait donc
+dont on parlait tout à l'heure la fraude c'est quoi est ce que c'est uniquement ce qu'on connaît
+ou est ce que ce qu'on était rejeté on va dire en fait c'était de la fraude parce que je fais
+confiance à mes analystes manuels et qu'ils ont eu raison de le faire bah en fait c'est encore plus
+compliqué que ça nous par exemple dans notre dans notre mission on s'est rendu compte que
+effectivement un analyste fraude manuel il n'est pas parfait il fait des erreurs donc on est sûr
+que là dedans il y a des cas comme ça donc des dossiers qu'ont été rejetés qui n'était pas
+fraudeur la question c'est bah dans quelle proportion en fait est-ce qu'on peut s'y fier
+ou est-ce qu'on peut pas s'y fier et là ça devient compliqué à la fois pour l'entraînement
+d'un modèle et à la fois pour l'évaluation à la fin du modèle parce qu'on l'entraîne sur
+un jeu qui est biaisé mais aussi on va le tester sur un jeu qui est biaisé donc quand on va en
+faire l'évaluation en fait on ne sait pas ce que ça donne et en plus on ne sait pas dans quelle
+proportion donc là ça devient compliqué et c'est là où du coup on va utiliser des techniques
+qui permettent de débiaiser ce jeu là donc les quatre techniques qu'on va regarder la première
+c'est kgb qui veut dire non good bad la reclassification iterative le reweighting et le nec
+plus ultra c'est l'utilisation d'un groupe de contrôle sauf qu'un groupe de contrôle ça coûte
+très cher on va regarder une par une chacune de ces techniques en commençant par le kgb alors
+le kgb c'est pas compliqué c'est qu'on a un jeu de données au départ celui qu'on a vu jusqu'à
+présent on ne veut pas utiliser celui là on va utiliser uniquement les dossiers acceptés donc
+on prend en fait uniquement cette partie là du jeu de données qu'on a ça s'introduit un autre
+biais donc on enlève un biais qui est que on n'a plus les dossiers dont on connaît pas l'échéance
+on introduit en fait un autre biais en faisant ça qui est que la proportion de fraudeur déjà dans
+ce jeu là c'est pas la même que dans le jeu dans la vraie population donc on suppose fortement
+que la proportion de fraudeur dans les dossiers acceptés elle est beaucoup plus faible que dans
+la réalité si les analyses font bien leur travail et c'est le cas en général et en plus il y a un
+certain nombre de profils qu'on n'aura pas c'est à dire que du coup le modèle si on peut pas l'entraîner
+là dessus c'est un nombre de profils qu'on perd et que le modèle ne pourra pas reconnaître par
+la suite donc ça c'est les biais qu'on introduit par contre c'est la façon la plus facile de se
+dégager de ce biais là aucune des techniques qu'on va regarder n'est parfaite
+une autre technique c'est la reclassification iterative toutes ces techniques on les a testés
+dans notre mission pour voir du coup de quelle façon elle marchait et en gros pour vous spoiler
+après la synthèse c'est qu'on les benchmark par rapport au groupe de contrôle le groupe de
+contrôle étant le l'optimum voilà là où on peut ce qu'on peut avoir de mieux du coup en fait
+toutes ces techniques après on les compare à ça et nous on avait la chance d'avoir un groupe de
+contrôle et donc le but de la reclassification de la reclassification iterative pardon c'est
+quoi c'est d'affecter et ben les positifs et non positifs parmi ces dossiers qui ont été
+rejetés initialement donc le but c'est de dire ok est ce que moi je peux réussir à trouver une façon
+de les répartir et dire en fait j'ai des vrais fraudeurs et et des non fraudeurs et je fais
+comme si je les connaissais donc comment on fait en fait ça quelle est cette technique là
+cette technique elle consiste dans un premier temps à séparer le jeu en deux et donc iterative
+pourquoi parce qu'on va faire plusieurs iterations premièrement on fait un modèle sur le jeu des
+dossiers acceptés et donc on va l'entraîner là dessus avec une cible fraudur non fraudur on va
+le prédire ensuite sur l'ensemble des dossiers qu'ont été rejetés qu'est ce que ça va nous
+donner en fait ça va nous permettre d'étiqueter ces dossiers là et dire celui ci je l'étiquette
+fraudur celui ci je l'étiquette non fraudur première étape la deuxième étape c'est qu'une
+fois qu'on a fait ça on obtient un nouveau jeu de données qu'on appelle ensemble augmenter donc
+c'est tout le jeu sur lequel cette fois ci on a étiqueté les dossiers rejetés et donc on
+qualifie certains certains dossiers comme non fraudur et certains comme fraudur bah sur l'ensemble
+ce jeu là on va entraîner un nouveau modèle toujours avec la cible fraudur non fraudur et on
+va prédire sur les dossiers rejetés encore une fois et en fait on va réitérer jusqu'à ce qu'on
+arrive à une convergence donc on fait ça autant de fois qu'il faut pour que d'une itération à une
+autre notre vecteur de prédiction soit le même il n'est pas bougé en général il faut six à sept
+itérations pour arriver à une convergence là dessus et on arrive effectivement à une convergence
+donc ça c'est une façon d'étiqueter les dossiers rejetés et donc du coup de conserver à la fois
+le volume de données qu'on a au départ et donc pas les mettre de côté le biais là dedans et on
+va voir après mais c'est que de la même façon il ya certains profils qu'on aura pas comme le modèle
+initial à la toute première itération itération on l'a entraîné là dessus bah les profils qui
+sont là dessus il y en a qu'on perd on les a pas on les a forcément pas non plus donc il y a aussi
+un biais en faisant ça mais en le testant ça améliore nettement la situation et ça a des
+performances qui sont relativement bonnes une autre technique qu'on a pu tester c'est la
+technique du reweighting et qui est une technique en fait de pondération alors là comment ça
+marche on fait un premier modèle sur lequel on va prédire si les dossiers sont acceptés
+ou rejetés donc c'est un modèle qu'on entraîne sur l'ensemble de la population on en sort du coup
+un vecteur de prédiction accepté égal à en rejeté égal 0 ce qui nous fait que lorsque la prédiction
+est par exemple à 0 95 ça veut dire que le dossier le modèle est relativement sûr pour ce dossier
+qu'il risque d'être accepté lorsque la prédiction est très proche de 0 comme ici 0 12 ça veut
+dire que le modèle considère que le dossier a de fortes chances d'être rejeté donc c'est l'inverse
+de ce qu'on fait d'habitude entre les 0 et 1 ce vecteur de prédiction qu'est ce qu'on fait en
+fait on va l'inverser et on va en faire du coup un vecteur de poids donc les 0 95 1 sur 0 95 etc
+etc quel est l'intérêt en fait de l'inverser d'en faire un vecteur de poids c'est que tous les
+dossiers pour lequel le modèle initial c'était dit il y a de fortes chances qu'il soit accepté on
+va avoir un poids qui va être très très proche de 1 puisque du coup la prédiction était très
+proche de 1 donc 1 sur quasiment 1 ça fait quasiment 1 tous ceux pour lesquels le modèle
+initialement était quasiment sûr de les rejeter on va avoir un poids très très fort 1 sur un
+chiffre qui est très petit du coup ça va nous faire quelque chose de très gros et ce vecteur de
+poids là on va l'insérer dans un autre modèle sur lequel on va prédire les fraudeurs et non
+fraudeurs de la même façon donc ça permet en fait de s'affranchir du fait qu'on ne prend pas les
+dossiers rejetés par contre ça introduit toujours le même biais qui est que les
+dossiers rejetés les profils particuliers qui sont dans ce dossier rejeté on les a toujours pas mais
+en pratique quand on le teste ça nous donne également des bonnes performances relativement
+les mêmes qu'on a avec la reclassification iterative et on va voir en fait relativement les
+mêmes qu'on peut avoir avec un groupe de contrôle donc ça c'est la troisième technique
+la dernière technique qui n'en est pas vraiment une c'est utiliser un groupe de contrôle alors là
+le groupe de contrôle c'est ce qui peut y avoir de mieux donc déjà qu'est ce que c'est qu'un
+groupe de contrôle dans ce cas là en fait le groupe de contrôle ça consiste à dire je vais
+laisser passer tous les dossiers du coup tous les dossiers comme ils sont passés comme je les ai
+validés je vais savoir si c'est des vrais fraudeurs ou si c'est pas des vrais fraudeurs donc le problème
+de cette technique là c'est que ça a un coût c'est à dire que on va dire par exemple ben 10%
+de l'ensemble de mes commandes sur le mois je vais en faire un groupe de contrôle on le prend
+aléatoirement pour avoir l'ensemble des profils nécessaires tout va passer ben du coup toute la
+fraude va passer donc du coup ça coûte directement à toute l'entreprise donc ça c'est compliqué par
+contre ça nous donne un jeu qui est complètement débiaisé on connaît l'échéance de chacun des
+dossiers qui soit fraudeur ou pas et donc on n'a plus la problématique de billets de sélection et donc
+à la fois sur la partie entraînement et à la fois sur la partie évaluation parce que ça aussi
+c'était une problématique dès le départ c'est à dire que on a un modèle on va évaluer sa
+performance sur quelque chose de faux donc du coup c'est quelque chose de compliqué à justifier
+derrière et donc là le fait d'avoir un groupe de contrôle ça fait que on peut prédire sur ce
+groupe de contrôle et donc avoir des performances qui sont évaluées dans des conditions réelles
+du modèle et pour l'entraînement alors il y a deux cas c'est soit on a un groupe de contrôle en
+fait qui est suffisamment grand en termes de volume et qui nous permet d'avoir suffisamment de profils
+et à ce moment là on peut dire bah tiens mon modèle je vais l'entraîner sur mon groupe de
+contrôle au lieu de l'entraîner sur le jeu historique que j'avais je l'entraîne entièrement
+sur mon groupe de contrôle et je prédis après sur mes nouvelles commandes qui arrivent sauf que c'est
+rarement le cas que le groupe de contrôle soit suffisamment grand parce que ça coûte beaucoup
+donc du coup en général ce qu'on fait c'est qu'on prend un pourcentage de l'ensemble des
+commandes et tous les mois on récupère une partie du groupe de contrôle et donc là on a un groupe
+de contrôle qui est relativement petit et en fait on met beaucoup de temps à récupérer un groupe
+de contrôle qui aurait un volume suffisamment grand. Imaginez tous les mois 10% ça vous
+prend 10 mois pour récupérer un groupe de contrôle qui correspond à un mois de commande en
+termes de volume et donc du coup à ce moment là comment on fait ? à ce moment là ce qu'on a
+testé et qui a très bien marché c'était d'utiliser le groupe de contrôle avec un modèle
+conservateur alors conservateur ça veut dire quoi ? ça veut dire que on a un modèle ici qui va
+bloquer un maximum de fraudure qui va envoyer un manuel un maximum de dossier aussi ça veut dire
+que les dossiers qui vont être envoyés qui vont être considérés par le modèle comme douteux
+on sait qu'ils sont pas tous fraudeurs on sait qu'il y a une bonne partie qui est mal étiquetée on
+va dire par le modèle donc ils bloquent très bien mais ils en envoient beaucoup de l'autre côté
+et bien ce beaucoup qui est envoyé qui est ici donc la partie douteuse en fait on va réappliquer
+un modèle qui a été entraîné sur le groupe de contrôle là dessus faut imaginer en fait des
+proportions type pour 100 commandes qui rentrent ici je vais en avoir 20 qui vont être envoyés
+en douteuse par exemple et bien sur ces 20 je peux utiliser le groupe de contrôle prédire dessus
+et du coup débiaiser ce jeu là donc en fait je fais un premier filtre quelque part et ensuite sur
+ce filtre j'applique un nouveau modèle et ça ça marche super bien pour débiaiser et ensuite je
+reconquataine en fait l'ensemble de mes prédictions donc celle que j'ai validé en premier lieu comme
+il est très conservateur j'ai pas besoin de l'air traité je sais que s'il les a validés c'est
+quasiment sûr qu'elles sont bonnes les douteuses je les passe par là et ensuite je réassemble
+l'ensemble des données ça c'est hyper important et c'est différent dans les secteurs d'activité
+sur lesquels on peut intervenir dans le cas d'un opérateur télécom donc du coup pour la
+subscription d'abonnement en fait on a on peut mettre en place un groupe de contrôle parce que le ratio
+entre les faux positifs et les faux négatifs je sais pas si ça vous parle les faux positifs et
+les faux négatifs mais en gros les faux négatifs c'est les fraudeurs qui passent et qui nous
+coûtent énormément et les faux positifs c'est ce qu'on bloque alors qu'on devrait pas et donc
+du coup c'est le manque à gagner et donc du coup ce ratio là chez un opérateur télécom il est
+il peut être de l'ordre de 4 à 5 mais mettons un fraudeur ça peut vous coûter 200 euros par
+contre un dossier qui rentre qu'on bloque alors qu'il pourrait rentrer ça pourrait nous rapporter
+quelque chose comme 6 à 800 euros par exemple en moyenne ce ratio là il fait qu'on peut mettre
+en place un groupe de contrôle parce que si on le met on sait qu'on va avoir les fraudeurs qui vont
+passer vont être quelque part rattrapés par les dossiers qu'on aurait bloqué sinon et qui vont
+passer aussi et donc quelque part le coup il va être à moindre y pourquoi je vous dis ça parce
+que si on se place par exemple dans le cas de défaut de paiement des faux de crédit donc dans le
+cas d'une banque qui fait des prêts par exemple le rapport il est complètement inversé c'est à
+dire que le le coup d'un fraudeur c'est la totalité du crédit donc mettons un crédit je vais
+emprunter 1000 euros je dis n'importe quel taux à 5% donc j'ai mes 1000 euros plus les 5% de 1000
+ça c'est mon coup ce que je gagne en fait quand je suis une banque et donc les faux positifs ce que
+je bloque alors que je pourrais gagner c'est 5% de crédit en fait donc du coup j'ai un rapport
+qui est à la fois plus grand et complètement inversé quand vous mettez en place un groupe de
+contrôle là dedans bah en fait ça vous coûte uniquement tout ce qui passe quoi et c'est hyper
+élevé donc du coup dans ce cadre là c'est très compliqué de mettre en place un groupe de contrôle
+et dans tous les cas c'est vraiment quelque chose qu'il faut discuter avec le métier et il faut que
+tout le monde en est bien conscience parce que ça a des impacts après derrière sur les marges
+de la société qui sont très importantes d'autant plus dans ce cas là puisque on va le voir après
+mais le modèle a été mis en production très très vite et donc du coup on a en fait amélioré le
+modèle au fur et à mesure qui était déjà en production et qui traiterait déjà des vrais
+commandes et donc du coup voilà il faut pas faut pas se louper là dessus quoi il faut que tout le
+monde comprenne bien qui risque d'y avoir des pertes donc du coup pour faire la synthèse de ces
+quelques techniques qu'on vient de voir alors rapidement le kgb on a vu c'était très simple
+et c'est pas coûteux mais par contre il y a un bien important qu'on introduit en faisant cette
+technique là et donc des profils qui nous manquent on a vu que la reclassification
+iterative et le reweighting il y avait des performances qui étaient relativement bonnes
+par contre de la même façon on a des profils qui nous manquent lorsqu'on utilise ces techniques
+là et en plus pour la reclassification iterative c'est consommateur de temps et de mémoire le temps
+de pouvoir faire toutes ces iterations là le groupe de contrôle c'est très bien au niveau
+des performances c'est le parfait c'est stable dans le temps par contre ça dépend vraiment du secteur
+dans lequel on se place et c'est un coup qui est très important et un délai de mise en place qui
+a assez long comme on le disait on va pas mettre un groupe de contrôle toutes les commandes on va
+pas toutes les laisser passer donc il faut en sélectionner une partie et du coup chaque mois
+récupérer une partie des commandes donc c'est assez long à récupérer donc le groupe de contrôle
+avoir comment on peut l'utiliser et donc là pour faire la récapituler un peu ce qu'on vient de
+dire c'est que la technique elle est vraiment adaptée en fonction du métier dans lequel on
+intervient dans le cas d'un opérateur télécom un groupe de contrôle c'est complètement envisageable
+et donc comme on le disait au début les modèles qu'on a construit c'est dans le cas
+d'un processus global et donc ça c'est important parce que le modèle ne bloquait pas il envoyait
+en manuel et les les analyses de fraude manuel après derrière faisait la décision de dire est-ce
+qu'on accepte ou est-ce qu'on rejette en fait la commande c'est hyper important
+alors après on va passer au score de risque donc là on vient de voir le biais de sélection qui est
+une des principales problématiques qu'on voit dans ce cadre là le score de risque c'est en fait une
+technique qui nous a permis d'améliorer significativement d'un coup la performance
+en fait de notre modèle comment ça fonctionne c'est pas du tout compliqué mais par contre c'est
+hyper efficace donc on a notre modèle en sortie de notre modèle on a une probat en fait en fait
+pour faire un score de risque ce qu'on veut c'est pondérer notre probat pour ne plus comparer des
+volumes et dire ben voilà je veux avoir ma performance de mon modèle par rapport au
+nombre de fraudeurs qui tombent dans tel ou tel casse mais on veut comparer des coups des
+coups ou des gains et donc à ce moment là ce qu'est ce qu'on fait tout simplement on va
+multiplier la probat par le critère de risque financier qu'elle plus adapté au métier donc par
+exemple ici dans le cadre de l'opérateur télécom le montant du téléphone qu'on perd directement
+et donc du coup ça veut dire que ce qu'on obtient à la fin c'est une espérance de perte financière
+ça veut dire qu'au lieu d'avoir pour un dossier une probabilité qui dit ben il y a 65% de chance
+que le dossier soit fraudeur en fait on a 65% fois le montant du risque financier et donc à la fin
+on dit en fait ce qu'on risque de perdre avec ce dossier c'est 400 euros 500 euros selon ce que
+ça représente donc la probat multiplié par le montant de la perte financière qui risque d'arriver
+plus la probat est forte alors ça c'est très caricatural on va avoir derrière un peu plus
+en détail ce que ça veut dire mais plus la probat en sortie du modèle elle est forte plus on a
+de chance que le dossier soit prédit frauduleux plus le critère de risque financier est important
+donc celui qu'on met ici plus on a de chance que le dossier soit prédit frauduleux également
+on va regarder ce que ça veut dire très concrètement je vais le faire comme ça hop
+ce que ça veut dire c'est quoi c'est que si on regarde une matrice de confusion classique donc
+prédit fraudeur par le modèle prédit non fraudeur par le modèle mes dossiers négatifs donc non
+fraudeur et mes dossiers positifs fraudeur en fait une fois qu'on a appliqué ce score de risque
+le modèle il va avoir tendance à faire quoi il va avoir tendance à prédire fraudeur des
+dossiers qui ont soit une très forte probat et un critère financier important soit un critère
+financier très important voire avec une probat un peu plus faible donc en gros en fait ce qu'on
+risque d'avoir ici c'est les dossiers qui ont un critère financier très important donc dans le
+cadre des téléphones mobiles ce qu'en montant de téléphone hyper important ce qu'on va avoir
+dans les prédits non fraudeur c'est l'inverse c'est qu'on risque d'avoir tous les dossiers qui ont
+un montant de téléphone très faible qu'est-ce que ça veut dire ça veut dire que nos faux négatifs
+qui sont ici en fait et donc c'est nos pertes directes des fraudes et nos faux positifs qui sont
+ici qui sont notre manque à gagner bien nos faux négatifs on peut très bien en avoir autant que
+si on n'a on n'appliqué pas le score de risque donc un biais de modèle aussi important en termes
+de volume par contre tous les dossiers qui vont être là c'est ceux que le modèle a sélectionné
+comme étant ceux qu'on a un coup le plus faible donc en fait on diminue énormément tous les fraudeurs
+qu'on laisse passer volontairement on ne laisse passer que ceux qu'ont un montant très très faible
+et donc une espérance de perte financière très très faible donc on améliore l'optimisation du
+coup que représentent les fraudeurs à contrario ici dans nos faux positifs on va avoir des dossiers
+qui ont tendance à avoir un montant un critère financier qui est très important donc on n'aura pas
+que des fraudeurs donc pas que ceux dont la probat était forte d'être fraudeur mais aussi ceux par
+exemple dont la probat était relativement faible mettons un 30% mais par contre qu'il y a un montant
+de perte financière très très élevé et donc du coup on va aussi les avoir. Ici on va induire
+le modèle pour lui dire bah tout ce que tu laisse passer c'est ceux qui ont un faible coup par contre
+tout ce que tu vas envoyer un manuel après derrière c'est ceux qui ont un fort coup y compris ceux
+qui sont pas forcément fraudeurs et donc du coup on va avoir tendance à augmenter en fait le volume
+des faux positifs et donc le nombre de dossiers qu'on envoie un manuel derrière et par contre à
+diminuer le coup de la fraude et donc en fait ça c'est le modèle conservateur dont on parlait tout
+à l'heure il est conservateur parce qu'il bloque complètement la fraude il diminue énormément
+le coup de la fraude mais par contre le contre-coup c'est qu'il envoie beaucoup de dossiers aux
+analystes manuels et ça ça a été le moment où on a mis ça en place ça a amélioré nettement
+en fait nos performances parce que c'est quelque part ce que notre client cherche à faire il voulait
+absolument bloquer le coup de la fraude et l'augmentation du nombre de dossiers qu'on
+envoyait un manuel était pas si importante que ça par rapport à ce qu'on bloquait et donc du
+coup ça lui allait très bien en termes de processus donc dans tout ce qui concerne détection de fraude
+mais aussi et ben voilà des modèles qui concernent des coups financiers en particulier voilà moi je
+vous invite à appliquer ce score de risque qui permet d'avoir une optimisation non pas du nombre
+mais des coups et c'est en général ce que recherchent les entreprises derrière c'est ça qui justifie
+après derrière en fait que le projet était mis en place maintenant je vous parlais un peu de
+l'industrialisation donc c'est qu'il a été industrialisé très très vite c'était la volonté
+en fait de notre client il voulait absolument qu'il soit testé pour qu'on puisse rapidement en avoir
+les retours en conditions réelles et rapidement l'améliorer pour qu'en conditions réelles il
+marche très bien donc du coup en fait mise en production rapidement ça veut dire qu'il y a un
+modèle qui a été fait au bout de deux mois il a été mis en production et donc il a traité des commandes
+de cet opérateur directement donc ça c'est une stratégie du client c'est pas nous qui décidons
+mais si le client décide de faire ça il va accepter aussi les quelques conséquences désagréables
+qu'il peut y avoir derrière le double run initial ça veut dire quoi ça c'est essentiel pour pouvoir
+mesurer l'impact qu'elle modèle donc double run ça veut dire faire tourner en même temps l'ancien
+processus donc avec les règles automatiques etc et le nouveau processus avec l'algorithme qui
+prend les décisions d'acceptation et de refus des dossiers ça veut dire qu'à partir du moment
+on les fait tourner en même temps pendant une certaine période sur cette période là on peut
+dire ben en fait le modèle il apporte ça en plus il a refusé moins de dossiers qui était pas
+froideur il a bloqué davantage de froideur etc etc et là on peut faire la comparaison directe et
+extrapoler en donnant héroïe quelque part et en disant voilà sur une année ça représenterait ça
+si jamais on se plait dans ce cadre là et donc on disait la mise en production ça a des
+contreparties la contrepartie c'est qu'il faut accepter qu'il y ait des pertes au début vous allez
+mettre un modèle en production au bout de deux ou trois mois le modèle il a absolument pas optimisé
+il est bien mais il est skillé du coup ça nécessite du temps pour l'optimiser quand vous allez le
+mettre vous allez constater des écueils et donc par exemple nous ce qu'on a pu constater au tout
+début quand la première fois que le modèle a été mis en place dans le mois qu'a suivi il y a eu
+pendant deux semaines une recrudescence de froide en fait et notamment le modèle qui avait un
+biais à ce moment là et la mise en place du groupe de contrôle et donc c'est ce qu'on disait
+de tout à l'heure c'est qu'en fait mettre en place un groupe de contrôle mettons par exemple 10%
+des commandes du mois tout elle passe ça veut dire quoi concrètement ça veut dire que quand vous
+passez une commande si la commande elle est rejetée vous la passez dix fois il y a une fois elle va
+être acceptée statistiquement c'est ça si ça représente 10% des commandes ben il y a des
+les gens qui froide en fait c'est leur métier ils sont à l'affût de ce truc là et deux semaines
+après on va mettre en place le groupe de contrôle c'est ce qu'ils ont fait et donc ils sont passés
+par ce par ce défaut là donc après qu'on a corrigé juste après donc c'est très voilà c'est très
+sûrement tout ça mais du coup c'est vachement intéressant à traiter quoi on a mis en place
+plusieurs mises en production plusieurs maps et on a mis en place des métriques de suivi des
+performances donc très important les métriques de suivi des performances il faut que ça soit
+des métriques qui correspondent au métier et donc du coup c'est le nombre de dossiers envoyés un
+manuel c'est le taux de froideur parmi les dossiers envoyer un manuel c'est pas des métriques type
+courbe rock type nombre de faux positifs etc ça parle ça parle qu'aux gens qui font de la
+date à science mais pas au métier donc c'est très important de mettre en place ces métriques pour
+pouvoir communiquer et l'aspect le plus important de l'industrialisation c'est le mco le maintien
+en condition opérationnel c'est en fait la vie du modèle et donc il faut suivre très régulièrement
+et donc tous les jours les performances du modèle pour s'assurer qu'il dévie pas notamment dans
+le cadre d'un modèle de déélection de fraude en fait on a des profils qui évoluent au cours du
+temps très rapidement et donc en fait on l'entraîne souvent sur un historique de données qui colle à
+la période on va prédire et on fait on fait glisser en fait l'historique d'entraînement
+au fur et à mesure qu'on réentraîne le modèle on apprend sur des périodes très proches les
+comportements changent et les périodes d'apprentissage changent aussi et donc il se peut qu'à un moment
+donné les performances du modèle dérivent et pour s'en rendre compte suffisamment tôt il faut que
+tous les jours en fait on puisse suivre les métriques de performances pour comprendre que le modèle est
+en train de dériver et pour pouvoir le mettre à jour à ce moment là donc aller explorer pendant
+quelques jours les raisons qui font qu'il a dérivé et du coup aller réparer entre guillemets en fait
+ces raisons là donc ça pour la mise en production très important le maintien en condition opérationnelle
+vraiment très très important et le double run dont on parlait au départ
+et alors les derniers points que je voulais voir avec vous c'est un retour d'expérience globale
+sur la façon dont le projet a été mené voilà je trouvais que c'était intéressant en fait de voir
+comment les projets sont réalisés avec quelles équipes avec quelles techno etc et par exemple
+ce projet donc on l'a dit il a duré à peu près 8 mois on était en régie on était donc comme on
+disait tout à l'heure à peu près deux personnes en fait pendant les 8 mois il y avait juste les
+deux premiers mois où il y avait une personne en plus pour être sûr que le début enfin ça
+commençait bien et donc les équipes c'était quoi on avait un product honneur alors je sais pas si
+vous avez l'habitude d'avoir ces dipologies d'organisation en fait sur les projets que vous
+menez donc un product honneur qui est un peu le chef de projet et avec qui on fait des points
+régulièrement pour s'assurer de la direction du projet un sponsor très important qui en fait
+une personne dans la société qui est hiérarchiquement très haut placé et qui peut en fait activer des
+leviers quand on a des points de blocage par exemple on doit aller chercher des données on doit
+solliciter plein de personnes différentes dans différents départements il se peut que ces personnes
+n'aient pas le temps de faire les choses ne comprennent pas exactement de quoi il s'agit où on ne voit
+pas l'aspect stratégique où juste on n'a pas communiqué auprès d'elle elle ne voit pas pourquoi
+elle nous aiderait et donnerait du temps du coup le sponsor il est là pour dire ok bah non ce
+projet il est important il faut que vous accordez du temps à ces personnes là pour qu'elles aillent
+au bout de leur projet donc qui perd important le sponsor et l'équipe de production les data
+scientiste alors data scientiste et data ingénieurs je sais pas si vous connaissez le concept du
+coup les data ingénieurs bon les architectes j'imagine que oui les data scientiste au départ on les
+voyait comme des moutons à cinq pattes en fait qu'il y avait toutes les compétences à la fois
+informatique à la fois mathématiques statistiques à la fois connaissance métier etc aujourd'hui en
+fait on est vachement dans un dans une période qui est au delà du poc qui va jusqu'à l'industrialisation
+pour faire l'industrialisation il faut des gens qui sont compétents là dedans un data scientiste qui
+à la fois connaît toutes les types d'architecture avec les types de performance qui s'est les
+optimisés qui s'allait chercher les données les retraités comme il faut dans tous les cas
+ça existe pas en fait c'est du coup il faut créer des équipes avec des gens qui soient spécialisés
+dans chacun des domaines un data scientiste il va être très bon pour analyser les données
+faire des modèles et essayer de tirer le maximum d'information des données un data ingénieur il va
+être très très bon pour pouvoir communiquer avec la dsi à récupérer les données les mettre en
+forme et les apporter pour que le modèle soit soit mis en place un architecte il va être très très
+bon pour mettre en place l'architecture big data s'il y a besoin selon le volume la variété des
+données et pour mettre en place des clusters ce qu'un data scientiste c'est pas forcément faire donc
+data scientiste et data ingénieur point hebdomadaire donc c'est type méthode scrum un peu adapté en
+fait donc un point de travail avec le product honneur et l'équipe de production toutes les semaines
+et un point de travail entre product honneur sponsor et en représentant l'équipe de production
+toutes les semaines également pour suivre un peu plus de haut le projet et les points
+quotidiens donc qui suivent la méthode scrum les stand-up chaque jour devant le camp banc donc le
+tableau devant sur lequel on met les post-it alors ça ça peut être en physique un tableau physique
+soit ça peut être je sais pas si vous connaissez les trélos ou gira ou voilà tous les logiciels
+qui permettent de suivre l'avancement des tâches etc et voilà c'est une méthode on va dire adapté
+scrum pour l'expérimentation dans la data science là je voulais vous présenter juste pour
+constater des différentes versions en fait qu'ont été mises en production et des différentes
+améliorations qu'ont été mises en place à chaque fois avec là le t0 et le petit test
+c'est semaine donc à chaque fois le nombre de semaines qu'on rajoute pour arriver à la version
+d'après donc il y a beaucoup de versions et il y a beaucoup de choses en fait qu'ont été faites
+et on remarque en fait au début il y a des petits trucs on pense que ça apporte pas énormément
+d'amélioration mais c'est hyper important de pouvoir le faire donc première mise en production
+voilà des corrections sur des champs qui contiennent du futur ça c'est typique ben voilà on a une
+variable à un moment donné on s'en rend pas compte mais en fait elle contient un élément de cible
+qu'on doit prédire oui le t0 c'est combien de temps après le premier t0 qui était le début de la
+création du modèle alors le t0 c'était trois mois après la création du premier modèle en fait
+exactement sur cette mission il y a eu un premier modèle qui a été fait en interne et nous on
+est arrivé à ce moment là quand ils ont commencé à le mettre en production parce qu'ils ont vu
+que ça marchait pas super bien et ils voulaient voir si on pouvait challenger ça du refactoring de
+code qui a été fait de nombreuses fois pour s'assurer que le code soit compréhensible et
+modulaire pour qu'on puisse l'adapter après du future engineering forcément des filtres sur les
+jeux pour que ça colle en fait avec la situation concrète et dire ben le jeu qui arrive en fait
+dans le modèle il faut qu'il y ait les règles les règles automatiques à mon qui sont restés il faut
+aussi qu'elles soient appliquées dans tous les cas via l'entraînement du modèle le score de risques
+financiers donc c'est ce dont je vous parlais tout à l'heure et la distinction des deux types de
+fraud donc la fraude terminale et la fraude à l'usage ça ça a été la plus grosse amélioration qu'on
+a pu apporter sur le modèle et qui a perduré jusqu'à la fin en fait ensuite on a rajouté des
+features on a regardé les commandes qui étaient associées aux commandes qu'on prenait en compte
+et donc est-ce que la personne par exemple dans les six mois qu'on précédait a fait d'autres commandes
+est-ce que ces commandes étaient assimilés fraude ou pas est-ce que l'adresse correspond à une
+adresse qui avait déjà utilisé pour de la fraude etc etc le l'utilisation du groupe de contrôle
+pour débiaiser le jeu d'entraînement voilà et une dernière version alors il y en a même une
+après que j'ai pas mise mais ça va être le même principe qui est une sorte d'AB testing en
+fait en gros à la fin le modèle que je vous ai montré on va dire que c'est le modèle 4.2 et en
+fait il y a un autre modèle le 5.0 qu'on a mis en parallèle l'idée c'était de dire les commandes
+on va les affecter de façon aléatoire à un modèle ou un autre ce qui reste de perturber
+encore plus les fraudeurs de ne pas savoir à quel modèle en fait quel modèle est appliqué sur
+leur commande à eux et du coup on a même fini par mettre trois modèles en parallèle avec un
+pourcentage aléatoire d'affectation à chacun des modèles pour à la fois de challenger les
+modèles suivre leur performance et voir lesquels était mieux mais en même temps aussi pour
+perturber les fraudeurs en fait sachant que c'est vraiment leur métier de regarder tous les jours
+quels sont les failles de ce qui peut se passer et du coup à ce moment là c'est un peu plus
+compliqué parce qu'on sait jamais quel modèle va traiter à quel commande donc ça c'est l'historique
+de toutes les versions qu'on a pu mettre en place pendant ces 8 mois les points particuliers alors
+on en a parlé tout à l'heure le biais dans le jeu d'entraînement on n'en a pas parlé c'est le
+déséquilibre dans la cible donc là on avait une cible qui était à peu près à 10% donc 10%
+de fraude à peu près sur le taux sur le la population globale du coup ce déséquilibre il a été
+traité via le modèle il y avait un reweighting qui est appliqué directement dans le modèle et qui
+permet en fait de resampler la part de population positive et la part de population négative on
+pourrait très bien je sais pas si vous connaissez des algorithmes type smote qui permettent de faire
+du resampling justement pour ajuster la part de positif qui est très faible et de là l'over
+sampler d'en faire un peu plus en fait légèrement décaler ce qui permet d'avoir plus de profils de
+positif et du coup d'avoir un modèle qui est un peu plus qui marche un peu mieux par la suite parce
+qu'il a une forte représentation de sa cible et un traitement en quasi réel on avait des batchs
+en fait qui tournaient toutes les trois minutes donc on allait chercher en fait les données en
+ftp on les récupérer on les traiter par là avec le modèle qui était prêt à enregistrer et on
+les renvoyait en fait à l'unité fraude et en termes d'environnement techno donc c'était du
+piton les modèles qui étaient utilisés c'était des g boost donc la famille des gradients de
+boosting et en fait l'entraînement le faisait sur un pc local donc pas connecté etc et le modèle
+ensuite on le mettait dans une dans une vm en fait en prod et donc dans cette vm donc ce que je
+disais on récupère les fichiers ftp on applique le modèle pré-entraîné pour faire la prédiction
+et on envoie le fichier de prédiction à la fraude donc c'est très léger c'est hyper light en fait
+mais ça marche très bien et c'est hyper robuste et la vm de production et en fait elle était très
+sous dimensionné on n'avait pas besoin d'avoir une machine de fou en fait derrière et donc les
+résultats en fait de ce projet juste pour qu'on est conscient c'est ça je pense que c'est typique
+des cas de fraude en fait c'est assez universel sur les quatre détections de fraude dans n'importe
+quelle société c'est que la fraude en fait c'est souvent ce qu'on appelle un quick win c'est
+à dire c'est un projet qu'on peut mener assez rapidement parce qu'on connaît relativement
+bien en fait les techniques qu'on peut qu'on peut appliquer et souvent derrière il y a un
+roi qui est important en fait donc c'est souvent les premiers projets qu'on en avant pour justifier
+du budget qu'on va pouvoir utiliser derrière et faire d'autres projets et donc du coup donc on a
+réduit le travail de la charge de travail des analyses de 20% on a réduit le coût de la fraude
+de 25% et on a amélioré les ventes de 2,5% et donc ça notamment c'est quelque part en fait
+c'est le chiffre le plus important parce que c'est les faux positifs dont on parlait tout à l'heure
+c'est ceux qu'on bloquait à tort avant mais du coup le manque à gagner présentait 2,5%
+en fait du total des ventes par mois et en fait c'est énorme pour finir un petit point d'ouverture
+surtout ce qui est non supervisé alors des algorithmes de clustering ou les autos encodeurs
+c'est surtout sur les autos encodeurs que je voulais légèrement insister donc là le modèle
+que je vous ai présenté c'était dans le cadre d'un modèle supervisé donc on avait un label on
+apprenait ce label et on essaie de le reproduire le non supervisé donc dans ce cadre là on
+n'a pas de label et on essaie de détecter quelque part les anomalies les intrus on a essayé de
+mettre en place un auto encodeur pour voir comment ça marcherait pour détecter les cas du coup que
+le modèle n'arrivait pas à récupérer ça n'a pas été très concluant par contre peut-être qu'il
+aurait fallu plus de temps pour qu'on puisse le développer mais par contre là où ça a été
+très utile et ça peut être utile dans plein de cas dans plein de projets différents c'est pour
+assurer l'homogénalité d'un jeu de données par exemple souvent dans les projets moi ça m'est
+arrivé très souvent on nous donne des points csv pour les jeux d'entraînement qu'on va récupérer
+on nous en donne plusieurs fois en fait dans l'année on a plusieurs millions de lignes plusieurs milliers
+en fait de variables on les vérifie pas forcément une à une c'est même voilà on les vérifie
+forcément pas une à une et en fait il peut arriver que d'une extraction à une autre il y a un format
+de données qui change alors nous l'exemple par exemple c'était les numéros de téléphone donc
+les 06 machin 04 machin bah un coup en fait on avait des numéros de téléphone en mode texte
+qui commençaient par 06 un coup on avait des numéros de téléphone en mode integer qui commençaient
+par 6 et quelque chose après derrière et en fait il y a un moment donné où le modèle il marchait
+quand on a reçu cette collection il marchait pas très bien on se demandait pourquoi on a mis en
+place un auto en codeur qu'on a entraîné sur la période d'avant et qu'on est sur lequel en fait
+enfin qu'on a utilisé pour prédire sur la période d'après sur le nouveau jeu d'écreaction
+qu'on nous a donné en fait l'auto en codeur c'est hyper utile pour détecter les changements dans
+les jeux de données et donc là par exemple l'auto en codeur ça sorti c'est que ça va nous dire
+bah regardez cette variable en fait il ya une erreur construction qui est énorme derrière donc du coup
+il faut pointer dessus et c'est certainement là dessus qui a un problème et donc c'était les
+fameux numéros de téléphone et en fait ils se trouvent qu'ils avaient changé de format et donc ça nous
+a indiqué en fait qu'il y avait un problème dans le format des données et donc dans ce cadre là
+ça a été utile ça peut être utile aussi dans tout ce qui concerne les time series où je vois
+dans d'autres projets par exemple où ça marche pas mal l'idée c'est que ça puisse en fait indiquer
+les changements de régime quelque part et donc je sais pas si vous savez comment ça fonctionne mais
+globalement donc en entrée on a l'ensemble des variables on réalise une compression et une
+décompression et donc l'idée c'est de dire je vais l'entraîner sur un jeu normal et je vais prédire
+sur un jeu quelconque pour détecter les anomalies donc tout ce qui n'était pas dans mon jeu normal
+mais en fait toutes les anomalies qui a dans votre jeu sur lequel vous prédisez elles vont avoir
+une erreur de construction beaucoup plus élevée que celle qui correspond au jeu normal et donc
+du coup vous pouvez à la fois pointer en fait sur les observations et donc dire cette observation
+c'est peut-être une anomalie parce qu'elle a une erreur de construction élevée et à la fois
+pointer sur les variables pour dire ben la moyenne des erreurs de construction sur cette variable en
+fait elle est plus élevée que sur les autres et donc du coup ben en fait s'il y a un problème sur
+cette variable et donc c'est comme ça par exemple qu'on avait rencontré le problème d'homogénalité
+donc ça je pense que c'est un point très important à creuser qui peut apporter qui peut apporter pas
+mal quand on a le temps de le traiter les autant au codeur et voilà c'est tout pour moi merci beaucoup
+est-ce que vous avez des questions
+ouais ça marche oui
+ouais c'est ça
+c'est à dire comment directement en fait dans le modèle tu
+en fait tu pourrais très bien tu as complètement raison tu pourrais très bien faire une fonction
+de coup en fait directement plutôt que d'utiliser un remesseur log loss ou n'importe quoi et te dire
+derrière en fait ça va optimiser mon coût de cette façon là là il se trouve que en fait
+d'un point de vue métier c'était hyper pertinent et ça permettait d'avoir des chiffres derrière
+l'estimation de père financière qui en sortait c'était hyper parlant en fait pour le métier
+en fait en sorti tu voyais tu dis ben tous les dossiers en fait qui sont en dessous de 30 euros
+je peux me permettre de les laisser passer tu vois en fait tu avais une espèce de vision comme ça
+qui permettait de de rendre tout ça très très clair mais effectivement on aurait pu utiliser
+une fonction de coût différent pour le prendre en compte à l'intérieur du modèle complètement
+oui
+oui alors oui les conséquences géographiques et conséquences sociales moi j'ai les coups
+j'essaie de répéter la question donc on en a rencontré effectivement dans ces cas là en fait
+ce qui est particulier c'est que ben effectivement il y a certaines zones géographiques à
+certains moments où il y a une recrée d'essence de fraude mais c'est jamais permanent en fait donc
+on peut se dire ben tiens je vois que dans dans tel commune dans tel département pendant trois
+semaines en fait j'ai énormément de fraudeurs bah souvent en fait c'est de collusion de fraudeurs
+qui se retrouvent au même endroit et qui vont utiliser par exemple les pondeuses dont on a
+parlé tout à l'heure pour les abonnements téléphoniques en fait donc dans le dernier
+modèle que j'ai pas présenté donc on avait le 5.0 le 4.2 en fait on a rajouté un 5.1 ce qu'on a
+rajouté c'est la prise en compte de ces facteurs ponctuels en disant les analyses fraude tous les
+mois ils faisaient un récapitulatif de ce qui s'était passé dans le mois d'avant et du coup des
+par exemple jeunes géographiques un peu en tension sur le mois d'avant on récupérait ces données
+là et on les appliquait on appliquait un poids sur le sur le vecteur de prédiction parce que
+comme c'est pas des éléments permanents on ne pouvait pas les intégrer directement au modèle
+pour qu'il apprenne dessus ça change tout le temps mais du coup on l'a mis de façon ponctuelle
+en rajoutant un poids sur ces éléments là dans le vecteur de prédiction après derrière et donc
+par exemple ça veut dire que quand tu fais de la prédiction et que du coup sur le mois t'as une
+configuration qui dit ben tels zones géographiques faut insister un peu plus dessus du coup t'orientent
+un peu plus la décision du modèle là dessus alors après c'est challengeable parce que du coup on
+perd le côté généralisation du modèle mais par contre on gagne sur l'aspect métier dans le sens
+où eux connaissent très bien leur métier ils savent très bien en fait ça se passe réellement
+et du coup ça les avantageait le modèle marché milieu de faire comme ça alors l'amélioration je
+crois était quand même relativement à la marge mais ça a porté une légère amélioration quand même
+donc effectivement en fait il y a des trucs comme ça
+oui tout ce qui pense à la saisonnalité ou effectivement tu as des éléments comme ça
+donc tu prenais le timestamp en fait auquel ça correspondait et tu en sortais en fait les
+les éléments le mois le jour l'année puisque les années aussi sont différentes et notamment
+tu as aussi des périodes promotionnelles donc le jour où il y a l'iPhone 7 qui est sorti par
+exemple à ce moment là voilà tu sais que là tu vas avoir à la fois un pic de vente et à la
+fois un pic de fraude en fait qui va avec et donc du coup même à ces moments là donc le modèle
+tourne il marche de la même façon sauf que les volumes étant plus important ben tu peux quand
+même laisser passer un peu plus de fraude en volume on va dire ce qui est logique par contre
+ce qui peut arriver c'est que le métier mettre en place direct des règles rigide en fait pour dire
+bah sur cette période promotionnelle qui dure une ou deux semaines on veut vraiment couper tout
+ce qui concerne ce truc là quoi donc en général ça se passait un peu de cette façon là
+alors les types de variable donc il y en avait plein alors il y avait les aspects il y avait un peu
+les aspects géographiques comme on a parlé tout à l'heure il y a les adresses mail assez bizarrement
+on a fait une mesure de distance entre le nom de la personne et l'adresse mail en fait pour vérifier
+enfin les bibi 92 à roba je sais pas quoi en fait ça nous paraissait plus bizarre que d'avoir une
+adresse assez professionnelle on va dire il y avait des informations financières donc en fait il y a
+savoir s'il y a déjà eu des impayés en fait sur des commandes qu'on était fait avant est ce que
+la personne était reconnue comme un client déjà actif et donc avait déjà un abonnement chez cette
+opérateur et donc du coup le fait que le client soit connu ça diminue la probabilité de fraude
+derrière on a essayé de regarder aussi dans les navigations web en fait donc sur le site internet
+il y a un enchaînement de page avec un temps passé par page en fait qui peut être différent donc
+notamment on a souvent le formulaire qu'on remplit pour faire la commande donc il y a un enchaînement
+de page prédéterminé et on voit le temps en fait qu'on passe sur chacune des pages en fait
+quand on passe très très peu de temps c'est quelque alors c'est pas forcément complètement vrai
+tout le temps mais effectivement ça arrive que on voit ceux qui sont rapides et qui passent très
+peu de temps ça veut dire qu'ils ont ils ont préparé avant leur truc et qu'ils ne sont pas
+en train de chercher un nouvel abonnement ou un téléphone donc il y avait pas mal de données comme ça
+oui c'est une question qui rejoint la précédente c'est donc vous me dites que c'est un modèle de machine
+army mais en revanche on n'est pas sur des données qui sont normalisées et vous l'avez dit vous
+même le comportement des fraudeurs paris très énormément en fait d'un mois et d'une année à
+l'autre donc en fait pour le pérenniser en fait puisque là actuellement vous avez quitté l'entreprise
+ou est-ce que vous assurez une baille derrière est-ce que oui alors en fait donc on était deux sur
+le projet donc un de ma société et un interne en fait à la société et donc du coup la personne
+interne est restée et pouvait faire alors c'est le mco le maintien condition opérationnel du modèle
+notamment et donc ce qu'on a mis en place en fait c'est que on a déterminé à partir de quel moment
+dérivé le modèle c'est-à-dire que si on l'entraînait pas pendant un mois deux mois trois mois à quatre
+mois à quel moment en fait les performances commencent à baisser réellement et donc du
+coup on a déterminé une fréquence de réentraînement et donc là c'était tous les mois si je dis pas de
+bêtises donc on passait une journée pour refaire réévaluer les performances du modèle les constater
+et ensuite si jamais les performances avaient baissé on passait trois jours à faire de l'exploitatoire
+pour savoir pourquoi ils avaient baissé à pouvoir l'ajuster et donc en fait la journée qu'on passait
+pour réévaluer les performances elle a même été améliorée parce qu'il y a un batch automatique
+qui a été fait pour faire en sorte que le modèle tout sorte automatiquement et donc ça finit par
+à ce qui est plus que les trois jours en fait de l'exploration tous les mois un data scientiste donc
+data engineer celui qui était avec moi sur le projet il regarde le modèle il voit si ça a dévié
+si ça a pas dévié très bien on laisse comme ça on réentraîne sur les quatre mois glissant
+si ça a dévié ben du coup on fait l'exploration et on voit pour ajuster le jeu d'entraînement
+derrière quoi donc ouais ça c'est hyper important parce que ça dévie en fait très très vite du fait
+que le modèle les profils en fait des fraudeurs changent très très vite et si on est sur une
+offre promotionnelle par exemple qui a eu lieu la fois d'avant aussi il faut en tenir compte pour le
+jeu d'entraînement qu'on va utiliser donc il faut absolument avoir une fréquence et la fréquence on
+la détermine vraiment en regardant à quelle vitesse dévie le modèle quoi donc c'est très important
+oui on avait à peu près 2 millions de lignes donc 2 millions de commandes l'historique de 2
+millions de commandes c'était 150 variables si je dis pas de bêtises ouais donc entre les
+variables brut et les variables future engineer et derrière qu'on rajoutait donc du coup c'était
+très tablant piton en fait directement c'était pas suffisamment grand pour que l'on ait besoin
+d'aller sur du adouc du spark ou quelque chose comme ça
+oui
+non c'est juste la prédiction en fait le modèle on l'entraîné avant en fait on entraîne
+hors de la vm de production et ensuite on en sert on en fait un picole en fait et le picole on
+l'insert dans la vm de production l'entraînement il prenait à peu près une demi heure et du
+coup une fois qu'il a entraîné on se sert juste de l'aspect prédiction la prédiction elle dure
+elle durait vraiment que quelques secondes en fait donc les trois minutes étaient largement suffisantes
+donc vraiment l'entraînement le fait à côté on le fait pas en même temps parce que ça n'a pas
+d'intérêt que ça pouvait même faire faire péter en fait la vm de production qui avait très peu
+de rames qui avait une configuration très très faible en fait
+alors on aurait pu alors là on n'a pas fait de modèle pour le risque financier on s'est tenu
+en fait à quelques critères métiers particuliers par contre on avait commencé à regarder la
+customer lifetime value en fait qui est l'argent qui peut être généré par un client sur un ensemble
+d'années donc par exemple pour les abonnements téléphoniques on peut supposer que la personne
+a un abonnement pendant un temps déterminé à ce métier et que tous les mois il y a un abonnement
+qui tombe donc du coup ça génère tant de revenus sur une période déterminée pour l'opérateur
+téléphonique et donc ils avaient un calcul le customer lifetime value on avait commencé à
+partir là dessus on n'a pas eu le temps après d'enclencher plus loin parce que du coup ça
+c'était pas vraiment le coeur du sujet et que ça marchait déjà pas trop mal comme ça mais
+effectivement ça c'est un point d'amélioration qui peut être qui peut être envisager complètement
+puisque du coup cette customer lifetime value elle est faite par le contrôle de gestion c'est des
+calculs qui sont souvent pas très compliqué c'est des calculs d'actualisation en fait et donc du
+coup on peut certainement trouver un modèle qui pourrait différencier les types de clients un
+peu mieux un peu plus précisément peut-être à voir après c'est toujours pareil c'est est-ce
+que le temps qu'on va y passer ça va apporter suffisamment d'amélioration pour justifier quoi
+donc c'était plutôt ça la question à ce moment là
+oui
+et xGBoos vous l'utilisez souvent dans les travaux
+ouais en fait ouais c'est alors le xGBoos ouais on l'utilise souvent y'a donc il y a plein de
+modèles différents le xGBoos ça fait encore un peu boîte noire je sais pas si vous faites des
+compétitions Kaggle par exemple ici ou des choses comme ça
+exactement voilà et en fait en gros y'a xGBoos raisonneuron raisonneuron ils sont très
+bons pour les images et les sons et les xGBoos ils sont meilleurs que les raisonneuron sur tous
+les autres cas en fait à priori sur les Kaggle en fait ça marche très bien ça fait des performances
+qui sont très bonnes par contre c'est une boîte noire ça pour interpréter après derrière ce que
+ce qu'a voulu dire le modèle c'est assez compliqué on commence à arriver à trouver des éléments pour
+dire à tel endroit telle variable à la telle poids localement en fait il y a une comment ça s'appelle
+c'est l'IME il y a une librairie qui s'appelle l'IME maintenant qui permet de en fait en gros ça
+fit une régression logistique juste localement sur un point et du coup ça permet de sortir
+l'importance des variables en ce point là pour une prédiction donc c'est déjà un mieux
+mais après sinon tout ce qu'on peut en sortir normalement c'est une feature importance en fait
+et du coup c'est pas forcément suffisant pour essayer de comprendre le modèle il y a toujours
+ce trade-off entre est-ce qu'on fait un modèle simple mais qu'on va comprendre complètement
+genre régression logistique voilà où récations logistiques améliorées ou en arbres de décision donc
+là on voit très bien comment on peut comprendre où est-ce qu'on va aller plus loin et améliorer
+la performance et en fait ça dépend juste du coup de gap de performance qu'on peut avoir ça dépend
+vraiment parce qu'il y a des cas où on n'a pas besoin d'avoir une performance démentielle pour
+améliorer déjà le processus et ben le client a vraiment besoin de comprendre donc du coup souvent
+le client a besoin de comprendre donc on essaie de trouver des moyens mais
+ouais c'est ça
+ouais mais même en fait on le fait quand même parce que du coup ça améliore souvent pas mal la
+performance en arbres de décision c'est ça a overfit très souvent en fait et c'est pas très
+voilà c'est jamais très performant en général nous ce qu'on prend c'est un random forest pour
+baseline en fait et dire voilà il est assez robuste donc même si on le tue un peu ça va pas changer
+énormément donc on peut se baser là dessus et après on essaie d'améliorer mais du coup l'interprétation
+alors par exemple pour le ekg boost on avait j'étais allé dans tous les arbres en fait
+genre par exemple il y a 800 iterations il y a 800 arbres du coup qu'ils sont créés
+en allant dans les iterations on peut réussir à créer une espèce de tableau qui nous dit
+ben dans le pire des cas cette variable elle joue dans tel sens dans pire des cas elle joue dans
+tel sens et on peut avoir une approximation de ce que ça veut dire en fait mais du coup les
+efforts qui sont fournis pour pouvoir sortir quelque chose comme ça et du coup la qualité de
+l'information derrière elle est quand même relativement approximative c'est un peu voilà donc
+il faut vraiment voir faire ce trade off là mais c'est clair que de toute façon toujours le client
+a besoin de comprendre et c'est complètement normal parce que il y a quelqu'un qui va l'utiliser
+derrière on n'utilise pas un modèle qu'on ne comprend pas quoi donc c'est toujours ce trade
+off là qui est assez compliqué mais c'est vrai qu'on utilise souvent avec g boost en fait même
+pour des missions marketing pour des scores d'appétence classiques en fait ben souvent c'est
+ce qui marche le mieux et on arrive toujours à trouver une façon pour expliquer un peu de quelle
+façon donc elle sent ça va quoi donc écoutez merci beaucoup merci pour votre attention

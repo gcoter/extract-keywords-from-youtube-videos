@@ -1,0 +1,1 @@
+Meetup Lyon Data Science du 3 Octobre 2017. Au programme, nos 3 speakers reviennent sur les bases en Data Science : \n\n- Rémi : technos et ressources en Big Data.\n- Anil : pré-requis et ressources en Machine Learning.\n- Ohran : retour sur une compétition Kaggle.

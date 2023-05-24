@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science : Data Science en production avec R : quels enjeux ? Quelles solutions?", "keywords": ["R", "production", "Shiny", "usability", "scalability", "interoperability", "maintainability", "Packrat", "RStudio", "Future"]}

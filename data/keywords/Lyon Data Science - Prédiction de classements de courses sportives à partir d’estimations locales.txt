@@ -1,0 +1,1 @@
+{"title": "Lyon Data Science - Pr\u00e9diction de classements de courses sportives \u00e0 partir d\u2019estimations locales", "keywords": ["DataWalk", "sports race rankings", "machine learning", "feature engineering", "deep learning", "accuracy rate", "betting platform", "young audience", "duels", "variables"]}
