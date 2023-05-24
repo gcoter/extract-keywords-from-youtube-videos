@@ -1,11 +1,55 @@
 vars:
   - videos:
-    - title: Où va la Data Science ?
-      url: https://www.youtube.com/watch?v=bONAu-W44b8
-    - title: Techniques pour améliorer son éligibilité pour travailler dans la data
-      url: https://www.youtube.com/watch?v=N-7zRvzRr0I
-    - title: Le long parcours d'un cas d'usage applicatif en NLP, de 2013 à 2022
+    - title: "Lyon Data Science - Meetup #3"
+      url: https://www.youtube.com/watch?v=ZwMZI-3gAus
+    - title: "Lyon Data Science : Présentation Amazon WS et prédiction RedShift et ML"
+      url: https://www.youtube.com/watch?v=JksDTeEvlK8
+    - title: "Lyon Data Science : Les ressources indispensables pour débuter en Big Data - Machine Learning !"
+      url: https://www.youtube.com/watch?v=LnmoOvuu-Ek
+    - title: "Lyon Data Science Open Street Map 24-10-2017"
+      url: https://www.youtube.com/watch?v=3rnex4E3-sY
+    - title: "Lyon Data Science La détection de fraude"
+      url: https://www.youtube.com/watch?v=H0DQocQMSFU
+    - title: "Lyon Data Science : Place de R et Python dans les formations en Data Science"
+      url: https://www.youtube.com/watch?v=la9J4UpIgeQ
+    - title: "Lyon Data Science : Milou est à Tintin ce que Rantanplan est à Lucky Luke - NLP & Word Embeddings"
+      url: https://www.youtube.com/watch?v=hk5Qz2l4a7Y
+    - title: "Lyon Data Science : Introduction au Machine Learning avec Spark 2.x et Scala"
+      url: https://www.youtube.com/watch?v=H9z6-tqswws
+    - title: "Lyon Data Science : Data Science en production avec R : quels enjeux ? Quelles solutions?"
+      url: https://www.youtube.com/watch?v=rjQ1CcHEEF4
+    - title: "Lyon Data Science : AutoML avec R: le tuning de modèles pour paresseux"
+      url: https://www.youtube.com/watch?v=65-PmQG_t2g
+    - title: "Lyon Data Science : 7 conseils pour démarrer avec Spark"
+      url: https://www.youtube.com/watch?v=8-m461AD5MU
+    - title: "Lyon Data Science : L'importance de la normalisation en analyse de données"
+      url: https://www.youtube.com/watch?v=ev7r-FdEpd8
+    - title: "Lyon Data Science : Présentation de Sagemaker: plateforme ML d'AWS"
+      url: https://www.youtube.com/watch?v=P0evji1IMVQ
+    - title: "Lyon Data Science : Quickly build Data Science web apps with Streamlit"
+      url: https://www.youtube.com/watch?v=iwdHFssqtIM
+    - title: "Lyon Data Science : What to do before an A|B test? An exploration of offline evaluation methods"
+      url: https://www.youtube.com/watch?v=hntw-YG2Wuo
+    - title: "L'Industrialisation des modèles de machine learning via la conteneurisation"
+      url: https://www.youtube.com/watch?v=yvR5N83c7OU
+    - title: "Lyon Data Science - Prédiction de classements de courses sportives à partir d’estimations locales"
+      url: https://www.youtube.com/watch?v=2xMxUjoi2GU
+    - title: "Lyon Data Science - Machine Learning en production"
+      url: https://www.youtube.com/watch?v=f93yCPq-VMc
+    - title: "Efficacité 'réelle' d'un test de catégorisation"
+      url: https://www.youtube.com/watch?v=Kh8W4hNCIC8
+    - title: "Lyon Data Science - Enjeux de l'Intelligence Artificielle"
+      url: https://www.youtube.com/watch?v=_6V201z8vWw
+    - title: "Recommandation de contenus chez 6play"
+      url: https://www.youtube.com/watch?v=oU03ZE_vaoU
+    - title: "Le long parcours d'un cas d'usage applicatif en NLP, de 2013 à 2022"
       url: https://www.youtube.com/watch?v=Ki0pKl3TwdU
+    - title: "Techniques pour améliorer son éligibilité pour travailler dans la data"
+      url: https://www.youtube.com/watch?v=N-7zRvzRr0I
+    - title: "Où va la Data Science ?"
+      url: https://www.youtube.com/watch?v=bONAu-W44b8
+    - title: "Construire des produits data-driven"
+      url: https://www.youtube.com/watch?v=ei9MpUgEac0
 
 stages:
   get_description_from_youtube:
